@@ -163,6 +163,18 @@ class PlaybackSignal(
             "com.disney.disneyplus",
             "com.amazon.amazonvideo.livingroom",
             "com.hbo.hbonow",
+
+            /**
+             * 投屏接收端。孩子用手机/电脑把视频投到电视上时，前台包名是各家的投屏服务而非
+             * 视频 App，不进这个名单就不会被计入观看时长（docs/PARENTAL.md 计时，第三层兜底只在
+             * 前台是非 launcher/设置/Aerial 时才计，而投屏时前台若是桌面反而会被 QUIET 排除）。
+             * 加入后：普通模式前台命中即按 Foreground 计；严格模式下触发做题/密码闸门。
+             * 媒体会话层（Precise）本就不过滤包名，投屏若能发出 session 也已计入，这里补全的是
+             * 前台兜底层。
+             */
+            "com.xiaomi.mitv.smartshare",             // 小米 无线投屏 / 多屏互动 接收端
+            "com.mitv.smartshare",                    // 小米 旧版 智能分享（安全网，不存在则永不命中）
+            "com.tcl.MultiScreenInteraction_TV",      // TCL 多屏互动（投屏）接收端
         )
 
         /**
