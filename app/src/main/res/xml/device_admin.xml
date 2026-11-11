@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  No policy is declared: Aerial asks the device owner status for its persistent preferred Home
+  activity only, and that needs no policy. Declaring one would show the TV owner a list of powers
+  the app never uses.
+-->
+<device-admin xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-policies />
+</device-admin>

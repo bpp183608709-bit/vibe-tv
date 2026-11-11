@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aerial 家长模块 · 界面原型</title>
+<style>
+  /* 全部尺寸按 Aerial 的 960×540 逻辑画布写：1px = 1dp */
+  :root{
+    --label:#fff;
+    --sec:rgba(235,235,245,.60);
+    --ter:rgba(235,235,245,.30);
+    --fill:rgba(120,120,128,.18);
+    --fill2:rgba(120,120,128,.32);
+    --hair:rgba(255,255,255,.10);
+    --focus:#F5F5F7;
+    --onfocus:#1D1D1F;
+    --green:#30D158;
+    --orange:#FF9F0A;
+    --red:#FF453A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:#0a0a0b;color:#e8e8ea;
+    font:14px/1.45 "Inter",-apple-system,"SF Pro Display","PingFang SC","Helvetica Neue",sans-serif;
+    display:flex;flex-direction:column;align-items:center;gap:14px;padding:18px;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* ---- 画布外的控制条（不属于原型本身） ---- */
+  .bar{width:100%;max-width:1000px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:12px;color:#8b8b90}
+  .bar b{color:#e8e8ea;font-size:13px;font-weight:600}
+  .switch{display:flex;gap:6px;flex-wrap:wrap}
+  .switch button{
+    font:inherit;font-size:12px;padding:5px 11px;border-radius:999px;cursor:pointer;
+    color:#b6b6bb;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);
+  }
+  .switch button:hover{background:rgba(255,255,255,.12);color:#fff}
+  .switch button.on{background:#F5F5F7;color:#1D1D1F;border-color:#F5F5F7}
+  .bar .tip{margin-left:auto}
+  kbd{font:inherit;font-size:11px;padding:1px 5px;border-radius:4px;background:rgba(255,255,255,.1);color:#dcdce0}
+
+  .frame{width:960px;height:540px;transform-origin:top left}
+  .stage{
+    position:relative;width:960px;height:540px;overflow:hidden;border-radius:14px;
+    background:#000;box-shadow:0 24px 70px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.07);
+    user-select:none;
+  }
+
+  /* ---- 壁纸（模拟航拍主屏，静止一帧） ---- */
+  .wall{position:absolute;inset:0;transition:filter .35s ease,transform .35s ease;
+    background:
+      radial-gradient(70% 55% at 74% 30%, rgba(255,214,166,.55), transparent 62%),
+      radial-gradient(90% 70% at 18% 8%, rgba(126,196,236,.42), transparent 66%),
+      linear-gradient(180deg,#14313f 0%,#1b3a41 38%,#12242a 62%,#0a1417 100%);
+  }
+  .wall::after{content:"";position:absolute;left:0;right:0;bottom:0;height:220px;
+    background:
+      linear-gradient(180deg,rgba(8,20,24,0) 0%,rgba(6,14,17,.92) 78%),
+      linear-gradient(105deg,rgba(20,44,50,.9) 0%,rgba(10,22,26,0) 46%);
+  }
+  .ridge{position:absolute;left:-4%;right:-4%;bottom:0;height:230px;opacity:.5;
+    background:
+      linear-gradient(180deg,rgba(120,160,168,.35),rgba(6,14,17,1)),
+      linear-gradient(0deg,#0a1417,#16323a);
+    clip-path:polygon(0 62%,9% 48%,17% 55%,26% 34%,34% 46%,44% 26%,53% 41%,63% 22%,72% 38%,81% 30%,90% 45%,100% 36%,100% 100%,0 100%);
+  }
+  .wall.blur{filter:blur(26px) brightness(.5) saturate(1.1);transform:scale(1.08)}
+  .scrim{position:absolute;inset:0;background:rgba(0,0,0,.45)}
+  .scrim.soft{background:rgba(0,0,0,.28)}
+
+  .scene{position:absolute;inset:0;display:none}
+  .scene.on{display:block}
+
+  /* ---- 焦点 ---- */
+  .focusable{outline:none;transition:transform .14s cubic-bezier(.23,1,.32,1),background-color .14s ease,color .14s ease,box-shadow .14s ease}
+  .focusable.focused{transform:scale(1.06);z-index:3}
+
+  /* ================= 场景 1：主屏右上角入口（胶囊里的第一个图标） ================= */
+  .topbar{position:absolute;top:22px;right:26px;display:flex;align-items:center;gap:10px}
+  .pill{
+    display:flex;align-items:center;gap:9px;height:34px;padding:0 13px 0 5px;border-radius:999px;
+    background:rgba(28,28,30,.62);border:1px solid rgba(255,255,255,.10);
+    backdrop-filter:blur(18px);font-size:13px;font-weight:600;letter-spacing:.04em;color:#fff;
+    transition:box-shadow .16s ease;
+  }
+  .pill.ring{box-shadow:0 0 0 2px rgba(245,245,247,.5)}
+  .pill .sep{width:1px;height:14px;background:rgba(255,255,255,.18)}
+  .pill > svg{opacity:.85}
+  .pillbtn{
+    display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:999px;
+    color:#fff;flex:none;transition:background-color .14s ease,color .14s ease,transform .14s ease;
+  }
+  .pillbtn.focused{background:var(--focus);color:var(--onfocus);transform:scale(1.12);box-shadow:0 0 0 3px rgba(245,245,247,.45)}
+  .hint{position:absolute;top:76px;right:26px;font-size:11px;color:rgba(235,235,245,.42);letter-spacing:.01em}
+
+  .clock{position:absolute;left:64px;top:120px}
+  .clock .t{font-size:86px;font-weight:700;letter-spacing:-.04em;line-height:1;color:#fff}
+  .clock .d{margin-top:10px;font-size:17px;font-weight:600;color:rgba(255,255,255,.72)}
+  .tiles{position:absolute;left:64px;right:64px;bottom:46px;display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  .tile{aspect-ratio:1.42;border-radius:14px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.08);
+    display:flex;align-items:center;justify-content:center;font-size:12px;color:rgba(255,255,255,.5)}
+
+  /* ================= 设置面板 ================= */
+  .panel{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:660px;padding:24px 26px 20px;border-radius:28px;
+    background:rgba(24,24,26,.86);border:1px solid rgba(255,255,255,.09);
+    backdrop-filter:blur(30px) saturate(1.15);
+    box-shadow:0 30px 70px rgba(0,0,0,.55);
+  }
+  .phead{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+  .badge{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    background:rgba(255,159,10,.16);color:var(--orange);flex:none}
+  .phead h1{font-size:19px;font-weight:600;letter-spacing:-.01em;color:#fff}
+  .phead p{font-size:11px;color:var(--sec);margin-top:2px}
+  .stat{margin-left:auto;text-align:right;font-size:11px;color:var(--sec);line-height:1.6}
+  .stat b{font-size:14px;font-weight:600;color:#fff;letter-spacing:-.01em}
+  .stat .warn{color:var(--orange)}
+
+  .group{border-radius:16px;background:rgba(255,255,255,.05);overflow:hidden}
+  .group + .group{margin-top:10px}
+  .row{display:flex;align-items:center;gap:12px;height:54px;padding:0 14px 0 18px;position:relative}
+  .row + .row::before{content:"";position:absolute;left:18px;right:0;top:0;height:1px;background:var(--hair)}
+  .row .label{flex:1;font-size:14px;font-weight:500;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .row.off .label{color:var(--ter)}
+  .row .sub{font-size:11px;color:var(--ter);margin-left:8px;font-weight:400}
+  .ctrl{display:flex;align-items:center;gap:8px}
+
+  .stepper{
+    display:flex;align-items:center;gap:2px;height:34px;padding:0 4px;border-radius:10px;
+    background:var(--fill);color:#fff;
+  }
+  .stepper.focused{background:var(--focus);color:var(--onfocus);transform:scale(1.05);box-shadow:0 0 0 3px rgba(245,245,247,.5)}
+  .stepper .arrow{width:20px;text-align:center;font-size:16px;opacity:.55;line-height:1}
+  .stepper.focused .arrow{opacity:.45}
+  .stepper .val{min-width:62px;text-align:center;font-size:14px;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+  .stepper.off{background:rgba(120,120,128,.08);color:var(--ter)}
+  /* 两段之间留 2px 缝，靠缝和白色焦点区分“这是两格”，不再塞第三个符号（会被白色控件挤掉） */
+  .pair{display:flex;align-items:center;gap:2px;height:34px;padding:0 2px;border-radius:11px;background:var(--fill)}
+  .seg{display:flex;align-items:center;gap:1px;height:30px;padding:0 2px;border-radius:9px;color:#fff;
+    transition:background-color .14s ease,color .14s ease}
+  .seg.focused{background:var(--focus);color:var(--onfocus)}
+  .seg .arrow{width:17px;text-align:center;font-size:15px;opacity:.55;line-height:1}
+  .seg.focused .arrow{opacity:.4}
+  .seg .val{min-width:56px;text-align:center;font-size:14px;font-weight:600;letter-spacing:-.01em;
+    font-variant-numeric:tabular-nums}
+  .none{font-size:13px;color:var(--ter);padding:0 6px}
+
+  .note{height:34px;padding:8px 4px 0;font-size:11px;color:var(--ter);line-height:1.5;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;transition:color .15s ease}
+  /* 每日那一行的按键和别处不同（上下键换字段），说明文字提到二级白强调一下 */
+  .note.strong{color:var(--sec)}
+
+  .chev{display:flex;align-items:center;gap:8px;height:34px;padding:0 8px 0 12px;border-radius:10px;
+    background:var(--fill);font-size:13px;font-weight:500;color:#fff}
+  .chev.focused{background:var(--focus);color:var(--onfocus);transform:scale(1.05);box-shadow:0 0 0 3px rgba(245,245,247,.5)}
+  .chev .k{font-size:13px;opacity:.5}
+
+  /* ================= 锁屏 ================= */
+  .lockwrap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;
+    background:radial-gradient(120% 90% at 50% 0%,rgba(28,44,52,.92),rgba(4,6,8,.98) 62%),#040608}
+  .lockicon{color:rgba(255,255,255,.4)}
+  .lockwrap h1{margin-top:18px;font-size:30px;font-weight:600;letter-spacing:-.02em;color:#fff}
+  .lockwrap .why{margin-top:8px;font-size:14px;color:var(--sec)}
+  .lockwrap .why b{color:#fff;font-weight:600}
+  .count{margin:6px 0 2px;font-size:64px;font-weight:700;letter-spacing:-.02em;color:#fff;font-variant-numeric:tabular-nums;line-height:1.05}
+  .cdlabel{margin-top:18px;font-size:11.5px;color:var(--ter);letter-spacing:.02em}
+  .acts{margin-top:24px;display:flex;flex-direction:column;gap:10px;width:330px}
+  .btn{display:flex;align-items:center;justify-content:space-between;gap:10px;height:44px;padding:0 18px;border-radius:12px;
+    background:var(--fill);color:#fff;font-size:14px;font-weight:500}
+  .btn.focused{background:var(--focus);color:var(--onfocus);transform:scale(1.03);box-shadow:0 0 0 3px rgba(245,245,247,.45)}
+  .btn .hintk{font-size:11px;color:var(--ter);font-weight:400}
+  .btn.focused .hintk{color:rgba(29,29,31,.5)}
+  .btn.danger{color:var(--orange)}
+  .btn.danger.focused{color:#7a4a00}
+  .foot{position:absolute;left:0;right:0;bottom:26px;text-align:center;font-size:11px;color:rgba(235,235,245,.32)}
+  .locktag{position:absolute;top:24px;left:50%;transform:translateX(-50%);
+    display:flex;align-items:center;gap:6px;height:26px;padding:0 12px;border-radius:999px;
+    background:rgba(255,159,10,.14);color:var(--orange);font-size:11px;font-weight:600}
+
+  /* ================= 密码浮层 ================= */
+  .sheet{position:absolute;inset:0;display:none;z-index:30;align-items:center;justify-content:center;
+    background:rgba(0,0,0,.55)}
+  .sheet.on{display:flex}
+  .pad{width:280px;padding:22px 24px 20px;border-radius:22px;background:rgba(30,30,32,.92);
+    border:1px solid rgba(255,255,255,.10);backdrop-filter:blur(26px);box-shadow:0 24px 60px rgba(0,0,0,.6);
+    text-align:center}
+  .pad h2{font-size:17px;font-weight:600;letter-spacing:-.01em;color:#fff}
+  .padfoot{margin-top:12px;font-size:10.5px;color:var(--ter)}
+  /* 门上的「修改密码」：真机上它是 PinPad.footer，遥控器一路按 ↓ 最后才到的那一项。
+     这个原型不模拟弹层里的方向键，所以这里只画一个能用鼠标点的链接，不带焦点环。 */
+  .padlink{margin-top:9px;padding:0;border:0;background:none;cursor:pointer;
+    font-size:11.5px;letter-spacing:.01em;color:var(--sec)}
+  .padlink:hover{color:#fff}
+  .padlink[hidden]{display:none}
+  .pad .hint2{margin-top:5px;font-size:11px;color:var(--sec);height:30px;line-height:1.4}
+  .pad .hint2.err{color:var(--red)}
+  .dots{display:flex;justify-content:center;gap:11px;margin:12px 0 16px;height:14px}
+  .dot{width:14px;height:14px;border-radius:50%;border:1.5px solid #fff;flex:none;transition:background .1s}
+  .dot.f{background:#fff}
+  .dot.more{width:auto;height:14px;border:0;color:var(--sec);font-size:11px;line-height:14px}
+  .keys{display:grid;grid-template-columns:repeat(3,64px);gap:10px;justify-content:center}
+  .key{height:46px;border-radius:12px;background:var(--fill);display:flex;align-items:center;justify-content:center;
+    font-size:17px;font-weight:600;color:#fff}
+  .key.focused{background:var(--focus);color:var(--onfocus);transform:scale(1.08);box-shadow:0 0 0 3px rgba(245,245,247,.5)}
+  .key.ok{font-size:13px;font-weight:600;background:rgba(48,209,88,.18);color:var(--green)}
+  .key.ok.focused{background:var(--green);color:#04250f;box-shadow:0 0 0 3px rgba(48,209,88,.4)}
+  .key.dis{background:rgba(120,120,128,.08);color:var(--ter)}
+  .shake{animation:sh .3s}
+  @keyframes sh{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+  .field{margin:14px 0 6px;display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;border-radius:10px;
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);font-size:13px;color:#fff;text-align:left}
+  .field .txt{flex:1;letter-spacing:.06em;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden}
+  .field .txt.empty{color:var(--ter);letter-spacing:0}
+  .field .caret{width:1.5px;height:16px;background:#fff;animation:bl 1s steps(1) infinite}
+  @keyframes bl{50%{opacity:0}}
+
+  /* toast */
+  .toast{position:absolute;left:50%;bottom:52px;transform:translate(-50%,10px);z-index:40;
+    display:flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:999px;
+    background:rgba(48,209,88,.16);border:1px solid rgba(48,209,88,.35);color:#9df0b6;font-size:12.5px;font-weight:500;
+    opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+  .toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <b>Aerial · 家长模块 UI 原型</b>
+  <div class="switch" id="sw">
+    <button data-go="home" class="on">主屏入口</button>
+    <button data-go="settings">家长设置</button>
+    <button data-go="daily">锁屏·每日额度</button>
+    <button data-go="interval">锁屏·休息间隔</button>
+    <button data-go="gate">密码门</button>
+  </div>
+  <span class="tip"><kbd>↑↓←→</kbd> 移动 · <kbd>Enter</kbd> 确定 · <kbd>0-9</kbd> 输密码 · <kbd>Esc</kbd> 取消</span>
+</div>
+
+<div class="frame" id="frame">
+<div class="stage" id="stage">
+
+  <!-- ========== 主屏 + 右上角入口 ========== -->
+  <div class="scene on" data-scene="home">
+    <div class="wall"></div><div class="ridge"></div>
+    <div class="clock">
+      <div class="t">22:54</div>
+      <div class="d">10月29日 周四 · 晴 18°</div>
+    </div>
+    <div class="topbar">
+      <div class="pill" id="pill">
+        <div class="pillbtn focusable" data-act="gate" data-first="1" title="家长模式">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round">
+            <rect x="4.5" y="10.5" width="15" height="10" rx="3"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/>
+          </svg>
+        </div>
+        <span class="sep"></span>
+        <span>22:54</span>
+        <span class="sep"></span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M2 8.8a15 15 0 0 1 20 0"/><path d="M5.5 12.5a10 10 0 0 1 13 0"/><path d="M9 16.2a5 5 0 0 1 6 0"/><circle cx="12" cy="19.5" r="1.2" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hint">新增入口 · 胶囊里的第一个图标，焦点接在时间之前</div>
+    <div class="tiles">
+      <div class="tile">影视</div><div class="tile">直播</div><div class="tile">音乐</div><div class="tile">游戏</div><div class="tile">设置</div>
+    </div>
+  </div>
+
+  <!-- ========== 家长设置 ========== -->
+  <div class="scene" data-scene="settings">
+    <div class="wall blur"></div><div class="scrim"></div>
+    <div class="panel">
+      <div class="phead">
+        <div class="badge">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <rect x="4.5" y="10.5" width="15" height="10" rx="3"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/>
+          </svg>
+        </div>
+        <div>
+          <h1>家长设置</h1>
+          <p>离开本页后需要密码才能再次进入</p>
+        </div>
+        <div class="stat">
+          今日已看 <b id="st-daily">1 小时 12 分</b><br>
+          单次已用 <b id="st-sess">12 分</b> <span id="st-sess-max">/ 45 分</span>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="row" id="row-daily" data-note="每天累计播放的视频时长，到点锁屏。0 小时 0 分表示不限制。左右调值，上下（或 OK）在时/分之间切换。">
+          <span class="label">每日观看时长</span>
+          <div class="ctrl" id="c-daily">
+            <div class="pair">
+              <div class="seg focusable" data-step="dailyH" data-first="1">
+                <span class="arrow">‹</span><span class="val" data-v="dailyH">2 小时</span><span class="arrow">›</span>
+              </div>
+              <div class="seg focusable" data-step="dailyM">
+                <span class="arrow">‹</span><span class="val" data-v="dailyM">0 分</span><span class="arrow">›</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" data-note="连续观看达到该时长后锁屏，进入休息倒计时。0 表示不限制。">
+          <span class="label">单次观看时长</span>
+          <div class="ctrl">
+            <div class="stepper focusable" data-step="session">
+              <span class="arrow">‹</span><span class="val" data-v="session">45 分钟</span><span class="arrow">›</span>
+            </div>
+          </div>
+        </div>
+        <div class="row" id="row-interval" data-note="单次到点后必须等待这么久的睡眠时间。单次设为不限时，此项不会触发。">
+          <span class="label">观看间隔时长</span>
+          <div class="ctrl">
+            <div class="stepper focusable" data-step="interval">
+              <span class="arrow">‹</span><span class="val" data-v="interval">10 分钟</span><span class="arrow">›</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="row" data-note="修改密码需要管理员口令。忘记密码时，管理员口令就是恢复入口。">
+          <span class="label">修改密码</span>
+          <div class="ctrl"><div class="chev focusable" data-act="changepin"><span>8–12 位</span><span class="k">›</span></div></div>
+        </div>
+        <div class="row" data-note="退出后回到主屏；再次点击右上角锁图标需要输入密码。">
+          <span class="label">退出家长模块</span>
+          <div class="ctrl"><div class="chev focusable" data-act="exit"><span>需要密码再次进入</span><span class="k">›</span></div></div>
+        </div>
+      </div>
+
+      <div class="note" id="note">每天累计播放的视频时长，到点锁屏。0 小时 0 分表示不限制。</div>
+    </div>
+  </div>
+
+  <!-- ========== 锁屏：每日额度 ========== -->
+  <div class="scene" data-scene="daily">
+    <div class="lockwrap">
+      <div class="locktag">家长模式已锁定</div>
+      <svg class="lockicon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <rect x="4.5" y="10.5" width="15" height="10" rx="3"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/>
+      </svg>
+      <h1>今天的观看时间用完了</h1>
+      <div class="why">今日已看 <b id="d-used">2 小时 0 分</b> · 明天 00:00 恢复</div>
+
+      <div class="acts">
+        <div class="btn focusable" data-ext="30"><span>延长 30 分钟</span><span class="hintk">需密码</span></div>
+        <div class="btn focusable" data-ext="60"><span>延长 1 小时</span><span class="hintk">需密码</span></div>
+        <div class="btn focusable" data-ext="120"><span>延长 2 小时</span><span class="hintk">需密码</span></div>
+        <div class="btn danger focusable" data-ext="all"><span>今日不再限制总时长</span><span class="hintk">需密码</span></div>
+      </div>
+      <div class="foot">延长只加当日额度 · 单次观看仍在计时（<span id="d-sess">45 分钟</span>一次）</div>
+    </div>
+  </div>
+
+  <!-- ========== 锁屏：休息间隔 ========== -->
+  <div class="scene" data-scene="interval">
+    <div class="lockwrap">
+      <div class="locktag">休息时间</div>
+      <h1 style="margin-top:0">休息一下眼睛</h1>
+      <div class="cdlabel">距离可以继续观看还有</div>
+      <div class="count" id="cd">09:58</div>
+      <div class="why">本次已看 <b id="i-sess">45 分钟</b> · 休息 <b id="i-int">10 分钟</b></div>
+
+      <div class="acts">
+        <div class="btn focusable" data-act="skip"><span>跳过本次休息</span><span class="hintk">需密码</span></div>
+      </div>
+      <div class="foot">倒计时期间按 HOME、返回都留在本页 · 跨天不打断</div>
+    </div>
+  </div>
+
+  <!-- ========== 空场景：密码门（设置页前面板） ========== -->
+  <div class="scene" data-scene="gate">
+    <div class="wall blur"></div><div class="scrim"></div>
+    <div class="panel" style="width:520px;text-align:center;padding:34px 30px 30px">
+      <div class="badge" style="margin:0 auto 14px">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <rect x="4.5" y="10.5" width="15" height="10" rx="3"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/>
+        </svg>
+      </div>
+      <h1 style="font-size:19px;font-weight:600;color:#fff">家长模式</h1>
+      <p style="margin-top:6px;font-size:11.5px;color:var(--sec)">输入 8–12 位密码后进入设置</p>
+      <div style="margin-top:26px;display:flex;justify-content:center">
+        <div class="chev focusable" data-act="gate" style="height:40px;padding:0 22px;font-size:14px"><span>输入密码</span><span class="k">›</span></div>
+      </div>
+      <p style="margin-top:22px;font-size:11px;color:var(--ter)">首次使用会要求先设置密码</p>
+    </div>
+  </div>
+
+  <!-- ========== 密码浮层 ========== -->
+  <div class="sheet" id="sheet">
+    <div class="pad" id="pad">
+      <h2 id="pad-title">请输入家长密码</h2>
+      <div class="hint2" id="pad-hint">演示密码 12345678 · 输入完成后按「确定」</div>
+      <div class="dots" id="dots"></div>
+      <div class="keys" id="keys"></div>
+      <div class="padfoot">返回键取消</div>
+      <button class="padlink" id="pad-link" type="button" hidden>修改密码 · 需管理员口令 ›</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 12.5l5.2 5.2L20 7"/></svg>
+    <span id="toast-t">已延长 30 分钟</span>
+  </div>
+
+</div>
+</div>
+
+<script>
+/* ---------------- 状态 ---------------- */
+const S = {
+  dailyH: 2, dailyM: 0,        // 每日：0h0m = 不限
+  session: 45,                 // 单次：0 = 不限
+  interval: 10,                // 间隔：10–60，无 0
+  usedDailyMin: 72,            // 演示：今日已用
+  usedSessionMin: 12,
+};
+const LIMITS = { dailyH:[0,12,1], dailyM:[0,45,15], session:[0,60,15], interval:[10,60,10] };
+
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const stage = $('#stage');
+
+/* ---------------- 场景 ---------------- */
+let scene = 'home';
+function go(name){
+  scene = name;
+  $$('.scene').forEach(el => el.classList.toggle('on', el.dataset.scene === name));
+  closeSheet(true);
+  toggleToast(false);
+  if (name === 'interval') startCountdown();
+  else stopCountdown();
+  $$('#sw button').forEach(b => b.classList.toggle('on', b.dataset.go === name));
+  requestAnimationFrame(() => {
+    const first = $(`.scene.on .focusable[data-first], .scene.on .focusable`);
+    if (first) setFocus(first);
+  });
+  if (name === 'daily') $('#d-used').textContent = fmt(dailyBudget() || 120);
+}
+
+/* ---------------- 焦点：几何就近 ---------------- */
+let cur = null;
+function pool(){ return [...document.querySelectorAll('.scene.on .focusable, .sheet.on .focusable')]
+  .filter(e => !e.classList.contains('off') && e.getClientRects().length); }
+function setFocus(el){
+  if (!el) return;
+  if (cur) cur.classList.remove('focused');
+  cur = el; el.classList.add('focused');
+  // 入口在胶囊里：聚焦时整颗胶囊描边，图标本身翻白
+  $('#pill').classList.toggle('ring', el.classList.contains('pillbtn'));
+  const row = el.closest('.row');
+  // 每日那一行的上下键被用来换字段，说明文字提到二级白，避免和别处的行看起来一样
+  $('#note').classList.toggle('strong', !!row && row.id === 'row-daily');
+  if (row && row.dataset.note && scene === 'settings') $('#note').textContent = row.dataset.note;
+}
+function move(dir){
+  const els = pool().filter(e => e !== cur);
+  if (!cur || !els.length) return;
+  const c = cur.getBoundingClientRect();
+  const cx = c.left + c.width / 2, cy = c.top + c.height / 2;
+  let best = null, bestScore = 1e9;
+  for (const e of els){
+    const r = e.getBoundingClientRect();
+    const ex = r.left + r.width / 2, ey = r.top + r.height / 2;
+    const dx = ex - cx, dy = ey - cy;
+    const ok = dir === 'left' ? dx < -6 : dir === 'right' ? dx > 6 : dir === 'up' ? dy < -6 : dy > 6;
+    if (!ok) continue;
+    const primary = dir === 'left' ? -dx : dir === 'right' ? dx : dir === 'up' ? -dy : dy;
+    const lateral = (dir === 'left' || dir === 'right') ? Math.abs(dy) : Math.abs(dx);
+    const score = primary + lateral * 2.4;
+    if (score < bestScore){ bestScore = score; best = e; }
+  }
+  if (best) setFocus(best);
+}
+
+/* ---------------- 取值与格式化 ---------------- */
+function fmt(min){
+  if (min === 0) return '不限';
+  const h = Math.floor(min / 60), m = min % 60;
+  if (h && m) return `${h} 小时 ${m} 分`;
+  return h ? `${h} 小时` : `${m} 分`;
+}
+function dailyBudget(){ return S.dailyH * 60 + S.dailyM; }
+
+function render(){
+  // 每日 0h0m = 不限：小时档位改显示“不限”，右移一格回到 15 分钟，这一行始终可聚焦
+  const dailyOff = dailyBudget() === 0;
+  $('[data-v=dailyH]').textContent = dailyOff ? '不限' : S.dailyH + ' 小时';
+  $('[data-v=dailyM]').textContent = S.dailyM + ' 分';
+  $('[data-step=dailyM]').style.display = dailyOff ? 'none' : '';
+  $('[data-v=session]').textContent = S.session === 0 ? '不限' : S.session + ' 分钟';
+  $('[data-v=interval]').textContent = S.interval + ' 分钟';
+
+  // 单次不限 → 间隔不生效（P0-3）
+  const intRow = $('#row-interval');
+  intRow.classList.toggle('off', S.session === 0);
+  intRow.querySelector('[data-step=interval]').classList.toggle('off', S.session === 0);
+  intRow.dataset.note = S.session === 0
+    ? '单次观看设为「不限」时，休息间隔不会触发。要启用间隔，请先把单次设为 15 分钟以上。'
+    : '单次到点后必须等待这么久的睡眠时间。';
+
+  $('#st-sess-max').textContent = S.session ? `/ ${S.session} 分` : '/ 不限';
+  $('#d-sess').textContent = S.session ? `${S.session} 分钟` : '不限';
+  $('#i-int').textContent = S.interval + ' 分钟';
+  $('#i-sess').textContent = S.session ? `${S.session} 分钟` : '不限';
+}
+
+function step(key, dir){
+  // 从“不限”往右的第一格给 15 分钟，免得为了 15 分钟先跳到 1 小时再往回退
+  if (key === 'dailyH' && dir > 0 && dailyBudget() === 0){ S.dailyM = 15; render(); return; }
+  const [min, max, unit] = LIMITS[key];
+  if (unit === 1){ S[key] = Math.min(max, Math.max(min, S[key] + dir)); }
+  else {
+    const i = Math.round((S[key] - min) / unit);
+    const n = Math.max(0, Math.min(Math.round((max - min) / unit), i + dir));
+    S[key] = min + n * unit;
+  }
+  if (key === 'session' && S.session === 0) { /* 保留间隔值，仅禁用 */ }
+  render();
+}
+
+/* ---------------- 密码浮层 ---------------- */
+const PIN = { on:false, mode:'enter', buf:'', step:1, tmp:'', after:null };
+const KEYS = ['1','2','3','4','5','6','7','8','9','del','0','ok'];
+
+function renderDots(){
+  const box = $('#dots');
+  if (!box) return;   // 口令模式下没有圆点
+  box.innerHTML = '';
+  const len = PIN.buf.length;
+  const count = len < 8 ? 8 : Math.min(12, len + 1);
+  for (let i = 0; i < count; i++){
+    const d = document.createElement('div');
+    d.className = 'dot' + (i < len ? ' f' : '');
+    box.appendChild(d);
+  }
+  if (len > 12){
+    const m = document.createElement('div'); m.className = 'dot more'; m.textContent = '+' + (len - 12);
+    box.appendChild(m);
+  }
+}
+
+function renderKeys(){
+  const box = $('#keys'); box.innerHTML = '';
+  KEYS.forEach(k => {
+    const el = document.createElement('div');
+    el.className = 'key focusable';
+    if (k === 'del'){ el.innerHTML = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6H9L3 12l6 6h11a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1z"/><path d="M12 9.5l4 5M16 9.5l-4 5"/></svg>'; }
+    else if (k === 'ok'){ el.textContent = '确定'; el.classList.add('ok', 'dis'); }
+    else el.textContent = k;
+    el.dataset.key = k;
+    // 点击统一由 activate() 处理，避免和鼠标事件重复触发
+    box.appendChild(el);
+  });
+}
+
+/** 每次打开都从干净结构开始：口令模式是输入框，密码模式是圆点 + 键盘。 */
+function buildPad(mode){
+  const pad = $('#pad');
+  const holder = pad.querySelector('.dots, .field');
+  const fresh = document.createElement('div');
+  fresh.className = 'dots'; fresh.id = 'dots';
+  holder.replaceWith(fresh);
+  $('#keys').style.display = mode === 'admin' ? 'none' : '';
+  if (mode === 'admin'){
+    const f = document.createElement('div');
+    f.className = 'field focusable'; f.id = 'field';
+    f.innerHTML = '<div class="txt empty">输入管理员口令…</div><div class="caret"></div>';
+    fresh.replaceWith(f);
+  }
+}
+
+function openSheet(opts){
+  PIN.on = true; PIN.buf = ''; PIN.step = 1;
+  PIN.mode = opts.mode || 'enter';
+  PIN.after = opts.after || null;
+  // 二次确认这一步要沿用上一步记下的密码
+  if (PIN.mode !== 'confirm') PIN.tmp = '';
+  $('#pad-title').textContent = {
+    enter: '请输入家长密码',
+    admin: '输入管理员口令',
+    new: '设置新密码',
+    confirm: '再输一次',
+  }[PIN.mode];
+  $('#pad-hint').className = 'hint2';
+  $('#pad-hint').textContent = PIN.mode === 'enter'  ? '演示密码 12345678 · 输完按「确定」'
+                             : PIN.mode === 'admin' ? '输入管理员口令 · 按 Enter 提交'
+                             : PIN.mode === 'new'   ? '8–12 位，建议纯数字（遥控器好按）'
+                             : '两次输入必须一致';
+  $('#sheet').classList.add('on');
+  PIN.adminText = '';
+  // 只在家长密码门上出现：延长、跳过、以及口令/设密码那几步都没有这个入口。
+  $('#pad-link').hidden = !(PIN.mode === 'enter' && PIN.after === 'open');
+  buildPad(PIN.mode);
+  renderDots(); renderKeys(); updateOk();
+  requestAnimationFrame(() => {
+    const f = PIN.mode === 'admin' ? $('.field') : $('[data-key="1"]');
+    setFocus(f);
+  });
+}
+function closeSheet(silent){
+  PIN.on = false;
+  $('#sheet').classList.remove('on');
+  if (!silent && cur && !cur.isConnected) cur = null;
+}
+function updateOk(){
+  const ok = $('[data-key="ok"]');
+  if (!ok) return;
+  const need = PIN.mode === 'admin' ? 4 : 8;
+  const en = PIN.buf.length >= need;
+  ok.classList.toggle('dis', !en);
+}
+function pressKey(k){
+  if (!PIN.on) return;
+  if (k === 'del'){ PIN.buf = PIN.buf.slice(0, -1); renderDots(); updateOk(); return; }
+  if (k === 'ok'){ submit(); return; }
+  if (PIN.buf.length >= 12) return;
+  PIN.buf += k;
+  renderDots(); updateOk();
+  // 8 位以上不自动提交：长度可变，必须显式确认
+}
+function submit(){
+  if (PIN.mode === 'admin'){
+    // Prototype only: the real phrase is injected at build time, never stored here.
+    if (PIN.adminText !== '000000000'){
+      err('口令不对'); return;
+    }
+    // 从门上来的（reset）改完落到设置页；从设置页来的（save）改完留在原处。
+    openSheet({ mode:'new', after: PIN.after === 'reset' ? 'reset' : 'save' }); return;
+  }
+  if (PIN.mode === 'new'){
+    if (PIN.buf.length < 8){ err('至少 8 位'); return; }
+    PIN.tmp = PIN.buf;
+    openSheet({ mode:'confirm', after: PIN.after }); return;
+  }
+  if (PIN.mode === 'confirm'){
+    if (PIN.buf !== PIN.tmp){ err('两次输入不一致'); PIN.buf = ''; renderDots(); updateOk(); return; }
+    const after = PIN.after;
+    closeSheet(); toast('密码已更新');
+    if (after === 'reset') go('settings');
+    return;
+  }
+  // enter
+  if (PIN.buf !== '12345678'){ err('密码不对，还可以再试'); return; }
+  const after = PIN.after;
+  closeSheet();
+  if (after === 'open') go('settings');
+  else if (after && after.startsWith('ext:')) unlock(after.slice(4));
+  else if (after === 'skip') { toast('已跳过本次休息，单次额度已重置'); setTimeout(() => go('home'), 1400); }
+}
+function err(msg){
+  const h = $('#pad-hint');
+  h.textContent = msg; h.classList.add('err');
+  $('#pad').classList.remove('shake'); void $('#pad').offsetWidth; $('#pad').classList.add('shake');
+  PIN.buf = ''; renderDots(); updateOk();
+  // 口令输错要清空输入框，否则下一次输入会接在错的那串后面（真机上没有这个状态）。
+  if (PIN.mode === 'admin'){ PIN.adminText = ''; renderField(); }
+}
+
+/* ---------------- 锁屏动作 ---------------- */
+function unlock(kind){
+  if (kind === 'all') toast('今日不再限制总时长 · 单次仍在计时');
+  else toast(`已延长 ${kind === '30' ? '30 分钟' : kind === '60' ? '1 小时' : '2 小时'}`);
+  setTimeout(() => go('home'), 1500);
+}
+
+let cdTimer = null, cdLeft = 0;
+function startCountdown(){
+  stopCountdown();
+  cdLeft = S.interval * 60;
+  const tick = () => {
+    cdLeft = Math.max(0, cdLeft - 1);
+    const m = String(Math.floor(cdLeft / 60)).padStart(2, '0');
+    const s = String(cdLeft % 60).padStart(2, '0');
+    $('#cd').textContent = `${m}:${s}`;
+    if (cdLeft === 0){ stopCountdown(); toast('休息结束，可以继续观看'); setTimeout(() => go('home'), 1400); }
+  };
+  const m = String(Math.floor(cdLeft / 60)).padStart(2, '0');
+  const s = String(cdLeft % 60).padStart(2, '0');
+  $('#cd').textContent = `${m}:${s}`;
+  cdTimer = setInterval(tick, 1000);
+}
+function stopCountdown(){ if (cdTimer){ clearInterval(cdTimer); cdTimer = null; } }
+
+let toastTimer = null;
+function toast(msg){
+  $('#toast-t').textContent = msg;
+  $('#toast').classList.add('on');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => $('#toast').classList.remove('on'), 1800);
+}
+function toggleToast(on){ if (!on) $('#toast').classList.remove('on'); }
+
+/* ---------------- 事件 ---------------- */
+document.addEventListener('keydown', e => {
+  const k = e.key;
+  // 口令模式吃所有可打印字符；密码模式只吃数字
+  if (PIN.on && PIN.mode === 'admin' && k.length === 1 && !e.ctrlKey && !e.metaKey){
+    e.preventDefault(); PIN.adminText += k; renderField(); return;
+  }
+  if (k >= '0' && k <= '9' && PIN.on){ e.preventDefault(); pressKey(k); return; }
+  if (k === 'Backspace' && PIN.on){ e.preventDefault(); pressKey('del'); return; }
+  if (k === 'Escape'){ e.preventDefault(); if (PIN.on) closeSheet(); else if (scene !== 'home') go('home'); return; }
+  if (k === 'Enter'){
+    e.preventDefault();
+    if (PIN.on){ submit(); return; }
+    activate(cur);
+    return;
+  }
+  const map = { ArrowLeft:'left', ArrowRight:'right', ArrowUp:'up', ArrowDown:'down' };
+  if (!map[k]) return;
+  e.preventDefault();
+  const dir = map[k];
+  if (!cur || PIN.on){ return; }
+  // 步进器：左右直接改值，不移动焦点
+  if (cur.dataset.step && (dir === 'left' || dir === 'right')){
+    step(cur.dataset.step, dir === 'right' ? 1 : -1);
+    return;
+  }
+  // 时/分是一对：上下在两者之间走，走到边界才交给常规移动
+  if (cur.dataset.step === 'dailyH' && dir === 'down' && minuteShown()){ setFocus($('[data-step=dailyM]')); return; }
+  if (cur.dataset.step === 'dailyM' && dir === 'up'){ setFocus($('[data-step=dailyH]')); return; }
+  move(dir);
+});
+
+function minuteShown(){ return $('[data-step=dailyM]').style.display !== 'none'; }
+
+/** 时/分之间用 OK 也能切，遥控器上比上下键更好按。 */
+function flipSegment(key){
+  if (!minuteShown()) return;
+  setFocus($(key === 'dailyH' ? '[data-step=dailyM]' : '[data-step=dailyH]'));
+}
+
+/** 一个焦点元素被「确定」时要做什么：鼠标点击和遥控器 OK 走同一条路。 */
+function activate(el){
+  if (!el) return;
+  if (el.dataset.step){ flipSegment(el.dataset.step); return; }
+  if (el.dataset.key){ pressKey(el.dataset.key); return; }
+  if (el.dataset.act === 'gate'){ go('home'); openSheet({ mode:'enter', after:'open' }); return; }
+  if (el.dataset.act === 'exit'){ go('home'); return; }
+  if (el.dataset.act === 'changepin'){ openSheet({ mode:'admin', after:'save' }); return; }
+  if (el.dataset.act === 'skip'){ openSheet({ mode:'enter', after:'skip' }); return; }
+  if (el.dataset.ext){ openSheet({ mode:'enter', after:'ext:' + el.dataset.ext }); return; }
+}
+
+function renderField(){
+  const t = $('.field .txt');
+  if (!t) return;
+  t.textContent = PIN.adminText ? '•'.repeat(PIN.adminText.length) : '输入管理员口令…';
+  t.classList.toggle('empty', !PIN.adminText);
+}
+
+$('#sw').addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  if (b.dataset.go === 'gate'){ go('home'); openSheet({ mode:'enter', after:'open' }); return; }
+  go(b.dataset.go);
+});
+
+// 门上的「修改密码」：口令 → 新密码 → 直接进设置页（真机是 PinPad.footer 那一项）。
+// 它不是 .focusable，所以不参与方向键/OK 的走位，只能点。
+$('#pad-link').addEventListener('click', () => openSheet({ mode:'admin', after:'reset' }));
+
+stage.addEventListener('click', e => {
+  const el = e.target.closest('.focusable');
+  if (!el) return;
+  setFocus(el);
+  // 真实鼠标点步进器左右半边 = 加减；遥控器的 OK 没有坐标（detail 0）
+  if (el.dataset.step && e.detail > 0){
+    const r = el.getBoundingClientRect();
+    step(el.dataset.step, e.clientX < r.left + r.width / 2 ? -1 : 1);
+    return;
+  }
+  activate(el);
+});
+
+/* 管理员口令面板里用物理键盘输入（真机上走手机页） */
+
+/* ---------------- 启动 ---------------- */
+function fit(){
+  const s = Math.min(1, (window.innerWidth - 60) / 960, (window.innerHeight - 130) / 540);
+  const f = $('#frame');
+  f.style.width = 960 * s + 'px'; f.style.height = 540 * s + 'px';
+  stage.style.transform = `scale(${s})`;
+}
+window.addEventListener('resize', fit);
+render(); fit();
+// 便于截图/分享：parental.html#settings 直接打开某个场景
+const want = (location.hash || '').replace('#', '');
+go(['home','settings','daily','interval','gate'].includes(want) ? want : 'home');
+if (want === 'pin') openSheet({ mode:'enter', after:'open' });
+</script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+# 家长模块（Parental）
+
+放在首页右上角**控制中心**里的入口（「设置」图标右边那颗），用来限制电视每天能看多久、一次能看多久、两次之间要歇多久。
+设置需要 8–12 位数字密码才能进；到点后锁屏，家长输密码才能延长或跳过。
+
+代码：`app/src/main/java/app/orchard/tv/parental/WatchTimer.kt`（纯逻辑，可单测）。
+本文是它的规格；改动行为先改这里。
+
+## 已经定下来的六件事
+
+1. 密码是 **8–12 位纯数字**（遥控器只有数字键和方向键，混合字符没法输；完整密码只在电视上设）。
+2. 「今日不再限制」**只解除每日限制**，单次和间隔继续生效。按钮文案因此叫「今日不再限制总时长」，锁屏页要写明单次仍在计时。
+3. 「延长」是**加当日额度**（30 分钟 / 1 小时 / 2 小时），第二天自动回到设置里的值。
+4. 密码**合成一套**：旧的 4 位 PIN 与新的家长密码是同一个密码，只换存储格式。
+5. 统计**接收读媒体播放状态**（MediaSession 播放态），自研播放器拿不到时按设备使用时长兜底，见「计时」。
+6. **Lite（Android 4.x）不跟进**。
+
+## 设置项
+
+| 项 | 档位 | 范围 | 默认 | 说明 |
+|---|---|---|---|---|
+| 每日观看时长 | 小时 1 小时一档，分钟 15 分钟一档 | 0–12 小时 | 0 小时 0 分 | 0 = 不限制 |
+| 单次观看时长 | 15 分钟一档 | 0–60 分钟 | 0 分钟 | 0 = 不限制 |
+| 观看间隔时长 | 10 分钟一档 | 10–60 分钟 | 10 分钟 | 没有 0；单次为 0 时这一项置灰 |
+
+三条互相独立地计时，**谁先到点谁锁屏**。单次为 0 时间隔没有触发源，所以设置页要置灰并提示
+「先设置单次观看时长」（否则家长以为设了限制，其实一项都没生效）。
+
+## 状态机
+
+只有三个状态，加一个「今日不限每日」的标志。
+
+| 状态 | 表现 | 离开方式 |
+|---|---|---|
+| `Normal` | 正常使用，两个计时器同时累加 | 到点自动转出 |
+| `Interval` | 间隔倒计时页，整屏锁住，显示剩余时间 | 倒计时结束（自动）或密码「跳过本次间隔」 |
+| `DailyLimit` | 每日额度锁屏页，显示已用/上限 | 密码：延长 30 分 / 1 小时 / 2 小时，或今日不再限制总时长 |
+
+转换：
+
+| 从 | 条件 | 到 | 备注 |
+|---|---|---|---|
+| Normal | 每日额度用尽 | DailyLimit | 两者同时用尽时**以每日优先**，不让人白等一轮间隔 |
+| Normal | 单次额度用尽，且今日还有额度 | Interval | 进间隔时单次额度**先归零**，倒计时结束即可继续 |
+| Normal | 单次额度用尽，且今日也没额度了 | DailyLimit | 跳过一整轮间隔 |
+| Interval | 倒计时结束，今日还有额度 | Normal | 单次额度归零 |
+| Interval | 倒计时结束，今日额度已尽 | DailyLimit | 已付的等待不白费 |
+| Interval | 密码「跳过本次间隔」 | Normal | 单次额度归零；每日额度不变 |
+| DailyLimit | 密码延长 N | Normal 或 Interval | 延长后若单次也早已用尽，转 Interval（单次限制仍在） |
+| DailyLimit | 密码「今日不再限制总时长」 | Normal 或 Interval | 同上，只解除每日 |
+| 任意 | 本地日期变化（00:00） | — | 每日已用、延长、今日不限全部清零；**倒计时不中断** |
+
+## 计时
+
+### 看什么算「在看」
+
+三级信号，从准到粗，取当前可用的最高一级：
+
+1. **精确**：`MediaSessionManager.getActiveSessions()` 里有 `playbackState == PLAYING` 的会话。Aerial 已经通过安装脚本拿到通知监听权限（`RevivalListener`），但这一级只在真正发布会话的电视上可用——读得到列表而列表恒空时，它等于不可用（见下条）。
+2. **前台 App**：前台包名属于视频类 App（沿用 `apps/TileRecipes.kt` 的包名表），且不在 Aerial 自己里。
+3. **兜底：设备使用时长**：屏幕亮 + `elapsedRealtime()` 在推进 + 前台不是 Aerial、不是系统设置/桌面 → 计入。
+
+**空列表不等于「没在看」（`SessionVerdict`）**：`getActiveSessions` 返回空列表有两种意思——真没在播，或者这台电视上的视频 App 根本不发布会话。本机是后者：开着通知监听放 120 秒云视听极光，计数为 0，因为每个 tick 都把空列表读成了「暂停」。所以空列表只有在**这台设备至少答过一次非空会话**之后才被当成「没在播」；在那之前一律答「不知道」（null），交给第二、三级。判定按进程重置，不做持久化：固件升级后开始发布会话的电视下次启动就自动用上精确级。
+
+两级都拿不到时的底线是「不知道就不算在看」：屏幕亮着但前台未知（没有使用情况权限）时计 0，而不是猜「亮着就一定在看」——那样孩子坐在桌面上也会被锁，比漏计更难解释。
+
+**为什么不按需求原文的「开机运行时长 − 观看间隔时长」**：间隔是设置值而不是已发生的时长，开机时长又包含大量待机时间，减出来恒为 0 或负数，没法当额度用。兜底口径改成「亮屏且前台不是桌面的累计时长」，它的误差方向是**偏大**（保守），对家长限制是有利的。
+
+三级的差别要显示给家长看：设置页底部一行「统计方式：精确 / 按前台 App / 按使用时长（粗略）」，否则家长没法判断限制准不准。
+
+## 严格模式（家长可开的另一套管法，默认关）
+
+上面那一整套叫**记账**：家长设额度，孩子直接看，屏幕上真在放才计时，到点才锁。它管的是总量，不管理入口。
+
+**严格模式**管入口：视频 App 也要先输密码。密码换的不是「这次可以进」，而是一张**票**——票多长由设置页定（15 / 30 / 45 / 60 分钟，默认 30）。
+
+四条规则（`WatchTicket`）：
+
+1. **票在走，秒表就走**。不看屏幕上在不在放——孩子停在选片页、暂停着、在首页挑片子，照样算时间。时间是被家长发出去的，不是被观察到的。这也是它和记账最本质的区别。
+2. **票有尽**。到点停表，同时守护把视频 App 挡回来：它在前台而票已失效，就弹密码（`HomeGuardService.needsPin`）。家长不在，孩子就看不成。
+3. **离开不算立刻作废，但只有 60 秒**。离开视频 App 一分钟内回来，票还在；超过一分钟票作废，回来重新输密码。宽限期内**也计时**——否则孩子每隔几分钟切出去一趟就能把时间攒下来。
+4. **换 App 不通用**。票只对发下去的那个包有效，从云视听极光切到银河奇异果要重新要票。
+
+两个模式各自管得住什么，买之前就该知道：
+
+| | 记账（默认） | 严格模式 |
+|---|---|---|
+| 家长不在家，孩子开机就能看 | 能 | **不能**，进不去任何视频 App |
+| 停在选片页挂着、暂停着 | 不计时 | 计时 |
+| 只设了单次、没设日额度 | 「看 30 分钟歇 6 分钟」可无限循环 | 歇着也在烧票，绕不过 |
+| 密码被孩子看到 | 当天额度随便加 | 只多一张票，离开 1 分钟作废 |
+| 家长自己进设置调 HDMI | 不计时 | **算到孩子账上** |
+| 需要家长一直在场 | 不需要 | **需要** |
+
+**已知偏差**：最后第二行。票只认「谁拿着」，不认「谁在看」，所以家长拿票进「小米电视设置」的时间会计入孩子的当天用量。要修得让票能区分持票人，成本高于收益，先记为已知。
+
+**默认关的理由**：严格模式的第一前提是家长在场。天天守着的家庭很好用，上班的家庭第三天就会关掉它——所以它必须是开关，而且默认关。
+
+**两套一起开的完整形态**：票管入口（家长不在就开不了），额度管总量（给多少次票，总量到点照样锁）。
+
+### 真机结果：严格模式（MiTV-MFTP0，2026-11-03 凌晨）
+
+先测的是行为，结果带出四个缺陷——前两个不是严格模式引入的，是它把一直存在的东西照了出来：
+
+1. **守护在用户解锁前绑定 → 闸门从不工作**。`onServiceConnected` 里 `frontMatters` 依赖 `Parental.hasPin`，而那时 `Parental` 还没读过设置（`store == null`，`hasPin` 为假），于是 `foregroundCheck` 一次都没被 post。之后 `Parental` 初始化了也没人重算这个判断。**这意味着商店和设置的闸门在同样情况下也是哑的**，只是没人碰巧测到。修法：`ParentalClock.start` 在 `Parental.init` 之后调 `HomeGuardService.onParentalReady()`，把轮询补上。
+2. **`lastWindow?.first == launchedGuest` 在两者都为 null 时成立**，服务刚绑定、还没收到任何窗口事件时，每一轮都从这里早退。修法：加 `launchedGuest != null` 前置。
+3. **视频 App 会自己盖掉闸门**。云视听极光启动 400 ms 后由它自己（uid 10036）`START HomeSingleTaskActivity`，把刚弹出的闸门顶回去，日志里是「password gate up」之后同一秒内焦点就回到极光。修法：`GateActivity.onPause` 把自己重新置顶（最多 4 次，250 ms 间隔），避免和 App 无限抢。
+4. **闸门只在「前台有变化」时判定**。票是在 App 一直停在前台的情况下到期的，usage stats 没有新事件，`foreground()` 返回 null，于是票没了也不会再拦。修法：`foregroundCheck` 每轮都用 `lastKnownFront` 判一次闸门，抢桌面那段仍然只认新事件。
+
+修完的三段实测：
+
+| 步骤 | 结果 |
+|---|---|
+| 严格模式开、无票，点极光 | 闸门弹出并**稳定在前台**（6 秒后焦点仍是 `GateActivity`） |
+| 发票 → Back 关闸门 → 点极光 | 直接进入；`watching=true level=Ticket`，10 个 tick 涨 10000 ms |
+| 极光在前台不动，清票 | 3 秒内闸门接管，日志 `gate: com.ktcp.video is in front with no password` |
+
+另外验了票的两条边界：**离开超过 60 秒票作废**（前台在 Aerial 主屏，`used` 停在 60280 不再涨，`ticket=0s`）；**票主在前台时挂着也计时**（极光停在选片首页，`used` 照样 10 秒涨 10 秒）。
+
+### 必须排除的
+
+- **Aerial 自己**（包名 `app.orchard.tv`）：主屏航拍壁纸和航拍屏保都是 Aerial 用 Media3 播的视频，不排除的话挂着壁纸也会烧额度。
+- 屏幕熄灭、待机、睡眠期间的时长。
+
+### 累加的细节
+
+- 用 `SystemClock.elapsedRealtime()`（单调时钟），不用 `System.currentTimeMillis()`——否则把电视时间改早就能重置每日额度。日期判定另用本地日期。
+- 单次 tick 最多计 60 秒：间隔超过 60 秒说明进程没在跑（息屏、待机、被杀），这段不算。
+- 连续 **5 分钟**没有播放 → 本次单次结束、额度归零。这是一个已知的宽松点：在视频 App 里暂停 5 分钟也会归零，换来的是「看完一集去吃饭」不该算进下一次。每日额度是硬约束，兜得住。
+- 「今日不再限制总时长」之后，**已用时长仍继续累计**，只是不再参与判定——家长第二天还能看到昨天到底看了多久。
+
+## 密码
+
+- 8–12 位纯数字，遥控器数字键或屏幕九宫格输入。
+- 存 `pin_hash`（加盐 SHA-256），不存明文；现有 4 位 PIN 的用户首次进家长模块时强制重设，旧值只用于迁移判断。
+- **每次离开模块即失效**，再次进入重新输入（复用 #718 的「离开前台重新上锁」语义）。
+- 连续 5 次错误锁 5 分钟，错误次数与锁定截止时间持久化。
+- 密码输入页提供「修改密码」：需要**旧密码或管理员口令**二选一。
+- **忘记密码**：用管理员口令直接设新密码（不给这条路径，家长忘了密码只能 ADB 清数据）。
+- 管理员口令固定为 `<9 位数字，见本地私有说明>`，**纯 9 位数字**（这样电视上的九宫格键盘才打得进去，见下文「四处要定」1），**不入库、不进 APK 明文**：从 `local/signing.properties` 同级的 `local/` 目录在构建期注入 `BuildConfig`，只存其哈希用于比对。`AGENTS.md` 明令不许把密钥类内容提交进版本库；且固定口令一旦泄露，所有人的电视都能被改密码，要写进用户文档。
+
+## 数据
+
+`SharedPreferences("parental")`，每次状态变化与每 30 秒各 commit 一次：
+
+| 字段 | 含义 |
+|---|---|
+| `pin_hash` / `pin_salt` | 密码 |
+| `pin_fail` / `pin_lock_until` | 失败次数与锁定截止（wall clock） |
+| `daily_date` | 本地日期 ISO，与今天不同即触发日切 |
+| `daily_used_ms` | 今日已用 |
+| `daily_extra_ms` | 今日已延长 |
+| `daily_unrestricted` | 今日不限总时长 |
+| `session_used_ms` | 本次已用 |
+| `interval_end_wall` | 间隔结束的**系统时间**（重启后靠它恢复；`elapsedRealtime` 开机会归零，不能直接存） |
+| `daily_budget_ms` / `session_budget_ms` / `interval_ms` | 设置项 |
+
+重启恢复：`interval_end_wall` 与当前时间比较，仍在未来则回到 `Interval` 并继续倒计时；若检测到系统时间被回拨（比上次记录早超过 1 小时），按「仍在倒计时」处理（保守）。
+
+## 界面
+
+**可交互原型：`docs/prototype/parental.html`**（960×540 逻辑画布，方向键 + Enter 模拟遥控器，`#settings` / `#daily` / `#interval` 可直接定位场景）。下面是原型定下的规则，实现时照做。
+
+- **入口**：控制中心里**「设置」图标右边**的第四个圆钮（`家长模式`）。原先是状态胶囊里的图标、后来是胶囊左边的一个独立圆钮，两版都让首页角落多一个控件；移到控制中心后，首页右上角只剩胶囊一个可按的东西。焦点顺序接在三个圆钮之后，音量滑块的「按上回到刚才那颗按钮」也认得它。
+- **设置页**：三行档位选择（沿用个性化面板的 `Stepper` 样式）+ 今日已用/剩余 + 统计方式 + 修改密码 + 关闭限制。进入时焦点落在「每日观看时长」这一行。
+- **时/分两段的键位**（这一行独有，必须按这个来）：左右键调值，**上下键在时/分之间切换**，`OK` 也切（遥控器上比上下键好按）。因为左右键被调值占用，没有额外的键可以离开控件，所以两段做成连体控件、只有一段翻白；底部的说明文字提到二级白以示区分，写明「左右调值，上下（或 OK）在时/分之间切换」。**不要**在两段之间塞图标——焦点翻白的那段会把它挤掉。
+- **间隔倒计时页**：剩余 mm:ss、单次额度说明、「跳过本次间隔」（需密码）。
+- **每日锁屏页**：今日已用 X 小时 Y 分、上限、四个操作（30 分/1 小时/2 小时/今日不再限制总时长），都要密码。
+- **8–12 位意味着不能自动提交**：现有 `PinPad` 是 4 位、满 4 位即校验，改长之后必须在键盘上加「确定」键，`确定` 在不足 8 位时置灰。
+- **每日「不限」必须留一个可聚焦档位**：0h0m 时若把两个 Stepper 整个隐藏，这一行在遥控器上就再也点不到，等于永久锁死。做法是小时档显示「不限」，右移一格直接给 15 分钟，分钟档此时隐藏。
+- **单次「不限」时，间隔一行整体置灰、不可聚焦**，并给出「要先设单次时长」的说明（否则家长设了间隔却永不触发）。
+- **锁屏实现**：独立 `LockActivity`（`singleInstance`、`excludeFromRecents`、自行消费返回键、`setShowWhenLocked`），**不能做成 Aerial 内部的浮层**——浮层挡不住 HOME 键和其他 App 的启动。进入锁屏时结束 `AerialDream` 屏保。
+- 文案进 `values`/`values-zh`/`values-ru`/`values-uk`/`values-kk` 五份，手机页 `assets/web/index.html` 的 `KEYS`/`TEXTS` 同步。
+
+## 守护要配合的两处
+
+1. **锁屏期间拦 HOME**：现在 `HomeGuardService.updateKeyFilter()` 在 `isDefaultHome()` 时主动放行 HOME，锁屏期间必须特判——否则按 HOME 回到 Aerial 首页，锁屏直接被顶掉。
+2. **锁屏期间拒绝切走**：前台是锁屏时，守护不响应信号源/回到原桌面的判据。
+
+## 管不到的（写进用户文档，别让家长误会）
+
+- **HDMI / DTMB 直播**：信号源是固件层的事，孩子按遥控器切到机顶盒，任何软件都管不了。
+- **待机、关机、拔电源、恢复出厂**。
+- 关机再开机（重启）当天额度仍在，但「间隔」按系统时间算，拔电改系统时间可绕过——这是已知限制。
+
+## 验收用例
+
+1. 每日 2 小时、单次 0：连续看到 2 小时整 → 每日锁屏页，剩余显示 0。
+2. 单次 30 分钟、每日 0：30 分钟 → 间隔页；倒计时结束后回首页，能再看 30 分钟，不会立刻再锁。
+3. 单次 30 分钟、每日 20 分钟：第 20 分钟锁每日页（先到者胜），不进间隔。
+4. 间隔进行中把每日额度耗到 0（家长在另一边看）→ 倒计时结束后进每日页，不是回首页。
+5. 每日锁屏页点「延长 30 分钟」→ 需密码 → 输对后回到正常，可继续看 30 分钟，再锁。
+6. 「今日不再限制总时长」→ 需密码 → 单次到点仍然进间隔。
+7. 间隔页「跳过本次间隔」→ 需密码 → 回首页且单次归零。
+8. 单次 0、间隔 30：设置页中间隔一行置灰。
+9. 挂着航拍壁纸不看电视 → 额度不动。
+10. 密码输错 5 次 → 锁 5 分钟，期间即使输对也拒绝。
+11. 修改密码：旧密码对 → 改成功；旧密码错但管理员口令对 → 改成功。
+12. 00:00 前后跨天：倒计时不中断；00:00 后每日已用归零。
+13. 强制停止 Aerial 后重启 → 间隔仍在倒计时，剩余时间正确。
+14. 按 HOME、返回、菜单键 → 锁屏不被顶掉，仍在最前。
+15. 关闭无障碍守护的情况下 → 按 HOME 会回到原桌面（已知限制，不是 bug，文档里说明）。
+
+## 分阶段
+
+1. `WatchTimer`（纯逻辑）+ 单元测试 ← 已写：`app/src/main/java/app/orchard/tv/parental/WatchTimer.kt` 和 `app/src/test/java/app/orchard/tv/parental/WatchTimerTest.kt`。状态机语义已用等价实现跑过本文验收用例的 47 条断言；**Kotlin 已真编译、单测已跑**（见本节末「构建与测试现状」）。
+2. `ParentalStore`（持久化 + 日切 + 重启恢复） ← **已写**：`app/src/main/java/app/orchard/tv/parental/ParentalStore.kt`（三个限值、计数器、密码与管理员口令的哈希）+ `Parental.kt`（把 `WatchTimer` 接到存储和界面上的运行时）+ 12 条单元测试 `ParentalStoreTest.kt`
+3. `PlaybackSignal`（三级信号） ← **已写**：`app/src/main/java/app/orchard/tv/parental/PlaybackSignal.kt`（精确 → 前台 App → 使用时长，10 条单元测试 + `SessionVerdict` 5 条）。Android 侧只有 `AndroidSource` 一处，判定逻辑本身不碰系统，可在单测里喂任意答案
+4. 设置页 + 密码页（改造 `PinPad` 支持 8–12 位） ← `PinPad` **已改造完成**；设置页 **已落 Compose**：`app/src/main/java/app/orchard/tv/ui/parental/ParentalSheet.kt`（密码门 → 设置页 → 改密码三段，8–12 位密码位全部走 `PinPad`）。**入口已接**：`Overlay.Parental` + 顶栏胶囊左侧的 `ParentalDoor`（`ui/home/HomeChrome.kt`），主屏挂载 `ParentalSheet`；`Parental.init/tick` 也已在 `HomeScreen` 里每秒走一次，三级信号与计数器因此真的会动。
+5. `LockActivity` + 两个锁屏页 + 守护配合 ← **已写**（Kotlin 已真编译通过，见本节末「构建与测试现状」）：
+   - `app/src/main/java/app/orchard/tv/LockActivity.kt`：独立 `singleInstance` + `excludeFromRecents` 的锁屏 Activity，`setShowWhenLocked`、自己吃掉返回键/菜单键、进来自动结束 `AerialDream` 屏保；它**不计数**，只每秒 `Parental.idle()` 走倒计时截止判定（`WatchTimer.checkDeadline`），额度一解除就 `letGo()` 回主屏。`LockActivity.bringUp()` 是唯一的入口，主屏每秒的 tick、守护的 HOME 键、守护看到别的 App 到前台，都调它（`inFront` 而不是「存在」决定要不要再拉起来，被顶掉也能回来）。
+   - `app/src/main/java/app/orchard/tv/ui/parental/LockScreen.kt`：两个锁屏页照原型——每日页（今日已看 / 上限 + 延长 30 分 / 1 小时 / 2 小时 / 今日不再限制）、间隔页（mm:ss 倒计时 + 跳过这次休息），每个动作都要密码，密码错了显示「还差 4:32」这类剩余时间。
+   - 守护两处：`updateKeyFilter()` 在锁屏期间无论 `isDefaultHome()` 都过滤 HOME；`onKeyEvent` 拿走 HOME 并 `bringUp`；`onAccessibilityEvent` 见到别的 Activity 到前台就把锁屏顶回去；`goHome()` 在锁屏期间改为拉锁屏而不是主屏。
+   - 失败计数：`parental/Attempts.kt`（见下面第 168 行那条），7 条单测 `AttemptsTest.kt`。
+   - 没密码时不锁屏（保险，不是功能）：`hasPin == false` 却有限制，等于没人能解开这张锁，日额度会把电视按到零点。`LockActivity` 遇到这种情况直接放行并写 `DiagLog`，`bringUp` 也不再拉。设置页的流程（先过密码门才能看见额度）产生不了这个状态，所以它只可能是坏数据。
+   - 已知代价：Android 10+ 后台启动 Activity 需要 `SYSTEM_ALERT_WINDOW`（`tools/install.sh` 已授），没授时锁屏只能在主屏自己的 tick 里拉起来，从视频 App 里可能顶不出来；`bringUp` 每 2 秒重试一次并在 `DiagLog` 留一行。
+6. 五语言文案 + 手机页 ← **文案已齐**：`values` / `values-zh` 各 49 条 `parental_*`，本轮补齐 `values-ru` / `values-uk` / `values-kk` 各 49 条（占位符与 `*强调*` 标记脚本校验一致，`aapt2 dump` 确认 APK 内五语俱在）。**手机页不做**（已定）：`assets/web/index.html` 是手机扫码配置壁纸/屏保/磁贴的页面（`wallpaper/PhoneServer.kt`，局域网 8790 + token 前缀），全页与家长控制只有一句交集——「家长密码已开启：有 n 个隐藏的 App，要在电视上输入密码后恢复」。要把它变成家长入口得新增 `/api/parental/*` 与页面区块，且孩子也能摸到同一台手机，收益不抵风险。
+7. 真机验证（小米 MiTV-MFTP0 + TCL MT5879），按 `docs/HANDOFF.md` 的规矩跑 `selftest.sh` ← **MiTV-MFTP0（Android 9）已上机，家长模块七条全 PASS**，结果与三处发现见下面「真机结果：MiTV-MFTP0」。
+
+### 构建与测试现状
+
+- 构建：`GRADLE_USER_HOME=/Volumes/个人/code/gradle-home ~/gradle-dist/gradle-8.14.3/bin/gradle :app:assembleStandardDebug`，产物 `app/build/outputs/apk/standard/debug/app-standard-debug.apk`（约 13 MB）。`GRADLE_USER_HOME` 必须放在外置卷：home 卷下 JVM 删不掉 Gradle 的 `.tmp`，构建会以 `Operation not permitted` 失败。
+- 单测 **81 条全绿**：`WatchTimer` 22、`Limits` 14、`ParentalStore` 12、`PlaybackSignal` 10、`Attempts` 7、`SessionVerdict` 5、`WatchTicket` 11。其中 4 条专门盯锁屏的时钟路径（`checkDeadline`）：到点才结束间隔、Normal 下不许动计数器、日额度锁不被时钟解开、不会偷走主屏 tick 的 dt 基线。
+- 清单核对：`LockActivity` 的 `launchMode=singleInstance`、`excludeFromRecents`、`exported=false` 已进 APK；`LockActivity` 与 `ParentalLockScreen` 都在 dex 里。
+
+### 自动检查（`tools/selftest.sh`，`PARENTAL=1`）
+
+家长模块的七条检查跟别的检查一样是 PASS / FAIL / SKIP，跑完把自己的痕迹擦掉：
+
+| 检查 | 它在问什么 |
+|---|---|
+| `parental_clock` | 走两分钟表、日额度设成两分钟，`WatchTimer` 会不会真的锁 |
+| `parental_lock` | 锁屏能不能从主屏那一秒的 tick 里顶出来 |
+| `parental_keys` | 遥控器的 Home / Back / Menu 能不能把锁屏顶掉 |
+| `parental_guard` | 别的 App 到前台，守护能不能把锁屏重新压回去（`SYSTEM_ALERT_WINDOW` 在这里现形） |
+| `parental_exit` | 「加 30 分钟」这条出口能不能让锁屏自己退掉、回主屏 |
+| `parental_break` | 另一种锁屏：休息倒计时，和它的「跳过这次休息」 |
+| `parental_pin` | 密码本身：`PIN=<8–12 位>` 时用 `input keyevent` 打数字、点按「确定」，像遥控器那样输一遍 |
+
+背后是十一个只给 ADB 用的入口（`guard/ConfigReceiver.kt` → `parental/ParentalProbe.kt`，受
+`WRITE_SECURE_SETTINGS` 保护，电视上的 App 发不出来）：`--ez parental_state`（计数器与锁的 JSON）、
+`--es parental_limits`、`--ei parental_watch_min`（按分钟喂时钟，不必真放一刻钟视频）、
+`--es parental_action`、`--ez parental_reset`、`--es parental_restore`（把开始时的计数原样写回）、
+`--es parental_pin`（只在没有密码的电视上设一个，跑完用 `--ez parental_clear_pin` 删掉）、
+`--ez parental_strict true|false`（严格模式开关）、`--es parental_ticket com.ktcp.video`（直接发一张票，
+省掉在遥控器上敲八位密码；票本身就是要测的东西，密码那条路由 `parental_pin` 覆盖）、
+`--ez parental_clear_ticket true`（把票作废，等于它到点或超时离开）。
+
+```bash
+TV=<电视内网 IP> APK_FILE=app/build/outputs/apk/standard/debug/app-standard-debug.apk tools/install.sh
+TV=<电视内网 IP> PARENTAL=1 tools/selftest.sh            # 不给 PIN 就不动键盘
+TV=<电视内网 IP> PARENTAL=1 PIN=<密码> tools/selftest.sh  # 连键盘一起验；输错一次算一次错
+```
+
+电视上没有家长密码时，脚本会自己设一个（`PIN=`，否则 `24681357`），跑完再删掉——因为 `hasPin`
+为假时锁屏会按「没人能解开」直接放行。只在不存在的场合设，**绝不覆盖已有的密码**：存储里只有哈希，
+覆盖了就还不回去。
+
+### 真机结果：MiTV-MFTP0（Redmi 电视，Android 9，2026-11-01）
+
+| 检查 | 结果 |
+|---|---|
+| `parental_clock` | PASS 两分钟额度、走两分钟表，`state=DailyLimit` |
+| `parental_lock` | PASS 锁屏从主屏每秒的 tick 里顶出来 |
+| `parental_keys` | PASS BACK / MENU 都带不走锁屏；Home 会把小米桌面顶出来，约 3 秒后锁屏回来 |
+| `parental_guard` | PASS 开设置 App，锁屏纹丝不动（它压根没到前台） |
+| `parental_exit` | PASS 「加 30 分钟」让锁自己退掉、回主屏 |
+| `parental_break` | PASS 休息倒计时屏 |
+| `parental_pin` | PASS 八位密码打进键盘、点「确定」，锁屏退掉、`dailyExtra` 加 30 分钟 |
+| `home_on_aerial` | FAIL 早于此功能：按 Home 后小米桌面出现约 4 秒才被守护拉回 |
+
+密码闸本身是通的：把密码设进去、用 `input keyevent` 打八位、点按「确定」，锁屏立刻退掉、`dailyExtra`
+变成 30 分钟、`MainActivity` 回到前台。
+
+**三处发现**
+
+1. **`input keyevent` 的 Home 不进无障碍过滤器。** `tools/selftest.sh` 里原有注释已记着这一点（Sony
+   Android 9 同理），所以 Home 一项用注入永远测不到「被吞掉」：Home 直接到系统，小米桌面出现约 3 秒，
+   再由主屏的 tick 把锁屏拉回来。这条检查因此只判「锁屏回得来」，并在 PASS 的说明里写明真遥控器才是真测。
+2. **`HomeGuardService` 从来没请求过按键过滤标志。** `home_guard.xml` 只声明了
+   `canRequestFilterKeyEvents` 能力，运行时没有 `FLAG_REQUEST_FILTER_KEY_EVENTS`，`onKeyEvent` 是死代码
+   （连按两次 Home、长按 Home、锁屏期间吞 Home 全靠它）。现在在 `onServiceConnected` 里主动请求，
+   `dumpsys` 侧确认 `flags=0x21`。注入事件仍不经过过滤器，所以这条改动在真遥控器上的效果待验。
+3. **`parental_pin` 一直是「密码不对」，原因在测试脚本里，不在密码里。** 打进去的永远是**前七位**：
+
+   ```sh
+   printf '%s' "$PIN" | fold -w1 | while read -r d; do ... done   # 错
+   printf '%s\n' "$PIN" | fold -w1 | while read -r d; do ... done # 对
+   ```
+
+   `printf '%s'` 不给结尾换行，`fold` 就把最后一个数字也吐成「没有换行结尾的最后一行」；`read` 在这种情况下
+   返回非零，`while` 于是**不为最后一位执行循环体**——八位只能进去七位，校验当然不过。截图数点数可以确诊：
+   七个实心、一个空心。补一个 `\n` 就完了。之前把这归给「注入按键偶发丢键」，是错的。
+
+### 商店与应用管理要密码
+
+装一个新的视频 App，就等于把额度重新谈一次；所以从 Aerial 打开**应用商店**或**应用管理**，先要家长密码。
+
+- 判据是**包名**，不是入口：`SystemProbe.isStoreOrManager()` 认小米自己的三个（`com.xiaomi.mitv.appstore`
+  应用商店、`com.xiaomi.mitv.tvmanager` 电视管家/应用管理、`com.xiaomi.mitv.shop` 小米商城），加
+  `com.mitv.shoplugin` 和手机版的 `com.xiaomi.market`。商店在桌面上是以
+  `android.intent.category.APPSTORE_LAUNCHER` 类别出现的（`Apps.kt` 专门查这一类），所以它就混在
+  App 列表里，和别的磁贴长得一样。
+- **不是小米的也算**：`com.dangbeimarket`（当贝市场）在 MiTV-MFTP0 上是侧载装的，一次点击就能装任何
+  APK，绕额度和应用商店一样彻底。除这条明文，还加了一条**按名字的网**：包名里带 `market` 或
+  `appstore` 的也算（沙发管家 `com.shafa.market` 就是这样进来的），以后再冒出来的市场不必再改代码。
+  没有按「声明了 `REQUEST_INSTALL_PACKAGES` 就拦」判：`com.gitvdemo.video` 这类播放器为了自更新也
+  声明了它，那样会把正常应用一起挡在密码后面。`StoreGateTest` 把两边都钉住了。
+- 闸门开在**启动路径**上：`MainActivity.launch()`（磁贴）和 `open()`（深链、控制中心）都先解析出
+  intent 真正会打开的包，命中就在 `HomeViewModel.afterParentalPin` 里等密码，通过了再带 `gated = true`
+  重进一次。按包名判，所以「直接打洞跳到商店某一页」和「按磁贴」走的是同一个门。
+- 电视上**没有设家长密码**时不拦（`Parental.hasPin == false`）：门是给户主设的，没设就是户主不要这道门。
+- 密码盘用的是家长模块自己那套 8–12 位（`Overlay.Pin(parental = true)`）：`PinPad` 的 `minLength`/
+  `maxLength` 换成 `MIN_PIN`/`MAX_PIN`、`verify` 换成 `Parental.verifyPin`、不提供箭头输入。Aerial 自己
+  的四位密码那条路（`Overlay.Pin(...)` 不带 `parental`）一个字节没动。
+- 顺带一个观察：`com.xiaomi.mitv.appstore` 没有 `LAUNCHER` 类别，只有 `APPSTORE_LAUNCHER`；只按
+  `LAUNCHER`/`LEANBACK_LAUNCHER` 枚举的话，商店根本不会出现在桌面上，也就谈不上拦。
+
+### 原机桌面：先要密码，进去之后不再弹回
+
+小米原机桌面（PatchWall，`com.mitv.tvhome`）在网格里有一个磁贴（标签「桌面」）。它是固件自己的 Home，
+守护一直在把它顶回去，所以点进去几秒就弹回 Aerial。这里其实有两件事，得分开解决。
+
+- **要密码**：`SystemProbe.isHomeLauncher()` 问包管理器「这个包声明了 `CATEGORY_HOME` 没有」，命中就
+  走和商店同一个闸门（`afterParentalPin`）。特意不查守护自己的 `stockHomes`：那张表要等服务
+  `onServiceConnected` 才填好，密码不该依赖一个可能还没起来的服务。
+- **进去之后不弹回**：`launch()` 本来就在启动前调了 `HomeGuardService.launchAllow(target)`，但守护的
+  「原机桌面」分支只认时间窗 `allowStockUntil`，不认这份许可，于是照抢不误——实测 `onPause` 之后
+  0.38 秒就被顶回来。现在三条会抢回原机桌面的路径（窗口变化、`foregroundCheck` 轮询、
+  `takeOverOnceSettled` 与 `stockHomeRecheck` 复查）都加了 `pkg == launchedGuest` 放行。
+- **别的路进来的照样抢回**：`launchedGuest` 在 Aerial 回到前台（`onAerialResumed`）时清空，所以遥控器
+  Home 键、固件自己启动、别的 App 跳转带出来的原机桌面，仍旧被顶回去。实测：从磁贴进去停 20 秒不动；
+  退出后在 Aerial 按 Home，2.5 秒就被抢回，日志
+  `stock home com.mitv.tvhome came to the front (allowed=false guest=null)`。
+- **怎么出来**：在原机桌面里按 Home。`homeKey` 那条路不看 `launchedGuest`，`front` 是原机桌面时直接
+  `goHome()` 回 Aerial，日志 `Home pressed with com.mitv.tvhome in front; bringing Aerial back`。
+- **在原机桌面里再开 App**：那个 App 仍会被 `takeBackFrom` 抢回，因为它不是 Aerial 启动的。这是「前台
+  只有 Aerial 拉起的应用」的直接结果——原机桌面是一次参观，不是一张通行证。要让里面的 App 也能用，
+  得另开一条规则（比如访问期间整个放行），那是产品取舍，不在这一条里。
+- `HomeLauncherGateTest` 钉住三条：原机桌面要拦、普通 App 不拦、Aerial 自己永远不拦（它自己的 Home
+  filter 是守护找它的依据，回桌面时问密码会把户主锁在外面）。
+
+### 前台只有 Aerial 拉起的应用
+
+除 Aerial 自己打开的那个 App，别的 App 到前台都会被主屏顶回去（`HomeGuardService.takeBackFrom`）。
+
+- **谁被允许**：`HomeGuardService.launchAllow(pkg)` 在每次启动前记下即将打开的包（`launch()`、`open()`
+  都调），这个包可以一直待在前台；Aerial 一旦回到前台（`onAerialResumed`）这份许可就作废，再进来必须
+  再按一次磁贴。固件自己的桌面也算在内（见上一节的 `pkg == launchedGuest`）。
+- **谁不被碰**：`NEVER_TAKEN_BACK` —— SystemUI、各家设置 App、安装器、权限弹窗。这些是固件自己弹出来的，
+  和它们抢窗口只会把系统搞坏；开机头三分钟（`BOOT_WINDOW_MS`）也不抢，那是厂商启动画面和开机引导。
+- **为什么不用 `goHome()` 之外的招**：`goHome()` 本来就带「屏幕熄了就别拉」「快待机模式别拉」「额度用完
+  改拉锁屏」三道判断，复用它比自己再写一遍启动逻辑稳。抢回之间隔 1 秒（`tookBackAt`），免得两个窗口事件
+  一来就重复启动。
+- 实测（MiTV-MFTP0）：`am start` 直接拉起 `com.duokan.videodaily`，Aerial 立刻回来，日志一行
+  `came to the front and Aerial did not open it; bringing Aerial back`；从桌面磁贴点开银河奇异果，十秒内
+  一直是它在前台，没被抢。
+
+### 顺带修掉的两个键盘缺陷
+
+- 锁屏的密码盘关掉再打开时，上一次输入的数字还在（`entered` 只随组件销毁才清），家长输错重输会变成
+  两次输入**拼接**，等于白费一次机会。`PinPad` 现在每次打开都换一个 `key`，面板状态从头来。
+- 自检里「走到确定」那段原来靠按若干次 Down、「确定」拿到焦点才算到位，可焦点落在哪要看键盘布局和起点
+  （从数字 `1` 起是四次，从 `7` 起七次都不一定到），而 `input keyevent` 的 OK 又不被按钮认（它要在自己身上
+  按下的 key up 才认）。现在直接点「确定」文字所在的矩形——文字画在按钮里面，点下去就是按钮的 onClick，
+  不必先让它拿到焦点。
+
+
+### 落地时定下的四处细节（原文没写到，实现时按这个）
+
+- **密码存在家长模块自己的 `SharedPreferences("parental")` 里**，只存 SHA-256（`aerial-parental:` + 密码），不存明文；旧的四位 `pin_hash` 一个字节都不动。第 5 步再把两者合一：家长密码存在时，个性化面板的门禁改调 `Parental.verifyPin`（旧四位只在还没设家长密码时使用），也就是「一套密码」而不是「两套并存」。
+- **`PinPad` 的定长输入行为一点没变**：`minLength == maxLength` 时仍是满位即提交，老用户的四位体验不动；只有区间（8–12）才出现「确定」键。箭头序列只可能是固定四位，所以区间模式不提供箭头选项。
+- **管理员口令只以哈希出现**（`ParentalStore.ADMIN_HASH`），口令原文只在本地私有文件里。`verifyAdmin` 用字节比较，不做前缀匹配。
+- **改密码只认管理员口令，不认旧密码。** 密码回答的是「能不能进这一页」，口令回答的是「能不能换掉密码」——分开之后，孩子就算看到了密码也改不掉它，家长忘了密码也有软出口。这一条偏离规格第 84 行「旧密码或管理员口令二选一」的字面（原型 `docs/prototype/parental.html` 的注释写的也是管理员口令）。要改回二选一只是把校验换成 `verifyPin(pin) || verifyAdmin(pin)` 一行的事。
+
+### 做到设置页和信号时发现的四处（要定）
+
+1. ~~**管理员口令在电视上输不进去。**~~ **已定并已接线：口令改为 9 位纯数字 `<9 位数字，见本地私有说明>`**（原来是 `<旧版口令：已移除>`，13 位、含字母和下划线，而 `PinPad` 只收数字）。`ParentalStore.ADMIN_HASH` 已换成新口令的哈希，长度落在 8–12 位区间内，走的是同一个九宫格 + 「确定」键。
+   入口有两个，流程同一条：**门（密码输入界面）的键盘下方**（`PinPad.footer`，遥控器一路往下最后一项）和**设置页的「修改密码」行**。两处都进「输管理员口令 → 设新密码（输两次）」，成功后落到设置页；中途取消回到来的地方（门上的回门，设置页的回设置页）。
+2. ~~**`PinPad` 的密码只存哈希，没有失败计数。**~~ **已补（第 5 步一起做）**：`parental/Attempts.kt` 存 `pin_fail` / `pin_lock_until`（自己的 `SharedPreferences("parental_attempts")`，不碰 `ParentalStore` 的键），`Parental.verifyPin` / `verifyAdmin` 统一过这道闸：连错 5 次关 5 分钟，期间输对也拒绝，成功一次归零；截止时间是系统时间，改钟只会让它提前结束（和「拔电改时间」是同一类已知限制），改慢也不会超过 5 分钟。`AttemptState` 是纯算术，7 条单测在 `AttemptsTest.kt`。
+3. **规格里说的「`apps/TileRecipes.kt` 的包名表」不存在**：那个文件是磁贴配色配方，不是视频类 App 名单。第二级信号改用 `apps/LayoutStore.kt` 的 `Defaults.preferred`（首次开机的流媒体排序，真机核对过），外加排除表（桌面、设置、系统 UI、Aerial 自己）。
+4. **第二级信号的固有宽松**：拿不到通知监听权限时，前台是视频 App 就按「在看」算，暂停也会计入——这是规格里写明的偏保守方向；能读到会话列表时则以会话为准，暂停才真正停表。
+5. ~~**开了通知监听反而更糟：读得到会话、但列表永远是空的。**~~ **已修（`SessionVerdict`）**：原来空列表被读成「确定没在播」，于是监听一开，精确级就把每一次读数都判成暂停、整块额度不计数（本机实测 120 秒云视听极光计 0）。现在空列表先答「不知道」，只有这台设备答过一次非空会话之后才允许把空列表当暂停。副作用是：在没有使用情况权限、又从来没答过会话的电视上，精确级等于不可用，会掉到「不知道就不算在看」。
+   2026-11-02 复测把这件事坐实了：云视听极光在前台、音轨在放，`dumpsys media_session` 仍是 `Sessions Stack - have 0 sessions`——会话栈为空是这台电视的事实，不是权限问题，所以「空列表 = 暂停」在本机必然误判。同一轮里视频 App 前台 10 个 tick 涨 10000 ms（1:1），回 Aerial 主屏立刻 `watching=false` 且计数冻结。
+
+### 小米儿童模式的密码界面为什么会自己弹（2026-11-01 补测）
+
+现象：开机后没对小米儿童模式输入密码解锁时，从 Aerial 点磁贴进 App 有概率被顶到「儿童模式密码」界面；在 App 内按 HOME 也一样。
+
+**那个界面是 PatchWall 自己推的，不是 Aerial 拉起来的。** 它是
+`com.mitv.tvhome/.business.kidcontrols.LockControlsActivity`，事件日志里的启动理由是窗口可见性：
+
+```
+am_on_start_called(4192): [0, com.mitv.tvhome.business.kidcontrols.LockControlsActivity, handleWindowVisibility]
+```
+
+也就是儿童桌的窗口一被盖住，它就上来要密码。触发条件是 `Settings.System.child_mode_lock_switch =
+child_mode_lock_on`；同一台机器上还有 `child_lock_controls=3`、`childmode_autoin=1`（开机自动进儿童模式）。
+小米桌面没有对外暴露「退出儿童模式」的 action（`dumpsys package com.mitv.tvhome` 里只有
+`ENTER_KIDS_MODE` 和 `KID_LOCK_CONTROLS` 这些进/锁侧的），所以从 Aerial 这边解不开，只能让户主关掉或输入密码。
+
+对照实验（MiTV-MFTP0，同一序列 `am start 腾讯视频`）：
+
+| 状态 | 进 App 后 | App 内按 HOME | `kidcontrols` 事件 |
+|---|---|---|---|
+| `child_mode_lock_on` | 第 9 秒被密码界面顶掉 | 密码界面 | 有 |
+| `child_mode_lock_off` | 前台 16 秒不动 | 3 秒儿童桌 → 6 秒 Aerial | 0 |
+
+所以这是 MIUI 第二套家长系统在抢，不是 Aerial 的缺陷。**不要**把 `LockControlsActivity` 加进
+`GuardScreens` 去抢回：它是 PatchWall 反复重起的，抢回会变成两边互踢。正确做法是让儿童模式处于
+「未加锁」，Aerial 自己那套（限额、密码、商店闸门）才是这台电视唯一的家长控制。
+
+遗留：`childmode_autoin=1` 还在，开机会自动进儿童模式。锁关掉之后不会再弹密码，但开机瞬间仍会看到
+儿童桌，约 2–3 秒后由守护接管回 Aerial。
+

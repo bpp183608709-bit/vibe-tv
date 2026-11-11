@@ -1,0 +1,29 @@
+.gradle/
+build/
+local.properties
+.idea/
+*.iml
+.kotlin/
+
+# Machine- and household-specific: TV addresses, signing key. Hand over privately.
+local/
+.DS_Store
+
+# Copied into the website by tools/deploy-site.sh: the latest release's APKs and the install scripts.
+site/download/
+site/tools/
+site/install.sh
+site/icons/
+
+# Wrangler state and the account cache (account id, e-mail).
+.wrangler/
+
+# Local-only dumps and notes: never version household data or device captures.
+notes/_private/
+*.apk
+*.log
+*.jks
+*.keystore
+
+# BuildConfig.ADMIN_HASH and the signing key are supplied from files under local/.
+# See README.md ("二次开发资料") and AGENTS.md.
