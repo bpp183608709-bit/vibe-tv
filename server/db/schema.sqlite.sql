@@ -369,6 +369,8 @@ CREATE TABLE topic_mastery (
   weight_x10    INTEGER NOT NULL DEFAULT 10,
   target_qty    INTEGER NOT NULL DEFAULT 0,
   ready_qty     INTEGER NOT NULL DEFAULT 0,
+  right_streak  INTEGER NOT NULL DEFAULT 0,     -- second right in a row is worth an extra -10
+  wrong_streak  INTEGER NOT NULL DEFAULT 0,     -- five in a row pauses the topic for three days
   paused_until  TEXT    NULL,
   total_wrong   INTEGER NOT NULL DEFAULT 0,
   total_right   INTEGER NOT NULL DEFAULT 0,

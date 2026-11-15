@@ -23,7 +23,8 @@ import re
 import unicodedata
 from fractions import Fraction
 
-from server.app import limits, ticket
+from server.app import limits, mastery, ticket
+from server.app.ids import new_ulid
 
 
 class GradeError(Exception):
@@ -220,6 +221,24 @@ def _bump_topic_signal(cur, device_id: str, topic_id: int, correct: bool, flagge
         )
 
 
+def _record_wrong_item(cur, *, device_id: str, topic_id: int, question_id: int, stem: str,
+                       day_key, now_iso: str) -> str:
+    """File a TV mistake where the parent will find it (docs/WRONGBOOK.md §4.1).
+
+    Written for every wrong answer, including one the child flagged as 没学过: the parent should see
+    what was actually asked and answered, and the flag is already on `quiz_answer` for the topics that
+    need a different conversation. No extra request from the TV — this is the same transaction.
+    """
+    item_id = new_ulid()
+    day = day_key if isinstance(day_key, str) else day_key.strftime("%Y-%m-%d")
+    cur.execute(
+        "INSERT INTO wrong_item (id, device_id, source, question_id, topic_id, stem_text, occurred_on,"
+        " status, created_at) VALUES (?, ?, 'tv', ?, ?, ?, ?, 'confirmed', ?)",
+        (item_id, device_id, question_id, topic_id, stem, day, now_iso),
+    )
+    return item_id
+
+
 def _existing_ticket(db, session_id: str) -> dict | None:
     return db.query_one("SELECT * FROM ticket WHERE session_id = ?", (session_id,))
 
@@ -340,7 +359,20 @@ def grade_session(
                 (session_id, qid, device_id, session["day_key"], chosen, 1 if correct else 0,
                  1 if flagged else 0, now_iso),
             )
-            _bump_topic_signal(cur, device_id, int(questions[qid]["topic_id"]), correct, flagged, now_iso)
+            topic_id = int(questions[qid]["topic_id"])
+            _bump_topic_signal(cur, device_id, topic_id, correct, flagged, now_iso)
+            # The mastery ledger moves in the same transaction as the answers: a retry that rolled
+            # back half of this would double-count a wrong answer, which is exactly the number the
+            # picker trusts. Nothing here reaches the TV (docs/WRONGBOOK.md §10).
+            if not correct:
+                _record_wrong_item(cur, device_id=device_id, topic_id=topic_id, question_id=qid,
+                                   stem=questions[qid]["stem"], day_key=session["day_key"],
+                                   now_iso=now_iso)
+            mastery.record_tv_answer(
+                cur, device_id=device_id, topic_id=topic_id, correct=correct, flagged=flagged,
+                session_id=session_id, question_id=qid, now_ms=now_ms, now_iso=now_iso,
+                lock=db.lock_clause(),
+            )
 
         if passed and quota["award_available"]:
             award_ms = limits.AWARD_MS

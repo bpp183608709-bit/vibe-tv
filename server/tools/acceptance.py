@@ -30,9 +30,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
-from server.app import es256, grade as grading, limits, ticket  # noqa: E402
+from server.app import es256, grade as grading, ids, limits, mastery, ticket  # noqa: E402
 from server.app.db import Database  # noqa: E402
-from server.tools import gen_seed_questions, import_curriculum  # noqa: E402
+from server.tools import check_tv_silence, gen_seed_questions, import_curriculum  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 LOCAL = ROOT / "local"
@@ -42,6 +42,25 @@ PORT = 8765
 BASE = f"http://127.0.0.1:{PORT}"
 
 results: list[tuple[str, bool, str]] = []
+
+#: The wire, frozen (docs/WRONGBOOK.md §9). These are the exact shapes the television already parses;
+#: a field that appears or disappears here is a change the child's screen would see, so it has to be an
+#: explicit edit to this list rather than an accident of adding to a dict somewhere in the server.
+NEXT_KEYS = {"session_id", "day_key", "expires_at", "ttl_seconds", "questions", "quota"}
+QUESTION_KEYS = {"id", "topic_id", "qtype", "stem", "angle", "difficulty"}
+QUOTA_KEYS = {"success_count", "max_success", "awarded_ms", "max_award_ms", "attempt_count",
+              "max_attempts", "award_available", "attempts_left"}
+VERDICT_KEYS = {"session_id", "score", "total", "pass_line", "passed", "award_ms", "ticket", "review",
+                "cooldown_seconds", "flags"}
+FLAG_KEYS = {"capped", "cooldown_applied", "unknown_flagged"}
+REVIEW_KEYS = {"question_id", "subject", "topic", "stem", "chosen", "correct", "explanation"}
+
+#: Names that would only be in a response to carry mastery state to the child's screen.
+FORBIDDEN_FIELDS = ("need_right", "mastery", "review_question_ids", "mix_state", "mix_c", "mix_r",
+                    "mix_n", "segment", "is_review", "weight", "level", "paused_until", "streak")
+
+#: Words that would turn "this kind of question came back" into "you are being made to study".
+BANNED_WORDS = ("薄弱", "复习", "巩固", "加强", "强化", "专项", "达标", "过关")
 
 
 def check(name: str, condition: bool, detail: str = "") -> None:
@@ -333,6 +352,144 @@ def main() -> int:
         status, body = http("POST", "/v1/quiz/next", {"device_id": device4, "day_key": DAY})
         check("a fourth group is refused",
               status == 409 and body.get("error") == "quota-exhausted", f"{status} {body}")
+
+        # ---- P0-B: a wrong answer becomes a number (docs/WRONGBOOK.md §5) ----
+        # A fresh device, so every topic starts at zero and the arithmetic can be checked by hand.
+        device5 = pair()
+        session5 = serve(device5)
+        graded5 = submit(device5, session5, correct_count=2)
+        wrong5 = [item["question_id"] for item in (graded5.get("review") or [])]
+        check("a three-wrong group reviews three questions", len(wrong5) == 3, str(wrong5))
+
+        probe = Database(dsn)
+        probe.connect()
+        filed = probe.query(
+            "SELECT question_id, source, status FROM wrong_item WHERE device_id = ?", (device5,))
+        ledger = probe.query(
+            "SELECT topic_id, kind, delta, score_after FROM mastery_event WHERE device_id = ?"
+            " ORDER BY created_at, id", (device5,))
+        stored = {int(r["topic_id"]): int(r["score"]) for r in probe.query(
+            "SELECT topic_id, score FROM topic_mastery WHERE device_id = ?", (device5,))}
+        probe.close()
+
+        check("each wrong answer lands in the wrong book",
+              sorted(r["question_id"] for r in filed) == sorted(wrong5), f"{len(filed)} filed")
+        check("filed as a confirmed television mistake",
+              all(r["source"] == "tv" and r["status"] == "confirmed" for r in filed), str(filed[:1]))
+        check("one ledger row per wrong answer",
+              sum(1 for e in ledger if e["kind"] == "tv_wrong") == 3, str(ledger))
+        check("one ledger row per right answer",
+              sum(1 for e in ledger if e["kind"] == "tv_right") == 2, str(ledger))
+        check("a first mistake is worth twelve",
+              all(e["delta"] == 12 for e in ledger if e["kind"] == "tv_wrong"), str(ledger))
+        # The ledger is only worth keeping if replaying it lands on the stored score. This is also the
+        # check that would catch a weight changed in one place and not the other.
+        check("the ledger replays to the stored score",
+              bool(stored) and all(
+                  sum(e["delta"] for e in ledger if int(e["topic_id"]) == topic) == score
+                  for topic, score in stored.items()),
+              f"stored={stored} ledger={ledger}")
+        check("a right answer cannot take a topic below zero",
+              all(int(e["score_after"]) >= 0 for e in ledger), str(ledger))
+
+        replay5 = submit(device5, session5, correct_count=2)
+        probe = Database(dsn)
+        probe.connect()
+        events_after = probe.scalar("SELECT COUNT(*) FROM mastery_event WHERE device_id = ?", (device5,))
+        items_after = probe.scalar("SELECT COUNT(*) FROM wrong_item WHERE device_id = ?", (device5,))
+        probe.close()
+        check("a replayed submit adds no ledger rows", events_after == len(ledger),
+              f"{events_after} vs {len(ledger)}")
+        check("a replayed submit adds no wrong items", items_after == len(filed), str(items_after))
+        check("a replay still answers like the first time", replay5.get("replayed") is True)
+
+        # ---- P0-E: the television is told nothing new (docs/WRONGBOOK.md §9/§10) ----
+        # Exact shapes, not "at least": a field that quietly appears here is something the child's
+        # screen could start showing, and that is the one thing this feature must never do.
+        check("the served group has exactly its old fields", set(session5) == NEXT_KEYS,
+              str(sorted(set(session5) ^ NEXT_KEYS)))
+        shapes = {frozenset(question) for question in session5["questions"]}
+        check("a question carries the old fields and nothing else",
+              shapes <= {frozenset(QUESTION_KEYS | {"options"}),
+                         frozenset(QUESTION_KEYS | {"accepted"})},
+              str([sorted(s) for s in shapes]))
+        check("the quota is the same counters as before", set(session5["quota"]) == QUOTA_KEYS,
+              str(sorted(set(session5["quota"]) ^ QUOTA_KEYS)))
+        check("the verdict has exactly its old fields", set(graded5) == VERDICT_KEYS,
+              str(sorted(set(graded5) ^ VERDICT_KEYS)))
+        check("and the same flags", set(graded5["flags"]) == FLAG_KEYS, str(sorted(graded5["flags"])))
+        check("a reviewed mistake has exactly its old fields",
+              all(set(item) == REVIEW_KEYS for item in graded5["review"]),
+              str([sorted(item) for item in graded5["review"]][:1]))
+
+        served = json.dumps({"next": session5, "grade": graded5}, ensure_ascii=False)
+        leaked = [name for name in FORBIDDEN_FIELDS if name in served]
+        check("no mastery field reaches the television", not leaked, str(leaked))
+        said = [word for word in BANNED_WORDS if word in served]
+        check("no word about weak topics reaches the television", not said, str(said))
+        silence = check_tv_silence.scan()
+        check("and the android module has none either", not silence, "; ".join(silence[:3]))
+
+        # ---- the rules a random group cannot be made to hit, driven straight at the model ----
+        device6 = pair()
+        probe = Database(dsn)
+        probe.connect()
+        topic6 = int(probe.scalar("SELECT id FROM topic ORDER BY id LIMIT 1"))
+        iso6 = limits.to_iso(1_770_000_000_000)
+
+        def answer(correct: bool, flagged: bool = False, question_id: int = 1) -> dict:
+            with probe.tx() as cur:
+                return mastery.record_tv_answer(
+                    cur, device_id=device6, topic_id=topic6, correct=correct, flagged=flagged,
+                    session_id="01ACCEPTANCE00000000000001", question_id=question_id,
+                    now_ms=1_770_000_000_000, now_iso=iso6)
+
+        answer(False)
+        answer(False)                       # 24
+        answer(True)                        # 14
+        answer(True)                        # 4, then the pair bonus takes it to 0
+        after_pair = mastery.state(probe, device6, topic6)
+        check("a pair of right answers clears two mistakes", after_pair["score"] == 0,
+              str(after_pair))
+        bonus = probe.query(
+            "SELECT delta FROM mastery_event WHERE device_id = ? AND kind = 'streak_bonus'", (device6,))
+        check("the pair bonus is its own ledger row, clamped like everything else",
+              len(bonus) == 1 and int(bonus[0]["delta"]) == -4, str(bonus))
+
+        for index in range(5):
+            paused = answer(False, question_id=10 + index)
+        check("five wrong in a row pauses the topic", paused["paused_until"] is not None, str(paused))
+        check("and leaves the score at sixty", paused["score"] == 60, str(paused))
+        again6 = answer(False, question_id=20)
+        check("a sixth wrong answer does not extend the pause",
+              again6["paused_until"] == paused["paused_until"], f"{again6['paused_until']}")
+
+        paper_a = ids.new_ulid(1_770_000_000_000)
+        with probe.tx() as cur:
+            cur.execute(
+                "INSERT INTO wrong_item (id, device_id, source, topic_id, occurred_on, status)"
+                " VALUES (?, ?, 'paper', ?, ?, 'confirmed')", (paper_a, device6, topic6, DAY))
+            first_paper = mastery.record_paper_wrong(
+                cur, device_id=device6, topic_id=topic6, wrong_item_id=paper_a, day_key=DAY,
+                now_iso=iso6)
+        paper_b = ids.new_ulid(1_770_000_000_000)
+        with probe.tx() as cur:
+            cur.execute(
+                "INSERT INTO wrong_item (id, device_id, source, topic_id, occurred_on, status)"
+                " VALUES (?, ?, 'paper', ?, ?, 'confirmed')", (paper_b, device6, topic6, DAY))
+            second_paper = mastery.record_paper_wrong(
+                cur, device_id=device6, topic_id=topic6, wrong_item_id=paper_b, day_key=DAY,
+                now_iso=iso6)
+        check("the first paper mistake of the day is worth twenty",
+              first_paper["delta"] == 20, str(first_paper))
+        check("the second on the same topic is worth eight",
+              second_paper["delta"] == 8, str(second_paper))
+        final6 = mastery.state(probe, device6, topic6)
+        probe.close()
+        check("a maxed-out topic reads as very weak", final6["level"] == 3 and final6["weight"] == 4.0,
+              str(final6))
+        check("the parent page can still promise a way out",
+              final6["need_right"] == mastery.need_right(final6["score"]) > 0, str(final6))
 
         # ---- case 9: 0.75 and 3/4 are the same answer ----
         probe = Database(dsn)

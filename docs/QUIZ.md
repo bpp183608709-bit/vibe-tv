@@ -279,7 +279,7 @@ F6 答"直接上线，不做影子运行"，P0 影子阶段取消。家长密码
 
 | 步 | 落点 | 验收 |
 |---|---|---|
-| 建表 | `db/schema.sql`（MySQL）+ `db/schema.sqlite.sql`（本机）；25 表 210 列（错题本五张表加入后），`tools/check_schema_parity.py` 防漂移 | 两份列名必须完全一致 |
+| 建表 | `db/schema.sql`（MySQL）+ `db/schema.sqlite.sql`（本机）；25 表 212 列（错题本五张表 + 连对/连错计数），`tools/check_schema_parity.py` 防漂移 | 两份列名必须完全一致 |
 | 导树 | `content/curriculum/grade6-up.json` → `tools/import_curriculum.py` | 3 科 16 单元 30 知识点，幂等 |
 | 造题 | `tools/gen_seed_questions.py`：模板 × 参数，数学过 sympy | 86 题（56 sympy_ok / 30 manual_ok） |
 | 出题 | `app/picker.py` | 5 题、≥2 科、≤2 题/知识点 |

@@ -427,6 +427,11 @@ CREATE TABLE topic_mastery (
   weight_x10    SMALLINT UNSIGNED NOT NULL DEFAULT 10, -- 10/20/30/40: integers, so no float rounding
   target_qty    TINYINT UNSIGNED NOT NULL DEFAULT 0,  -- 0/5/7/10; the generator fills up to this
   ready_qty     SMALLINT UNSIGNED NOT NULL DEFAULT 0, -- cache of "servable questions right now"
+  -- Two counters the weights depend on: the second right answer in a row is worth an extra -10, and
+  -- five wrong in a row takes the topic off the review segment for three days. Stored rather than
+  -- derived from the ledger because both are read on every grade.
+  right_streak  TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  wrong_streak  TINYINT UNSIGNED NOT NULL DEFAULT 0,
   paused_until  DATETIME         NULL,                -- five wrong in a row: off the review segment
   total_wrong   INT UNSIGNED     NOT NULL DEFAULT 0,
   total_right   INT UNSIGNED     NOT NULL DEFAULT 0,
