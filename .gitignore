@@ -27,3 +27,25 @@ notes/_private/
 
 # BuildConfig.ADMIN_HASH and the signing key are supplied from files under local/.
 # See README.md ("二次开发资料") and AGENTS.md.
+
+# Quiz server (server/): the ticket signing key and the database DSN live on the ECS, not here.
+server/.env
+server/local/
+*.pem
+.venv*/
+# app/src/main/res/raw/quiz_ca.pem is the pinned CA for the quiz server. It falls under *.pem above on
+# purpose: the certificate belongs to one deployment, so each build generates it (server/tools/make_ca.sh)
+# rather than carrying somebody else's. A checkout without it builds a TV with the quiz page switched off.
+# Local acceptance database. In-memory by preference; a stray file must never be committed.
+*.sqlite3
+*.sqlite3-journal
+
+# Agent scratch (memory notes, local session state).
+.workbuddy/
+
+# Python bytecode from running the quiz server or its tools.
+__pycache__/
+*.pyc
+
+# Headless-Chrome profile left behind by docs/mockups/shoot.mjs. Scratch, never a source of truth.
+docs/mockups/.chrome-profile/
