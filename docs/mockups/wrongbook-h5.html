@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<!-- 少了这一行，移动端模拟会按 980px 默认视口排版再缩小到 390，整张图像被缩印过一遍：
+     卡片变小、行距变密，看着像 CSS 写错，其实是视口没声明。 -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aerial · 错题本 H5 界面稿</title>
+<!-- 复用真机的 app.css：圆角、色值、字号、深色变量全部同源，截图即界面稿，改样式只改一处。 -->
+<link rel="stylesheet" href="../../server/web/app.css">
+<style>
+  /* 只补 app.css 里还没有的几个组件：掌握度行、分数条、来源角标、底部主按钮、筛选条。 */
+  html, body { margin: 0; background: var(--bg); }
+
+  .wrap { min-height: 100dvh; }
+  .wrap[hidden] { display: none; }
+
+  /* .topbar-title 在 app.css 里是 column（eyebrow 压在标题上），返回按钮要横排 */
+  .topbar-title.back { flex-direction: row; align-items: center; gap: 5px; }
+  /* app.css 给 h1 挂了一个「可切换」的下拉箭头；返回按钮不是切换器，得去掉 */
+  .topbar-title.back h1::after { display: none; }
+  .back svg { width: 20px; height: 20px; fill: none; stroke: var(--tint); stroke-width: 2.2;
+              stroke-linecap: round; stroke-linejoin: round; }
+
+  /* 掌握度行 */
+  .mrow { padding: 11px 0; border-top: 1px solid var(--sep); }
+  .mrow:first-of-type { border-top: 0; }
+  .mrow .top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+  .mrow .nm { font-size: 15px; font-weight: 500; letter-spacing: -0.01em; }
+  .mrow .need { font-size: 13.5px; font-weight: 600; color: var(--label); white-space: nowrap;
+                font-variant-numeric: tabular-nums; }
+  .mrow .need.done { color: var(--ok); }
+  .mrow .sub2 { display: flex; align-items: center; gap: 7px; margin: 5px 0 7px; }
+  .mrow .sub2 .u { font-size: 12px; color: var(--tertiary); }
+  .mrow .sub2 .sc { margin-left: auto; font-size: 12.5px; font-weight: 600; color: var(--secondary);
+                    font-variant-numeric: tabular-nums; }
+  .mbar { height: 6px; border-radius: 999px; background: var(--fill); overflow: hidden;
+          margin-top: 2px; }
+  .mbar > i { display: block; height: 100%; border-radius: 999px; background: var(--bad); }
+  .mbar.l1 > i { background: var(--tint); }
+  /* 需巩固的徽标跟蓝色进度条同色系；默认灰底会让「需巩固」看起来像「无标签」 */
+  .pill.l1 { background: var(--tint-soft); color: var(--tint); }  .mbar.l2 > i { background: #ff9500; }
+  .mbar.l3 > i { background: var(--bad); }
+
+  .sec { display: flex; align-items: baseline; justify-content: space-between;
+         margin: 20px 4px 0; }
+  .sec h2 { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
+            text-transform: uppercase; color: var(--secondary); }
+  .sec a { font-size: 13px; color: var(--tint); text-decoration: none; }
+  /* 卡片标题行右侧放一个「全部 N 个 ›」，与 .card h2 同字号 */
+  .sec-in { display: flex; align-items: baseline; justify-content: space-between; }
+  .sec-in h2 { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
+               text-transform: uppercase; color: var(--secondary); }
+  .sec-in a { font-size: 13px; color: var(--tint); text-decoration: none; }
+
+  /* 来源角标 */
+  .src { display: inline-flex; align-items: center; gap: 3px; font-size: 11.5px; font-weight: 600;
+         padding: 2px 7px; border-radius: 6px; background: var(--fill); color: var(--secondary); }
+  .src.tv { background: var(--tint-soft); color: var(--tint); }
+  .src.man { background: rgba(255, 149, 0, 0.14); color: #b26a00; }
+
+  /* 底部主按钮 */
+  .dock { position: fixed; left: 0; right: 0; bottom: var(--tabbar); z-index: 8;
+          padding: 12px 16px 12px;
+          background: linear-gradient(to bottom, transparent, var(--bg) 46%); }
+  .dock .primary { margin: 0; }
+  .view.has-dock { padding-bottom: calc(var(--tabbar) + 84px); }
+
+  /* 筛选条 */
+  .filters { display: flex; gap: 7px; margin: 10px 0 2px; }
+  .filters .f { border: 1px solid var(--sep); background: var(--card); color: var(--secondary);
+                border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 500; }
+  .filters .f.on { background: var(--tint); border-color: var(--tint); color: #fff; font-weight: 600; }
+  .filters .f b { font-weight: 600; opacity: 0.7; margin-left: 4px; }
+
+  /* 详情页头部：分数单独一行，档位徽标跟在下方的说明行首，避免贴在数字底部 */
+  .hero { margin: 6px 0 6px; }
+  .hero .big { font-size: 52px; display: block; line-height: 1; }
+  .heroline { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 13.5px;
+              color: var(--secondary); }
+  .heroline b { color: var(--label); }
+
+  /* 流水 */
+  .flow { display: grid; }
+  .flow .f { display: flex; align-items: center; gap: 10px; padding: 10px 0;
+             border-top: 1px solid var(--sep); font-size: 13.5px; }
+  .flow .f:first-child { border-top: 0; }
+  .flow .f .when { color: var(--tertiary); font-size: 12px; font-variant-numeric: tabular-nums;
+                   flex: 0 0 auto; }
+  .flow .f .what { color: var(--label); }
+  .flow .f .d { margin-left: auto; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .flow .f .d.up { color: var(--bad); }
+  .flow .f .d.dn { color: var(--ok); }
+
+  /* 表单 */
+  .seg { display: flex; gap: 3px; background: var(--fill); border-radius: 11px; padding: 3px;
+         margin: 0 0 10px; }
+  .sheet .footer-note { margin: 8px 4px 14px; }
+  /* 真机上 sheet 高于视口时内部滚动；这里内容已裁到一屏内，但保留 max-height 以免以后加字段又溢出 */
+  .sheet { max-height: 92dvh; overflow-y: auto; }
+  .seg b { flex: 1; text-align: center; font-size: 14px; font-weight: 500; padding: 7px 0;
+           border-radius: 9px; color: var(--secondary); }
+  .seg b.on { background: var(--card); color: var(--label); font-weight: 600;
+              box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+
+  /* 深色截屏：把 app.css 的深色块提到这一屏上，不改系统偏好也能出图。 */
+  .force-dark {
+    /* 必须一起改 color：app.css 的 body{color:var(--label)} 用的是 :root 的值，
+       只覆盖变量的话卡片里没显式设色的文字还是黑的（深色底上直接看不见）。 */
+    color: var(--label);
+    --bg: #000; --card: #1c1c1e; --card-2: #232325; --label: #fff;
+    --secondary: rgba(235,235,245,0.62); --tertiary: rgba(235,235,245,0.32);
+    --sep: rgba(84,84,88,0.62); --tint: #0a84ff; --tint-soft: rgba(10,132,255,0.32);
+    --fill: rgba(118,118,128,0.24); --ok: #30d158; --ok-soft: rgba(48,209,88,0.16);
+    --bad: #ff453a; --bad-soft: rgba(255,69,58,0.16); --shadow: none;
+    background: #000;
+  }
+  .force-dark .src.man { background: rgba(255,159,10,0.2); color: #ff9f0a; }
+  .force-dark .mbar.l2 > i { background: #ff9f0a; }
+
+  /* 截屏时隐藏走查用的说明条 */
+  .cap { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: none; }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script>
+// ------------------------------------------------------------------ 数据
+// 全部为虚构示例。分数与「再答对 N 次」按 WRONGBOOK.md §5.3 的公式推导：
+//   N = ceil((M - 11) / 10)
+const MASTERY = [
+  { name: '一般现在时第三人称单数', unit: '英语 · 第 2 单元', score: 86 },
+  { name: '分数乘法应用题',          unit: '数学 · 第 1 单元', score: 72 },
+  { name: '一个数除以分数',          unit: '数学 · 第 3 单元', score: 65 },
+  { name: '分数乘分数',              unit: '数学 · 第 1 单元', score: 44 },
+  { name: '圆的面积',                unit: '数学 · 第 5 单元', score: 28 },
+];
+const LV = ['牢固', '需巩固', '不牢', '很弱'];
+const WEIGHT = [1, 2, 3, 4];
+const TARGET = [0, 5, 7, 10];
+
+const lvl = s => (s <= 11 ? 0 : s <= 35 ? 1 : s <= 70 ? 2 : 3);
+const needOf = s => Math.ceil((s - 11) / 10);
+
+const WRONG = [
+  { src: 'tv',  day: '11-15', subj: '数学', topic: '分数乘法应用题',
+    stem: '一根绳子长 12 米，用去它的 3/4，还剩多少米？',
+    yours: '9 米', right: '3 米',
+    why: '3/4 是「用去的部分」。先算用去 12×3/4 = 9 米，再算剩下 12 − 9 = 3 米。' },
+  { src: 'man', day: '11-13', subj: '数学', topic: '分数乘法应用题',
+    stem: '把 5/8 千克糖果平均分成 5 份，每份是多少千克？',
+    yours: '25/8 千克', right: '1/8 千克',
+    why: '平均分要用除法：5/8 ÷ 5 = 1/8。乘 5 是「求 5 份一共多少」，方向反了。' },
+  { src: 'tv',  day: '11-12', subj: '英语', topic: '一般现在时第三人称单数',
+    stem: 'He ______ up at six every morning.　（get）',
+    yours: 'get', right: 'gets',
+    why: '主语是 he（第三人称单数），every morning 表示习惯，动词要加 s。' },
+  { src: 'tv',  day: '11-10', subj: '数学', topic: '一个数除以分数',
+    stem: '计算：3/4 ÷ 2/5 = ？',
+    yours: '6/20', right: '15/8',
+    why: '除以一个分数等于乘它的倒数：3/4 × 5/2 = 15/8。直接分子分母相乘是把除法当乘法了。' },
+  { src: 'tv',  day: '11-09', subj: '数学', topic: '圆的面积',
+    stem: '一个圆形花坛的直径是 8 米，面积是多少平方米？（π 取 3.14）',
+    yours: '25.12 平方米', right: '50.24 平方米',
+    why: '面积公式用的是半径：8 ÷ 2 = 4 米，3.14 × 4² = 50.24。25.12 是周长的一半。' },
+];
+
+// ------------------------------------------------------------------ 组件
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+function topbar({ title, back }) {
+  return `<header class="topbar">
+    ${back
+      ? `<button class="topbar-title back" type="button">
+           <svg viewBox="0 0 24 24"><path d="M14.5 5.5 8 12l6.5 6.5"/></svg>
+           <h1>${esc(title)}</h1></button>`
+      : `<button class="topbar-title" type="button">
+           <p class="eyebrow">家长</p><h1>${esc(title)}</h1></button>`}
+    <button class="chip" type="button">中</button>
+  </header>`;
+}
+
+function tabbar(on) {
+  const t = (id, label, icon) => `<button class="tab ${on === id ? 'is-on' : ''}" type="button">
+      ${icon}<span>${label}</span></button>`;
+  return `<nav class="tabbar">
+    ${t('today', '今日', '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/><path d="M12 7.6V12l3 1.9"/></svg>')}
+    ${t('week', '周报', '<svg viewBox="0 0 24 24"><path d="M5 19V11M12 19V5M19 19v-5"/></svg>')}
+    ${t('wrong', '错题本', '<svg viewBox="0 0 24 24"><path d="M6 4.5h9.5L20 9v10.5H6z"/><path d="M9 12.5h8M9 16h5"/></svg>')}
+    ${t('settings', '设置', '<svg viewBox="0 0 24 24"><path d="M4 8h10M18 8h2M4 16h4M12 16h8"/><circle cx="16" cy="8" r="2.2"/><circle cx="10" cy="16" r="2.2"/></svg>')}
+  </nav>`;
+}
+
+function mrow(m, opts = {}) {
+  const l = lvl(m.score);
+  const n = needOf(m.score);
+  return `<div class="mrow">
+    <div class="top">
+      <span class="nm">${esc(m.name)}</span>
+      <span class="need">再答对 ${n} 次</span>
+    </div>
+    <div class="sub2">
+      <span class="pill ${l >= 2 ? 'bad' : l === 1 ? 'l1' : ''}">${LV[l]}</span>
+      <span class="u">${esc(m.unit)}</span>
+      <span class="sc">${m.score} 分</span>
+    </div>
+    <div class="mbar l${l}"><i style="width:${m.score}%"></i></div>
+  </div>`;
+}
+
+function qcard(q, showWhy) {
+  return `<div class="q">
+    <div class="head">
+      <span class="src ${q.src}">${q.src === 'tv' ? '电视' : '手动录入'}</span>
+      <span class="pill">${esc(q.subj)}</span>
+      <span class="pill">${esc(q.topic)}</span>
+    </div>
+    <p class="stem">${esc(q.stem)}</p>
+    <div class="answer">
+      <div class="line yours"><b>他答</b><span>${esc(q.yours)}</span></div>
+      <div class="line right"><b>答案</b><span>${esc(q.right)}</span></div>
+    </div>
+    ${showWhy && q.why ? `<p class="why">${esc(q.why)}</p>` : ''}
+    <p class="meta">${esc(q.day)}</p>
+  </div>`;
+}
+
+// ------------------------------------------------------------------ 屏 1：错题本总览
+function sOverview(dark) {
+  return `<div class="wrap ${dark ? 'force-dark' : ''}">
+    ${topbar({ title: '客厅的电视' })}
+    <main class="view has-dock">
+      <div class="card">
+        <div class="sec-in"><h2>薄弱知识点</h2><a href="#">全部 5 个 ›</a></div>
+        <p class="sub">越靠上越该讲 · 本周清掉 1 个</p>
+        ${MASTERY.slice(0, 2).map(m => mrow(m)).join('')}
+      </div>
+      <div class="sec"><h2>错题清单</h2><a href="#">全部 23 条 ›</a></div>
+      ${qcard(WRONG[0], false)}
+      ${qcard(WRONG[2], false)}
+      ${qcard(WRONG[3], false)}
+      ${qcard(WRONG[1], false)}
+      ${qcard(WRONG[4], false)}
+      <p class="footer-note">最近 30 天 · 共 23 条</p>
+    </main>
+    <div class="dock"><button class="primary" type="button">拍照添加错题</button></div>
+    ${tabbar('wrong')}
+  </div>`;
+}
+
+// ------------------------------------------------------------------ 屏 2：薄弱知识点列表
+function sTopics() {
+  return `<div class="wrap">
+    ${topbar({ title: '薄弱知识点', back: true })}
+    <main class="view">
+      <div class="card">
+        <h2>本周该讲</h2>
+        <p class="sub">一周讲掉 1–2 个就够，不用全清</p>
+        <div class="kv">
+          <div class="row"><span class="k">① 一般现在时第三人称单数</span>
+            <span class="v dim">很弱 · 86 分</span></div>
+          <div class="row"><span class="k">② 分数乘法应用题</span>
+            <span class="v dim">很弱 · 72 分</span></div>
+          <div class="row"><span class="k">③ 一个数除以分数</span>
+            <span class="v dim">不牢 · 65 分</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>全部 5 个</h2>
+        ${MASTERY.map(m => mrow(m)).join('')}
+      </div>
+      <div class="card"><h2>近 7 天</h2><div class="kv">
+        <div class="row"><span class="k">新增薄弱知识点</span><span class="v">2 个</span></div>
+        <div class="row"><span class="k">已经过关</span><span class="v">1 个</span></div>
+        <div class="row"><span class="k">平均掌握度</span><span class="v">59 分 → 62 分</span></div>
+      </div></div>
+
+      <p class="footer-note">分数越高说明越不牢固。孩子每做对一次扣 10 分，连续做对两次再多扣 10 分；
+        扣到 11 分以下就不再出现在电视的错题训练里。</p>
+      <button class="quiet" type="button">手动调整掌握度</button>
+    </main>
+    ${tabbar('wrong')}
+  </div>`;
+}
+
+// ------------------------------------------------------------------ 屏 3：知识点详情
+function sDetail(dark) {
+  const m = MASTERY[1];          // 分数乘法应用题 72 分
+  const l = lvl(m.score), n = needOf(m.score);
+  const flow = [
+    ['11-15 20:22', '电视答错', +12],
+    ['11-15 20:14', '电视答对', -10],
+    ['11-15 20:09', '答对（连对加成）', -10],
+    ['11-13 19:40', '手动录入 2 道', +28],
+  ];
+  return `<div class="wrap ${dark ? 'force-dark' : ''}">
+    ${topbar({ title: '分数乘法应用题', back: true })}
+    <main class="view">
+      <div class="card">
+        <div class="hero"><span class="big">${m.score}</span></div>
+        <div class="heroline"><span class="pill bad">${LV[l]}</span>
+          <span>再答对 <b>${n} 次</b>就过关 · 按每天 3 题算约 3 天</span></div>
+        <div class="mbar l${l}" style="margin-top:14px"><i style="width:${m.score}%"></i></div>
+      </div>
+
+      <div class="card"><div class="kv">
+        <div class="row"><span class="k">出题权重</span><span class="v">${WEIGHT[l]} 倍（最弱档）</span></div>
+        <div class="row"><span class="k">目标题量</span><span class="v">${TARGET[l]} 题</span></div>
+        <div class="row"><span class="k">题库已有</span><span class="v">${TARGET[l]} 题</span></div>
+        <div class="row"><span class="k">今天已出</span><span class="v dim">2 题（上限 3）</span></div>
+      </div></div>
+
+      <div class="card">
+        <h2>加减分记录</h2>
+        <div class="flow">
+          ${flow.map(([w, t, d]) => `<div class="f"><span class="when">${w}</span>
+            <span class="what">${t}</span>
+            <span class="d ${d > 0 ? 'up' : 'dn'}">${d > 0 ? '+' : '−'}${Math.abs(d)}</span></div>`).join('')}
+        </div>
+      </div>
+      <p class="footer-note">每一次加减分都可回放，家长可以核到具体是哪一道题。</p>
+
+      <div class="sec"><h2>这个知识点的错题</h2><a href="#">全部 5 条 ›</a></div>
+      ${qcard(WRONG[0], false)}
+    </main>
+    ${tabbar('wrong')}
+  </div>`;
+}
+
+// ------------------------------------------------------------------ 屏 4：错题清单
+function sList() {
+  return `<div class="wrap">
+    ${topbar({ title: '错题清单', back: true })}
+    <main class="view">
+      <div class="filters">
+        <button class="f on" type="button">全部<b>23</b></button>
+        <button class="f" type="button">电视<b>18</b></button>
+        <button class="f" type="button">手动录入<b>5</b></button>
+      </div>
+      ${WRONG.map(q => qcard(q, true)).join('')}
+      <p class="footer-note">最近 30 天 · 共 23 条。答案与解析只给家长看，孩子端不显示。</p>
+    </main>
+    ${tabbar('wrong')}
+  </div>`;
+}
+
+// ------------------------------------------------------------------ 屏 5：添加错题（拍照入口 + 手动降级）
+function sAdd() {
+  return `<div class="wrap">
+    ${topbar({ title: '客厅的电视' })}
+    <main class="view">
+      <div class="card">
+        <h2>薄弱知识点</h2>
+        <p class="sub">越靠上越该讲 · 5 个待清</p>
+        ${MASTERY.slice(0, 3).map(m => mrow(m)).join('')}
+      </div>
+    </main>
+    ${tabbar('wrong')}
+
+    <div class="sheet-backdrop">
+      <div class="sheet">
+        <h2>添加错题</h2>
+        <div class="seg"><b class="on">数学</b><b>语文</b><b>英语</b></div>
+        ${[
+          ['分数乘法应用题', '第 1 单元', true],
+          ['分数乘分数', '第 1 单元', false],
+          ['圆的面积', '第 5 单元', false],
+        ].map(([t, u, on]) => `<button class="sheet-row ${on ? 'is-on' : ''}" type="button">
+            <strong>${t}</strong><span>${on ? '✓ 已选' : u}</span></button>`).join('')}
+        <div class="row" style="border-top:1px solid var(--sep);margin-top:4px">
+          <span class="k">错了几道</span>
+          <div class="stepper"><button type="button">−</button>
+            <span class="val">3 道</span><button type="button">+</button></div>
+        </div>
+        <p class="footer-note">拍照识别试卷还在做，先用下面的方式：选一个知识点、填错了几个，20 秒录完。</p>
+        <button class="primary" type="button" style="margin-top:0">保存并生成相似题</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ------------------------------------------------------------------ 屏 6：空状态
+function sEmpty() {
+  return `<div class="wrap">
+    ${topbar({ title: '客厅的电视' })}
+    <main class="view has-dock">
+      <div class="card">
+        <h2>薄弱知识点</h2>
+        <div class="empty"><strong>还没有薄弱知识点</strong>
+          错题会自动折算成知识点的掌握度，出现在这里。</div>
+      </div>
+      <div class="sec"><h2>错题清单</h2></div>
+      <div class="card">
+        <div class="empty"><strong>最近没有错题</strong>
+          孩子在电视上做错的题会出现在这里；拍照添加一条也能马上开始练。</div>
+      </div>
+    </main>
+    <div class="dock"><button class="primary" type="button">拍照添加错题</button></div>
+    ${tabbar('wrong')}
+  </div>`;
+}
+
+// ------------------------------------------------------------------ 出图
+const SCREENS = {
+  overview: () => sOverview(false),
+  topics:   () => sTopics(),
+  detail:   () => sDetail(false),
+  list:     () => sList(),
+  add:      () => sAdd(),
+  empty:    () => sEmpty(),
+  dark:     () => sOverview(true),
+};
+
+const want = (location.search.match(/[?&]only=([\w-]+)/) || [])[1];
+document.getElementById('root').innerHTML = want && SCREENS[want]
+  ? SCREENS[want]()
+  : Object.values(SCREENS).map(f => f()).join('');
+
+// 只有带 ?probe=1 才跑：量一遍横向溢出，出图前用来定位被裁的元素。
+if (/[?&]probe=1/.test(location.search)) {
+  requestAnimationFrame(() => {
+    const de = document.documentElement;
+    const wide = [...document.querySelectorAll('*')]
+      .filter(e => e.getBoundingClientRect().right > de.clientWidth + 0.5)
+      .slice(0, 12)
+      .map(e => `${e.tagName}.${(e.className || '-')} right=${Math.round(e.getBoundingClientRect().right)} w=${Math.round(e.getBoundingClientRect().width)}`);
+    document.title = `SW=${de.scrollWidth} CW=${de.clientWidth} | ` + wide.join(' ;; ');
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>错题本 H5 · 界面稿总览</title>
+<style>
+  :root {
+    --bg: #f2f2f7; --card: #fff; --label: #000;
+    --secondary: rgba(60,60,67,0.62); --tertiary: rgba(60,60,67,0.34);
+    --sep: rgba(60,60,67,0.16); --tint: #007aff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#000; --card:#1c1c1e; --label:#fff;
+      --secondary: rgba(235,235,245,0.62); --tertiary: rgba(235,235,245,0.32);
+      --sep: rgba(84,84,88,0.6); --tint:#0a84ff; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--label);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC",
+          "Noto Sans SC", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: 32px 24px 48px;
+  }
+  header { max-width: 1180px; margin: 0 auto 26px; }
+  h1 { font-size: 22px; letter-spacing: -0.01em; margin: 0 0 6px; }
+  header p { margin: 0; font-size: 13.5px; color: var(--secondary); max-width: 760px; }
+  header code { font-size: 12.5px; background: var(--card); padding: 1px 6px;
+                border-radius: 6px; border: 1px solid var(--sep); }
+
+  .grid {
+    max-width: 1180px; margin: 0 auto;
+    display: grid; gap: 26px 20px;
+    grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+  }
+  figure { margin: 0; }
+  .phone {
+    border-radius: 30px; overflow: hidden; background: var(--card);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 10px 34px rgba(0,0,0,0.10);
+    border: 1px solid var(--sep);
+  }
+  .phone img { display: block; width: 100%; height: auto; }
+  figcaption { margin-top: 11px; }
+  figcaption b { display: block; font-size: 14.5px; font-weight: 600; }
+  figcaption span { display: block; font-size: 12.5px; color: var(--secondary); margin-top: 2px; }
+  @media (prefers-color-scheme: dark) { .phone { box-shadow: none; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>错题本 H5 · 界面稿</h1>
+  <p>基于 <code>docs/WRONGBOOK.md</code> v1.2 第 11 章出稿，7 屏。样式直接复用
+    <code>server/web/app.css</code>（圆角、色值、深色变量同源），所以这些图不是另行设计的一套视觉，
+    而是把现有 H5 往后画。示例数据全部虚构。</p>
+</header>
+
+<div class="grid">
+  <figure>
+    <div class="phone"><img src="shot-overview.png" alt="错题本总览"></div>
+    <figcaption><b>① 错题本总览</b>
+      <span>薄弱知识点前 2 条 + 错题清单 + 吸底录入。首屏同时回答「还有几个洞」和「最近错了什么」。</span></figcaption>
+  </figure>
+
+  <figure>
+    <div class="phone"><img src="shot-topics.png" alt="薄弱知识点列表"></div>
+    <figcaption><b>② 薄弱知识点列表</b>
+      <span>「本周该讲」三行是给家长的唯一结论；下面才是完整榜与近 7 天变化。</span></figcaption>
+  </figure>
+
+  <figure>
+    <div class="phone"><img src="shot-detail.png" alt="知识点详情"></div>
+    <figcaption><b>③ 知识点详情</b>
+      <span>72 分 / 很弱 / 再答对 7 次，加出题权重与目标题量，再摊开加减分流水——「凭什么 72 分」有据可查。</span></figcaption>
+  </figure>
+
+  <figure>
+    <div class="phone"><img src="shot-list.png" alt="错题清单"></div>
+    <figcaption><b>④ 错题清单</b>
+      <span>按来源筛选（电视 / 手动录入），卡片带来源角标与解析。答案只给家长看。</span></figcaption>
+  </figure>
+
+  <figure>
+    <div class="phone"><img src="shot-add.png" alt="添加错题"></div>
+    <figcaption><b>⑤ 添加错题</b>
+      <span>入口按钮是「拍照添加错题」；拍照识别上线前，弹层先给降级路径：选知识点 + 错了几道，约 20 秒。</span></figcaption>
+  </figure>
+
+  <figure>
+    <div class="phone"><img src="shot-empty.png" alt="空状态"></div>
+    <figcaption><b>⑥ 空状态</b>
+      <span>新装或还没错过题。空态文案要顺带解释「这里会出现什么」，不能只写「暂无数据」。</span></figcaption>
+  </figure>
+
+  <figure>
+    <div class="phone"><img src="shot-dark.png" alt="深色模式"></div>
+    <figcaption><b>⑦ 深色模式</b>
+      <span>沿用 app.css 的深色变量，不是另做一套。夜间家长看屏幕不刺眼。</span></figcaption>
+  </figure>
+</div>
+
+</body>
+</html>

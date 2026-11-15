@@ -6,6 +6,9 @@
 - 240dpi 下 `loadIcon` 给的是 72px 的图标，所以磁贴图要取 App 自带的最高密度。
 - 原桌面：`com.tcl.cyberui/.MainActivity`（唯一的 HOME 候选）。
 - 安装的 flavor：`guard`。
+- 2026-11-12：`1.69-guard`（versionCode 85 → 86）用「方法一：多屏互动推送」升级成功，
+  全过程无人工按键（`uiautomator dump` 找 `btn_positive` 后 `input tap`）。同一版上把「做题换时长」
+  整条链路跑通了，细节见 [../QUIZ.md](../QUIZ.md) §14.6。
 
 ## 安装限制：系统校验链
 
