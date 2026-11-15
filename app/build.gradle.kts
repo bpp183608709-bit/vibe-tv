@@ -16,8 +16,8 @@ android {
         // Android 5.0. Compose 1.10 and later need 6.0, so the Compose BOM below stays on 1.9.
         minSdk = 21
         targetSdk = 34
-        versionCode = 85
-        versionName = "1.69"
+        versionCode = 90
+        versionName = "1.72"
         // `./gradlew -Pdiag ...`: a build for one reporter's TV whose logcat shows no app lines;
         // see system/DiagLog.kt.
         val diag = project.hasProperty("diag")
@@ -33,6 +33,22 @@ android {
                 .getProperty("adminHash") ?: ""
         } else ""
         buildConfigField("String", "ADMIN_HASH", "\"$adminHash\"")
+
+        // The quiz server (docs/QUIZ.md): its address, the ES256 key it signs tickets with, and a
+        // development HMAC key for a build with no server certificate yet. All three come from
+        // local/quiz.properties (gitignored, see AGENTS.md), so the address and the key are decided
+        // by whoever deploys the server and cannot be edited on the television.
+        //
+        // A checkout without that file gets three empty strings: the quiz page then says the server
+        // is not configured and everything else works as before. That is on purpose — a client that
+        // falls back to "trust anything" when its pin is missing is worse than one that does not run.
+        val quizProps = rootProject.file("local/quiz.properties")
+        val quiz = Properties().apply {
+            if (quizProps.exists()) quizProps.inputStream().use { load(it) }
+        }
+        buildConfigField("String", "QUIZ_BASE_URL", "\"${quiz.getProperty("baseUrl", "").trim()}\"")
+        buildConfigField("String", "QUIZ_PUBKEY", "\"${quiz.getProperty("publicKey", "").trim()}\"")
+        buildConfigField("String", "QUIZ_DEV_HMAC", "\"${quiz.getProperty("devHmac", "").trim()}\"")
     }
 
     // standard: a normal HOME app. guard: no HOME intent filter at all, for China-market firmwares

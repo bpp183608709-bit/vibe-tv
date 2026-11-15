@@ -65,8 +65,20 @@ class LimitsTest {
     }
 
     @Test
-    fun backFromTheFirstQuarterIsUnlimited() {
-        assertEquals(0, daily(15).withDailyMinutes(-1).dailyMinutes)
+    fun belowTheFirstQuarterSitsAMinute() {
+        // 1 minute is the only stop between "no limit" and the first quarter of an hour: with it the
+        // daily limit can be reached in a minute, which is how the quiz-for-time door is verified
+        // without watching a real quarter of an hour.
+        assertEquals(1, daily(15).withDailyMinutes(-1).dailyMinutes)
+        assertEquals(15, daily(1).withDailyMinutes(1).dailyMinutes)
+        assertEquals(0, daily(1).withDailyMinutes(-1).dailyMinutes)
+    }
+
+    @Test
+    fun theMinuteDoesNotComeUpIntoTheSecondHour() {
+        // 1h1m is a value neither half of the row can produce by stepping, so the hour press drops it.
+        assertEquals(60, daily(1).withDailyHours(1).dailyMinutes)
+        assertEquals(75, daily(90).withDailyMinutes(-1).dailyMinutes)
     }
 
     @Test

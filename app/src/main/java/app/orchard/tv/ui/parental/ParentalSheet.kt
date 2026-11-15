@@ -7,7 +7,9 @@ import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -40,14 +42,17 @@ import androidx.compose.ui.input.key.KeyEventType
 import androidx.compose.ui.input.key.type
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import app.orchard.tv.R
 import app.orchard.tv.parental.Parental
 import app.orchard.tv.parental.ParentalStore
 import app.orchard.tv.parental.ParentalStore.Limits
 import app.orchard.tv.parental.PlaybackSignal
+import app.orchard.tv.quiz.QuizVault
 import app.orchard.tv.ui.components.Pressable
 import app.orchard.tv.ui.components.consumeTaps
 import app.orchard.tv.ui.components.liquidGlass
@@ -104,11 +109,13 @@ fun ParentalSheet(
     }
 
     // Only while the page itself is up: the pad brings its own, and two would fight for Back.
-    BackHandler(enabled = visible && stage == Stage.Settings, onBack = onDismiss)
+    BackHandler(enabled = visible && (stage == Stage.Settings || stage == Stage.Pairing)) {
+        if (stage == Stage.Pairing) stage = Stage.Settings else onDismiss()
+    }
 
     AnimatedVisibility(
         visible = visible && stage == Stage.Settings,
-        enter = fadeIn(tween(220, easing = Motion.EaseOut)),
+        enter = fadeIn(tween(220, easing = Motion.EaseOut)) + scaleIn(tween(320, easing = Motion.Drawer), initialScale = 0.98f),
         exit = fadeOut(tween(180, easing = Motion.EaseOut)),
         modifier = Modifier.fillMaxSize(),
     ) {
@@ -117,8 +124,20 @@ fun ParentalSheet(
             signal = signal,
             onLimits = { Parental.applyLimits(it) },
             onChangePin = { adminFrom = Stage.Settings; stage = Stage.Admin },
+            onPairPhone = { stage = Stage.Pairing },
             onExit = onDismiss,
         )
+    }
+
+    // The pairing code, over the settings page rather than instead of it: backing out returns to the
+    // settings the parent was looking at, which is where they came from.
+    AnimatedVisibility(
+        visible = visible && stage == Stage.Pairing,
+        enter = fadeIn(tween(200, easing = Motion.EaseOut)),
+        exit = fadeOut(tween(160, easing = Motion.EaseOut)),
+        modifier = Modifier.fillMaxSize(),
+    ) {
+        PairingPage(visible = visible && stage == Stage.Pairing, onClose = { stage = Stage.Settings })
     }
 
     // One pad per stage, all with the module's own length: 8 to 12 digits cannot submit itself, so
@@ -170,7 +189,7 @@ fun ParentalSheet(
  * Where the module is: the door, the page, and the one way past the door for a change — the
  * administrator phrase, which opens the new-password pad ([ResetPin]).
  */
-private enum class Stage { Gate, Create, Admin, ResetPin, Settings }
+private enum class Stage { Gate, Create, Admin, ResetPin, Settings, Pairing }
 
 /**
  * [PinPad] with the parental module's rules fixed: 8 to 12 digits, no arrow sequences (an arrow
@@ -232,6 +251,7 @@ private fun SettingsPage(
     signal: PlaybackSignal.Level?,
     onLimits: (Limits) -> Unit,
     onChangePin: () -> Unit,
+    onPairPhone: () -> Unit,
     onExit: () -> Unit,
 ) {
     // The note under the cards follows the row that has focus, as in tvOS Settings. The daily row
@@ -263,10 +283,10 @@ private fun SettingsPage(
                 // on 退出家长模块, not on a stray tap (unlike the pad, which cancels on one).
                 .consumeTaps()
                 .liquidGlass(28.dp)
-                .padding(horizontal = 26.dp, vertical = 24.dp),
+                .padding(horizontal = 24.dp, vertical = 16.dp),
         ) {
             PageHeader(ui)
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(12.dp))
 
             Group {
                 DailyRow(
@@ -330,13 +350,24 @@ private fun SettingsPage(
                 }
             }
 
-            Spacer(Modifier.height(10.dp))
+            Spacer(Modifier.height(8.dp))
 
             Group {
+                // The pairing code lives behind this row rather than on the lock screen: a child sees
+                // the lock screen every evening, and a code is a way into the parent page.
+                ActionRow(
+                    label = R.string.parental_pair,
+                    value = stringResource(
+                        if (QuizVault.bound(context)) R.string.parental_pair_value_on
+                        else R.string.parental_pair_value_off,
+                    ),
+                    first = true,
+                    onClick = onPairPhone,
+                ) { note = R.string.parental_pair_note; strong = false }
                 ActionRow(
                     label = R.string.parental_change_pin,
                     value = stringResource(R.string.parental_change_pin_value),
-                    first = true,
+                    first = false,
                     onClick = onChangePin,
                 ) { note = R.string.parental_note_change_pin; strong = false }
                 ActionRow(
@@ -348,11 +379,11 @@ private fun SettingsPage(
             }
 
             // Two lines of room, so the cards above do not shift as the note changes. The height is
-            // outside the padding: two 11sp lines need the 34dp the padding leaves.
-            Box(Modifier.fillMaxWidth().height(42.dp).padding(start = 4.dp, top = 8.dp)) {
+            // outside the padding: two 11sp lines need the room the padding leaves.
+            Box(Modifier.fillMaxWidth().height(38.dp).padding(start = 3.dp, top = 7.dp)) {
                 BasicText(
                     stringResource(note),
-                    style = Type.Caption.copy(color = if (strong) Palette.SecondaryLabel else Palette.TertiaryLabel),
+                    style = Type.Caption.copy(color = if (strong) Palette.Label.copy(alpha = 0.62f) else Palette.Label.copy(alpha = 0.44f)),
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
                 )
@@ -363,51 +394,94 @@ private fun SettingsPage(
             if (signal != null) {
                 BasicText(
                     stringResource(R.string.parental_signal, stringResource(signalText(signal))),
-                    style = Type.Caption.copy(color = Palette.TertiaryLabel),
-                    modifier = Modifier.padding(start = 4.dp),
+                    style = Type.Caption.copy(color = Palette.Label.copy(alpha = 0.42f)),
+                    modifier = Modifier.padding(start = 3.dp),
                 )
             }
         }
     }
 }
 
-/** The lock, the page's name, and today's two readings. */
+/**
+ * The lock, the page's name, and today's two readings.
+ *
+ * The readings carry a meter each: a number against a budget is the one thing a parent opens this
+ * page to check, and "1 小时 20 分钟" tells them nothing about how much of the day is gone until it
+ * is put against the bar. The bar turns to the accent only when the budget is nearly spent, so the
+ * colour means "this is about to lock" and nothing else.
+ */
 @Composable
 private fun PageHeader(ui: Parental.Ui) {
     Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
         Box(
-            Modifier.size(38.dp).clip(RoundedCornerShape(12.dp)).background(Palette.Orange.copy(alpha = 0.16f)),
+            Modifier
+                .size(40.dp)
+                .clip(RoundedCornerShape(13.dp))
+                .background(Palette.Green.copy(alpha = 0.12f))
+                .border(1.dp, Palette.Green.copy(alpha = 0.22f), RoundedCornerShape(13.dp)),
             contentAlignment = Alignment.Center,
         ) {
-            GlyphIcon(Glyph.Shield, Palette.Orange, 19.dp)
+            GlyphIcon(Glyph.Shield, Palette.Green, 20.dp)
         }
         Spacer(Modifier.width(14.dp))
         Column(Modifier.weight(1f)) {
-            BasicText(stringResource(R.string.parental_title), style = Type.Title)
+            BasicText(stringResource(R.string.parental_title), style = Type.LargeTitle.copy(fontSize = 24.sp))
             Spacer(Modifier.height(2.dp))
             BasicText(stringResource(R.string.parental_subtitle), style = Type.Caption, maxLines = 1)
         }
+        Spacer(Modifier.width(16.dp))
         Column(horizontalAlignment = Alignment.End) {
-            Reading(R.string.parental_used_today, durationText(ui.dailyUsedMs), null)
-            Spacer(Modifier.height(3.dp))
+            Reading(
+                label = R.string.parental_used_today,
+                value = durationText(ui.dailyUsedMs),
+                of = null,
+                fraction = fractionOf(ui.dailyUsedMs, ui.dailyBudgetMs),
+            )
+            Spacer(Modifier.height(7.dp))
             // With no session limit there is no "/ 45 分钟" to show, and "0 分钟" would read as a
-            // budget of zero.
-            val limit = if (ui.sessionBudgetMs == 0L) stringResource(R.string.parental_unlimited) else durationText(ui.sessionBudgetMs)
-            Reading(R.string.parental_session_used, durationText(ui.sessionUsedMs), limit)
+            // budget of zero. Only the day gets a meter: it is the budget that runs out for good,
+            // and two bars in this corner would read as a dashboard.
+            val limited = ui.sessionBudgetMs > 0L
+            Reading(
+                label = R.string.parental_session_used,
+                value = durationText(ui.sessionUsedMs),
+                of = if (limited) durationText(ui.sessionBudgetMs) else stringResource(R.string.parental_unlimited),
+                fraction = null,
+            )
         }
     }
 }
 
-/** One reading: its name in grey, its number in white, and what it is out of, if anything. */
+/** Used against budget, or null when there is no budget to be against (0 means 不限 here). */
+private fun fractionOf(usedMs: Long, budgetMs: Long): Float? =
+    if (budgetMs <= 0L) null else (usedMs.toFloat() / budgetMs).coerceIn(0f, 1f)
+
+/** One reading: its name in grey, its number in white, what it is out of, and how much is left. */
 @Composable
-private fun Reading(label: Int, value: String, of: String?) {
-    Row(verticalAlignment = Alignment.CenterVertically) {
-        BasicText(stringResource(label), style = Type.Caption)
-        Spacer(Modifier.width(6.dp))
-        BasicText(value, style = Type.Caption.copy(color = Palette.Label))
-        if (of != null) {
+private fun Reading(label: Int, value: String, of: String?, fraction: Float?) {
+    Column(horizontalAlignment = Alignment.End) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            BasicText(stringResource(label), style = Type.Caption)
             Spacer(Modifier.width(6.dp))
-            BasicText(stringResource(R.string.parental_of, of), style = Type.Caption.copy(color = Palette.TertiaryLabel))
+            BasicText(
+                value,
+                style = Type.Caption.copy(color = Palette.Label, fontWeight = FontWeight.W600, fontFeatureSettings = "tnum"),
+            )
+            if (of != null) {
+                Spacer(Modifier.width(5.dp))
+                BasicText(stringResource(R.string.parental_of, of), style = Type.Caption.copy(color = Palette.TertiaryLabel))
+            }
+        }
+        if (fraction != null) {
+            Spacer(Modifier.height(4.dp))
+            Meter(
+                fraction = fraction,
+                // Green while there is budget left, red in the last stretch: by the time this bar
+                // is read it is a warning, not a decoration.
+                tint = if (fraction >= 0.85f) Palette.Red else Palette.Green.copy(alpha = 0.85f),
+                modifier = Modifier.width(150.dp),
+                height = 2.dp,
+            )
         }
     }
 }
@@ -584,8 +658,8 @@ private fun ActionRow(
     Row(
         Modifier
             .fillMaxWidth()
-            .height(54.dp)
-            .padding(start = 18.dp, end = 14.dp)
+            .height(ROW)
+            .padding(start = 18.dp, end = 12.dp)
             .onFocusChanged { if (it.hasFocus) onFocused() },
         verticalAlignment = Alignment.CenterVertically,
     ) {
@@ -618,7 +692,7 @@ private fun SettingRow(
 ) {
     if (!first) Hairline()
     Row(
-        Modifier.fillMaxWidth().height(54.dp).padding(start = 18.dp, end = 14.dp),
+        Modifier.fillMaxWidth().height(ROW).padding(start = 18.dp, end = 12.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         BasicText(
@@ -633,17 +707,22 @@ private fun SettingRow(
 
 @Composable
 private fun Hairline() {
-    Box(Modifier.padding(start = 18.dp).fillMaxWidth().height(1.dp).background(Palette.Hairline))
+    Box(Modifier.padding(start = 18.dp).fillMaxWidth().height(1.dp).background(Ink.Edge))
 }
 
 /** A card of rows, as in tvOS Settings: one surface, hairlines between the rows. */
 @Composable
 private fun Group(rows: @Composable ColumnScope.() -> Unit) {
-    Column(
-        Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(Color.White.copy(alpha = 0.05f)),
-        content = rows,
-    )
+    Column(Modifier.fillMaxWidth().cardSurface(16.dp), content = rows)
 }
+
+/**
+ * The height of a settings row. It was 54dp, which made the page 602dp tall with all eight rows —
+ * taller than the 960×540 canvas, so 退出家长模块 and the note under it were drawn off the screen
+ * (found while reworking this page, 2026-11-13). 46dp still clears every control on the rows (34dp
+ * steppers, 30dp day segments) with room above and below them.
+ */
+private val ROW = 46.dp
 
 // ---- the numbers ----
 

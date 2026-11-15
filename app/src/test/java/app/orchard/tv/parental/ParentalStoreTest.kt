@@ -94,13 +94,32 @@ class ParentalStoreTest {
     }
 
     @Test
-    fun theDayChangesAtLocalMidnight() {
+    fun theDayChangesAtFourInTheMorning() {
         val zone = ZoneId.of("Asia/Shanghai")
-        val lateNight = LocalDateTime.of(2026, 10, 29, 23, 59, 59).atZone(zone).toInstant().toEpochMilli()
-        val justAfter = LocalDateTime.of(2026, 10, 30, 0, 0, 1).atZone(zone).toInstant().toEpochMilli()
-        assertEquals("2026-10-29", ParentalStore.dayKey(lateNight, zone))
-        assertEquals("2026-10-30", ParentalStore.dayKey(justAfter, zone))
-        assertNotEquals(ParentalStore.dayKey(lateNight, zone), ParentalStore.dayKey(justAfter, zone))
+        // Half past three is still the evening before: a film that started at eleven is not cut in
+        // two by the date, and nobody gets a fresh budget at midnight.
+        val before = LocalDateTime.of(2026, 10, 30, 3, 59, 59).atZone(zone).toInstant().toEpochMilli()
+        val after = LocalDateTime.of(2026, 10, 30, 4, 0, 1).atZone(zone).toInstant().toEpochMilli()
+        assertEquals("2026-10-29", ParentalStore.dayKey(before, zone))
+        assertEquals("2026-10-30", ParentalStore.dayKey(after, zone))
+
+        // Everything on the earlier evening belongs to that day, right up to the four o'clock edge.
+        val lateEvening = LocalDateTime.of(2026, 10, 29, 23, 59, 59).atZone(zone).toInstant().toEpochMilli()
+        val midnight = LocalDateTime.of(2026, 10, 30, 0, 0, 1).atZone(zone).toInstant().toEpochMilli()
+        assertEquals("2026-10-29", ParentalStore.dayKey(lateEvening, zone))
+        assertEquals("2026-10-29", ParentalStore.dayKey(midnight, zone))
+    }
+
+    @Test
+    fun theRolloverStaysAtFourAcrossADaylightSavingChange() {
+        // Berlin springs forward at 02:00 on 2026-03-29. The day must still turn at four on the wall
+        // clock, not at five: taking four hours off the instant instead of the civil time moved the
+        // roll-over by the summer-time offset, which is the bug this test exists for.
+        val zone = ZoneId.of("Europe/Berlin")
+        val justBefore = LocalDateTime.of(2026, 3, 29, 3, 59).atZone(zone).toInstant().toEpochMilli()
+        val justAfter = LocalDateTime.of(2026, 3, 29, 4, 1).atZone(zone).toInstant().toEpochMilli()
+        assertEquals("2026-03-28", ParentalStore.dayKey(justBefore, zone))
+        assertEquals("2026-03-29", ParentalStore.dayKey(justAfter, zone))
     }
 
     @Test

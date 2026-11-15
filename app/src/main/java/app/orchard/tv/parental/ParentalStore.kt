@@ -12,9 +12,10 @@ import app.orchard.tv.BuildConfig
  *
  * docs/PARENTAL.md is the spec. The fields follow from three rules there:
  *
- *  - **The day is a local date.** Counters are stamped with it, so a new day starts from the
- *    configured budgets rather than from what was watched yesterday (P1-2). A countdown that is
- *    running when the date changes is kept: the wait was already spent.
+ *  - **The day is a local date, turning over at 04:00.** Counters are stamped with it, so a new day
+ *    starts from the configured budgets rather than from what was watched yesterday (P1-2). A
+ *    countdown that is running when the date changes is kept: the wait was already spent. Four in
+ *    the morning rather than midnight is the 2026-11-11 decision ([dayKey]).
  *  - **The countdown's deadline is wall-clock here**, because [WatchTimer] ticks with
  *    elapsedRealtime, which restarts at boot. Wall clock is used for that one difference and for
  *    the date, never for counting: turning the TV's clock back cannot give anyone more time today,
@@ -59,18 +60,33 @@ class ParentalStore(context: Context) {
             if (dailyMinutes == 0) return if (delta > 0) copy(dailyMinutes = 15) else this
             val hours = (dailyMinutes / 60 + delta).coerceIn(0, MAX_HOURS)
             // Twelve hours is the top: a quarter of an hour does not fit after it, and the store
-            // would clamp 12h45m down to 12h behind the panel's back.
-            val rest = if (hours == MAX_HOURS) 0 else dailyMinutes % 60
+            // would clamp 12h45m down to 12h behind the panel's back. The same goes for the minute
+            // stop: it lives inside the first hour only, and carrying 1 up would leave the panel
+            // showing 1h1m — a value neither half can produce by stepping.
+            val quarter = dailyMinutes % 60
+            val rest = if (hours == MAX_HOURS || quarter == 1) 0 else quarter
             return copy(dailyMinutes = (hours * 60 + rest).coerceAtMost(MAX_DAILY_MINUTES))
         }
 
-        /** A quarter of an hour either way, inside the hour. At 0h15 ← goes back to "no limit". */
+        /**
+         * One press takes the minutes half to its next stop: 45, 30, 15, 1, and out to 0 — "no
+         * limit". The 1 is not a limit a home keeps. It is there because one minute is enough to
+         * reach the lock screen, which is how 「去做题，换时长」 gets walked through without sitting
+         * through a quarter of an hour of video first (docs/PARENTAL.md, 设置项).
+         */
         fun withDailyMinutes(delta: Int): Limits {
             if (delta == 0) return this
             val hours = dailyMinutes / 60
-            val top = if (hours >= MAX_HOURS) 0 else 45
-            val minutes = ((dailyMinutes % 60) + delta * 15).coerceIn(0, top)
-            return copy(dailyMinutes = hours * 60 + minutes)
+            val stops = when {
+                hours >= MAX_HOURS -> DAILY_MINUTES_AT_THE_TOP
+                hours == 0 -> DAILY_MINUTES_FIRST_HOUR
+                else -> DAILY_MINUTES_LATER
+            }
+            // The nearest stop at or below what is stored, so a value written from the phone that
+            // falls between two stops still moves in the direction the press asks for.
+            val at = stops.indexOfLast { it <= dailyMinutes % 60 }.coerceAtLeast(0)
+            val next = stops[(at + delta).coerceIn(0, stops.lastIndex)]
+            return copy(dailyMinutes = hours * 60 + next)
         }
 
         /** A quarter of an hour, 0 = no limit. */
@@ -190,6 +206,16 @@ class ParentalStore(context: Context) {
         /** The daily top in whole hours: 12, what the hour half of the panel's stepper stops at. */
         private const val MAX_HOURS = MAX_DAILY_MINUTES / 60
 
+        /**
+         * What the minutes half of the day's row can hold, in the order a press walks through it:
+         * the quarter-hours, and inside the first hour a stop at 1 minute as well — short enough
+         * to reach the lock screen in a minute, which is how 「去做题，换时长」 gets verified.
+         * Above the first hour the stop is gone, and at twelve hours there is no room left at all.
+         */
+        private val DAILY_MINUTES_FIRST_HOUR = intArrayOf(0, 1, 15, 30, 45)
+        private val DAILY_MINUTES_LATER = intArrayOf(0, 15, 30, 45)
+        private val DAILY_MINUTES_AT_THE_TOP = intArrayOf(0)
+
         /** 60 minutes: the top of the session stepper. */
         const val MAX_SESSION_MINUTES = 60
 
@@ -223,9 +249,26 @@ class ParentalStore(context: Context) {
          */
         private val ADMIN_HASH: String get() = BuildConfig.ADMIN_HASH
 
-        /** The local date [millis] falls on, which is how a day is told from the next. */
+        /**
+         * The hour the day turns over: four in the morning, not midnight (docs/PARENTAL.md,
+         * 做题换时长). A film that starts at half past eleven is not cut in two by the date, and a
+         * child who watched until midnight does not wake up to a fresh budget while the parents are
+         * asleep. Everything that counts a day uses this — the three limits, the quiz's awards and
+         * the tickets that carry them — so there is one roll-over moment on the television.
+         */
+        const val DAY_ROLLOVER_HOUR = 4
+
+        /**
+         * The local date [millis] falls on, which is how a day is told from the next.
+         *
+         * The four hours come off the **civil** time: [java.time.LocalDateTime] arithmetic, not
+         * [java.time.ZonedDateTime.minusHours], which subtracts from the instant and would turn the
+         * day over at five o'clock for the half of the year that is on summer time. The date is all
+         * that is wanted, so a zone where four in the morning does not exist needs no special case.
+         */
         fun dayKey(millis: Long, zone: ZoneId = ZoneId.systemDefault()): String =
-            Instant.ofEpochMilli(millis).atZone(zone).toLocalDate().toString()
+            Instant.ofEpochMilli(millis).atZone(zone).toLocalDateTime()
+                .minusHours(DAY_ROLLOVER_HOUR.toLong()).toLocalDate().toString()
 
         // ---- 严格模式 (docs/PARENTAL.md, 严格模式) ----
 

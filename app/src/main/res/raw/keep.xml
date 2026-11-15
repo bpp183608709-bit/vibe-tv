@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The quiz CA is opened by name (`getIdentifier("quiz_ca", "raw", ...)`) so that a checkout without a
+  certificate still compiles. A name is not a reference: the resource shrinker cannot see it, and a
+  release build is free to drop the file. The symptom would be a child who cannot do any quiz and a
+  log line saying the server's certificate is wrong, on release only.
+
+  `tools:keep` is the one place that tells the shrinker to leave it alone.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@raw/quiz_ca" />

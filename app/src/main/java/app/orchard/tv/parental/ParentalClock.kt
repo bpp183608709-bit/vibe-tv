@@ -8,6 +8,7 @@ import android.util.Log
 import app.orchard.tv.LockActivity
 import app.orchard.tv.guard.GuardSetup
 import app.orchard.tv.guard.HomeGuardService
+import app.orchard.tv.quiz.QuizSync
 
 /**
  * The parental clock: one pass a second, for as long as Aerial's process lives.
@@ -44,6 +45,7 @@ object ParentalClock {
 
     private var lastWatching: Boolean? = null
     private var lastLevel: PlaybackSignal.Level? = null
+    private var lastLocked: Boolean? = null
 
     private val tick = object : Runnable {
         override fun run() {
@@ -82,7 +84,20 @@ object ParentalClock {
             }
             // The moment a limit runs out the lock goes up, over this process's screen or over the
             // video app that is counting (docs/PARENTAL.md, 锁屏实现).
-            if (Parental.ui.locked) LockActivity.bringUp(context)
+            if (Parental.ui.locked) {
+                LockActivity.bringUp(context)
+                // The lock is one of the two moments the parent page is likely to be opened, so the
+                // viewing counter is pushed then instead of waiting for the half hour
+                // (docs/PARENTAL.md, 家长 H5: 周报).
+                if (lastLocked != true) {
+                    lastLocked = true
+                    QuizSync.beatNow(context)
+                }
+            } else {
+                lastLocked = false
+            }
+            // The five-minute settings poll and the half-hour counter, both rated inside.
+            QuizSync.tick(context)
         }
     }
 

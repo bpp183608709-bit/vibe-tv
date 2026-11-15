@@ -302,14 +302,94 @@
     <string name="parental_lock_left">Until watching can start again</string>
     <string name="parental_lock_extend_30">Add 30 Minutes</string>
     <string name="parental_lock_extend_60">Add 1 Hour</string>
-    <string name="parental_lock_extend_120">Add 2 Hours</string>
     <string name="parental_lock_lift">No Limit for the Rest of Today</string>
     <string name="parental_lock_skip">End This Break</string>
     <string name="parental_lock_needs_pin">Password</string>
-    <string name="parental_lock_foot">Parental controls · the password lifts this screen</string>
+    <string name="parental_lock_foot">Parental controls · a quiz or the password lifts this screen</string>
     <string name="parental_lock_pin_hint">The parental password. Five wrong entries close the keypad for five minutes.</string>
     <string name="parental_lock_blocked_hint">The keypad is shut for a while: five wrong entries in a row.</string>
     <string name="parental_lock_blocked">Shut for %1$s after five wrong entries.</string>
     <string name="parental_clock">%1$d:%2$02d</string>
     <string name="parental_clock_hours">%1$d:%2$02d:%3$02d</string>
+
+    <!-- Quiz for time (docs/PARENTAL.md, 做题换时长). The first action on the daily lock, and the
+         only one that does not ask for the password. -->
+    <string name="parental_lock_quiz">Take a quiz for 30 minutes</string>
+    <string name="parental_lock_quiz_hint">No password</string>
+    <!-- The daily lock has two doors: the quiz, and the parent's. The three ways to add time sit
+         behind the second one, so a child never reads "no limit today" on the screen that stops him. -->
+    <string name="parental_lock_portal">Parent Access</string>
+    <string name="parental_lock_portal_title">Parent Actions</string>
+    <string name="parental_lock_back">Back</string>
+    <string name="parental_lock_cooling">The last group did not pass. Another try in %1$s.</string>
+    <string name="parental_lock_quiz_cooling_hint">in %1$s</string>
+
+    <!-- The quiz page. A group has ten minutes; three minutes untouched returns to the lock. -->
+    <string name="parental_quiz_tag">Quiz for Time</string>
+    <string name="parental_quiz_progress">Question %1$d of %2$d</string>
+    <string name="parental_quiz_left">%1$s left</string>
+    <string name="parental_quiz_loading">Getting questions…</string>
+    <string name="parental_quiz_submitting">Checking answers…</string>
+    <string name="parental_quiz_right">Right</string>
+    <string name="parental_quiz_wrong">Not quite — the answer is %1$s</string>
+    <string name="parental_quiz_unknown">Did not learn this</string>
+    <string name="parental_quiz_unknown_on">Marked: not learned yet</string>
+    <string name="parental_quiz_exit_hint">Back returns to the lock</string>
+    <string name="parental_quiz_fill_hint">Type the answer</string>
+    <string name="parental_quiz_fill_ready">Press OK to send this answer</string>
+    <string name="parental_quiz_key_back">Del</string>
+    <string name="parental_quiz_key_done">OK</string>
+    <string name="parental_quiz_pass_title">Passed</string>
+    <string name="parental_quiz_fail_title">Not This Time</string>
+    <string name="parental_quiz_score">%1$d of %2$d right</string>
+    <string name="parental_quiz_award">%1$d minutes added for today</string>
+    <string name="parental_quiz_award_refused">The ticket did not check out, so no minutes were added</string>
+    <string name="parental_quiz_award_capped">The quiz limit for today has been reached</string>
+    <string name="parental_quiz_fail_why">Four of five right passes. Try again in ten minutes.</string>
+    <string name="parental_quiz_refused">Could not redeem: %1$s</string>
+    <string name="parental_quiz_continue">Keep Watching</string>
+    <string name="parental_quiz_back">Back to the Lock</string>
+    <!-- The wrong answers of the group just handed in: the child's version. The phone still has the
+         seven-day book; this one is what a child can use while the result is on screen. -->
+    <string name="parental_quiz_review">Review mistakes (%1$d)</string>
+    <string name="parental_quiz_review_title">Mistakes in This Group</string>
+    <string name="parental_quiz_review_count">%1$d of %2$d</string>
+    <string name="parental_quiz_review_yours">Your answer: %1$s</string>
+    <string name="parental_quiz_review_correct">Right answer: %1$s</string>
+    <string name="parental_quiz_review_why">Why: %1$s</string>
+    <string name="parental_quiz_review_prev">Previous</string>
+    <string name="parental_quiz_review_next">Next</string>
+    <string name="parental_quiz_retry">Try Again</string>
+    <string name="parental_quiz_error_offline">Cannot reach the server</string>
+    <string name="parental_quiz_error_untrusted">The server certificate is not the expected one</string>
+    <string name="parental_quiz_error_untrusted_body">Ask a parent to look at this one.</string>
+    <string name="parental_quiz_error_cooldown_title">Not Yet</string>
+    <string name="parental_quiz_error_cooldown_body">Not this time. Another group in %1$s.</string>
+    <string name="parental_quiz_error_attempts">All six tries are used up today</string>
+    <string name="parental_quiz_error_quota">The quiz limit for today has been reached</string>
+    <string name="parental_quiz_error_no_questions">No questions ready for this unit yet</string>
+    <string name="parental_quiz_error_unpaired">This television is not registered</string>
+    <string name="parental_quiz_error_config">No quiz server is set up for this television</string>
+    <string name="parental_quiz_error_config_body">Ask a parent for the password instead, which still adds time.</string>
+    <string name="parental_quiz_error_other">Something went wrong on the server</string>
+
+    <string name="parental_pair">Phone pairing</string>
+    <string name="parental_pair_value_off">Not connected</string>
+    <string name="parental_pair_value_on">Connected</string>
+    <string name="parental_pair_note">Open the parent page on a phone and type the code shown here.</string>
+    <string name="parental_pair_title">Pair a phone</string>
+    <string name="parental_pair_how">On the phone, open %1$s and type this code:</string>
+    <string name="parental_pair_left">%1$d s left</string>
+    <string name="parental_pair_expired">That code has expired.</string>
+    <string name="parental_pair_again">Show a new code</string>
+    <string name="parental_pair_done">Connected: %1$s</string>
+    <string name="parental_pair_done_body">The phone can change these settings now. Changes arrive within five minutes.</string>
+    <string name="parental_pair_waiting">Waiting for the phone…</string>
+    <string name="parental_pair_busy">Contacting the server…</string>
+    <string name="parental_pair_failed">Cannot reach the server.</string>
+    <string name="parental_pair_retry">Try again</string>
+    <string name="parental_pair_close">Close</string>
+    <string name="parental_pair_replace">Add another phone</string>
+    <string name="parental_pair_off">No parent page is set up for this television.</string>
+    <string name="parental_pair_case">The code is case sensitive.</string>
 </resources>

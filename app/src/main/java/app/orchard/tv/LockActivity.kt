@@ -26,10 +26,13 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import app.orchard.tv.dream.AerialDream
 import app.orchard.tv.parental.Parental
+import app.orchard.tv.quiz.QuizRun
+import app.orchard.tv.quiz.QuizVault
 import app.orchard.tv.system.DiagLog
 import app.orchard.tv.system.Sounds
 import app.orchard.tv.ui.components.UhdCanvas
 import app.orchard.tv.ui.parental.ParentalLockScreen
+import app.orchard.tv.ui.parental.QuizScreen
 import app.orchard.tv.ui.theme.LocalReducedMotion
 import app.orchard.tv.ui.theme.canvasDensity
 import kotlinx.coroutines.delay
@@ -100,19 +103,42 @@ class LockActivity : ComponentActivity() {
             val canvas = Density(density = canvasDensity(resources.displayMetrics), fontScale = LocalDensity.current.fontScale)
             CompositionLocalProvider(LocalReducedMotion provides reducedMotion, LocalDensity provides canvas) {
                 var leftSec by remember { mutableStateOf(Parental.intervalLeftSec()) }
+                // The quiz's cooldown, in whole seconds: a group that did not pass makes the server
+                // refuse the next one for ten minutes, and the screen has to say how long.
+                var coolSec by remember { mutableStateOf(QuizVault.cooldownSec(this)) }
+                // The quiz is a pane of this activity, not an activity of its own: see the note in
+                // QuizScreen. It is null while the lock screen itself is up.
+                var quiz by remember { mutableStateOf<QuizRun?>(null) }
                 LaunchedEffect(Unit) {
                     while (true) {
                         // The deadline, not the counters: see the class comment.
                         Parental.idle()
                         leftSec = Parental.intervalLeftSec()
-                        if (!Parental.ui.locked) {
+                        coolSec = QuizVault.cooldownSec(this@LockActivity)
+                        // A quiz that just added thirty minutes must reach its result screen before
+                        // the lock lets go — otherwise the child never sees why the screen vanished.
+                        if (!Parental.ui.locked && quiz == null) {
                             letGo()
                             break
                         }
                         delay(500L)
                     }
                 }
-                ParentalLockScreen(ui = Parental.ui, leftSec = leftSec)
+                val closeQuiz = {
+                    quiz?.close()
+                    quiz = null
+                }
+                val active = quiz
+                if (active == null) {
+                    ParentalLockScreen(
+                        ui = Parental.ui,
+                        leftSec = leftSec,
+                        coolSec = coolSec,
+                        onQuiz = { quiz = QuizRun(this).also { it.start() } },
+                    )
+                } else {
+                    QuizScreen(run = active, onExit = closeQuiz, onContinue = closeQuiz)
+                }
             }
         }
         if (Build.VERSION.SDK_INT >= 29 && uhd > 1f) {
