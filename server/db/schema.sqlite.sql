@@ -78,6 +78,10 @@ CREATE TABLE question (
   param_hash       TEXT    NOT NULL DEFAULT '',
   created_at       TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
   retired_at       TEXT    NULL,
+  origin           TEXT    NOT NULL DEFAULT 'seed'
+                     CHECK (origin IN ('seed','template','ai_similar')),
+  source_wrong_item TEXT   NULL,                  -- which mistake caused it; NULL for seeds
+  owner_device     TEXT    NULL,                  -- set = one TV's own question, NULL = public bank
   UNIQUE (topic_id, template_key, param_hash),
   FOREIGN KEY (textbook_id) REFERENCES textbook (id),
   FOREIGN KEY (topic_id) REFERENCES topic (id)
@@ -150,6 +154,13 @@ CREATE TABLE daily_state (
   cooldown_until TEXT    NULL,
   used_ms        INTEGER NOT NULL DEFAULT 0,    -- what the TV says it watched today (heartbeat)
   used_at        TEXT    NULL,                  -- when it last said so; NULL means never, not zero
+  -- Today's mix snapshot (docs/WRONGBOOK.md §6.6). NULL on rows written before this feature, which the
+  -- picker reads as "no snapshot yet, take one now".
+  mix_state      TEXT    NULL CHECK (mix_state IN ('S0','S1','S2','S3')),
+  mix_c          INTEGER NULL,
+  mix_r          INTEGER NULL,
+  mix_n          INTEGER NULL,
+  mix_note       TEXT    NULL,
   updated_at     TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (device_id, day_key),
   FOREIGN KEY (device_id) REFERENCES device (id)
@@ -169,6 +180,7 @@ CREATE TABLE quiz_session (
   passed            INTEGER NULL,
   award_ms          INTEGER NULL,
   ticket_jti        TEXT    NULL,
+  review_question_ids TEXT  NULL,               -- JSON array: which of the served ones were review slots
   created_at        TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
   FOREIGN KEY (device_id) REFERENCES device (id)
@@ -297,3 +309,111 @@ CREATE TABLE account_device (
   FOREIGN KEY (device_id) REFERENCES device (id)
 );
 CREATE INDEX idx_device_accounts ON account_device (device_id);
+
+-- ---------------------------------------------------------------- wrong book (docs/WRONGBOOK.md)
+-- Nothing here is ever shown to the child. No topic name, no counter, no "review this" wording reaches
+-- the TV (docs/WRONGBOOK.md §10): these tables feed the picker and the parent H5, and only those two.
+-- Kept at the end of the file on purpose: paper.account_id points at account, and MySQL refuses a
+-- foreign key whose target table has not been created yet. Moving this block up breaks the import.
+
+CREATE TABLE paper (
+  id             TEXT    NOT NULL,
+  device_id      TEXT    NOT NULL,
+  account_id     TEXT    NOT NULL,
+  subject_id     INTEGER NULL,
+  shot_count     INTEGER NOT NULL DEFAULT 0,
+  ocr_status     TEXT    NOT NULL DEFAULT 'none'
+                   CHECK (ocr_status IN ('none','queued','done','failed')),
+  item_total     INTEGER NOT NULL DEFAULT 0,
+  item_confirmed INTEGER NOT NULL DEFAULT 0,
+  captured_at    TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  confirmed_at   TEXT    NULL,
+  purge_at       TEXT    NOT NULL,
+  purged_at      TEXT    NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (device_id)  REFERENCES device (id),
+  FOREIGN KEY (account_id) REFERENCES account (id),
+  FOREIGN KEY (subject_id) REFERENCES subject (id)
+);
+CREATE INDEX idx_paper_device ON paper (device_id, captured_at);
+CREATE INDEX idx_paper_purge  ON paper (purge_at);
+
+CREATE TABLE wrong_item (
+  id          TEXT    NOT NULL,
+  device_id   TEXT    NOT NULL,
+  source      TEXT    NOT NULL CHECK (source IN ('tv','paper')),
+  question_id INTEGER NULL,
+  paper_id    TEXT    NULL,
+  topic_id    INTEGER NOT NULL,
+  stem_text   TEXT    NULL,
+  occurred_on TEXT    NOT NULL,
+  status      TEXT    NOT NULL DEFAULT 'confirmed'
+                CHECK (status IN ('pending','confirmed','rejected','purged')),
+  confidence  TEXT    NULL CHECK (confidence IN ('high','low')),
+  created_at  TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  FOREIGN KEY (device_id)   REFERENCES device (id),
+  FOREIGN KEY (topic_id)    REFERENCES topic (id),
+  FOREIGN KEY (question_id) REFERENCES question (id),
+  FOREIGN KEY (paper_id)    REFERENCES paper (id)
+);
+CREATE INDEX idx_wrong_item_topic    ON wrong_item (device_id, topic_id, occurred_on);
+CREATE INDEX idx_wrong_item_paper    ON wrong_item (paper_id);
+CREATE INDEX idx_wrong_item_question ON wrong_item (question_id);
+
+CREATE TABLE topic_mastery (
+  device_id     TEXT    NOT NULL,
+  topic_id      INTEGER NOT NULL,
+  score         INTEGER NOT NULL DEFAULT 0,
+  level         INTEGER NOT NULL DEFAULT 0,
+  weight_x10    INTEGER NOT NULL DEFAULT 10,
+  target_qty    INTEGER NOT NULL DEFAULT 0,
+  ready_qty     INTEGER NOT NULL DEFAULT 0,
+  paused_until  TEXT    NULL,
+  total_wrong   INTEGER NOT NULL DEFAULT 0,
+  total_right   INTEGER NOT NULL DEFAULT 0,
+  last_event_at TEXT    NULL,
+  updated_at    TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (device_id, topic_id),
+  FOREIGN KEY (device_id) REFERENCES device (id),
+  FOREIGN KEY (topic_id)  REFERENCES topic (id)
+);
+CREATE INDEX idx_mastery_weak ON topic_mastery (device_id, level);
+
+CREATE TABLE mastery_event (
+  id          TEXT    NOT NULL,
+  device_id   TEXT    NOT NULL,
+  topic_id    INTEGER NOT NULL,
+  -- One line on purpose: migrate.py reads one column declaration per line.
+  kind        TEXT    NOT NULL CHECK (kind IN ('tv_wrong','tv_right','paper_wrong','streak_bonus','parent_adjust','bad_question_void')),
+  delta       INTEGER NOT NULL,
+  score_after INTEGER NOT NULL,
+  ref_id      TEXT    NULL,
+  note        TEXT    NULL,
+  created_at  TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  FOREIGN KEY (device_id) REFERENCES device (id),
+  FOREIGN KEY (topic_id)  REFERENCES topic (id)
+);
+CREATE INDEX idx_mastery_event_topic ON mastery_event (device_id, topic_id, created_at);
+
+CREATE TABLE gen_task (
+  id          TEXT    NOT NULL,
+  device_id   TEXT    NOT NULL,
+  topic_id    INTEGER NOT NULL,
+  level       INTEGER NOT NULL,
+  need_count  INTEGER NOT NULL,
+  done_count  INTEGER NOT NULL DEFAULT 0,
+  route       TEXT    NOT NULL DEFAULT 'template' CHECK (route IN ('template')),
+  status      TEXT    NOT NULL DEFAULT 'queued'
+                CHECK (status IN ('queued','running','done','failed','skipped')),
+  attempts    INTEGER NOT NULL DEFAULT 0,
+  last_error  TEXT    NULL,
+  created_at  TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at  TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  FOREIGN KEY (device_id) REFERENCES device (id),
+  FOREIGN KEY (topic_id)  REFERENCES topic (id)
+);
+CREATE INDEX idx_gen_queued ON gen_task (status, created_at);
+CREATE INDEX idx_gen_topic  ON gen_task (device_id, topic_id, status);

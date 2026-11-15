@@ -90,6 +90,13 @@ CREATE TABLE question (
   param_hash       CHAR(16)          NOT NULL DEFAULT '',  -- hex of the sampled parameters
   created_at       DATETIME          NOT NULL DEFAULT CURRENT_TIMESTAMP,
   retired_at       DATETIME          NULL,
+  -- Which pipeline produced it (docs/WRONGBOOK.md §8). Deliberately not folded into `source`: that
+  -- column says who typed it (ai/manual) and already has data; this one says which assembly line ran.
+  origin           ENUM('seed','template','ai_similar') NOT NULL DEFAULT 'seed',
+  source_wrong_item CHAR(26)         NULL,         -- which mistake caused it; NULL for seeds
+  -- A similar question belongs to one TV's weak spot, not to the shared bank. Without this one child's
+  -- Chinese mistakes would start appearing in another child's groups as soon as there are two devices.
+  owner_device     CHAR(26)          NULL,         -- NULL = public bank
   PRIMARY KEY (id),
   UNIQUE KEY uk_question_dedup (topic_id, template_key, param_hash),
   KEY idx_question_pick (unit_id, difficulty, angle, id),
@@ -185,6 +192,14 @@ CREATE TABLE daily_state (
   -- When it last said so. NULL means "never reported", which is not the same as zero minutes: the
   -- parent page draws a dash rather than a confident 0.
   used_at        DATETIME     NULL,
+  -- The mix snapshot for today (docs/WRONGBOOK.md §6.6): written once with the day's first group and
+  -- then read unchanged, so a bad answer at 17:00 cannot reshuffle the 20:00 group. All NULL on rows
+  -- that predate this feature, which the picker reads as "no snapshot yet, take one now".
+  mix_state      ENUM('S0','S1','S2','S3') NULL,
+  mix_c          TINYINT UNSIGNED NULL,        -- current-unit slots
+  mix_r          TINYINT UNSIGNED NULL,        -- review slots
+  mix_n          TINYINT UNSIGNED NULL,        -- how many weak topics drove the choice
+  mix_note       VARCHAR(120) NULL,            -- one line for the parent: why it went up or down
   updated_at     DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (device_id, day_key),
   CONSTRAINT fk_daily_device FOREIGN KEY (device_id) REFERENCES device (id)
@@ -206,6 +221,11 @@ CREATE TABLE quiz_session (
   passed        TINYINT(1)   NULL,
   award_ms      INT UNSIGNED NULL,                 -- 30 minutes on a pass; 0 otherwise. No half award (B2).
   ticket_jti    CHAR(26)     NULL,
+  -- Which of the served questions came from the review segment, as a JSON array of ids. The mix metric
+  -- needs this after the fact: recomputing it from curriculum_progress is not reliable, because the
+  -- calendar may have moved to the next unit while the child was still answering this group.
+  -- Written for the server's own accounting; never sent to the TV (docs/WRONGBOOK.md §10).
+  review_question_ids JSON   NULL,
   created_at    DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
   KEY idx_session_device_day (device_id, day_key),
@@ -225,7 +245,6 @@ CREATE TABLE quiz_answer (
   answered_at    DATETIME     NULL,
   PRIMARY KEY (session_id, question_id),
   KEY idx_answer_recent (device_id, answered_day, question_id),
-  KEY idx_answer_question (question_id, session_id),
   -- Feeds "do not repeat a question this device has seen": this index is the de-duplication.
   KEY idx_answer_question (question_id, session_id),
   CONSTRAINT fk_answer_session FOREIGN KEY (session_id) REFERENCES quiz_session (id) ON DELETE CASCADE,
@@ -338,4 +357,129 @@ CREATE TABLE account_device (
   KEY idx_device_accounts (device_id),
   CONSTRAINT fk_ad_account FOREIGN KEY (account_id) REFERENCES account (id),
   CONSTRAINT fk_ad_device  FOREIGN KEY (device_id) REFERENCES device (id)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------- wrong book (docs/WRONGBOOK.md)
+-- Nothing here is ever shown to the child. No topic name, no counter, no "review this" wording reaches
+-- the TV (docs/WRONGBOOK.md §10): these tables feed the picker and the parent H5, and only those two.
+-- Kept at the end of the file on purpose: paper.account_id points at account, and MySQL refuses a
+-- foreign key whose target table has not been created yet. Moving this block up breaks the import.
+
+-- A batch of photographed pages (D2: the OCR part is a separate project, so for now a paper is a
+-- container the parent fills by hand — one row per upload, not per question).
+CREATE TABLE paper (
+  id             CHAR(26)         NOT NULL,          -- ULID
+  device_id      CHAR(26)         NOT NULL,
+  account_id     CHAR(26)         NOT NULL,           -- who uploaded it; the audit needs an answer
+  subject_id     TINYINT UNSIGNED NULL,               -- optional: narrows the topic list the parent sees
+  shot_count     TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  -- 'none' is a normal resting state until OCR lands: a hand-entered paper never had text recognised.
+  ocr_status     ENUM('none','queued','done','failed') NOT NULL DEFAULT 'none',
+  item_total     SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+  item_confirmed SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+  captured_at    DATETIME         NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  confirmed_at   DATETIME         NULL,
+  purge_at       DATETIME         NOT NULL,           -- captured_at + 30 days (D4)
+  purged_at      DATETIME         NULL,               -- NULL until the photos are actually gone
+  PRIMARY KEY (id),
+  KEY idx_paper_device (device_id, captured_at),
+  KEY idx_paper_purge (purge_at),
+  CONSTRAINT fk_paper_device  FOREIGN KEY (device_id)  REFERENCES device (id),
+  CONSTRAINT fk_paper_account FOREIGN KEY (account_id) REFERENCES account (id),
+  CONSTRAINT fk_paper_subject FOREIGN KEY (subject_id) REFERENCES subject (id)
+) ENGINE=InnoDB;
+
+-- One row per mistake, from either source. This is the record a parent scrolls, and the thing the
+-- mastery ledger points back at. A TV mistake is written in the same transaction as the grade; a paper
+-- mistake waits for the parent to confirm, because a wrong guess here poisons the next group.
+CREATE TABLE wrong_item (
+  id          CHAR(26)         NOT NULL,
+  device_id   CHAR(26)         NOT NULL,
+  source      ENUM('tv','paper') NOT NULL,
+  -- Exactly one of these two is set: a TV mistake names the question that was served, a paper mistake
+  -- names the batch it came from.
+  question_id INT UNSIGNED     NULL,
+  paper_id    CHAR(26)         NULL,
+  topic_id    INT UNSIGNED     NOT NULL,              -- what the weighting actually keys on
+  stem_text   TEXT             NULL,                  -- recognised or typed; never served back as a question
+  occurred_on DATE             NOT NULL,              -- the TV's day_key basis (04:00 rollover)
+  -- 'confirmed' for TV rows (the grade is the evidence); 'pending' for paper rows until a parent agrees.
+  status      ENUM('pending','confirmed','rejected','purged') NOT NULL DEFAULT 'confirmed',
+  confidence  ENUM('high','low') NULL,                -- only meaningful for paper rows
+  created_at  DATETIME         NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  KEY idx_wrong_item_topic (device_id, topic_id, occurred_on),
+  KEY idx_wrong_item_paper (paper_id),
+  KEY idx_wrong_item_question (question_id),
+  CONSTRAINT fk_wrong_device   FOREIGN KEY (device_id)   REFERENCES device (id),
+  CONSTRAINT fk_wrong_topic    FOREIGN KEY (topic_id)    REFERENCES topic (id),
+  CONSTRAINT fk_wrong_question FOREIGN KEY (question_id) REFERENCES question (id),
+  CONSTRAINT fk_wrong_paper    FOREIGN KEY (paper_id)    REFERENCES paper (id)
+) ENGINE=InnoDB;
+
+-- One row per device × topic: the number the parent reads and the weight the picker uses. `level` and
+-- `weight_x10` are stored rather than derived because both are read on every serve.
+CREATE TABLE topic_mastery (
+  device_id     CHAR(26)         NOT NULL,
+  topic_id      INT UNSIGNED     NOT NULL,
+  score         TINYINT UNSIGNED NOT NULL DEFAULT 0,  -- 0..100, clamped on every event
+  level         TINYINT UNSIGNED NOT NULL DEFAULT 0,  -- L0..L3
+  weight_x10    SMALLINT UNSIGNED NOT NULL DEFAULT 10, -- 10/20/30/40: integers, so no float rounding
+  target_qty    TINYINT UNSIGNED NOT NULL DEFAULT 0,  -- 0/5/7/10; the generator fills up to this
+  ready_qty     SMALLINT UNSIGNED NOT NULL DEFAULT 0, -- cache of "servable questions right now"
+  paused_until  DATETIME         NULL,                -- five wrong in a row: off the review segment
+  total_wrong   INT UNSIGNED     NOT NULL DEFAULT 0,
+  total_right   INT UNSIGNED     NOT NULL DEFAULT 0,
+  last_event_at DATETIME         NULL,
+  updated_at    DATETIME         NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (device_id, topic_id),
+  KEY idx_mastery_weak (device_id, level),
+  CONSTRAINT fk_mastery_device FOREIGN KEY (device_id) REFERENCES device (id),
+  CONSTRAINT fk_mastery_topic  FOREIGN KEY (topic_id)  REFERENCES topic (id)
+) ENGINE=InnoDB;
+
+-- The ledger. Every change to topic_mastery.score has a row here with the weight that caused it, so
+-- "why is this at 72" is a SELECT rather than an argument. `score_after` is the redundancy that makes
+-- the ledger checkable: replay the deltas and the last one must equal the stored score.
+CREATE TABLE mastery_event (
+  id          CHAR(26)       NOT NULL,
+  device_id   CHAR(26)       NOT NULL,
+  topic_id    INT UNSIGNED   NOT NULL,
+  kind        ENUM('tv_wrong','tv_right','paper_wrong','streak_bonus','parent_adjust',
+                   'bad_question_void') NOT NULL,
+  delta       SMALLINT       NOT NULL,               -- signed; the only place the weights live
+  score_after TINYINT UNSIGNED NOT NULL,
+  -- What caused it: wrong_item.id for a paper mistake, '<session_id>:<question_id>' for a TV answer.
+  -- VARCHAR rather than CHAR(26) because the TV case carries both halves of quiz_answer's key.
+  ref_id      VARCHAR(64)    NULL,
+  note        VARCHAR(200)   NULL,
+  created_at  DATETIME       NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  KEY idx_mastery_event_topic (device_id, topic_id, created_at),
+  CONSTRAINT fk_event_device FOREIGN KEY (device_id) REFERENCES device (id),
+  CONSTRAINT fk_event_topic  FOREIGN KEY (topic_id)  REFERENCES topic (id)
+) ENGINE=InnoDB;
+
+-- Generation is asynchronous: the parent confirming a paper should not wait for templates to run. One
+-- row per request, `need_count` up front and `done_count` as it goes, so a crash mid-run is resumable.
+CREATE TABLE gen_task (
+  id          CHAR(26)         NOT NULL,
+  device_id   CHAR(26)         NOT NULL,
+  topic_id    INT UNSIGNED     NOT NULL,
+  level       TINYINT UNSIGNED NOT NULL,              -- the level at request time, for the audit
+  need_count  SMALLINT UNSIGNED NOT NULL,
+  done_count  SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+  -- One route on purpose (D3). A model-generated route would be a new value here plus a new review
+  -- step; until then the CHECK keeps a second path from sneaking in unannounced.
+  route       ENUM('template') NOT NULL DEFAULT 'template',
+  status      ENUM('queued','running','done','failed','skipped') NOT NULL DEFAULT 'queued',
+  attempts    TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  last_error  VARCHAR(500)     NULL,
+  created_at  DATETIME         NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at  DATETIME         NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  KEY idx_gen_queued (status, created_at),
+  KEY idx_gen_topic (device_id, topic_id, status),
+  CONSTRAINT fk_gen_device FOREIGN KEY (device_id) REFERENCES device (id),
+  CONSTRAINT fk_gen_topic  FOREIGN KEY (topic_id)  REFERENCES topic (id)
 ) ENGINE=InnoDB;
