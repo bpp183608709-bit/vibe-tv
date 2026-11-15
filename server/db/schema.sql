@@ -248,7 +248,7 @@ CREATE TABLE quiz_answer (
   -- Feeds "do not repeat a question this device has seen": this index is the de-duplication.
   KEY idx_answer_question (question_id, session_id),
   CONSTRAINT fk_answer_session FOREIGN KEY (session_id) REFERENCES quiz_session (id) ON DELETE CASCADE,
-  CONSTRAINT fk_answer_question FOREIGN KEY (question_id) REFERENCES question (id)
+  CONSTRAINT fk_quizanswer_question FOREIGN KEY (question_id) REFERENCES question (id)
 ) ENGINE=InnoDB;
 
 -- One row per awarded group. Kept after redemption: it is the audit trail behind a parent asking
