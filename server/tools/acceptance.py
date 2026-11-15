@@ -21,16 +21,18 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import random
 import subprocess
 import sys
 import time
 import urllib.error
 import urllib.request
+from collections import Counter, defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
-from server.app import es256, grade as grading, ids, limits, mastery, ticket  # noqa: E402
+from server.app import es256, grade as grading, ids, limits, mastery, mix, picker, ticket  # noqa: E402
 from server.app.db import Database  # noqa: E402
 from server.tools import check_tv_silence, gen_seed_questions, import_curriculum  # noqa: E402
 
@@ -176,6 +178,74 @@ def wrong(q: dict) -> str:
     if q["qtype"] == "choice":
         return next(o["label"] for o in q["options"] if not o["correct"])
     return "X"
+
+
+def legacy_pick(db, device_id: str, now_ms: int, difficulty: int) -> list[int]:
+    """`pick_group` as it was before the quota (docs/WRONGBOOK.md §6.5), copied verbatim.
+
+    This is a golden reference, not a second implementation to keep in step. It reads candidates
+    through `picker._candidates` on purpose — the query is not what the quota changed — and then does
+    the ordering, the subject rotation, the two-per-topic cap and the shuffle exactly as they were,
+    including the *second* `random.Random(now_ms)` for the shuffle. Reusing the first generator there
+    would shift the served order and this test would not notice, which is the whole failure it exists
+    to catch.
+
+    If this has to be edited, the served group has changed. That is allowed, but it is a decision to
+    be made in daylight, not a side effect.
+    """
+    progress = picker.ensure_progress(db, device_id, now_ms)
+    rows = picker._candidates(db, device_id, difficulty)
+    rng = random.Random(now_ms)
+    tiers = {}
+    for row in rows:
+        current = progress.get(int(row["textbook_id"]), 1)
+        ordinal = int(row["unit_ordinal"])
+        tiers[id(row)] = 0 if ordinal == current else (1 if current - 2 <= ordinal < current else 2)
+
+    def key(row: dict) -> tuple:
+        return (tiers[id(row)], -int(row["wrong_count"]), row.get("last_seen") or "", rng.random())
+
+    fresh = [row for row in rows if not picker._seen_recently(row, now_ms)]
+    stale = [row for row in rows if picker._seen_recently(row, now_ms)]
+    ordered = sorted(fresh, key=key) + sorted(stale, key=key)
+
+    by_subject: dict[int, list[dict]] = defaultdict(list)
+    for row in ordered:
+        by_subject[int(row["subject_id"])].append(row)
+
+    picked: list[dict] = []
+    per_topic: Counter[int] = Counter()
+
+    def take(row: dict) -> None:
+        picked.append(row)
+        per_topic[int(row["topic_id"])] += 1
+        by_subject[int(row["subject_id"])].remove(row)
+
+    def take_from(subject_id: int) -> bool:
+        for row in by_subject[subject_id]:
+            if per_topic[int(row["topic_id"])] < 2:
+                take(row)
+                return True
+        return False
+
+    subject_order = sorted(by_subject)
+    for subject_id in subject_order:
+        if len(picked) >= limits.GROUP_SIZE:
+            break
+        take_from(subject_id)
+
+    while len(picked) < limits.GROUP_SIZE:
+        took_any = False
+        for subject_id in subject_order:
+            if len(picked) >= limits.GROUP_SIZE:
+                break
+            if take_from(subject_id):
+                took_any = True
+        if not took_any:
+            break
+
+    random.Random(now_ms).shuffle(picked)
+    return [int(row["id"]) for row in picked]
 
 
 def submit(device_id: str, session: dict, correct_count: int, day: str = DAY) -> dict:
@@ -490,6 +560,157 @@ def main() -> int:
               str(final6))
         check("the parent page can still promise a way out",
               final6["need_right"] == mastery.need_right(final6["score"]) > 0, str(final6))
+
+        # ---- P0-C: the five slots are split by need (docs/WRONGBOOK.md §6) ----
+        # One weak topic is enough to set the state: the count and the depth are judged separately and
+        # the heavier one wins, so a single L3 topic is S3 on its own.
+        probe = Database(dsn)
+        probe.connect()
+
+        # Yesterday, relative to DAY: these cases are about the quota, and a mistake dated *today*
+        # would trip the newcomer rule instead (§6.6 is tested on its own further down).
+        BEFORE_DAY = "2026-11-10 12:00:00"
+
+        def weak_topics(count: int) -> list[int]:
+            """Topics with questions to spare, outside the current unit and the two before it."""
+            return [int(row["topic_id"]) for row in probe.query(
+                "SELECT q.topic_id FROM question q JOIN unit u ON u.id = q.unit_id"
+                " WHERE q.difficulty <= 2 AND u.ordinal >= 5 AND q.verify_status = 'sympy_ok'"
+                f" GROUP BY q.topic_id HAVING COUNT(*) >= 3 ORDER BY q.topic_id LIMIT {int(count)}")]
+
+        def weak_topic() -> int:
+            return weak_topics(1)[0]
+
+        def mark_weak(device_id: str, topic_id: int, score: int, when: str = BEFORE_DAY) -> None:
+            level = mastery.level_of(score)
+            with probe.tx() as cur:
+                cur.execute(
+                    "INSERT INTO topic_mastery (device_id, topic_id, score, level, weight_x10,"
+                    " target_qty, last_event_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                    (device_id, topic_id, score, level, mastery.weight_x10(level),
+                     mastery.target_qty(level), when, when))
+
+        def split(device_id: str, session: dict) -> tuple[int, int, int]:
+            """(review, current-unit, total), read back from the database rather than the response."""
+            raw = probe.scalar("SELECT review_question_ids FROM quiz_session WHERE id = ?",
+                               (session["session_id"],)) or "[]"
+            review = set(json.loads(raw))
+            qids = [question["id"] for question in session["questions"]]
+            rows = probe.query(
+                "SELECT q.id, u.ordinal, cp.current_unit_ordinal AS current FROM question q"
+                " JOIN unit u ON u.id = q.unit_id"
+                " JOIN curriculum_progress cp ON cp.textbook_id = q.textbook_id AND cp.device_id = ?"
+                f" WHERE q.id IN ({','.join('?' for _ in qids)})", [device_id] + qids)
+            current = sum(1 for row in rows
+                          if int(row["ordinal"]) == int(row["current"]) and int(row["id"]) not in review)
+            return len(review), current, len(qids)
+
+        # S0 / S1 / S2 / S3 by one score each, because a single L3 topic is S3 without help.
+        for score, state, expected_r, expected_c in ((None, mix.S0, 0, 5),
+                                                     (12, mix.S1, 1, 4),
+                                                     (36, mix.S2, 2, 3),
+                                                     (71, mix.S3, 2, 2)):
+            device7 = pair()
+            topic7 = weak_topic()
+            if score is not None:
+                mark_weak(device7, topic7, score)
+            session7 = serve(device7)
+            review7, current7, total7 = split(device7, session7)
+            stored_state = probe.scalar(
+                "SELECT mix_state FROM daily_state WHERE device_id = ? AND day_key = ?",
+                (device7, DAY))
+            check(f"{state} puts {expected_r} of 5 in the review segment",
+                  (review7, total7) == (expected_r, 5), f"{review7}/{total7}")
+            check(f"{state} keeps the current unit within {expected_c}",
+                  current7 <= expected_c, f"{current7} current-unit questions")
+            check(f"{state} is the state the snapshot recorded", stored_state == state,
+                  str(stored_state))
+
+        # The split is decided once a day. Making the topic worse cannot move it until tomorrow.
+        # Driven through `pick_group` rather than HTTP: the daily per-topic cap would otherwise be
+        # indistinguishable from the split moving, and this case is about the split alone.
+        device8 = pair()
+        mark_weak(device8, weak_topic(), 36)                 # one L2 topic -> S2, two review slots
+        first8 = picker.pick_group(probe, device8, DAY, 1_770_000_000_000, limits.DEFAULT_DIFFICULTY)
+        with probe.tx() as cur:
+            cur.execute("UPDATE topic_mastery SET score = 100, level = 3, weight_x10 = 40"
+                        " WHERE device_id = ?", (device8,))
+        second8 = picker.pick_group(probe, device8, DAY, 1_770_000_001_000, limits.DEFAULT_DIFFICULTY)
+        check("the day's split is taken from the state at the first group",
+              (first8.plan["state"], second8.plan["state"]) == (mix.S2, mix.S2),
+              f"{first8.plan['state']} then {second8.plan['state']}")
+        check("so the second group still has two review slots",
+              len(first8.review_ids) == len(second8.review_ids) == 2,
+              f"{len(first8.review_ids)} then {len(second8.review_ids)}")
+        check("even though the topic is now very weak",
+              mastery.state(probe, device8, weak_topic())["level"] == 3, "level did not change")
+
+        # One topic cannot fill the day: three questions a day is the cap, and a slot that runs out of
+        # candidates goes back to the course rather than shrinking the group.
+        device9 = pair()
+        topic9 = weak_topic()
+        mark_weak(device9, topic9, 71)                       # L3, and the daily cap is 3
+        per_group = [split(device9, serve(device9)) for _ in range(3)]
+        check("the daily cap drains the review slots one group at a time",
+              [item[0] for item in per_group] == [2, 1, 0], str(per_group))
+        check("and a slot with no candidates goes back to the course, not missing",
+              [item[2] for item in per_group] == [5, 5, 5], str(per_group))
+
+        # Something that goes wrong today gets one slot even though the day's snapshot says none.
+        device10 = pair()
+        topic10 = weak_topic()
+        before_ten = serve(device10)                         # snapshot taken while nothing was wrong
+        mark_weak(device10, topic10, 71, when=f"{DAY} 10:00:00")
+        after_ten = serve(device10)
+        check("nothing was reviewed while nothing was wrong",
+              split(device10, before_ten)[0] == 0, str(split(device10, before_ten)))
+        check("a mistake made today is practised today",
+              split(device10, after_ten)[0] == 1, str(split(device10, after_ten)))
+        check("and the snapshot still says what it said this morning",
+              probe.scalar("SELECT mix_state FROM daily_state WHERE device_id = ? AND day_key = ?",
+                           (device10, DAY)) == mix.S0)
+
+        # ---- P0-D: weighted draws, reproducible, and no drift when nothing is wrong ----
+        def fake(topic_id: int, count: int) -> list[dict]:
+            return [{"id": 1000 + topic_id * 100 + i, "topic_id": topic_id} for i in range(count)]
+
+        # Supply equal to target, so the weights are the bare 4 and 2 of §6.7 and the ratio is 2:1.
+        weak_pair = {1: {"level": 3, "score": 71, "topic_id": 1}, 2: {"level": 1, "score": 12, "topic_id": 2}}
+        pool_pair = fake(1, 10) + fake(2, 5)
+        supply_pair = Counter({1: 10, 2: 5})
+        draws = Counter()
+        for seed in range(400):
+            first_pick = picker._review_pick(pool_pair, weak_pair, supply_pair, random.Random(seed), 1,
+                                             Counter())[0]
+            draws[int(first_pick["topic_id"])] += 1
+        share = draws[1] / max(1, sum(draws.values()))
+        check("the weaker topic is drawn about twice as often (4:2)",
+              0.6 <= share <= 0.74, f"L3 share {share:.2f} over {sum(draws.values())} draws")
+        same = [int(picker._review_pick(pool_pair, weak_pair, supply_pair, random.Random(7), 1,
+                                        Counter())[0]["id"]) for _ in range(2)]
+        check("the same seed draws the same question", same[0] == same[1], str(same))
+
+        # The whole group twice at the same instant: same questions, or a report cannot be reproduced.
+        device12 = pair()
+        topic12 = weak_topic()
+        mark_weak(device12, topic12, 71)
+        once = picker.pick_group(probe, device12, NEXT_DAY, 1_770_000_000_000, limits.DEFAULT_DIFFICULTY)
+        twice = picker.pick_group(probe, device12, NEXT_DAY, 1_770_000_000_000, limits.DEFAULT_DIFFICULTY)
+        check("the same moment produces the same group",
+              [int(q["id"]) for q in once.questions] == [int(q["id"]) for q in twice.questions],
+              str([int(q["id"]) for q in once.questions]))
+        check("and two review questions in it", len(once.review_ids) == 2, str(once.review_ids))
+
+        # Zero regression (§6.5): with nothing weak, today's picker must return the old group exactly.
+        device13 = pair()
+        frozen = legacy_pick(probe, device13, 1_770_000_000_000, limits.DEFAULT_DIFFICULTY)
+        actual = picker.pick_group(probe, device13, DAY, 1_770_000_000_000, limits.DEFAULT_DIFFICULTY)
+        check("with no weak topic the picker serves exactly the group it used to",
+              [int(q["id"]) for q in actual.questions] == frozen,
+              f"{[int(q['id']) for q in actual.questions]} vs {frozen}")
+        check("and takes nothing from the review segment", actual.review_ids == [],
+              str(actual.review_ids))
+        probe.close()
 
         # ---- case 9: 0.75 and 3/4 are the same answer ----
         probe = Database(dsn)

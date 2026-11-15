@@ -56,7 +56,8 @@ server/
     make_tv_fixture.py   连上跑着的服务端真签一张票，存成电视端的测试向量
     check_schema_parity.py 两份 DDL 的列名比对
     check_tv_silence.py  电视端不许出现薄弱知识点 / 复习相关的任何字样或字段（WRONGBOOK §10）
-    acceptance.py        端到端验收，132 条断言（P1 30 + P3 20 + 账号 53 + 掌握度与静默 29）
+    acceptance.py        端到端验收，158 条断言（P1 30 + P3 20 + 账号 53 + 掌握度与静默 29
+                         + 三段配比与零回归 26）
 ```
 
 ## 跑起来
@@ -70,11 +71,12 @@ python -m server.app.es256                   # 曲线自检
 python -m server.app.limits                  # 上限自检
 python -m server.app.ids                     # ULID 自检
 python -m server.app.mastery                 # 掌握度权重/档位/过关次数自检
+python -m server.app.mix                     # 三段配比 S0–S3 与权重自检
 python server/tools/interop_es256.py         # 与 openssl 交叉验签（需要 openssl）
 python server/tools/check_schema_parity.py   # MySQL / SQLite 两份 DDL 不许漂移
 python server/tools/check_tv_silence.py      # 电视端零表达（WRONGBOOK §10）
 
-# 一条龙：建库(内存/文件) → 导树 → 造题 → 起服务 → 132 条验收
+# 一条龙：建库(内存/文件) → 导树 → 造题 → 起服务 → 158 条验收
 python server/tools/acceptance.py
 ```
 

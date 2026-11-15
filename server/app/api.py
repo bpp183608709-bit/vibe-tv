@@ -193,7 +193,7 @@ class Api:
 
         difficulty = limits.target_difficulty(row)
         try:
-            questions = picker.pick_group(self.db, device_id, now_ms, difficulty)
+            group = picker.pick_group(self.db, device_id, day_key, now_ms, difficulty)
         except picker.NotEnoughQuestions as exc:
             raise grading.GradeError("no-questions", 503, str(exc)) from exc
 
@@ -202,10 +202,15 @@ class Api:
         with self.db.tx() as cur:
             cur.insert(
                 "INSERT INTO quiz_session (id, device_id, day_key, issued_at, expires_at, status,"
-                " target_difficulty, question_ids, created_at) VALUES (?, ?, ?, ?, ?, 'issued', ?, ?, ?)",
+                " target_difficulty, question_ids, review_question_ids, created_at)"
+                " VALUES (?, ?, ?, ?, ?, 'issued', ?, ?, ?, ?)",
                 (
                     session_id, device_id, day_key, limits.to_iso(now_ms), limits.to_iso(expires_at),
-                    difficulty, json.dumps([int(q["id"]) for q in questions]), limits.to_iso(now_ms),
+                    difficulty, json.dumps([int(q["id"]) for q in group.questions]),
+                    # Server-side bookkeeping only: the day's per-topic cap and the parent's mix
+                    # metric read this. It never appears in the response (§9, §10).
+                    json.dumps(group.review_ids),
+                    limits.to_iso(now_ms),
                 ),
             )
             cur.execute(
@@ -219,7 +224,7 @@ class Api:
             "day_key": day_key,
             "expires_at": limits.to_iso(expires_at),
             "ttl_seconds": limits.SESSION_TTL_MS // 1000,
-            "questions": picker.payload(self.db, questions),
+            "questions": picker.payload(self.db, group.questions),
             "quota": limits.quota_state(
                 self.db.query_one(
                     "SELECT * FROM daily_state WHERE device_id = ? AND day_key = ?", (device_id, day_key)
