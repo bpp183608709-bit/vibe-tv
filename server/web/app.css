@@ -646,3 +646,136 @@ body {
   border-radius: 12px;
 }
 .quiet:active { background: var(--fill); }
+
+/* ------------------------------------------------------------------ the weak list (P2)
+
+   Components the mockup needed and the four existing tabs did not: a score row with a bar, a source
+   badge, a filter strip, a flow of score changes, a segmented control and a bottom action. They follow
+   the same variables as everything else, so the dark theme is still one block at the top. */
+
+.subhead { display: flex; align-items: center; gap: 10px; margin: 2px 4px 10px; }
+.subhead button {
+  border: 0; background: none; padding: 6px 2px; margin: 0;
+  color: var(--tint); font: inherit; font-size: 15px;
+  display: flex; align-items: center; gap: 2px;
+}
+.subhead h1 { margin: 0; font-size: 17px; letter-spacing: -0.01em; }
+
+/* one topic on the list */
+.mrow { padding: 11px 0; border-top: 1px solid var(--sep); }
+.mrow:first-of-type { border-top: 0; }
+.mrow .top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.mrow .nm { font-size: 15px; font-weight: 500; letter-spacing: -0.01em; }
+.mrow .need { font-size: 13.5px; font-weight: 600; white-space: nowrap;
+              font-variant-numeric: tabular-nums; }
+.mrow .need.done { color: var(--ok); }
+.mrow .sub2 { display: flex; align-items: center; gap: 7px; margin: 5px 0 7px; }
+.mrow .sub2 .u { font-size: 12px; color: var(--tertiary); }
+.mrow .sub2 .sc { margin-left: auto; font-size: 12.5px; font-weight: 600; color: var(--secondary);
+                  font-variant-numeric: tabular-nums; }
+.mbar { height: 6px; border-radius: 999px; background: var(--fill); overflow: hidden; margin-top: 2px; }
+.mbar > i { display: block; height: 100%; border-radius: 999px; background: var(--bad); }
+.mbar.l1 > i { background: var(--tint); }
+.mbar.l2 > i { background: #ff9500; }
+.pill.l1 { background: var(--tint-soft); color: var(--tint); }
+.pill.l2 { background: rgba(255, 149, 0, 0.14); color: #b26a00; }
+
+/* a card header with "全部 N 个 ›" on the right */
+.sec-in { display: flex; align-items: baseline; justify-content: space-between; }
+.sec-in a { font-size: 13px; color: var(--tint); text-decoration: none; }
+.sec { display: flex; align-items: baseline; justify-content: space-between; margin: 20px 4px 0; }
+.sec h2 { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
+          text-transform: uppercase; color: var(--secondary); }
+.sec a { font-size: 13px; color: var(--tint); text-decoration: none; }
+
+/* where a mistake came from */
+.src { display: inline-flex; align-items: center; gap: 3px; font-size: 11.5px; font-weight: 600;
+       padding: 2px 7px; border-radius: 6px; background: var(--fill); color: var(--secondary); }
+.src.tv { background: var(--tint-soft); color: var(--tint); }
+.src.man { background: rgba(255, 149, 0, 0.14); color: #b26a00; }
+@media (prefers-color-scheme: dark) {
+  .src.man { background: rgba(255, 159, 10, 0.2); color: #ff9f0a; }
+  .mbar.l2 > i { background: #ff9f0a; }
+  .pill.l2 { background: rgba(255, 159, 10, 0.2); color: #ff9f0a; }
+}
+
+/* the one action on the wrong tab */
+.dock { position: fixed; left: 0; right: 0; bottom: var(--tabbar); z-index: 8;
+        padding: 12px 16px; background: linear-gradient(to bottom, transparent, var(--bg) 46%); }
+.dock .primary { margin: 0; }
+.view.has-dock { padding-bottom: calc(var(--tabbar) + 84px); }
+
+/* 全部 / 电视 / 手动录入 */
+.filters { display: flex; gap: 7px; margin: 10px 0 2px; }
+.filters .f { border: 1px solid var(--sep); background: var(--card); color: var(--secondary);
+              border-radius: 999px; padding: 6px 12px; font: inherit; font-size: 13px;
+              font-weight: 500; }
+.filters .f.on { background: var(--tint); border-color: var(--tint); color: #fff; font-weight: 600; }
+.filters .f b { font-weight: 600; opacity: 0.7; margin-left: 4px; }
+
+/* the detail page's score */
+.hero { margin: 6px 0; }
+.hero .score { font-size: 52px; line-height: 1; font-weight: 600; letter-spacing: -0.03em;
+               font-variant-numeric: tabular-nums; }
+.heroline { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 13.5px;
+            color: var(--secondary); flex-wrap: wrap; }
+.heroline b { color: var(--label); }
+
+/* the ledger, as the parent reads it */
+.flow { display: grid; }
+.flow .f { display: flex; align-items: center; gap: 10px; padding: 10px 0;
+           border-top: 1px solid var(--sep); font-size: 13.5px; }
+.flow .f:first-child { border-top: 0; }
+.flow .f .when { color: var(--tertiary); font-size: 12px; font-variant-numeric: tabular-nums;
+                 flex: 0 0 auto; }
+.flow .f .what { color: var(--label); }
+.flow .f .d { margin-left: auto; font-weight: 600; font-variant-numeric: tabular-nums; }
+.flow .f .d.up { color: var(--bad); }
+.flow .f .d.dn { color: var(--ok); }
+
+/* 数学 / 语文 / 英语 */
+.seg { display: flex; gap: 3px; background: var(--fill); border-radius: 11px; padding: 3px; margin: 0 0 10px; }
+.seg button { flex: 1; border: 0; background: none; font: inherit; text-align: center;
+              font-size: 14px; font-weight: 500; padding: 7px 0; border-radius: 9px;
+              color: var(--secondary); }
+.seg button.on { background: var(--card); color: var(--label); font-weight: 600;
+                 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+
+/* the add sheet's topic list, capped so the stepper and the button stay on screen */
+.picker { max-height: 42dvh; overflow-y: auto; margin: 0 -4px; }
+.sheet h2.plain { text-transform: none; letter-spacing: -0.01em; font-size: 17px;
+                  color: var(--label); margin: 2px 4px 12px; }
+.sheet .footer-note { margin: 8px 4px 14px; }
+.sheet { max-height: 92dvh; overflow-y: auto; }
+
+/* the ±10 form, revealed in place */
+.adjust { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--sep); }
+.adjust input {
+  width: 100%; border: 1px solid var(--sep); background: var(--card);
+  border-radius: 11px; padding: 10px 12px; font: inherit; font-size: 15px; color: var(--label);
+  margin-bottom: 8px;
+}
+.adjust input:focus { outline: none; border-color: var(--tint); }
+.adjust .two { display: flex; gap: 8px; }
+.adjust .two button {
+  flex: 1; border: 1px solid var(--sep); background: var(--card); color: var(--label);
+  border-radius: 11px; padding: 10px; font: inherit; font-size: 14.5px; font-weight: 600;
+}
+.adjust .two button[data-delta="-10"] { color: var(--bad); }
+.adjust .two button[data-delta="10"] { color: var(--ok); }
+.adjust .two button:disabled { opacity: 0.4; }
+
+/* the sentence to say out loud, and the two inputs on the progress page */
+.say { margin: 2px 0 12px; font-size: 16px; line-height: 1.55; letter-spacing: -0.01em; }
+.row select {
+  flex: 0 0 auto; max-width: 46%; border: 0; background: none; color: var(--secondary);
+  font: inherit; font-size: 14.5px; font-weight: 500; text-align: right;
+}
+.row .k small { display: block; font-size: 12px; font-weight: 400; color: var(--tertiary);
+                margin-top: 2px; line-height: 1.4; }
+.date-input {
+  width: 100%; margin-top: 10px; border: 1px solid var(--sep); background: var(--card);
+  border-radius: 11px; padding: 10px 12px; font: inherit; font-size: 15px; color: var(--label);
+  -webkit-appearance: none; appearance: none;
+}
+.date-input:focus { outline: none; border-color: var(--tint); }

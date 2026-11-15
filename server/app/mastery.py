@@ -212,19 +212,75 @@ def record_paper_wrong(cur, *, device_id: str, topic_id: int, wrong_item_id: str
 
 
 def adjust(cur, *, device_id: str, topic_id: int, delta: int, note: str, now_iso: str,
-           lock: str = "") -> dict:
+           ref_id: str | None = None, lock: str = "") -> dict:
     """The parent's ±10. Signed by the caller; the absolute value is capped at PARENT_ADJUST so a
-    stray value from the H5 cannot rewrite a score in one request."""
+    stray value from the H5 cannot rewrite a score in one request.
+
+    `ref_id` carries the account that pressed the button (docs/WRONGBOOK.md §9: 必填理由，写审计). The
+    reason is in `note`; the actor is an id in `ref_id`, which is what every other kind uses that
+    column for — the ledger stays one table, with the meaning of the reference decided by `kind`.
+    """
     step = max(-PARENT_ADJUST, min(PARENT_ADJUST, int(delta)))
     row = _row(cur, device_id, topic_id, now_iso, lock)
     score = clamp(int(row["score"]) + step)
     _emit(cur, device_id=device_id, topic_id=topic_id, kind="parent_adjust", delta=score - int(row["score"]),
-          score_after=score, ref_id=None, note=note or "家长手动调整", now_iso=now_iso)
+          score_after=score, ref_id=ref_id, note=note or "家长手动调整", now_iso=now_iso)
     _store(cur, device_id=device_id, topic_id=topic_id, score=score,
            right_streak=0, wrong_streak=0, paused_until=row["paused_until"],
            total_wrong=int(row["total_wrong"] or 0), total_right=int(row["total_right"] or 0),
            now_iso=now_iso)
     return {"score": score, "level": level_of(score), "delta": step}
+
+
+def void_question(cur, *, device_id: str, question_id: int, note: str, now_iso: str,
+                  ref_id: str | None = None) -> dict:
+    """Undo what one bad question did, when a parent says "这题有问题" (docs/WRONGBOOK.md §11).
+
+    The events caused by a question are the ones whose `ref_id` is `session:question` and ends with this
+    question's id. Their deltas are summed per topic and applied backwards in a single
+    `bad_question_void` row, so the ledger still adds up: replaying every row lands on the stored score.
+
+    The counters are rewound as well (`total_wrong` / `total_right`), because they are shown to the
+    parent next to the score and a total that counts a withdrawn question would contradict the flow.
+    Streaks are not: they are transient, and the next answer re-establishes them.
+    """
+    suffix = f":{int(question_id)}"
+    rows = cur.query(
+        "SELECT topic_id, kind, delta, ref_id FROM mastery_event"
+        " WHERE device_id = ? AND ref_id LIKE ?",
+        (device_id, f"%{suffix}"),
+    )
+    # `LIKE '%:12'` cannot match '…:112', but it can match a ref whose session id happens to end in a
+    # colon; the exact suffix check keeps this from depending on that being impossible.
+    rows = [row for row in rows if str(row["ref_id"] or "").endswith(suffix)]
+
+    per_topic: dict[int, dict] = {}
+    for row in rows:
+        if row["kind"] == "parent_adjust" or row["kind"] == "bad_question_void":
+            continue
+        slot = per_topic.setdefault(int(row["topic_id"]), {"delta": 0, "wrong": 0, "right": 0})
+        slot["delta"] += int(row["delta"])
+        if row["kind"] == "tv_wrong":
+            slot["wrong"] += 1
+        elif row["kind"] == "tv_right":
+            slot["right"] += 1
+
+    touched = []
+    for topic_id, slot in per_topic.items():
+        row = _row(cur, device_id, topic_id, now_iso, "")
+        before = int(row["score"])
+        score = clamp(before - slot["delta"])
+        _emit(cur, device_id=device_id, topic_id=topic_id, kind="bad_question_void",
+              delta=score - before, score_after=score, ref_id=ref_id,
+              note=f"{note}（题目 #{int(question_id)}）" if note else f"题目 #{int(question_id)} 下架",
+              now_iso=now_iso)
+        _store(cur, device_id=device_id, topic_id=topic_id, score=score,
+               right_streak=0, wrong_streak=0, paused_until=row["paused_until"],
+               total_wrong=max(0, int(row["total_wrong"] or 0) - slot["wrong"]),
+               total_right=max(0, int(row["total_right"] or 0) - slot["right"]), now_iso=now_iso)
+        touched.append({"topic_id": topic_id, "score": score, "level": level_of(score),
+                        "delta": score - before})
+    return {"topics": touched, "events": len(rows)}
 
 
 def to_iso(now_ms: int) -> str:

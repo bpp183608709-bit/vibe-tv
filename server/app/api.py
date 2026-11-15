@@ -16,6 +16,13 @@
     GET  /v1/h5/config           read the three numbers
     PUT  /v1/h5/config           write them, bump the version
     GET  /v1/h5/wrongbook        wrong answers in the last N days, with answers and explanations
+    GET  /v1/h5/mastery          the weak topics, worst first, with today's quota snapshot
+    GET  /v1/h5/mastery/{id}     one topic: score, the ledger behind it, the line to say out loud
+    POST /v1/h5/topic/{id}/adjust  the parent's ±10, with a reason
+    POST /v1/h5/paper            record "he got 3 wrong on this topic" from a paper
+    POST /v1/h5/question/{id}/flag  a bad question: stop serving it, give back the score it caused
+    GET  /v1/h5/curriculum       the term's first day and where each book's unit stands
+    PUT  /v1/h5/curriculum       set that first day; PUT …/unit overrides one book by hand
     GET  /v1/h5/report           seven days: attempts, passes, the three worst topics
     POST /v1/h5/unpair           drop this phone's cookie
 
@@ -250,6 +257,12 @@ class Api:
 
 GRADE_PATH = re.compile(r"^/v1/quiz/([A-Z0-9]{26})/grade$")
 
+#: Parent-page routes carrying an id. Compiled once, matched after the exact paths, so a typo in a
+#: number is a 404 rather than a route that silently takes the wrong topic.
+H5_TOPIC_PATH = re.compile(r"^/v1/h5/mastery/(\d+)$")
+H5_TOPIC_ADJUST_PATH = re.compile(r"^/v1/h5/topic/(\d+)/adjust$")
+H5_QUESTION_FLAG_PATH = re.compile(r"^/v1/h5/question/(\d+)/flag$")
+
 
 def make_handler(api: Api):
     class Handler(BaseHTTPRequestHandler):
@@ -451,9 +464,48 @@ def make_handler(api: Api):
                 api.h5.device_of(account["id"], device_id)
                 try:
                     days = int(query.get("days") or 7)
+                    limit = int(query.get("limit") or 60)
+                    offset = int(query.get("offset") or 0)
                 except ValueError:
-                    days = 7
-                self._send(200, api.h5.wrongbook(device_id, self._day_key(query, body, now_ms), days))
+                    days, limit, offset = 7, 60, 0
+                self._send(200, api.h5.wrongbook(
+                    device_id, self._day_key(query, body, now_ms), days, limit, offset,
+                    str(query.get("source") or "all"),
+                ))
+            elif path == "/v1/h5/mastery" and method == "GET":
+                api.h5.device_of(account["id"], device_id)
+                self._send(200, api.h5.weak_list(
+                    device_id, self._day_key(query, body, now_ms), now_ms))
+            elif H5_TOPIC_PATH.match(path) and method == "GET":
+                api.h5.device_of(account["id"], device_id)
+                self._send(200, api.h5.weak_topic(
+                    device_id, int(H5_TOPIC_PATH.match(path).group(1)),
+                    self._day_key(query, body, now_ms), now_ms))
+            elif H5_TOPIC_ADJUST_PATH.match(path) and method == "POST":
+                api.h5.device_of(account["id"], device_id)
+                self._send(200, api.h5.adjust_topic(
+                    device_id, int(H5_TOPIC_ADJUST_PATH.match(path).group(1)), body, now_ms,
+                    account["id"]))
+            elif path == "/v1/h5/topics" and method == "GET":
+                api.h5.device_of(account["id"], device_id)
+                self._send(200, api.h5.catalog(device_id))
+            elif path == "/v1/h5/paper" and method == "POST":
+                api.h5.device_of(account["id"], device_id)
+                self._send(200, api.h5.add_paper(device_id, account["id"], body, now_ms))
+            elif H5_QUESTION_FLAG_PATH.match(path) and method == "POST":
+                api.h5.device_of(account["id"], device_id)
+                self._send(200, api.h5.flag_question(
+                    device_id, int(H5_QUESTION_FLAG_PATH.match(path).group(1)), body, now_ms,
+                    account["id"]))
+            elif path == "/v1/h5/curriculum" and method == "GET":
+                api.h5.device_of(account["id"], device_id)
+                self._send(200, api.h5.curriculum_overview(device_id, now_ms))
+            elif path == "/v1/h5/curriculum" and method == "PUT":
+                api.h5.device_of(account["id"], device_id)
+                self._send(200, api.h5.put_anchor(device_id, body, now_ms))
+            elif path == "/v1/h5/curriculum/unit" and method == "PUT":
+                api.h5.device_of(account["id"], device_id)
+                self._send(200, api.h5.put_unit(device_id, body, now_ms))
             elif path == "/v1/h5/report" and method == "GET":
                 api.h5.device_of(account["id"], device_id)
                 self._send(200, api.h5.report(device_id, self._day_key(query, body, now_ms), now_ms))

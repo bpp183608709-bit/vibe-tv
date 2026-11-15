@@ -1156,6 +1156,244 @@ def main() -> int:
         probe.close()
         check("and the device token is cleared", leftover is None, str(leftover))
 
+        # ---- P2: the weak list, the ledger, and the parent's two hands ----
+        #
+        # One promise holds this block together: a number the parent can act on, and an action that
+        # changes what the child is asked next — while the television still says nothing (that is §10,
+        # asserted above by the frozen protocol shapes). Nothing here may add a field to `/quiz/next`.
+        p2 = start(T + 3_600_000)
+        p2_device = p2["device_id"]
+        dad = Parent()
+        status, body = dad.register("p2@example.com")
+        check("the third parent has an account", status == 201, f"{status} {body}")
+        status, body = dad.call("POST", "/v1/h5/pair",
+                                {"pair_code": p2["pair_code"], "now_ms": T + 3_660_000})
+        check("and holds the P2 television",
+              status == 200 and body["device"]["device_id"] == p2_device, f"{status} {body}")
+        weak_url = f"/v1/h5/mastery?day_key={DAY}&device_id={p2_device}"
+
+        status, body = dad.call("GET", weak_url)
+        check("a television nobody has used has no weak topics",
+              status == 200 and body["count"] == 0 and body["mix"] is None, f"{status} {body}")
+
+        first_group = serve(p2_device, DAY)
+        submit(p2_device, first_group, 1, DAY)          # four wrong answers, one right
+        status, body = dad.call("GET", weak_url)
+        listed = body["items"]
+        check("wrong answers put topics on the weak list",
+              body["count"] >= 1 and all(item["score"] >= 12 for item in listed), str(listed[:2]))
+        check("worst first",
+              [item["score"] for item in listed] == sorted(
+                  (item["score"] for item in listed), reverse=True), str(listed[:2]))
+        check("every row says how many right answers are left",
+              all(item["need_right"] >= 1 for item in listed), str(listed[:2]))
+        check("and carries the lesson it belongs to",
+              all(item["unit"] and item["subject"] and item["topic"] for item in listed), str(listed[:1]))
+        check("the day's split is reported as it was frozen",
+              body["mix"] and body["mix"]["c"] + body["mix"]["p"] + body["mix"]["r"] == 5,
+              str(body.get("mix")))
+        check("the list page has its one sentence",
+              isinstance(body["week_line"], str) and body["week_line"], str(body.get("week_line")))
+
+        # The add sheet's menu is the whole catalog, not the weak list: a parent recording a mistake
+        # from a paper is often recording one on a topic that has not gone weak yet.
+        status, body = dad.call("GET", f"/v1/h5/topics?device_id={p2_device}")
+        catalog = body.get("topics") or []
+        check("the add sheet offers every topic, weak or not",
+              status == 200 and len(catalog) >= 20
+              and any(topic["score"] == 0 for topic in catalog)
+              and any(topic["score"] >= 12 for topic in catalog),
+              f"{status} {len(catalog)}")
+
+        worst = listed[0]
+        detail_url = (f"/v1/h5/mastery/{worst['topic_id']}?day_key={DAY}"
+                      f"&device_id={p2_device}")
+        status, detail = dad.call("GET", detail_url)
+        # The ledger has to add up to the score it claims. If it ever does not, the page is quoting a
+        # number no one — including the server — can reproduce.
+        check("a topic page reproduces its own score from the ledger",
+              status == 200 and sum(e["delta"] for e in detail["events"]) == detail["score"],
+              f"{status} {detail.get('score')} {[e['delta'] for e in detail.get('events', [])]}")
+        check("and shows the mistakes behind it",
+              len(detail["wrong_items"]) >= 1 and all(w["stem"] for w in detail["wrong_items"]),
+              str(detail.get("wrong_items")))
+        check("and one sentence to say out loud",
+              bool(detail["coach"]["say"]) and bool(detail["coach"]["why"])
+              and bool(detail["coach"]["avoid"]), str(detail.get("coach")))
+        check("the topic page knows how much of today's cap is spent",
+              0 <= detail["today_used"] <= detail["daily_cap"], str(detail.get("today_used")))
+
+        # ---- the parent's ±10 ----
+        adjust_url = f"/v1/h5/topic/{worst['topic_id']}/adjust?device_id={p2_device}"
+        before = worst["score"]
+        status, body = dad.call("POST", adjust_url, {"delta": -10, "note": "周末给他讲过了"})
+        check("ten points off with a reason", status == 200 and body["score"] == before - 10,
+              f"{status} {body.get('score')} (was {before})")
+        status, body = dad.call("GET", detail_url)
+        check("the adjustment is in the ledger, with the reason",
+              body["events"][0]["kind"] == "parent_adjust" and "周末" in body["events"][0]["label"],
+              str(body["events"][:1]))
+        check("and the score it records is the one after the clamp",
+              body["events"][0]["score_after"] == body["score"], str(body["events"][:1]))
+        status, body = dad.call("POST", adjust_url, {"delta": -10})
+        check("but not without a reason",
+              status == 400 and body.get("error") == "note-required", f"{status} {body}")
+        status, body = dad.call("POST", adjust_url, {"delta": -25, "note": "一次到位"})
+        check("and never more than ten at a time",
+              status == 400 and body.get("error") == "bad-delta", f"{status} {body}")
+        status, body = stranger.call("POST", adjust_url, {"delta": 10, "note": "别人家的电视"})
+        check("another account cannot move this score",
+              status == 403, f"{status} {body}")
+
+        # ---- recording a paper: the ≤20-second path ----
+        #
+        # A second television, all five right, so today's split is S0 with no review slot. That is the
+        # only state in which "record a mistake, see it in the next group" can be tested honestly: on a
+        # day that already has review slots the topic could have been asked anyway.
+        # `today`, not `DAY`: the newcomer slot compares the ledger's real timestamp with the day being
+        # planned, so the two have to be the same day or the case would pass only on the right date.
+        today = datetime.date.today().isoformat()
+        p2b = start(T + 4_300_000)
+        p2b_device = p2b["device_id"]
+        status, body = dad.call("POST", "/v1/h5/pair",
+                                {"pair_code": p2b["pair_code"], "now_ms": T + 4_360_000})
+        clean_group = serve(p2b_device, today)
+        submit(p2b_device, clean_group, 5, today)
+        status, body = dad.call("GET", f"/v1/h5/mastery?day_key={today}&device_id={p2b_device}")
+        check("a clean group leaves nothing to practise",
+              body["count"] == 0 and body["mix"] and body["mix"]["r"] == 0, f"{status} {body}")
+
+        # A topic with questions left to ask: the ones served above are inside the seven-day window, so
+        # a topic whose only question was just asked cannot be practised today and `mix.assess` drops it
+        # on purpose. Picking a richer, untouched topic keeps this case about the newcomer slot rather
+        # than about a thin bank.
+        asked = [int(q["topic_id"]) for q in clean_group["questions"]]
+        marks = ",".join("?" for _ in asked)
+        probe = Database(dsn)
+        probe.connect()
+        rich = probe.query_one(
+            "SELECT q.topic_id, COUNT(*) AS n FROM question q"
+            " WHERE q.retired_at IS NULL AND q.verify_status IN ('sympy_ok', 'manual_ok')"
+            "   AND q.difficulty <= 3"
+            f"   AND q.topic_id NOT IN ({marks})"
+            " GROUP BY q.topic_id ORDER BY n DESC LIMIT 1",
+            asked,
+        )
+        probe.close()
+        check("the bank has a topic with questions to spare", rich is not None, str(rich))
+        target = int(rich["topic_id"]) if rich else asked[0]
+
+        status, body = dad.call("POST", f"/v1/h5/paper?device_id={p2b_device}", {
+            "topic_id": target, "count": 3, "day_key": today,
+            # The page chooses the batch id, which is what makes a second tap harmless.
+            "paper_id": "P2BATCH00000000000000000001",
+        })
+        check("recording three mistakes adds 20, then 8, then 8",
+              status == 200 and body["added"] == 20 + 2 * 8, f"{status} {body}")
+        check("and the topic is on the list right away",
+              body["topic"]["score"] == 20 + 2 * 8 and body["topic"]["level"] >= 1,
+              str(body.get("topic")))
+        status, again = dad.call("POST", f"/v1/h5/paper?device_id={p2b_device}", {
+            "topic_id": target, "count": 3, "day_key": today,
+            "paper_id": "P2BATCH00000000000000000001",
+        })
+        check("a repeated batch does not count twice",
+              status == 200 and again.get("repeated") is True
+              and again["topic"]["score"] == body["topic"]["score"], f"{status} {again.get('topic')}")
+
+        next_group = serve(p2b_device, today)
+        asked_next = [int(q["topic_id"]) for q in next_group["questions"]]
+        check("the very next group asks it",
+              target in asked_next, f"target={target} asked={asked_next}")
+
+        status, body = dad.call(
+            "GET", f"/v1/h5/wrongbook?day_key={today}&days=7&device_id={p2b_device}&source=paper")
+        check("the wrong list shows the recorded mistakes",
+              body["total"] == 3 and [i["source"] for i in body["items"]] == ["paper"] * 3,
+              f"{status} {body.get('total')} {[i['source'] for i in body.get('items', [])]}")
+        check("with the score of their topic attached",
+              all(i["mastery_score"] == 20 + 2 * 8 for i in body["items"]), str(body["items"][:1]))
+        status, body = dad.call(
+            "GET", f"/v1/h5/wrongbook?day_key={today}&days=7&device_id={p2b_device}&source=tv")
+        check("and the television's own list stays separate",
+              body["total"] == 0 and body["counts"] == {"all": 3, "tv": 0, "paper": 3},
+              f"{body.get('total')} {body.get('counts')}")
+        status, body = dad.call(
+            "GET", f"/v1/h5/wrongbook?day_key={today}&days=7&device_id={p2b_device}&limit=1&offset=1")
+        check("paging moves the window", len(body["items"]) == 1 and body["total"] == 3,
+              f"{body.get('total')} {len(body.get('items', []))}")
+
+        # ---- where the child is in the book ----
+        status, body = dad.call("GET", f"/v1/h5/curriculum?device_id={p2b_device}")
+        check("progress starts on unit one, by calendar",
+              status == 200 and body["start_date"] is None
+              and all(book["current"] == 1 and book["source"] == "calendar"
+                      for book in body["books"]), f"{status} {body.get('books')}")
+        check("and every book lists the units it has",
+              len(body["books"]) >= 2 and all(book["units"] for book in body["books"]),
+              str(len(body.get("books", []))))
+
+        status, body = dad.call("PUT", f"/v1/h5/curriculum?device_id={p2b_device}",
+                                {"start_date": "2026-09-01"})
+        expected_week = curriculum.weeks_in(datetime.date(2026, 9, 1), datetime.date.today())
+        check("a term start turns into a week",
+              status == 200 and body["week"] == expected_week, f"{status} {body.get('week')}")
+        book = body["books"][0]
+        last_ordinal = book["units"][-1]["ordinal"]
+        status, body = dad.call("PUT", f"/v1/h5/curriculum/unit?device_id={p2b_device}",
+                                {"textbook_id": book["textbook_id"], "ordinal": last_ordinal})
+        after = next(b for b in body["books"] if b["textbook_id"] == book["textbook_id"])
+        check("a parent can say which unit the class is on",
+              after["current"] == last_ordinal and after["source"] == "parent", str(after))
+        check("finishing the book is a state, not an error",
+              after["reviewing"] is True and after["last"] == last_ordinal, str(after))
+        status, body = dad.call("PUT", f"/v1/h5/curriculum/unit?device_id={p2b_device}",
+                                {"textbook_id": book["textbook_id"], "mode": "calendar"})
+        after = next(b for b in body["books"] if b["textbook_id"] == book["textbook_id"])
+        check("and hand that book back to the date",
+              after["source"] == "calendar" and after["reviewing"] is False, str(after))
+        status, body = dad.call("PUT", f"/v1/h5/curriculum?device_id={p2b_device}",
+                                {"start_date": "term started yesterday"})
+        check("a date that is not a date is refused",
+              status == 400 and body.get("error") == "bad-date", f"{status} {body}")
+
+        # ---- a bad question ----
+        #
+        # `bad_question_void` is the reason the flag lives on the phone (D5): the parent is the one who
+        # notices a typo, and a topic must not stay weak because of it.
+        wrong_qid = int(first_group["questions"][1]["id"])   # `submit` marks index 1 as wrong
+        probe = Database(dsn)
+        probe.connect()
+        topic_before = probe.query_one(
+            "SELECT topic_id, score FROM topic_mastery WHERE device_id = ? AND topic_id = ?",
+            (p2_device, int(first_group["questions"][1]["topic_id"])),
+        )
+        probe.close()
+        status, body = dad.call("POST", f"/v1/h5/question/{wrong_qid}/flag?device_id={p2_device}",
+                                {"note": "题干里的单位写错了"})
+        check("a flagged question stops being served", status == 200 and body["retired"] is True,
+              f"{status} {body}")
+        probe = Database(dsn)
+        probe.connect()
+        retired = probe.scalar("SELECT retired_at FROM question WHERE id = ?", (wrong_qid,))
+        after_row = probe.query_one(
+            "SELECT score FROM topic_mastery WHERE device_id = ? AND topic_id = ?",
+            (p2_device, int(first_group["questions"][1]["topic_id"])),
+        )
+        probe.close()
+        check("and is retired in the bank itself", retired is not None, str(retired))
+        check("and the score it caused is given back",
+              topic_before is not None and after_row is not None
+              and after_row["score"] < topic_before["score"], f"{topic_before} -> {after_row}")
+        # Asked of the pool itself rather than by serving another group: that device's failed group
+        # bought a ten-minute cooldown, and working around it would be testing the cooldown instead.
+        probe = Database(dsn)
+        probe.connect()
+        servable = [int(row["id"]) for row in picker._candidates(probe, p2_device, 99)]
+        probe.close()
+        check("so it is out of the pool the picker draws from",
+              wrong_qid not in servable, f"{wrong_qid} in {len(servable)} candidates")
+
     finally:
         server.terminate()
         try:

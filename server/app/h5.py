@@ -22,6 +22,13 @@ also the only way to answer "who set 30 minutes?" when the two ends disagree.
 **Nothing here mints time.** A ticket is signed in `grade.py` and spent on the TV; the parent page
 changes limits, never balances.
 
+**The wrong book is where a score is allowed to be read** (docs/WRONGBOOK.md §11). The TV says nothing
+about weak topics, so every number a parent acts on arrives through the routes in the second half of this
+file: the weak list, one topic's ledger, the two hands (±10 and "record three mistakes"), and the page
+that says which unit the class is on. `h5.mastery` reads the day's frozen quota out of `daily_state`
+rather than recomputing it — calling `mix.snapshot` from a page view would decide the child's day at the
+moment the parent happened to open the tab (docs/RULES.md §2.6).
+
 The pairing alphabet and TTL live here rather than in `api.py` so there is one copy: `pair/start`
 (create a code) and `h5/pair` (consume one) must agree on both, and they sit in different modules.
 """
@@ -31,12 +38,14 @@ from __future__ import annotations
 import datetime
 import hashlib
 import json
+import re
 import secrets
 from collections import deque
 
-from server.app import limits
+from server.app import coach, curriculum, limits, mastery, mix, picker
 from server.app.auth import SESSION_COOKIE, Accounts
 from server.app.grade import GradeError
+from server.app.ids import new_ulid
 
 #: Pairing alphabet (G6): no I, O, l, o, 0, 1 — the characters a parent misreads off a TV screen.
 #: Case is kept because the code is half the defence against guessing, the rate limit is the other.
@@ -62,6 +71,34 @@ CONFIG_RANGE = {
 
 #: What a device that has never been configured looks like. 60 minutes a day is G1.
 DEFAULT_CONFIG = {"daily_minutes": 60, "session_minutes": 30, "interval_minutes": 20}
+
+#: score at or above which a topic is on the weak list. Same number the picker uses (`mix.assess`) —
+#: imported rather than written down again, because a page that lists two topics the picker will not
+#: practise is worse than one that lists none.
+WEAK_FLOOR = mix.WEAK_MIN_SCORE
+
+#: level -> the word this page prints. L0 has one because a detail page can be opened for a topic that
+#: has already left the list (docs/WRONGBOOK.md §5.2 fixes the bands; only the wording is here).
+LEVEL_WORDS = ("牢固", "需巩固", "不牢", "很弱")
+
+#: `mastery_event.kind` -> what the parent reads when the row has no note of its own.
+KIND_LABELS = {
+    "tv_wrong": "电视答错",
+    "tv_right": "电视答对",
+    "paper_wrong": "试卷错题",
+    "streak_bonus": "连对加成",
+    "parent_adjust": "家长调整",
+    "bad_question_void": "题目下架退回",
+}
+
+#: How many mistakes one recording may add at once. Ten is a weekend worksheet; more would let one tap
+#: max out every topic the child has.
+PAPER_MAX_ITEMS = 10
+#: Photos of a paper would live 30 days (D4). Nothing is photographed yet, but the column is NOT NULL,
+#: so the manual path has to put something defensible in it.
+PAPER_PURGE_DAYS = 30
+#: The page may choose the batch id, which is what makes a double tap harmless (§9 幂等).
+PAPER_ID = re.compile(r"^[A-Za-z0-9-]{6,40}$")
 
 #: Rate limits on the one endpoint worth brute-forcing (docs/PARENTAL.md, 限速与留痕).
 RATE_PER_MINUTE = 5
@@ -478,61 +515,114 @@ class H5:
 
     # ---- the wrong answers ----
 
-    def wrongbook(self, device_id: str, day_key: str, days: int = 7, limit: int = 60) -> dict:
+    def wrongbook(self, device_id: str, day_key: str, days: int = 7, limit: int = 60,
+                  offset: int = 0, source: str = "all") -> dict:
         """What the parent reads to know what to help with.
 
-        The full question, what the child picked, and what the right answer was — plus the explanation
-        when the bank has one. C13's "no answers" rule is about the version the *child* sees; hiding
-        them from the parent would leave them looking at "虚拟语气 3 题" with no way to teach it.
+        Two sources, one list. A mistake on the television arrives through `quiz_answer` — it has the
+        question, what the child picked and the right answer; a mistake the parent recorded from a paper
+        arrives through `wrong_item` — no question, often no stem, because there was no OCR. They are
+        merged rather than shown as two lists: the parent's question is "what did he get wrong", not
+        "which of our tables is it in". C13's "no answers" rule is about the version the *child* sees;
+        hiding them from the parent would leave them looking at "虚拟语气 3 题" with no way to teach it.
+
+        `offset` is the parent's scroll position, i.e. it indexes the merged list, so both queries fetch
+        up to `offset + limit` and the slicing happens after the sort. Correct rather than clever, and
+        unremarkable at one child's volume.
         """
         days = max(1, min(days, 30))
         limit = max(1, min(limit, 200))
+        offset = max(0, min(offset, 5000))
+        source = source if source in ("all", "tv", "paper") else "all"
         span = _recent_days(day_key, days)
         placeholders = ",".join("?" for _ in span)
+        fetch = offset + limit
 
-        rows = self.db.query(
-            "SELECT a.question_id, a.chosen, a.answered_day, a.flagged_unknown,"
-            "       q.stem, q.qtype, q.explanation_zh, q.difficulty,"
-            "       t.id AS topic_id, t.name_zh AS topic, u.name_zh AS unit,"
-            "       s.name_zh AS subject, s.code AS subject_code"
-            "  FROM quiz_answer a"
-            "  JOIN question q ON q.id = a.question_id"
-            "  JOIN topic t ON t.id = q.topic_id"
-            "  JOIN unit u ON u.id = t.unit_id"
-            "  JOIN textbook b ON b.id = u.textbook_id"
-            "  JOIN subject s ON s.id = b.subject_id"
-            f" WHERE a.device_id = ? AND a.is_correct = 0 AND a.answered_day IN ({placeholders})"
-            "  ORDER BY a.answered_day DESC, a.answered_at DESC"
-            "  LIMIT ?",
-            (device_id, *span, limit),
-        )
-        if not rows:
-            return {"days": days, "items": []}
+        tv_count = int(self.db.scalar(
+            "SELECT COUNT(*) FROM quiz_answer"
+            f" WHERE device_id = ? AND is_correct = 0 AND answered_day IN ({placeholders})",
+            (device_id, *span), default=0,
+        ))
+        paper_count = int(self.db.scalar(
+            "SELECT COUNT(*) FROM wrong_item"
+            " WHERE device_id = ? AND source = 'paper' AND status = 'confirmed'"
+            f"   AND occurred_on IN ({placeholders})",
+            (device_id, *span), default=0,
+        ))
+        counts = {"all": tv_count + paper_count, "tv": tv_count, "paper": paper_count}
+        total = counts[source]
+
+        mastery_score = {
+            int(row["topic_id"]): int(row["score"])
+            for row in self.db.query(
+                "SELECT topic_id, score FROM topic_mastery WHERE device_id = ?", (device_id,)
+            )
+        }
+
+        rows: list[dict] = []
+        if source in ("all", "tv"):
+            rows = self.db.query(
+                "SELECT a.question_id, a.chosen, a.answered_day, a.flagged_unknown,"
+                "       q.stem, q.qtype, q.explanation_zh, q.difficulty,"
+                "       t.id AS topic_id, t.name_zh AS topic, u.name_zh AS unit,"
+                "       s.name_zh AS subject, s.code AS subject_code"
+                "  FROM quiz_answer a"
+                "  JOIN question q ON q.id = a.question_id"
+                "  JOIN topic t ON t.id = q.topic_id"
+                "  JOIN unit u ON u.id = t.unit_id"
+                "  JOIN textbook b ON b.id = u.textbook_id"
+                "  JOIN subject s ON s.id = b.subject_id"
+                f" WHERE a.device_id = ? AND a.is_correct = 0 AND a.answered_day IN ({placeholders})"
+                "  ORDER BY a.answered_day DESC, a.answered_at DESC"
+                "  LIMIT ?",
+                (device_id, *span, fetch),
+            )
+
+        papers: list[dict] = []
+        if source in ("all", "paper"):
+            papers = self.db.query(
+                "SELECT w.id, w.occurred_on, w.created_at, w.stem_text,"
+                "       t.id AS topic_id, t.name_zh AS topic, u.name_zh AS unit,"
+                "       s.name_zh AS subject, s.code AS subject_code"
+                "  FROM wrong_item w"
+                "  JOIN topic t ON t.id = w.topic_id"
+                "  JOIN unit u ON u.id = t.unit_id"
+                "  JOIN textbook b ON b.id = u.textbook_id"
+                "  JOIN subject s ON s.id = b.subject_id"
+                " WHERE w.device_id = ? AND w.source = 'paper' AND w.status = 'confirmed'"
+                f"   AND w.occurred_on IN ({placeholders})"
+                "  ORDER BY w.occurred_on DESC, w.created_at DESC"
+                "  LIMIT ?",
+                (device_id, *span, fetch),
+            )
 
         ids = sorted({int(row["question_id"]) for row in rows})
-        marks = ",".join("?" for _ in ids)
         options: dict[int, list[dict]] = {}
-        for row in self.db.query(
-            f"SELECT question_id, label, text, is_correct FROM question_option"
-            f" WHERE question_id IN ({marks}) ORDER BY label",
-            ids,
-        ):
-            options.setdefault(int(row["question_id"]), []).append(
-                {"label": row["label"], "text": row["text"], "correct": bool(row["is_correct"])}
-            )
         accepted: dict[int, list[str]] = {}
-        for row in self.db.query(
-            f"SELECT question_id, text_raw FROM question_answer"
-            f" WHERE question_id IN ({marks}) ORDER BY ordinal",
-            ids,
-        ):
-            accepted.setdefault(int(row["question_id"]), []).append(row["text_raw"])
+        if ids:
+            marks = ",".join("?" for _ in ids)
+            for row in self.db.query(
+                f"SELECT question_id, label, text, is_correct FROM question_option"
+                f" WHERE question_id IN ({marks}) ORDER BY label",
+                ids,
+            ):
+                options.setdefault(int(row["question_id"]), []).append(
+                    {"label": row["label"], "text": row["text"], "correct": bool(row["is_correct"])}
+                )
+            for row in self.db.query(
+                f"SELECT question_id, text_raw FROM question_answer"
+                f" WHERE question_id IN ({marks}) ORDER BY ordinal",
+                ids,
+            ):
+                accepted.setdefault(int(row["question_id"]), []).append(row["text_raw"])
 
         items = []
         for row in rows:
             qid = int(row["question_id"])
             chosen = row.get("chosen") or ""
+            topic_id = int(row["topic_id"])
             item = {
+                "source": "tv",
                 "question_id": qid,
                 "day_key": row["answered_day"],
                 "stem": row["stem"],
@@ -540,9 +630,11 @@ class H5:
                 "subject": row["subject"],
                 "unit": row["unit"],
                 "topic": row["topic"],
+                "topic_id": topic_id,
                 "chosen": chosen,
                 "explanation": row.get("explanation_zh"),
                 "flagged_unknown": bool(row.get("flagged_unknown")),
+                "mastery_score": mastery_score.get(topic_id, 0),
             }
             if row["qtype"] == "choice":
                 opts = options.get(qid, [])
@@ -557,7 +649,445 @@ class H5:
                 item["answer_text"] = " / ".join(accepted.get(qid, []))
             items.append(item)
 
-        return {"days": days, "items": items}
+        for row in papers:
+            items.append({
+                "source": "paper",
+                "item_id": row["id"],
+                "question_id": None,
+                "day_key": row["occurred_on"],
+                "stem": row.get("stem_text") or "",
+                "qtype": "manual",
+                "subject": row["subject"],
+                "unit": row["unit"],
+                "topic": row["topic"],
+                "topic_id": int(row["topic_id"]),
+                "chosen": None,
+                "chosen_text": None,
+                # Not "—": there is no right answer to show, and an em dash would read as one.
+                "answer_text": None,
+                "explanation": None,
+                "flagged_unknown": False,
+                "mastery_score": mastery_score.get(int(row["topic_id"]), 0),
+            })
+
+        # Newest day first. Within a day the television's answers stay ahead of the recorded ones,
+        # because a stable sort keeps the order the two queries were appended in and only one of them
+        # knows a time of day.
+        items.sort(key=lambda item: item["day_key"], reverse=True)
+
+        return {"days": days, "items": items[offset:offset + limit], "total": total,
+                "offset": offset, "counts": counts, "source": source}
+
+    # ---- the weak list, which is the only place a score is allowed to be read ----
+
+    def _topics(self, device_id: str, topic_id: int | None = None,
+                floor: bool = True) -> list[dict]:
+        """Topic metadata + mastery + how much the bank holds: one topic, the weak list, or everything.
+
+        One topic ignores the floor — the wrong list links to topics that have since been practised
+        back to 0, and a 404 on a row the parent just tapped would be a bug they can see. The catalog
+        (`floor=False`) is what the add sheet picks from, where the topic is often not weak yet.
+
+        `in_bank` is counted here rather than read from `topic_mastery.ready_qty`: that column is the
+        generator's bookkeeping (P1, not built yet) and is always 0, so the parent page would show
+        "题库已有 0 题" next to "目标 10 题" and read it as a bug rather than a thin bank.
+        """
+        if topic_id is not None:
+            where, params, tail = "WHERE t.id = ?", (device_id, device_id, topic_id), "ORDER BY t.id"
+        elif floor:
+            where, params = "WHERE COALESCE(m.score, 0) >= ?", (device_id, device_id, WEAK_FLOOR)
+            tail = "ORDER BY COALESCE(m.score, 0) DESC, t.name_zh"
+        else:
+            where, params = "WHERE 1 = 1", (device_id, device_id)
+            tail = "ORDER BY s.id, u.ordinal, t.ordinal"
+        rows = self.db.query(
+            "SELECT t.id AS topic_id, t.name_zh AS topic,"
+            "       u.ordinal AS unit_ordinal, u.name_zh AS unit,"
+            "       s.name_zh AS subject, s.code AS subject_code, b.id AS textbook_id,"
+            "       COALESCE(m.score, 0) AS score, COALESCE(m.total_wrong, 0) AS total_wrong,"
+            "       COALESCE(m.total_right, 0) AS total_right, m.paused_until,"
+            "       (SELECT MAX(w.occurred_on) FROM wrong_item w"
+            "         WHERE w.device_id = ? AND w.topic_id = t.id AND w.status = 'confirmed')"
+            "        AS last_wrong_on,"
+            "       (SELECT COUNT(*) FROM question q"
+            "         WHERE q.topic_id = t.id AND q.retired_at IS NULL"
+            "           AND q.verify_status IN ('sympy_ok', 'manual_ok')) AS in_bank"
+            "  FROM topic t"
+            "  JOIN unit u ON u.id = t.unit_id"
+            "  JOIN textbook b ON b.id = u.textbook_id"
+            "  JOIN subject s ON s.id = b.subject_id"
+            "  LEFT JOIN topic_mastery m ON m.topic_id = t.id AND m.device_id = ?"
+            f" {where} {tail}",
+            params,
+        )
+        return [self._shape_topic(row) for row in rows]
+
+    def catalog(self, device_id: str) -> dict:
+        """Every topic, weak or not, for the add sheet's picker.
+
+        The weak list would be the wrong menu: a parent recording a mistake from a paper is often
+        recording one on a topic that is not weak yet, and a picker that only offered weak topics would
+        hide the case it exists for.
+        """
+        return {"topics": self._topics(device_id, floor=False)}
+
+    def _shape_topic(self, row: dict) -> dict:
+        score = int(row["score"] or 0)
+        level = mastery.level_of(score)
+        return {
+            "topic_id": int(row["topic_id"]),
+            "topic": row["topic"],
+            "subject": row["subject"],
+            "subject_code": row["subject_code"],
+            "textbook_id": int(row["textbook_id"]),
+            "unit": row["unit"],
+            "unit_ordinal": int(row["unit_ordinal"]),
+            "score": score,
+            "level": level,
+            "level_name": mastery.LEVEL_NAMES[level],
+            "level_word": LEVEL_WORDS[level],
+            "need_right": mastery.need_right(score),
+            "weight": mastery.weight_x10(level) / 10,
+            "target_qty": mastery.target_qty(level),
+            "daily_cap": mastery.daily_cap(level),
+            "in_bank": int(row["in_bank"] or 0),
+            "total_wrong": int(row["total_wrong"] or 0),
+            "total_right": int(row["total_right"] or 0),
+            "last_wrong_on": row["last_wrong_on"],
+            "paused_until": row["paused_until"],
+        }
+
+    def _mix(self, device_id: str, day_key: str) -> dict | None:
+        """Today's split as it was frozen, or None when no group has been served yet.
+
+        Read, never recomputed: `mix.snapshot` writes the day's quota on the first group, and calling it
+        from a page view would decide the child's day at the moment the parent happened to open the tab.
+        """
+        row = self.db.query_one(
+            "SELECT mix_state, mix_c, mix_r, mix_n, mix_note FROM daily_state"
+            " WHERE device_id = ? AND day_key = ?",
+            (device_id, day_key),
+        )
+        if not row or not row.get("mix_state"):
+            return None
+        c, r = int(row["mix_c"]), int(row["mix_r"])
+        return {"state": row["mix_state"], "c": c, "r": r, "p": limits.GROUP_SIZE - c - r,
+                "n": int(row["mix_n"] or 0), "note": row.get("mix_note") or ""}
+
+    def _week_stats(self, device_id: str, day_key: str, weak_ids: list[int]) -> dict:
+        """The four numbers on the list page: how many arrived, how many left, and the average then/now.
+
+        Computed from the ledger in one read rather than four aggregate queries. The ledger is one
+        child's: hundreds of rows after a term, so replaying it is cheaper than four round trips and
+        much easier to read than the SQL that would replace it.
+        """
+        cutoff = (_day(day_key) - datetime.timedelta(days=7)).isoformat() + " 00:00:00"
+        events = self.db.query(
+            "SELECT topic_id, score_after, created_at FROM mastery_event"
+            " WHERE device_id = ? ORDER BY created_at, id",
+            (device_id,),
+        )
+        first_at: dict[int, str] = {}
+        before: dict[int, int] = {}
+        touched: set[int] = set()
+        for event in events:
+            topic_id = int(event["topic_id"])
+            first_at.setdefault(topic_id, event["created_at"])
+            if event["created_at"] < cutoff:
+                before[topic_id] = int(event["score_after"])
+            else:
+                touched.add(topic_id)
+
+        weak = set(weak_ids)
+        arrived = [topic_id for topic_id in weak if first_at.get(topic_id, "") >= cutoff]
+        cleared = [topic_id for topic_id in touched if topic_id not in weak]
+        scores = [
+            int(row["score"]) for row in self.db.query(
+                "SELECT score FROM topic_mastery WHERE device_id = ?", (device_id,)
+            ) if int(row["score"]) >= WEAK_FLOOR
+        ]
+        before_scores = [before.get(topic_id, 0) for topic_id in weak]
+        return {
+            "days": 7,
+            "arrived": len(arrived),
+            "cleared": len(cleared),
+            "avg_now": round(sum(scores) / len(scores)) if scores else 0,
+            "avg_before": round(sum(before_scores) / len(before_scores)) if before_scores else 0,
+        }
+
+    def weak_list(self, device_id: str, day_key: str, now_ms: int) -> dict:
+        """The weak list: the only page in the product where a score is allowed to be read.
+
+        Ordering is worst first — level, then score, then the most recent mistake — because the page
+        exists to answer "which one do I teach this week", and the answer is whichever row is at the top.
+
+        `mix` is the day's quota when the child has already been served, so the parent can see what the
+        page decided (3 课文 + 2 错题训练, say) instead of guessing from the child's screen, where
+        nothing is said at all.
+        """
+        items = self._topics(device_id)
+        return {
+            "items": items,
+            "count": len(items),
+            "weak_floor": WEAK_FLOOR,
+            "mix": self._mix(device_id, day_key),
+            "week": self._week_stats(device_id, day_key, [item["topic_id"] for item in items]),
+            "today": day_key,
+            "week_line": coach.week_line(len(items)),
+        }
+
+    def weak_topic(self, device_id: str, topic_id: int, day_key: str, now_ms: int) -> dict:
+        """One topic: the score, the arithmetic behind it, and the sentence to say out loud.
+
+        The flow is the answer to "凭什么 72 分" — a parent who can read `+12 电视答错` four times does
+        not need the model explained. It is capped at 20 rows because the newest explain the score; the
+        rest is archaeology.
+        """
+        rows = self._topics(device_id, topic_id)
+        if not rows:
+            raise GradeError("unknown-topic", 404, "no such topic")
+        item = rows[0]
+
+        events = []
+        for row in self.db.query(
+            "SELECT kind, delta, score_after, note, created_at FROM mastery_event"
+            " WHERE device_id = ? AND topic_id = ? ORDER BY created_at DESC, id DESC LIMIT 20",
+            (device_id, topic_id),
+        ):
+            events.append({
+                "kind": row["kind"],
+                "label": row.get("note") or KIND_LABELS.get(row["kind"], row["kind"]),
+                "delta": int(row["delta"]),
+                "score_after": int(row["score_after"]),
+                "at": row["created_at"],
+            })
+
+        wrong = []
+        for row in self.db.query(
+            "SELECT w.id, w.occurred_on, w.source, w.stem_text, q.stem"
+            "  FROM wrong_item w LEFT JOIN question q ON q.id = w.question_id"
+            " WHERE w.device_id = ? AND w.topic_id = ? AND w.status = 'confirmed'"
+            " ORDER BY w.occurred_on DESC, w.created_at DESC LIMIT 5",
+            (device_id, topic_id),
+        ):
+            wrong.append({
+                "item_id": row["id"],
+                "day_key": row["occurred_on"],
+                "source": row["source"],
+                "stem": row.get("stem") or row.get("stem_text") or "",
+            })
+
+        used = picker.review_used_today(self.db, device_id, day_key)
+        item["today_used"] = int(used.get(topic_id, 0))
+        item["events"] = events
+        item["wrong_items"] = wrong
+        item["coach"] = coach.line(item["level"], item["need_right"])
+        return item
+
+    def adjust_topic(self, device_id: str, topic_id: int, body: dict, now_ms: int,
+                     account_id: str | None) -> dict:
+        """The parent's ±10, with a reason. The reason is required because this is the one number in
+        the product a human can move: an unexplained jump behind a score the child is served from would
+        make the ledger worthless exactly when someone finally asks about it (§9)."""
+        try:
+            delta = int(body.get("delta"))
+        except (TypeError, ValueError) as exc:
+            raise GradeError("bad-delta", 400, "delta must be 10 or -10") from exc
+        if delta not in (mastery.PARENT_ADJUST, -mastery.PARENT_ADJUST):
+            raise GradeError("bad-delta", 400, "delta must be 10 or -10")
+        note = str(body.get("note") or "").strip()
+        if len(note) < 2:
+            raise GradeError("note-required", 400, "写一句为什么")
+        if not self._topics(device_id, topic_id):
+            raise GradeError("unknown-topic", 404, "no such topic")
+
+        with self.db.tx() as cur:
+            result = mastery.adjust(cur, device_id=device_id, topic_id=topic_id, delta=delta,
+                                    note=note[:120], now_iso=mastery.to_iso(now_ms),
+                                    ref_id=account_id)
+        row = self._topics(device_id, topic_id)[0]
+        return {"topic": row, "delta": result["delta"], "score": result["score"]}
+
+    def add_paper(self, device_id: str, account_id: str, body: dict, now_ms: int) -> dict:
+        """The parent records "he got 3 wrong on this topic" from a paper (§11 录入弹层).
+
+        No OCR, no photograph: one topic and a count, which is the ≤20-second path. Each item is a
+        `wrong_item` row of its own even though they are identical, because the score is per item
+        (+20 for the day's first, +8 after) and a count would make that arithmetic invisible.
+
+        `paper_id` may be supplied by the page. If it already exists the call answers with what that
+        batch did, so a double tap on a slow phone cannot add six mistakes instead of three.
+        """
+        try:
+            topic_id = int(body.get("topic_id"))
+            count = int(body.get("count") or 1)
+        except (TypeError, ValueError) as exc:
+            raise GradeError("bad-entry", 400, "topic_id and count are required") from exc
+        if not 1 <= count <= PAPER_MAX_ITEMS:
+            raise GradeError("bad-entry", 400, f"count must be 1..{PAPER_MAX_ITEMS}")
+        day_key = limits.validate_day_key(
+            str(body.get("day_key") or limits.to_iso(now_ms)[:10])
+        )
+        paper_id = str(body.get("paper_id") or "").strip() or new_ulid()
+        if not PAPER_ID.match(paper_id):
+            raise GradeError("bad-entry", 400, "paper_id must be 6-40 letters or digits")
+
+        existing = self.db.query_one("SELECT * FROM paper WHERE id = ?", (paper_id,))
+        if existing is not None:
+            if existing["device_id"] != device_id:
+                raise GradeError("paper-taken", 409, "that id belongs to another television")
+            first = self.db.query_one(
+                "SELECT topic_id FROM wrong_item WHERE paper_id = ? ORDER BY id LIMIT 1", (paper_id,)
+            )
+            row = self._topics(device_id, int(first["topic_id"]))[0] if first else None
+            return {"paper_id": paper_id, "count": int(existing["item_total"]),
+                    "repeated": True, "topic": row}
+
+        rows = self._topics(device_id, topic_id)
+        if not rows:
+            raise GradeError("unknown-topic", 404, "no such topic")
+        topic = rows[0]
+        now_iso = mastery.to_iso(now_ms)
+        purge = limits.to_iso(now_ms + PAPER_PURGE_DAYS * 24 * 3600 * 1000)
+        subject_id = self.db.scalar(
+            "SELECT b.subject_id FROM topic t JOIN unit u ON u.id = t.unit_id"
+            " JOIN textbook b ON b.id = u.textbook_id WHERE t.id = ?",
+            (topic_id,),
+        )
+
+        with self.db.tx() as cur:
+            cur.execute(
+                "INSERT INTO paper (id, device_id, account_id, subject_id, shot_count, ocr_status,"
+                " item_total, item_confirmed, captured_at, confirmed_at, purge_at)"
+                " VALUES (?, ?, ?, ?, 0, 'none', ?, ?, ?, ?, ?)",
+                (paper_id, device_id, account_id, subject_id, count, count, now_iso, now_iso, purge),
+            )
+            for _ in range(count):
+                item_id = new_ulid()
+                cur.execute(
+                    "INSERT INTO wrong_item (id, device_id, source, question_id, paper_id, topic_id,"
+                    " stem_text, occurred_on, status, confidence, created_at)"
+                    " VALUES (?, ?, 'paper', NULL, ?, ?, NULL, ?, 'confirmed', NULL, ?)",
+                    (item_id, device_id, paper_id, topic_id, day_key, now_iso),
+                )
+                # Inside the loop, after its own insert: the +20/+8 decision counts today's paper
+                # mistakes for this topic, and this one has to be among them.
+                mastery.record_paper_wrong(cur, device_id=device_id, topic_id=topic_id,
+                                           wrong_item_id=item_id, day_key=day_key, now_iso=now_iso)
+
+        after = self._topics(device_id, topic_id)[0]
+        return {"paper_id": paper_id, "count": count, "day_key": day_key, "topic": after,
+                "added": after["score"] - topic["score"]}
+
+    def flag_question(self, device_id: str, question_id: int, body: dict, now_ms: int,
+                      account_id: str | None) -> dict:
+        """「这题有问题」, moved off the television by D5 (§11).
+
+        Two effects, both needed: the question stops being served (`retired_at`), and the score it
+        caused is given back. Without the second, a bad question would leave a topic marked as weak
+        because of a typo in the bank, and the child would keep meeting its replacement for a week.
+        """
+        row = self.db.query_one("SELECT id, retired_at FROM question WHERE id = ?", (question_id,))
+        if row is None:
+            raise GradeError("unknown-question", 404, "no such question")
+        note = str(body.get("note") or "").strip()[:120] or "家长标记题目有问题"
+        now_iso = mastery.to_iso(now_ms)
+
+        with self.db.tx() as cur:
+            voided = mastery.void_question(cur, device_id=device_id, question_id=question_id,
+                                           note=note, now_iso=now_iso, ref_id=account_id)
+            cur.execute(
+                "UPDATE question SET retired_at = ? WHERE id = ? AND retired_at IS NULL",
+                (now_iso, question_id),
+            )
+        return {"question_id": question_id, "retired": True, "voided": voided}
+
+    # ---- where the child is in the book ----
+
+    def curriculum_overview(self, device_id: str, now_ms: int) -> dict:
+        """The progress card: the term's first day, which week that makes today, and each book's unit.
+
+        Before this page existed the parent had no way to say "he is in unit 5": `set_anchor` and
+        `set_unit` were written for the picker and reachable from nowhere, so every child was served
+        unit 1 forever (docs/RULES.md §3.0). This is that page's API.
+        """
+        stages = curriculum.resolve(self.db, device_id, now_ms)
+        anchor = self.db.query_one("SELECT start_date FROM term_anchor WHERE device_id = ?", (device_id,))
+        start = curriculum.parse_date(anchor["start_date"] if anchor else None)
+        today = datetime.date.fromtimestamp(now_ms / 1000)
+        week = curriculum.weeks_in(start, today) if start else None
+
+        books: dict[int, dict] = {}
+        for row in self.db.query(
+            "SELECT b.id AS textbook_id, b.title_zh AS book, b.grade, b.term, b.subject_id,"
+            "       s.name_zh AS subject, s.code AS subject_code,"
+            "       u.ordinal, u.name_zh AS unit, u.week_start"
+            "  FROM unit u"
+            "  JOIN textbook b ON b.id = u.textbook_id"
+            "  JOIN subject s ON s.id = b.subject_id"
+            " WHERE b.is_active = 1 ORDER BY b.id, u.ordinal"
+        ):
+            book = books.setdefault(int(row["textbook_id"]), {
+                "textbook_id": int(row["textbook_id"]),
+                "book": row["book"],
+                "grade": int(row["grade"]),
+                "term": row["term"],
+                "subject": row["subject"],
+                "subject_code": row["subject_code"],
+                "units": [],
+            })
+            book["units"].append({"ordinal": int(row["ordinal"]), "name": row["unit"],
+                                  "week_start": row["week_start"]})
+
+        for textbook_id, book in books.items():
+            stage = stages.get(textbook_id)
+            book.update({
+                "current": stage.current if stage else 1,
+                "last": stage.last if stage else max(u["ordinal"] for u in book["units"]),
+                "reviewing": bool(stage and stage.reviewing),
+                "source": stage.source if stage else "calendar",
+            })
+        return {
+            "start_date": start.isoformat() if start else None,
+            "week": week,
+            "today": today.isoformat(),
+            "books": sorted(books.values(), key=lambda book: (book["subject_code"], book["textbook_id"])),
+        }
+
+    def put_anchor(self, device_id: str, body: dict, now_ms: int) -> dict:
+        """The one date a parent types per term. Everything else about the calendar is arithmetic."""
+        raw = str(body.get("start_date") or "").strip()
+        try:
+            start = datetime.date.fromisoformat(raw)
+        except ValueError as exc:
+            raise GradeError("bad-date", 400, "start_date must be YYYY-MM-DD") from exc
+        if not 2000 <= start.year <= 2100:
+            raise GradeError("bad-date", 400, "start_date is not a school year")
+        curriculum.set_anchor(self.db, device_id, start, now_ms)
+        return self.curriculum_overview(device_id, now_ms)
+
+    def put_unit(self, device_id: str, body: dict, now_ms: int) -> dict:
+        """One book's unit, or `mode: 'calendar'` to hand that book back to the date."""
+        try:
+            textbook_id = int(body.get("textbook_id"))
+        except (TypeError, ValueError) as exc:
+            raise GradeError("bad-unit", 400, "textbook_id is required") from exc
+
+        if str(body.get("mode") or "") == "calendar":
+            curriculum.release_unit(self.db, device_id, textbook_id, now_ms)
+            return self.curriculum_overview(device_id, now_ms)
+
+        try:
+            ordinal = int(body.get("ordinal"))
+        except (TypeError, ValueError) as exc:
+            raise GradeError("bad-unit", 400, "ordinal is required") from exc
+        exists = self.db.query_one(
+            "SELECT 1 FROM unit WHERE textbook_id = ? AND ordinal = ?", (textbook_id, ordinal)
+        )
+        if exists is None:
+            raise GradeError("bad-unit", 404, "that book has no such unit")
+        curriculum.set_unit(self.db, device_id, textbook_id, ordinal, now_ms)
+        return self.curriculum_overview(device_id, now_ms)
 
     # ---- the TV's side of the same conversation ----
 

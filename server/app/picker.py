@@ -185,6 +185,16 @@ def _review_used_today(db, device_id: str, day_key: str) -> Counter:
     return used
 
 
+def review_used_today(db, device_id: str, day_key: str) -> Counter:
+    """How many review questions each topic has already been given today (public, for the H5).
+
+    The parent page shows "今天已出 2 题（上限 3）" next to a topic, and that number has to be the one
+    the picker will act on tomorrow morning — the same count, from the same place, not a second
+    approximation that drifts.
+    """
+    return _review_used_today(db, device_id, day_key)
+
+
 def _review_pick(fresh: list[dict], weak: dict[int, dict], supply: Counter, rng: random.Random,
                  limit: int, used_today: Counter) -> list[dict]:
     """Weighted draw without replacement inside the review segment (§6.7).

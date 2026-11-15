@@ -99,11 +99,56 @@ const TEXTS = {
       unpairConfirm: '解绑后要重新在电视上取码。确定？',
       change: '修改密码', setQuestion: '找回问题',
       language: '语言',
+      progress: '孩子学到哪儿',
+      progressNote: '出哪些单元的题由进度决定。填一次开学日期，之后按周往前推。',
+      startDate: '开学第一天',
+      startHint: '填这学期第一个周一。放假缺的周不用管，差一两周可以单独指定某一科。',
+      weekN: '第 {n} 周',
+      unitN: '第 {n} 单元',
+      reviewing: '学完了',
+      autoByDate: '按日期',
+      setByParent: '家长指定',
+      unitPick: '现在学到',
+      progressSaved: '已保存',
+      badDate: '日期没填完整。',
     },
     wrong: {
       empty: '最近没有错题', emptyHint: '做错的题会出现在这里，带着正确答案和解析。',
       yours: '他答', right: '答案', days: '最近 {n} 天',
       flagged: '标记没学过',
+
+      weak: '薄弱知识点', weakAll: '全部 {n} 个 ›', weakEmpty: '还没有薄弱知识点',
+      weakEmptyHint: '孩子在电视上做错的题会自动折算成知识点的分数，出现在这里。',
+      need: '再答对 {n} 次', needDone: '已回到正常', score: '{n} 分',
+      word0: '牢固', word1: '需巩固', word2: '不牢', word3: '很弱',
+
+      teach: '本周该讲', teachNote: '一周讲掉 1–2 个就够，不用全清。',
+      arrived: '新增', cleared: '已清掉', avg: '平均掌握度', weekK: '近 7 天',
+      avgMove: '{a} 分 → {b} 分',
+      listNote: '分数越高越不牢固。做对一次 −10，连着做对两次再多 −10；扣到 11 分以下就不再单独练。',
+
+      list: '错题清单', listAll: '全部 {n} 条 ›', listEmpty: '最近没有错题',
+      listHint: '电视上做错的、你手动录的，都在这里。',
+      filterAll: '全部', filterTv: '电视', filterManual: '手动录入',
+      srcTv: '电视', srcManual: '手动录入', noAnswer: '只记了知识点，没有题目',
+      more: '再看 {n} 条', total: '最近 {n} 天 · 共 {m} 条',
+      answers: '答案与解析只给家长看，孩子端不显示。',
+
+      detailWeight: '出题权重', detailTarget: '目标题量', detailBank: '题库已有',
+      detailToday: '今天已出', capLimit: '{n} 题（上限 {m}）',
+      times: '{n} 倍', qty: '{n} 题',
+      flow: '加减分记录', flowNote: '每一次加减分都能回放，核得到具体是哪一道题。',
+      flowEmpty: '还没有记录。',
+      coach: '可以这样跟他说', coachWhy: '他为什么会问', coachAvoid: '别这么说',
+      topicWrong: '这个知识点的错题',
+
+      adjust: '手动调整', adjustWhy: '写一句为什么，会记进流水',
+      adjustDown: '−10 已经会了', adjustUp: '＋10 还是不牢',
+      adjustSaved: '已调整',
+
+      add: '添加错题', addTitle: '添加错题', addCount: '错了几道',
+      addSave: '保存', addNote: '拍照识别还在做：选一个知识点、填错了几个，20 秒录完。',
+      countN: '{n} 道', addDone: '记下了，下一组就会练它。',
     },
     week: {
       attempts: '做题', passed: '通过', rate: '通过率', earned: '换到',
@@ -195,11 +240,56 @@ const TEXTS = {
       unpairConfirm: 'You will need a new code on the TV. Continue?',
       change: 'Change password', setQuestion: 'Recovery question',
       language: 'Language',
+      progress: 'Where the class is',
+      progressNote: 'Progress decides which units the questions come from. Enter the term once; the weeks follow.',
+      startDate: 'First day of term',
+      startHint: 'The first Monday of this term. Skip holiday weeks; a subject that is off by a week can be set on its own.',
+      weekN: 'Week {n}',
+      unitN: 'Unit {n}',
+      reviewing: 'Book finished',
+      autoByDate: 'from the date',
+      setByParent: 'set by hand',
+      unitPick: 'Now on',
+      progressSaved: 'Saved',
+      badDate: 'That date is incomplete.',
     },
     wrong: {
       empty: 'No mistakes recently', emptyHint: 'Wrong answers show up here with the right answer and the explanation.',
       yours: 'They said', right: 'Answer', days: 'Last {n} days',
       flagged: 'Marked as not learned',
+
+      weak: 'Topics to work on', weakAll: 'All {n} ›', weakEmpty: 'Nothing to work on',
+      weakEmptyHint: 'A wrong answer on the TV becomes a score for that topic, and it shows up here.',
+      need: '{n} more right', needDone: 'Back to normal', score: '{n}',
+      word0: 'Solid', word1: 'Shaky', word2: 'Weak', word3: 'Weakest',
+
+      teach: 'Teach this week', teachNote: 'One or two a week is enough. There is no need to clear them all.',
+      arrived: 'New', cleared: 'Cleared', avg: 'Average score', weekK: 'Last 7 days',
+      avgMove: '{a} → {b}',
+      listNote: 'A higher score means less solid. One right answer is −10; two in a row is another −10. Below 12 it stops being practised on its own.',
+
+      list: 'Past mistakes', listAll: 'All {n} ›', listEmpty: 'No mistakes recently',
+      listHint: 'Wrong on the TV, or recorded here by hand — all of it lives in one list.',
+      filterAll: 'All', filterTv: 'TV', filterManual: 'By hand',
+      srcTv: 'TV', srcManual: 'By hand', noAnswer: 'Topic recorded, no question',
+      more: '{n} more', total: 'Last {n} days · {m} in total',
+      answers: 'Answers and explanations are for the parent. The TV never shows them.',
+
+      detailWeight: 'Weight', detailTarget: 'Target questions', detailBank: 'In the bank',
+      detailToday: 'Asked today', capLimit: '{n} (cap {m})',
+      times: '{n}×', qty: '{n}',
+      flow: 'How the score moved', flowNote: 'Every change is replayable — you can trace it to the question.',
+      flowEmpty: 'Nothing yet.',
+      coach: 'What you can say to them', coachWhy: 'Why they bring it up', coachAvoid: 'Not this',
+      topicWrong: 'Mistakes on this topic',
+
+      adjust: 'Adjust by hand', adjustWhy: 'Say why — it goes into the record',
+      adjustDown: '−10 they know it', adjustUp: '+10 still shaky',
+      adjustSaved: 'Adjusted',
+
+      add: 'Add a mistake', addTitle: 'Add a mistake', addCount: 'How many wrong',
+      addSave: 'Save', addNote: 'Photo recognition is still being built: pick a topic, say how many, and it takes 20 seconds.',
+      countN: '{n}', addDone: 'Recorded. It will be in the next group.',
     },
     week: {
       attempts: 'Tries', passed: 'Passed', rate: 'Pass rate', earned: 'Earned',
@@ -537,7 +627,24 @@ const signedOut = err => err.code === 'not-signed-in' || err.code === 'not-paire
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-function T() { return TEXTS[lang]; }
+/** The copy for the current language, with Chinese filling any gap.
+ *
+ *  The wrong-book pages landed in Chinese and English first, because that copy is read by a parent and
+ *  translating it badly is worse than not translating it. The other three languages keep their own
+ *  existing strings and borrow Chinese for the new ones — better than a blank label or a half-and-half
+ *  sentence nobody can proofread. */
+let textsFor = { lang: null, value: null };
+function T() {
+  if (textsFor.lang === lang) return textsFor.value;
+  let value = TEXTS[lang] || TEXTS.zh;
+  if (lang !== 'zh') {
+    value = Object.fromEntries(Object.keys(TEXTS.zh).map(group => [
+      group, { ...TEXTS.zh[group], ...((TEXTS[lang] || {})[group] || {}) },
+    ]));
+  }
+  textsFor = { lang, value };
+  return value;
+}
 
 function fill(template, values) {
   return template.replace(/\{(\w+)\}/g, (_, key) => (key in values ? String(values[key]) : `{${key}}`));
@@ -1204,6 +1311,8 @@ function renderSettings(config) {
     </div></div>
     <p class="footer-note">${esc(s.delay)}</p>
     <div class="card"><div class="kv">
+      <div class="row tap" id="progress"><span class="k">${esc(s.progress)}</span>
+        <span class="v dim">›</span></div>
       <div class="row tap" id="setq"><span class="k">${esc(s.setQuestion)}</span>
         <span class="v dim">›</span></div>
       <div class="row tap" id="change"><span class="k">${esc(s.change)}</span>
@@ -1213,35 +1322,454 @@ function renderSettings(config) {
     </div></div>`;
 }
 
-function renderWrong(data) {
+// ---------------------------------------------------------------- the wrong tab, five pages
+//
+// Overview → weak list → one topic → past mistakes → the add sheet. The tab used to be one flat list;
+// it is now the only place in the product where a score is visible (the TV says nothing, §10), so the
+// overview has to answer "how many holes" and "what did he get wrong" before the parent scrolls, and
+// the detail page has to answer "why 72" without a paragraph of theory.
+
+/** Which sub-page is open inside the wrong tab: null = overview. */
+let page = null;
+let pageArg = null;
+/** The list's filter and scroll position, kept while moving between pages. */
+let listSource = 'all';
+let listOffset = 0;
+const LIST_PAGE = 40;
+/** The add sheet's draft: the subject tab, the chosen topic, the count, and the batch id that makes a
+ *  second tap harmless. */
+let addDraft = null;
+
+const qs = (extra = '') => {
+  const day = `day_key=${dayKey()}`;
+  const tv = deviceId ? `&device_id=${encodeURIComponent(deviceId)}` : '';
+  return `?${day}${tv}${extra}`;
+};
+
+const levelWord = level => T().wrong[`word${level}`] || '';
+const levelClass = level => (level >= 3 ? 'bad' : level === 2 ? 'l2' : level === 1 ? 'l1' : '');
+
+function subhead(title) {
+  const back = T().tab[view] || '';
+  return `<div class="subhead"><button type="button" id="back" aria-label="${esc(back)}">‹ ${esc(back)}</button>
+    <h1>${esc(title)}</h1></div>`;
+}
+
+/** One topic on the weak list: name, how many rights are left, its unit, the score, and a bar.
+ *  The bar is the score itself, not progress towards anything — 72 means 72. */
+function weakRow(item) {
   const w = T().wrong;
-  if (!data.items.length) return emptyState(w.empty, w.emptyHint);
+  return `<div class="mrow" data-topic="${item.topic_id}">
+    <div class="top"><span class="nm">${esc(item.topic)}</span>
+      <span class="need${item.need_right ? '' : ' done'}">${esc(
+        item.need_right ? fill(w.need, { n: item.need_right }) : w.needDone)}</span></div>
+    <div class="sub2"><span class="pill ${levelClass(item.level)}">${esc(levelWord(item.level))}</span>
+      <span class="u">${esc(item.unit)}</span>
+      <span class="sc">${esc(fill(w.score, { n: item.score }))}</span></div>
+    <div class="mbar l${item.level}"><i style="width:${item.score}%"></i></div>
+  </div>`;
+}
 
-  const cards = data.items.map(item => {
-    const tags = [
-      item.subject ? `<span class="pill">${esc(item.subject)}</span>` : '',
-      item.topic ? `<span class="pill">${esc(item.topic)}</span>` : '',
-      item.flagged_unknown ? `<span class="pill">${esc(w.flagged)}</span>` : '',
-    ].join('');
+function qcard(item) {
+  const w = T().wrong;
+  const tags = [
+    `<span class="src ${item.source === 'paper' ? 'man' : 'tv'}">${esc(
+      item.source === 'paper' ? w.srcManual : w.srcTv)}</span>`,
+    item.subject ? `<span class="pill">${esc(item.subject)}</span>` : '',
+    item.topic ? `<span class="pill">${esc(item.topic)}</span>` : '',
+    item.flagged_unknown ? `<span class="pill">${esc(w.flagged)}</span>` : '',
+  ].join('');
+  const yours = item.chosen_text || item.chosen || '';
+  const right = item.answer_text || '';
+  // A recorded mistake has no question behind it: an empty "he said / answer" pair would look like the
+  // child answered nothing, so it says what actually happened instead.
+  const answers = item.source === 'paper' && !item.stem
+    ? `<p class="meta" style="margin:0">${esc(w.noAnswer)}</p>`
+    : `<div class="answer">
+        <div class="line yours"><b>${esc(w.yours)}</b><span>${esc(yours || '—')}</span></div>
+        <div class="line right"><b>${esc(w.right)}</b><span>${esc(right || '—')}</span></div>
+      </div>`;
+  const stem = item.stem ? `<p class="stem">${esc(item.stem)}</p>` : '';
+  const why = item.explanation ? `<p class="why">${esc(item.explanation)}</p>` : '';
+  return `<div class="q">
+    <div class="head">${tags}</div>
+    ${stem}
+    ${answers}
+    ${why}
+    <p class="meta">${esc(item.day_key)}${item.unit ? ' · ' + esc(item.unit) : ''}</p>
+  </div>`;
+}
 
-    const yours = item.chosen_text || item.chosen || '—';
-    const right = item.answer_text || '—';
-    const why = item.explanation
-      ? `<p class="why">${esc(item.explanation)}</p>` : '';
+function renderWeakOverview(mastery, wrong) {
+  const w = T().wrong;
+  const top = mastery.items.slice(0, 2);
+  const weakCard = top.length
+    ? `<div class="sec-in"><h2>${esc(w.weak)}</h2>
+         <a href="#" data-go="topics">${esc(fill(w.weakAll, { n: mastery.count }))}</a></div>
+       <p class="sub">${esc(mastery.week_line)}</p>
+       ${top.map(weakRow).join('')}`
+    : `<div class="sec-in"><h2>${esc(w.weak)}</h2></div>
+       <div class="empty"><strong>${esc(w.weakEmpty)}</strong>${esc(w.weakEmptyHint)}</div>`;
 
-    return `<div class="q">
-      <div class="head">${tags}</div>
-      <p class="stem">${esc(item.stem)}</p>
-      <div class="answer">
-        <div class="line yours"><b>${esc(w.yours)}</b><span>${esc(yours)}</span></div>
-        <div class="line right"><b>${esc(w.right)}</b><span>${esc(right)}</span></div>
+  const recent = (wrong.items || []).slice(0, 2);
+  const listHead = `<div class="sec"><h2>${esc(w.list)}</h2>${
+    wrong.total ? `<a href="#" data-go="list">${esc(fill(w.listAll, { n: wrong.total }))}</a>` : ''}</div>`;
+  const listBody = recent.length
+    ? recent.map(qcard).join('')
+    : `<div class="card"><div class="empty"><strong>${esc(w.listEmpty)}</strong>${esc(w.listHint)}</div></div>`;
+
+  return `<div class="card">${weakCard}</div>${listHead}${listBody}
+    <div class="dock"><button class="primary" type="button" id="add-open">${esc(w.add)}</button></div>`;
+}
+
+function renderTopics(mastery) {
+  const w = T().wrong;
+  const teach = mastery.items.slice(0, 3);
+  const week = mastery.week || {};
+  const rows = (items, withIndex) => items.map((item, index) => `<div class="row" data-topic="${item.topic_id}">
+      <span class="k">${withIndex ? `${index + 1}. ` : ''}${esc(item.topic)}</span>
+      <span class="v dim">${esc(levelWord(item.level))} · ${esc(fill(w.score, { n: item.score }))}</span>
+    </div>`).join('');
+
+  const teachCard = teach.length
+    ? `<p class="sub">${esc(w.teachNote)}</p><div class="kv">${rows(teach, true)}</div>`
+    : `<div class="empty"><strong>${esc(w.weakEmpty)}</strong>${esc(w.weakEmptyHint)}</div>`;
+
+  return `${subhead(w.weak)}
+    <div class="card"><h2>${esc(w.teach)}</h2>${teachCard}</div>
+    <div class="card"><h2>${esc(fill(w.weakAll, { n: mastery.count }).replace(' ›', ''))}</h2>
+      <div class="kv">${mastery.items.map(item => weakRow(item)).join('')}</div></div>
+    <div class="card"><h2>${esc(w.weekK)}</h2><div class="kv">
+      <div class="row"><span class="k">${esc(w.arrived)}</span><span class="v">${week.arrived ?? 0}</span></div>
+      <div class="row"><span class="k">${esc(w.cleared)}</span><span class="v">${week.cleared ?? 0}</span></div>
+      <div class="row"><span class="k">${esc(w.avg)}</span>
+        <span class="v">${esc(fill(w.avgMove, { a: week.avg_before ?? 0, b: week.avg_now ?? 0 }))}</span></div>
+    </div></div>
+    <p class="footer-note">${esc(w.listNote)}</p>`;
+}
+
+function renderTopicDetail(t) {
+  const w = T().wrong;
+  const flow = t.events.length
+    ? t.events.map(event => `<div class="f">
+        <span class="when">${esc(String(event.at).slice(5, 16))}</span>
+        <span class="what">${esc(event.label)}</span>
+        <span class="d ${event.delta > 0 ? 'up' : 'dn'}">${event.delta > 0 ? '+' : '−'}${Math.abs(event.delta)}</span>
+      </div>`).join('')
+    : `<p class="footer-note" style="margin:0">${esc(w.flowEmpty)}</p>`;
+
+  const numbers = [
+    [w.detailWeight, fill(w.times, { n: t.weight })],
+    [w.detailTarget, fill(w.qty, { n: t.target_qty })],
+    [w.detailBank, fill(w.qty, { n: t.in_bank })],
+    [w.detailToday, fill(w.capLimit, { n: t.today_used, m: t.daily_cap })],
+  ].map(([k, v]) => `<div class="row"><span class="k">${esc(k)}</span>
+      <span class="v">${esc(v)}</span></div>`).join('');
+
+  const wrongCards = t.wrong_items.length
+    ? t.wrong_items.map(item => `<div class="row" style="align-items:flex-start">
+        <span class="k" style="font-size:14px">${esc(item.stem || w.noAnswer)}</span>
+        <span class="v dim">${esc(item.day_key.slice(5))}</span></div>`).join('')
+    : `<p class="footer-note" style="margin:0">${esc(w.listEmpty)}</p>`;
+
+  return `${subhead(t.topic)}
+    <div class="card">
+      <div class="hero"><span class="score">${t.score}</span></div>
+      <div class="heroline"><span class="pill ${levelClass(t.level)}">${esc(levelWord(t.level))}</span>
+        <span>${esc(t.need_right ? fill(w.need, { n: t.need_right }) : w.needDone)}</span></div>
+      <div class="mbar l${t.level}" style="margin-top:14px"><i style="width:${t.score}%"></i></div>
+    </div>
+    <div class="card"><div class="kv">${numbers}</div></div>
+    <div class="card"><h2>${esc(w.flow)}</h2><div class="flow">${flow}</div></div>
+    <p class="footer-note">${esc(w.flowNote)}</p>
+    <div class="card"><h2>${esc(w.coach)}</h2>
+      <p class="say">「${esc(t.coach.say)}」</p>
+      <div class="row"><span class="k">${esc(w.coachWhy)}</span></div>
+      <p class="footer-note" style="margin:4px 0 12px">${esc(t.coach.why)}</p>
+      <div class="row"><span class="k">${esc(w.coachAvoid)}</span></div>
+      <p class="footer-note" style="margin:4px 0 0">${esc(t.coach.avoid)}</p>
+    </div>
+    <div class="card"><h2>${esc(w.topicWrong)}</h2><div class="kv">${wrongCards}</div></div>
+    <div class="card">
+      <button class="quiet" type="button" id="adjust-toggle" style="margin:0">${esc(w.adjust)}</button>
+      <div class="adjust" id="adjust-form" hidden>
+        <input id="adjust-note" type="text" maxlength="60" placeholder="${esc(w.adjustWhy)}"
+               autocomplete="off" enterkeyhint="done">
+        <div class="two">
+          <button type="button" data-delta="-10">${esc(w.adjustDown)}</button>
+          <button type="button" data-delta="10">${esc(w.adjustUp)}</button>
+        </div>
       </div>
-      ${why}
-      <p class="meta">${esc(item.day_key)}${item.unit ? ' · ' + esc(item.unit) : ''}</p>
+    </div>`;
+}
+
+function renderWrongList(data) {
+  const w = T().wrong;
+  const chips = [['all', w.filterAll], ['tv', w.filterTv], ['paper', w.filterManual]]
+    .map(([key, label]) => `<button class="f ${data.source === key ? 'on' : ''}" type="button"
+        data-source="${key}">${esc(label)}<b>${data.counts[key] ?? 0}</b></button>`).join('');
+  const cards = data.items.length
+    ? `<div id="cards">${data.items.map(qcard).join('')}</div>`
+    : emptyState(w.listEmpty, w.listHint);
+  const left = data.total - data.offset - data.items.length;
+  const more = left > 0
+    ? `<button class="quiet" type="button" id="more">${esc(fill(w.more, { n: left }))}</button>` : '';
+  return `${subhead(w.list)}<div class="filters">${chips}</div>${cards}${more}
+    <p class="footer-note">${esc(fill(w.total, { n: data.days, m: data.total }))} · ${esc(w.answers)}</p>`;
+}
+
+function renderProgress(data) {
+  const s = T().settings;
+  const books = data.books.map(book => {
+    // The options are short on purpose: a <select> whose text is "第 5 单元 圆" pushes past the card
+    // edge on a 390pt phone, and the unit's name is already on the line above.
+    const options = book.units.map(unit => `<option value="${unit.ordinal}"
+        ${unit.ordinal === book.current ? 'selected' : ''}>${esc(fill(s.unitN, { n: unit.ordinal }))}</option>`).join('');
+    const unit = book.units.find(one => one.ordinal === book.current) || {};
+    const note = book.reviewing ? s.reviewing : (book.source === 'parent' ? s.setByParent : s.autoByDate);
+    return `<div class="row">
+      <span class="k">${esc(book.subject)}<small>${esc(book.book)} · ${esc(unit.name || '')} · ${esc(note)}</small></span>
+      <select data-book="${book.textbook_id}" aria-label="${esc(s.unitPick)}">${options}</select>
     </div>`;
   }).join('');
 
-  return `<p class="footer-note" style="margin:2px 4px 0">${esc(fill(w.days, { n: data.days }))}</p>${cards}`;
+  return `${subhead(s.progress)}
+    <div class="card"><h2>${esc(s.startDate)}</h2>
+      <p class="sub">${esc(s.startHint)}</p>
+      <input class="date-input" id="start-date" type="date" value="${esc(data.start_date || '')}">
+      <p class="footer-note">${esc(data.week ? fill(s.weekN, { n: data.week }) : '')}</p>
+    </div>
+    <div class="card"><h2>${esc(s.unitPick)}</h2><div class="kv">${books}</div></div>
+    <p class="footer-note">${esc(s.progressNote)}</p>`;
+}
+
+// ---- the add sheet ----
+
+function newBatchId() {
+  // Crockford-ish, 26 characters, matching `PAPER_ID` on the server. Its only job is to be unique per
+  // sheet opening so a double tap lands on the same batch instead of adding twice.
+  const alphabet = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+  let id = '';
+  for (let i = 0; i < 26; i += 1) id += alphabet[Math.floor(Math.random() * alphabet.length)];
+  return id;
+}
+
+function renderAddSheet() {
+  const w = T().wrong;
+  const subjects = [...new Set(addDraft.topics.map(topic => topic.subject_code))];
+  const seg = subjects.map(code => {
+    const name = (addDraft.topics.find(topic => topic.subject_code === code) || {}).subject || code;
+    return `<button type="button" data-subject="${esc(code)}"
+      class="${code === addDraft.subject ? 'on' : ''}">${esc(name)}</button>`;
+  }).join('');
+  const rows = addDraft.topics
+    .filter(topic => topic.subject_code === addDraft.subject)
+    .map(topic => `<button class="sheet-row ${addDraft.topic === topic.topic_id ? 'is-on' : ''}"
+        type="button" data-pick="${topic.topic_id}">
+        <strong>${esc(topic.topic)}</strong>
+        <span>${addDraft.topic === topic.topic_id ? '✓' : esc(topic.unit)}</span></button>`).join('');
+
+  $('#add-body').innerHTML = `
+    <h2 class="plain" id="add-title">${esc(w.addTitle)}</h2>
+    <div class="seg">${seg}</div>
+    <div class="picker">${rows}</div>
+    <div class="row" style="border-top:1px solid var(--sep);margin-top:6px">
+      <span class="k">${esc(w.addCount)}</span>
+      <span class="stepper">
+        <button type="button" data-count="-1" ${addDraft.count <= 1 ? 'disabled' : ''}>−</button>
+        <span class="val">${esc(fill(w.countN, { n: addDraft.count }))}</span>
+        <button type="button" data-count="1" ${addDraft.count >= 10 ? 'disabled' : ''}>+</button>
+      </span></div>
+    <p class="footer-note">${esc(w.addNote)}</p>
+    <button class="primary" id="add-save" type="button"
+      ${addDraft.topic ? '' : 'disabled'}>${esc(w.addSave)}</button>`;
+
+  $$('#add-body [data-subject]').forEach(button => button.addEventListener('click', () => {
+    addDraft.subject = button.dataset.subject;
+    renderAddSheet();
+  }));
+  $$('#add-body [data-pick]').forEach(button => button.addEventListener('click', () => {
+    addDraft.topic = Number(button.dataset.pick);
+    renderAddSheet();
+  }));
+  $$('#add-body [data-count]').forEach(button => button.addEventListener('click', () => {
+    addDraft.count = Math.max(1, Math.min(10, addDraft.count + Number(button.dataset.count)));
+    renderAddSheet();
+  }));
+  $('#add-save').addEventListener('click', saveAdd);
+}
+
+async function openAdd() {
+  if (!addDraft || !addDraft.topics.length) {
+    try {
+      const data = await api(`/v1/h5/topics${qs()}`);
+      addDraft = { topics: data.topics, subject: null, topic: null, count: 1, batch: newBatchId() };
+      addDraft.subject = data.topics.length ? data.topics[0].subject_code : null;
+    } catch (err) {
+      if (signedOut(err)) return;
+      toast(T().common.error);
+      return;
+    }
+  }
+  renderAddSheet();
+  $('#add-backdrop').hidden = false;
+}
+
+function closeAdd() {
+  $('#add-backdrop').hidden = true;
+}
+
+async function saveAdd() {
+  if (!addDraft || !addDraft.topic) return;
+  const button = $('#add-save');
+  button.disabled = true;
+  try {
+    await api(`/v1/h5/paper${qs()}`, {
+      method: 'POST',
+      body: {
+        topic_id: addDraft.topic,
+        count: addDraft.count,
+        day_key: dayKey(),
+        // Sent so a retry on a flaky connection lands on the same batch rather than a second one.
+        paper_id: addDraft.batch,
+      },
+    });
+    closeAdd();
+    addDraft = null;
+    toast(T().wrong.addDone);
+    await refresh();
+  } catch (err) {
+    button.disabled = false;
+    if (signedOut(err)) return;
+    toast(T().common.error);
+  }
+}
+
+// ---- loading and moving between the pages ----
+
+async function loadWeak() {
+  return api(`/v1/h5/mastery${qs()}`);
+}
+
+async function loadWrong(days = 30, limit = 60, offset = 0, source = 'all') {
+  return api(`/v1/h5/wrongbook${qs(`&days=${days}&limit=${limit}&offset=${offset}&source=${source}`)}`);
+}
+
+async function nav(next, arg = null) {
+  page = next;
+  pageArg = arg;
+  const host = $('#view');
+  host.classList.remove('has-dock');
+  host.innerHTML = skeleton();
+  try {
+    if (next === 'topics') {
+      host.innerHTML = renderTopics(await loadWeak());
+      bindTopicLinks();
+    } else if (next === 'topic') {
+      const data = await api(`/v1/h5/mastery/${arg}${qs()}`);
+      host.innerHTML = renderTopicDetail(data);
+      bindTopicDetail(data);
+    } else if (next === 'list') {
+      const data = await loadWrong(30, LIST_PAGE, 0, listSource);
+      listOffset = data.items.length;
+      host.innerHTML = renderWrongList(data);
+      bindList();
+    } else if (next === 'progress') {
+      host.innerHTML = renderProgress(await api(`/v1/h5/curriculum${qs()}`));
+      bindProgress();
+    }
+    $('#back')?.addEventListener('click', () => go(view));
+  } catch (err) {
+    if (signedOut(err)) return;
+    host.innerHTML = `<div class="card"><div class="empty"><strong>${esc(T().common.error)}</strong>
+      <button class="primary" id="retry" style="margin-top:18px;max-width:180px">${esc(T().common.retry)}</button></div></div>`;
+    $('#retry').addEventListener('click', () => nav(next, arg));
+  }
+}
+
+function bindTopicLinks() {
+  $$('#view [data-topic]').forEach(node => node.addEventListener('click', () => {
+    nav('topic', Number(node.dataset.topic));
+  }));
+}
+
+function bindTopicDetail(topic) {
+  const form = $('#adjust-form');
+  $('#adjust-toggle')?.addEventListener('click', () => { form.hidden = !form.hidden; });
+  $$('#adjust-form [data-delta]').forEach(button => button.addEventListener('click', async () => {
+    const note = $('#adjust-note').value.trim();
+    if (!note) {
+      toast(T().wrong.adjustWhy);
+      $('#adjust-note').focus();
+      return;
+    }
+    button.disabled = true;
+    try {
+      await api(`/v1/h5/topic/${topic.topic_id}/adjust${qs()}`, {
+        method: 'POST', body: { delta: Number(button.dataset.delta), note },
+      });
+      toast(T().wrong.adjustSaved);
+      await nav('topic', topic.topic_id);
+    } catch (err) {
+      button.disabled = false;
+      if (signedOut(err)) return;
+      toast(T().common.error);
+    }
+  }));
+}
+
+function bindList() {
+  $$('#view [data-source]').forEach(button => button.addEventListener('click', async () => {
+    listSource = button.dataset.source;
+    await nav('list');
+  }));
+  // "看更多" appends into the card container rather than re-rendering: a parent reading down the list
+  // should not be thrown back to the top by the next page arriving.
+  $('#more')?.addEventListener('click', async () => {
+    try {
+      const more = await loadWrong(30, LIST_PAGE, listOffset, listSource);
+      listOffset += more.items.length;
+      $('#cards')?.insertAdjacentHTML('beforeend', more.items.map(qcard).join(''));
+      if (listOffset >= more.total) $('#more')?.remove();
+    } catch (err) {
+      if (signedOut(err)) return;
+      toast(T().common.error);
+    }
+  });
+}
+
+function bindProgress() {
+  const input = $('#start-date');
+  input?.addEventListener('change', async () => {
+    if (!input.value) return;
+    try {
+      const data = await api(`/v1/h5/curriculum${qs()}`, {
+        method: 'PUT', body: { start_date: input.value },
+      });
+      toast(T().settings.progressSaved);
+      $('#view').innerHTML = renderProgress(data);
+      bindProgress();
+      $('#back')?.addEventListener('click', () => go(view));
+    } catch (err) {
+      if (signedOut(err)) return;
+      toast(err.code === 'bad-date' ? T().settings.badDate : T().common.error);
+    }
+  });
+  $$('#view [data-book]').forEach(select => select.addEventListener('change', async () => {
+    try {
+      const data = await api(`/v1/h5/curriculum/unit${qs()}`, {
+        method: 'PUT',
+        body: { textbook_id: Number(select.dataset.book), ordinal: Number(select.value) },
+      });
+      toast(T().settings.progressSaved);
+      $('#view').innerHTML = renderProgress(data);
+      bindProgress();
+      $('#back')?.addEventListener('click', () => go(view));
+    } catch (err) {
+      if (signedOut(err)) return;
+      toast(T().common.error);
+    }
+  }));
 }
 
 function renderWeek(data) {
@@ -1305,15 +1833,23 @@ async function load(name) {
   const tv = deviceId ? `device_id=${encodeURIComponent(deviceId)}` : '';
   if (name === 'today') return api(`/v1/h5/summary?day_key=${day}&${tv}`);
   if (name === 'week') return api(`/v1/h5/report?day_key=${day}&${tv}`);
-  if (name === 'wrong') return api(`/v1/h5/wrongbook?day_key=${day}&days=7&${tv}`);
+  if (name === 'wrong') {
+    // Two calls in parallel: the overview shows both halves, and waiting for them in sequence would
+    // leave the card empty for as long as the second one takes.
+    return Promise.all([loadWeak(), loadWrong(30, 2, 0, 'all')])
+      .then(([mastery, wrong]) => ({ mastery, wrong }));
+  }
   if (name === 'settings') return api(`/v1/h5/config?${tv}`);
   return null;
 }
 
 async function go(name) {
   view = name;
+  page = null;
+  pageArg = null;
   $$('.tab').forEach(tab => tab.classList.toggle('is-on', tab.dataset.tab === name));
   const host = $('#view');
+  host.classList.remove('has-dock');
   host.innerHTML = skeleton();
   try {
     const data = await load(name);
@@ -1327,7 +1863,16 @@ async function go(name) {
     } else if (name === 'week') {
       host.innerHTML = renderWeek(data);
     } else {
-      host.innerHTML = renderWrong(data);
+      host.classList.add('has-dock');
+      host.innerHTML = renderWeakOverview(data.mastery, data.wrong);
+      $$('#view [data-go]').forEach(link => link.addEventListener('click', event => {
+        event.preventDefault();
+        nav(link.dataset.go);
+      }));
+      $$('#view [data-topic]').forEach(row => row.addEventListener('click', () => {
+        nav('topic', Number(row.dataset.topic));
+      }));
+      $('#add-open')?.addEventListener('click', openAdd);
     }
   } catch (err) {
     if (signedOut(err)) return;
@@ -1350,8 +1895,11 @@ function refresh() {
   if ($('#screen-main').hidden) return;
   // Never redraw the settings page from under a thumb: a language switch would reset a stepper the
   // parent is halfway through. It catches up the next time the tab is opened.
-  if (view === 'settings') return;
-  go(view);
+  if (view === 'settings' && !page) return;
+  // Re-open the same sub-page after a language switch or a recorded mistake, rather than dropping the
+  // parent back on the tab root.
+  if (page) nav(page, pageArg);
+  else go(view);
 }
 
 // ---------------------------------------------------------------- settings
@@ -1378,6 +1926,7 @@ function bindSettings(data) {
     });
   });
 
+  $('#progress')?.addEventListener('click', () => nav('progress'));
   $('#setq')?.addEventListener('click', () => showAuth('question'));
   $('#change')?.addEventListener('click', () => showAuth('change'));
 
@@ -1446,6 +1995,9 @@ async function boot() {
   });
 
   $$('.tab').forEach(tab => tab.addEventListener('click', () => {
+    // Tapping the tab you are already on is a no-op — except from a sub-page, where it is the shortest
+    // way back to the root and does not need the back arrow.
+    if (tab.dataset.tab === view && page) { go(view); return; }
     if (tab.dataset.tab === view && cache[tab.dataset.tab]) return;
     go(tab.dataset.tab);
   }));
@@ -1470,6 +2022,10 @@ async function boot() {
   });
   $('#device-switch').addEventListener('click', openSheet);
   $('#sheet-close').addEventListener('click', closeSheet);
+  $('#add-close').addEventListener('click', closeAdd);
+  $('#add-backdrop').addEventListener('click', event => {
+    if (event.target === $('#add-backdrop')) closeAdd();
+  });
   $('#sheet-backdrop').addEventListener('click', event => {
     // Only the backdrop closes it; a tap inside the sheet must not.
     if (event.target === $('#sheet-backdrop')) closeSheet();

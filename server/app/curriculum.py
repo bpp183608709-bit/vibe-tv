@@ -76,7 +76,7 @@ def unit_for_week(units: list[tuple[int, int | None]], week: int) -> int:
     return current
 
 
-def _parse_date(value) -> datetime.date | None:
+def parse_date(value) -> datetime.date | None:
     if value is None:
         return None
     if isinstance(value, datetime.datetime):
@@ -93,7 +93,7 @@ def resolve(db, device_id: str, now_ms: int) -> dict[int, BookStage]:
     """textbook_id -> BookStage for every active book. Books without a stage are served nothing."""
     progress = ensure_progress(db, device_id, now_ms)
     anchor = db.query_one("SELECT start_date FROM term_anchor WHERE device_id = ?", (device_id,))
-    start = _parse_date(anchor["start_date"] if anchor else None)
+    start = parse_date(anchor["start_date"] if anchor else None)
     today = datetime.date.fromtimestamp(now_ms / 1000)
     week = weeks_in(start, today) if start else None
 
@@ -173,6 +173,20 @@ def set_unit(db, device_id: str, textbook_id: int, ordinal: int, now_ms: int) ->
             " updated_by, updated_at) VALUES (?, ?, ?, 'parent', ?)",
             (device_id, textbook_id, ordinal, now),
         )
+
+
+def release_unit(db, device_id: str, textbook_id: int, now_ms: int) -> None:
+    """Hand one book back to the calendar, leaving the others as the parent set them.
+
+    `set_anchor` releases every book at once, which is right when the date was wrong. This is for the
+    other case: one subject was corrected by hand and is now back in step with the class. Clearing the
+    flag is the whole operation — `resolve` skips books whose `updated_by` is not 'parent'.
+    """
+    db.execute(
+        "UPDATE curriculum_progress SET updated_by = 'calendar', updated_at = ?"
+        " WHERE device_id = ? AND textbook_id = ?",
+        (limits.to_iso(now_ms), device_id, textbook_id),
+    )
 
 
 def _selfcheck() -> None:
