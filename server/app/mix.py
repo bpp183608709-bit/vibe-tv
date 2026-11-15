@@ -41,9 +41,8 @@ STATES = (S0, S1, S2, S3)
 
 #: state -> (current unit, review segment). Previous units get the rest; never a third knob.
 QUOTA = {S0: (5, 0), S1: (4, 1), S2: (3, 2), S3: (2, 2)}
-#: state -> how many units back count as "the previous units". S0 must stay 2 or the zero-regression
-#: case breaks: a wider window changes which questions are tier 1.
-PREV_WINDOW = {S0: 2, S1: 2, S2: 2, S3: 3}
+# The window that used to live here (`how many units back count as previous`) is gone: the band is the
+# whole term now, so it no longer depends on the state (docs/RULES.md §3.2).
 
 #: score at which a topic enters the weak list; the top of L0 plus one (§5.2).
 WEAK_MIN_SCORE = mastery.LEVEL_BOUNDS[0][1] + 1
@@ -77,10 +76,6 @@ def state_for(n: int, deepest: int) -> str:
     if n <= 0:
         return S0
     return STATES[max(STATES.index(scale_state(n)), STATES.index(depth_state(deepest)))]
-
-
-def prev_window(state: str) -> int:
-    return PREV_WINDOW[state]
 
 
 def weight_of(topic: dict, supply: int) -> float:
@@ -125,7 +120,7 @@ def assess(db, device_id: str, now_ms: int, supply: dict[int, int]) -> dict:
 def snapshot(db, device_id: str, day_key: str, now_ms: int, supply: dict[int, int]) -> dict:
     """Today's split, taken on the first group of the day and then reused verbatim.
 
-    Returned keys: state, c, r, p, n, deepest, weak, prev_window, note. `weak` is recomputed on every
+    Returned keys: state, c, r, p, n, deepest, weak, note. `weak` is recomputed on every
     call (a topic can fall out of the list mid-day); the quota is not.
     """
     row = limits.get_or_create_daily(db, device_id, day_key, now_ms)
@@ -160,7 +155,6 @@ def snapshot(db, device_id: str, day_key: str, now_ms: int, supply: dict[int, in
     plan["p"] = limits.GROUP_SIZE - plan["c"] - plan["r"]
     plan["weak"] = info["weak"]
     plan["deepest"] = info["deepest"]
-    plan["prev_window"] = prev_window(plan["state"])
     return plan
 
 
@@ -205,8 +199,9 @@ def _selfcheck() -> None:
         assert 2 <= c <= limits.GROUP_SIZE, state   # C never drops below 2: it is still a quiz
     assert [QUOTA[s] for s in STATES] == [(5, 0), (4, 1), (3, 2), (2, 2)]
 
-    # S0 has to look exactly like the picker did before this feature: same window, no review slot
-    assert PREV_WINDOW[S0] == 2 and QUOTA[S0] == (5, 0)
+    # S0 has to look exactly like the picker did before this feature: no review slot, and the current
+    # unit so cheap that all five come from it.
+    assert QUOTA[S0] == (5, 0)
 
     # weight: one L3 against one L1 is 4:2, not 1:1 — this is the whole point of §6.7
     l3 = {"level": 3}

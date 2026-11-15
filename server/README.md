@@ -3,7 +3,7 @@
 出题、判分、签票。**行为规格在 `docs/QUIZ.md` 与 `docs/PARENTAL.md`，错题训练的数值规则在 `docs/RULES.md`，
 这里只讲怎么跑、目录怎么放、哪些还没做。**
 
-现状（2026-11-16 复验）：P1/P2/P3 的链路都已跑通，错题训练 P0 的 A–E 已落地（`server/tools/acceptance.py` 158/158），
+现状（2026-11-16 复验）：P1/P2/P3 的链路都已跑通，错题训练 P0 的 A–E 已落地（`server/tools/acceptance.py` 166/166），
 电视端已上机，手机页已在电视上真机走通「手机改设置 → 94 秒后电视应用」与「电视上报今日已看」。
 包含：建表 → 知识点树导入 → 出题 → 判分 → 签票 → 电视端本地验签 → 钉住 CA 的 https →
 六位码配对 → 设置下发 → 今日 / 错题本 / 周报。
@@ -38,7 +38,10 @@ server/
     auth.py              账号：注册、登录、会话、绑定表、注册四道闸、口令规则、改密与找回（docs/ACCOUNT.md）
     h5.py                家长手机那一半：配对、今日、设置读写、错题本、周报、心跳、配对限速闸
     limits.py            上限与冷却（3 次 / 90 分钟 / 10 分钟冷却 / 每日 6 次）
-    picker.py            出题：当前单元 → 前两单元 → 其余，错题加权，≤2 题/知识点
+    picker.py            出题：当前单元 → 本学期已学单元 → 其余，错题加权，≤2 题/知识点
+    curriculum.py        当前单元从哪来：日历推算（term_anchor）+ 家长覆盖；学期学完转复习期
+    mix.py               三段配比 S0–S3：薄弱规模 × 最深档，当日快照（docs/RULES.md §3）
+    mastery.py           薄弱度：事件权重累加、档位、还要答对几次、连对加成、连错暂停
     grade.py             判分：等价答案、⌈0.8n⌉ 通过线、幂等、上限在事务里扣
     ticket.py            凭证格式 AQ1.<payload>.<sig>，ES256/HS256 两种签名器
     es256.py             ECDSA P-256 + RFC 6979 + DER，标准库
@@ -57,8 +60,8 @@ server/
     make_tv_fixture.py   连上跑着的服务端真签一张票，存成电视端的测试向量
     check_schema_parity.py 两份 DDL 的列名比对
     check_tv_silence.py  电视端不许出现薄弱知识点 / 复习相关的任何字样或字段（WRONGBOOK §10）
-    acceptance.py        端到端验收，158 条断言（P1 30 + P3 20 + 账号 53 + 掌握度与静默 29
-                         + 三段配比与零回归 26）
+    acceptance.py        端到端验收，166 条断言（P1 30 + P3 20 + 账号 53 + 掌握度与静默 29
+                         + 三段配比与零回归 26 + 进度与学期阶段 8）
 ```
 
 ## 跑起来
@@ -73,11 +76,12 @@ python -m server.app.limits                  # 上限自检
 python -m server.app.ids                     # ULID 自检
 python -m server.app.mastery                 # 掌握度权重/档位/过关次数自检
 python -m server.app.mix                     # 三段配比 S0–S3 与权重自检
+python -m server.app.curriculum              # 当前单元推算（日历 / 家长覆盖 / 复习期）自检
 python server/tools/interop_es256.py         # 与 openssl 交叉验签（需要 openssl）
 python server/tools/check_schema_parity.py   # MySQL / SQLite 两份 DDL 不许漂移
 python server/tools/check_tv_silence.py      # 电视端零表达（WRONGBOOK §10）
 
-# 一条龙：建库(内存/文件) → 导树 → 造题 → 起服务 → 158 条验收
+# 一条龙：建库(内存/文件) → 导树 → 造题 → 起服务 → 166 条验收
 python server/tools/acceptance.py
 ```
 

@@ -281,8 +281,18 @@ CREATE TABLE curriculum_progress (
   CONSTRAINT fk_progress_textbook FOREIGN KEY (textbook_id) REFERENCES textbook (id)
 ) ENGINE=InnoDB;
 
--- Per-topic outcome for one device: the wrong-answer weighting (C6), the "没学过" escape count (B7),
--- and the three worst topics in the weekly report (C14).
+-- When this term's first week started, so "which unit are we on" can be worked out from the calendar
+-- instead of being a number nobody updates (docs/RULES.md §3.0). One row per device: only one term is
+-- in progress at a time. The parent can override any unit by hand; that override wins over this date.
+CREATE TABLE term_anchor (
+  device_id   CHAR(26) NOT NULL,
+  start_date  DATE     NOT NULL,
+  updated_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (device_id),
+  CONSTRAINT fk_anchor_device FOREIGN KEY (device_id) REFERENCES device (id)
+) ENGINE=InnoDB;
+
+
 CREATE TABLE topic_signal (
   device_id        CHAR(26)     NOT NULL,
   topic_id         INT UNSIGNED NOT NULL,

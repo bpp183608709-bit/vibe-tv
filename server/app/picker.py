@@ -4,15 +4,21 @@ The rules, in the order they bite:
 
 1. **Where the child is in the book.** `curriculum_progress.current_unit_ordinal` per textbook, moved by
    the school calendar or by the parent. Questions from that unit come first.
-2. **Two units back are fair game.** A group made only of the current unit runs dry in a week — the seed
-   bank has tens of questions per unit, not hundreds — and spaced review is what makes the wrong-answer
-   statistics mean anything. So the pool is: current unit, then the two before it, then the rest.
-3. **Do not re-ask what was answered in the last seven days**, unless there is nothing else left, in
+2. **Everything taught this term is fair game.** A group made only of the current unit runs dry in a
+   week — the seed bank has tens of questions per unit, not hundreds. A fixed two-unit window had a
+   worse problem: in week 18 it never reached what the child learned in September, so "review" meant
+   "review the last fortnight". The pool is now the current unit, then every earlier unit in the book,
+   and only as a last resort the units not taught yet.
+3. **A finished book has no current unit.** When `current` reaches the last unit, `reviewing` is true
+   and the `c` slots stop privileging one unit: they draw from the whole book. See `curriculum.py` for
+   how `current` moves and why finishing is a state rather than an error.
+4. **Do not re-ask what was answered in the last seven days**, unless there is nothing else left, in
    which case the oldest come back first. The window is per question, not per topic: a child who got
    one fraction question wrong should meet a different one, not the same one.
-4. **Weight by what went wrong.** A topic with wrong answers rises in the ordering; the wrong-answer
-   count is the only signal the system has that something needs practice.
-5. **At least two subjects, at most two questions per topic**, five in total (C5, C2). A group of five
+5. **Coverage before repetition outside the current unit.** In the previous-units band the order is
+   "never asked, then longest unseen", because that is what makes a whole term get looked at; inside
+   the current unit the order stays "worst first", which is what the week's lesson needs.
+6. **At least two subjects, at most two questions per topic**, five in total (C5, C2). A group of five
    algebra questions is not a quiz, it is a punishment.
 
 On top of that shape sits a quota (docs/WRONGBOOK.md §6): of the five slots, `c` belong to the current
@@ -41,7 +47,11 @@ import random
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 
-from server.app import limits, mastery, mix
+from server.app import curriculum, limits, mastery, mix
+
+# Re-exported: the frozen picker in acceptance calls `picker.ensure_progress`, and the name still means
+# the same thing now that the calendar can move it.
+from server.app.curriculum import ensure_progress  # noqa: F401
 
 
 class NotEnoughQuestions(Exception):
@@ -66,26 +76,6 @@ class Group:
     plan: dict = field(default_factory=dict)
 
 
-def ensure_progress(db, device_id: str, now_ms: int) -> dict[int, int]:
-    """textbook_id -> current unit ordinal, creating a row at unit 1 on first use."""
-    rows = db.query(
-        "SELECT textbook_id, current_unit_ordinal FROM curriculum_progress WHERE device_id = ?",
-        (device_id,),
-    )
-    progress = {int(r["textbook_id"]): int(r["current_unit_ordinal"]) for r in rows}
-    for textbook in db.query("SELECT id FROM textbook WHERE is_active = 1"):
-        textbook_id = int(textbook["id"])
-        if textbook_id in progress:
-            continue
-        db.execute(
-            "INSERT INTO curriculum_progress (device_id, textbook_id, current_unit_ordinal, updated_by,"
-            " updated_at) VALUES (?, ?, 1, 'calendar', ?)",
-            (device_id, textbook_id, limits.to_iso(now_ms)),
-        )
-        progress[textbook_id] = 1
-    return progress
-
-
 def _candidates(db, device_id: str, difficulty_cap: int) -> list[dict]:
     rows = db.query(
         "SELECT q.id, q.topic_id, q.qtype, q.stem, q.difficulty, q.angle,"
@@ -104,14 +94,22 @@ def _candidates(db, device_id: str, difficulty_cap: int) -> list[dict]:
     return [dict(r) for r in rows]
 
 
-def _tier(row: dict, progress: dict[int, int], window: int) -> int:
-    current = progress.get(int(row["textbook_id"]), 1)
+#: a question the child has not been taught yet. Served only when the taught part of the book runs out.
+UNLEARNED = 3
+
+
+def _tier(row: dict, stages: dict[int, curriculum.BookStage]) -> int:
+    """0 = the unit being taught (or any unit, once the book is finished), 1 = taught but earlier,
+    3 = not taught yet. Missing stage means the book is not in progress: teach nothing from it."""
+    stage = stages.get(int(row["textbook_id"]))
+    if stage is None:
+        return UNLEARNED
     ordinal = int(row["unit_ordinal"])
-    if ordinal == current:
+    if ordinal > stage.current:
+        return UNLEARNED
+    if stage.reviewing:
         return 0
-    if current - window <= ordinal < current:
-        return 1
-    return 2
+    return 0 if ordinal == stage.current else 1
 
 
 def _seen_recently(row: dict, now_ms: int) -> bool:
@@ -124,19 +122,30 @@ def _seen_recently(row: dict, now_ms: int) -> bool:
     return last_seen >= cutoff
 
 
-def _ordered(rows: list[dict], progress: dict[int, int], now_ms: int, rng: random.Random,
-             window: int) -> list[dict]:
-    tiers = {id(row): _tier(row, progress, window) for row in rows}
+def _ordered(rows: list[dict], stages: dict[int, curriculum.BookStage], now_ms: int,
+             rng: random.Random) -> list[dict]:
+    """Sort into the order questions will be taken, then append the un-taught ones as a last resort.
+
+    Two orders live here on purpose. Inside the unit being taught, `wrong_count` leads: this week's
+    lesson is what the child is being graded on and what the parent is watching. Everywhere else
+    (`tier` 1, and every unit of a finished book) coverage leads — never asked first, then longest
+    unseen — because a term is only actually reviewed if the September units come back too.
+
+    Exactly one `rng.random()` per row, in both branches: the zero-regression group depends on the
+    generator being consumed in the same order as before (docs/RULES.md §5).
+    """
+    tiers = {id(row): _tier(row, stages) for row in rows}
     fresh = [row for row in rows if not _seen_recently(row, now_ms)]
     stale = [row for row in rows if _seen_recently(row, now_ms)]
 
     def key(row: dict) -> tuple:
-        return (
-            tiers[id(row)],
-            -int(row["wrong_count"]),
-            row.get("last_seen") or "",     # never-seen sorts first
-            rng.random(),
-        )
+        tier = tiers[id(row)]
+        stage = stages.get(int(row["textbook_id"]))
+        last_seen = row.get("last_seen") or ""     # never asked sorts first
+        wrong = -int(row["wrong_count"])
+        if tier == 1 or (tier == 0 and stage is not None and stage.reviewing):
+            return (tier, last_seen, wrong, rng.random())
+        return (tier, wrong, last_seen, rng.random())
 
     return sorted(fresh, key=key) + sorted(stale, key=key)
 
@@ -228,7 +237,7 @@ def _review_pick(fresh: list[dict], weak: dict[int, dict], supply: Counter, rng:
 
 def pick_group(db, device_id: str, day_key: str, now_ms: int, difficulty: int) -> Group:
     """Return the chosen question rows, in the order they will be served, plus the review bookkeeping."""
-    progress = ensure_progress(db, device_id, now_ms)
+    stages = curriculum.resolve(db, device_id, now_ms)
     rows = _candidates(db, device_id, difficulty)
     if not rows:
         raise NotEnoughQuestions("the bank has no servable questions at this difficulty")
@@ -236,9 +245,9 @@ def pick_group(db, device_id: str, day_key: str, now_ms: int, difficulty: int) -
     fresh = [row for row in rows if not _seen_recently(row, now_ms)]
     supply = Counter(int(row["topic_id"]) for row in fresh)
     plan = mix.snapshot(db, device_id, day_key, now_ms, supply)
-    window = int(plan["prev_window"])
 
-    ordered = _ordered(rows, progress, now_ms, random.Random(now_ms), window)
+    ordered = _ordered(rows, stages, now_ms, random.Random(now_ms))
+    tiers = {id(row): _tier(row, stages) for row in rows}
     by_subject: dict[int, list[dict]] = defaultdict(list)
     for row in ordered:
         by_subject[int(row["subject_id"])].append(row)
@@ -246,14 +255,19 @@ def pick_group(db, device_id: str, day_key: str, now_ms: int, difficulty: int) -
     picked: list[dict] = []
     review: list[dict] = []
     per_topic: Counter = Counter()
-    tier0_cap = int(plan["c"])
+    # A finished book has no unit to privilege, so the c slots draw from the whole book. Left at `c`,
+    # the cap would spend itself on one unit and then hand the rest back through the "supply ran dry"
+    # path below — an accident dressed as a rule (§3.3).
+    reviewing = bool(stages) and all(stage.reviewing for stage in stages.values())
+    plan["stage"] = "reviewing" if reviewing else "learning"
+    tier0_cap = limits.GROUP_SIZE - int(plan["r"]) if reviewing else int(plan["c"])
     tier0_taken = 0
 
     def take(row: dict, from_review: bool = False) -> None:
         nonlocal tier0_taken
         picked.append(row)
         per_topic[int(row["topic_id"])] += 1
-        if _tier(row, progress, window) == 0:
+        if tiers[id(row)] == 0:
             tier0_taken += 1
         by_subject[int(row["subject_id"])].remove(row)
         if from_review:
@@ -262,7 +276,7 @@ def pick_group(db, device_id: str, day_key: str, now_ms: int, difficulty: int) -
     def room(row: dict) -> bool:
         if per_topic[int(row["topic_id"])] >= PER_TOPIC:
             return False
-        return not (_tier(row, progress, window) == 0 and tier0_taken >= tier0_cap)
+        return not (tiers[id(row)] == 0 and tier0_taken >= tier0_cap)
 
     def take_from(subject_id: int) -> bool:
         for row in by_subject[subject_id]:

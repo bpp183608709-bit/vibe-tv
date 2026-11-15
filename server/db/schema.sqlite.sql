@@ -230,6 +230,14 @@ CREATE TABLE curriculum_progress (
   FOREIGN KEY (textbook_id) REFERENCES textbook (id)
 );
 
+CREATE TABLE term_anchor (
+  device_id   TEXT NOT NULL,
+  start_date  TEXT NOT NULL,
+  updated_at  TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (device_id),
+  FOREIGN KEY (device_id) REFERENCES device (id)
+);
+
 CREATE TABLE topic_signal (
   device_id      TEXT    NOT NULL,
   topic_id       INTEGER NOT NULL,

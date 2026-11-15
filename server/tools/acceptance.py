@@ -18,6 +18,7 @@ of a fraction, and yesterday's ticket.
 
 from __future__ import annotations
 
+import datetime
 import hashlib
 import json
 import os
@@ -32,7 +33,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
-from server.app import es256, grade as grading, ids, limits, mastery, mix, picker, ticket  # noqa: E402
+from server.app import curriculum, es256, grade as grading, ids, limits, mastery, mix, picker, ticket  # noqa: E402
 from server.app.db import Database  # noqa: E402
 from server.tools import check_tv_silence, gen_seed_questions, import_curriculum  # noqa: E402
 
@@ -710,6 +711,79 @@ def main() -> int:
               f"{[int(q['id']) for q in actual.questions]} vs {frozen}")
         check("and takes nothing from the review segment", actual.review_ids == [],
               str(actual.review_ids))
+
+        # ---- §3.0: who moves the unit, and what a finished book means ----
+        # Until now `current_unit_ordinal` was written once at 1 and never again, so a child in unit 5
+        # was being served unit 1. These cases pin the two sources that move it.
+        device14 = pair()
+        with probe.tx() as cur:
+            cur.execute("INSERT INTO term_anchor (device_id, start_date) VALUES (?, ?)",
+                        (device14, "2026-09-01"))
+
+        def at(year: int, month: int, day: int) -> int:
+            return int(datetime.datetime(year, month, day, 9, 0).timestamp() * 1000)
+
+        autumn, winter = at(2026, 11, 11), at(2027, 1, 20)
+        stage14 = curriculum.resolve(probe, device14, autumn)[1]     # textbook 1 is 数学
+        check("by week 11 the calendar has the child in unit 5",
+              (stage14.current, stage14.source, stage14.reviewing) == (5, "calendar", False),
+              str(stage14))
+
+        late14 = curriculum.resolve(probe, device14, winter)[1]
+        check("by week 21 the book is finished, so no unit is 'current' any more",
+              (late14.reviewing, late14.current) == (True, late14.last), str(late14))
+
+        # A number a parent typed on purpose must not be overwritten by arithmetic.
+        curriculum.set_unit(probe, device14, 1, 2, autumn)
+        overridden = curriculum.resolve(probe, device14, autumn)[1]
+        check("a parent's unit beats the calendar's",
+              (overridden.current, overridden.source) == (2, "parent"), str(overridden))
+
+        # ... and the calendar takes it back when the parent says so, without touching the date.
+        curriculum.set_anchor(probe, device14, datetime.date(2026, 9, 1), autumn)
+        restored = curriculum.resolve(probe, device14, autumn)[1]
+        check("handing the unit back to the calendar restores week 11's answer",
+              (restored.current, restored.source) == (5, "calendar"), str(restored))
+
+        # Nothing from a unit the class has not reached — that was implicit before and wrong.
+        curriculum.set_unit(probe, device14, 1, 2, autumn)
+        stages14 = curriculum.resolve(probe, device14, autumn)
+        group14 = picker.pick_group(probe, device14, NEXT_DAY, autumn, limits.DEFAULT_DIFFICULTY)
+        highest: dict[int, int] = {}
+        for question in group14.questions:
+            book = int(question["textbook_id"])
+            highest[book] = max(highest.get(book, 0), int(question["unit_ordinal"]))
+        beyond = {book: ordinal for book, ordinal in highest.items()
+                  if ordinal > stages14[book].current}
+        check("no question comes from a unit the child has not reached", not beyond,
+              f"{beyond} vs { {b: s.current for b, s in stages14.items()} }")
+
+        # The previous-units band is the whole term, not the last two units: a September unit is a
+        # previous unit (tier 1), while next month's is last-resort only (tier 3).
+        previous = curriculum.BookStage(textbook_id=1, current=5, last=8, reviewing=False,
+                                        source="parent")
+        scope = {1: previous}
+
+        def tier_of(ordinal: int) -> int:
+            return picker._tier({"textbook_id": 1, "unit_ordinal": ordinal}, scope)
+
+        check("a unit from September is a previous unit, not an out-of-scope one",
+              (tier_of(1), tier_of(4), tier_of(5), tier_of(6))
+              == (1, 1, 0, picker.UNLEARNED),
+              f"{tier_of(1)}/{tier_of(4)}/{tier_of(5)}/{tier_of(6)}")
+
+        # Finished book: the c slots stop privileging one unit, so all five come from the whole book.
+        curriculum.set_anchor(probe, device14, datetime.date(2026, 9, 1), winter)
+        within = curriculum.resolve(probe, device14, winter)
+        check("all three books are finished by week 21",
+              all(stage.reviewing for stage in within.values()),
+              str({book: (stage.current, stage.last) for book, stage in within.items()}))
+        group15 = picker.pick_group(probe, device14, NEXT_DAY, winter, limits.DEFAULT_DIFFICULTY)
+        inside = sum(1 for question in group15.questions
+                     if picker._tier(question, within) == 0)
+        check("a finished book serves from all of it, not only from the last unit",
+              (group15.plan.get("stage"), inside) == ("reviewing", 5),
+              f"{group15.plan.get('stage')} / {inside} of 5")
         probe.close()
 
         # ---- case 9: 0.75 and 3/4 are the same answer ----
