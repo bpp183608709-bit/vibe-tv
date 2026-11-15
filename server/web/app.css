@@ -1,0 +1,648 @@
+/* The parent page. iOS-shaped on purpose: it is a page a parent opens on a phone twice a week, and
+   the rest of the product's phone surfaces (assets/web) look like this too.
+
+   No framework, no build. Two rules worth keeping:
+   - everything is in CSS variables so the dark theme is one block, not a second stylesheet;
+   - `dvh` and `env(safe-area-inset-*)` rather than `vh`, so the tab bar does not sit under the
+     home indicator on an iPhone. */
+
+:root {
+  --bg: #f2f2f7;
+  --card: #ffffff;
+  --card-2: #fbfbfd;
+  --label: #000000;
+  --secondary: rgba(60, 60, 67, 0.62);
+  --tertiary: rgba(60, 60, 67, 0.34);
+  --sep: rgba(60, 60, 67, 0.16);
+  --tint: #007aff;
+  --tint-soft: rgba(0, 122, 255, 0.12);
+  --fill: rgba(118, 118, 128, 0.12);
+  --ok: #1c8b3f;
+  --ok-soft: rgba(28, 139, 63, 0.12);
+  --bad: #d70015;
+  --bad-soft: rgba(215, 0, 21, 0.1);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 28px rgba(0, 0, 0, 0.06);
+  --radius: 18px;
+  --ease: cubic-bezier(0.23, 1, 0.32, 1);
+  --tabbar: calc(58px + env(safe-area-inset-bottom));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --card: #1c1c1e;
+    --card-2: #232325;
+    --label: #ffffff;
+    --secondary: rgba(235, 235, 245, 0.62);
+    --tertiary: rgba(235, 235, 245, 0.32);
+    --sep: rgba(84, 84, 88, 0.62);
+    --tint: #0a84ff;
+    /* 0.18 washes out against the #1c1c1e card: the "other watching" bar became a dark navy smudge
+       that could not be told from the card. 0.32 keeps it quiet but readable. */
+    --tint-soft: rgba(10, 132, 255, 0.32);
+    --fill: rgba(118, 118, 128, 0.24);
+    --ok: #30d158;
+    --ok-soft: rgba(48, 209, 88, 0.16);
+    --bad: #ff453a;
+    --bad-soft: rgba(255, 69, 58, 0.16);
+    --shadow: none;
+  }
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--label);
+  font: 16px/1.45 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Noto Sans SC",
+        "Noto Sans", system-ui, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+.screen { min-height: 100dvh; }
+[hidden] { display: none !important; }
+
+/* ------------------------------------------------------------------ pairing */
+
+.pair {
+  display: grid;
+  place-items: center;
+  padding: 24px max(20px, env(safe-area-inset-left)) calc(24px + env(safe-area-inset-bottom));
+}
+
+.pair-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--card);
+  border-radius: 26px;
+  padding: 28px 24px 22px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.pair-brand { display: grid; place-items: center; margin-bottom: 14px; }
+.pair-brand img { border-radius: 12px; }
+
+.pair-card h1 { margin: 0 0 8px; font-size: 22px; letter-spacing: -0.01em; }
+.pair-card .muted { margin: 0 0 22px; font-size: 14px; line-height: 1.5; }
+
+.field { display: block; text-align: left; margin-bottom: 6px; }
+.field-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 6px;
+}
+
+/* Every field on these cards is a real tap target. Left to the browser an input is about 22px
+   tall — half of what a thumb hits reliably — and the parent fills this in one-handed while the
+   television sits waiting. Same box as `#pair-code` below, minus the oversized monospace type. */
+.field input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid var(--sep);
+  border-radius: 13px;
+  background: var(--card-2);
+  color: var(--label);
+  font-family: inherit;
+  font-size: 16px;              /* below 16px Safari zooms the page on focus and never zooms back */
+  line-height: 1.3;
+  appearance: none;
+  transition: border-color 0.18s var(--ease), box-shadow 0.18s var(--ease);
+}
+.field input::placeholder { color: var(--tertiary); }
+.field input:focus {
+  outline: none;
+  border-color: var(--tint);
+  box-shadow: 0 0 0 3.5px var(--tint-soft);
+}
+/* The email on the recovery screen is read-only: it says which account is being reset, and must
+   look like it cannot be changed rather than like an empty box the parent has to fill again. */
+.field input:read-only {
+  background: var(--fill);
+  color: var(--secondary);
+}
+
+/* The six-character code keeps its own look: big enough to read across a sofa. */
+#pair-code {
+  width: 100%;
+  border: 1px solid var(--sep);
+  background: var(--card-2);
+  color: var(--label);
+  border-radius: 13px;
+  padding: 14px 12px;
+  font: 600 26px/1 ui-monospace, "SF Mono", Menlo, monospace;
+  letter-spacing: 0.28em;
+  text-align: center;
+  text-indent: 0.28em;
+  transition: border-color 0.18s var(--ease), box-shadow 0.18s var(--ease);
+}
+#pair-code::placeholder { color: var(--tertiary); letter-spacing: 0.2em; }
+#pair-code:focus {
+  outline: none;
+  border-color: var(--tint);
+  box-shadow: 0 0 0 3.5px var(--tint-soft);
+}
+
+.note { margin: 8px 0 0; font-size: 12.5px; color: var(--secondary); text-align: left; }
+.note.tiny { font-size: 12px; color: var(--tertiary); text-align: center; margin-top: 14px; }
+
+.error {
+  margin: 12px 0 0;
+  font-size: 13.5px;
+  color: var(--bad);
+  background: var(--bad-soft);
+  border-radius: 10px;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+.primary {
+  width: 100%;
+  margin-top: 20px;
+  border: 0;
+  border-radius: 14px;
+  padding: 15px;
+  font-size: 16.5px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--tint);
+  transition: transform 0.12s var(--ease), opacity 0.12s var(--ease);
+}
+.primary:active { transform: scale(0.985); opacity: 0.9; }
+.primary[disabled] { opacity: 0.45; }
+
+/* ------------------------------------------------------------------ shell */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding: calc(14px + env(safe-area-inset-top)) max(20px, env(safe-area-inset-left)) 12px;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: saturate(180%) blur(18px);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  border-bottom: 1px solid transparent;
+}
+.topbar.stuck { border-bottom-color: var(--sep); }
+
+.eyebrow {
+  margin: 0 0 2px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tint);
+}
+.topbar h1 { margin: 0; font-size: 21px; letter-spacing: -0.015em; }
+
+.chip {
+  border: 1px solid var(--sep);
+  background: var(--card);
+  color: var(--secondary);
+  border-radius: 999px;
+  padding: 7px 13px;
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 46px;
+}
+.chip:active { background: var(--fill); }
+
+.view {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 4px max(16px, env(safe-area-inset-left)) calc(var(--tabbar) + 26px);
+}
+
+/* ------------------------------------------------------------------ cards */
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  margin-top: 14px;
+}
+.card:first-child { margin-top: 10px; }
+.card h2 {
+  margin: 0 0 2px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+.card .sub { margin: 0; font-size: 13px; color: var(--secondary); }
+
+/* today: the one number that matters, then the arithmetic behind it */
+.headline { display: flex; align-items: baseline; gap: 8px; margin: 6px 0 2px; }
+/* Words in place of a number ("电视还没报数") should not shout like the number would. */
+.headline .muted { color: var(--secondary); letter-spacing: -0.01em; }
+.big {
+  font-size: 44px;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+}
+.big.small { font-size: 30px; }
+.unit { font-size: 16px; font-weight: 500; color: var(--secondary); }
+
+.bar {
+  position: relative;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--fill);
+  overflow: hidden;
+  margin: 14px 0 10px;
+}
+.bar > i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 999px;
+  background: var(--tint);
+  transition: width 0.5s var(--ease);
+}
+.bar.earned > i { background: var(--ok); }
+
+.kv { display: grid; gap: 0; margin-top: 4px; }
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--sep);
+}
+.row:first-child { border-top: 0; }
+.row .k { font-size: 14.5px; color: var(--label); }
+.row .v {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--label);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+.row .v.dim { color: var(--secondary); font-weight: 500; }
+.row.tap { cursor: pointer; }
+
+.pill {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--fill);
+  color: var(--secondary);
+}
+.pill.ok { background: var(--ok-soft); color: var(--ok); }
+.pill.bad { background: var(--bad-soft); color: var(--bad); }
+
+.empty {
+  text-align: center;
+  padding: 36px 20px;
+  color: var(--secondary);
+  font-size: 14.5px;
+}
+.empty strong { display: block; font-size: 16px; color: var(--label); margin-bottom: 6px; }
+
+/* ------------------------------------------------------------------ settings */
+
+.stepper { display: flex; align-items: center; gap: 3px; background: var(--fill); border-radius: 11px; padding: 3px; }
+.stepper button {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--card);
+  color: var(--label);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+.stepper button:active { background: var(--tint); color: #fff; }
+.stepper button[disabled] { opacity: 0.3; box-shadow: none; background: transparent; }
+.stepper .val {
+  min-width: 88px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.footer-note { margin: 12px 4px 0; font-size: 12.5px; line-height: 1.5; color: var(--tertiary); }
+
+/* ------------------------------------------------------------------ wrongbook */
+
+.q {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  margin-top: 12px;
+}
+.q .head { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+.q .stem { font-size: 15.5px; line-height: 1.5; margin: 0 0 12px; white-space: pre-wrap; }
+.q .answer { display: grid; gap: 6px; }
+.q .line {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+.q .line.yours { background: var(--bad-soft); color: var(--bad); }
+.q .line.right { background: var(--ok-soft); color: var(--ok); }
+.q .line b { font-weight: 600; flex: 0 0 auto; }
+.q .why {
+  margin: 10px 0 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--secondary);
+  border-left: 2px solid var(--sep);
+  padding-left: 10px;
+}
+.q .meta { margin: 10px 0 0; font-size: 12px; color: var(--tertiary); }
+
+/* ------------------------------------------------------------------ week */
+
+.chart { display: flex; align-items: flex-end; gap: 6px; height: 118px; margin: 16px 0 6px; }
+.chart .col { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; }
+.chart .stem-bar {
+  width: 100%;
+  min-height: 0;
+  border-radius: 6px 6px 3px 3px;
+  background: var(--tint-soft);
+  position: relative;
+  transition: height 0.5s var(--ease);
+}
+.chart .stem-bar > i {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  border-radius: 6px 6px 3px 3px;
+  background: var(--tint);
+  transition: height 0.5s var(--ease);
+}
+.axis { display: flex; margin-bottom: 10px; }
+.axis span { flex: 1; text-align: center; font-size: 11px; color: var(--tertiary); }
+.legend { display: flex; gap: 14px; font-size: 12px; color: var(--secondary); margin-top: 2px; }
+.legend i { display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+
+/* ------------------------------------------------------------------ tabbar */
+
+.tabbar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 10;
+  display: flex;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-top: 1px solid var(--sep);
+}
+.tab {
+  flex: 1;
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  padding: 9px 0 8px;
+  border: 0;
+  background: none;
+  color: var(--tertiary);
+  font-size: 11px;
+  font-weight: 500;
+}
+.tab svg {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.tab.is-on { color: var(--tint); }
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--tabbar) + 16px);
+  transform: translateX(-50%);
+  background: rgba(30, 30, 32, 0.92);
+  color: #fff;
+  font-size: 13.5px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  z-index: 30;
+  max-width: min(86vw, 360px);
+  text-align: center;
+  animation: toast-in 0.22s var(--ease);
+}
+@keyframes toast-in { from { opacity: 0; transform: translate(-50%, 8px); } }
+
+.skeleton {
+  height: 14px;
+  border-radius: 7px;
+  background: var(--fill);
+  animation: pulse 1.3s ease-in-out infinite;
+}
+@keyframes pulse { 50% { opacity: 0.45; } }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ------------------------------------------------------------------ accounts */
+
+/* The sign-in screen is the pairing screen's card with two more fields; it reuses `.pair` and
+   `.pair-card` on purpose, so the first screen and the second look like one product. */
+.auth { display: grid; place-items: center; padding: 18px max(20px, env(safe-area-inset-left)) calc(24px + env(safe-area-inset-bottom)); }
+/* Six fields do not fit a phone the way two did: the card keeps its airiness but the gaps are
+   measured so the whole form, button included, lands on one screen. */
+.auth .pair-card { padding-top: 22px; padding-bottom: 18px; }
+.auth .pair-card .muted { margin-bottom: 16px; }
+.auth .field + .field { margin-top: 10px; }
+.auth .primary { margin-top: 18px; }
+.auth .note.tiny a { color: var(--tint); text-decoration: none; font-weight: 600; }
+
+/* The recovery question is optional, so it gets its own small heading: a bare field would read as
+   one more thing the parent has to fill in before the button works. */
+.auth .group-label {
+  margin: 16px 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  text-align: left;
+}
+
+/* The question the account chose, read back on the recovery screen: a sentence, not a field, so the
+   parent is answering something they can see rather than guessing. */
+.auth .question {
+  margin: 10px 0 4px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--fill);
+  font-size: 14px;
+  line-height: 1.45;
+  text-align: left;
+  word-break: break-word;
+}
+
+/* The password rules. Grey while unmet, green once met — the same four checks the server runs, so
+   the form never turns the parent down for something the list said was fine. */
+.rules { list-style: none; margin: 12px 0 0; padding: 0; text-align: left; }
+.rules li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--tertiary);
+  transition: color 120ms ease;
+}
+.rules li i {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  position: relative;
+}
+.rules li.is-ok { color: var(--ok); }
+.rules li.is-ok i { border-color: var(--ok); background: var(--ok); }
+.rules li.is-ok i::after {
+  content: '';
+  position: absolute;
+  left: 3.5px;
+  top: 1px;
+  width: 4px;
+  height: 7px;
+  border: solid #fff;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(42deg);
+}
+
+/* Off screen, not hidden: `display:none` is a field some bots skip, and a person must never reach
+   it by tabbing. Same rule the spam filters use. */
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* The device name is a button now: it opens the sheet, and it must not look like a heading that
+   happens to be clickable. */
+.topbar-title {
+  border: 0;
+  background: none;
+  padding: 0;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  cursor: pointer;
+}
+.topbar-title:active { opacity: 0.6; }
+.topbar-title h1::after {
+  content: '';
+  display: inline-block;
+  margin-left: 7px;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid var(--tertiary);
+  border-bottom: 2px solid var(--tertiary);
+  transform: translateY(-3px) rotate(45deg);
+}
+
+/* ------------------------------------------------------------------ sheet */
+
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.28);
+  animation: fade-in 0.16s var(--ease);
+}
+@keyframes fade-in { from { opacity: 0; } }
+
+.sheet {
+  width: 100%;
+  max-width: 560px;
+  background: var(--card);
+  border-radius: 22px 22px 0 0;
+  padding: 18px 16px calc(16px + env(safe-area-inset-bottom));
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.18);
+  animation: sheet-up 0.22s var(--ease);
+}
+@keyframes sheet-up { from { transform: translateY(18px); opacity: 0.6; } }
+
+.sheet h2 {
+  margin: 2px 4px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+}
+
+.sheet-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  border: 0;
+  background: var(--fill);
+  color: var(--label);
+  border-radius: 13px;
+  padding: 13px 14px;
+  margin-bottom: 8px;
+  font: inherit;
+  text-align: left;
+}
+.sheet-row:active { opacity: 0.7; }
+.sheet-row span { font-size: 12.5px; color: var(--tertiary); }
+.sheet-row.is-on { background: color-mix(in srgb, var(--tint) 16%, transparent); }
+.sheet-row.is-on strong { color: var(--tint); }
+.sheet-row.plain { justify-content: center; font-weight: 600; color: var(--tint); background: none; }
+.quiet {
+  width: 100%;
+  margin-top: 4px;
+  border: 0;
+  background: none;
+  color: var(--secondary);
+  font: inherit;
+  padding: 12px;
+  border-radius: 12px;
+}
+.quiet:active { background: var(--fill); }

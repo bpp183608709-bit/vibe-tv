@@ -1,0 +1,14 @@
+# Runtime deps for the quiz-for-time server. Keep this list short: one 2C2G ECS runs it.
+#
+# Deliberately empty of a web framework and of a crypto library:
+#   * the HTTP server is `http.server` (server/app/api.py) — one process, a handful of routes, no ASGI
+#     server to supervise on a 2 GB box;
+#   * ES256 is implemented in server/app/es256.py (standard library only) and proven against openssl
+#     by server/tools/interop_es256.py, so there is no Rust toolchain to install on a fresh ECS.
+#
+# The one dependency left is the MySQL driver, and only when the DSN is not SQLite.
+
+pymysql>=1.1,<2.0
+
+# Not a runtime dep: the question importer and the seed generator use it to recompute the maths (E6).
+sympy>=1.13,<2.0
