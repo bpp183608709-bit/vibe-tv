@@ -72,6 +72,10 @@ def depth_state(deepest: int) -> str:
 
 
 def state_for(n: int, deepest: int) -> str:
+    # No weak topics means no depth to read: `assess` already guarantees deepest == 0 in that case,
+    # and returning S2 from a contradictory pair (0, 2) would be a silent lie in the state table.
+    if n <= 0:
+        return S0
     return STATES[max(STATES.index(scale_state(n)), STATES.index(depth_state(deepest)))]
 
 
@@ -189,6 +193,8 @@ def _selfcheck() -> None:
     # and the other way round: two topics, one of them L3 -> the depth decides
     assert state_for(2, 3) == S3
     assert state_for(0, 0) == S0
+    # a contradictory pair cannot invent a state: no topics means nothing is deep
+    assert [state_for(0, d) for d in (1, 2, 3)] == [S0, S0, S0]
 
     for state in STATES:
         c, r = QUOTA[state]
