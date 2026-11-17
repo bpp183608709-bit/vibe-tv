@@ -686,16 +686,50 @@ def make_handler(api: Api):
     return Handler
 
 
+#: 一次 TLS 握手最多给多久。握手是在 accept 的那个线程里同步做的，不设上限的话**一条握不完的连接**
+#: 就能把这个监听钉死——端口扫描器、握手中途被掐断的请求都算。2026-11-17 家长页就是这么整个不可用的：
+#: 一条只连不发数据的 TCP 连接，让 8443 之后的所有请求都在 backlog 里排到超时。
+#: 取 5 秒：正常手机/电视握手都在 1 秒内完成，而卡住的时候下一条请求最多只等这么久，不是无限等。
+HANDSHAKE_TIMEOUT = 5.0
+
+
+class _TLSServer(ThreadingHTTPServer):
+    """自己带超时做 TLS 握手的 ThreadingHTTPServer。
+
+    不写成 `context.wrap_socket(server.socket, server_side=True)` 是因为那种写法会把握手放进
+    CPython 的 `accept()` 里，而且没有任何超时；这里改成先 accept 明文连接、再用带超时的 socket 换
+    TLS，握不完就关掉它、跳过这条，监听继续服务下一条。
+    """
+
+    def __init__(self, address: tuple[str, int], handler, context: ssl.SSLContext) -> None:
+        self._context = context
+        super().__init__(address, handler)
+
+    def get_request(self):  # noqa: ANN201 - 返回 (socket, address)，基类就是这么约定的
+        connection, address = self.socket.accept()
+        connection.settimeout(HANDSHAKE_TIMEOUT)
+        try:
+            tls = self._context.wrap_socket(connection, server_side=True)
+        except OSError:
+            # SSLError 与 socket.timeout 都是 OSError：握手失败/超时，关掉这条，让 serve_forever 继续。
+            connection.close()
+            raise
+        tls.settimeout(None)
+        return tls, address
+
+
 def _bind(host: str, port: int, api: "Api", tls_cert: str | None, tls_key: str | None) -> ThreadingHTTPServer:
-    server = ThreadingHTTPServer((host, port), make_handler(api))
-    server.daemon_threads = True
+    handler = make_handler(api)
     if tls_cert and tls_key:
         # TLS here rather than in a reverse proxy: the television pins a CA it ships with, the parent
         # page needs a publicly trusted certificate, and those are two different certificates — but
         # they can still be two sockets of one process, which is one thing for systemd to restart.
         context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
         context.load_cert_chain(tls_cert, tls_key)
-        server.socket = context.wrap_socket(server.socket, server_side=True)
+        server: ThreadingHTTPServer = _TLSServer((host, port), handler, context)
+    else:
+        server = ThreadingHTTPServer((host, port), handler)
+    server.daemon_threads = True
     return server
 
 
