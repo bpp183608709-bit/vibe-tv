@@ -113,6 +113,33 @@ install -m 600 server/local/tls/server.key /opt/wrong-quiz/tls/server.key
 域名和 IP 都进 SAN，所以 DNS 指过来之前用地址、之后用域名，**是同一张证书**。
 重新生成 CA 必须重装 APK：电视钉的是旧那张。
 
+### 家长页那张公信证书（2026-11-17 起在用）
+
+8443 给手机看，手机不认我们的 CA，所以它单独用一张 Let's Encrypt 的 **IP 证书**：
+免费、不需要域名、不需要备案，但只有 **160 小时（约 6 天）**，必须自动续期。
+
+```bash
+apt-get remove -y certbot                      # 22.04 自带的是 1.21，不支持 profile
+snap install --classic certbot                 # 5.x，认 --preferred-profile 与 IP 标识符
+/snap/bin/certbot certonly --standalone --ip-address 47.95.198.148 \
+    --preferred-profile shortlived --agree-tos --register-unsafely-without-email --non-interactive
+```
+
+两处容易踩：
+
+- **标识符要用 `--ip-address`，不是 `-d`**。用 `-d 47.95.198.148` 会得到
+  「The Let's Encrypt certificate authority will not issue certificates for a bare IP address」。
+- **验证只能走 80 或 443**（`http-01` / `tls-alpn-01`，IP 没有 dns-01）。安全组必须开 80，
+  否则续期一开始就失败。内地 ECS 的 80 有可能被拦到备案页，先放个文件从外网 curl 一次确认。
+
+续期由 `bin/cert-hook.sh` 收尾：把 `fullchain.pem` / `privkey.pem` 搬成
+`tls/h5.pem`（644）和 `tls/h5.key`（600），属主 `wrongquiz:tvault`，然后重启服务。
+它挂在 `/etc/letsencrypt/renewal/47.95.198.148.conf` 的 `renew_hook` 上；
+`snap.certbot.renew.timer` 一天跑两次，对 6 天的证书够用。
+
+改完 `bin/app` 记得**重新推上去**——2026-11-17 这次就是仓库里早就有 `H5_CERT` 支持、
+机器上还是旧脚本，换了证书却一直在用旧那张，排查了半小时。
+
 票签名密钥：
 
 ```bash
@@ -190,9 +217,13 @@ mysql -uroot -e "DROP DATABASE quiz_restore"
 | 端口 | 用途 | 来源 |
 |---|---|---|
 | 22 | SSH | 你的固定 IP，**不要 0.0.0.0/0** |
-| 8443 | 家长页（https） | 0.0.0.0/0 |
+| 80 | 只为签发/续期证书时 ACME 校验用，平时无监听 | 0.0.0.0/0 |
+| 8443 | 家长页（https，Let's Encrypt IP 证书） | 0.0.0.0/0 |
 | 9443 | 电视（https，钉 CA） | 0.0.0.0/0 |
 | 443 | 备案下来后的家长页 | 0.0.0.0/0 |
+
+80 平时是空的（`certbot --standalone` 只在续期那几秒绑它），但**安全组必须一直开着**：
+关掉之后某天续期静默失败，六天后所有手机又开始报证书警告。
 
 MySQL 只听 127.0.0.1（`zz-quiz.cnf` 的 `bind-address`），所以 3306 既不开也不该开。
 
@@ -200,12 +231,14 @@ MySQL 只听 127.0.0.1（`zz-quiz.cnf` 的 `bind-address`），所以 3306 既�
 
 ## 7. 备案没下来之前
 
-8443 上现在是自签证书，手机点开会有一次警告——这就是「能用但不好用」。备案下来之后：
+**8443 已经没有「继续访问」警告了**：它用的是 Let's Encrypt 的 IP 证书（见 §3），手机的系统信任链
+认它，跟有没有域名、有没有备案都无关。电视那条更不受影响——它钉的是自家 CA。
+
+备案下来之后要做的只有「换一张叶子」：
 
 1. `certbot certonly --standalone -d quiz.qust.me`，拿 `/etc/letsencrypt/live/quiz.qust.me/`；
-2. 把两个文件软链到 `/opt/wrong-quiz/tls/`，在 `deploy.env` 里加
-   `QUIZ_H5_CERT=… QUIZ_H5_KEY=…`（`deploy/bin/app` 已经认这两个变量），`systemctl restart wrong-quiz`；
-3. 加一条 `--listen 0.0.0.0:443:…`，或者把 8443 改成 443——**APK 不用动**，因为它钉的是 CA，
-   CA 没换，域名换了也照旧验得过。
+2. `cert-hook.sh` 里的 `LIVE=` 改成新目录（或者给这条也写一个 `renew_hook`），重启即可；
+3. 再把 `--listen` 的端口从 8443 换成 443 ——**APK 不用动**，它钉的是 CA，域名换了照旧验得过。
+   IP 证书可以留着当退路：域名解析出事时把地址改回 IP 就行。
 
 备案没通过时的退路写在同一份文件里：`docs/备案降级.md`。
