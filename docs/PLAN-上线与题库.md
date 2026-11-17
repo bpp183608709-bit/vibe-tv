@@ -12,7 +12,7 @@
 
 | 里程碑 | 内容 | 工期 | 依赖 | 完成标志（一句话） |
 |---|---|---|---|---|
-| **M0** | 上线地基：真 MySQL、设备鉴权、部署件 | 4 天 | 你给 SSH | 公网 `curl /health` 通，且 207 条验收在 MySQL 上跑过 |
+| **M0** | 上线地基：真 MySQL、设备鉴权、部署件 | 4 天 | 你给 SSH | ✅ 2026-11-17：217/217 在 MySQL 上通过 |
 | **M1** | 电视端接公网 | 3 天 + 3 天观察 | M0 | 家里那台电视用公网地址做完一组题并兑换成功 |
 | **M2** | H5 公网 | 3 天 | M0 | 手机用流量（不连家里 Wi-Fi）打开 `https://quiz.qust.me:8443` 全流程可用 |
 | **M3** | 题库建设（一期 ~1000 题） | 3 周，分批 | 目录页 | 26 批全部过五道闸入库，抽检不合格率 ≤ 5% |
@@ -38,23 +38,25 @@
 
 | 缺口 | 现状事实 | 谁来解决 |
 |---|---|---|
-| **① 生产库从没跑过** | `server/db/schema.sql` 是 MySQL 8 的，但**一次都没在真 MySQL 上执行过**；验收跑的是 `schema.sqlite.sql`。已修掉两处 DDL 错误（重复的 `KEY idx_answer_question`、跨表重名的 `fk_answer_question`），但「修掉了已知的」不等于「能跑」 | M0 |
-| **② 电视端没有设备鉴权** | `device_id` 就在请求体里。知道别人的 id 就能替他交卷、烧他的次数（`server/app/api.py` 文件头自己写着这是最大的洞）。局域网时无所谓，**挂到公网就是第一天就会发生的事** | M0 |
-| **③ 没有任何部署件** | 仓库里没有 systemd、没有 nginx、没有备份脚本、没有环境变量模板；`local/quiz.properties` 里电视地址还是 `https://192.168.31.83:8443` | M0 / M1 |
+| **① 生产库从没跑过** | ~~一次都没在真 MySQL 上执行过~~ **✅ 2026-11-17：26 表 216 列建好，种子题入库，验收 217/217 在 MySQL 上通过。顺带抓出两个只有真库才有的 bug，见 §4。** | M0 已完成 |
+| **② 电视端没有设备鉴权** | ~~`device_id` 就在请求体里~~ **✅ 2026-11-17：`device.secret_hash` + `Authorization: Bearer`，除 `pair/start` 外每条电视路由都要密钥；10 条新验收证明「知道别人的 id 什么也打不开」。** | M0 已完成 |
+| **③ 没有任何部署件** | ~~仓库里没有 systemd、没有备份脚本、没有环境变量模板~~ **✅ 2026-11-17：`deploy/` 全套进仓库（unit、MySQL 参数、备份、探活、runbook），备份与恢复演练都在机器上实跑过。nginx 取消，见 §3。电视地址仍在 `local/quiz.properties`，属 M1。** | M0 已完成 / M1 剩地址 |
 | **④ 题库是种子** | 86 题，覆盖 19 个知识点；知识点树 30 个，其中**语文只有 4/8 单元、英语只有 4/10 单元**，且 30 个全部 `verified=false` | M3 |
 | **⑤ 拍照链路只有半截** | 表结构齐（`paper.ocr_status`、`shot_count`、`purge_at`），接口设计齐，五个 `/v1/h5/paper/{id}/*` 一个都没实现；H5 的按钮叫「添加错题」不是「拍照添加」，因为点了不存在 | M5 |
 
 ### 1.3 「线上」还差的具体清单
 
 ```
-deploy/README.md                runbook：从空机到能访问，一步一条命令
-deploy/systemd/quiz-api.service 进程守护、环境变量、重启策略
-deploy/nginx/quiz.conf          两个端口、两张证书、限速、静态缓存、安全头
-deploy/bin/backup.sh            mysqldump + gzip + 传 OSS + 保留 7 天
-deploy/bin/healthcheck.sh       探活 + 磁盘 + 备份是否新鲜，异常发通知
-deploy/env.example              QUIZ_DSN / QUIZ_TICKET_KEY / 两个模型 Key 的位置
-server/tools/make_leaf.sh       用**同一张 CA** 给新域名签叶子证书（不换 CA 就不用重装 APK）
-server/tools/check_schema_parity.py --mysql   直接比真库与 SQLite，而不是比两份 DDL
+deploy/README.md                runbook：从空机到能访问，一步一条命令            ✅
+deploy/systemd/wrong-quiz.service 进程守护、环境变量、重启策略                  ✅（名字按机器上的 unit）
+deploy/mysql/zz-quiz.cnf        1.6 GB 内存的 MySQL 8 参数                     ✅（原计划漏了这一项）
+deploy/bin/backup.sh            mysqldump + gzip + 保留 7 天，root 名下          ✅（OSS 传输待 M2 再做）
+deploy/bin/healthcheck.sh       探活 + 题库行数 + 备份新鲜度，异常给非零退出码   ✅
+deploy/env.example              QUIZ_DSN / QUIZ_TICKET_KEY / 两个模型 Key 的位置 ✅
+server/tools/acceptance_mysql.sh 先重建空库再跑全量，免得又指着生产库           ✅
+server/tools/make_ca.sh         多 SAN（域名 + IP），同一张 CA 可续签           ✅（原计划叫 make_leaf.sh）
+server/tools/check_schema_parity.py --mysql   比真库与 SQLite                   ✅ 216 列 0 差异
+deploy/nginx/quiz.conf          按端口分流 + 限速 + 静态缓存                     ❌ 取消，见 §3 开头
 ```
 
 ---
@@ -72,34 +74,67 @@ server/tools/check_schema_parity.py --mysql   直接比真库与 SQLite，而不
 
 ---
 
-## 3. 证书与端口：一个进程，三张证书的位置
+## 3. 证书与端口：一个进程，三个监听（2026-11-17 定稿）
 
-服务端仍然只有一个进程（`python -m server.app.api --host 127.0.0.1 --port 8080`），nginx 在它前面按端口分流。
-这样做的好处是 TLS 集中在一处，Python 那边不用再管证书轮换。
+原本这里写的是「Python 只监听 127.0.0.1，nginx 在前面按端口分流」。**实现时取消了 nginx**：
 
-| 端口 | 证书 | 给谁 | 放行的路由 |
+```bash
+python -m server.app.api \
+    --listen 0.0.0.0:8443:/opt/wrong-quiz/tls/h5.pem:/opt/wrong-quiz/tls/h5.key \
+    --listen 0.0.0.0:9443:/opt/wrong-quiz/tls/server.pem:/opt/wrong-quiz/tls/server.key \
+    --listen 127.0.0.1:8100
+```
+
+一个进程多绑几个 socket，每个 socket 带自己的证书。理由：代理要买的是「TLS 集中、限速、静态缓存」，
+而 TLS 在这套设计里本来就只是「两个端口两套证书」，限速在配对接口里，静态文件只有三个；
+换来的却是第二个要监控、要重启、要写配置的守护进程。等真需要多机/灰度/HTTP2 时再加，
+那时它是升级而不是返工。
+
+**每个端口都服务全部路由。** 原本计划按端口裁剪（电视口不放行 `/v1/h5/*`），实现时没做：9443 用的是
+只有电视信的那张私有 CA，别人连 TLS 都握不上手，裁剪能防的东西本来就不在威胁模型里；而多一层
+「这个端口放行哪些路径」的规则，就会多一类「443 上能用、8443 上 404」的怪问题。
+
+| 端口 | 证书 | 给谁 | 说明 |
 |---|---|---|---|
-| 8443 | Let's Encrypt（`quiz.qust.me`） | 家长手机 | `/`、`/app.*`、`/manifest.webmanifest`、`/icon.svg`、`/v1/h5/*`、`/v1/auth/*`；其余一律 404 |
-| 9443 | 自签 CA 的新叶子（同一张 CA） | 电视 | `/v1/pair/*`、`/v1/quiz/*`、`/v1/quota`、`/v1/config`、`/v1/heartbeat`、`/health`；其余 404 |
-| 443 | 同 8443 的 LE 证书 | 家长手机（备案下来后加） | 同 8443 |
+| 8443 | 现在自签（SAN 含域名与 IP），备案后换 Let's Encrypt | 家长手机 | 手机第一次会警告一次，见 `docs/备案降级.md` |
+| 9443 | 自签 CA 的新叶子（同一张 CA） | 电视 | 电视钉的就是这张 CA，换 CA 要重装 APK |
+| 443 | 同 8443 的 LE 证书 | 家长手机（备案下来后加） | 加一行 `--listen`，代码不改 |
+| 8100 | 无 TLS，只听 127.0.0.1 | 本机 curl / 探活 / 运维脚本 | 不对外 |
 | 22 | — | 运维 | 只放行你的固定 IP |
 
 三件容易踩的：
 
 - **端口 8443 + Let's Encrypt 是备案期间的正解。** 证书公信力与端口无关，手机浏览器不会报警；8443 不受
-  「未备案域名 80 端口拦截」影响。备案下来只需在 nginx 加一个 `listen 443 ssl` 的 server 块，地址从
-  `:8443` 变成默认 443，代码一行不改。
+  「未备案域名 80 端口拦截」影响。备案下来后加一条 `--listen 0.0.0.0:443:…`，地址从 `:8443` 变成默认 443，
+  代码一行不改。
 - **电视不校验域名，只校验 CA**（`QuizHttp.kt` 里 `HostnameVerifier { _, _ -> true }`）。所以新叶子的 SAN
   写 `quiz.qust.me` 就够，**CA 不换 = 已装机的电视不用重装**。但 `baseUrl` 变了，APK 仍然要重出一次。
-- **LE 续期用 `certbot --nginx` 或 `certbot renew` + `--deploy-hook "systemctl reload nginx"`**。忘记
-  reload 的典型症状是「证书明明续上了，浏览器还在报过期」。
+- **LE 续期用 `certbot renew` + `--deploy-hook "systemctl restart wrong-quiz"`**。没有 nginx 可 reload，
+  而这个进程是启动时读证书的：忘记重启的典型症状是「证书明明续上了，浏览器还在报过期」。顺手把续期
+  和重启写进同一条 cron/timer，不要靠人记得。
 
 ---
 
-## 4. M0 · 上线地基（4 天）
+## 4. M0 · 上线地基（4 天）—— **✅ 2026-11-17 完成**
 
 为什么它排第一：**这三件事里任何一件没做完，公网一开就会立刻出问题**——库建不起来、别人能替你交卷、
 机器挂了没人知道。
+
+结果（细节见 `deploy/README.md`）：
+
+| 项 | 状态 | 怎么验的 |
+|---|---|---|
+| 真 MySQL 8 跑通 | ✅ 26 表 216 列 | `check_schema_parity --mysql` 0 差异；种子题 86 道入库 |
+| 验收在 MySQL 上跑 | ✅ **217/217** | `sh server/tools/acceptance_mysql.sh` |
+| 设备鉴权 | ✅ `device.secret_hash` + Bearer | 10 条新验收全是「试图冒充别人」，全部被拒 |
+| 部署件 | ✅ systemd / 备份 / 探活 / runbook | 备份 64 KB、探活三项全绿、恢复演练逐表对上行数 |
+| 端口与证书 | ✅ 8443 / 9443 / 8100 loopback | 外部可达；8443 仍是自签，等备案后换 LE |
+
+**在真 MySQL 上抓到两个只有真 MySQL 才有的 bug**（SQLite 全绿，207/207 掩盖了它们）：
+关掉 autocommit 时一条普通 SELECT 会留下一个 REPEATABLE READ 事务，之后这条连接上所有读都停在
+「上一次请求结束」那一刻——手机记的错题对下一组题不可见；以及事务内的读没有做 `datetime → 文本`
+归一化，暂停窗口因此把第六次错答当成第一次。两个都是「静默地给错答案」，这是这类适配 bug 里最贵的。
+所以 §4.1 那句「这条不是形式」应当留着：**它当时是对的。**
 
 ### 4.1 范围
 
@@ -137,15 +172,23 @@ curl -s -X POST https://quiz.qust.me:9443/v1/quiz/next -d '{"device_id":"..."}' 
 
 ---
 
-## 5. M1 · 电视端接公网（3 天 + 3 天观察）
+## 5. M1 · 电视端接公网（3 天 + 3 天观察）—— **代码就绪，等两样东西**
 
-1. `sh server/tools/make_leaf.sh quiz.qust.me`：用**已有 CA**签一张新叶子，装到 nginx 的 9443。
-2. `python -m server.tools.write_tv_config --base-url https://quiz.qust.me:9443`（脚本已存在）。
-3. 重出 APK（`local/quiz.properties` 变了 + M0 的 device_secret），装到家里那台电视。
-4. 真机跑一遍：出码 → 手机配对 → 出题 → 交卷 → 签票 → 兑换 30 分钟 → 屏幕上真的多出 30 分钟。
+1. ✅ 证书：`sh server/tools/make_ca.sh quiz.qust.me 47.95.198.148` 已签，SAN 两个都在，
+   装到了 `tls/server.pem`。**CA 没换**，所以已装机的电视不会因为证书而拒连。
+2. ✅ 地址：`write_tv_config --base-url https://47.95.198.148:9443` 已写进 `local/quiz.properties`。
+   用 IP 不用域名，理由是备案没下来之前不该把 `quiz.qust.me` 解析到内地这台机器（见 `docs/备案降级.md`）。
+3. ⏳ **APK 重出**：代码改了（每个请求带 `Authorization: Bearer`，配对时存 `device_secret`），必须重出。
+   卡在两处，都不是代码问题：
+   - `local/signing.keystore` + `local/signing.properties` 不在这台机器上。没有它，编出来的是
+     本机 debug key 签的包，**装不上电视**（签名不一致，`adb install -r` 会直接拒绝）。
+   - 有了签名材料之后：`./gradlew assembleStandardRelease` → `adb install -r`。
+     旧包里没有密钥，换上新包第一次启动会被服务器 401，客户端会自己重新登记一条新 device —— 
+     **代价是今天已用的次数与已赚的时长归零**（它们记在旧 device 行上）。挑一个当天还没做题的时间装。
+4. ⏳ 真机跑一遍：出码 → 手机配对 → 出题 → 交卷 → 签票 → 兑换 30 分钟 → 屏幕上真的多出 30 分钟。
 
 **观察 3 天**，只看三个数：出题失败率、兑换失败率、`last_seen_at` 是否连续。任何一项异常先回滚到
-局域网地址（改 nginx 的 upstream 或 DNS），不要在现场调。
+局域网地址（改 `local/quiz.properties` 重出包，或者把 9443 的 upstream 指回内网），不要在现场调。
 
 ---
 
