@@ -548,15 +548,21 @@ class Accounts:
         }
 
     def account_json(self, account_id: str) -> dict:
-        """What the page is told about the account. `has_question` decides whether the recovery form
-        asks for the old answer before it shows the new one — the answer itself never leaves here."""
+        """What the page is told about the account.
+
+        `question` is the text the parent typed, and it is here so the replace screen can show what
+        is being replaced — asking for "the answer to the current question" without printing the
+        question is asking someone to remember two things at once. The answer never leaves this
+        method; only its hash is stored, and `has_question` stays for callers that want a boolean.
+        """
         row = self.db.query_one(
             "SELECT id, email, created_at, recovery_question FROM account WHERE id = ?",
             (account_id,))
         if row is None:
             raise GradeError("not-signed-in", 401)
+        question = row.get("recovery_question") or ""
         return {"id": row["id"], "email": row["email"], "created_at": row.get("created_at"),
-                "has_question": bool(row.get("recovery_question"))}
+                "has_question": bool(question), "question": question}
 
     # ---- devices ----
 

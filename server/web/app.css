@@ -94,6 +94,21 @@ body {
 .pair-card .muted { margin: 0 0 22px; font-size: 14px; line-height: 1.5; }
 
 .field { display: block; text-align: left; margin-bottom: 6px; }
+
+/* The question being replaced, printed as plain text above the answer box: the answer is useless
+   without the question next to it. Same label as a field, but the value is not editable, so it
+   gets a quiet panel instead of an input's border. */
+.q-now { display: block; text-align: left; margin-bottom: 10px; }
+.q-now p {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--fill, rgba(0, 0, 0, 0.04));
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--label);
+  word-break: break-word;
+}
 .field-label {
   display: block;
   font-size: 12px;

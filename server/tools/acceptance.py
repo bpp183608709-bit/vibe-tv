@@ -1106,6 +1106,8 @@ def main(argv: list[str] | None = None) -> int:
         check("and it says it has none",
               status == 200 and (body.get("account") or {}).get("has_question") is False,
               f"{status} {body}")
+        check("with no question text to show either",
+              (body.get("account") or {}).get("question") == "", f"{status} {body}")
         status, body = late.call("POST", "/v1/auth/question/set", {
             "question": "家里第一只猫叫什么？", "answer": "小花"})
         check("so the first question needs no old answer",
@@ -1132,6 +1134,11 @@ def main(argv: list[str] | None = None) -> int:
         status, body = rules.call("GET", "/v1/auth/me")
         check("and the account says it now has one",
               status == 200 and (body.get("account") or {}).get("has_question") is True,
+              f"{status} {body}")
+        # The replace screen prints it: "answer the current question" without the question on
+        # screen is asking the parent to remember two things at once.
+        check("and hands the question text back to the page",
+              (body.get("account") or {}).get("question") == "家里第一只狗叫什么？",
               f"{status} {body}")
         status, body = rules.call("POST", "/v1/auth/question",
                                   {"email": "rules@example.com"})

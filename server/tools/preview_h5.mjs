@@ -57,7 +57,7 @@ const WRONG = [
 
 const FIXTURES = {
   '/v1/auth/me': {
-    account: { id: 'A1', email: 'parent@example.com', has_question: true },
+    account: { id: 'A1', email: 'parent@example.com', has_question: true, question: '妈妈的生日是哪天？' },
     devices: [{ device_id: 'D1', name: '客厅的电视' }],
     legacy: false,
   },
@@ -318,6 +318,9 @@ await type('#auth-question-input', '第一只狗叫什么');
 await type('#auth-answer', '小');
 await click('#auth-submit');
 await shot('07c-question-too-short');
+// 这一屏没有「取消」，只能靠浏览器的返回离开；脚本里直接回到主屏，否则下面两张会拍到同一张表单。
+await evaluate('showMain(); "ok"');
+await sleepMs(300);
 await click('#progress');
 await settle('progress');
 await shot('08-progress');

@@ -79,7 +79,15 @@
     <!-- Replacing a question is a credential swap, not a preference: without the old answer an
          unlocked phone could point the question at something only its holder knows and shut the
          owner out of the only way back in. Shown only when the account already has one; the server
-         demands it too (`need-old-answer`), so this field is not decoration. -->
+         demands it too (`need-old-answer`), so this field is not decoration.
+
+         The question itself is printed above the box. Asking for "the answer to the current
+         question" without showing the question is asking the parent to remember two things at
+         once — the text comes from `account.question` in `/v1/auth/me`. -->
+    <div class="q-now" data-modes="question" id="auth-old-q-wrap" hidden>
+      <span class="field-label" data-i18n="auth.currentQuestionLabel"></span>
+      <p id="auth-old-question"></p>
+    </div>
     <label class="field" data-modes="question" id="auth-old-wrap" hidden>
       <span class="field-label" data-i18n="auth.oldAnswerLabel"></span>
       <input id="auth-old-answer" name="old_answer" type="text" maxlength="100"

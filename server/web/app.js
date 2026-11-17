@@ -68,7 +68,7 @@ const TEXTS = {
       mismatch: '两次输入的密码不一样。',
       needQuestion: '问题至少 3 个字，写一个只有你知道答案的。', needAnswer: '答案至少 2 个字——忘记密码时就靠它。',
       ruleQuestion: '问题至少 3 个字', ruleAnswer: '答案至少 2 个字',
-      oldAnswerLabel: '现在这个问题的答案', needOldAnswer: '先答对现在的问题，才能换成新的。',
+      currentQuestionLabel: '现在的问题', oldAnswerLabel: '答案', needOldAnswer: '先答对现在的问题，才能换成新的。',
       newQuestionLabel: '新的问题', newAnswerLabel: '新的答案',
       badAnswer: '答案不对。', recoverLocked: '答错次数太多，过 15 分钟再试。',
       noAccount: '这个邮箱没有注册过。',
@@ -214,7 +214,7 @@ const TEXTS = {
       mismatch: 'The two passwords are not the same.',
       needQuestion: 'At least three characters — a question only you can answer.', needAnswer: 'At least two characters — this is the only way back in.',
       ruleQuestion: 'Three characters or more', ruleAnswer: 'Two characters or more',
-      oldAnswerLabel: 'The answer to your current question',
+      currentQuestionLabel: 'The question now', oldAnswerLabel: 'Your answer',
       newQuestionLabel: 'The new question', newAnswerLabel: 'The new answer',
       needOldAnswer: 'Answer the current question first, then you can replace it.',
       badAnswer: 'That is not the answer.', recoverLocked: 'Too many wrong answers. Try again in fifteen minutes.',
@@ -361,7 +361,7 @@ const TEXTS = {
       mismatch: 'Пароли не совпадают.',
       needQuestion: 'Не короче 3 символов — вопрос, ответ на который знаете только вы.', needAnswer: 'Не короче 2 символов — на нём всё держится.',
       ruleQuestion: 'Не короче 3 символов', ruleAnswer: 'Не короче 2 символов',
-      oldAnswerLabel: 'Ответ на текущий вопрос',
+      currentQuestionLabel: 'Текущий вопрос', oldAnswerLabel: 'Ваш ответ',
       newQuestionLabel: 'Новый вопрос', newAnswerLabel: 'Новый ответ',
       needOldAnswer: 'Сначала ответьте на текущий вопрос, потом можно менять.',
       badAnswer: 'Ответ неверный.', recoverLocked: 'Слишком много неверных ответов. Через пятнадцать минут.',
@@ -463,7 +463,7 @@ const TEXTS = {
       mismatch: 'Паролі не збігаються.',
       needQuestion: 'Не коротше 3 символів — питання, відповідь на яке знаєте тільки ви.', needAnswer: 'Не коротше 2 символів — на ній усе тримається.',
       ruleQuestion: 'Не коротше 3 символів', ruleAnswer: 'Не коротше 2 символів',
-      oldAnswerLabel: 'Відповідь на поточне питання',
+      currentQuestionLabel: 'Поточне питання', oldAnswerLabel: 'Ваша відповідь',
       newQuestionLabel: 'Нове питання', newAnswerLabel: 'Нова відповідь',
       needOldAnswer: 'Спершу дайте відповідь на поточне питання, потім можна змінювати.',
       badAnswer: 'Відповідь неправильна.', recoverLocked: 'Забагато неправильних відповідей. За пʼятнадцять хвилин.',
@@ -565,7 +565,7 @@ const TEXTS = {
       mismatch: 'Құпиясөздер сәйкес емес.',
       needQuestion: 'Кемінде 3 таңба — жауабын тек сіз білетін сұрақ.', needAnswer: 'Кемінде 2 таңба — бәрі соған тіреледі.',
       ruleQuestion: 'Кемінде 3 таңба', ruleAnswer: 'Кемінде 2 таңба',
-      oldAnswerLabel: 'Қазіргі сұрақтың жауабы',
+      currentQuestionLabel: 'Қазіргі сұрақ', oldAnswerLabel: 'Жауабыңыз',
       newQuestionLabel: 'Жаңа сұрақ', newAnswerLabel: 'Жаңа жауап',
       needOldAnswer: 'Алдымен қазіргі сұраққа жауап беріңіз, содан кейін ауыстыруға болады.',
       badAnswer: 'Жауап қате.', recoverLocked: 'Қате жауап тым көп. Он бес минуттан кейін.',
@@ -813,7 +813,11 @@ function showAuth(mode, context) {
   };
   // Replacing a question asks for the old answer first, and the hint has to say so — otherwise the
   // extra field reads like the page doubting the parent rather than protecting the account.
-  const hasQuestion = !!(me && me.account && me.account.has_question);
+  // The text of the question, not just whether there is one: the replace screen has to print it,
+  // because "answer the current question" with no question on screen asks the parent to remember
+  // two things at once.
+  const oldQuestion = (me && me.account && me.account.question) || '';
+  const hasQuestion = !!oldQuestion;
   if (authMode === 'question' && hasQuestion) hints.question = a.hintSetQuestionFirst;
 
   // The two fields are the *new* pair when there is an old one above them; leaving them labelled
@@ -865,6 +869,8 @@ function showAuth(mode, context) {
   // After applyAuthMode: that call shows every field whose `data-modes` names this screen, and the
   // old-answer field is only wanted when there is a question to replace.
   $('#auth-old-wrap').hidden = !(authMode === 'question' && hasQuestion);
+  $('#auth-old-q-wrap').hidden = !(authMode === 'question' && hasQuestion);
+  if (hasQuestion) $('#auth-old-question').textContent = oldQuestion;
   if (authMode === 'in' || authMode === 'change' || authMode === 'recover2'
       || authMode === 'question') {
     challenge = null;                      // nothing is being registered, so no nonce to fetch
@@ -1081,7 +1087,10 @@ async function submitAuth(event) {
     if (authMode === 'question') {
       // The account has one now, and the settings row and the next visit to this screen both read
       // that flag — without this line the old-answer field would stay hidden until a reload.
-      if (me && me.account) me.account.has_question = true;
+      if (me && me.account) {
+        me.account.has_question = true;
+        me.account.question = result.question || '';
+      }
       toast(T().auth.questionSaved);
       showMain();
       await go('settings');
