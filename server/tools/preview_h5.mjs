@@ -57,7 +57,7 @@ const WRONG = [
 
 const FIXTURES = {
   '/v1/auth/me': {
-    account: { id: 'A1', email: 'parent@example.com' },
+    account: { id: 'A1', email: 'parent@example.com', has_question: true },
     devices: [{ device_id: 'D1', name: '客厅的电视' }],
     legacy: false,
   },
@@ -303,6 +303,21 @@ await shot('06b-add-saved');
 await click('.tab[data-tab="settings"]');
 await settle('settings');
 await shot('07-settings');
+// 换密保：先答旧问题再填新的，两个输入框和两条规则必须在同一屏里说清楚。
+await click('#setq');
+await settle('set question');
+await shot('07b-question-replace');
+// 问题够长、答案只有一个字：这时提交，得到的是「答案至少 2 个字」而不是一句和长度无关的错。
+const type = async (selector, text) => evaluate(`(() => {
+  const el = document.querySelector(${JSON.stringify(selector)});
+  el.value = ${JSON.stringify(text)};
+  el.dispatchEvent(new Event('input', { bubbles: true }));
+  return el.value; })()`);
+await type('#auth-old-answer', '三月九日');
+await type('#auth-question-input', '第一只狗叫什么');
+await type('#auth-answer', '小');
+await click('#auth-submit');
+await shot('07c-question-too-short');
 await click('#progress');
 await settle('progress');
 await shot('08-progress');

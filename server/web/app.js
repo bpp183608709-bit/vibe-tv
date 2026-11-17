@@ -66,13 +66,17 @@ const TEXTS = {
       hintChange: '先输现在的密码，再输两次新密码。改完之后这台手机也要重新登录。',
       changeSubmit: '修改密码',
       mismatch: '两次输入的密码不一样。',
-      needQuestion: '写一个只有你知道答案的问题。', needAnswer: '写下答案，忘记密码时就靠它。',
+      needQuestion: '问题至少 3 个字，写一个只有你知道答案的。', needAnswer: '答案至少 2 个字——忘记密码时就靠它。',
+      ruleQuestion: '问题至少 3 个字', ruleAnswer: '答案至少 2 个字',
+      oldAnswerLabel: '现在这个问题的答案', needOldAnswer: '先答对现在的问题，才能换成新的。',
+      newQuestionLabel: '新的问题', newAnswerLabel: '新的答案',
       badAnswer: '答案不对。', recoverLocked: '答错次数太多，过 15 分钟再试。',
       noAccount: '这个邮箱没有注册过。',
       noQuestion: '这个账号没有设问题，用不了这种方式。',
       samePassword: '这就是现在用的密码。', weakPassword: '密码不能只有数字。',
       changed: '密码已改，请用新密码登录。', resetDone: '密码已重设，用新密码登录。',
       setQuestionTitle: '找回问题', hintSetQuestion: '忘记密码时靠它回来。改掉之后，旧的答案就作废了。',
+      hintSetQuestionFirst: '换问题前要先答对现在的问题——这是唯一能把账号找回来的凭据。',
       saveQuestion: '保存', questionSaved: '已保存。',
       signOut: '退出登录', switch: '切换电视', addTv: '连接另一台电视',
       devices: '这个账号的电视', current: '正在看的',
@@ -98,6 +102,7 @@ const TEXTS = {
       unpair: '解绑这台手机',
       unpairConfirm: '解绑后要重新在电视上取码。确定？',
       change: '修改密码', setQuestion: '找回问题',
+      questionSet: '已设置', questionUnset: '没有设置',
       language: '语言',
       progress: '孩子学到哪儿',
       progressNote: '出哪些单元的题由进度决定。填一次开学日期，之后按周往前推。',
@@ -207,13 +212,18 @@ const TEXTS = {
       hintChange: 'Type the current password, then the new one twice. This phone signs out too.',
       changeSubmit: 'Change password',
       mismatch: 'The two passwords are not the same.',
-      needQuestion: 'Write a question only you can answer.', needAnswer: 'Write the answer down — it is the only way back in.',
+      needQuestion: 'At least three characters — a question only you can answer.', needAnswer: 'At least two characters — this is the only way back in.',
+      ruleQuestion: 'Three characters or more', ruleAnswer: 'Two characters or more',
+      oldAnswerLabel: 'The answer to your current question',
+      newQuestionLabel: 'The new question', newAnswerLabel: 'The new answer',
+      needOldAnswer: 'Answer the current question first, then you can replace it.',
       badAnswer: 'That is not the answer.', recoverLocked: 'Too many wrong answers. Try again in fifteen minutes.',
       noAccount: 'No account with that email.',
       noQuestion: 'This account has no question, so this route does not apply.',
       samePassword: 'That is the password you already have.', weakPassword: 'Not digits only.',
       changed: 'Password changed. Sign in with the new one.', resetDone: 'Password reset. Sign in with the new one.',
       setQuestionTitle: 'Recovery question', hintSetQuestion: 'This is how you get back in. Replacing it retires the old answer.',
+      hintSetQuestionFirst: 'Answer the current question first — it is the only way back into this account.',
       saveQuestion: 'Save', questionSaved: 'Saved.',
       signOut: 'Sign out', switch: 'Switch TV', addTv: 'Connect another TV',
       devices: 'Televisions on this account', current: 'Watching',
@@ -239,6 +249,7 @@ const TEXTS = {
       unpair: 'Unpair this phone',
       unpairConfirm: 'You will need a new code on the TV. Continue?',
       change: 'Change password', setQuestion: 'Recovery question',
+      questionSet: 'Set', questionUnset: 'Not set',
       language: 'Language',
       progress: 'Where the class is',
       progressNote: 'Progress decides which units the questions come from. Enter the term once; the weeks follow.',
@@ -348,13 +359,18 @@ const TEXTS = {
       hintChange: 'Введите текущий пароль, затем дважды новый. Этот телефон тоже выйдет из аккаунта.',
       changeSubmit: 'Сменить пароль',
       mismatch: 'Пароли не совпадают.',
-      needQuestion: 'Напишите вопрос, ответ на который знаете только вы.', needAnswer: 'Запишите ответ — на нём всё держится.',
+      needQuestion: 'Не короче 3 символов — вопрос, ответ на который знаете только вы.', needAnswer: 'Не короче 2 символов — на нём всё держится.',
+      ruleQuestion: 'Не короче 3 символов', ruleAnswer: 'Не короче 2 символов',
+      oldAnswerLabel: 'Ответ на текущий вопрос',
+      newQuestionLabel: 'Новый вопрос', newAnswerLabel: 'Новый ответ',
+      needOldAnswer: 'Сначала ответьте на текущий вопрос, потом можно менять.',
       badAnswer: 'Ответ неверный.', recoverLocked: 'Слишком много неверных ответов. Через пятнадцать минут.',
       noAccount: 'Такая почта не зарегистрирована.',
       noQuestion: 'У этого аккаунта нет вопроса, этот способ не подойдёт.',
       samePassword: 'Это и есть текущий пароль.', weakPassword: 'Не только цифры.',
       changed: 'Пароль изменён. Войдите с новым.', resetDone: 'Пароль сброшен. Войдите с новым.',
       setQuestionTitle: 'Вопрос для восстановления', hintSetQuestion: 'По нему вы вернётесь в аккаунт. Замените — старый ответ перестанет работать.',
+      hintSetQuestionFirst: 'Сначала ответьте на текущий вопрос — это единственный путь назад в аккаунт.',
       saveQuestion: 'Сохранить', questionSaved: 'Сохранено.',
       signOut: 'Выйти', switch: 'Сменить телевизор', addTv: 'Подключить другой телевизор',
       devices: 'Телевизоры аккаунта', current: 'Сейчас',
@@ -380,6 +396,7 @@ const TEXTS = {
       unpair: 'Отвязать этот телефон',
       unpairConfirm: 'Понадобится новый код на телевизоре. Продолжить?',
       change: 'Сменить пароль', setQuestion: 'Вопрос для восстановления',
+      questionSet: 'Задан', questionUnset: 'Не задан',
       language: 'Язык',
     },
     wrong: {
@@ -444,13 +461,18 @@ const TEXTS = {
       hintChange: 'Введіть поточний пароль, потім двічі новий. Цей телефон теж вийде з запису.',
       changeSubmit: 'Змінити пароль',
       mismatch: 'Паролі не збігаються.',
-      needQuestion: 'Напишіть питання, відповідь на яке знаєте тільки ви.', needAnswer: 'Запишіть відповідь — на ній усе тримається.',
+      needQuestion: 'Не коротше 3 символів — питання, відповідь на яке знаєте тільки ви.', needAnswer: 'Не коротше 2 символів — на ній усе тримається.',
+      ruleQuestion: 'Не коротше 3 символів', ruleAnswer: 'Не коротше 2 символів',
+      oldAnswerLabel: 'Відповідь на поточне питання',
+      newQuestionLabel: 'Нове питання', newAnswerLabel: 'Нова відповідь',
+      needOldAnswer: 'Спершу дайте відповідь на поточне питання, потім можна змінювати.',
       badAnswer: 'Відповідь неправильна.', recoverLocked: 'Забагато неправильних відповідей. За пʼятнадцять хвилин.',
       noAccount: 'Така пошта не зареєстрована.',
       noQuestion: 'У цього запису немає питання, цей спосіб не підійде.',
       samePassword: 'Це і є поточний пароль.', weakPassword: 'Не лише цифри.',
       changed: 'Пароль змінено. Увійдіть із новим.', resetDone: 'Пароль скинуто. Увійдіть із новим.',
       setQuestionTitle: 'Питання для відновлення', hintSetQuestion: 'За ним ви повернетеся до запису. Заміните — стара відповідь перестане діяти.',
+      hintSetQuestionFirst: 'Спершу дайте відповідь на поточне питання — це єдиний шлях назад до запису.',
       saveQuestion: 'Зберегти', questionSaved: 'Збережено.',
       signOut: 'Вийти', switch: 'Змінити телевізор', addTv: 'Підключити інший телевізор',
       devices: 'Телевізори запису', current: 'Зараз',
@@ -476,6 +498,7 @@ const TEXTS = {
       unpair: 'Від’єднати цей телефон',
       unpairConfirm: 'Знадобиться новий код на телевізорі. Продовжити?',
       change: 'Змінити пароль', setQuestion: 'Питання для відновлення',
+      questionSet: 'Задано', questionUnset: 'Не задано',
       language: 'Мова',
     },
     wrong: {
@@ -540,13 +563,18 @@ const TEXTS = {
       hintChange: 'Қазіргі құпиясөзді, содан кейін жаңасын екі рет енгізіңіз. Бұл телефон да шығады.',
       changeSubmit: 'Құпиясөзді ауыстыру',
       mismatch: 'Құпиясөздер сәйкес емес.',
-      needQuestion: 'Жауабын тек сіз білетін сұрақ жазыңыз.', needAnswer: 'Жауапты жазып алыңыз — бәрі соған тіреледі.',
+      needQuestion: 'Кемінде 3 таңба — жауабын тек сіз білетін сұрақ.', needAnswer: 'Кемінде 2 таңба — бәрі соған тіреледі.',
+      ruleQuestion: 'Кемінде 3 таңба', ruleAnswer: 'Кемінде 2 таңба',
+      oldAnswerLabel: 'Қазіргі сұрақтың жауабы',
+      newQuestionLabel: 'Жаңа сұрақ', newAnswerLabel: 'Жаңа жауап',
+      needOldAnswer: 'Алдымен қазіргі сұраққа жауап беріңіз, содан кейін ауыстыруға болады.',
       badAnswer: 'Жауап қате.', recoverLocked: 'Қате жауап тым көп. Он бес минуттан кейін.',
       noAccount: 'Бұл пошта тіркелмеген.',
       noQuestion: 'Бұл аккаунтта сұрақ жоқ, бұл жол келмейді.',
       samePassword: 'Бұл қазіргі құпиясөз.', weakPassword: 'Тек цифр емес.',
       changed: 'Құпиясөз ауыстырылды. Жаңасымен кіріңіз.', resetDone: 'Құпиясөз қалпына келтірілді. Жаңасымен кіріңіз.',
       setQuestionTitle: 'Қалпына келтіру сұрағы', hintSetQuestion: 'Осы арқылы қайтасыз. Ауыстырсаңыз, ескі жауап күшін жояды.',
+      hintSetQuestionFirst: 'Алдымен қазіргі сұраққа жауап беріңіз — бұл аккаунтқа қайтудың жалғыз жолы.',
       saveQuestion: 'Сақтау', questionSaved: 'Сақталды.',
       signOut: 'Шығу', switch: 'Теледидар ауыстыру', addTv: 'Басқа теледидар қосу',
       devices: 'Аккаунттағы теледидарлар', current: 'Қазір',
@@ -572,6 +600,7 @@ const TEXTS = {
       unpair: 'Бұл телефонды ажырату',
       unpairConfirm: 'Теледидарда жаңа код қажет болады. Жалғастыру керек пе?',
       change: 'Құпиясөзді ауыстыру', setQuestion: 'Қалпына келтіру сұрағы',
+      questionSet: 'Орнатылған', questionUnset: 'Орнатылмаған',
       language: 'Тіл',
     },
     wrong: {
@@ -782,6 +811,24 @@ function showAuth(mode, context) {
     recover: a.hintRecover, recover2: a.hintRecover2, change: a.hintChange,
     question: a.hintSetQuestion,
   };
+  // Replacing a question asks for the old answer first, and the hint has to say so — otherwise the
+  // extra field reads like the page doubting the parent rather than protecting the account.
+  const hasQuestion = !!(me && me.account && me.account.has_question);
+  if (authMode === 'question' && hasQuestion) hints.question = a.hintSetQuestionFirst;
+
+  // The two fields are the *new* pair when there is an old one above them; leaving them labelled
+  // "找回密码的问题" under a filled-in "现在这个问题的答案" reads like the same question twice.
+  const relabel = (id, key, value) => {
+    const node = $(id);
+    if (!node) return;
+    node.dataset.i18n = `auth.${key}`;
+    node.textContent = value;
+  };
+  const replacing = authMode === 'question' && hasQuestion;
+  relabel('#auth-question-label', replacing ? 'newQuestionLabel' : 'questionLabel',
+    replacing ? a.newQuestionLabel : a.questionLabel);
+  relabel('#auth-answer-label', replacing ? 'newAnswerLabel' : 'answerLabel',
+    replacing ? a.newAnswerLabel : a.answerLabel);
   const buttons = {
     in: a.signIn, up: a.signUp, claim: a.claim,
     recover: a.askQuestion, recover2: a.setPassword, change: a.changeSubmit,
@@ -812,9 +859,12 @@ function showAuth(mode, context) {
     authMode === 'in' || authMode === 'change' ? 'current-password' : 'new-password');
 
   ['#auth-password', '#auth-password2', '#auth-answer', '#auth-answer2', '#auth-question-input',
-    '#auth-old'].forEach(id => { $(id).value = ''; });
+    '#auth-old', '#auth-old-answer'].forEach(id => { $(id).value = ''; });
   $('#auth-error').hidden = true;
   applyAuthMode();
+  // After applyAuthMode: that call shows every field whose `data-modes` names this screen, and the
+  // old-answer field is only wanted when there is a question to replace.
+  $('#auth-old-wrap').hidden = !(authMode === 'question' && hasQuestion);
   if (authMode === 'in' || authMode === 'change' || authMode === 'recover2'
       || authMode === 'question') {
     challenge = null;                      // nothing is being registered, so no nonce to fetch
@@ -822,8 +872,10 @@ function showAuth(mode, context) {
     startAuth();
   }
   paintRules();
+  // Typing the old answer is the first thing the screen asks for when one is required, so the cursor
+  // starts there rather than on the new question.
   const first = authMode === 'change' ? '#auth-old'
-    : authMode === 'question' ? '#auth-question-input'
+    : authMode === 'question' ? (hasQuestion ? '#auth-old-answer' : '#auth-question-input')
       : authMode === 'recover2' ? '#auth-answer2' : '#auth-email';
   $(first).focus({ preventScroll: true });
 }
@@ -847,21 +899,29 @@ function ruleState() {
   const again = $('#auth-password2').value;
   const local = ($('#auth-email').value.split('@')[0] || '').trim().toLowerCase();
   const flat = password.trim().toLowerCase();
+  // The question and the answer are measured the way `normalise_question()` / `normalise_answer()`
+  // measure them: trimmed and with runs of spaces collapsed, so "红色" and " 红  色 " differ here
+  // exactly as they differ on the server (QUESTION_MIN 3, ANSWER_MIN 2).
+  const squeeze = text => (text || '').trim().replace(/\s+/g, ' ');
   return {
     length: password.length >= 8,
     digits: password.length > 0 && !/^\d+$/.test(password),
     notemail: password.length > 0 && !(local && flat === local),
     common: password.length > 0 && !WEAK_LOCAL.includes(flat),
     match: again.length > 0 && password === again,
+    qLength: squeeze($('#auth-question-input') && $('#auth-question-input').value).length >= 3,
+    aLength: squeeze($('#auth-answer') && $('#auth-answer').value).length >= 2,
   };
 }
 
 function paintRules() {
-  const box = $('#auth-rules');
-  if (!box || box.hidden) return;
   const state = ruleState();
-  $$('#auth-rules li').forEach(item => {
-    item.classList.toggle('is-ok', !!state[item.dataset.rule]);
+  // Two lists now (passwords, the question pair); neither is on screen at the same time.
+  $$('#auth-form .rules').forEach(box => {
+    if (box.hidden) return;
+    box.querySelectorAll('li').forEach(item => {
+      item.classList.toggle('is-ok', !!state[item.dataset.rule]);
+    });
   });
 }
 
@@ -951,6 +1011,7 @@ function authError(err) {
     case 'question-long': return a.needQuestion;
     case 'answer-short':
     case 'answer-long': return a.needAnswer;
+    case 'need-old-answer': return a.needOldAnswer;
     case 'bad-answer': return a.badAnswer;
     case 'recover-locked': return a.recoverLocked;
     case 'no-account': return a.noAccount;
@@ -982,6 +1043,8 @@ async function submitAuth(event) {
   if (authMode === 'question') {
     body.question = $('#auth-question-input').value.trim();
     body.answer = $('#auth-answer').value;
+    // Sent only when there is a question to replace; the server refuses a replacement without it.
+    if (!$('#auth-old-wrap').hidden) body.old_answer = $('#auth-old-answer').value;
   } else if (authMode === 'change') {
     body.old_password = $('#auth-old').value;
   } else if (authMode === 'recover2') {
@@ -1002,7 +1065,8 @@ async function submitAuth(event) {
       : authMode === 'change' ? '/v1/auth/password'
       : authMode === 'recover2' ? '/v1/auth/recover'
         : authMode === 'up' ? '/v1/auth/register' : '/v1/auth/claim';
-  if (authMode === 'recover2' && !$('#auth-answer2').value.trim()) return a.needAnswer;
+  // The empty answer for `recover2` is refused in `checkLocally`, alongside the other local checks;
+  // it used to be repeated here against a variable that does not exist on this screen.
   if (authMode === 'up' || authMode === 'claim') {
     if (!challenge && challengePending) await challengePending;
     body.challenge = challenge;
@@ -1015,6 +1079,9 @@ async function submitAuth(event) {
     const result = await api(path, { method: 'POST', body });
 
     if (authMode === 'question') {
+      // The account has one now, and the settings row and the next visit to this screen both read
+      // that flag — without this line the old-answer field would stay hidden until a reload.
+      if (me && me.account) me.account.has_question = true;
       toast(T().auth.questionSaved);
       showMain();
       await go('settings');
@@ -1072,9 +1139,15 @@ function checkLocally(email, password) {
     if (!question && answer) return a.needQuestion;
   }
   if (authMode === 'question') {
-    if (!$('#auth-question-input').value.trim()) return a.needQuestion;
-    if (!$('#auth-answer').value.trim()) return a.needAnswer;
+    // Same order the server checks in: the old answer (when there is a question to replace), then the
+    // new pair. Length limits are checked here too — a one-character answer used to travel to the
+    // server and come back as a sentence that never mentioned length.
+    if (!$('#auth-old-wrap').hidden && !$('#auth-old-answer').value.trim()) return a.needOldAnswer;
+    const state = ruleState();
+    if (!state.qLength) return a.needQuestion;
+    if (!state.aLength) return a.needAnswer;
   }
+  if (authMode === 'recover2' && !$('#auth-answer2').value.trim()) return a.needAnswer;
   if (authMode === 'up' || authMode === 'claim' || authMode === 'recover2' || authMode === 'change') {
     if (password !== $('#auth-password2').value) return a.mismatch;
     const state = ruleState();
@@ -1290,6 +1363,9 @@ function nextSetting(key, value, delta) {
 
 function renderSettings(config) {
   const s = T().settings;
+  // Whether the account has a question yet: the row says so, because "not set" is the state that
+  // makes a forgotten password unrecoverable, and nothing else on this page hints at it.
+  const hasQuestion = !!(me && me.account && me.account.has_question);
   const row = (key, label, note) => {
     const value = config[key];
     const down = nextSetting(key, value, -1) >= MIN[key];
@@ -1314,7 +1390,7 @@ function renderSettings(config) {
       <div class="row tap" id="progress"><span class="k">${esc(s.progress)}</span>
         <span class="v dim">›</span></div>
       <div class="row tap" id="setq"><span class="k">${esc(s.setQuestion)}</span>
-        <span class="v dim">›</span></div>
+        <span class="v dim">${esc(hasQuestion ? s.questionSet : s.questionUnset)} ›</span></div>
       <div class="row tap" id="change"><span class="k">${esc(s.change)}</span>
         <span class="v dim">›</span></div>
       <div class="row tap" id="unpair"><span class="k" style="color:var(--bad)">${esc(s.unpair)}</span>
@@ -2014,7 +2090,8 @@ async function boot() {
     showAuth('recover');
   });
   // The rules light up while typing, and the error from the last attempt stops applying.
-  ['#auth-password', '#auth-password2', '#auth-email'].forEach(id => {
+  ['#auth-password', '#auth-password2', '#auth-email', '#auth-question-input', '#auth-answer',
+    '#auth-old-answer'].forEach(id => {
     $(id).addEventListener('input', () => {
       paintRules();
       $('#auth-error').hidden = true;

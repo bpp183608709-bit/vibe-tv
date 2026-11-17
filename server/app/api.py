@@ -528,7 +528,10 @@ def make_handler(api: Api):
                     self._send(200, {"legacy": True,
                                      "device": {"device_id": legacy["id"], "name": legacy.get("name")}})
                     return True
-                self._send(200, {"account": account, "devices": accounts.devices_of(account["id"])})
+                # `account_json` rather than the raw resolve() row: the page needs `has_question` to
+                # know whether replacing the question has to prove the old answer first.
+                self._send(200, {"account": accounts.account_json(account["id"]),
+                                 "devices": accounts.devices_of(account["id"])})
                 return True
 
             if path == "/v1/auth/claim" and method == "POST":
@@ -552,7 +555,7 @@ def make_handler(api: Api):
 
             if path == "/v1/auth/question/set" and method == "POST":
                 account = accounts.resolve(self._cookie(), now_ms)
-                self._send(200, accounts.set_question(account["id"], body))
+                self._send(200, accounts.set_question(account["id"], body, now_ms))
                 return True
 
             if path == "/v1/auth/recover" and method == "POST":

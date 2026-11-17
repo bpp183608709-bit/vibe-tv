@@ -76,16 +76,34 @@
          `checkLocally()` — a question without an answer is not something to send. -->
     <p class="group-label" data-modes="up claim" data-i18n="auth.questionGroup"></p>
 
+    <!-- Replacing a question is a credential swap, not a preference: without the old answer an
+         unlocked phone could point the question at something only its holder knows and shut the
+         owner out of the only way back in. Shown only when the account already has one; the server
+         demands it too (`need-old-answer`), so this field is not decoration. -->
+    <label class="field" data-modes="question" id="auth-old-wrap" hidden>
+      <span class="field-label" data-i18n="auth.oldAnswerLabel"></span>
+      <input id="auth-old-answer" name="old_answer" type="text" maxlength="100"
+             autocomplete="off" autocapitalize="off" enterkeyhint="next">
+    </label>
+
     <label class="field" data-modes="up claim question">
-      <span class="field-label" data-i18n="auth.questionLabel"></span>
+      <span class="field-label" id="auth-question-label" data-i18n="auth.questionLabel"></span>
       <input id="auth-question-input" name="question" type="text" maxlength="120"
              autocomplete="off" enterkeyhint="next">
     </label>
     <label class="field" data-modes="up claim question">
-      <span class="field-label" data-i18n="auth.answerLabel"></span>
+      <span class="field-label" id="auth-answer-label" data-i18n="auth.answerLabel"></span>
       <input id="auth-answer" name="answer" type="text" maxlength="100"
              autocomplete="off" autocapitalize="off" enterkeyhint="go">
     </label>
+
+    <!-- The two limits that decide whether the pair is stored at all (QUESTION_MIN / ANSWER_MIN in
+         server/app/auth.py). Without them a one-character answer is refused with no way to know that
+         length was the problem. -->
+    <ul id="auth-rules-q" class="rules" data-modes="question">
+      <li data-rule="qLength"><i></i><span data-i18n="auth.ruleQuestion"></span></li>
+      <li data-rule="aLength"><i></i><span data-i18n="auth.ruleAnswer"></span></li>
+    </ul>
 
     <!-- The honeypot: off screen, out of the tab order, and never filled by a person. A bot that
          fills every field gets a 400 that says nothing. -->

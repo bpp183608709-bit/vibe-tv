@@ -1096,12 +1096,43 @@ def main(argv: list[str] | None = None) -> int:
         status, body = rules.login("rules@example.com", "Tangerine-line-2048")
         check("with the new password", status == 200, f"{status} {body}")
 
-        # An account that predates questions has none, and would have no way back in. Setting one
-        # while signed in is the only repair, and it must take effect immediately.
+        # The other half of the same rule: an account that never had a question is not asked for an
+        # old answer, because there is nothing to prove. This is the "signed up in a hurry" repair.
+        late = Parent()
+        status, body = late.register("late@example.com", "Tangerine-line-2048", question="",
+                                     answer="")
+        check("an account can be made without a question", status == 201, f"{status} {body}")
+        status, body = late.call("GET", "/v1/auth/me")
+        check("and it says it has none",
+              status == 200 and (body.get("account") or {}).get("has_question") is False,
+              f"{status} {body}")
+        status, body = late.call("POST", "/v1/auth/question/set", {
+            "question": "家里第一只猫叫什么？", "answer": "小花"})
+        check("so the first question needs no old answer",
+              status == 200 and body.get("replaced") is False, f"{status} {body}")
+
+        # Replacing a question is a credential swap, not a preference: without the old answer an
+        # unlocked phone could point the question at something only its holder knows and shut the
+        # owner out of the only way back in. So the two refusals come first, then the real swap.
         status, body = rules.call("POST", "/v1/auth/question/set", {
             "question": "家里第一只狗叫什么？", "answer": "小黑"})
-        check("the question can be set while signed in",
+        check("a new question cannot replace one without the old answer",
+              status == 400 and body.get("error") == "need-old-answer", f"{status} {body}")
+        status, body = rules.call("POST", "/v1/auth/question/set", {
+            "question": "家里第一只狗叫什么？", "answer": "小黑", "old_answer": "三月十日"})
+        check("and a wrong old answer is refused like any other wrong answer",
+              status == 403 and body.get("error") == "bad-answer", f"{status} {body}")
+
+        # The same call with the right old answer goes through, and takes effect immediately: the
+        # read-back below is what the forgotten-password screen would ask, so it has to be the new one.
+        status, body = rules.call("POST", "/v1/auth/question/set", {
+            "question": "家里第一只狗叫什么？", "answer": "小黑", "old_answer": "三月九日"})
+        check("the question can be replaced once the old answer is given",
               status == 200 and body.get("question") == "家里第一只狗叫什么？", f"{status} {body}")
+        status, body = rules.call("GET", "/v1/auth/me")
+        check("and the account says it now has one",
+              status == 200 and (body.get("account") or {}).get("has_question") is True,
+              f"{status} {body}")
         status, body = rules.call("POST", "/v1/auth/question",
                                   {"email": "rules@example.com"})
         check("and that is the one read back", body.get("question") == "家里第一只狗叫什么？",

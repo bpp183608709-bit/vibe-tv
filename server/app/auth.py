@@ -371,13 +371,43 @@ class Accounts:
             cur.execute("DELETE FROM account_session WHERE account_id = ?", (account_id,))
         return {"ok": True, "signed_out": True}
 
-    def set_question(self, account_id: str, body: dict) -> dict:
-        """Set or replace the question, while signed in.
+    def set_question(self, account_id: str, body: dict, now_ms: int) -> dict:
+        """Set the question, or replace it — the second only after proving the first answer.
 
         Needed for two reasons: accounts created before questions existed have none and would have no
         way back in, and a parent who typed something they cannot answer later deserves to fix it.
-        Replacing it does not touch the password; the old answer simply stops working.
+
+        Replacing one is a credential swap, not a preference: whoever holds an unlocked phone could
+        otherwise point the question at something only they know and shut the real owner out of the
+        only way back in (there is no mail gateway). So the old answer is required, and guessing it
+        shares the counter with `recover`: five wrong answers lock both for fifteen minutes.
         """
+        row = self.db.query_one(
+            "SELECT id, recovery_question, recovery_answer_hash, recover_fail_count,"
+            " recover_locked_until FROM account WHERE id = ?", (account_id,))
+        if row is None:
+            raise GradeError("not-signed-in", 401)
+        stored = row.get("recovery_answer_hash") or ""
+        # A question with no answer hash is a half-written row from before this rule; there is nothing
+        # to prove, so it is treated as "none yet" rather than as an account nobody can repair.
+        replacing = bool(row.get("recovery_question")) and bool(stored)
+
+        if replacing:
+            self._raise_if_recover_locked(row, now_ms)
+            old = body.get("old_answer")
+            if not isinstance(old, str) or not old.strip():
+                raise GradeError("need-old-answer", 400, "answer the current question first")
+            try:
+                guess = normalise_answer(old)
+            except GradeError:
+                # Too short to be the stored answer, so it is a wrong answer, not a form error:
+                # counted the same way, and answered the same way.
+                self._note_recover_failure(row, now_ms)
+                raise GradeError("bad-answer", 403, "that answer does not match") from None
+            if not verify_password(guess, stored):
+                self._note_recover_failure(row, now_ms)
+                raise GradeError("bad-answer", 403, "that answer does not match")
+
         question = normalise_question(body.get("question"))
         answer = normalise_answer(body.get("answer"))
         self.db.execute(
@@ -385,7 +415,7 @@ class Accounts:
             " recover_fail_count = 0, recover_locked_until = NULL WHERE id = ?",
             (question, hash_password(answer), account_id),
         )
-        return {"ok": True, "question": question}
+        return {"ok": True, "question": question, "replaced": replacing}
 
     def recover_question(self, body: dict, now_ms: int, source: str) -> dict:
         """The question this account chose, for the phone that forgot the password.
@@ -518,10 +548,15 @@ class Accounts:
         }
 
     def account_json(self, account_id: str) -> dict:
-        row = self.db.query_one("SELECT id, email, created_at FROM account WHERE id = ?", (account_id,))
+        """What the page is told about the account. `has_question` decides whether the recovery form
+        asks for the old answer before it shows the new one — the answer itself never leaves here."""
+        row = self.db.query_one(
+            "SELECT id, email, created_at, recovery_question FROM account WHERE id = ?",
+            (account_id,))
         if row is None:
             raise GradeError("not-signed-in", 401)
-        return {"id": row["id"], "email": row["email"], "created_at": row.get("created_at")}
+        return {"id": row["id"], "email": row["email"], "created_at": row.get("created_at"),
+                "has_question": bool(row.get("recovery_question"))}
 
     # ---- devices ----
 
