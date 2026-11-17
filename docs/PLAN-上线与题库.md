@@ -13,7 +13,7 @@
 | 里程碑 | 内容 | 工期 | 依赖 | 完成标志（一句话） |
 |---|---|---|---|---|
 | **M0** | 上线地基：真 MySQL、设备鉴权、部署件 | 4 天 | 你给 SSH | ✅ 2026-11-17：217/217 在 MySQL 上通过 |
-| **M1** | 电视端接公网 | 3 天 + 3 天观察 | M0 | 家里那台电视用公网地址做完一组题并兑换成功 |
+| **M1** | 电视端接公网 | 3 天 + 3 天观察 | M0 | ✅ 2026-11-17：公网地址做完一组题并兑换 30 分钟（观察 3 天待做） |
 | **M2** | H5 公网 | 3 天 | M0 | 手机用流量（不连家里 Wi-Fi）打开 `https://quiz.qust.me:8443` 全流程可用 |
 | **M3** | 题库建设（一期 ~1000 题） | 3 周，分批 | 目录页 | 26 批全部过五道闸入库，抽检不合格率 ≤ 5% |
 | **M4** | 增量生题（自动补货） | 1 周 | M3 | 连续 7 天夜里自动补齐缺口，白天没有「库存不足」告警 |
@@ -178,14 +178,21 @@ curl -s -X POST https://quiz.qust.me:9443/v1/quiz/next -d '{"device_id":"..."}' 
    装到了 `tls/server.pem`。**CA 没换**，所以已装机的电视不会因为证书而拒连。
 2. ✅ 地址：`write_tv_config --base-url https://47.95.198.148:9443` 已写进 `local/quiz.properties`。
    用 IP 不用域名，理由是备案没下来之前不该把 `quiz.qust.me` 解析到内地这台机器（见 `docs/备案降级.md`）。
-3. ⏳ **APK 重出**：代码改了（每个请求带 `Authorization: Bearer`，配对时存 `device_secret`），必须重出。
-   卡在两处，都不是代码问题：
-   - `local/signing.keystore` + `local/signing.properties` 不在这台机器上。没有它，编出来的是
-     本机 debug key 签的包，**装不上电视**（签名不一致，`adb install -r` 会直接拒绝）。
-   - 有了签名材料之后：`./gradlew assembleStandardRelease` → `adb install -r`。
-     旧包里没有密钥，换上新包第一次启动会被服务器 401，客户端会自己重新登记一条新 device —— 
-     **代价是今天已用的次数与已赚的时长归零**（它们记在旧 device 行上）。挑一个当天还没做题的时间装。
-4. ⏳ 真机跑一遍：出码 → 手机配对 → 出题 → 交卷 → 签票 → 兑换 30 分钟 → 屏幕上真的多出 30 分钟。
+3. ✅ **APK 重出并装机**（2026-11-17 12:22）：`./gradlew assembleGuardRelease` → `1.72-guard` / `versionCode 91`。
+   三处与计划不同，都是好事：
+   - flavor 用 `guard` 不是 `standard`：`standard` 声明了 HOME，被 LauncherStrategy 拒（MT5879 / MT9655 已证）。
+   - **不需要 `local/signing.*`**：电视上那一版本来就是本机 debug key 签的，同 key 覆盖即可。
+   - **不用 `adb install`**：TCL 一律回 `INSTALL_FAILED_VERIFICATION_FAILURE`。走多屏互动
+     （`tools/tcast-push.py`，见 `docs/devices/tcl-mt5879-cn.md` 方法一），一次成功。
+   旧包里没有密钥，新包第一次请求就被 401，客户端自己重新登记了一条新 device，代价如预期：
+   旧 device 行上的今日次数与时长不带过来。
+4. ✅ **真机跑通**（2026-11-17 13:28，生产 `47.95.198.148:9443`）：出题 → 交卷 → 签票 → 兑换 30 分钟 → 屏幕上真的多出 30 分钟。
+   - 旧 device 号先被拒：`/v1/config`、`/v1/heartbeat`、`/v1/quiz/next` 全 401 → 自愈 `pair/start` 200 → `quiz/next` 200。
+   - 一组 5 题（古诗选择 ×2、词形填空 ×1、分数 ×2）全对，`quiz/{id}/grade` 200 签票。
+   - 屏幕：「通过了 / 答对 5 / 5 题 / 今天多了 30 分钟」；`dailyBudget` 60000 → 1860000，`dailyExtra` 1800000。
+   - 库里对得上：`quiz_answer` 5 行全对、`quiz_session` submitted / score 5 / `award_ms` 1800000、`ticket` 已签发。
+     `ticket.redeemed_at` 仍是 `NULL` 属设计：票据在电视本地验签与记 `spent`，服务端不参与兑换。
+   **手机配对那半段还没做**——H5 属 M2，尚未公网部署。
 
 **观察 3 天**，只看三个数：出题失败率、兑换失败率、`last_seen_at` 是否连续。任何一项异常先回滚到
 局域网地址（改 `local/quiz.properties` 重出包，或者把 9443 的 upstream 指回内网），不要在现场调。
