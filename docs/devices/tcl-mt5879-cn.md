@@ -53,6 +53,7 @@ TCL 手机 App 有一个「把手机里的 APK 推到电视」的功能。电视
 4. 用遥控器操作时：列表第一个通常是别的 APK，按「右」到 Aerial；在系统安装器里按 4 次「下」再按「右」，焦点才会到「安装」。
 5. **versionCode 必须比已装的大**，否则当贝会把它从列表里隐藏。
 6. 每一步都先截图确认焦点再按 OK。当贝左侧有「批量删除」和「一键清空」，列表还没加载出来时焦点会停在那里。
+7. 2026-11-17 在这台 `tc8000_ay30a2` 上复测：**方法二已经走不通**。把 `READ_EXTERNAL_STORAGE`/`WRITE_EXTERNAL_STORAGE`（含 `appops set --uid`）和 `MANAGE_EXTERNAL_STORAGE` 都放行、再对 `/sdcard/Download` 触发媒体扫描，`ApkManagerActivity` 依旧停在「没有残留安装包」，它不扫 `Download`；而且 `adb push` 上去的 APK 会在几分钟内被自动删掉（TCL 安全管家 / AerialParental 在清理），来不及点。这台机器上直接用方法一。
 
 **方法三：Aerial 自己的「下载并安装」**（2026-10-22 实测，从自称 1.30 的 guard 包升到官方 1.31-guard）：Aerial 用 `ACTION_VIEW` 把 APK 交给 `com.android.packageinstaller`，和当贝一样能过校验。这台没有「安装未知应用」设置页（`ACTION_MANAGE_UNKNOWN_APP_SOURCES` 解析不到），`REQUEST_INSTALL_PACKAGES` 要由 `install.sh` 用 appops 放行。安装界面用遥控器要按 4 次「下」再按「右」才到「安装」；装完弹「应用安装已完成，是否立即体验？」，选「暂不体验」时露出 TCL 原桌面 `com.tcl.cyberui`，守护照常拉回 Aerial。
 
