@@ -64,11 +64,13 @@ object QuizClient {
             put("name", "Aerial TV")
             put("app_version", BuildConfig.VERSION_NAME)
         }
+        // No secret on this one: it is the call that hands one out.
         val json = call(QuizConfig.baseUrl, "/v1/pair/start", body, QuizConfig.caPem(context))
         val device = json.getString("device_id")
         val code = json.optString("pair_code")
         val ttlSeconds = json.optLong("pair_ttl_seconds", 600L)
         QuizVault.saveDevice(context, device, code, System.currentTimeMillis() + ttlSeconds * 1_000L)
+        QuizVault.saveSecret(context, json.optString("device_secret").ifEmpty { null })
         DiagLog.i("quiz: paired as $device, code $code")
         return device
     }
@@ -77,17 +79,24 @@ object QuizClient {
     fun fetchGroup(context: Context, dayKey: String): QuizGroup {
         val device = QuizVault.deviceId(context) ?: pair(context)
         return try {
-            QuizWire.group(call(QuizConfig.baseUrl, "/v1/quiz/next", request(device, dayKey), QuizConfig.caPem(context)))
+            nextGroup(context, device, dayKey)
         } catch (e: Failed) {
             // The server was rebuilt, or a different one is answering: one re-registration, then the
             // failure is real. Without this the television would be stuck for ever on a stale id.
             if (e.error !is Error.Unpaired) throw e
             DiagLog.i("quiz: device unknown to the server, registering again")
             QuizVault.forgetDevice(context)
-            val fresh = pair(context)
-            QuizWire.group(call(QuizConfig.baseUrl, "/v1/quiz/next", request(fresh, dayKey), QuizConfig.caPem(context)))
+            nextGroup(context, pair(context), dayKey)
         }
     }
+
+    private fun nextGroup(context: Context, device: String, dayKey: String): QuizGroup =
+        QuizWire.group(
+            call(
+                QuizConfig.baseUrl, "/v1/quiz/next", request(device, dayKey),
+                QuizConfig.caPem(context), secret(context),
+            ),
+        )
 
     /** One answered group. The verdict's ticket is not yet minutes — [QuizVault.redeem] is. */
     fun submit(
@@ -113,7 +122,10 @@ object QuizClient {
             put("answers", array)
         }
         return QuizWire.verdict(
-            call(QuizConfig.baseUrl, "/v1/quiz/$sessionId/grade", body, QuizConfig.caPem(context)),
+            call(
+                QuizConfig.baseUrl, "/v1/quiz/$sessionId/grade", body,
+                QuizConfig.caPem(context), secret(context),
+            ),
         )
     }
 
@@ -143,7 +155,10 @@ object QuizClient {
 
     fun pairStatus(context: Context): PairState {
         val device = QuizVault.deviceId(context) ?: throw Failed(Error.Unpaired)
-        val json = get(QuizConfig.baseUrl, "/v1/pair/status?device_id=$device", QuizConfig.caPem(context))
+        val json = get(
+            QuizConfig.baseUrl, "/v1/pair/status?device_id=$device",
+            QuizConfig.caPem(context), secret(context),
+        )
         return PairState(bound = json.optBoolean("bound", false), name = json.optString("name").ifEmpty { null })
     }
 
@@ -154,7 +169,9 @@ object QuizClient {
     fun renewPair(context: Context): String {
         val device = QuizVault.deviceId(context) ?: return pair(context)
         val body = JSONObject().apply { put("device_id", device) }
-        val json = call(QuizConfig.baseUrl, "/v1/pair/renew", body, QuizConfig.caPem(context))
+        val json = call(
+            QuizConfig.baseUrl, "/v1/pair/renew", body, QuizConfig.caPem(context), secret(context),
+        )
         val code = json.optString("pair_code")
         val ttlSeconds = json.optLong("pair_ttl_seconds", 600L)
         QuizVault.saveDevice(context, device, code, System.currentTimeMillis() + ttlSeconds * 1_000L)
@@ -168,6 +185,7 @@ object QuizClient {
             QuizConfig.baseUrl,
             "/v1/config?device_id=$device&version=$knownVersion",
             QuizConfig.caPem(context),
+            secret(context),
         )
         if (!json.optBoolean("changed", false)) return null
         val config = json.optJSONObject("config") ?: return null
@@ -211,7 +229,7 @@ object QuizClient {
                 },
             )
         }
-        val json = call(QuizConfig.baseUrl, "/v1/heartbeat", body, QuizConfig.caPem(context))
+        val json = call(QuizConfig.baseUrl, "/v1/heartbeat", body, QuizConfig.caPem(context), secret(context))
         return Beat(
             bound = json.optBoolean("bound", true),
             configVersion = json.optInt("config_version", configVersion),
@@ -219,19 +237,27 @@ object QuizClient {
         )
     }
 
-    private fun get(baseUrl: String, path: String, ca: ByteArray?): JSONObject = try {
-        QuizHttp.get(baseUrl, path, ca)
+    private fun get(baseUrl: String, path: String, ca: ByteArray?, secret: String?): JSONObject = try {
+        QuizHttp.get(baseUrl, path, ca, secret)
     } catch (e: QuizHttp.Failure) {
         throw Failed(translate(e))
     }
+
+    private fun secret(context: Context): String? = QuizVault.secret(context)
 
     private fun request(deviceId: String, dayKey: String) = JSONObject().apply {
         put("device_id", deviceId)
         put("day_key", dayKey)
     }
 
-    private fun call(baseUrl: String, path: String, body: JSONObject, ca: ByteArray?): JSONObject = try {
-        QuizHttp.post(baseUrl, path, body, ca)
+    private fun call(
+        baseUrl: String,
+        path: String,
+        body: JSONObject,
+        ca: ByteArray?,
+        secret: String? = null,
+    ): JSONObject = try {
+        QuizHttp.post(baseUrl, path, body, ca, secret)
     } catch (e: QuizHttp.Failure) {
         throw Failed(translate(e))
     }
@@ -245,6 +271,10 @@ object QuizClient {
             "quota-exhausted" -> Error.QuotaExhausted
             "no-questions" -> Error.NoQuestions
             "unknown-device" -> Error.Unpaired
+            // `bad-device` is "this id and this secret are not a pair the server knows". For the
+            // television that means the same thing `unknown-device` used to: register again. It cannot
+            // mean anything else for a stranger, who has no valid secret to send.
+            "bad-device" -> Error.Unpaired
             "device-revoked" -> Error.Revoked
             else -> Error.Other(failure.code, failure.status)
         }

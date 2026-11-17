@@ -1,0 +1,34 @@
+#!/bin/sh
+# 前台运行入口 — systemd 的 ExecStart 是
+#
+#     /usr/local/bin/tvault-run.sh wrong-quiz /opt/wrong-quiz/bin/app
+#
+# 也就是说 DEEPSEEK_API_KEY 进到这个进程时**已经在环境里**了。本脚本不读密钥、不解密保险库、
+# 不回显环境、也不 fork：进程退出就是服务退出，`Type=simple` 依赖这个语义。
+#
+# 三件刻意的事：
+#   * `exec` 而不是 `&`：中间不能再多一层进程，否则 SIGTERM 停在 shell 上，30 秒后被 SIGKILL。
+#   * 参数与端口都在这里定死，不靠 systemd 单元：单元是部署方的文件，改了会被覆盖回去。
+#   * 没有密钥可泄漏：DSN 走 unix socket + MySQL auth_socket，所以 deploy.env 里没有密码。
+set -eu
+
+APP_DIR=$(cd "$(dirname "$0")/.." && pwd)
+cd "$APP_DIR"
+
+if [ -f "$APP_DIR/deploy.env" ]; then
+    # `set -a` matters: a plain `. file` creates shell variables, and `exec` would hand the child an
+    # environment without them — the service then quietly starts on the sqlite default.
+    set -a
+    # shellcheck disable=SC1091
+    . "$APP_DIR/deploy.env"
+    set +a
+fi
+
+CERT="$APP_DIR/tls/server.pem"
+KEY="$APP_DIR/tls/server.key"
+
+exec "$APP_DIR/.venv/bin/python" -m server.app.api \
+    --require-llm \
+    --listen "0.0.0.0:${QUIZ_H5_PORT:-8443}:$CERT:$KEY" \
+    --listen "0.0.0.0:${QUIZ_TV_PORT:-9443}:$CERT:$KEY" \
+    --listen "127.0.0.1:${PORT:-8100}"

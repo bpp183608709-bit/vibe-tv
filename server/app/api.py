@@ -1,7 +1,7 @@
 """The HTTP surface: standard library, no framework.
 
     GET  /health
-    POST /v1/pair/start          register the TV, get a six-character code for the parent page
+    POST /v1/pair/start          register the TV, hand out its secret and a six-character code
     POST /v1/pair/renew          a new code for the same TV, when the first one expired
     GET  /v1/pair/status         has the parent typed the code yet (the TV polls this)
     GET  /v1/quota               today's counters, for the lock screen
@@ -31,11 +31,11 @@ and a 2 GB box that should not be running an ASGI server plus a process supervis
 would buy — validation and routing — is forty lines here, and the deployment story becomes "python -m
 server.app.api".
 
-**Not production-hardened, and it says so.** There is no rate limiting outside pairing, and no device
-authentication beyond the `device_id` in the body. That last one is the largest hole left: knowing
-another TV's `device_id` lets you submit answers for it. It does not let you mint minutes — tickets are
-signed for the device they were earned on, and the TV re-checks `did` — but it does let you burn
-someone's attempts. The fix is a device keypair, and it belongs with the rest of the pairing work.
+**Every television route but `POST /v1/pair/start` needs `Authorization: Bearer <device_secret>`**,
+where the secret came back from `pair/start` exactly once and is stored hashed in `device.secret_hash`.
+Before 2026-11-17 the `device_id` in the body was the whole story, which was survivable on a LAN and
+is not survivable on the internet: an id is a name, not a password. What is still missing is rate
+limiting outside pairing — one address can knock as often as it likes.
 """
 
 from __future__ import annotations
@@ -46,8 +46,11 @@ import json
 import os
 import re
 import secrets
+import signal
 import ssl
 import sys
+import threading
+import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import unquote
@@ -58,6 +61,7 @@ from server.app.db import Database, default_db
 from server.app.grade import GradeError
 from server.app.h5 import H5, PAIR_ALPHABET, PAIR_CODE_LEN, PAIR_TTL_MS, SESSION_COOKIE
 from server.app.ids import new_ulid
+from server.app.llm import client as llm
 
 #: Dev-only clock override, so the acceptance suite can test "the ten minutes ran out" and "it is
 #: tomorrow now" without waiting. Off unless QUIZ_DEV=1; a production server refuses the field outright.
@@ -73,6 +77,16 @@ WEB_FILES = {
     "manifest.webmanifest": ("manifest.webmanifest", "application/manifest+json"),
     "icon.svg": ("icon.svg", "image/svg+xml"),
 }
+
+
+def _hash_secret(secret: str) -> str:
+    """The column value for a television's secret. SHA-256, no salt: this is 32 bytes of `secrets`,
+    not a password a person chose, so there is nothing to make expensive and nothing to guess."""
+    return hashlib.sha256(secret.encode("utf-8")).hexdigest()
+
+
+def new_device_secret() -> str:
+    return secrets.token_urlsafe(32)
 
 
 def build_signer():
@@ -99,6 +113,7 @@ class Api:
         self.signer = signer
         # The parent page's routes live in their own module; they share the database and nothing else.
         self.h5 = H5(db)
+        self.started_at = time.monotonic()
 
     # ---- helpers ----
 
@@ -110,9 +125,40 @@ class Api:
             raise grading.GradeError("device-revoked", 403)
         return row
 
-    def _now(self, body: dict) -> int:
-        import time
+    def authenticate(self, secret: str | None, device_id: str) -> dict:
+        """The television behind a request, or 401.
 
+        `device_id` is a name the TV chose for itself and it travels in the body; the secret is the
+        credential and it travels in `Authorization: Bearer`. Before this existed, anyone who learned
+        an id could start groups and hand them in on that television's behalf — on a LAN that was
+        library-hours vandalism, on the open internet it is the first thing that happens.
+
+        A wrong secret and an unknown id answer the same thing on purpose: which ids exist is not
+        information a stranger should be able to collect by trying.
+        """
+        if not secret or not device_id:
+            raise grading.GradeError("bad-device", 401, "the television's secret is missing")
+        row = self.db.query_one("SELECT * FROM device WHERE id = ?", (device_id,))
+        stored = (row or {}).get("secret_hash") or ""
+        # Compare even when there is no row, so the timing of "unknown id" and "wrong secret" match.
+        matched = secrets.compare_digest(stored, _hash_secret(secret)) if stored else False
+        if row is None or not matched:
+            raise grading.GradeError("bad-device", 401, "device_id and secret do not match")
+        if row.get("revoked_at"):
+            raise grading.GradeError("device-revoked", 403)
+        return row
+
+    def owns(self, device_id: str, secret: str | None) -> bool:
+        """Whether this request may act as [device_id], without raising. Used by pairing, which has to
+        fall back to "a new television" rather than fail a screen that is already on."""
+        if not device_id or not secret:
+            return False
+        row = self.db.query_one("SELECT * FROM device WHERE id = ?", (device_id,))
+        stored = (row or {}).get("secret_hash") or ""
+        return bool(stored) and not row.get("revoked_at") and secrets.compare_digest(
+            stored, _hash_secret(secret))
+
+    def _now(self, body: dict) -> int:
         if DEV_MODE and isinstance(body.get("now_ms"), int):
             return int(body["now_ms"])
         return int(time.time() * 1000)
@@ -123,42 +169,79 @@ class Api:
         return {"ok": True, "dsn": self.db.dsn.split(":")[0], "questions": self.db.scalar(
             "SELECT COUNT(*) FROM question", default=0)}
 
-    def pair_start(self, body: dict, now_ms: int) -> dict:
-        """Make a code for the TV to show. A TV that re-opens the pairing page keeps its device id:
-        minting a new one per visit would split its counters across rows, and the daily caps are
-        enforced per row — three visits would buy three sets of three groups."""
+    def healthz(self) -> dict:
+        """Liveness for the deployment's probes: state, not diagnosis.
+
+        It deliberately does **not** call DeepSeek. A probe that spends money and takes two seconds to
+        answer is a probe that turns a traffic spike into an outage of its own. What it reports is what
+        can be known without asking anyone: whether a key was injected and for how long we have been up.
+        """
+        return {
+            "status": "ok",
+            "model": llm.model(),
+            "key_present": llm.key_present(),
+            "uptime_s": int(time.monotonic() - self.started_at),
+        }
+
+    def readyz(self) -> dict:
+        """Readiness: the database answers and the model side is not in a known-bad state."""
+        try:
+            self.db.scalar("SELECT 1", default=0)
+            database = True
+        except Exception:  # noqa: BLE001 - a probe reports, it does not raise
+            database = False
+        body = self.healthz()
+        body["db"] = database
+        body["llm"] = "degraded" if llm.degraded() else "ok"
+        body["status"] = "ok" if database and not llm.degraded() else "degraded"
+        return body
+
+    def pair_start(self, body: dict, now_ms: int, secret: str | None = None) -> dict:
+        """Make a code for the TV to show, and the secret it will use from now on.
+
+        A television that presents its own id *and* its own secret keeps that row: minting a new one
+        per visit would split its counters across rows, and the daily caps are enforced per row, so
+        three visits would buy three sets of three groups. Without the secret, an id in the body is
+        just a number someone typed — that path now creates a new television instead of adopting
+        (and thereby locking out) somebody else's.
+        """
         code = "".join(secrets.choice(PAIR_ALPHABET) for _ in range(PAIR_CODE_LEN))
         code_hash = hashlib.sha256(code.encode("utf-8")).hexdigest()
         expires = limits.to_iso(now_ms + PAIR_TTL_MS)
         now_iso = limits.to_iso(now_ms)
+        # Rotated on every pairing, so the plaintext is handed over exactly once and a leaked
+        # preference file is worth nothing after the parent pairs again.
+        fresh_secret = new_device_secret()
+        secret_hash = _hash_secret(fresh_secret)
 
         existing = body.get("device_id")
-        if isinstance(existing, str) and existing:
+        if isinstance(existing, str) and existing and self.owns(existing, secret):
             row = self.db.query_one("SELECT * FROM device WHERE id = ?", (existing,))
-            if row is not None and not row.get("revoked_at"):
-                self.db.execute(
-                    "UPDATE device SET pair_code_hash = ?, pair_expires_at = ?, app_version = ?,"
-                    " last_seen_at = ? WHERE id = ?",
-                    (code_hash, expires, body.get("app_version") or row.get("app_version"),
-                     now_iso, existing),
-                )
-                return {
-                    "device_id": existing,
-                    "pair_code": code,
-                    "expires_at": expires,
-                    "pair_ttl_seconds": PAIR_TTL_MS // 1000,
-                    "bound": bool(row.get("bound_at")),
-                }
+            self.db.execute(
+                "UPDATE device SET pair_code_hash = ?, pair_expires_at = ?, app_version = ?,"
+                " last_seen_at = ?, secret_hash = ? WHERE id = ?",
+                (code_hash, expires, body.get("app_version") or row.get("app_version"),
+                 now_iso, secret_hash, existing),
+            )
+            return {
+                "device_id": existing,
+                "device_secret": fresh_secret,
+                "pair_code": code,
+                "expires_at": expires,
+                "pair_ttl_seconds": PAIR_TTL_MS // 1000,
+                "bound": bool(row.get("bound_at")),
+            }
 
         device_id = new_ulid(now_ms)
         self.db.execute(
-            "INSERT INTO device (id, name, pair_code_hash, pair_expires_at, app_version, last_seen_at,"
-            " created_at) VALUES (?, ?, ?, ?, ?, ?, ?)",
+            "INSERT INTO device (id, name, pair_code_hash, pair_expires_at, secret_hash, app_version,"
+            " last_seen_at, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
             (
                 device_id,
                 body.get("name"),
                 code_hash,
                 expires,
+                secret_hash,
                 body.get("app_version"),
                 now_iso,
                 now_iso,
@@ -166,6 +249,7 @@ class Api:
         )
         return {
             "device_id": device_id,
+            "device_secret": fresh_secret,
             "pair_code": code,
             "expires_at": expires,
             "pair_ttl_seconds": PAIR_TTL_MS // 1000,
@@ -257,6 +341,12 @@ class Api:
 
 GRADE_PATH = re.compile(r"^/v1/quiz/([A-Z0-9]{26})/grade$")
 
+#: The television's own routes. Every one of them needs the bearer secret `/v1/pair/start` handed out;
+#: pairing itself is the one exception (that is where the secret comes from). The parent page's routes
+#: are authenticated by its session cookie, and the probes by nothing at all.
+TV_GET_ROUTES = frozenset({"/v1/quota", "/v1/pair/status", "/v1/config"})
+TV_POST_ROUTES = frozenset({"/v1/pair/renew", "/v1/heartbeat", "/v1/quiz/next"})
+
 #: Parent-page routes carrying an id. Compiled once, matched after the exact paths, so a typo in a
 #: number is a 404 rather than a route that silently takes the wrong topic.
 H5_TOPIC_PATH = re.compile(r"^/v1/h5/mastery/(\d+)$")
@@ -270,6 +360,13 @@ def make_handler(api: Api):
 
         def log_message(self, fmt: str, *args) -> None:  # quieter default; one line per request
             sys.stderr.write("%s %s\n" % (self.address_string(), fmt % args))
+
+        def _bearer(self) -> str | None:
+            """The television's secret, from `Authorization: Bearer …`."""
+            scheme, _, token = (self.headers.get("Authorization") or "").partition(" ")
+            if scheme.lower() != "bearer":
+                return None
+            return token.strip() or None
 
         def _read_json(self) -> dict:
             length = int(self.headers.get("Content-Length") or 0)
@@ -529,8 +626,19 @@ def make_handler(api: Api):
                 body = self._read_json() if method in ("POST", "PUT") else {}
                 now_ms = api._now(body)
 
+                # One gate in front of every route the television owns, instead of a check inside each
+                # of them that a later route could forget to copy. `pair/start` is outside it: that is
+                # the call that hands the secret out.
+                if (path in TV_GET_ROUTES or path in TV_POST_ROUTES or GRADE_PATH.match(path)):
+                    api.authenticate(self._bearer(),
+                                     str(query.get("device_id") or body.get("device_id") or ""))
+
                 if method == "GET" and path == "/health":
                     self._send(200, api.health(body, now_ms))
+                elif method == "GET" and path == "/healthz":
+                    self._send(200, api.healthz())
+                elif method == "GET" and path == "/readyz":
+                    self._send(200, api.readyz())
                 elif method == "GET" and path == "/v1/quota":
                     self._send(200, api.quota(query, now_ms))
                 elif method == "GET" and path == "/v1/pair/status":
@@ -540,7 +648,7 @@ def make_handler(api: Api):
                 elif method == "POST" and path == "/v1/heartbeat":
                     self._send(200, api.h5.heartbeat(body, now_ms))
                 elif method == "POST" and path == "/v1/pair/start":
-                    self._send(200, api.pair_start(body, now_ms))
+                    self._send(200, api.pair_start(body, now_ms, self._bearer()))
                 elif method == "POST" and path == "/v1/pair/renew":
                     self._send(200, api.h5.pair_renew(body, now_ms))
                 elif method == "POST" and path == "/v1/quiz/next":
@@ -578,21 +686,86 @@ def make_handler(api: Api):
     return Handler
 
 
-def serve(host: str, port: int, db: Database, signer, tls_cert: str | None = None, tls_key: str | None = None) -> None:
-    api = Api(db, signer)
+def _bind(host: str, port: int, api: "Api", tls_cert: str | None, tls_key: str | None) -> ThreadingHTTPServer:
     server = ThreadingHTTPServer((host, port), make_handler(api))
-    scheme = "http"
+    server.daemon_threads = True
     if tls_cert and tls_key:
-        # TLS here rather than in a reverse proxy: the box has an address and no domain, the
-        # television pins a CA it ships with, and one process is one thing to restart (docs/QUIZ.md
-        # §8). A proxy in front is still fine — this just means the wiki is not the only way to get
-        # an https endpoint.
+        # TLS here rather than in a reverse proxy: the television pins a CA it ships with, the parent
+        # page needs a publicly trusted certificate, and those are two different certificates — but
+        # they can still be two sockets of one process, which is one thing for systemd to restart.
         context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
         context.load_cert_chain(tls_cert, tls_key)
         server.socket = context.wrap_socket(server.socket, server_side=True)
-        scheme = "https"
-    print(f"quiz api on {scheme}://{host}:{port} (dsn={db.dsn})", file=sys.stderr)
-    server.serve_forever()
+    return server
+
+
+def serve(listeners: list[tuple[str, int, str | None, str | None]], db: Database, signer) -> None:
+    """Bind every listener, serve them from this one process, stop on SIGTERM.
+
+    8443 carries the publicly trusted certificate for the parent page; 9443 carries the private CA the
+    television pins. Two processes would also work and would double the memory for no benefit on a
+    1.6 GB box, and a reverse proxy in front would mean a unit this deployment does not have.
+
+    SIGTERM is handled rather than defaulted: systemd stops the unit with it, and a handler that shuts
+    the sockets down lets in-flight requests finish instead of severing them mid-response.
+    """
+    api = Api(db, signer)
+    servers = []
+    for host, port, cert, key in listeners:
+        try:
+            servers.append(_bind(host, port, api, cert, key))
+        except OSError as exc:
+            print(f"FATAL: 无法绑定 {host}:{port}（{exc.strerror}），端口被占用或权限不足", file=sys.stderr)
+            for bound in servers:
+                bound.server_close()
+            raise SystemExit(78) from exc
+        llm.event("INFO", "listen", host=host, port=port, tls=bool(cert))
+
+    stop = threading.Event()
+
+    def _on_signal(signum, _frame):  # noqa: ANN001 - signal handlers get (signum, frame)
+        stop.set()
+
+    signal.signal(signal.SIGTERM, _on_signal)
+    signal.signal(signal.SIGINT, _on_signal)
+
+    threads = [
+        threading.Thread(target=server.serve_forever, name=f"listen-{server.server_port}", daemon=True)
+        for server in servers
+    ]
+    for thread in threads:
+        thread.start()
+
+    try:
+        while not stop.wait(1.0):
+            pass
+    finally:
+        for server in servers:
+            server.shutdown()
+        for server in servers:
+            server.server_close()
+        llm.event("INFO", "stopped", listeners=len(servers))
+
+
+def _parse_listener(spec: str, default_host: str) -> tuple[str, int, str | None, str | None]:
+    """`PORT`, `PORT:CERT:KEY`, `HOST:PORT:CERT:KEY` — one flag instead of four.
+
+    A listener without a certificate is plain http, which is only ever correct on loopback: the
+    television pins a CA and the parent page carries a session cookie, so an unencrypted socket on a
+    public address would be both broken and dangerous.
+    """
+    parts = spec.split(":")
+    if parts[0].isdigit():
+        host, port, rest = default_host, int(parts[0]), parts[1:]
+    else:
+        if len(parts) < 2 or not parts[1].isdigit():
+            raise SystemExit(f"--listen 看起来不像 HOST:PORT[:CERT:KEY]：{spec!r}")
+        host, port, rest = parts[0], int(parts[1]), parts[2:]
+    if not rest:
+        return host, port, None, None
+    if len(rest) == 2:
+        return host, port, rest[0] or None, rest[1] or None
+    raise SystemExit(f"--listen 看起来不像 HOST:PORT[:CERT:KEY]：{spec!r}")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -602,17 +775,54 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--dsn", default=None)
     parser.add_argument("--tls-cert", default=None, help="PEM chain; the television pins its CA (tools/make_ca.sh)")
     parser.add_argument("--tls-key", default=None, help="PEM private key for --tls-cert")
+    parser.add_argument(
+        "--listen",
+        action="append",
+        default=[],
+        metavar="PORT[:CERT:KEY]",
+        help="bind an extra socket in this same process; PORT alone means plain http",
+    )
+    parser.add_argument(
+        "--require-llm",
+        action="store_true",
+        help="refuse to start without DEEPSEEK_API_KEY (the deployed unit passes this; local runs do not)",
+    )
     args = parser.parse_args(argv)
 
-    db = Database(args.dsn) if args.dsn else default_db()
-    if args.dsn:
-        db.connect(init_schema=True)
-    if not DEV_MODE:
-        print("QUIZ_DEV is off: the now_ms override is disabled", file=sys.stderr)
+    # Checked first: a missing key is a configuration error, and finding out about it when the first
+    # question is requested would mean a service that looks healthy and does nothing. Exit 78 is
+    # EX_CONFIG — systemd's Restart=on-failure would otherwise restart it forever, five seconds apart.
+    if args.require_llm:
+        llm.require_key()
+
     if bool(args.tls_cert) != bool(args.tls_key):
         print("--tls-cert and --tls-key go together", file=sys.stderr)
         return 2
-    serve(args.host, args.port, db, build_signer(), args.tls_cert, args.tls_key)
+
+    try:
+        db = Database(args.dsn) if args.dsn else default_db()
+        if args.dsn:
+            db.connect(init_schema=True)
+    except Exception as exc:  # noqa: BLE001 - the reason has to be readable in `systemctl status`
+        print(f"FATAL: 数据库连接失败（{type(exc).__name__}），检查 QUIZ_DSN 与 MySQL", file=sys.stderr)
+        return 78
+
+    if args.listen:
+        listeners = [_parse_listener(spec, args.host) for spec in args.listen]
+    else:
+        listeners = [(args.host, args.port, args.tls_cert, args.tls_key)]
+
+    if not DEV_MODE:
+        print("QUIZ_DEV is off: the now_ms override is disabled", file=sys.stderr)
+    llm.event(
+        "INFO",
+        "startup",
+        model=llm.model(),
+        key_present=llm.key_present(),
+        ports=",".join(str(port) for _, port, _, _ in listeners),
+        db=db.dsn.split(":", 1)[0],
+    )
+    serve(listeners, db, build_signer())
     return 0
 
 

@@ -72,11 +72,37 @@ def check(name: str, condition: bool, detail: str = "") -> None:
     results.append((name, bool(condition), detail if not condition else ""))
 
 
-def http(method: str, path: str, body: dict | None = None) -> tuple[int, dict]:
+#: device_id -> the secret `/v1/pair/start` handed out for it. The television keeps this in its own
+#: preferences; here one dict plays that part, so tests do not have to thread it through every call.
+SECRETS: dict[str, str] = {}
+
+
+def _query_value(path: str, name: str) -> str:
+    """One query parameter, because two of the TV's routes carry the id there rather than in a body."""
+    _, _, query = path.partition("?")
+    for pair in query.split("&"):
+        key, _, value = pair.partition("=")
+        if key == name:
+            return value
+    return ""
+
+
+def http(method: str, path: str, body: dict | None = None, *, secret: str | None = "",
+         device_id: str | None = None) -> tuple[int, dict]:
+    """One request as the television makes it: the id in the body, the secret in a header.
+
+    `secret=""` means "whatever was issued for this device"; pass `None` to send no header at all, or
+    a string to send a wrong one — the two refusal cases need both.
+    """
     data = json.dumps(body).encode("utf-8") if body is not None else None
     request = urllib.request.Request(
         BASE + path, data=data, method=method, headers={"Content-Type": "application/json"}
     )
+    if secret == "":
+        who = device_id or (body or {}).get("device_id") or _query_value(path, "device_id")
+        secret = SECRETS.get(str(who))
+    if secret:
+        request.add_header("Authorization", f"Bearer {secret}")
     try:
         with urllib.request.urlopen(request, timeout=10) as response:
             return response.status, json.loads(response.read().decode("utf-8"))
@@ -91,6 +117,7 @@ def http(method: str, path: str, body: dict | None = None) -> tuple[int, dict]:
 def pair() -> str:
     status, body = http("POST", "/v1/pair/start", {"app_version": "acceptance"})
     assert status == 200, (status, body)
+    SECRETS[body["device_id"]] = body["device_secret"]
     return body["device_id"]
 
 
@@ -101,6 +128,7 @@ def start(now_ms: int | None = None) -> dict:
         body["now_ms"] = now_ms
     status, payload = http("POST", "/v1/pair/start", body)
     assert status == 200, (status, payload)
+    SECRETS[payload["device_id"]] = payload["device_secret"]
     return payload
 
 
@@ -374,6 +402,46 @@ def main(argv: list[str] | None = None) -> int:
             graded["ticket"], verifier, device_id=device, day_key=DAY, spent_jti=set()
         )
         check("ticket verifies on the TV", parsed.ms == limits.AWARD_MS and parsed.did == device)
+
+        # ---- case 1b: an id is a name, not a password (2026-11-17) ----
+        # Before this, knowing another television's id was enough to start groups and hand them in on
+        # its behalf. Four ways to be someone else, all of which must fail.
+        status, body = http("POST", "/v1/quiz/next", {"device_id": device, "day_key": DAY}, secret=None)
+        check("a group needs the televisions secret", status == 401 and body.get("error") == "bad-device",
+              f"{status} {body}")
+        status, body = http("POST", "/v1/quiz/next", {"device_id": device, "day_key": DAY},
+                            secret="not-the-secret")
+        check("and a wrong secret is not a secret", status == 401, f"{status} {body}")
+        status, body = http("GET", f"/v1/config?device_id={device}&version=0", secret=None)
+        check("reading the settings needs one as well", status == 401, f"{status} {body}")
+        bystander = pair()
+        status, body = http("POST", "/v1/quiz/next", {"device_id": device, "day_key": DAY},
+                            secret=SECRETS[bystander])
+        check("another televisions secret opens nothing", status == 401, f"{status} {body}")
+        status, body = http("POST", "/v1/heartbeat",
+                            {"device_id": device, "day_key": DAY, "used_ms": 0}, secret=None)
+        check("and neither does a heartbeat without one", status == 401, f"{status} {body}")
+        # `pair/start` is the one route that cannot need the secret, so it must not become a way to
+        # take over a row: an unauthenticated id in the body makes a *new* television instead.
+        status, hijack = http("POST", "/v1/pair/start", {"device_id": device, "app_version": "x"},
+                              secret=None)
+        check("an id alone cannot re-register someone elses television",
+              status == 200 and hijack["device_id"] != device,
+              f"{status} {hijack.get('device_id')}")
+        status, body = http("GET", f"/v1/quota?device_id={device}&day_key={DAY}")
+        check("and the original row is untouched", status == 200, f"{status} {body}")
+        # Re-pairing as itself keeps the row (counters live there) and rotates the credential.
+        status, again = http("POST", "/v1/pair/start", {"device_id": device, "app_version": "x"},
+                             secret="")
+        check("a television that proves itself keeps its id",
+              status == 200 and again["device_id"] == device, f"{status} {again.get('device_id')}")
+        old_secret = SECRETS[device]
+        SECRETS[device] = again["device_secret"]
+        status, body = http("POST", "/v1/quiz/next", {"device_id": device, "day_key": DAY},
+                            secret=old_secret)
+        check("and the secret it replaced is dead", status == 401, f"{status} {body}")
+        status, body = http("GET", f"/v1/config?device_id={device}&version=0")
+        check("while the new one works", status == 200, f"{status} {body}")
 
         # ---- case 5: the same string again is spent ----
         try:

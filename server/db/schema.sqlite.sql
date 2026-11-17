@@ -126,6 +126,7 @@ CREATE TABLE device (
   pair_expires_at TEXT NULL,
   bound_at        TEXT NULL,
   token_hash      TEXT NULL,
+  secret_hash     TEXT NULL,                    -- sha256 of the TV's bearer secret; NULL = pre-auth row
   app_version     TEXT NULL,
   last_seen_at    TEXT NULL,
   revoked_at      TEXT NULL,

@@ -61,13 +61,21 @@ internal object QuizHttp {
      * [caPem] is the pinned CA. Null means "no CA configured", which is a refusal rather than a
      * fallback to the system store — a client that quietly trusts everything when its pin is missing
      * is worse than one that does not run.
+     *
+     * [secret] is the bearer token from the last pairing; null only for `/v1/pair/start`, the call
+     * that issues one.
      */
-    fun post(baseUrl: String, path: String, body: JSONObject, caPem: ByteArray?): JSONObject =
-        exchange("POST", baseUrl, path, body, caPem)
+    fun post(
+        baseUrl: String,
+        path: String,
+        body: JSONObject,
+        caPem: ByteArray?,
+        secret: String? = null,
+    ): JSONObject = exchange("POST", baseUrl, path, body, caPem, secret)
 
     /** GETs [path]. Same trust rules as [post]; used by the two polls that carry no payload. */
-    fun get(baseUrl: String, path: String, caPem: ByteArray?): JSONObject =
-        exchange("GET", baseUrl, path, null, caPem)
+    fun get(baseUrl: String, path: String, caPem: ByteArray?, secret: String? = null): JSONObject =
+        exchange("GET", baseUrl, path, null, caPem, secret)
 
     private fun exchange(
         method: String,
@@ -75,6 +83,7 @@ internal object QuizHttp {
         path: String,
         body: JSONObject?,
         caPem: ByteArray?,
+        secret: String?,
     ): JSONObject {
         if (baseUrl.isEmpty()) throw Failure(Kind.OFFLINE, detail = "no server configured")
         if (!baseUrl.startsWith("https://")) throw Failure(Kind.UNTRUSTED, detail = "base url is not https")
@@ -101,6 +110,11 @@ internal object QuizHttp {
             connection.readTimeout = READ_TIMEOUT_MS
             connection.setRequestProperty("Accept", "application/json")
             connection.setRequestProperty("User-Agent", "Aerial-Quiz")
+            // In a header, never in the URL: a query string lands in the server's access log, in a
+            // proxy's cache key and in whatever the router keeps. A bearer header does not.
+            if (!secret.isNullOrEmpty()) {
+                connection.setRequestProperty("Authorization", "Bearer $secret")
+            }
 
             if (body != null) {
                 connection.doOutput = true

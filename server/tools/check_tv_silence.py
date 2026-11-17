@@ -56,6 +56,10 @@ WIRE_KEYS = frozenset({
     "question_id", "subject", "topic", "chosen", "explanation",
     # settings and pairing, which predate this feature
     "config", "pair_code", "name", "error", "detail",
+    # the television's own bearer secret, read once from `pair/start` and written to its preferences.
+    # Admissible because it never reaches a screen, a log line or a URL: it is the one thing on this
+    # list that is about the television rather than about the child.
+    "device_secret",
     # ticket claims
     "v", "alg", "jti", "did", "day", "ms", "iat", "exp",
 })

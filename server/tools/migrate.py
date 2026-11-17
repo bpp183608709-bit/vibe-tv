@@ -36,6 +36,7 @@ _MYSQL_TYPE = {
     "recovery_answer_hash": "VARCHAR(255) NULL",
     "recover_fail_count": "SMALLINT UNSIGNED NOT NULL DEFAULT 0",
     "recover_locked_until": "DATETIME NULL",
+    "secret_hash": "CHAR(64) NULL",
 }
 
 

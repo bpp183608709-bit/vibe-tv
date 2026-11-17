@@ -155,6 +155,11 @@ CREATE TABLE device (
   -- Hash of the bearer token the H5 keeps in a cookie. One parent per TV this release (D6): binding a
   -- new phone overwrites this and the old cookie stops working.
   token_hash     CHAR(64)     NULL,
+  -- Hash of the 32-byte secret the television keeps in its own preferences. Every request the TV makes
+  -- carries it as `Authorization: Bearer …`, and `device_id` alone stopped being enough on
+  -- 2026-11-17: on a LAN an id was a name, on the internet it is half a password. NULL only on rows
+  -- created before this column existed, which are refused until they re-register.
+  secret_hash    CHAR(64)     NULL,
   app_version    VARCHAR(32)  NULL,
   last_seen_at   DATETIME     NULL,
   revoked_at     DATETIME     NULL,

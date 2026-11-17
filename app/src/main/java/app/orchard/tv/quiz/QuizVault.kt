@@ -19,11 +19,16 @@ import app.orchard.tv.system.DiagLog
  * **The device id is a name, not a credential.** It is what the server files a day's counters under.
  * Losing it means re-pairing and starting today's quiz allowance from zero, which is why it is stored
  * on the television rather than derived from something that changes.
+ *
+ * **The secret is the credential.** Since the server went public (2026-11-17) an id alone is refused,
+ * so the 32 bytes `pair/start` hands over are kept here next to it and sent as a bearer token on every
+ * request. They are never displayed, logged, or put in a URL: a URL ends up in a proxy's log.
  */
 object QuizVault {
 
     private const val PREFS = "quiz"
     private const val KEY_DEVICE = "device_id"
+    private const val KEY_SECRET = "device_secret"
     private const val KEY_PAIR_CODE = "pair_code"
     private const val KEY_PAIR_UNTIL = "pair_until"
     private const val KEY_SPENT = "spent"
@@ -32,6 +37,9 @@ object QuizVault {
     private const val KEY_COOLDOWN_UNTIL = "cooldown_until"
 
     fun deviceId(context: Context): String? = prefs(context).getString(KEY_DEVICE, null)?.ifEmpty { null }
+
+    /** The bearer token issued with the last pairing. Null on a build that has never paired. */
+    fun secret(context: Context): String? = prefs(context).getString(KEY_SECRET, null)?.ifEmpty { null }
 
     fun pairCode(context: Context): String? = prefs(context).getString(KEY_PAIR_CODE, null)?.ifEmpty { null }
 
@@ -107,6 +115,17 @@ object QuizVault {
     }
 
     /**
+     * Keeps (or replaces) the bearer secret. Separate from [saveDevice] because the secret arrives
+     * once and the code arrives every time: a screen that re-renders the pairing page must not be able
+     * to wipe the credential by saving a code without one.
+     */
+    fun saveSecret(context: Context, secret: String?) {
+        prefs(context).edit {
+            if (secret.isNullOrEmpty()) remove(KEY_SECRET) else putString(KEY_SECRET, secret)
+        }
+    }
+
+    /**
      * Forgets the device, so the next group registers again.
      *
      * Two callers, one meaning: "the row the server files my day under is not mine any more". Either
@@ -122,6 +141,7 @@ object QuizVault {
     fun forgetDevice(context: Context) {
         prefs(context).edit {
             remove(KEY_DEVICE)
+            remove(KEY_SECRET)
             remove(KEY_PAIR_CODE)
             remove(KEY_PAIR_UNTIL)
             remove(KEY_CONFIG_VERSION)
