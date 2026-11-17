@@ -205,15 +205,19 @@ curl -s -X POST https://quiz.qust.me:9443/v1/quiz/next -d '{"device_id":"..."}' 
 
 ## 6. M2 · H5 公网（3 天）
 
-1. `certbot` 签 `quiz.qust.me`，nginx 8443 起站点；静态资源 `Cache-Control: immutable`（`app.css`/`app.js`
-   没哈希，用 `no-cache` + ETag，别给自己挖坑）。
+1. ~~`certbot` 签 `quiz.qust.me`，nginx 8443 起站点~~ → **已换成 Let's Encrypt 的 IP 证书（2026-11-17），
+   没有 nginx**。静态资源用 `no-cache` + ETag（`app.css`/`app.js` 没哈希，别给自己挖坑）—— ✅ 2026-11-17：
+   `ETag` 已发，命中回 304、0 字节。
 2. 手机**用流量**走完整流程：注册 → 登录 → 配对 → 改设置 → 错题本五个页面 → 添加错题 → 退出登录。
-   这一条必须用流量，不能用家里 Wi-Fi——很多「公网不可用」的问题都出在「其实还连在内网」。
-3. PWA：`manifest.webmanifest` 与 `icon.svg` 都在，确认「添加到主屏幕」后能独立窗口打开。
+   这一条必须用流量，不能用家里 Wi-Fi——很多「公网不可用」的问题都出在「其实还连在内网」。**⏳ 未做**
+3. PWA：`manifest.webmanifest` 与 `icon.svg` 都在，确认「添加到主屏幕」后能独立窗口打开。**⏳ 未做**
 4. 安全头：`Strict-Transport-Security`、`X-Content-Type-Options`、`Referrer-Policy: no-referrer`、
-   `Content-Security-Policy`（页面无外链，可以很紧：`default-src 'self'`）。
+   `Content-Security-Policy`（页面无外链，可以很紧：`default-src 'self'`）。**✅ 2026-11-17**
+   一处偏离：CSP 必须写 `style-src 'self' 'unsafe-inline'`——页面把 25 处 `style="…"` 拼进 HTML，
+   掐掉它会让错题本与填报弹层错位。脚本侧没有内联 `<script>`、也没有 `onclick=`，所以 `script-src`
+   只留 `'self'`，防 XSS 的那一条是完整的。HSTS 只在 TLS 连接上发（对 IP 本就不生效，等域名上线才起作用）。
 5. 隐私与合规（一次做完，别拖）：页面底部放隐私说明；写明「只记录答题与掌握度，照片 30 天后删除」；
-   备案信息在页脚展示（备案号 + 链接到工信部）。
+   备案信息在页脚展示（备案号 + 链接到工信部）。**⏳ 卡备案**
 
 ---
 

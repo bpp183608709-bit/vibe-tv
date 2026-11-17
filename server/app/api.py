@@ -78,6 +78,19 @@ WEB_FILES = {
     "icon.svg": ("icon.svg", "image/svg+xml"),
 }
 
+#: 每个响应都带的安全头。`style-src` 必须留 `'unsafe-inline'`：页面把 25 处 `style="…"` 拼进 HTML，
+#: 掐掉它会让错题本和填报弹层错位。脚本侧没有内联 `<script>`、也没有 `onclick=` 这类内联处理器，
+#: 所以 `script-src` 只留 `'self'`——真正防 XSS 的是这一条。
+SECURITY_HEADERS = (
+    ("X-Content-Type-Options", "nosniff"),
+    ("Referrer-Policy", "no-referrer"),
+    ("Content-Security-Policy", "default-src 'self'; style-src 'self' 'unsafe-inline'"),
+)
+
+#: 只在 TLS 连接上发。HSTS 对 IP 地址本来不生效（RFC 6797 只管域名），先发着：等 443 + 域名上线，
+#: 这台机器就自动受它保护，那时不用再改一次代码。
+HSTS_HEADER = ("Strict-Transport-Security", "max-age=31536000")
+
 
 def _hash_secret(secret: str) -> str:
     """The column value for a television's secret. SHA-256, no salt: this is 32 bytes of `secrets`,
@@ -383,6 +396,13 @@ def make_handler(api: Api):
                 raise grading.GradeError("bad-json", 400, "expected an object")
             return data
 
+        def _security_headers(self) -> None:
+            """Security headers. Called before every end_headers, JSON and static alike."""
+            for key, value in SECURITY_HEADERS:
+                self.send_header(key, value)
+            if self._secure():
+                self.send_header(*HSTS_HEADER)
+
         def _send(self, status: int, payload: dict, headers: dict[str, str] | None = None) -> None:
             body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
             self.send_response(status)
@@ -391,6 +411,7 @@ def make_handler(api: Api):
             self.send_header("Cache-Control", "no-store")
             for key, value in (headers or {}).items():
                 self.send_header(key, value)
+            self._security_headers()
             self.end_headers()
             self.wfile.write(body)
 
@@ -406,12 +427,24 @@ def make_handler(api: Api):
             except OSError:
                 self._send(500, {"error": "web-missing", "detail": filename})
                 return True
+            # The names carry no hash, so the validator has to be the content: 改一行重新部署，
+            # 手机下次打开就会拿到新的；没改就只回 304，省掉 9 KB 的往返。
+            etag = '"%s"' % hashlib.sha256(data).hexdigest()[:32]
+            if self.headers.get("If-None-Match", "").strip() in (etag, "W/" + etag):
+                self.send_response(304)
+                self.send_header("ETag", etag)
+                self.send_header("Cache-Control", "no-cache, must-revalidate")
+                self._security_headers()
+                self.end_headers()
+                return True
             self.send_response(200)
             self.send_header("Content-Type", mime)
             self.send_header("Content-Length", str(len(data)))
+            self.send_header("ETag", etag)
             # The names carry no hash, so no long cache: a phone stuck on yesterday's JavaScript after
             # an update is the classic "works on my laptop".
             self.send_header("Cache-Control", "no-cache, must-revalidate")
+            self._security_headers()
             self.end_headers()
             self.wfile.write(data)
             return True
