@@ -1,0 +1,16 @@
+# 1.6 GB 内存、2 vCPU 的机器上，MySQL 8 的默认值是按 16 GB 写的。这份是实际在用的。
+# 装法：cp deploy/mysql/zz-quiz.cnf /etc/mysql/mysql.conf.d/ && systemctl restart mysql
+# zz- 前缀是为了排在 mysqld.cnf 之后（含则顺序决定谁覆盖谁）。
+[mysqld]
+bind-address            = 127.0.0.1
+mysqlx                  = 0
+skip-name-resolve
+character-set-server    = utf8mb4
+collation-server        = utf8mb4_0900_ai_ci
+default-time-zone       = "+08:00"
+innodb_buffer_pool_size = 128M
+innodb_log_file_size    = 64M
+innodb_flush_method     = O_DIRECT
+performance_schema      = OFF
+max_connections         = 60
+table_open_cache        = 400

@@ -26,9 +26,13 @@ fi
 
 CERT="$APP_DIR/tls/server.pem"
 KEY="$APP_DIR/tls/server.key"
+# 两张证书的位置在这里分开：电视端钉的是自家 CA 签的那张（换 CA 要重装 APK），家长页要的是公信证书
+# （Let's Encrypt，备案下来后签，APK 不用动）。没配就都回到同一张自签证书——先能跑，再谈公信。
+H5_CERT="${QUIZ_H5_CERT:-$CERT}"
+H5_KEY="${QUIZ_H5_KEY:-$KEY}"
 
 exec "$APP_DIR/.venv/bin/python" -m server.app.api \
     --require-llm \
-    --listen "0.0.0.0:${QUIZ_H5_PORT:-8443}:$CERT:$KEY" \
+    --listen "0.0.0.0:${QUIZ_H5_PORT:-8443}:$H5_CERT:$H5_KEY" \
     --listen "0.0.0.0:${QUIZ_TV_PORT:-9443}:$CERT:$KEY" \
     --listen "127.0.0.1:${PORT:-8100}"
