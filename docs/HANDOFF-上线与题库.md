@@ -145,11 +145,12 @@ ssh -i ~/.ssh/misty_deploy root@47.95.198.148 'sh /opt/wrong-quiz/server/tools/a
 
 ## 6. 风险与待办（按紧急度）
 
-1. **🔴 证书续期没有部署钩子。** `/etc/letsencrypt/renewal-hooks/deploy/` 是空的，续期只会更新
-   `/etc/letsencrypt/live/` 里的文件，**不会**搬到 `/opt/wrong-quiz/tls/h5.pem`，也不会重启服务。
-   当前证书 **2026-11-23 20:42 GMT 到期**，续期成功后线上仍会发旧证书 → 手机立刻弹警告。
-   修法：把 `deploy/bin/cert-hook.sh` 装成 deploy hook（缺 `77` 权限可执行位和 `chown wrongquiz`），
-   然后 `snap run certbot renew --dry-run` 验一次「钩子跑了、服务重启了、`tls/h5.pem` 的 notAfter 变新」。
+1. **✅ 已修（2026-11-18 00:48）：证书续期现在有部署钩子。** 之前
+   `/etc/letsencrypt/renewal-hooks/deploy/` 是空的，续期只更新 `/etc/letsencrypt/live/`，不会搬到
+   `/opt/wrong-quiz/tls/h5.pem`。现在 `90-quiz-h5.sh` 指向 `/opt/wrong-quiz/bin/cert-hook.sh`（进仓库了），
+   `snap run certbot renew --dry-run --run-deploy-hooks` 证明钩子被调用，日志见 `/var/log/wrong-quiz-cert.log`。
+   **注意 `--dry-run` 默认不跑 deploy hook，必须加 `--run-deploy-hooks`，否则验不出接线。**
+   下一个可观测点：证书 **2026-11-23 20:42 GMT 到期**，到期前续期应写出 `deployed, notAfter=...`。
 2. **🟡 备份 cron 从没在 03:00 跑过**（现有那份 `quiz-20261117-092055.sql.gz` 是手工的）。
    等一个凌晨或直接手动执行 `bin/backup.sh`，确认新文件 + `healthcheck.sh` 返回 0。
 3. **🟡 认证屏没有「取消/返回」。** 设置页进「找回问题」「修改密码」后，除了浏览器返回没有出口。

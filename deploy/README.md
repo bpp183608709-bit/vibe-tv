@@ -145,7 +145,22 @@ snap install --classic certbot                 # 5.x，认 --preferred-profile �
 
 续期由 `bin/cert-hook.sh` 收尾：把 `fullchain.pem` / `privkey.pem` 搬成
 `tls/h5.pem`（644）和 `tls/h5.key`（600），属主 `wrongquiz:tvault`，然后重启服务。
-它挂在 `/etc/letsencrypt/renewal/47.95.198.148.conf` 的 `renew_hook` 上；
+
+**它必须装成 certbot 的 deploy hook，否则续期等于白续**：续期只更新
+`/etc/letsencrypt/live/` 里的文件，服务读的是 `/opt/wrong-quiz/tls/`。没有钩子，证书换了线上还在发旧的，
+6 天到期那天手机才开始弹警告。2026-11-18 之前就是这样——renewal 配置里没有 `renew_hook`，
+`renewal-hooks/deploy/` 也是空的，文档里却写着"已经挂上了"。
+
+```bash
+ln -sf /opt/wrong-quiz/bin/cert-hook.sh /etc/letsencrypt/renewal-hooks/deploy/90-quiz-h5.sh
+snap run certbot renew --dry-run --run-deploy-hooks      # 必须带这个参数才会真的跑钩子
+tail -3 /var/log/wrong-quiz-cert.log                     # 期望 "unchanged, nothing to do"
+```
+
+`--dry-run` 默认**不执行** deploy hook，只有 `--run-deploy-hooks` 才会；不加就验不出接线对不对。
+钩子里有「字节没变就不重启」的判断，所以一天两次的检查和 dry-run 都不会打断正在服务的进程。
+真换证时日志会写 `deployed, notAfter=...`；服务起不来则写 `DEPLOYED BUT SERVICE IS DOWN` 并返回非零。
+
 `snap.certbot.renew.timer` 一天跑两次，对 6 天的证书够用。
 
 改完 `bin/app` 记得**重新推上去**——2026-11-17 这次就是仓库里早就有 `H5_CERT` 支持、
