@@ -18,6 +18,7 @@ of a fraction, and yesterday's ticket.
 
 from __future__ import annotations
 
+import argparse
 import datetime
 import hashlib
 import json
@@ -28,6 +29,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from urllib.parse import urlparse
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -260,15 +262,59 @@ def submit(device_id: str, session: dict, correct_count: int, day: str = DAY) ->
     return body
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="End-to-end acceptance for the quiz server.")
+    parser.add_argument(
+        "--dsn",
+        default=None,
+        help="run against this database instead of a fresh SQLite file. MySQL carries no schema "
+             "helper: apply server/db/schema.sql first, and point this at an empty database.",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="run even though the target database already has accounts, devices or answers. Only "
+             "for a database you are willing to lose data from.",
+    )
+    args = parser.parse_args(argv)
+
     LOCAL.mkdir(parents=True, exist_ok=True)
     stamp = int(time.time())
-    db_path = LOCAL / f"acceptance-{stamp}.sqlite3"
-    dsn = f"sqlite:{db_path}"
+    if args.dsn:
+        dsn = args.dsn
+        # The database name, not the tail of the string: a unix-socket DSN ends in "/mysqld.sock",
+        # and "db mysqld.sock" in the summary line told nobody which database was measured.
+        db_label = (urlparse(dsn).path or "/").lstrip("/") or dsn.rsplit("/", 1)[-1]
+    else:
+        db_path = LOCAL / f"acceptance-{stamp}.sqlite3"
+        dsn = f"sqlite:{db_path}"
+        db_label = db_path.name
 
     # ---- 1/2. a fresh database, seeded ----
     db = Database(dsn)
     db.connect(init_schema=True)
+    if args.dsn and not dsn.startswith("sqlite"):
+        try:
+            db.scalar("SELECT COUNT(*) FROM question", default=0)
+        except Exception:  # noqa: BLE001 - the message below is the point
+            print(f"schema missing in {dsn.split('@')[-1]}; apply server/db/schema.sql first", file=sys.stderr)
+            return 2
+        # This suite registers accounts, pairs televisions, answers groups and seeds the question bank:
+        # pointed at a live database it fills it with fiction, and its own assertions start failing on
+        # leftovers from the previous run. Both happened (2026-11-16/17) because the DSN was copied
+        # from deploy.env. An empty database is the whole contract of this flag, so it is checked
+        # rather than hoped for — content tables included, since the suite imports its own tree.
+        used = {table: db.scalar(f"SELECT COUNT(*) FROM {table}", default=0)
+                for table in ("question", "topic", "textbook", "account", "device", "quiz_answer",
+                              "wrong_item")}
+        if any(used.values()) and not args.force:
+            print(
+                "refusing to run: " + db_label + " already holds "
+                + ", ".join(f"{count} {table}" for table, count in used.items() if count)
+                + ". Point --dsn at an empty database, or pass --force to overwrite it.",
+                file=sys.stderr,
+            )
+            return 2
     tree = json.loads((ROOT / "content/curriculum/grade6-up.json").read_text(encoding="utf-8"))
     import_curriculum.import_tree(db, tree)
     if db.scalar("SELECT COUNT(*) FROM question", default=0) == 0:
@@ -287,10 +333,14 @@ def main() -> int:
         "QUIZ_DEV": "1",
         "QUIZ_TICKET_KEY": str(key_path),
     }
+    # The server's own traceback is the only useful thing when a case fails with a 500, and it is the
+    # one thing this suite used to throw away. Set QUIZ_ACCEPTANCE_LOG to keep it.
+    log_path = os.environ.get("QUIZ_ACCEPTANCE_LOG")
+    log = open(log_path, "wb") if log_path else subprocess.DEVNULL
     server = subprocess.Popen(
         [sys.executable, "-m", "server.app.api", "--port", str(PORT)],
         cwd=str(ROOT.parent), env=env,
-        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+        stdout=log, stderr=subprocess.STDOUT if log_path else subprocess.DEVNULL,
     )
     try:
         for _ in range(60):
@@ -1286,7 +1336,7 @@ def main() -> int:
         status, body = dad.call("POST", f"/v1/h5/paper?device_id={p2b_device}", {
             "topic_id": target, "count": 3, "day_key": today,
             # The page chooses the batch id, which is what makes a second tap harmless.
-            "paper_id": "P2BATCH00000000000000000001",
+            "paper_id": "P2BATCH0000000000000000001",
         })
         check("recording three mistakes adds 20, then 8, then 8",
               status == 200 and body["added"] == 20 + 2 * 8, f"{status} {body}")
@@ -1295,7 +1345,7 @@ def main() -> int:
               str(body.get("topic")))
         status, again = dad.call("POST", f"/v1/h5/paper?device_id={p2b_device}", {
             "topic_id": target, "count": 3, "day_key": today,
-            "paper_id": "P2BATCH00000000000000000001",
+            "paper_id": "P2BATCH0000000000000000001",
         })
         check("a repeated batch does not count twice",
               status == 200 and again.get("repeated") is True
@@ -1404,7 +1454,7 @@ def main() -> int:
     failed = [r for r in results if not r[1]]
     for name, ok, detail in results:
         print(f"  {'ok  ' if ok else 'FAIL'}  {name}" + (f"   [{detail}]" if detail else ""))
-    print(f"\nacceptance: {len(results) - len(failed)}/{len(results)} passed  (db {db_path.name})")
+    print(f"\nacceptance: {len(results) - len(failed)}/{len(results)} passed  (db {db_label})")
     return 1 if failed else 0
 
 

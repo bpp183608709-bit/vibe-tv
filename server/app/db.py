@@ -13,6 +13,9 @@ and a learning surface for nothing; what is actually needed is:
     sqlite::memory:                    default; schema is applied at startup, data dies with the process
     sqlite:/abs/path/quiz.sqlite3      a file, for poking at data between runs
     mysql://user:pass@host:3306/quiz   production; schema.sql is applied by hand, not here
+    mysql://user@localhost/quiz?unix_socket=/run/mysqld/mysqld.sock
+                                       production without a password in any file: the account is
+                                       `auth_socket`, so the kernel has already proved who we are
 
 Keeping the SQL portable has one hard rule: no dialect-specific upsert, no `RETURNING`, no window
 functions. Insert-then-select is two round trips and it is fine at this scale.
@@ -20,16 +23,35 @@ functions. Insert-then-select is two round trips and it is fine at this scale.
 
 from __future__ import annotations
 
+import datetime
 import os
 import sqlite3
 import threading
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Any, Iterator, Sequence
-from urllib.parse import unquote, urlparse
+from urllib.parse import parse_qs, unquote, urlparse
 
 DB_DIR = Path(__file__).resolve().parent.parent / "db"
 SQLITE_SCHEMA = DB_DIR / "schema.sqlite.sql"
+
+
+def _plain(value: Any) -> Any:
+    """Dates and datetimes as the strings SQLite would have handed back.
+
+    PyMySQL returns `datetime.date` / `datetime.datetime` objects; SQLite returns the text that was
+    written. Callers above this layer slice those values as strings — `parse_iso(text[:19])` — so one
+    backend works and the other raises `TypeError` on the very first grade. That is not hypothetical:
+    it is what happened the first time this server ran against a real MySQL (2026-11-16).
+
+    Normalising here keeps the dialect difference inside the one module whose job is dialect
+    differences; every route above sees the same shape it always saw.
+    """
+    if isinstance(value, datetime.datetime):
+        return value.strftime("%Y-%m-%d %H:%M:%S")
+    if isinstance(value, datetime.date):
+        return value.strftime("%Y-%m-%d")
+    return value
 
 
 class Database:
@@ -39,6 +61,7 @@ class Database:
         self.is_memory = self.dsn in ("sqlite::memory:", "sqlite:")
         self._lock = threading.RLock()
         self._conn: Any = None
+        self._depth = 0
 
     # ---- connection ----
 
@@ -65,16 +88,30 @@ class Database:
             import pymysql  # only imported for the MySQL path
 
             parsed = urlparse(self.dsn)
-            self._conn = pymysql.connect(
-                host=parsed.hostname or "127.0.0.1",
-                port=parsed.port or 3306,
-                user=unquote(parsed.username or ""),
-                password=unquote(parsed.password or ""),
-                database=(parsed.path or "/quiz").lstrip("/"),
-                charset="utf8mb4",
-                autocommit=False,
-                cursorclass=pymysql.cursors.DictCursor,
-            )
+            options: dict[str, Any] = {
+                "user": unquote(parsed.username or ""),
+                "password": unquote(parsed.password or ""),
+                "database": (parsed.path or "/quiz").lstrip("/"),
+                "charset": "utf8mb4",
+                # One statement, one transaction — the same shape SQLite gives us here, and the only
+                # shape that cannot go stale. With autocommit off, a plain SELECT left an open
+                # REPEATABLE READ transaction behind, and every later read on that connection saw the
+                # world as it was when the *previous* request ended: a mistake the parent recorded on
+                # the phone was invisible to the next group (found on MySQL, 2026-11-17). `tx()` opens
+                # a real transaction with BEGIN instead.
+                "autocommit": True,
+                "cursorclass": pymysql.cursors.DictCursor,
+            }
+            # A unix socket DSN carries no password on purpose (see the module docstring): there is
+            # nothing to leak into a config file or into `ps`, and MySQL's auth_socket plugin has
+            # already checked the uid of the process on the other end of the socket.
+            socket_path = parse_qs(parsed.query).get("unix_socket", [""])[0]
+            if socket_path:
+                options["unix_socket"] = socket_path
+            else:
+                options["host"] = parsed.hostname or "127.0.0.1"
+                options["port"] = parsed.port or 3306
+            self._conn = pymysql.connect(**options)
 
     def close(self) -> None:
         if self._conn is not None:
@@ -96,7 +133,7 @@ class Database:
                 rows = cur.fetchall()
             finally:
                 cur.close()
-        return [dict(row) for row in rows]
+        return [{key: _plain(value) for key, value in dict(row).items()} for row in rows]
 
     def query_one(self, sql: str, params: Sequence[Any] = ()) -> dict | None:
         rows = self.query(sql, params)
@@ -112,16 +149,29 @@ class Database:
 
     @contextmanager
     def tx(self) -> Iterator["Cursor"]:
-        """A write transaction. Nested use is a no-op bracket, not a savepoint."""
+        """A write transaction. Nested use is a no-op bracket, not a savepoint.
+
+        MySQL runs with autocommit on (see `connect`), so the outermost bracket has to say BEGIN
+        itself; a nested one must *not*, or MySQL would silently commit the outer transaction and
+        leave half of it on disk. That is why the depth counter is here rather than a comment saying
+        "do not nest".
+        """
         with self._lock:
+            outermost = self._depth == 0
+            if outermost and not self.is_sqlite:
+                self._conn.begin()
+            self._depth += 1
             cur = self._conn.cursor()
             try:
                 yield Cursor(self, cur)
-                self._conn.commit()
+                if outermost:
+                    self._conn.commit()
             except Exception:
-                self._conn.rollback()
+                if outermost:
+                    self._conn.rollback()
                 raise
             finally:
+                self._depth -= 1
                 cur.close()
 
     def execute(self, sql: str, params: Sequence[Any] = ()) -> int:
@@ -176,7 +226,11 @@ class Cursor:
 
     def query(self, sql: str, params: Sequence[Any] = ()) -> list[dict]:
         self._cur.execute(self._db._sql(sql), tuple(params))
-        return [dict(row) for row in self._cur.fetchall()]
+        # Same normalisation as `Database.query`: inside a transaction PyMySQL hands back
+        # `datetime` objects where SQLite hands back text, and a caller that compares the two — the
+        # pause window does exactly that — would silently get a different answer on each backend.
+        return [{key: _plain(value) for key, value in dict(row).items()}
+                for row in self._cur.fetchall()]
 
     def query_one(self, sql: str, params: Sequence[Any] = ()) -> dict | None:
         rows = self.query(sql, params)
