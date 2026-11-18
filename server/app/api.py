@@ -17,6 +17,7 @@
     PUT  /v1/h5/config           write them, bump the version
     GET  /v1/h5/wrongbook        wrong answers in the last N days, with answers and explanations
     GET  /v1/h5/mastery          the weak topics, worst first, with today's quota snapshot
+    GET  /v1/h5/mastery/report   chapters as rows, diagnostic nodes as lines (§2.6)
     GET  /v1/h5/mastery/{id}     one topic: score, the ledger behind it, the line to say out loud
     POST /v1/h5/topic/{id}/adjust  the parent's ±10, with a reason
     POST /v1/h5/paper            record "he got 3 wrong on this topic" from a paper
@@ -616,6 +617,12 @@ def make_handler(api: Api):
                 api.h5.device_of(account["id"], device_id)
                 self._send(200, api.h5.weak_list(
                     device_id, self._day_key(query, body, now_ms), now_ms))
+            elif path == "/v1/h5/mastery/report" and method == "GET":
+                # Two levels, the way the book is: a chapter is a row, the diagnostic nodes inside it
+                # are the lines. Kept beside `/v1/h5/report` rather than replacing it — that one is the
+                # seven-day activity summary the home page has always drawn.
+                api.h5.device_of(account["id"], device_id)
+                self._send(200, api.h5.report_by_node(device_id))
             elif H5_TOPIC_PATH.match(path) and method == "GET":
                 api.h5.device_of(account["id"], device_id)
                 self._send(200, api.h5.weak_topic(

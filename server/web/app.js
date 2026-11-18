@@ -125,12 +125,13 @@ const TEXTS = {
       weak: '薄弱知识点', weakAll: '全部 {n} 个 ›', weakEmpty: '还没有薄弱知识点',
       weakEmptyHint: '孩子在电视上做错的题会自动折算成知识点的分数，出现在这里。',
       need: '再答对 {n} 次', needDone: '已回到正常', score: '{n} 分',
-      word0: '牢固', word1: '需巩固', word2: '不牢', word3: '很弱',
+      word0: '未掌握', word1: '基础', word2: '熟练', word3: '拓展', wordPending: '待测',
 
       teach: '本周该讲', teachNote: '一周讲掉 1–2 个就够，不用全清。',
+      chapterCount: '{n} 个知识点 · {m} 个薄弱', chapterEmpty: '这一章目前没有薄弱点。',
       arrived: '新增', cleared: '已清掉', avg: '平均掌握度', weekK: '近 7 天',
       avgMove: '{a} 分 → {b} 分',
-      listNote: '分数越高越不牢固。做对一次 −10，连着做对两次再多 −10；扣到 11 分以下就不再单独练。',
+      listNote: '分数是最近 10 道题的加权正确率：越高越牢固，难题算两倍。做对一次不一定涨，连着答对两三道才会跨过档位。',
 
       list: '错题清单', listAll: '全部 {n} 条 ›', listEmpty: '最近没有错题',
       listHint: '电视上做错的、你手动录的，都在这里。',
@@ -145,6 +146,7 @@ const TEXTS = {
       flow: '加减分记录', flowNote: '每一次加减分都能回放，核得到具体是哪一道题。',
       flowEmpty: '还没有记录。',
       coach: '可以这样跟他说', coachWhy: '他为什么会问', coachAvoid: '别这么说',
+      nextStep: '接下来怎么练',
       topicWrong: '这个知识点的错题',
 
       adjust: '手动调整', adjustWhy: '写一句为什么，会记进流水',
@@ -272,12 +274,14 @@ const TEXTS = {
       weak: 'Topics to work on', weakAll: 'All {n} ›', weakEmpty: 'Nothing to work on',
       weakEmptyHint: 'A wrong answer on the TV becomes a score for that topic, and it shows up here.',
       need: '{n} more right', needDone: 'Back to normal', score: '{n}',
-      word0: 'Solid', word1: 'Shaky', word2: 'Weak', word3: 'Weakest',
+      word0: 'Not yet', word1: 'Basics', word2: 'Fluent', word3: 'Extended',
+      wordPending: 'Untested',
 
       teach: 'Teach this week', teachNote: 'One or two a week is enough. There is no need to clear them all.',
+      chapterCount: '{n} topics · {m} weak', chapterEmpty: 'Nothing in this chapter is weak right now.',
       arrived: 'New', cleared: 'Cleared', avg: 'Average score', weekK: 'Last 7 days',
       avgMove: '{a} → {b}',
-      listNote: 'A higher score means less solid. One right answer is −10; two in a row is another −10. Below 12 it stops being practised on its own.',
+      listNote: 'The score is weighted accuracy over the last ten answers: higher is more solid, and a hard question counts double. One right answer may not move it; two or three in a row crosses a band.',
 
       list: 'Past mistakes', listAll: 'All {n} ›', listEmpty: 'No mistakes recently',
       listHint: 'Wrong on the TV, or recorded here by hand — all of it lives in one list.',
@@ -292,6 +296,7 @@ const TEXTS = {
       flow: 'How the score moved', flowNote: 'Every change is replayable — you can trace it to the question.',
       flowEmpty: 'Nothing yet.',
       coach: 'What you can say to them', coachWhy: 'Why they bring it up', coachAvoid: 'Not this',
+      nextStep: 'What to practise next',
       topicWrong: 'Mistakes on this topic',
 
       adjust: 'Adjust by hand', adjustWhy: 'Say why — it goes into the record',
@@ -1432,7 +1437,15 @@ const qs = (extra = '') => {
 };
 
 const levelWord = level => T().wrong[`word${level}`] || '';
-const levelClass = level => (level >= 3 ? 'bad' : level === 2 ? 'l2' : level === 1 ? 'l1' : '');
+// 0 is the worst now, not the best: the number is weighted accuracy, so the colour has to run
+// red → green rather than green → red. Anything above 3 cannot happen and falls in with 拓展.
+const levelClass = level => (level <= 0 ? 'bad' : level === 1 ? 'l1' : level === 2 ? 'l2' : 'l3');
+/** 待测 is not a grade. Under three answers (MIN_SAMPLE) there is nothing to print, and saying
+ *  「未掌握」 about a node nobody measured would be the one lie this page must not tell. */
+const levelPill = item => (item.need_sample > 0
+  ? `<span class="pill">${esc(T().wrong.wordPending)}</span>`
+  : `<span class="pill ${levelClass(item.level)}">${esc(levelWord(item.level))}</span>`);
+const levelText = item => (item.need_sample > 0 ? T().wrong.wordPending : levelWord(item.level));
 
 function subhead(title) {
   const back = T().tab[view] || '';
@@ -1441,15 +1454,17 @@ function subhead(title) {
 }
 
 /** One topic on the weak list: name, how many rights are left, its unit, the score, and a bar.
- *  The bar is the score itself, not progress towards anything — 72 means 72. */
-function weakRow(item) {
+ *  The bar is the score itself, not progress towards anything — 72 means 72.
+ *  `showUnit` is off inside a chapter card: the chapter name is already the card's heading, and
+ *  repeating it on every row is the kind of noise that makes a list look longer than it is. */
+function weakRow(item, showUnit = true) {
   const w = T().wrong;
   return `<div class="mrow" data-topic="${item.topic_id}">
     <div class="top"><span class="nm">${esc(item.topic)}</span>
       <span class="need${item.need_right ? '' : ' done'}">${esc(
         item.need_right ? fill(w.need, { n: item.need_right }) : w.needDone)}</span></div>
-    <div class="sub2"><span class="pill ${levelClass(item.level)}">${esc(levelWord(item.level))}</span>
-      <span class="u">${esc(item.unit)}</span>
+    <div class="sub2">${levelPill(item)}
+      ${showUnit ? `<span class="u">${esc(item.unit)}</span>` : ''}
       <span class="sc">${esc(fill(w.score, { n: item.score }))}</span></div>
     <div class="mbar l${item.level}"><i style="width:${item.score}%"></i></div>
   </div>`;
@@ -1492,7 +1507,7 @@ function renderWeakOverview(mastery, wrong) {
     ? `<div class="sec-in"><h2>${esc(w.weak)}</h2>
          <a href="#" data-go="topics">${esc(fill(w.weakAll, { n: mastery.count }))}</a></div>
        <p class="sub">${esc(mastery.week_line)}</p>
-       ${top.map(weakRow).join('')}`
+       ${top.map(item => weakRow(item)).join('')}`
     : `<div class="sec-in"><h2>${esc(w.weak)}</h2></div>
        <div class="empty"><strong>${esc(w.weakEmpty)}</strong>${esc(w.weakEmptyHint)}</div>`;
 
@@ -1507,23 +1522,56 @@ function renderWeakOverview(mastery, wrong) {
     <div class="dock"><button class="primary" type="button" id="add-open">${esc(w.add)}</button></div>`;
 }
 
-function renderTopics(mastery) {
+/** One chapter on the list page: a header with the two counts, then its diagnostic nodes.
+ *
+ *  The chapter is never given a level of its own — it has no questions, so a grade on it would be a
+ *  statement about nothing. What the header carries is what a parent actually asks at this level:
+ *  how many nodes this chapter has, and how many of them need work. */
+function chapterCard(chapter, byId) {
+  const w = T().wrong;
+  const rows = chapter.diagnostics
+    .map(line => byId.get(line.diagnostic_node_id))
+    .filter(Boolean)
+    .map(item => weakRow(item, false)).join('');
+  const head = `<div class="sec-in"><h2>${esc(chapter.aggregate_name)}</h2>
+      <span class="chap-count">${esc(fill(w.chapterCount, {
+        n: chapter.diagnostic_count, m: chapter.weak_diagnostic_count,
+      }))}</span></div>`;
+  // A chapter whose nodes are all untested still exists in the book; it just has no lines to draw.
+  const body = rows
+    ? `<div class="kv">${rows}</div>`
+    : `<p class="footer-note" style="margin:6px 0 0">${esc(w.chapterEmpty)}</p>`;
+  return `<div class="card">${head}${body}</div>`;
+}
+
+function renderTopics(mastery, chapters) {
   const w = T().wrong;
   const teach = mastery.items.slice(0, 3);
   const week = mastery.week || {};
   const rows = (items, withIndex) => items.map((item, index) => `<div class="row" data-topic="${item.topic_id}">
       <span class="k">${withIndex ? `${index + 1}. ` : ''}${esc(item.topic)}</span>
-      <span class="v dim">${esc(levelWord(item.level))} · ${esc(fill(w.score, { n: item.score }))}</span>
+      <span class="v dim">${esc(levelText(item))} · ${esc(fill(w.score, { n: item.score }))}</span>
     </div>`).join('');
 
   const teachCard = teach.length
     ? `<p class="sub">${esc(w.teachNote)}</p><div class="kv">${rows(teach, true)}</div>`
     : `<div class="empty"><strong>${esc(w.weakEmpty)}</strong>${esc(w.weakEmptyHint)}</div>`;
 
+  // This page used to be one flat list. It is the book's shape now: chapters, and the nodes inside
+  // them. Only the rows that are on the weak list are drawn, so the two views cannot disagree about
+  // which node is weak — the chapter adds the context, not a second opinion.
+  const byId = new Map(mastery.items.map(item => [item.node_code || String(item.topic_id), item]));
+  const grouped = (chapters || [])
+    .filter(chapter => chapter.diagnostics.length)
+    .map(chapter => chapterCard(chapter, byId)).join('');
+  const flat = mastery.items.map(item => weakRow(item)).join('');
+  const allCard = grouped || (flat
+    ? `<h2>${esc(fill(w.weakAll, { n: mastery.count }).replace(' ›', ''))}</h2><div class="kv">${flat}</div>`
+    : `<div class="empty"><strong>${esc(w.weakEmpty)}</strong>${esc(w.weakEmptyHint)}</div>`);
+
   return `${subhead(w.weak)}
     <div class="card"><h2>${esc(w.teach)}</h2>${teachCard}</div>
-    <div class="card"><h2>${esc(fill(w.weakAll, { n: mastery.count }).replace(' ›', ''))}</h2>
-      <div class="kv">${mastery.items.map(item => weakRow(item)).join('')}</div></div>
+    ${grouped ? allCard : `<div class="card">${allCard}</div>`}
     <div class="card"><h2>${esc(w.weekK)}</h2><div class="kv">
       <div class="row"><span class="k">${esc(w.arrived)}</span><span class="v">${week.arrived ?? 0}</span></div>
       <div class="row"><span class="k">${esc(w.cleared)}</span><span class="v">${week.cleared ?? 0}</span></div>
@@ -1533,8 +1581,11 @@ function renderTopics(mastery) {
     <p class="footer-note">${esc(w.listNote)}</p>`;
 }
 
-function renderTopicDetail(t) {
+function renderTopicDetail(t, line) {
   const w = T().wrong;
+  // 待测: no score yet. Printing "0 分" for a node nobody has answered would read as "he knows
+  // nothing", which is the one thing the ≥3-answer rule exists to avoid saying.
+  const untested = t.need_sample > 0;
   const flow = t.events.length
     ? t.events.map(event => `<div class="f">
         <span class="when">${esc(String(event.at).slice(5, 16))}</span>
@@ -1557,13 +1608,23 @@ function renderTopicDetail(t) {
         <span class="v dim">${esc(item.day_key.slice(5))}</span></div>`).join('')
     : `<p class="footer-note" style="margin:0">${esc(w.listEmpty)}</p>`;
 
+  // The two sentences the report adds and the list does not carry: which ability line is weakest,
+  // and what to do in the next ten minutes. Absent until there is enough evidence to name one.
+  const advice = line && (line.ability_breakdown_note || line.suggestion)
+    ? `<div class="card"><h2>${esc(w.nextStep)}</h2>
+        ${line.ability_breakdown_note
+          ? `<p class="sub" style="margin:0 0 8px">${esc(line.ability_breakdown_note)}</p>` : ''}
+        <p class="say">${esc(line.suggestion)}</p></div>`
+    : '';
+
   return `${subhead(t.topic)}
     <div class="card">
-      <div class="hero"><span class="score">${t.score}</span></div>
-      <div class="heroline"><span class="pill ${levelClass(t.level)}">${esc(levelWord(t.level))}</span>
+      <div class="hero"><span class="score">${untested ? '—' : t.score}</span></div>
+      <div class="heroline">${levelPill(t)}
         <span>${esc(t.need_right ? fill(w.need, { n: t.need_right }) : w.needDone)}</span></div>
-      <div class="mbar l${t.level}" style="margin-top:14px"><i style="width:${t.score}%"></i></div>
+      <div class="mbar l${t.level}" style="margin-top:14px"><i style="width:${untested ? 0 : t.score}%"></i></div>
     </div>
+    ${advice}
     <div class="card"><div class="kv">${numbers}</div></div>
     <div class="card"><h2>${esc(w.flow)}</h2><div class="flow">${flow}</div></div>
     <p class="footer-note">${esc(w.flowNote)}</p>
@@ -1736,6 +1797,19 @@ async function loadWeak() {
   return api(`/v1/h5/mastery${qs()}`);
 }
 
+/** The two-level report, or an empty list.
+ *
+ *  Failing soft on purpose: the list page is still perfectly usable flat, and a report the server has
+ *  not been updated to serve must not turn the 错题 tab into an error screen. */
+async function loadReport() {
+  try {
+    const data = await api(`/v1/h5/mastery/report${qs()}`);
+    return data.aggregate_summary || [];
+  } catch {
+    return [];
+  }
+}
+
 async function loadWrong(days = 30, limit = 60, offset = 0, source = 'all') {
   return api(`/v1/h5/wrongbook${qs(`&days=${days}&limit=${limit}&offset=${offset}&source=${source}`)}`);
 }
@@ -1748,11 +1822,20 @@ async function nav(next, arg = null) {
   host.innerHTML = skeleton();
   try {
     if (next === 'topics') {
-      host.innerHTML = renderTopics(await loadWeak());
+      const [weak, chapters] = await Promise.all([loadWeak(), loadReport()]);
+      host.innerHTML = renderTopics(weak, chapters);
       bindTopicLinks();
     } else if (next === 'topic') {
-      const data = await api(`/v1/h5/mastery/${arg}${qs()}`);
-      host.innerHTML = renderTopicDetail(data);
+      // The detail page reads the report for the two sentences the weak list does not carry: which
+      // ability line is weakest, and what to do about it. Both come from `report.build` so the page
+      // and the report cannot phrase the same node differently.
+      const [data, chapters] = await Promise.all([
+        api(`/v1/h5/mastery/${arg}${qs()}`), loadReport(),
+      ]);
+      const line = chapters
+        .flatMap(chapter => chapter.diagnostics)
+        .find(item => item.diagnostic_node_id === (data.node_code || String(data.topic_id)));
+      host.innerHTML = renderTopicDetail(data, line);
       bindTopicDetail(data);
     } else if (next === 'list') {
       const data = await loadWrong(30, LIST_PAGE, 0, listSource);

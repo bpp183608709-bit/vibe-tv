@@ -35,7 +35,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
-from server.app import curriculum, es256, grade as grading, ids, limits, mastery, mix, picker, ticket  # noqa: E402
+from server.app import curriculum, es256, grade as grading, ids, limits, mastery, mix, picker, report, ticket  # noqa: E402
 from server.app.db import Database  # noqa: E402
 from server.tools import check_tv_silence, import_curriculum, import_questions  # noqa: E402
 
@@ -1470,6 +1470,30 @@ def main(argv: list[str] | None = None) -> int:
               str(body.get("mix")))
         check("the list page has its one sentence",
               isinstance(body["week_line"], str) and body["week_line"], str(body.get("week_line")))
+
+        # ---- the two-level report (§2.6) ----
+        # A chapter is a row and the diagnostic nodes inside it are the lines. The chapter is never
+        # judged: it has no questions of its own, so a level on it would be a claim about nothing.
+        status, body = dad.call("GET", f"/v1/h5/mastery/report?device_id={p2_device}")
+        chapters = body.get("aggregate_summary") or []
+        named = [line for chapter in chapters for line in chapter["diagnostics"]]
+        check("the report groups by chapter rather than listing topics flat",
+              status == 200 and len(chapters) >= 3, f"{status} {len(chapters)} chapters")
+        check("each chapter counts its nodes and how many of them are weak",
+              all(chapter["diagnostic_count"] >= chapter["weak_diagnostic_count"] >= 0
+                  for chapter in chapters), str(chapters[:1]))
+        check("and carries no level of its own",
+              all("mastery_level" not in chapter for chapter in chapters),
+              str(sorted(chapters[0])) if chapters else "")
+        check("every measured node has a label, a suggestion and the questions behind it",
+              bool(named) and all(line["mastery_level"] in report.LABELS and line["suggestion"]
+                                  and line["evidence_question_ids"] for line in named),
+              str(named[:1]))
+        check("the accuracy it prints is the window's own number",
+              all(0.0 <= line["weighted_accuracy"] <= 1.0 for line in named), str(named[:1]))
+        check("unmeasured nodes are dropped from the lines but still counted in the chapter",
+              sum(chapter["diagnostic_count"] for chapter in chapters) >= len(named),
+              f"{sum(chapter['diagnostic_count'] for chapter in chapters)} vs {len(named)}")
 
         # The add sheet's menu is the whole catalog, not the weak list: a parent recording a mistake
         # from a paper is often recording one on a topic that has not gone weak yet.

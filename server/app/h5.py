@@ -42,7 +42,7 @@ import re
 import secrets
 from collections import deque
 
-from server.app import coach, curriculum, limits, mastery, mix, picker
+from server.app import coach, curriculum, limits, mastery, mix, picker, report
 from server.app.auth import SESSION_COOKIE, Accounts
 from server.app.grade import GradeError
 from server.app.ids import new_ulid
@@ -880,6 +880,81 @@ class H5:
             "today": day_key,
             "week_line": coach.week_line(len(items)),
         }
+
+    def report_by_node(self, device_id: str, period: str = "最近 30 天") -> dict:
+        """The two-level report: chapters as rows, diagnostic nodes as lines (docs/RULES.md §2.6).
+
+        Reads what the weak list reads and hands it to `report.build`, which owns the shape. Two things
+        are gathered here that the list page has no use for: which questions are the evidence behind a
+        number, and how the node's answers split across ability lines. Both come off the window rather
+        than being recomputed — one place decides a level, and it is `mastery`.
+
+        The chapter is never judged. It has no questions of its own, so "第三章薄弱" would be a claim
+        about nothing; it carries only the two counts (`diagnostic_count`, `weak_diagnostic_count`).
+        """
+        rows = self._topics(device_id, floor=False)
+        events = self.db.query(
+            "SELECT topic_id, ref_id, is_correct, weight_x10 FROM mastery_event"
+            " WHERE device_id = ? AND counted = 1 AND ref_id IS NOT NULL"
+            " ORDER BY topic_id, seq DESC",
+            (device_id,),
+        )
+        ability_of = {int(row["id"]): row["ability_tag"] for row in self.db.query(
+            "SELECT id, ability_tag FROM question WHERE ability_tag IS NOT NULL")}
+
+        evidence: dict[int, list[int]] = {}
+        abilities: dict[int, dict[str, dict]] = {}
+        for event in events:
+            # `ref_id` is `<session>:<question>`; anything else (a paper row, a parent's tap) is not
+            # evidence a question can be named from, and a report that quoted one would be misleading.
+            ref = str(event["ref_id"] or "")
+            if ":" not in ref:
+                continue
+            try:
+                question_id = int(ref.rsplit(":", 1)[-1])
+            except ValueError:
+                continue
+            topic_id = int(event["topic_id"])
+            bucket = evidence.setdefault(topic_id, [])
+            if len(bucket) < 3:
+                bucket.append(question_id)
+            tag = ability_of.get(question_id)
+            if tag:
+                weight = int(event["weight_x10"] or 0)
+                slot = abilities.setdefault(topic_id, {}).setdefault(
+                    tag, {"tag": tag, "weight": 0, "got": 0, "sample": 0})
+                slot["weight"] += weight
+                slot["sample"] += 1
+                if int(event["is_correct"] or 0):
+                    slot["got"] += weight
+
+        groups: dict[str, dict] = {}
+        for row in rows:
+            aggregate_id = f"{row['subject_code']}-6up-u{int(row['unit_ordinal']):02d}"
+            group = groups.get(aggregate_id)
+            if group is None:
+                group = groups[aggregate_id] = {
+                    "student_id": device_id,
+                    "aggregate_id": aggregate_id,
+                    "aggregate_name": row["unit"],
+                    "diagnostic_count": 0,
+                    "diagnostics": [],
+                }
+            group["diagnostic_count"] += 1
+            group["diagnostics"].append({
+                "node_id": row["node_code"] or str(row["topic_id"]),
+                "node_name": row["topic"],
+                "level": int(row["level"]),
+                "acc": round(float(row["weighted_accuracy"]) * 1000),
+                "sample": int(row["sample_count"]),
+                "evidence": evidence.get(int(row["topic_id"]), []),
+                "abilities": [
+                    {"tag": slot["tag"], "sample": slot["sample"],
+                     "acc": round(1000 * slot["got"] / slot["weight"]) if slot["weight"] else 0}
+                    for slot in abilities.get(int(row["topic_id"]), {}).values()
+                ],
+            })
+        return report.build(list(groups.values()), period)
 
     def weak_topic(self, device_id: str, topic_id: int, day_key: str, now_ms: int) -> dict:
         """One topic: the score, the arithmetic behind it, and the sentence to say out loud.
