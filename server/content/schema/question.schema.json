@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aerial.local/schema/question.schema.json",
+  "title": "Question",
+  "description": "One entry of server/content/questions/*.json. Matches docs/RULES.md §2.3a for ability_tag and the four 题型. 判断题 is 选择题 with two options; 简答题 does not exist (the TV keypad has no letters).",
+  "type": "object",
+  "required": ["question_id", "subject", "diagnostic_node_id", "ability_tag", "cognitive_level", "difficulty_preset", "question_type", "stem", "correct_answer", "explanation", "tags"],
+  "additionalProperties": false,
+  "properties": {
+    "question_id": {
+      "type": "string",
+      "pattern": "^[a-z]+-6up-d[0-9]{2}-q[0-9]{2}$"
+    },
+    "subject": {"type": "string", "enum": ["math", "chinese", "english"]},
+    "diagnostic_node_id": {
+      "type": "string",
+      "pattern": "^(math|chinese|english)-6up-d[0-9]{2}$",
+      "description": "A topic `code`, never the auto-increment id. Must point at a diagnostic node, never at a chapter."
+    },
+    "ability_tag": {
+      "type": "string",
+      "enum": ["理解意义", "执行计算", "情境应用", "辨析变式", "语言运用", "阅读理解", "辨析判断", "综合表达"]
+    },
+    "cognitive_level": {"type": "string", "enum": ["记忆理解", "应用", "分析评价创造"]},
+    "difficulty_preset": {"type": "string", "enum": ["易", "中", "难"]},
+    "question_type": {"type": "string", "enum": ["选择题", "填空题", "判断题"]},
+    "stem": {"type": "string", "minLength": 4},
+    "options": {
+      "type": ["array", "null"],
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["label", "text"],
+        "additionalProperties": false,
+        "properties": {
+          "label": {"type": "string", "pattern": "^[A-D]$"},
+          "text": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "correct_answer": {"type": "string", "minLength": 1},
+    "accepted": {
+      "type": ["array", "null"],
+      "items": {"type": "string", "minLength": 1},
+      "description": "Fill only: other strings that count as the same answer. Numeric comparison is exact, so list 7/2 and 3.5 both when both are natural."
+    },
+    "explanation": {"type": "string", "minLength": 4},
+    "tags": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  }
+}

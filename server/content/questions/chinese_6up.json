@@ -1,0 +1,230 @@
+{
+  "_note": [
+    "Hand-written questions for the six-up Chinese tree (统编版, 8 units). 12 questions over 4 nodes,",
+    "one per difficulty step each. Every item is 选择题: the TV keypad has digits only, so a Chinese",
+    "answer cannot be typed (QuizScreen.kt:432-441). Judgement items are 选择题 with 两条选项.",
+    "",
+    "Every stem names a text that is actually in the unit it is attached to: the tree's micro_nodes list",
+    "is the authority for which lessons belong to which node."
+  ],
+  "schema_version": 1,
+  "subject": "chinese",
+  "questions": [
+    {
+      "question_id": "chinese-6up-d01-q01",
+      "diagnostic_node_id": "chinese-6up-d01",
+      "ability_tag": "语言运用",
+      "cognitive_level": "记忆理解",
+      "difficulty_preset": "易",
+      "question_type": "选择题",
+      "stem": "《草原》中“翠色欲流”的“欲”意思是（  ）",
+      "options": [
+        {"label": "A", "text": "将要"},
+        {"label": "B", "text": "想要"},
+        {"label": "C", "text": "欲望"},
+        {"label": "D", "text": "需要"}
+      ],
+      "correct_answer": "A",
+      "explanation": "“欲”在这里是“将要”的意思，“翠色欲流”形容绿色浓得将要流动起来。",
+      "tags": ["草原", "语境词义"]
+    },
+    {
+      "question_id": "chinese-6up-d01-q02",
+      "diagnostic_node_id": "chinese-6up-d01",
+      "ability_tag": "阅读理解",
+      "cognitive_level": "应用",
+      "difficulty_preset": "中",
+      "question_type": "选择题",
+      "stem": "《丁香结》中，作者由“丁香结”想到的是（  ）",
+      "options": [
+        {"label": "A", "text": "结伴而行的游人"},
+        {"label": "B", "text": "人生中解不完的愁怨与问题"},
+        {"label": "C", "text": "花开时热闹的景象"},
+        {"label": "D", "text": "雨后空寂的小巷"}
+      ],
+      "correct_answer": "B",
+      "explanation": "课文结尾说“结，是解不完的；人生中的问题也是解不完的”，由花蕾的“结”想到人生的愁怨。",
+      "tags": ["丁香结", "借物喻理"]
+    },
+    {
+      "question_id": "chinese-6up-d01-q03",
+      "diagnostic_node_id": "chinese-6up-d01",
+      "ability_tag": "辨析判断",
+      "cognitive_level": "分析评价创造",
+      "difficulty_preset": "难",
+      "question_type": "选择题",
+      "stem": "《草原》中“在这境界里，连骏马和大牛都有时候静立不动，好像回味着草原的无限乐趣”这句话的作用是（  ）",
+      "options": [
+        {"label": "A", "text": "写骏马和大牛的动作，说明草原上牲畜很多"},
+        {"label": "B", "text": "直接抒发作者对草原的赞美"},
+        {"label": "C", "text": "通过想象侧面烘托草原的宁静美好"},
+        {"label": "D", "text": "交代草原上放牧的时间"}
+      ],
+      "correct_answer": "C",
+      "explanation": "牲畜“好像回味”是作者的想象，用侧面烘托写出草原的静和美，不是直接抒情，也不是实写牲畜。",
+      "tags": ["草原", "侧面描写"]
+    },
+    {
+      "question_id": "chinese-6up-d03-q01",
+      "diagnostic_node_id": "chinese-6up-d03",
+      "ability_tag": "语言运用",
+      "cognitive_level": "记忆理解",
+      "difficulty_preset": "易",
+      "question_type": "选择题",
+      "stem": "《七律·长征》中“五岭逶迤腾细浪，乌蒙磅礴走泥丸”把大山写成“细浪”“泥丸”，表现了红军（  ）",
+      "options": [
+        {"label": "A", "text": "装备简陋"},
+        {"label": "B", "text": "不怕艰难险阻的英雄气概"},
+        {"label": "C", "text": "行军速度很快"},
+        {"label": "D", "text": "人数很少"}
+      ],
+      "correct_answer": "B",
+      "explanation": "把连绵的五岭看作翻腾的细浪、把磅礴的乌蒙看作滚动的泥丸，是夸张缩小，突出红军的豪迈。",
+      "tags": ["七律·长征", "夸张"]
+    },
+    {
+      "question_id": "chinese-6up-d03-q02",
+      "diagnostic_node_id": "chinese-6up-d03",
+      "ability_tag": "阅读理解",
+      "cognitive_level": "应用",
+      "difficulty_preset": "中",
+      "question_type": "选择题",
+      "stem": "《开国大典》写阅兵式时，先写整个受阅部队，再写其中一个方阵，这种写法是（  ）",
+      "options": [
+        {"label": "A", "text": "首尾呼应"},
+        {"label": "B", "text": "点面结合"},
+        {"label": "C", "text": "借景抒情"},
+        {"label": "D", "text": "对比反衬"}
+      ],
+      "correct_answer": "B",
+      "explanation": "整体是“面”，一个方阵是“点”，先面后点，既有全貌又有细节，这就是点面结合。",
+      "tags": ["开国大典", "点面结合"]
+    },
+    {
+      "question_id": "chinese-6up-d03-q03",
+      "diagnostic_node_id": "chinese-6up-d03",
+      "ability_tag": "综合表达",
+      "cognitive_level": "分析评价创造",
+      "difficulty_preset": "难",
+      "question_type": "选择题",
+      "stem": "《灯光》中“多好啊”三次出现，理解最恰当的是（  ）",
+      "options": [
+        {"label": "A", "text": "都是指天安门广场上的灯光"},
+        {"label": "B", "text": "都是郝副营长说的话"},
+        {"label": "C", "text": "分别出自路人、郝副营长和作者，串起现在、往事与怀念"},
+        {"label": "D", "text": "只是作者发出的赞叹"}
+      ],
+      "correct_answer": "C",
+      "explanation": "第一次是天安门前路人的赞叹，第二次是郝副营长在战壕里的憧憬，第三次是作者的回忆，三次“多好啊”把现在与往事连起来。",
+      "tags": ["灯光", "线索"]
+    },
+    {
+      "question_id": "chinese-6up-d06-q01",
+      "diagnostic_node_id": "chinese-6up-d06",
+      "ability_tag": "阅读理解",
+      "cognitive_level": "记忆理解",
+      "difficulty_preset": "易",
+      "question_type": "选择题",
+      "stem": "小说的三要素是（  ）",
+      "options": [
+        {"label": "A", "text": "人物、情节、环境"},
+        {"label": "B", "text": "时间、地点、人物"},
+        {"label": "C", "text": "起因、经过、结果"},
+        {"label": "D", "text": "记叙、描写、抒情"}
+      ],
+      "correct_answer": "A",
+      "explanation": "小说靠人物形象、故事情节和环境描写来反映生活，这三样就是三要素。",
+      "tags": ["小说三要素"]
+    },
+    {
+      "question_id": "chinese-6up-d06-q02",
+      "diagnostic_node_id": "chinese-6up-d06",
+      "ability_tag": "阅读理解",
+      "cognitive_level": "应用",
+      "difficulty_preset": "中",
+      "question_type": "选择题",
+      "stem": "《穷人》中“屋外寒风呼啸，海浪拍击着海岸”这一环境描写的主要作用是（  ）",
+      "options": [
+        {"label": "A", "text": "说明天气突然变冷"},
+        {"label": "B", "text": "交代故事发生的时间"},
+        {"label": "C", "text": "衬托桑娜担忧、不安的心情"},
+        {"label": "D", "text": "暗示渔夫一定会遇到危险"}
+      ],
+      "correct_answer": "C",
+      "explanation": "风浪的凶险正对应桑娜等丈夫归来时的焦急不安，环境描写为人物心情服务。",
+      "tags": ["穷人", "环境描写的作用"]
+    },
+    {
+      "question_id": "chinese-6up-d06-q03",
+      "diagnostic_node_id": "chinese-6up-d06",
+      "ability_tag": "综合表达",
+      "cognitive_level": "分析评价创造",
+      "difficulty_preset": "难",
+      "question_type": "选择题",
+      "stem": "《桥》中“桥”多次出现，最合适的理解是（  ）",
+      "options": [
+        {"label": "A", "text": "只是村里的一座木桥，没有别的意思"},
+        {"label": "B", "text": "既是逃生的窄桥，也是老支书精神的象征"},
+        {"label": "C", "text": "暗示整个村庄将被洪水淹没"},
+        {"label": "D", "text": "说明洪水来得很急"}
+      ],
+      "correct_answer": "B",
+      "explanation": "桥是真实的逃生通道，也承载着老支书在生死关头把希望留给别人的形象，是全文的象征。",
+      "tags": ["桥", "象征"]
+    },
+    {
+      "question_id": "chinese-6up-d11-q01",
+      "diagnostic_node_id": "chinese-6up-d11",
+      "ability_tag": "语言运用",
+      "cognitive_level": "记忆理解",
+      "difficulty_preset": "易",
+      "question_type": "选择题",
+      "stem": "“伯牙鼓琴”中的“鼓”意思是（  ）",
+      "options": [
+        {"label": "A", "text": "鼓声"},
+        {"label": "B", "text": "弹"},
+        {"label": "C", "text": "鼓励"},
+        {"label": "D", "text": "一种乐器"}
+      ],
+      "correct_answer": "B",
+      "explanation": "文言里“鼓琴”就是弹琴，“鼓”作动词用。",
+      "tags": ["伯牙鼓琴", "文言实词"]
+    },
+    {
+      "question_id": "chinese-6up-d11-q02",
+      "diagnostic_node_id": "chinese-6up-d11",
+      "ability_tag": "阅读理解",
+      "cognitive_level": "应用",
+      "difficulty_preset": "中",
+      "question_type": "选择题",
+      "stem": "“汤汤乎若流水”中“汤汤”的读音和意思是（  ）",
+      "options": [
+        {"label": "A", "text": "shāng shāng，水流大而急的样子"},
+        {"label": "B", "text": "tāng tāng，热水"},
+        {"label": "C", "text": "shāng shāng，水面平静的样子"},
+        {"label": "D", "text": "tāng tāng，汤药"}
+      ],
+      "correct_answer": "A",
+      "explanation": "“汤汤”读 shāng shāng，形容水流大而急，与前面“巍巍乎若太山”相对。",
+      "tags": ["伯牙鼓琴", "古今异读"]
+    },
+    {
+      "question_id": "chinese-6up-d11-q03",
+      "diagnostic_node_id": "chinese-6up-d11",
+      "ability_tag": "辨析判断",
+      "cognitive_level": "分析评价创造",
+      "difficulty_preset": "难",
+      "question_type": "选择题",
+      "stem": "《书戴嵩画牛》这个故事告诉我们的道理，最恰当的是（  ）",
+      "options": [
+        {"label": "A", "text": "画画一定要画得很精细"},
+        {"label": "B", "text": "要尊重事实，向内行和有实践经验的人请教"},
+        {"label": "C", "text": "牧童比画家更聪明"},
+        {"label": "D", "text": "戴嵩其实不会画牛"}
+      ],
+      "correct_answer": "B",
+      "explanation": "牧童天天放牛，最懂牛的争斗，指出画中牛尾的错误；故事劝人实事求是、不要凭想当然。",
+      "tags": ["书戴嵩画牛", "寓意"]
+    }
+  ]
+}

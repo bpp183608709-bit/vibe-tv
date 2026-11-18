@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aerial.local/schema/node.schema.json",
+  "title": "Diagnostic node (flat form)",
+  "description": "One entry of the flattened tree that `server/tools/check_content.py --emit-nodes` writes. The tree itself stays nested (curriculum/grade6-up.json); this is the shape a report or an external tool consumes. Aggregate nodes are the `unit` rows and carry node_type=aggregate with no questions; only diagnostic nodes can be judged weak.",
+  "type": "object",
+  "required": ["node_id", "name", "subject", "grade", "semester", "node_type", "chapter_name", "knowledge_type", "micro_nodes", "prerequisite_node_ids", "description", "status"],
+  "additionalProperties": false,
+  "properties": {
+    "node_id": {
+      "type": "string",
+      "pattern": "^(math|chinese|english)-6up-(d[0-9]{2}|u[0-9]{2})$",
+      "description": "Stable business key. Diagnostic nodes end in -dNN, aggregate (chapter) nodes in -uNN."
+    },
+    "name": {"type": "string", "minLength": 1},
+    "subject": {"type": "string", "enum": ["math", "chinese", "english"]},
+    "grade": {"type": "integer", "enum": [6]},
+    "semester": {"type": "string", "enum": ["up"]},
+    "node_type": {"type": "string", "enum": ["aggregate", "diagnostic"]},
+    "parent_id": {
+      "type": ["string", "null"],
+      "description": "For a diagnostic node, the chapter's -uNN code. Null on aggregates."
+    },
+    "chapter_name": {"type": "string"},
+    "knowledge_type": {
+      "type": "string",
+      "enum": ["procedural", "conceptual", "representational", "grammar", "vocabulary", "sentence_pattern", "reading", "listening_speaking", "字词基础", "阅读理解", "语言运用", "习作方法"]
+    },
+    "micro_nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1},
+      "description": "The textbook's own sub-points this node covers. At least one: a node nobody can name a sub-point for is not diagnosable."
+    },
+    "prerequisite_node_ids": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^(math|chinese|english)-6up-d[0-9]{2}$"}
+    },
+    "description": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "enum": ["active", "retired"]}
+  }
+}

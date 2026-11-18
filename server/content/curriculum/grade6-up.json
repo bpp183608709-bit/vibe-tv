@@ -1,211 +1,1680 @@
 {
-  "_note": [
-    "Curriculum tree for one child, grade 6, first term. This is the shape the importer reads;",
-    "topics are the atom every question, every wrong-answer statistic and the weekly report join on.",
-    "",
-    "IMPORTANT: this file is a hand-written scaffold for P1 wiring, not the authoritative tree.",
-    "Every subject carries verified=false until the PDF from the national platform has been OCR'd and",
-    "diffed against this list (see docs/QUIZ.md §5). The English list is the risky one: the 2026 autumn",
-    "Xiangshao edition has 10 units and renamed a character (Katie -> Beibei) compared with the earlier",
-    "12-unit edition, so a tree remembered from an older book would be wrong for every single question.",
-    "",
-    "Fields:",
-    "  code/publisher     subject code and publisher key (pep = 人教版, xiangshao = 湘少版)",
-    "  edition            which printing the unit list came from, for the OCR diff",
-    "  verified           true only after a human compared it with the OCR of the official PDF",
-    "  source             how this row got here: manual | ocr | ai",
-    "  week_start         school week the unit is normally taught; drives calendar auto-advance (C3-B)",
-    "  generator          name of a question template in server/tools/gen_seed_questions.py, or null",
-    "                     when no template exists yet (the topic is still useful: it gets stats and",
-    "                     can hold hand-written or later AI-generated questions)"
-  ],
-  "schema_version": 1,
-  "grade": 6,
-  "term": "up",
-  "_subject_ids": {
-    "_note": "Explicit ids, not auto-increment: subject.id is a TINYINT and these three rows are referenced by name in reports. Fixing them now means a re-import can never renumber a subject out from under old statistics.",
-    "math": 1,
-    "chinese": 2,
-    "english": 3
-  },
-  "subjects": [
+ "_note": [
+  "Curriculum tree for one child, grade 6, first term. Written 2026-11-18 for the diagnostic-",
+  "node rebuild; supersedes the P1 scaffold wholesale (the old tree and its 86 questions were",
+  "cleared with reset_content.py — see docs/RULES.md §2).",
+  "",
+  "Two levels, both already in the schema: a `unit` is the aggregate node a report groups by",
+  "(a chapter, a textbook unit), a `topic` is the diagnostic node — the only thing a question",
+  "can hang from and the only thing that can be judged weak.",
+  "",
+  "Fields:",
+  "  code               stable business key ('math-6up-d01'); question files reference this, never",
+  "                     the auto-increment id",
+  "  knowledge_type     maths: conceptual/procedural/representational; English: grammar/vocabulary/",
+  "                     sentence_pattern/reading/listening_speaking; Chinese: 字词基础/阅读理解/",
+  "                     语言运用/习作方法",
+  "  micro_nodes        the textbook's own sub-points this node covers. Maths comes from the",
+  "                     vendored taxonomy (server/content/taxonomy/pep-math-6up-v2.json, 38 points);",
+  "                     Chinese and English are the lesson/topic lists, source_id null",
+  "  prereq             sibling node codes that should be solid first, from the taxonomy's 55 edges",
+  "  week_start         school week the unit is normally taught; drives calendar auto-advance (C3-B)",
+  "  verified           still false: a human has compared the unit list with the book, not the",
+  "                     per-node wording"
+ ],
+ "schema_version": 2,
+ "grade": 6,
+ "term": "up",
+ "_subject_ids": {
+  "_note": "Explicit ids: subject.id is a TINYINT and these rows are named in reports. Fixing them means a re-import can never renumber a subject out from under old statistics.",
+  "math": 1,
+  "chinese": 2,
+  "english": 3
+ },
+ "subjects": [
+  {
+   "code": "math",
+   "name_zh": "数学",
+   "publisher": "pep",
+   "publisher_zh": "人教版",
+   "textbook_title_zh": "义务教育教科书·数学·六年级上册",
+   "edition": "current printing (2019 series)",
+   "verified": false,
+   "source": "manual",
+   "taxonomy": "server/content/taxonomy/pep-math-6up-v2.json",
+   "units": [
     {
-      "code": "math",
-      "name_zh": "数学",
-      "publisher": "pep",
-      "publisher_zh": "人教版",
-      "textbook_title_zh": "义务教育教科书·数学·六年级上册",
-      "edition": "current printing (2019 series)",
-      "verified": false,
-      "source": "manual",
-      "units": [
+     "ordinal": 1,
+     "name_zh": "分数乘法",
+     "week_start": 1,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "math-6up-d01",
+       "name_zh": "分数乘整数",
+       "summary_zh": "整数与分数相乘的意义和算法",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
         {
-          "ordinal": 1,
-          "name_zh": "分数乘法",
-          "week_start": 1,
-          "topics": [
-            {"ordinal": 1, "name_zh": "分数乘整数", "summary_zh": "整数与分数相乘的意义和算法", "generator": "frac_mul_int"},
-            {"ordinal": 2, "name_zh": "分数乘分数", "summary_zh": "分数乘分数的算理：分子相乘、分母相乘", "generator": "frac_mul_frac"},
-            {"ordinal": 3, "name_zh": "分数乘法应用题", "summary_zh": "求一个数的几分之几是多少", "generator": "frac_mul_word"}
-          ]
+         "source_id": "mt_g6u_001",
+         "name": "分数乘整数的意义",
+         "evidence": [
+          "能用分数加法解释分数乘整数的意义",
+          "能正确列出分数乘整数的算式并说明含义",
+          "能将重复加法与乘法联系起来"
+         ],
+         "assessment_prompt": "{{name}}能用加法说明2/9×3的意义，并说出计算结果吗？"
         },
         {
-          "ordinal": 2,
-          "name_zh": "位置与方向（二）",
-          "week_start": 3,
-          "topics": [
-            {"ordinal": 1, "name_zh": "用方向和距离确定位置", "summary_zh": "以参照点描述方向与距离", "generator": null}
-          ]
-        },
-        {
-          "ordinal": 3,
-          "name_zh": "分数除法",
-          "week_start": 5,
-          "topics": [
-            {"ordinal": 1, "name_zh": "倒数的认识", "summary_zh": "乘积为 1 的两个数互为倒数", "generator": "reciprocal"},
-            {"ordinal": 2, "name_zh": "分数除以整数", "summary_zh": "除以整数等于乘这个整数的倒数", "generator": "frac_div_int"},
-            {"ordinal": 3, "name_zh": "一个数除以分数", "summary_zh": "除以分数等于乘除数的倒数", "generator": "frac_div_frac"}
-          ]
-        },
-        {
-          "ordinal": 4,
-          "name_zh": "比",
-          "week_start": 8,
-          "topics": [
-            {"ordinal": 1, "name_zh": "比的意义与化简比", "summary_zh": "比与除法的关系，化成最简整数比", "generator": "ratio_simplify"},
-            {"ordinal": 2, "name_zh": "按比分配", "summary_zh": "把一个量按给定的比分成几份", "generator": "ratio_split"}
-          ]
-        },
-        {
-          "ordinal": 5,
-          "name_zh": "圆",
-          "week_start": 10,
-          "topics": [
-            {"ordinal": 1, "name_zh": "圆的认识", "summary_zh": "半径、直径、圆心，同圆内 d=2r", "generator": "circle_radius_diameter"},
-            {"ordinal": 2, "name_zh": "圆的周长", "summary_zh": "C = πd = 2πr，取 π≈3.14", "generator": "circle_circumference"},
-            {"ordinal": 3, "name_zh": "圆的面积", "summary_zh": "S = πr²", "generator": "circle_area"}
-          ]
-        },
-        {
-          "ordinal": 6,
-          "name_zh": "百分数（一）",
-          "week_start": 13,
-          "topics": [
-            {"ordinal": 1, "name_zh": "百分数的意义与读写", "summary_zh": "表示一个数是另一个数的百分之几", "generator": "percent_to_percent"},
-            {"ordinal": 2, "name_zh": "求一个数的百分之几", "summary_zh": "与分数乘法同构，注意百分号", "generator": "percent_of"}
-          ]
-        },
-        {
-          "ordinal": 7,
-          "name_zh": "扇形统计图",
-          "week_start": 16,
-          "topics": [
-            {"ordinal": 1, "name_zh": "扇形统计图的读图", "summary_zh": "用百分比表示各部分与整体的关系", "generator": null}
-          ]
-        },
-        {
-          "ordinal": 8,
-          "name_zh": "数学广角——数与形",
-          "week_start": 18,
-          "topics": [
-            {"ordinal": 1, "name_zh": "数与形的规律", "summary_zh": "从图形规律抽象出数列规律", "generator": null}
-          ]
+         "source_id": "mt_g6u_002",
+         "name": "分数乘整数的计算",
+         "evidence": [
+          "能正确计算分数乘整数并化简结果",
+          "能在计算前进行约分以简化计算",
+          "能运用分数乘整数解决实际问题"
+         ],
+         "assessment_prompt": "{{name}}能计算3/4×4，并说明为什么可以先约分再乘吗？"
         }
-      ]
+       ],
+       "prereq": []
+      },
+      {
+       "ordinal": 2,
+       "code": "math-6up-d02",
+       "name_zh": "一个数乘分数与分数乘分数",
+       "summary_zh": "求一个数的几分之几，分子乘分子、分母乘分母",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_003",
+         "name": "一个数乘分数的意义",
+         "evidence": [
+          "能说出一个数乘分数的意义",
+          "能用线段图或面积图直观表示乘分数的意义",
+          "能区分分数乘整数与整数乘分数的含义"
+         ],
+         "assessment_prompt": "{{name}}能说明12×3/4表示什么意思，并用图形表示吗？"
+        },
+        {
+         "source_id": "mt_g6u_004",
+         "name": "分数乘分数的计算",
+         "evidence": [
+          "能正确计算分数乘分数",
+          "能用折纸或画图验证计算结果",
+          "能进行交叉约分使计算简便"
+         ],
+         "assessment_prompt": "{{name}}能计算3/4×2/3，并说明是怎么约分的吗？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d01"
+       ]
+      },
+      {
+       "ordinal": 3,
+       "code": "math-6up-d03",
+       "name_zh": "分数乘法的运算律与应用题",
+       "summary_zh": "交换、结合、分配律，以及连续求几分之几",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_005",
+         "name": "分数乘法的运算律应用",
+         "evidence": [
+          "能举例说明三条乘法运算律对分数成立",
+          "能用运算律进行分数混合运算的简便计算",
+          "能识别可用运算律简化的计算场景"
+         ],
+         "assessment_prompt": "{{name}}能用乘法分配律计算(1/2+1/3)×6吗？"
+        },
+        {
+         "source_id": "mt_g6u_006",
+         "name": "分数乘法应用题",
+         "evidence": [
+          "能解决一步分数乘法应用题",
+          "能解决两步或多步分数乘法应用题",
+          "能解决'比某量多/少几分之几'类型的问题"
+         ],
+         "assessment_prompt": "{{name}}能解决：一块布料长5/6米，剪去了它的3/5，还剩多少米？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d02"
+       ]
+      },
+      {
+       "ordinal": 4,
+       "code": "math-6up-d04",
+       "name_zh": "积与因数的大小关系",
+       "summary_zh": "乘数比 1 大还是小，决定积比原数大还是小",
+       "knowledge_type": "conceptual",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_007",
+         "name": "乘积与被乘数大小的比较规律",
+         "evidence": [
+          "能不计算直接判断乘积与被乘数的大小关系",
+          "能解释这一规律的原因",
+          "能用此规律检验计算结果的合理性"
+         ],
+         "assessment_prompt": "{{name}}能不计算，直接比较3/4×5/6与3/4的大小，并说明理由吗？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d02"
+       ]
+      }
+     ]
     },
     {
-      "code": "chinese",
-      "name_zh": "语文",
-      "publisher": "pep",
-      "publisher_zh": "人教版（统编）",
-      "textbook_title_zh": "义务教育教科书·语文·六年级上册",
-      "edition": "统编版 current printing",
-      "verified": false,
-      "source": "manual",
-      "units": [
+     "ordinal": 2,
+     "name_zh": "位置与方向（二）",
+     "week_start": 3,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "math-6up-d05",
+       "name_zh": "用方向和距离确定位置",
+       "summary_zh": "参照点、方向角与距离共同确定一个位置，会描述路线",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
         {
-          "ordinal": 1,
-          "name_zh": "触摸自然",
-          "week_start": 1,
-          "topics": [
-            {"ordinal": 1, "name_zh": "古诗接句（宿建德江·六月二十七日望湖楼醉书）", "summary_zh": "诗句上下句衔接与作者对应", "generator": "poem_jielong"},
-            {"ordinal": 2, "name_zh": "字词音形（草原·丁香结）", "summary_zh": "课内生字的读音与写法", "generator": null}
-          ]
+         "source_id": "mt_g6u_008",
+         "name": "方向角表示位置",
+         "evidence": [
+          "能用方向角和距离描述一个点的位置",
+          "能在平面图上标出指定方向角和距离的点",
+          "能读平面图，说出各地点的方向和距离"
+         ],
+         "assessment_prompt": "{{name}}能在方向图上标出'北偏东30°，距中心600km'的位置吗？"
         },
         {
-          "ordinal": 2,
-          "name_zh": "重温革命岁月",
-          "week_start": 3,
-          "topics": [
-            {"ordinal": 1, "name_zh": "古诗接句（七律·长征）", "summary_zh": "七律·长征的背诵与理解", "generator": "poem_jielong"},
-            {"ordinal": 2, "name_zh": "文学常识（开国大典）", "summary_zh": "课文体裁、写作顺序与关键史实", "generator": null}
-          ]
-        },
-        {
-          "ordinal": 7,
-          "name_zh": "艺术之美",
-          "week_start": 13,
-          "topics": [
-            {"ordinal": 1, "name_zh": "文言实词（伯牙鼓琴）", "summary_zh": "鼓、志、巍巍、汤汤等实词含义", "generator": null},
-            {"ordinal": 2, "name_zh": "成语积累与运用", "summary_zh": "课内成语的意思与使用语境", "generator": null}
-          ]
-        },
-        {
-          "ordinal": 8,
-          "name_zh": "走进鲁迅",
-          "week_start": 15,
-          "topics": [
-            {"ordinal": 1, "name_zh": "文学常识（少年闰土）", "summary_zh": "作者、出处与人物形象", "generator": null}
-          ]
+         "source_id": "mt_g6u_009",
+         "name": "描述和绘制运动路线",
+         "evidence": [
+          "能由路线描述文字绘制示意图",
+          "能由示意图描述路线（方向+距离）",
+          "能处理含多段转折的路线"
+         ],
+         "assessment_prompt": "{{name}}能根据'从A出发，向北偏东45°走5km到B，再向东走3km到C'画出路线图吗？"
         }
-      ]
+       ],
+       "prereq": []
+      }
+     ]
     },
     {
-      "code": "english",
-      "name_zh": "英语",
-      "publisher": "xiangshao",
-      "publisher_zh": "湘少版",
-      "textbook_title_zh": "义务教育教科书·英语·六年级上册",
-      "edition": "2026 autumn edition (10 units)",
-      "verified": false,
-      "source": "manual",
-      "units": [
+     "ordinal": 3,
+     "name_zh": "分数除法",
+     "week_start": 5,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "math-6up-d06",
+       "name_zh": "倒数的认识",
+       "summary_zh": "乘积是 1 的两个数互为倒数，1 和 0 的特殊情况",
+       "knowledge_type": "conceptual",
+       "generator": null,
+       "micro_nodes": [
         {
-          "ordinal": 1,
-          "name_zh": "What did you do during the holidays?",
-          "week_start": 1,
-          "topics": [
-            {"ordinal": 1, "name_zh": "一般过去时（did you …?）", "summary_zh": "假期活动的过去时问答", "generator": "past_simple"},
-            {"ordinal": 2, "name_zh": "假期活动词汇", "summary_zh": "travelled, visited, watched 等", "generator": null}
-          ]
-        },
-        {
-          "ordinal": 2,
-          "name_zh": "Beibei always gets up early",
-          "week_start": 3,
-          "topics": [
-            {"ordinal": 1, "name_zh": "一般现在时第三人称单数", "summary_zh": "动词加 -s/-es，主语为 he/she/it", "generator": "third_person_singular"},
-            {"ordinal": 2, "name_zh": "频度副词", "summary_zh": "always, usually, often, never 的位置", "generator": null}
-          ]
-        },
-        {
-          "ordinal": 8,
-          "name_zh": "This bird is bigger than the first one",
-          "week_start": 11,
-          "topics": [
-            {"ordinal": 1, "name_zh": "形容词比较级", "summary_zh": "big→bigger，双写与 -er 规则", "generator": "comparative"},
-            {"ordinal": 2, "name_zh": "比较级句型 than", "summary_zh": "A is bigger than B", "generator": "comparative_than"}
-          ]
-        },
-        {
-          "ordinal": 9,
-          "name_zh": "I don't feel well",
-          "week_start": 13,
-          "topics": [
-            {"ordinal": 1, "name_zh": "疾病表达与建议（should）", "summary_zh": "have a cold / should + 动词原形", "generator": null}
-          ]
+         "source_id": "mt_g6u_010",
+         "name": "倒数的认识",
+         "evidence": [
+          "能判断两个数是否互为倒数",
+          "能求一个分数（整数、小数）的倒数",
+          "能解释为什么0没有倒数"
+         ],
+         "assessment_prompt": "{{name}}能说出3/4的倒数是什么，并验证它们的乘积吗？"
         }
-      ]
+       ],
+       "prereq": [
+        "math-6up-d02"
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "math-6up-d07",
+       "name_zh": "分数除法的计算",
+       "summary_zh": "除以一个数等于乘它的倒数，含被除数与除数各种组合",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_011",
+         "name": "分数除以整数的计算",
+         "evidence": [
+          "能用两种方法计算分数除以整数",
+          "能选择更简便的方法",
+          "能正确化简计算结果"
+         ],
+         "assessment_prompt": "{{name}}能用两种方法计算6/7÷3，并比较哪种更简便吗？"
+        },
+        {
+         "source_id": "mt_g6u_012",
+         "name": "一个数除以分数的计算",
+         "evidence": [
+          "能用数线图解释为什么除以分数等于乘以倒数",
+          "能正确计算整数除以分数",
+          "能正确计算分数除以分数"
+         ],
+         "assessment_prompt": "{{name}}能用数线图解释2÷2/3=3的道理，并计算3/4÷3/8吗？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d06"
+       ]
+      },
+      {
+       "ordinal": 3,
+       "code": "math-6up-d08",
+       "name_zh": "商与被除数的关系",
+       "summary_zh": "除数比 1 大还是小，决定商比被除数大还是小",
+       "knowledge_type": "conceptual",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_013",
+         "name": "商与被除数大小的关系",
+         "evidence": [
+          "能不计算直接判断商与被除数的大小关系",
+          "能用具体例子验证这一规律",
+          "能运用此规律检验计算结果的合理性"
+         ],
+         "assessment_prompt": "{{name}}能不计算直接判断：3/4÷5/6的商比3/4大还是小？为什么？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d07",
+        "math-6up-d04"
+       ]
+      },
+      {
+       "ordinal": 4,
+       "code": "math-6up-d09",
+       "name_zh": "分数除法应用题",
+       "summary_zh": "已知一个数的几分之几是多少，求这个数",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_014",
+         "name": "分数除法应用题",
+         "evidence": [
+          "能用方程或算术方法解决'已知部分求整体'类问题",
+          "能解决工程类分数应用题（甲乙合作问题）",
+          "能灵活选择方程解法或算术解法"
+         ],
+         "assessment_prompt": "{{name}}能解决：一条绳子的3/5是12米，这条绳子共有多少米？（用两种方法）"
+        }
+       ],
+       "prereq": [
+        "math-6up-d07"
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 4,
+     "name_zh": "比",
+     "week_start": 8,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "math-6up-d10",
+       "name_zh": "比的意义与基本性质",
+       "summary_zh": "比与除法、分数的关系，化简比",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_015",
+         "name": "比的意义和各部分名称",
+         "evidence": [
+          "能说出比的各部分名称",
+          "能说明比与除法、分数的对应关系",
+          "能区分比值和比的概念"
+         ],
+         "assessment_prompt": "{{name}}能说出3:4中各部分的名称，并说明与3÷4和3/4的关系吗？"
+        },
+        {
+         "source_id": "mt_g6u_016",
+         "name": "比的基本性质与化简比",
+         "evidence": [
+          "能化简整数比",
+          "能化简含分数或小数的比",
+          "能说明化简比与分数基本性质的联系"
+         ],
+         "assessment_prompt": "{{name}}能化简0.75:1.5和1/2:3/4吗？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d07"
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "math-6up-d11",
+       "name_zh": "按比分配",
+       "summary_zh": "把一个量按给定的比分成几份",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_017",
+         "name": "按比例分配",
+         "evidence": [
+          "能用两种方法解决按比例分配问题",
+          "能解决三量连比的分配问题",
+          "能解决实际情境中的按比分配问题"
+         ],
+         "assessment_prompt": "{{name}}能按3:2的比将100分配给两人，用两种方法解决吗？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d10",
+        "math-6up-d02"
+       ]
+      },
+      {
+       "ordinal": 3,
+       "code": "math-6up-d12",
+       "name_zh": "比与分数、除法的联系",
+       "summary_zh": "三者的互相转化与在综合题里的换用",
+       "knowledge_type": "conceptual",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_037",
+         "name": "比与分数、除法的综合联系",
+         "evidence": [
+          "能用表格说明比、除法、分数三者的对应关系",
+          "能解释三者的联系与区别",
+          "能灵活在三种形式之间转化"
+         ],
+         "assessment_prompt": "{{name}}能说明3:4、3÷4和3/4之间的联系与区别吗？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d13"
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 5,
+     "name_zh": "圆",
+     "week_start": 10,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "math-6up-d13",
+       "name_zh": "圆的认识与对称性",
+       "summary_zh": "圆心、半径、直径，以及圆是轴对称图形",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_018",
+         "name": "圆的认识：圆心、半径、直径",
+         "evidence": [
+          "能说出圆心、半径、直径的定义",
+          "能用圆规画指定大小的圆",
+          "能说明圆的轴对称性及对称轴的特征"
+         ],
+         "assessment_prompt": "{{name}}能说出一个圆有几条半径、几条直径，并说明半径和直径的关系吗？"
+        },
+        {
+         "source_id": "mt_g6u_038",
+         "name": "圆与对称性的联系",
+         "evidence": [
+          "能说明圆有无数条对称轴",
+          "能利用圆的对称性设计图案",
+          "能验证圆的折叠对称性"
+         ],
+         "assessment_prompt": "{{name}}能说明圆有多少条对称轴，并解释为什么吗？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d15"
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "math-6up-d14",
+       "name_zh": "圆周率与圆的周长",
+       "summary_zh": "C=πd=2πr，π 的意义与割圆术的思想",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_019",
+         "name": "圆周率π的认识",
+         "evidence": [
+          "能说明π的定义（周长÷直径=常数）",
+          "能说明π是无限不循环小数，不等于3.14",
+          "能说出祖冲之在圆周率研究上的贡献"
+         ],
+         "assessment_prompt": "{{name}}能解释为什么用不同大小的圆测量，周长÷直径的比值总是相同的吗？"
+        },
+        {
+         "source_id": "mt_g6u_020",
+         "name": "圆的周长公式与计算",
+         "evidence": [
+          "能正确运用公式C=2πr计算圆的周长",
+          "能由周长反求半径或直径",
+          "能解决结合圆周长的实际应用问题"
+         ],
+         "assessment_prompt": "{{name}}能计算半径为5cm的圆的周长，并解释公式的来源吗？"
+        },
+        {
+         "source_id": "mt_g6u_035",
+         "name": "刘徽割圆术的数学思想",
+         "evidence": [
+          "能描述割圆术的基本思路",
+          "能说明分割份数越多近似越准确的原因",
+          "能体会无限逼近的数学思想方法"
+         ],
+         "assessment_prompt": "{{name}}能用自己的话说明刘徽是怎样用割圆法求圆的面积的吗？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d13",
+        "math-6up-d02",
+        "math-6up-d09"
+       ]
+      },
+      {
+       "ordinal": 3,
+       "code": "math-6up-d15",
+       "name_zh": "圆的面积",
+       "summary_zh": "S=πr² 的推导与计算",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_021",
+         "name": "圆的面积公式推导与计算",
+         "evidence": [
+          "能说明割圆拼长方形的推导过程",
+          "能正确运用S=πr²计算圆的面积",
+          "能计算圆环（S大圆-S小圆）的面积"
+         ],
+         "assessment_prompt": "{{name}}能用割圆的方法说明为什么圆面积公式是πr²，并计算半径3cm的圆的面积吗？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d14"
+       ]
+      },
+      {
+       "ordinal": 4,
+       "code": "math-6up-d16",
+       "name_zh": "组合图形与扇形",
+       "summary_zh": "圆环、半圆、扇形的面积与周长",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_022",
+         "name": "圆形组合图形的面积",
+         "evidence": [
+          "能正确计算圆环面积",
+          "能计算外方内圆或外圆内方的面积差",
+          "能建立组合图形面积的通用公式"
+         ],
+         "assessment_prompt": "{{name}}能计算边长等于直径的正方形与其内切圆之间的面积差吗？"
+        },
+        {
+         "source_id": "mt_g6u_023",
+         "name": "扇形的认识",
+         "evidence": [
+          "能说出弧、扇形、圆心角的定义",
+          "能辨认实物中的扇形",
+          "能画出指定圆心角大小的扇形"
+         ],
+         "assessment_prompt": "{{name}}能说出扇形与圆心角的关系，并画一个圆心角为60°的扇形吗？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d15",
+        "math-6up-d13"
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 6,
+     "name_zh": "百分数（一）",
+     "week_start": 13,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "math-6up-d17",
+       "name_zh": "百分数的意义与取值范围",
+       "summary_zh": "表示一个数是另一个数的百分之几，以及它的上下界",
+       "knowledge_type": "conceptual",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_025",
+         "name": "百分数的意义",
+         "evidence": [
+          "能读写百分数",
+          "能解释百分数的含义",
+          "能区分百分数与分数的本质区别（百分数不表示具体量）"
+         ],
+         "assessment_prompt": "{{name}}能说明65%和65/100的联系与区别吗？"
+        },
+        {
+         "source_id": "mt_g6u_029",
+         "name": "百分数的取值范围",
+         "evidence": [
+          "能举例说明哪类百分数可以超过100%",
+          "能举例说明哪类百分数不能超过100%",
+          "能分析实际问题中百分数的合理性"
+         ],
+         "assessment_prompt": "{{name}}能解释为什么'出勤率可以是120%'这句话是错误的吗？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d10",
+        "math-6up-d19"
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "math-6up-d18",
+       "name_zh": "百分数与小数、分数的互化",
+       "summary_zh": "三种写法之间的转换与计算",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_026",
+         "name": "百分数、小数、分数的互化",
+         "evidence": [
+          "能将小数化为百分数",
+          "能将分数化为百分数（需计算时保留三位小数）",
+          "能将百分数化为最简分数或小数"
+         ],
+         "assessment_prompt": "{{name}}能把3/8和0.625分别化成百分数吗？"
+        },
+        {
+         "source_id": "mt_g6u_027",
+         "name": "百分数的基本计算",
+         "evidence": [
+          "能计算某量的百分之几是多少",
+          "能计算两数之间的百分率",
+          "能计算增加或减少了百分之多少"
+         ],
+         "assessment_prompt": "{{name}}能解决：750件商品中合格品720件，合格率是多少？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d17"
+       ]
+      },
+      {
+       "ordinal": 3,
+       "code": "math-6up-d19",
+       "name_zh": "百分数增减的综合应用",
+       "summary_zh": "增加百分之几、减少百分之几的实际问题",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_028",
+         "name": "百分数增减的综合应用",
+         "evidence": [
+          "能用1+百分比的方法计算增加后的总量",
+          "能分析连续百分比变化中基数不同的影响",
+          "能正确区分'增加了百分之几'和'增加到百分之几'"
+         ],
+         "assessment_prompt": "{{name}}能解释为什么一件商品先降价20%再涨价20%，最终价格不等于原价吗？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d18"
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 7,
+     "name_zh": "扇形统计图",
+     "week_start": 16,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "math-6up-d20",
+       "name_zh": "扇形统计图的读图与制作",
+       "summary_zh": "用百分比表示各部分与整体的关系",
+       "knowledge_type": "representational",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_030",
+         "name": "扇形统计图的认识与制作",
+         "evidence": [
+          "能读懂扇形统计图并回答问题",
+          "能说明扇形统计图与条形、折线统计图的适用场景",
+          "能根据百分比数据制作扇形统计图"
+         ],
+         "assessment_prompt": "{{name}}能根据'喜欢乒乓球30%，足球20%，跑步50%'的数据画出扇形统计图吗？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d18",
+        "math-6up-d16"
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "math-6up-d21",
+       "name_zh": "三种统计图的选择",
+       "summary_zh": "条形、折线、扇形各自擅长什么",
+       "knowledge_type": "conceptual",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_031",
+         "name": "三种统计图的比较与选择",
+         "evidence": [
+          "能根据数据类型和分析目的选择合适的统计图",
+          "能说明三种统计图各自的优点和局限",
+          "能从统计图中提取有效信息并分析"
+         ],
+         "assessment_prompt": "{{name}}能说明：表示一年12个月销售额变化趋势，应选哪种统计图？为什么？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d20"
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 8,
+     "name_zh": "数学广角——数与形",
+     "week_start": 18,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "math-6up-d22",
+       "name_zh": "数与形结合的规律",
+       "summary_zh": "从图形规律抽象出数列，用图形解释数的性质",
+       "knowledge_type": "conceptual",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_032",
+         "name": "数形结合：奇数求和的图形规律",
+         "evidence": [
+          "能发现奇数求和与完全平方数的规律",
+          "能用正方形图形验证这一规律",
+          "能用规律计算前n个奇数的和"
+         ],
+         "assessment_prompt": "{{name}}能用图形说明为什么1+3+5+7=4²吗？"
+        },
+        {
+         "source_id": "mt_g6u_033",
+         "name": "数形结合：无限递减分数的极限规律",
+         "evidence": [
+          "能用图形表示无限递减分数的累加过程",
+          "能说明为什么这些分数之和趋近于1",
+          "能体会无限逼近这一数学思想方法"
+         ],
+         "assessment_prompt": "{{name}}能用线段图说明1/2+1/4+1/8+...为什么越来越接近1吗？"
+        }
+       ],
+       "prereq": []
+      }
+     ]
+    },
+    {
+     "ordinal": 9,
+     "name_zh": "综合与实践",
+     "week_start": 19,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "math-6up-d23",
+       "name_zh": "确定起跑线",
+       "summary_zh": "跑道弯道长度差与起跑线位置的数学建模",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_024",
+         "name": "确定起跑线的数学建模",
+         "evidence": [
+          "能建立标准跑道的数学模型",
+          "能计算相邻跑道的起跑线差距",
+          "能解释为什么外圈运动员需要提前起跑"
+         ],
+         "assessment_prompt": "{{name}}能说明标准跑道中相邻两条跑道的起跑线为什么要错开约7.85米吗？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d14"
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "math-6up-d24",
+       "name_zh": "节约用水的数据",
+       "summary_zh": "用统计与百分数处理用水数据",
+       "knowledge_type": "procedural",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": "mt_g6u_034",
+         "name": "节约用水的数据统计",
+         "evidence": [
+          "能收集数据并制作条形统计图",
+          "能计算年漏水量并与实际用水量对比",
+          "能用百分数表示节水措施的效果"
+         ],
+         "assessment_prompt": "{{name}}能根据'每天漏水量200毫升'计算一年共浪费多少升水吗？"
+        }
+       ],
+       "prereq": [
+        "math-6up-d18",
+        "math-6up-d20"
+       ]
+      }
+     ]
     }
-  ]
+   ]
+  },
+  {
+   "code": "chinese",
+   "name_zh": "语文",
+   "publisher": "pep",
+   "publisher_zh": "人教版（统编）",
+   "textbook_title_zh": "义务教育教科书·语文·六年级上册",
+   "edition": "统编版 current printing (8 units)",
+   "verified": false,
+   "source": "manual",
+   "units": [
+    {
+     "ordinal": 1,
+     "name_zh": "触摸自然",
+     "week_start": 1,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "chinese-6up-d01",
+       "name_zh": "写景状物类文本的语境词义与情感把握",
+       "summary_zh": "能在写景句子里读出词义和作者的心情",
+       "knowledge_type": "阅读理解",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "草原",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "丁香结",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "古诗词三首",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "chinese-6up-d02",
+       "name_zh": "古诗词的背诵与理解（宿建德江·六月二十七日望湖楼醉书·西江月·夜行黄沙道中）",
+       "summary_zh": "三首古诗词的默写、作者与画面",
+       "knowledge_type": "字词基础",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "宿建德江",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "六月二十七日望湖楼醉书",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "西江月·夜行黄沙道中",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 2,
+     "name_zh": "重温革命岁月",
+     "week_start": 3,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "chinese-6up-d03",
+       "name_zh": "革命题材叙事文的场面概括与人物品质",
+       "summary_zh": "能用一句话概括场面，说出人物的品质",
+       "knowledge_type": "阅读理解",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "七律·长征",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "狼牙山五壮士",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "开国大典",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "灯光",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "我的战友邱少云",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "chinese-6up-d04",
+       "name_zh": "点面结合写法的辨识",
+       "summary_zh": "能分出哪句写整体、哪句写个别人物",
+       "knowledge_type": "习作方法",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "开国大典",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "狼牙山五壮士",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 3,
+     "name_zh": "有目的地阅读",
+     "week_start": 5,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "chinese-6up-d05",
+       "name_zh": "按任务筛选信息与调整阅读速度",
+       "summary_zh": "带着问题找段落，与任务无关的部分快速跳过",
+       "knowledge_type": "阅读理解",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "竹节人",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "宇宙生命之谜",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "故宫博物院",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 4,
+     "name_zh": "小说阅读",
+     "week_start": 7,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "chinese-6up-d06",
+       "name_zh": "小说三要素的识别与分析",
+       "summary_zh": "找出人物、情节、环境，并说明各自的作用",
+       "knowledge_type": "阅读理解",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "桥",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "穷人",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "金色的鱼钩",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "chinese-6up-d07",
+       "name_zh": "环境描写与人物心理的关系",
+       "summary_zh": "从环境句里读出人物当时的心情",
+       "knowledge_type": "阅读理解",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "穷人",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "桥",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 5,
+     "name_zh": "围绕中心意思写",
+     "week_start": 9,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "chinese-6up-d08",
+       "name_zh": "围绕中心意思选取材料",
+       "summary_zh": "能判断哪些事例支撑中心，哪些跑题",
+       "knowledge_type": "习作方法",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "夏天里的成长",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "盼",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 6,
+     "name_zh": "保护环境",
+     "week_start": 11,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "chinese-6up-d09",
+       "name_zh": "说明性文章的信息提取与观点依据",
+       "summary_zh": "找出说明方法，说出观点靠什么支撑",
+       "knowledge_type": "阅读理解",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "只有一个地球",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "青山不老",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "三黑和土地",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "chinese-6up-d10",
+       "name_zh": "古诗三首的景物与情感（浪淘沙·江南春·书湖阴先生壁）",
+       "summary_zh": "三首古诗的默写、画面与情感",
+       "knowledge_type": "字词基础",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "浪淘沙（其一）",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "江南春",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "书湖阴先生壁",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 7,
+     "name_zh": "艺术之美",
+     "week_start": 13,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "chinese-6up-d11",
+       "name_zh": "文言实词与文意（伯牙鼓琴·书戴嵩画牛）",
+       "summary_zh": "鼓、志、巍巍、汤汤等实词，能把句子说通",
+       "knowledge_type": "字词基础",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "伯牙鼓琴",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "书戴嵩画牛",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "chinese-6up-d12",
+       "name_zh": "艺术类文本的联想与表达",
+       "summary_zh": "从音乐、京剧的描写里读出想象和用词的好处",
+       "knowledge_type": "阅读理解",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "月光曲",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "京剧趣谈",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 8,
+     "name_zh": "走近鲁迅",
+     "week_start": 15,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "chinese-6up-d13",
+       "name_zh": "鲁迅作品的人物形象与时代背景",
+       "summary_zh": "闰土、伯父的形象，以及那时社会的样子",
+       "knowledge_type": "阅读理解",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "少年闰土",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "好的故事",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "我的伯父鲁迅先生",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "有的人——纪念鲁迅有感",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "chinese-6up-d14",
+       "name_zh": "借助资料理解课文",
+       "summary_zh": "会查背景资料，并用它解释课文里读不懂的地方",
+       "knowledge_type": "阅读理解",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "少年闰土",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "我的伯父鲁迅先生",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "english",
+   "name_zh": "英语",
+   "publisher": "xiangshao",
+   "publisher_zh": "湘少版",
+   "textbook_title_zh": "义务教育教科书·英语·六年级上册",
+   "edition": "2026 autumn edition (10 units)",
+   "verified": false,
+   "source": "manual",
+   "units": [
+    {
+     "ordinal": 1,
+     "name_zh": "Cities in China",
+     "week_start": 1,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "english-6up-d01",
+       "name_zh": "一般过去时（规则与不规则动词）+ 谈假期活动",
+       "summary_zh": "went/visited/watched 的用法与 What did you do 问答",
+       "knowledge_type": "grammar",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "一般过去时",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "不规则动词过去式",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "What did you do during the holidays?",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "english-6up-d02",
+       "name_zh": "假期活动词汇与问答",
+       "summary_zh": "travelled, visited, climbed, took photos 等假期动词",
+       "knowledge_type": "vocabulary",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "假期活动动词",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "城市与家乡名称",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 2,
+     "name_zh": "Daily plan",
+     "week_start": 2,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "english-6up-d03",
+       "name_zh": "一般现在时第三人称单数",
+       "summary_zh": "主语是 he/she/it 时动词加 -s/-es",
+       "knowledge_type": "grammar",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "一般现在时",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "第三人称单数",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "Katie always gets up early",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "english-6up-d04",
+       "name_zh": "频度副词",
+       "summary_zh": "always/usually/often/sometimes/never 的位置与含义",
+       "knowledge_type": "vocabulary",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "频度副词",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "日常作息表达",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 3,
+     "name_zh": "I like my computer",
+     "week_start": 4,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "english-6up-d05",
+       "name_zh": "There be 句型",
+       "summary_zh": "There is / There are 与单复数的一致",
+       "knowledge_type": "sentence_pattern",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "There be 句型",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "描述房间里有什么",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "english-6up-d06",
+       "name_zh": "enjoy + doing",
+       "summary_zh": "enjoy 后接动名词，以及 like/love + doing",
+       "knowledge_type": "grammar",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "enjoy doing",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "like doing",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 4,
+     "name_zh": "The Mid-Autumn Festival",
+     "week_start": 5,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "english-6up-d07",
+       "name_zh": "一般现在时与一般过去时在节日描述中的对比",
+       "summary_zh": "习俗用现在时，今年的经历用过去时",
+       "knowledge_type": "grammar",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "一般现在时",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "一般过去时",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "节日活动表达",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 5,
+     "name_zh": "It will be sunny and cool tomorrow",
+     "week_start": 7,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "english-6up-d08",
+       "name_zh": "一般将来时 will",
+       "summary_zh": "will + 动词原形，以及 will be 描述天气",
+       "knowledge_type": "grammar",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "一般将来时 will",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "天气描述",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "english-6up-d09",
+       "name_zh": "天气词汇与活动安排",
+       "summary_zh": "sunny/cloudy/rainy/windy 与好天气坏天气下的活动",
+       "knowledge_type": "vocabulary",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "天气形容词",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "天气下的活动",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 6,
+     "name_zh": "I will bring a big bottle of orange juice",
+     "week_start": 8,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "english-6up-d10",
+       "name_zh": "量词表达（a bottle of / a glass of）",
+       "summary_zh": "不可数名词前的量词与复数变化",
+       "knowledge_type": "vocabulary",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "量词 a bottle of",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "a glass of / a cup of",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "不可数名词",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 7,
+     "name_zh": "What can I do?",
+     "week_start": 10,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "english-6up-d11",
+       "name_zh": "情态动词 can 表能力与请求",
+       "summary_zh": "can + 动词原形，What can I do for you?",
+       "knowledge_type": "grammar",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "情态动词 can",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "提供帮助的表达",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 8,
+     "name_zh": "We shouldn't waste water",
+     "week_start": 11,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "english-6up-d12",
+       "name_zh": "should / shouldn't 表建议",
+       "summary_zh": "should + 动词原形，给环保提建议",
+       "knowledge_type": "grammar",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "情态动词 should",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "3R 环保表达",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 9,
+     "name_zh": "This bird is bigger than the first one",
+     "week_start": 13,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "english-6up-d13",
+       "name_zh": "形容词比较级（-er / more）",
+       "summary_zh": "big→bigger，双写与 more 的规则",
+       "knowledge_type": "grammar",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "形容词比较级",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "双写辅音",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "more + 长形容词",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      },
+      {
+       "ordinal": 2,
+       "code": "english-6up-d14",
+       "name_zh": "比较级句型 than",
+       "summary_zh": "A is bigger than B 的完整句子",
+       "knowledge_type": "sentence_pattern",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "比较级句型 than",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "两者比较",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "ordinal": 10,
+     "name_zh": "Festivals",
+     "week_start": 15,
+     "topics": [
+      {
+       "ordinal": 1,
+       "code": "english-6up-d15",
+       "name_zh": "节日习俗表达与最高级初步",
+       "summary_zh": "春节与圣诞节的习俗，the biggest / the most popular",
+       "knowledge_type": "vocabulary",
+       "generator": null,
+       "micro_nodes": [
+        {
+         "source_id": null,
+         "name": "节日习俗",
+         "evidence": [],
+         "assessment_prompt": null
+        },
+        {
+         "source_id": null,
+         "name": "形容词最高级",
+         "evidence": [],
+         "assessment_prompt": null
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
 }

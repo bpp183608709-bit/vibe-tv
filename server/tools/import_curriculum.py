@@ -26,6 +26,13 @@ from server.app.db import Database, default_db  # noqa: E402
 CURRICULUM = Path(__file__).resolve().parent.parent / "content" / "curriculum" / "grade6-up.json"
 
 
+def _json(value):
+    """JSON columns take a string on both backends; NULL stays NULL so "no micro-points" is readable."""
+    if value in (None, [], {}):
+        return None
+    return json.dumps(value, ensure_ascii=False)
+
+
 def import_tree(db: Database, tree: dict) -> dict[str, int]:
     stats = {"subjects": 0, "textbooks": 0, "units": 0, "topics": 0, "skipped_topics": 0}
     subject_ids: dict[str, int] = tree.get("_subject_ids", {})
@@ -85,20 +92,36 @@ def import_tree(db: Database, tree: dict) -> dict[str, int]:
             seen_ordinals = set()
             for topic in unit["topics"]:
                 seen_ordinals.add(topic["ordinal"])
-                row = db.query_one(
-                    "SELECT id FROM topic WHERE unit_id = ? AND ordinal = ?",
-                    (unit_id, topic["ordinal"]),
+                payload = (
+                    topic.get("code"),
+                    topic["name_zh"],
+                    topic.get("summary_zh"),
+                    topic.get("knowledge_type"),
+                    _json(topic.get("micro_nodes")),
+                    _json(topic.get("prereq")),
                 )
+                # Code first: it is the stable key the question files use, so a re-cut that moves a node
+                # to another ordinal must not create a second row with the same code.
+                row = None
+                if topic.get("code"):
+                    row = db.query_one("SELECT id FROM topic WHERE code = ?", (topic["code"],))
+                if row is None:
+                    row = db.query_one(
+                        "SELECT id FROM topic WHERE unit_id = ? AND ordinal = ?",
+                        (unit_id, topic["ordinal"]),
+                    )
                 if row is None:
                     db.insert(
-                        "INSERT INTO topic (unit_id, ordinal, name_zh, summary_zh) VALUES (?, ?, ?, ?)",
-                        (unit_id, topic["ordinal"], topic["name_zh"], topic.get("summary_zh")),
+                        "INSERT INTO topic (unit_id, ordinal, code, name_zh, summary_zh, knowledge_type,"
+                        " micro_nodes_json, prereq_json) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                        (unit_id, topic["ordinal"], *payload),
                     )
                     stats["topics"] += 1
                 else:
                     db.execute(
-                        "UPDATE topic SET name_zh = ?, summary_zh = ? WHERE id = ?",
-                        (topic["name_zh"], topic.get("summary_zh"), int(row["id"])),
+                        "UPDATE topic SET unit_id = ?, ordinal = ?, code = ?, name_zh = ?, summary_zh = ?,"
+                        " knowledge_type = ?, micro_nodes_json = ?, prereq_json = ? WHERE id = ?",
+                        (unit_id, topic["ordinal"], *payload, int(row["id"])),
                     )
 
             stale = db.query(
