@@ -1483,6 +1483,52 @@ def main(argv: list[str] | None = None) -> int:
         check("the list page has its one sentence",
               isinstance(body["week_line"], str) and body["week_line"], str(body.get("week_line")))
 
+        # `weakness` is an entity now: the list page's membership comes from it, and a row is opened
+        # by the same transaction that lowers the level. "Was he weak last month" has an answer.
+        weakness_probe = Database(dsn)
+        weakness_probe.connect()
+        rows = weakness_probe.query(
+            "SELECT topic_id, diagnostic_node_id, mastery_level, resolved FROM weakness"
+            " WHERE device_id = ? AND resolved = 0", (p2_device,))
+        check("every row on the weak list is backed by a weakness row",
+              len(rows) == len(listed),
+              f"{len(rows)} weakness rows vs {len(listed)} listed")
+        check("and the weakness row names the node, not just a topic id",
+              bool(rows) and all(row["diagnostic_node_id"] for row in rows),
+              str(rows[:1]))
+
+        # A node that climbs back to 熟练 resolves its weakness row; it is not deleted, so the history
+        # survives. Driven through mastery.record_tv_answer, the path a real answer takes.
+        probe_device = pair()
+        seed_topic = int(stumbled[0])
+        with weakness_probe.tx() as cur:
+            for index in range(3):
+                mastery.record_tv_answer(
+                    cur, device_id=probe_device, topic_id=seed_topic, correct=False, flagged=False,
+                    session_id="01ACCEPTANCE000000000000W", question_id=300 + index,
+                    now_ms=T, now_iso=iso_p2)
+        opened = weakness_probe.query_one(
+            "SELECT weakness_id, mastery_level, resolved FROM weakness"
+            " WHERE device_id = ? AND topic_id = ?", (probe_device, seed_topic))
+        check("three wrong answers open a weakness row at 未掌握",
+              opened is not None and int(opened["mastery_level"]) == 0 and int(opened["resolved"]) == 0,
+              str(opened))
+
+        with weakness_probe.tx() as cur:
+            for index in range(mastery.MASTERY_WINDOW):
+                mastery.record_tv_answer(
+                    cur, device_id=probe_device, topic_id=seed_topic, correct=True, flagged=False,
+                    session_id="01ACCEPTANCE000000000000W", question_id=400 + index,
+                    now_ms=T, now_iso=iso_p2)
+        healed = weakness_probe.query_one(
+            "SELECT weakness_id, resolved FROM weakness WHERE device_id = ? AND topic_id = ?",
+            (probe_device, seed_topic))
+        check("ten right answers mark it resolved instead of deleting it",
+              healed is not None and int(healed["resolved"]) == 1
+              and healed["weakness_id"] == opened["weakness_id"],
+              str(healed))
+        weakness_probe.close()
+
         # ---- the two-level report (§2.6) ----
         # A chapter is a row and the diagnostic nodes inside it are the lines. The chapter is never
         # judged: it has no questions of its own, so a level on it would be a claim about nothing.

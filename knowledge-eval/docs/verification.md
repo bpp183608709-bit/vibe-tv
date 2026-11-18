@@ -163,7 +163,7 @@ python -m server.tools.acceptance
 ```
 
 ```
-acceptance: 252/252 passed  (db acceptance-<stamp>.sqlite3)
+acceptance: 256/256 passed  (db acceptance-<stamp>.sqlite3)
 ```
 
 覆盖：配对、出题、判分、工单、错题本、掌握度、配额混合、两级报告、家长页、账号、排课、作废题目。

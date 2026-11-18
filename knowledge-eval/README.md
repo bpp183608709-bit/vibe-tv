@@ -106,7 +106,7 @@ knowledge-eval/
 | 出题 | `server/app/picker.py` | `topic.chapter_order`，不再 join `unit` |
 | 表结构 | `server/db/schema.sql` · `schema.sqlite.sql` | 27 表 / 259 列，两边列级一致 |
 | 迁移 | `server/db/migrate-2026-11-19-flat-nodes.sql` | 只加不删；`question.unit_id` 置空 |
-| 端到端验收 | `server/tools/acceptance.py` | 252 条 |
+| 端到端验收 | `server/tools/acceptance.py` | 256 条 |
 
 `evaluate.py` 与 `report.py` 的分工：前者只把「作答文件」变成「报告行」，后者决定报告的字段与过滤；两边共用 `mastery.summarise` / `mastery.level_of`，所以算错的话两边一起错——那才会被发现。
 

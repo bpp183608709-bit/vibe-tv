@@ -166,7 +166,7 @@ python -m pytest knowledge-eval/tests/test_report_weak_only.py -v
 5 passed    ← 默认只有 L0；weak_count == 行数；L2/L3 只在 full_view；篡改报告会被 assert 脚本拒绝
 ```
 
-端到端：`acceptance` 新增 4 条断言（默认只列薄弱 / 计数等于行数 / `?scope=all` 不动 diagnostics / full_view 是超集）。
+端到端：`acceptance` 新增 8 条断言——报告侧 4 条（默认只列薄弱 / 计数等于行数 / `?scope=all` 不动 diagnostics / full_view 是超集），`weakness` 生命周期 4 条（弱项列表每一行都有 weakness 行 / 行内带节点 id / 三次答错开出未掌握行 / 十条答对把同一行标为 resolved 而非删除）。
 
 ---
 
@@ -206,4 +206,4 @@ python knowledge-eval/scripts/assert_report_weak_only.py /tmp/report.json
 python -m server.tools.acceptance
 ```
 
-期望：`schema: ok` / `content: ok` / `15 passed` / `1 weak node(s)` / `weak-only: ok` / `252/252 passed`。
+期望：`schema: ok` / `content: ok` / `15 passed` / `1 weak node(s)` / `weak-only: ok` / `256/256 passed`。
