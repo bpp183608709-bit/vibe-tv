@@ -53,11 +53,28 @@ CREATE TABLE topic (
   id           INT UNSIGNED      NOT NULL AUTO_INCREMENT,
   unit_id      SMALLINT UNSIGNED NOT NULL,
   ordinal      TINYINT UNSIGNED  NOT NULL,
+  -- Stable business key, 'math-6up-d01'. The question files and docs/data_sources.md name nodes by
+  -- this, because the auto-increment id is not known until the tree is imported and must not leak into
+  -- content a human maintains.
+  code         VARCHAR(24)       NULL,
   name_zh      VARCHAR(64)       NOT NULL,        -- '分数乘整数'
   -- One line the parent reads in the weekly report; not shown to the child (C13 shows the name only).
   summary_zh   VARCHAR(255)      NULL,
+  -- The textbook's own sub-points this node covers, in the taxonomy's own words. JSON array of
+  -- {source_id, name, evidence, assessment_prompt}. JSON because nothing joins on it: the picker asks
+  -- for topic_id and the report prints names. Empty for a subject with no public taxonomy (语文/英语).
+  micro_nodes_json JSON          NULL,
+  -- Which other diagnostic nodes should be solid first, as taxonomy ids. Advisory: the picker does not
+  -- reorder by it (a child should not be blocked from a topic the calendar is teaching today).
+  prereq_json  JSON              NULL,
+  -- What kind of knowledge this node is (docs/RULES.md §2.3a): procedural/conceptual/representational
+  -- for maths, grammar/vocabulary/sentence_pattern/reading/listening_speaking for English, and the
+  -- Chinese set 字词基础/阅读理解/语言运用/习作方法. Free text rather than an ENUM: the three subjects
+  -- share one column and their vocabularies only overlap by accident.
+  knowledge_type VARCHAR(16)     NULL,
   PRIMARY KEY (id),
   UNIQUE KEY uk_topic (unit_id, ordinal),
+  UNIQUE KEY uk_topic_code (code),
   CONSTRAINT fk_topic_unit FOREIGN KEY (unit_id) REFERENCES unit (id)
 ) ENGINE=InnoDB;
 
@@ -68,6 +85,10 @@ CREATE TABLE question (
   unit_id          SMALLINT UNSIGNED NOT NULL,
   topic_id         INT UNSIGNED      NOT NULL,     -- the primary topic (E4: one label, ~10% multi)
   angle            ENUM('recall','understand','apply') NOT NULL,
+  -- What the child has to do with the knowledge, per subject (see docs/RULES.md §2.3a). Kept beside
+  -- `angle` rather than replacing it: angle is what the picker sorts and indexes on, ability_tag is
+  -- what the report splits a node by. NULL on rows imported before the split.
+  ability_tag      VARCHAR(16)       NULL,
   difficulty       TINYINT UNSIGNED  NOT NULL,     -- 1 easy, 2 medium, 3 hard
   qtype            ENUM('choice','fill') NOT NULL, -- E8: figures only as choice/fill
   stem             TEXT              NOT NULL,     -- <= 120 chars, enforced by the importer
@@ -204,6 +225,9 @@ CREATE TABLE daily_state (
   mix_c          TINYINT UNSIGNED NULL,        -- current-unit slots
   mix_r          TINYINT UNSIGNED NULL,        -- review slots
   mix_n          TINYINT UNSIGNED NULL,        -- how many weak topics drove the choice
+  -- How deep the weakest one was (3 = not mastered, 1 = basic). Frozen with the rest of the snapshot:
+  -- level can recover during the day, and a later group must still be sized by the morning's picture.
+  mix_deepest    TINYINT UNSIGNED NULL,
   mix_note       VARCHAR(120) NULL,            -- one line for the parent: why it went up or down
   updated_at     DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (device_id, day_key),
@@ -433,23 +457,43 @@ CREATE TABLE wrong_item (
 ) ENGINE=InnoDB;
 
 -- One row per device × topic: the number the parent reads and the weight the picker uses. `level` and
--- `weight_x10` are stored rather than derived because both are read on every serve.
+-- `weight_x10` are stored rather than derived because both are read on every serve. The truth is the
+-- rolling window below (`acc_x1000` and friends), recomputed from mastery_event after every answer;
+-- `score` is that window as 0..100 where higher means better, kept because the ledger's replay
+-- contract and every screen are written against it.
 CREATE TABLE topic_mastery (
   device_id     CHAR(26)         NOT NULL,
   topic_id      INT UNSIGNED     NOT NULL,
-  score         TINYINT UNSIGNED NOT NULL DEFAULT 0,  -- 0..100, clamped on every event
-  level         TINYINT UNSIGNED NOT NULL DEFAULT 0,  -- L0..L3
+  score         TINYINT UNSIGNED NOT NULL DEFAULT 0,  -- 0..100 mastery; higher is better
+  level         TINYINT UNSIGNED NOT NULL DEFAULT 0,  -- L0 not mastered .. L3 extended
   weight_x10    SMALLINT UNSIGNED NOT NULL DEFAULT 10, -- 10/20/30/40: integers, so no float rounding
   target_qty    TINYINT UNSIGNED NOT NULL DEFAULT 0,  -- 0/5/7/10; the generator fills up to this
   ready_qty     SMALLINT UNSIGNED NOT NULL DEFAULT 0, -- cache of "servable questions right now"
-  -- Two counters the weights depend on: the second right answer in a row is worth an extra -10, and
-  -- five wrong in a row takes the topic off the review segment for three days. Stored rather than
-  -- derived from the ledger because both are read on every grade.
+  -- The rolling window: the last MASTERY_WINDOW (10) answers on this topic, weighted by difficulty
+  -- (easy 10, medium 15, hard 20, all x10). acc_x1000 = correct_weight / weight_sum. Recomputed after
+  -- every write and cached here because the parent page reads one row per topic.
+  sample_count       TINYINT UNSIGNED  NOT NULL DEFAULT 0, -- 0..10; under 3 the node reads 待测
+  weight_sum_x10     SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+  correct_weight_x10 SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+  acc_x1000          SMALLINT UNSIGNED NOT NULL DEFAULT 0, -- 0..1000
+  hard_right         TINYINT UNSIGNED  NOT NULL DEFAULT 0, -- hard questions answered right in the window
+  -- Monotonic per topic. mastery_event orders its window by this, not by created_at: one submit writes
+  -- five rows sharing a timestamp, and ULIDs are not ordered within a millisecond.
+  seq           INT UNSIGNED      NOT NULL DEFAULT 0,
+  -- The parent's manual correction, cumulative and clamped to ±30. Applied on top of the window rather
+  -- than written into it, so one tap cannot fake evidence and it survives the window rolling over.
+  bias          SMALLINT          NOT NULL DEFAULT 0,
+  -- Five wrong in a row takes the topic off the review segment for three days. `wrong_streak` is
+  -- stored rather than derived from the ledger because it is read on every grade.
+  -- `right_streak` has no reader since the weighted model; kept so existing rows stay meaningful.
   right_streak  TINYINT UNSIGNED NOT NULL DEFAULT 0,
   wrong_streak  TINYINT UNSIGNED NOT NULL DEFAULT 0,
   paused_until  DATETIME         NULL,                -- five wrong in a row: off the review segment
   total_wrong   INT UNSIGNED     NOT NULL DEFAULT 0,
   total_right   INT UNSIGNED     NOT NULL DEFAULT 0,
+  -- When it became weak (level crossed into 0 or 1); NULL while it is not weak. The day's "newcomer"
+  -- slot keys on this, never on last_event_at: a right answer refreshes that one too.
+  weak_since    DATETIME         NULL,
   last_event_at DATETIME         NULL,
   updated_at    DATETIME         NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (device_id, topic_id),
@@ -458,17 +502,33 @@ CREATE TABLE topic_mastery (
   CONSTRAINT fk_mastery_topic  FOREIGN KEY (topic_id)  REFERENCES topic (id)
 ) ENGINE=InnoDB;
 
--- The ledger. Every change to topic_mastery.score has a row here with the weight that caused it, so
--- "why is this at 72" is a SELECT rather than an argument. `score_after` is the redundancy that makes
--- the ledger checkable: replay the deltas and the last one must equal the stored score.
+-- The ledger. Every change to topic_mastery.score has a row here, so "why is this at 72" is a SELECT
+-- rather than an argument. `score_after` is the redundancy that makes the ledger checkable: replay the
+-- deltas and the last one must equal the stored score. Rows with counted=1 are also the window the
+-- weighted accuracy is computed from, which is why the evidence columns live here instead of a second
+-- table: an answer is one fact, not two.
 CREATE TABLE mastery_event (
   id          CHAR(26)       NOT NULL,
   device_id   CHAR(26)       NOT NULL,
   topic_id    INT UNSIGNED   NOT NULL,
   kind        ENUM('tv_wrong','tv_right','paper_wrong','streak_bonus','parent_adjust',
                    'bad_question_void') NOT NULL,
-  delta       SMALLINT       NOT NULL,               -- signed; the only place the weights live
+  delta       SMALLINT       NOT NULL,               -- score_after - score_before, signed
   score_after TINYINT UNSIGNED NOT NULL,
+  -- The evidence behind a counted row. NULL on rows that are bookkeeping only (parent_adjust,
+  -- bad_question_void, model_rebase-era rows).
+  is_correct  TINYINT(1)         NULL,
+  difficulty  TINYINT UNSIGNED   NULL,               -- 1/2/3; NULL for a paper mistake
+  weight_x10  SMALLINT UNSIGNED  NULL,               -- 10/15/20 as counted
+  -- 1 = inside the rolling window, 0 = ledger only. Defaults to 0 so a writer that forgets the flag
+  -- cannot silently pollute the accuracy of a topic.
+  counted     TINYINT(1)     NOT NULL DEFAULT 0,
+  -- The window's state after this row, so a parent can read "答对一道中档题，正确率 60%" without
+  -- replaying ten rows. Mirrors topic_mastery.acc_x1000 / sample_count.
+  acc_after   SMALLINT UNSIGNED  NULL,
+  sample_after TINYINT UNSIGNED  NULL,
+  -- Position in this topic's own sequence; the window is ORDER BY seq DESC LIMIT 10.
+  seq         INT UNSIGNED   NOT NULL DEFAULT 0,
   -- What caused it: wrong_item.id for a paper mistake, '<session_id>:<question_id>' for a TV answer.
   -- VARCHAR rather than CHAR(26) because the TV case carries both halves of quiz_answer's key.
   ref_id      VARCHAR(64)    NULL,
@@ -476,6 +536,7 @@ CREATE TABLE mastery_event (
   created_at  DATETIME       NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
   KEY idx_mastery_event_topic (device_id, topic_id, created_at),
+  KEY idx_event_window (device_id, topic_id, seq),
   CONSTRAINT fk_event_device FOREIGN KEY (device_id) REFERENCES device (id),
   CONSTRAINT fk_event_topic  FOREIGN KEY (topic_id)  REFERENCES topic (id)
 ) ENGINE=InnoDB;

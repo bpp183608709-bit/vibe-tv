@@ -51,9 +51,16 @@ CREATE TABLE topic (
   id           INTEGER PRIMARY KEY AUTOINCREMENT,
   unit_id      INTEGER NOT NULL,
   ordinal      INTEGER NOT NULL,
+  code         TEXT    NULL,                     -- stable business key, 'math-6up-d01'
   name_zh      TEXT    NOT NULL,
   summary_zh   TEXT    NULL,
+  -- JSON array of {source_id, name, evidence, assessment_prompt}: the textbook's own sub-points this
+  -- node covers. TEXT because SQLite has no JSON type (the MySQL side is JSON).
+  micro_nodes_json TEXT NULL,
+  prereq_json  TEXT    NULL,                     -- taxonomy ids that should be solid first; advisory
+  knowledge_type TEXT  NULL,                     -- procedural/conceptual/grammar/阅读理解/... see RULES
   UNIQUE (unit_id, ordinal),
+  UNIQUE (code),
   FOREIGN KEY (unit_id) REFERENCES unit (id)
 );
 
@@ -63,6 +70,7 @@ CREATE TABLE question (
   unit_id          INTEGER NOT NULL,
   topic_id         INTEGER NOT NULL,
   angle            TEXT    NOT NULL CHECK (angle IN ('recall','understand','apply')),
+  ability_tag      TEXT    NULL,                  -- subject-specific ability; see docs/RULES.md §2.3a
   difficulty       INTEGER NOT NULL,
   qtype            TEXT    NOT NULL CHECK (qtype IN ('choice','fill')),
   stem             TEXT    NOT NULL,
@@ -161,6 +169,7 @@ CREATE TABLE daily_state (
   mix_c          INTEGER NULL,
   mix_r          INTEGER NULL,
   mix_n          INTEGER NULL,
+  mix_deepest    INTEGER NULL,                  -- deepest weak level at snapshot time (frozen)
   mix_note       TEXT    NULL,
   updated_at     TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (device_id, day_key),
@@ -373,16 +382,25 @@ CREATE INDEX idx_wrong_item_question ON wrong_item (question_id);
 CREATE TABLE topic_mastery (
   device_id     TEXT    NOT NULL,
   topic_id      INTEGER NOT NULL,
-  score         INTEGER NOT NULL DEFAULT 0,
-  level         INTEGER NOT NULL DEFAULT 0,
+  score         INTEGER NOT NULL DEFAULT 0,       -- 0..100 mastery; higher is better
+  level         INTEGER NOT NULL DEFAULT 0,       -- 0 not mastered .. 3 extended
   weight_x10    INTEGER NOT NULL DEFAULT 10,
   target_qty    INTEGER NOT NULL DEFAULT 0,
   ready_qty     INTEGER NOT NULL DEFAULT 0,
-  right_streak  INTEGER NOT NULL DEFAULT 0,     -- second right in a row is worth an extra -10
-  wrong_streak  INTEGER NOT NULL DEFAULT 0,     -- five in a row pauses the topic for three days
+  -- The rolling window over the last 10 answers, weighted easy 10 / medium 15 / hard 20 (x10).
+  sample_count       INTEGER NOT NULL DEFAULT 0,
+  weight_sum_x10     INTEGER NOT NULL DEFAULT 0,
+  correct_weight_x10 INTEGER NOT NULL DEFAULT 0,
+  acc_x1000          INTEGER NOT NULL DEFAULT 0,
+  hard_right         INTEGER NOT NULL DEFAULT 0,
+  seq           INTEGER NOT NULL DEFAULT 0,       -- per-topic sequence; the window's sort key
+  bias          INTEGER NOT NULL DEFAULT 0,       -- parent's correction, clamped to ±30
+  right_streak  INTEGER NOT NULL DEFAULT 0,       -- unused since the weighted model; kept for rows
+  wrong_streak  INTEGER NOT NULL DEFAULT 0,       -- five in a row pauses the topic for three days
   paused_until  TEXT    NULL,
   total_wrong   INTEGER NOT NULL DEFAULT 0,
   total_right   INTEGER NOT NULL DEFAULT 0,
+  weak_since    TEXT    NULL,                     -- when it became weak; NULL while it is not
   last_event_at TEXT    NULL,
   updated_at    TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (device_id, topic_id),
@@ -397,8 +415,15 @@ CREATE TABLE mastery_event (
   topic_id    INTEGER NOT NULL,
   -- One line on purpose: migrate.py reads one column declaration per line.
   kind        TEXT    NOT NULL CHECK (kind IN ('tv_wrong','tv_right','paper_wrong','streak_bonus','parent_adjust','bad_question_void')),
-  delta       INTEGER NOT NULL,
+  delta       INTEGER NOT NULL,                   -- score_after - score_before
   score_after INTEGER NOT NULL,
+  is_correct  INTEGER NULL,                       -- evidence, on counted rows only
+  difficulty  INTEGER NULL,                       -- 1/2/3; NULL for a paper mistake
+  weight_x10  INTEGER NULL,
+  counted     INTEGER NOT NULL DEFAULT 0,         -- 1 = inside the rolling window
+  acc_after   INTEGER NULL,
+  sample_after INTEGER NULL,
+  seq         INTEGER NOT NULL DEFAULT 0,
   ref_id      TEXT    NULL,
   note        TEXT    NULL,
   created_at  TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -406,6 +431,7 @@ CREATE TABLE mastery_event (
   FOREIGN KEY (device_id) REFERENCES device (id),
   FOREIGN KEY (topic_id)  REFERENCES topic (id)
 );
+CREATE INDEX idx_event_window ON mastery_event (device_id, topic_id, seq);
 CREATE INDEX idx_mastery_event_topic ON mastery_event (device_id, topic_id, created_at);
 
 CREATE TABLE gen_task (
