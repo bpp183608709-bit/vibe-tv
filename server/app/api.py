@@ -295,11 +295,18 @@ class Api:
         if not state["award_available"]:
             raise grading.GradeError("quota-exhausted", 409, "three groups or ninety minutes, already earned")
 
-        difficulty = limits.target_difficulty(row)
+        # A hard question is only in the pool for a node that has run out of runway (level 2, accuracy
+        # above 0.8, no hard one right yet). `hard` is that set; empty means the group is drawn at 2.
+        hard = picker.hard_topics(self.db, device_id)
+        difficulty = limits.target_difficulty(row, need_hard=bool(hard), hard_supply=len(hard))
         try:
             group = picker.pick_group(self.db, device_id, day_key, now_ms, difficulty)
         except picker.NotEnoughQuestions as exc:
             raise grading.GradeError("no-questions", 503, str(exc)) from exc
+
+        # Record what was actually served, not the cap: the child may have drawn nothing harder than 2,
+        # and "was this group harder than the last one" has to be answerable afterwards.
+        served_difficulty = max((int(q["difficulty"]) for q in group.questions), default=difficulty)
 
         session_id = new_ulid(now_ms)
         expires_at = now_ms + limits.SESSION_TTL_MS
@@ -310,7 +317,7 @@ class Api:
                 " VALUES (?, ?, ?, ?, ?, 'issued', ?, ?, ?, ?)",
                 (
                     session_id, device_id, day_key, limits.to_iso(now_ms), limits.to_iso(expires_at),
-                    difficulty, json.dumps([int(q["id"]) for q in group.questions]),
+                    served_difficulty, json.dumps([int(q["id"]) for q in group.questions]),
                     # Server-side bookkeeping only: the day's per-topic cap and the parent's mix
                     # metric read this. It never appears in the response (§9, §10).
                     json.dumps(group.review_ids),

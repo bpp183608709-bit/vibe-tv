@@ -72,14 +72,15 @@ CONFIG_RANGE = {
 #: What a device that has never been configured looks like. 60 minutes a day is G1.
 DEFAULT_CONFIG = {"daily_minutes": 60, "session_minutes": 30, "interval_minutes": 20}
 
-#: score at or above which a topic is on the weak list. Same number the picker uses (`mix.assess`) —
-#: imported rather than written down again, because a page that lists two topics the picker will not
-#: practise is worse than one that lists none.
-WEAK_FLOOR = mix.WEAK_MIN_SCORE
+#: What "weak" means on this page. Same predicate the picker uses (`mix.assess`): enough samples to be
+#: judged, and level ≤ 1. Imported rather than written down again, because a page that lists topics the
+#: picker will not practise is worse than one that lists none.
+WEAK_MAX_LEVEL = mix.WEAK_MAX_LEVEL
+WEAK_MIN_SAMPLE = mastery.MIN_SAMPLE
 
-#: level -> the word this page prints. L0 has one because a detail page can be opened for a topic that
-#: has already left the list (docs/WRONGBOOK.md §5.2 fixes the bands; only the wording is here).
-LEVEL_WORDS = ("牢固", "需巩固", "不牢", "很弱")
+#: level -> the word this page prints. The numeric form ("0-未掌握") is for the report; a chip on a
+#: phone wants the short word.
+LEVEL_WORDS = ("未掌握", "基础", "熟练", "拓展")
 
 #: `mastery_event.kind` -> what the parent reads when the row has no note of its own.
 KIND_LABELS = {
@@ -695,17 +696,24 @@ class H5:
         if topic_id is not None:
             where, params, tail = "WHERE t.id = ?", (device_id, device_id, topic_id), "ORDER BY t.id"
         elif floor:
-            where, params = "WHERE COALESCE(m.score, 0) >= ?", (device_id, device_id, WEAK_FLOOR)
-            tail = "ORDER BY COALESCE(m.score, 0) DESC, t.name_zh"
+            # A node is on the list only once it has been measured (sample_count ≥ 3) and is weak
+            # (level ≤ 1). Worst first: lowest level, then lowest accuracy, then the newest mistake.
+            where = "WHERE COALESCE(m.level, 3) <= ? AND COALESCE(m.sample_count, 0) >= ?"
+            params = (device_id, device_id, WEAK_MAX_LEVEL, WEAK_MIN_SAMPLE)
+            tail = "ORDER BY COALESCE(m.level, 3), COALESCE(m.acc_x1000, 1000), t.name_zh"
         else:
             where, params = "WHERE 1 = 1", (device_id, device_id)
             tail = "ORDER BY s.id, u.ordinal, t.ordinal"
         rows = self.db.query(
-            "SELECT t.id AS topic_id, t.name_zh AS topic,"
+            "SELECT t.id AS topic_id, t.name_zh AS topic, t.code AS node_code,"
+            "       t.knowledge_type, t.summary_zh,"
             "       u.ordinal AS unit_ordinal, u.name_zh AS unit,"
             "       s.name_zh AS subject, s.code AS subject_code, b.id AS textbook_id,"
             "       COALESCE(m.score, 0) AS score, COALESCE(m.total_wrong, 0) AS total_wrong,"
             "       COALESCE(m.total_right, 0) AS total_right, m.paused_until,"
+            "       COALESCE(m.level, 0) AS level, COALESCE(m.sample_count, 0) AS sample_count,"
+            "       COALESCE(m.acc_x1000, 0) AS acc_x1000, COALESCE(m.hard_right, 0) AS hard_right,"
+            "       COALESCE(m.bias, 0) AS bias,"
             "       (SELECT MAX(w.occurred_on) FROM wrong_item w"
             "         WHERE w.device_id = ? AND w.topic_id = t.id AND w.status = 'confirmed')"
             "        AS last_wrong_on,"
@@ -720,7 +728,26 @@ class H5:
             f" {where} {tail}",
             params,
         )
-        return [self._shape_topic(row) for row in rows]
+        windows = self._windows(device_id)
+        return [self._shape_topic(row, windows.get(int(row["topic_id"]))) for row in rows]
+
+    def _windows(self, device_id: str) -> dict[int, list[dict]]:
+        """The rolling window per topic, in one read.
+
+        The list page needs it for every row's 「还要答对几道」, and a query per topic would be fifty-odd
+        round trips for numbers that come from one small table.
+        """
+        rows = self.db.query(
+            "SELECT topic_id, is_correct, weight_x10, seq FROM mastery_event"
+            " WHERE device_id = ? AND counted = 1 ORDER BY topic_id, seq DESC",
+            (device_id,),
+        )
+        out: dict[int, list[dict]] = {}
+        for row in rows:
+            bucket = out.setdefault(int(row["topic_id"]), [])
+            if len(bucket) < mastery.MASTERY_WINDOW:
+                bucket.append(row)
+        return out
 
     def catalog(self, device_id: str) -> dict:
         """Every topic, weak or not, for the add sheet's picker.
@@ -731,22 +758,36 @@ class H5:
         """
         return {"topics": self._topics(device_id, floor=False)}
 
-    def _shape_topic(self, row: dict) -> dict:
-        score = int(row["score"] or 0)
-        level = mastery.level_of(score)
+    def _shape_topic(self, row: dict, window: list[dict] | None = None) -> dict:
+        level = int(row["level"] or 0)
+        acc = int(row["acc_x1000"] or 0)
+        sample = int(row["sample_count"] or 0)
+        hard_right = int(row["hard_right"] or 0)
+        bias = int(row["bias"] or 0)
         return {
             "topic_id": int(row["topic_id"]),
             "topic": row["topic"],
+            "node_code": row.get("node_code"),
+            "knowledge_type": row.get("knowledge_type"),
+            "summary": row.get("summary_zh"),
             "subject": row["subject"],
             "subject_code": row["subject_code"],
             "textbook_id": int(row["textbook_id"]),
             "unit": row["unit"],
             "unit_ordinal": int(row["unit_ordinal"]),
-            "score": score,
+            "score": int(row["score"] or 0),
             "level": level,
             "level_name": mastery.LEVEL_NAMES[level],
             "level_word": LEVEL_WORDS[level],
-            "need_right": mastery.need_right(score),
+            # What the parent reads: a node under three answers is 待测, not 未掌握. Printing the band
+            # for a node nobody has measured would accuse the child of not knowing something untested.
+            "level_label": mastery.LEVEL_WORDS[level] if sample >= WEAK_MIN_SAMPLE else "待测",
+            "weighted_accuracy": round(acc / 1000, 3),
+            "sample_count": sample,
+            "hard_right": hard_right,
+            "bias": bias,
+            "need_sample": mastery.need_sample(sample),
+            "need_right": mastery.need_right(acc, sample, hard_right, bias, window),
             "weight": mastery.weight_x10(level) / 10,
             "target_qty": mastery.target_qty(level),
             "daily_cap": mastery.daily_cap(level),
@@ -764,7 +805,7 @@ class H5:
         from a page view would decide the child's day at the moment the parent happened to open the tab.
         """
         row = self.db.query_one(
-            "SELECT mix_state, mix_c, mix_r, mix_n, mix_note FROM daily_state"
+            "SELECT mix_state, mix_c, mix_r, mix_n, mix_deepest, mix_note FROM daily_state"
             " WHERE device_id = ? AND day_key = ?",
             (device_id, day_key),
         )
@@ -772,7 +813,8 @@ class H5:
             return None
         c, r = int(row["mix_c"]), int(row["mix_r"])
         return {"state": row["mix_state"], "c": c, "r": r, "p": limits.GROUP_SIZE - c - r,
-                "n": int(row["mix_n"] or 0), "note": row.get("mix_note") or ""}
+                "n": int(row["mix_n"] or 0), "deepest": int(row["mix_deepest"] or 0),
+                "note": row.get("mix_note") or ""}
 
     def _week_stats(self, device_id: str, day_key: str, weak_ids: list[int]) -> dict:
         """The four numbers on the list page: how many arrived, how many left, and the average then/now.
@@ -801,10 +843,13 @@ class H5:
         weak = set(weak_ids)
         arrived = [topic_id for topic_id in weak if first_at.get(topic_id, "") >= cutoff]
         cleared = [topic_id for topic_id in touched if topic_id not in weak]
+        # 平均掌握度, not 平均错误分: the number now means "how well", so higher is better everywhere.
         scores = [
             int(row["score"]) for row in self.db.query(
-                "SELECT score FROM topic_mastery WHERE device_id = ?", (device_id,)
-            ) if int(row["score"]) >= WEAK_FLOOR
+                "SELECT score FROM topic_mastery"
+                " WHERE device_id = ? AND level <= ? AND sample_count >= ?",
+                (device_id, WEAK_MAX_LEVEL, WEAK_MIN_SAMPLE),
+            )
         ]
         before_scores = [before.get(topic_id, 0) for topic_id in weak]
         return {
@@ -829,7 +874,7 @@ class H5:
         return {
             "items": items,
             "count": len(items),
-            "weak_floor": WEAK_FLOOR,
+            "weak_max_level": WEAK_MAX_LEVEL,
             "mix": self._mix(device_id, day_key),
             "week": self._week_stats(device_id, day_key, [item["topic_id"] for item in items]),
             "today": day_key,
@@ -850,8 +895,9 @@ class H5:
 
         events = []
         for row in self.db.query(
-            "SELECT kind, delta, score_after, note, created_at FROM mastery_event"
-            " WHERE device_id = ? AND topic_id = ? ORDER BY created_at DESC, id DESC LIMIT 20",
+            "SELECT kind, delta, score_after, acc_after, sample_after, note, created_at"
+            " FROM mastery_event WHERE device_id = ? AND topic_id = ?"
+            " ORDER BY created_at DESC, id DESC LIMIT 20",
             (device_id, topic_id),
         ):
             events.append({
@@ -859,6 +905,9 @@ class H5:
                 "label": row.get("note") or KIND_LABELS.get(row["kind"], row["kind"]),
                 "delta": int(row["delta"]),
                 "score_after": int(row["score_after"]),
+                # 为什么是这个数：每次写后的窗口正确率与样本数，比 delta 更能解释一次答对/答错
+                "acc_after": None if row["acc_after"] is None else int(row["acc_after"]) / 1000,
+                "sample_after": row["sample_after"],
                 "at": row["created_at"],
             })
 
@@ -881,7 +930,7 @@ class H5:
         item["today_used"] = int(used.get(topic_id, 0))
         item["events"] = events
         item["wrong_items"] = wrong
-        item["coach"] = coach.line(item["level"], item["need_right"])
+        item["coach"] = coach.line(item["level"], item["need_right"], item["need_sample"])
         return item
 
     def adjust_topic(self, device_id: str, topic_id: int, body: dict, now_ms: int,

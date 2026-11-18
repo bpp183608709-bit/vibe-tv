@@ -76,7 +76,27 @@ class Group:
     plan: dict = field(default_factory=dict)
 
 
-def _candidates(db, device_id: str, difficulty_cap: int) -> list[dict]:
+def hard_topics(db, device_id: str) -> set[int]:
+    """Nodes that may be served a hard question: 熟练 by accuracy but never a hard one right.
+
+    Without this set the group's difficulty cap has nothing to apply to — 3-拓展 needs a hard question
+    answered right, and nothing else would ever serve one.
+    """
+    rows = db.query(
+        "SELECT topic_id FROM topic_mastery"
+        " WHERE device_id = ? AND level = 2 AND acc_x1000 > 800 AND hard_right = 0",
+        (device_id,),
+    )
+    return {int(row["topic_id"]) for row in rows}
+
+
+def _candidates(db, device_id: str, difficulty_cap: int,
+                hard: set[int] | None = None) -> list[dict]:
+    """Servable questions, difficulty-filtered.
+
+    The cap applies to everything except hard questions on a node in `hard` — those are allowed through
+    even at cap 2, because they are the only way that node can reach 拓展.
+    """
     rows = db.query(
         "SELECT q.id, q.topic_id, q.qtype, q.stem, q.difficulty, q.angle,"
         " u.ordinal AS unit_ordinal, b.id AS textbook_id, b.subject_id,"
@@ -89,9 +109,14 @@ def _candidates(db, device_id: str, difficulty_cap: int) -> list[dict]:
         " LEFT JOIN topic_signal ts ON ts.topic_id = q.topic_id AND ts.device_id = ?"
         " WHERE q.retired_at IS NULL AND q.verify_status IN ('sympy_ok', 'manual_ok')"
         "   AND q.difficulty <= ?",
-        (device_id, device_id, difficulty_cap),
+        (device_id, device_id, max(int(difficulty_cap), 3)),
     )
-    return [dict(r) for r in rows]
+    allowed_hard = hard or set()
+    return [
+        dict(row) for row in rows
+        if int(row["difficulty"]) <= difficulty_cap
+        or (int(row["difficulty"]) == 3 and int(row["topic_id"]) in allowed_hard)
+    ]
 
 
 #: a question the child has not been taught yet. Served only when the taught part of the book runs out.
@@ -248,7 +273,7 @@ def _review_pick(fresh: list[dict], weak: dict[int, dict], supply: Counter, rng:
 def pick_group(db, device_id: str, day_key: str, now_ms: int, difficulty: int) -> Group:
     """Return the chosen question rows, in the order they will be served, plus the review bookkeeping."""
     stages = curriculum.resolve(db, device_id, now_ms)
-    rows = _candidates(db, device_id, difficulty)
+    rows = _candidates(db, device_id, difficulty, hard_topics(db, device_id) if difficulty < 3 else None)
     if not rows:
         raise NotEnoughQuestions("the bank has no servable questions at this difficulty")
 

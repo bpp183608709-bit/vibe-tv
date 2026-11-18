@@ -261,7 +261,7 @@ def grade_session(
     questions = {
         int(row["id"]): dict(row)
         for row in db.query(
-            "SELECT q.id, q.topic_id, q.qtype, q.stem, q.explanation_zh,"
+            "SELECT q.id, q.topic_id, q.qtype, q.difficulty, q.stem, q.explanation_zh,"
             "       t.name_zh AS topic, s.name_zh AS subject"
             "  FROM question q"
             "  JOIN topic t ON t.id = q.topic_id"
@@ -371,7 +371,7 @@ def grade_session(
             mastery.record_tv_answer(
                 cur, device_id=device_id, topic_id=topic_id, correct=correct, flagged=flagged,
                 session_id=session_id, question_id=qid, now_ms=now_ms, now_iso=now_iso,
-                lock=db.lock_clause(),
+                difficulty=int(questions[qid]["difficulty"] or 2), lock=db.lock_clause(),
             )
 
         if passed and quota["award_available"]:

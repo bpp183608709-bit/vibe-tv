@@ -39,6 +39,8 @@ MIN_GROUP_SIZE = 3
 REPEAT_WINDOW_DAYS = 7
 DEFAULT_DIFFICULTY = 2
 HARD_MIN_DIFFICULTY = 1
+#: The third step, served only where it can actually move the level (see target_difficulty).
+HARD_DIFFICULTY = 3
 
 ISO = "%Y-%m-%d %H:%M:%S"
 
@@ -107,12 +109,20 @@ def get_or_create_daily(db, device_id: str, day_key: str, now_ms: int) -> dict:
     )
 
 
-def target_difficulty(row: dict) -> int:
+def target_difficulty(row: dict, *, need_hard: bool = False, hard_supply: int = 0) -> int:
     """C7: after three failures in a row, serve one level easier — and say nothing in the UI.
-    The child should feel that the questions got easier, not be told that the system gave up."""
+    The child should feel that the questions got easier, not be told that the system gave up.
+
+    A node that has run out of runway gets a hard question instead: level 2 with accuracy above 0.8 and
+    no hard question right yet. Without this, 3-拓展 would be unreachable — the gate needs a hard
+    question answered right, and nothing else ever serves one. `hard_supply` keeps it honest: when the
+    bank has no hard question for that node, it stays at 熟练 rather than pretending.
+    """
     fail_count = int(row.get("fail_count") or 0)
     if fail_count >= 3:
         return max(HARD_MIN_DIFFICULTY, DEFAULT_DIFFICULTY - 1)
+    if need_hard and int(hard_supply) >= 1:
+        return HARD_DIFFICULTY
     return DEFAULT_DIFFICULTY
 
 
@@ -141,6 +151,12 @@ def _selfcheck() -> None:
     assert is_cooldown_active({"cooldown_until": None}, 0) == 0
     assert target_difficulty({"fail_count": 3}) == 1
     assert target_difficulty({"fail_count": 2}) == 2
+    # a hard question only where it can unlock 拓展, and only when the bank has one
+    assert target_difficulty({"fail_count": 2}, need_hard=True, hard_supply=1) == 3
+    assert target_difficulty({"fail_count": 2}, need_hard=True, hard_supply=0) == 2
+    assert target_difficulty({"fail_count": 2}, need_hard=False, hard_supply=5) == 2
+    # a failing day wins over the hard question: C7 exists so the child does not stall
+    assert target_difficulty({"fail_count": 3}, need_hard=True, hard_supply=1) == 1
     print("limits: ok")
 
 

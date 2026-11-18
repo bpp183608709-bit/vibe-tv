@@ -37,7 +37,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from server.app import curriculum, es256, grade as grading, ids, limits, mastery, mix, picker, ticket  # noqa: E402
 from server.app.db import Database  # noqa: E402
-from server.tools import check_tv_silence, gen_seed_questions, import_curriculum  # noqa: E402
+from server.tools import check_tv_silence, import_curriculum, import_questions  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 LOCAL = ROOT / "local"
@@ -345,8 +345,12 @@ def main(argv: list[str] | None = None) -> int:
             return 2
     tree = json.loads((ROOT / "content/curriculum/grade6-up.json").read_text(encoding="utf-8"))
     import_curriculum.import_tree(db, tree)
+    # The bank is the hand-written one now (content/questions/*.json): 39 questions on 13 diagnostic
+    # nodes, three difficulties each. The template generator is still in the tree for the topics it can
+    # serve, but it is no longer how this suite gets a bank — it would fill nodes the design left at 待测
+    # and hide the coverage the bank is supposed to prove (content/tools/check_content.py).
     if db.scalar("SELECT COUNT(*) FROM question", default=0) == 0:
-        gen_seed_questions.main(["--per-topic", "5", "--dsn", dsn])
+        import_questions.main(["--dsn", dsn])
     db.close()
 
     # ---- 3. key pair and server ----
@@ -555,8 +559,8 @@ def main(argv: list[str] | None = None) -> int:
         filed = probe.query(
             "SELECT question_id, source, status FROM wrong_item WHERE device_id = ?", (device5,))
         ledger = probe.query(
-            "SELECT topic_id, kind, delta, score_after FROM mastery_event WHERE device_id = ?"
-            " ORDER BY created_at, id", (device5,))
+            "SELECT topic_id, kind, delta, score_after, acc_after, sample_after, counted"
+            " FROM mastery_event WHERE device_id = ? ORDER BY created_at, id", (device5,))
         stored = {int(r["topic_id"]): int(r["score"]) for r in probe.query(
             "SELECT topic_id, score FROM topic_mastery WHERE device_id = ?", (device5,))}
         probe.close()
@@ -569,8 +573,14 @@ def main(argv: list[str] | None = None) -> int:
               sum(1 for e in ledger if e["kind"] == "tv_wrong") == 3, str(ledger))
         check("one ledger row per right answer",
               sum(1 for e in ledger if e["kind"] == "tv_right") == 2, str(ledger))
-        check("a first mistake is worth twelve",
-              all(e["delta"] == 12 for e in ledger if e["kind"] == "tv_wrong"), str(ledger))
+        # The exact numbers live further down, where the difficulty is ours to choose. Here the group is
+        # whatever the picker served, so the honest assertions are about direction and about the row.
+        check("no wrong answer raises the score and no right one lowers it",
+              all(int(e["delta"]) <= 0 for e in ledger if e["kind"] == "tv_wrong")
+              and all(int(e["delta"]) >= 0 for e in ledger if e["kind"] == "tv_right"), str(ledger))
+        check("each ledger row carries the accuracy and the sample it produced",
+              bool(ledger) and all(0 <= int(e["acc_after"]) <= 1000 and int(e["sample_after"]) >= 1
+                                   and int(e["counted"]) == 1 for e in ledger), str(ledger[:2]))
         # The ledger is only worth keeping if replaying it lands on the stored score. This is also the
         # check that would catch a weight changed in one place and not the other.
         check("the ledger replays to the stored score",
@@ -620,69 +630,143 @@ def main(argv: list[str] | None = None) -> int:
         check("and the android module has none either", not silence, "; ".join(silence[:3]))
 
         # ---- the rules a random group cannot be made to hit, driven straight at the model ----
+        # Five fresh topics on one device. The window is per (device, topic), so each case below gets its
+        # own arithmetic instead of inheriting the previous case's answers — which is also why the hand
+        # computations stay short enough to check.
         device6 = pair()
         probe = Database(dsn)
         probe.connect()
-        topic6 = int(probe.scalar("SELECT id FROM topic ORDER BY id LIMIT 1"))
+        topic6, topic_mix, topic_hard, topic_paper, topic_gate = [
+            int(row["id"]) for row in probe.query("SELECT id FROM topic ORDER BY id LIMIT 5")]
         iso6 = limits.to_iso(1_770_000_000_000)
 
-        def answer(correct: bool, flagged: bool = False, question_id: int = 1) -> dict:
+        def answer(correct: bool, *, topic: int | None = None, flagged: bool = False,
+                   question_id: int = 1, difficulty: int = 2) -> dict:
             with probe.tx() as cur:
                 return mastery.record_tv_answer(
-                    cur, device_id=device6, topic_id=topic6, correct=correct, flagged=flagged,
-                    session_id="01ACCEPTANCE00000000000001", question_id=question_id,
-                    now_ms=1_770_000_000_000, now_iso=iso6)
+                    cur, device_id=device6, topic_id=topic or topic6, correct=correct,
+                    flagged=flagged, session_id="01ACCEPTANCE00000000000001",
+                    question_id=question_id, now_ms=1_770_000_000_000, now_iso=iso6,
+                    difficulty=difficulty)
 
+        # 中 is weight 1.5. Wrong, wrong, right, right, right is accuracy 0, 0, 1/3, 1/2, 3/5, so the
+        # four band seams (0.4 / 0.6 / 0.8) are crossed by hand arithmetic rather than by a formula.
         answer(False)
-        answer(False)                       # 24
-        answer(True)                        # 14
-        answer(True)                        # 4, then the pair bonus takes it to 0
-        after_pair = mastery.state(probe, device6, topic6)
-        check("a pair of right answers clears two mistakes", after_pair["score"] == 0,
-              str(after_pair))
-        bonus = probe.query(
-            "SELECT delta FROM mastery_event WHERE device_id = ? AND kind = 'streak_bonus'", (device6,))
-        check("the pair bonus is its own ledger row, clamped like everything else",
-              len(bonus) == 1 and int(bonus[0]["delta"]) == -4, str(bonus))
+        answer(False)
+        unmeasured = mastery.state(probe, device6, topic6)
+        check("two wrong answers are zero accuracy and still 待测",
+              (unmeasured["score"], unmeasured["weighted_accuracy"], unmeasured["need_sample"])
+              == (0, 0.0, 1), str(unmeasured))
+        answer(True)
+        third = mastery.state(probe, device6, topic6)
+        check("one right of three is 33 and reads 未掌握",
+              (third["score"], third["level"]) == (33, 0), str(third))
+        answer(True)
+        half = mastery.state(probe, device6, topic6)
+        check("two of four is 50 and reads 基础", (half["score"], half["level"]) == (50, 1), str(half))
+        answer(True)
+        fifth = mastery.state(probe, device6, topic6)
+        check("three of five is 60 and reads 熟练", (fifth["score"], fifth["level"]) == (60, 2),
+              str(fifth))
+        check("拓展 is not reachable on accuracy alone", fifth["level"] < 3, str(fifth))
 
-        for index in range(5):
-            paused = answer(False, question_id=10 + index)
+        # The weight is the difficulty. The same one-right-one-wrong pattern reads 333 when the right one
+        # was easy and 667 when it was hard, which is the whole reason difficulty is stored per answer.
+        answer(True, topic=topic_mix, difficulty=1)
+        easy_first = answer(False, topic=topic_mix, difficulty=3)["score"]
+        check("an easy right against a hard wrong is 33", easy_first == 33, str(easy_first))
+        answer(True, topic=topic_hard, difficulty=3)
+        hard_first = answer(False, topic=topic_hard, difficulty=1)["score"]
+        check("a hard right against an easy wrong is 67", hard_first == 67, str(hard_first))
+
+        # Ten medium rights are full accuracy but still 熟练; one hard right, and only then, is 拓展.
+        for index in range(mastery.MASTERY_WINDOW):
+            answer(True, topic=topic_gate, question_id=30 + index)
+        capped = mastery.state(probe, device6, topic_gate)
+        check("full accuracy without a hard question stops at 熟练",
+              (capped["score"], capped["level"], capped["hard_right"]) == (100, 2, 0), str(capped))
+        answer(True, topic=topic_gate, question_id=50, difficulty=3)
+        gate = mastery.state(probe, device6, topic_gate)
+        check("one hard question right is what buys 拓展",
+              (gate["level"], gate["level_word"], gate["hard_right"]) == (3, "3-拓展", 1), str(gate))
+        check("the window slides instead of growing",
+              gate["sample_count"] == mastery.MASTERY_WINDOW, str(gate["sample_count"]))
+        check("and the parent page can still promise a way out", gate["need_right"] == 0, str(gate))
+
+        # Five wrong in a row pauses the topic. The window is full now — three right and seven wrong,
+        # all at 中 — so 45/150 is 30%, and 30 is what the parent reads.
+        for index in range(mastery.WRONG_STREAK_PAUSE):
+            paused = answer(False, question_id=60 + index)
         check("five wrong in a row pauses the topic", paused["paused_until"] is not None, str(paused))
-        check("and leaves the score at sixty", paused["score"] == 60, str(paused))
-        again6 = answer(False, question_id=20)
+        check("and takes the topic from 60 to 30", paused["score"] == 30, str(paused))
+        again6 = answer(False, question_id=70)
         check("a sixth wrong answer does not extend the pause",
-              again6["paused_until"] == paused["paused_until"], f"{again6['paused_until']}")
+              again6["paused_until"] == paused["paused_until"], str(again6["paused_until"]))
+        check("three answers is the point where a node stops being 待测",
+              (mastery.need_sample(2), mastery.need_sample(3)) == (1, 0), "need_sample")
 
-        paper_a = ids.new_ulid(1_770_000_000_000)
-        with probe.tx() as cur:
-            cur.execute(
-                "INSERT INTO wrong_item (id, device_id, source, topic_id, occurred_on, status)"
-                " VALUES (?, ?, 'paper', ?, ?, 'confirmed')", (paper_a, device6, topic6, DAY))
-            first_paper = mastery.record_paper_wrong(
-                cur, device_id=device6, topic_id=topic6, wrong_item_id=paper_a, day_key=DAY,
-                now_iso=iso6)
-        paper_b = ids.new_ulid(1_770_000_000_000)
-        with probe.tx() as cur:
-            cur.execute(
-                "INSERT INTO wrong_item (id, device_id, source, topic_id, occurred_on, status)"
-                " VALUES (?, ?, 'paper', ?, ?, 'confirmed')", (paper_b, device6, topic6, DAY))
-            second_paper = mastery.record_paper_wrong(
-                cur, device_id=device6, topic_id=topic6, wrong_item_id=paper_b, day_key=DAY,
-                now_iso=iso6)
-        check("the first paper mistake of the day is worth twenty",
-              first_paper["delta"] == 20, str(first_paper))
-        check("the second on the same topic is worth eight",
-              second_paper["delta"] == 8, str(second_paper))
+        # A paper mistake is one easy-weight row, and the day caps how many of them count: a worksheet
+        # typed in one go must not push the ten real answers out of the window.
+        for index in range(3):
+            answer(True, topic=topic_paper, question_id=80 + index)
+        check("three right answers are full accuracy",
+              mastery.state(probe, device6, topic_paper)["score"] == 100, "100")
+        papers = []
+        for _ in range(mastery.PAPER_PER_DAY + 1):
+            paper_id = ids.new_ulid(1_770_000_000_000)
+            with probe.tx() as cur:
+                cur.execute(
+                    "INSERT INTO wrong_item (id, device_id, source, topic_id, occurred_on, status)"
+                    " VALUES (?, ?, 'paper', ?, ?, 'confirmed')", (paper_id, device6, topic_paper, DAY))
+                papers.append(mastery.record_paper_wrong(
+                    cur, device_id=device6, topic_id=topic_paper, wrong_item_id=paper_id,
+                    day_key=DAY, now_iso=iso6))
+        check("the first three paper mistakes cost 18, 13 and 9",
+              [entry["delta"] for entry in papers[:3]] == [-18, -13, -9],
+              str([entry["delta"] for entry in papers[:3]]))
+        check("the fourth paper mistake of the day is filed but not counted",
+              papers[3]["delta"] == 0, str(papers[3]))
+        counted = probe.query(
+            "SELECT counted FROM mastery_event WHERE device_id = ? AND topic_id = ?"
+            " AND kind = 'paper_wrong' ORDER BY seq", (device6, topic_paper))
+        check("so the window keeps three counted mistakes and one row for the parent",
+              [int(row["counted"]) for row in counted] == [1, 1, 1, 0], str(counted))
+
+        # Telling the truth costs nothing: a right answer marked 没学过 is not evidence either way.
+        before_flag = probe.scalar(
+            "SELECT COUNT(*) FROM mastery_event WHERE device_id = ? AND topic_id = ?",
+            (device6, topic_paper))
+        answer(True, topic=topic_paper, flagged=True, question_id=90)
+        after_flag = probe.scalar(
+            "SELECT COUNT(*) FROM mastery_event WHERE device_id = ? AND topic_id = ?",
+            (device6, topic_paper))
+        check("a right answer marked 没学过 writes no evidence", after_flag == before_flag,
+              f"{before_flag} -> {after_flag}")
+
+        # The parent's ±10 is a bias on the displayed score, never on the accuracy: three taps and a
+        # fourth must stop at ±30, and the level must not move at all.
+        nudges = []
+        for _ in range(4):
+            with probe.tx() as cur:
+                nudges.append(mastery.adjust(cur, device_id=device6, topic_id=topic_paper, delta=10,
+                                             note="周末给他讲过了", now_iso=iso6))
+        nudged = mastery.state(probe, device6, topic_paper)
+        check("the parent's taps stop at plus thirty",
+              (nudged["bias"], nudged["score"]) == (30, 90), str(nudged))
+        check("and do not touch the accuracy or the level",
+              (nudged["weighted_accuracy"], nudged["level"]) == (0.6, 2), str(nudged))
+        check("every tap is its own ledger row",
+              len([entry for entry in nudges if entry["delta"] == 10]) == 3, str(nudges))
         final6 = mastery.state(probe, device6, topic6)
         probe.close()
-        check("a maxed-out topic reads as very weak", final6["level"] == 3 and final6["weight"] == 4.0,
-              str(final6))
-        check("the parent page can still promise a way out",
-              final6["need_right"] == mastery.need_right(final6["score"]) > 0, str(final6))
+        check("a node at 30 is weak, and the parent page can say how far it is from 熟练",
+              mastery.is_weak(final6["sample_count"], final6["level"])
+              and final6["need_right"] >= 1, str(final6))
 
         # ---- P0-C: the five slots are split by need (docs/WRONGBOOK.md §6) ----
-        # One weak topic is enough to set the state: the count and the depth are judged separately and
-        # the heavier one wins, so a single L3 topic is S3 on its own.
+        # Two dimensions and the heavier one wins: three 基础 nodes are S2 from the count, one 未掌握
+        # node is S3 from the depth. Both directions are below, because getting only one of them right
+        # is how the old table managed to be wrong in two places at once.
         probe = Database(dsn)
         probe.connect()
 
@@ -691,23 +775,32 @@ def main(argv: list[str] | None = None) -> int:
         BEFORE_DAY = "2026-11-10 12:00:00"
 
         def weak_topics(count: int) -> list[int]:
-            """Topics with questions to spare, outside the current unit and the two before it."""
+            """Topics with at least two servable questions, so a review slot can always be filled."""
             return [int(row["topic_id"]) for row in probe.query(
-                "SELECT q.topic_id FROM question q JOIN unit u ON u.id = q.unit_id"
-                " WHERE q.difficulty <= 2 AND u.ordinal >= 5 AND q.verify_status = 'sympy_ok'"
-                f" GROUP BY q.topic_id HAVING COUNT(*) >= 3 ORDER BY q.topic_id LIMIT {int(count)}")]
+                "SELECT q.topic_id FROM question q WHERE q.difficulty <= 2"
+                " AND q.verify_status IN ('sympy_ok', 'manual_ok') AND q.retired_at IS NULL"
+                f" GROUP BY q.topic_id HAVING COUNT(*) >= 2 ORDER BY q.topic_id LIMIT {int(count)}")]
 
         def weak_topic() -> int:
             return weak_topics(1)[0]
 
-        def mark_weak(device_id: str, topic_id: int, score: int, when: str = BEFORE_DAY) -> None:
-            level = mastery.level_of(score)
+        def mark_weak(device_id: str, topic_id: int, level: int, when: str = BEFORE_DAY) -> None:
+            """Give a topic the window that level means: 1 right of 3 (未掌握) or 2 of 4 (基础).
+
+            Written into the columns rather than driven through `record_tv_answer`, because the cases
+            below are about the quota. Setting the quota's input up by answering eight questions would
+            only re-test the model, and would do it more slowly.
+            """
+            sample, weight_sum, correct = (3, 45, 15) if level == 0 else (4, 60, 30)
+            acc = round(1000 * correct / weight_sum)
             with probe.tx() as cur:
                 cur.execute(
                     "INSERT INTO topic_mastery (device_id, topic_id, score, level, weight_x10,"
-                    " target_qty, last_event_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-                    (device_id, topic_id, score, level, mastery.weight_x10(level),
-                     mastery.target_qty(level), when, when))
+                    " target_qty, sample_count, weight_sum_x10, correct_weight_x10, acc_x1000,"
+                    " wrong_streak, weak_since, last_event_at, updated_at)"
+                    " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?)",
+                    (device_id, topic_id, round(acc / 10), level, mastery.weight_x10(level),
+                     mastery.target_qty(level), sample, weight_sum, correct, acc, when, when, when))
 
         def split(device_id: str, session: dict) -> tuple[int, int, int]:
             """(review, current-unit, total), read back from the database rather than the response."""
@@ -724,36 +817,37 @@ def main(argv: list[str] | None = None) -> int:
                           if int(row["ordinal"]) == int(row["current"]) and int(row["id"]) not in review)
             return len(review), current, len(qids)
 
-        # S0 / S1 / S2 / S3 by one score each, because a single L3 topic is S3 without help.
-        for score, state, expected_r, expected_c in ((None, mix.S0, 0, 5),
-                                                     (12, mix.S1, 1, 4),
-                                                     (36, mix.S2, 2, 3),
-                                                     (71, mix.S3, 2, 2)):
+        for levels, state, expected_r, expected_c in (([], mix.S0, 0, 5),
+                                                     ([1], mix.S1, 1, 4),
+                                                     ([1, 1, 1], mix.S2, 2, 3),
+                                                     ([0], mix.S3, 2, 2)):
             device7 = pair()
-            topic7 = weak_topic()
-            if score is not None:
-                mark_weak(device7, topic7, score)
+            for topic7, level7 in zip(weak_topics(len(levels)), levels):
+                mark_weak(device7, topic7, level7)
             session7 = serve(device7)
             review7, current7, total7 = split(device7, session7)
             stored_state = probe.scalar(
                 "SELECT mix_state FROM daily_state WHERE device_id = ? AND day_key = ?",
                 (device7, DAY))
-            check(f"{state} puts {expected_r} of 5 in the review segment",
+            label = state if not levels else f"{state} ({len(levels)}×L{levels[0]})"
+            check(f"{label} puts {expected_r} of 5 in the review segment",
                   (review7, total7) == (expected_r, 5), f"{review7}/{total7}")
-            check(f"{state} keeps the current unit within {expected_c}",
+            check(f"{label} keeps the current unit within {expected_c}",
                   current7 <= expected_c, f"{current7} current-unit questions")
-            check(f"{state} is the state the snapshot recorded", stored_state == state,
+            check(f"{label} is the state the snapshot recorded", stored_state == state,
                   str(stored_state))
 
-        # The split is decided once a day. Making the topic worse cannot move it until tomorrow.
+        # The split is decided once a day. Making the nodes worse cannot move it until tomorrow.
         # Driven through `pick_group` rather than HTTP: the daily per-topic cap would otherwise be
         # indistinguishable from the split moving, and this case is about the split alone.
         device8 = pair()
-        mark_weak(device8, weak_topic(), 36)                 # one L2 topic -> S2, two review slots
+        topics8 = weak_topics(3)
+        for topic8 in topics8:
+            mark_weak(device8, topic8, 1)                    # three 基础 nodes -> S2 from the count
         first8 = picker.pick_group(probe, device8, DAY, 1_770_000_000_000, limits.DEFAULT_DIFFICULTY)
         with probe.tx() as cur:
-            cur.execute("UPDATE topic_mastery SET score = 100, level = 3, weight_x10 = 40"
-                        " WHERE device_id = ?", (device8,))
+            cur.execute("UPDATE topic_mastery SET level = 0, acc_x1000 = 333, score = 33,"
+                        " weight_x10 = ? WHERE device_id = ?", (mastery.weight_x10(0), device8))
         second8 = picker.pick_group(probe, device8, DAY, 1_770_000_001_000, limits.DEFAULT_DIFFICULTY)
         check("the day's split is taken from the state at the first group",
               (first8.plan["state"], second8.plan["state"]) == (mix.S2, mix.S2),
@@ -761,14 +855,16 @@ def main(argv: list[str] | None = None) -> int:
         check("so the second group still has two review slots",
               len(first8.review_ids) == len(second8.review_ids) == 2,
               f"{len(first8.review_ids)} then {len(second8.review_ids)}")
-        check("even though the topic is now very weak",
-              mastery.state(probe, device8, weak_topic())["level"] == 3, "level did not change")
+        check("even though the nodes are 未掌握 now",
+              mastery.state(probe, device8, topics8[0])["level"] == 0, "level did not change")
 
         # One topic cannot fill the day: three questions a day is the cap, and a slot that runs out of
-        # candidates goes back to the course rather than shrinking the group.
+        # candidates goes back to the course rather than shrinking the group. Nothing is submitted here,
+        # so the questions stay "unseen" and the two-per-group limit is what drains the three-a-day cap:
+        # 2, then 1, then 0 — and every group still has five questions.
         device9 = pair()
         topic9 = weak_topic()
-        mark_weak(device9, topic9, 71)                       # L3, and the daily cap is 3
+        mark_weak(device9, topic9, 0)
         per_group = [split(device9, serve(device9)) for _ in range(3)]
         check("the daily cap drains the review slots one group at a time",
               [item[0] for item in per_group] == [2, 1, 0], str(per_group))
@@ -779,7 +875,7 @@ def main(argv: list[str] | None = None) -> int:
         device10 = pair()
         topic10 = weak_topic()
         before_ten = serve(device10)                         # snapshot taken while nothing was wrong
-        mark_weak(device10, topic10, 71, when=f"{DAY} 10:00:00")
+        mark_weak(device10, topic10, 0, when=f"{DAY} 10:00:00")
         after_ten = serve(device10)
         check("nothing was reviewed while nothing was wrong",
               split(device10, before_ten)[0] == 0, str(split(device10, before_ten)))
@@ -793,10 +889,11 @@ def main(argv: list[str] | None = None) -> int:
         def fake(topic_id: int, count: int) -> list[dict]:
             return [{"id": 1000 + topic_id * 100 + i, "topic_id": topic_id} for i in range(count)]
 
-        # Supply equal to target, so the weights are the bare 4 and 2 of §6.7 and the ratio is 2:1.
-        weak_pair = {1: {"level": 3, "score": 71, "topic_id": 1}, 2: {"level": 1, "score": 12, "topic_id": 2}}
-        pool_pair = fake(1, 10) + fake(2, 5)
-        supply_pair = Counter({1: 10, 2: 5})
+        # Supply equal to the target, so the discount is 1 and the weights are the bare 4 (未掌握) and
+        # 2 (基础) of §6.7 — a 2:1 draw, which is the assertion below.
+        weak_pair = {1: {"level": 0, "topic_id": 1}, 2: {"level": 1, "topic_id": 2}}
+        supply_pair = Counter({1: mastery.target_qty(0), 2: mastery.target_qty(1)})
+        pool_pair = fake(1, supply_pair[1]) + fake(2, supply_pair[2])
         draws = Counter()
         for seed in range(400):
             first_pick = picker._review_pick(pool_pair, weak_pair, supply_pair, random.Random(seed), 1,
@@ -804,7 +901,7 @@ def main(argv: list[str] | None = None) -> int:
             draws[int(first_pick["topic_id"])] += 1
         share = draws[1] / max(1, sum(draws.values()))
         check("the weaker topic is drawn about twice as often (4:2)",
-              0.6 <= share <= 0.74, f"L3 share {share:.2f} over {sum(draws.values())} draws")
+              0.6 <= share <= 0.74, f"未掌握 share {share:.2f} over {sum(draws.values())} draws")
         same = [int(picker._review_pick(pool_pair, weak_pair, supply_pair, random.Random(7), 1,
                                         Counter())[0]["id"]) for _ in range(2)]
         check("the same seed draws the same question", same[0] == same[1], str(same))
@@ -812,7 +909,7 @@ def main(argv: list[str] | None = None) -> int:
         # The whole group twice at the same instant: same questions, or a report cannot be reproduced.
         device12 = pair()
         topic12 = weak_topic()
-        mark_weak(device12, topic12, 71)
+        mark_weak(device12, topic12, 0)
         once = picker.pick_group(probe, device12, NEXT_DAY, 1_770_000_000_000, limits.DEFAULT_DIFFICULTY)
         twice = picker.pick_group(probe, device12, NEXT_DAY, 1_770_000_000_000, limits.DEFAULT_DIFFICULTY)
         check("the same moment produces the same group",
@@ -1334,13 +1431,36 @@ def main(argv: list[str] | None = None) -> int:
 
         first_group = serve(p2_device, DAY)
         submit(p2_device, first_group, 1, DAY)          # four wrong answers, one right
+
+        # A node is not judged at all below three answers (MIN_SAMPLE), and one group gives a node at
+        # most two questions, so an honest run would still leave the list empty here. Padding each node
+        # the child actually got wrong to a full window is what makes the scores below even numbers:
+        # 2, 3, 4 and 5 right answers out of ten, i.e. 20, 30, 40 and 50. Going through the model keeps
+        # the detail page's "the ledger adds up" assertion meaningful.
+        evidence = Database(dsn)
+        evidence.connect()
+        stumbled = [int(row["topic_id"]) for row in evidence.query(
+            "SELECT DISTINCT topic_id FROM wrong_item WHERE device_id = ? ORDER BY topic_id",
+            (p2_device,))]
+        iso_p2 = limits.to_iso(T)
+        with evidence.tx() as cur:
+            for ordinal, topic_id in enumerate(stumbled):
+                rights = 2 + ordinal
+                for index in range(mastery.MASTERY_WINDOW):
+                    mastery.record_tv_answer(
+                        cur, device_id=p2_device, topic_id=topic_id, correct=index < rights,
+                        flagged=False, session_id="01ACCEPTANCE0000000000P2",
+                        question_id=200 + index, now_ms=T, now_iso=iso_p2)
+        evidence.close()
+        check("four wrong answers leave four topics to practise", len(stumbled) >= 2, str(stumbled))
+
         status, body = dad.call("GET", weak_url)
         listed = body["items"]
         check("wrong answers put topics on the weak list",
-              body["count"] >= 1 and all(item["score"] >= 12 for item in listed), str(listed[:2]))
+              body["count"] >= 1 and all(item["level"] <= 1 for item in listed), str(listed[:2]))
         check("worst first",
-              [item["score"] for item in listed] == sorted(
-                  (item["score"] for item in listed), reverse=True), str(listed[:2]))
+              [item["score"] for item in listed] == sorted(item["score"] for item in listed),
+              str([item["score"] for item in listed]))
         check("every row says how many right answers are left",
               all(item["need_right"] >= 1 for item in listed), str(listed[:2]))
         check("and carries the lesson it belongs to",
@@ -1357,8 +1477,8 @@ def main(argv: list[str] | None = None) -> int:
         catalog = body.get("topics") or []
         check("the add sheet offers every topic, weak or not",
               status == 200 and len(catalog) >= 20
-              and any(topic["score"] == 0 for topic in catalog)
-              and any(topic["score"] >= 12 for topic in catalog),
+              and any(topic["sample_count"] == 0 for topic in catalog)
+              and any(topic["level"] <= 1 and topic["sample_count"] >= 3 for topic in catalog),
               f"{status} {len(catalog)}")
 
         worst = listed[0]
@@ -1444,11 +1564,15 @@ def main(argv: list[str] | None = None) -> int:
             # The page chooses the batch id, which is what makes a second tap harmless.
             "paper_id": "P2BATCH0000000000000000001",
         })
-        check("recording three mistakes adds 20, then 8, then 8",
-              status == 200 and body["added"] == 20 + 2 * 8, f"{status} {body}")
+        # Three paper mistakes on a node with no television answers yet: the window is three wrong
+        # rows and nothing else, so the accuracy is 0% and the score is 0. That is the model being
+        # honest rather than the page being broken — 20 and 8 belonged to the additive model, where a
+        # mistake "cost points"; here a mistake can only change the fraction of a window that is right.
+        check("recording three mistakes makes the node 0% and 未掌握",
+              status == 200 and body["added"] == 0 and body["topic"]["level"] == 0, f"{status} {body}")
         check("and the topic is on the list right away",
-              body["topic"]["score"] == 20 + 2 * 8 and body["topic"]["level"] >= 1,
-              str(body.get("topic")))
+              body["topic"]["score"] == 0 and body["topic"]["sample_count"] == 3
+              and body["topic"]["level_label"] == "0-未掌握", str(body.get("topic")))
         status, again = dad.call("POST", f"/v1/h5/paper?device_id={p2b_device}", {
             "topic_id": target, "count": 3, "day_key": today,
             "paper_id": "P2BATCH0000000000000000001",
@@ -1468,7 +1592,7 @@ def main(argv: list[str] | None = None) -> int:
               body["total"] == 3 and [i["source"] for i in body["items"]] == ["paper"] * 3,
               f"{status} {body.get('total')} {[i['source'] for i in body.get('items', [])]}")
         check("with the score of their topic attached",
-              all(i["mastery_score"] == 20 + 2 * 8 for i in body["items"]), str(body["items"][:1]))
+              all(i["mastery_score"] == 0 for i in body["items"]), str(body["items"][:1]))
         status, body = dad.call(
             "GET", f"/v1/h5/wrongbook?day_key={today}&days=7&device_id={p2b_device}&source=tv")
         check("and the television's own list stays separate",
@@ -1516,37 +1640,45 @@ def main(argv: list[str] | None = None) -> int:
         # ---- a bad question ----
         #
         # `bad_question_void` is the reason the flag lives on the phone (D5): the parent is the one who
-        # notices a typo, and a topic must not stay weak because of it.
-        wrong_qid = int(first_group["questions"][1]["id"])   # `submit` marks index 1 as wrong
+        # notices a typo, and a node must not stay weak because of it. The evidence is built here from
+        # the topic's own questions, so the row the flag removes is provably inside the window; on the
+        # padded device above the group's rows have long been pushed out, and removing a row that is no
+        # longer counted would prove nothing.
+        #
+        # The window before the flag: three paper mistakes (weight 10 each, all wrong), two right
+        # answers and one wrong one (weight 15 each) — 30 of 75, i.e. 40. Taking the wrong answer out
+        # leaves 30 of 60, i.e. 50.
         probe = Database(dsn)
         probe.connect()
-        topic_before = probe.query_one(
-            "SELECT topic_id, score FROM topic_mastery WHERE device_id = ? AND topic_id = ?",
-            (p2_device, int(first_group["questions"][1]["topic_id"])),
-        )
+        bad_qids = [int(row["id"]) for row in probe.query(
+            "SELECT id FROM question WHERE topic_id = ? AND retired_at IS NULL ORDER BY id LIMIT 3",
+            (target,))]
+        iso_bad = limits.to_iso(T)
+        wrong_qid = bad_qids[-1]
+        with probe.tx() as cur:
+            for index, qid in enumerate(bad_qids):
+                mastery.record_tv_answer(
+                    cur, device_id=p2b_device, topic_id=target, correct=qid != wrong_qid,
+                    flagged=False, session_id="01ACCEPTANCE0000000000BQ", question_id=qid,
+                    now_ms=T, now_iso=iso_bad)
+        before_bad = mastery.state(probe, p2b_device, target)
         probe.close()
-        status, body = dad.call("POST", f"/v1/h5/question/{wrong_qid}/flag?device_id={p2_device}",
+        status, body = dad.call("POST", f"/v1/h5/question/{wrong_qid}/flag?device_id={p2b_device}",
                                 {"note": "题干里的单位写错了"})
         check("a flagged question stops being served", status == 200 and body["retired"] is True,
               f"{status} {body}")
         probe = Database(dsn)
         probe.connect()
         retired = probe.scalar("SELECT retired_at FROM question WHERE id = ?", (wrong_qid,))
-        after_row = probe.query_one(
-            "SELECT score FROM topic_mastery WHERE device_id = ? AND topic_id = ?",
-            (p2_device, int(first_group["questions"][1]["topic_id"])),
-        )
+        after_bad = mastery.state(probe, p2b_device, target)
+        # Asked of the pool itself rather than by serving another group: that device's failed group
+        # bought a ten-minute cooldown, and working around it would be testing the cooldown instead.
+        servable = [int(row["id"]) for row in picker._candidates(probe, p2b_device, 99)]
         probe.close()
         check("and is retired in the bank itself", retired is not None, str(retired))
         check("and the score it caused is given back",
-              topic_before is not None and after_row is not None
-              and after_row["score"] < topic_before["score"], f"{topic_before} -> {after_row}")
-        # Asked of the pool itself rather than by serving another group: that device's failed group
-        # bought a ten-minute cooldown, and working around it would be testing the cooldown instead.
-        probe = Database(dsn)
-        probe.connect()
-        servable = [int(row["id"]) for row in picker._candidates(probe, p2_device, 99)]
-        probe.close()
+              (before_bad["score"], after_bad["score"]) == (40, 50),
+              f"{before_bad['score']} -> {after_bad['score']}")
         check("so it is out of the pool the picker draws from",
               wrong_qid not in servable, f"{wrong_qid} in {len(servable)} candidates")
 
