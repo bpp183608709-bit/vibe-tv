@@ -7,9 +7,17 @@
 -- Order matters only for readability: `AFTER` keeps the columns where schema.sql declares them, so a
 -- later `SHOW CREATE TABLE` diff against a fresh schema.sql comes out empty.
 
+-- `code` comes first because every other new column is positioned relative to it: the question files
+-- and docs/data_sources.md name a node by 'math-6up-d01', and the importer resolves by that string
+-- before it falls back to (unit_id, ordinal).
+ALTER TABLE topic
+  ADD COLUMN code VARCHAR(24) NULL AFTER ordinal,
+  ADD UNIQUE KEY uk_topic_code (code);
+
 ALTER TABLE topic
   ADD COLUMN micro_nodes_json JSON NULL AFTER summary_zh,
-  ADD COLUMN prereq_json      JSON NULL AFTER micro_nodes_json;
+  ADD COLUMN prereq_json      JSON NULL AFTER micro_nodes_json,
+  ADD COLUMN knowledge_type   VARCHAR(16) NULL AFTER prereq_json;
 
 ALTER TABLE question
   ADD COLUMN ability_tag VARCHAR(16) NULL AFTER angle;
