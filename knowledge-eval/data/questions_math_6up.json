@@ -1,0 +1,372 @@
+{
+ "schema_version": 3,
+ "shape": "§4.2 flat question list: options are plain strings, label = A + index",
+ "subject": "math",
+ "grade": 6,
+ "semester": "up",
+ "questions": [
+  {
+   "question_id": "math-6up-d01-q01",
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "3/8 × 4 表示 4 个 3/8 相加，结果是（  ）。",
+   "accepted": [
+    "3/2",
+    "1.5"
+   ],
+   "correct_answer": "3/2",
+   "explanation": "分数乘整数就是求几个相同分数的和：3/8×4 = 3/8+3/8+3/8+3/8 = 12/8 = 3/2。",
+   "tags": [
+    "分数乘整数的意义",
+    "分数乘整数的计算"
+   ]
+  },
+  {
+   "question_id": "math-6up-d01-q02",
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "计算 7/12 × 6，结果写成最简分数。",
+   "accepted": [
+    "7/2",
+    "3.5"
+   ],
+   "correct_answer": "7/2",
+   "explanation": "先约分再乘：6 和 12 约去 6，得 7/2，也就是 3 又 1/2。",
+   "tags": [
+    "分数乘整数的计算",
+    "先约分再乘"
+   ]
+  },
+  {
+   "question_id": "math-6up-d01-q03",
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面说法正确的是（  ）",
+   "options": [
+    "一个分数乘整数，积一定大于这个分数",
+    "一个分数乘整数，积一定小于这个分数",
+    "一个分数乘大于 1 的整数，积大于这个分数",
+    "分数乘整数的积一定是整数"
+   ],
+   "correct_answer": "C",
+   "explanation": "乘数大于 1 积变大，等于 1 积不变，小于 1 积变小；所以 A、B 都不对，D 也不对（3/8×4 虽得整数，3/8×2 得 3/4）。",
+   "tags": [
+    "积与因数的大小关系",
+    "辨析"
+   ]
+  },
+  {
+   "question_id": "math-6up-d08-q01",
+   "diagnostic_node_id": "math-6up-d08",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "除以一个数（0 除外），等于乘这个数的（  ）",
+   "options": [
+    "相反数",
+    "倒数",
+    "本身",
+    "平方"
+   ],
+   "correct_answer": "B",
+   "explanation": "分数除法的算理：除以一个数等于乘它的倒数，例如 5/6÷10 = 5/6×1/10。",
+   "tags": [
+    "分数除法的算理"
+   ]
+  },
+  {
+   "question_id": "math-6up-d08-q02",
+   "diagnostic_node_id": "math-6up-d08",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "计算 5/6 ÷ 10，结果写成最简分数。",
+   "accepted": [
+    "1/12"
+   ],
+   "correct_answer": "1/12",
+   "explanation": "5/6÷10 = 5/6×1/10 = 5/60 = 1/12。",
+   "tags": [
+    "分数除以整数"
+   ]
+  },
+  {
+   "question_id": "math-6up-d08-q03",
+   "diagnostic_node_id": "math-6up-d08",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面算式中，商大于被除数的是（  ）",
+   "options": [
+    "4/5 ÷ 3/2",
+    "4/5 ÷ 1",
+    "4/5 ÷ 2/3",
+    "4/5 ÷ 5/4"
+   ],
+   "correct_answer": "C",
+   "explanation": "除数小于 1 时商大于被除数，除数大于 1 时商小于被除数。2/3 < 1，所以只有 C 的商变大。",
+   "tags": [
+    "商与被除数的关系",
+    "辨析"
+   ]
+  },
+  {
+   "question_id": "math-6up-d11-q01",
+   "diagnostic_node_id": "math-6up-d11",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "把 60 按 2 : 3 分配，两份分别是（  ）",
+   "options": [
+    "20 和 40",
+    "24 和 36",
+    "30 和 30",
+    "12 和 48"
+   ],
+   "correct_answer": "B",
+   "explanation": "总份数 2+3=5，每份 60÷5=12，两份是 24 和 36。",
+   "tags": [
+    "按比分配"
+   ]
+  },
+  {
+   "question_id": "math-6up-d11-q02",
+   "diagnostic_node_id": "math-6up-d11",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个长方形的周长是 40 厘米，长与宽的比是 3 : 2，长是多少厘米？",
+   "accepted": [
+    "12"
+   ],
+   "correct_answer": "12",
+   "explanation": "周长 40 厘米，长+宽 = 20 厘米；按 3:2 分，长 = 20×3/5 = 12 厘米。",
+   "tags": [
+    "按比分配",
+    "周长与比结合"
+   ]
+  },
+  {
+   "question_id": "math-6up-d11-q03",
+   "diagnostic_node_id": "math-6up-d11",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "甲、乙两数的比是 3 : 5，乙数比甲数多 20，甲数是多少？",
+   "accepted": [
+    "30"
+   ],
+   "correct_answer": "30",
+   "explanation": "乙比甲多 5−3 = 2 份，2 份是 20，1 份是 10，甲是 3 份 = 30。",
+   "tags": [
+    "按比分配",
+    "差与份数"
+   ]
+  },
+  {
+   "question_id": "math-6up-d15-q01",
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "圆周率 π 表示（  ）",
+   "options": [
+    "圆的周长与直径的比值",
+    "圆的面积与半径的比值",
+    "圆的周长与半径的比值",
+    "圆的直径与周长的比值"
+   ],
+   "correct_answer": "A",
+   "explanation": "π = 周长÷直径，是一个固定的数，约等于 3.14。",
+   "tags": [
+    "圆周率的意义"
+   ]
+  },
+  {
+   "question_id": "math-6up-d15-q02",
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个圆的半径是 3 厘米，它的周长是多少厘米？（π 取 3.14，只填数）",
+   "accepted": [
+    "18.84"
+   ],
+   "correct_answer": "18.84",
+   "explanation": "C = 2πr = 2×3.14×3 = 18.84 厘米。",
+   "tags": [
+    "圆的周长计算"
+   ]
+  },
+  {
+   "question_id": "math-6up-d15-q03",
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "把一个直径 10 厘米的圆平均分成两个半圆，每个半圆的周长是（  ）厘米。（π 取 3.14）",
+   "options": [
+    "15.7",
+    "25.7",
+    "31.4",
+    "20.7"
+   ],
+   "correct_answer": "B",
+   "explanation": "半圆的周长是半个圆弧加一条直径：3.14×10÷2 + 10 = 15.7+10 = 25.7 厘米。只算弧长会漏掉直径。",
+   "tags": [
+    "半圆周长",
+    "易错点"
+   ]
+  },
+  {
+   "question_id": "math-6up-d17-q01",
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面各数中，不能表示成活率的是（  ）",
+   "options": [
+    "95%",
+    "100%",
+    "105%",
+    "80%"
+   ],
+   "correct_answer": "C",
+   "explanation": "成活棵数不会超过总棵数，所以成活率最多 100%，不可能 105%。",
+   "tags": [
+    "百分数的取值范围"
+   ]
+  },
+  {
+   "question_id": "math-6up-d17-q02",
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一件商品原价 200 元，现价 160 元，现价是原价的百分之几？（只填数，不带百分号）",
+   "accepted": [
+    "80"
+   ],
+   "correct_answer": "80",
+   "explanation": "160÷200 = 0.8 = 80%，所以现价是原价的 80%。",
+   "tags": [
+    "求一个数是另一个数的百分之几"
+   ]
+  },
+  {
+   "question_id": "math-6up-d17-q03",
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一件商品先涨价 10%，再降价 10%，现价与原价相比（  ）",
+   "options": [
+    "相等",
+    "比原价高",
+    "比原价低",
+    "无法确定"
+   ],
+   "correct_answer": "C",
+   "explanation": "设原价 100 元，涨价后 110 元，再降 10% 是降 11 元，得 99 元，比原价低。两次的 10% 基数不同。",
+   "tags": [
+    "百分数增减",
+    "单位一变化"
+   ]
+  },
+  {
+   "question_id": "math-6up-d25-q01",
+   "diagnostic_node_id": "math-6up-d25",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "计算 2/3 + 1/4 × 4/5，结果写成最简分数。",
+   "accepted": [
+    "13/15"
+   ],
+   "correct_answer": "13/15",
+   "explanation": "先算乘法：1/4×4/5=1/5；再通分相加：2/3+1/5=10/15+3/15=13/15。先乘除后加减。",
+   "tags": [
+    "分数四则混合运算",
+    "先乘除后加减"
+   ]
+  },
+  {
+   "question_id": "math-6up-d25-q02",
+   "diagnostic_node_id": "math-6up-d25",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一根绳长 3/4 米，用去 1/3，还剩多少米？",
+   "accepted": [
+    "1/2",
+    "0.5"
+   ],
+   "correct_answer": "1/2",
+   "explanation": "用去 1/3 就剩 2/3：3/4×2/3=1/2 米。也可以先算用去 3/4×1/3=1/4，再 3/4−1/4=1/2。",
+   "tags": [
+    "分数四则混合运算",
+    "情境应用"
+   ]
+  },
+  {
+   "question_id": "math-6up-d25-q03",
+   "diagnostic_node_id": "math-6up-d25",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "计算 (5/6 − 1/3) ÷ 2/3，结果写成最简分数。",
+   "accepted": [
+    "3/4",
+    "0.75"
+   ],
+   "correct_answer": "3/4",
+   "explanation": "先算括号：5/6−1/3=5/6−2/6=3/6=1/2；再除以 2/3，等于乘 3/2：1/2×3/2=3/4。",
+   "tags": [
+    "分数四则混合运算",
+    "有括号先算括号"
+   ]
+  }
+ ]
+}

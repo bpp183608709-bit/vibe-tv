@@ -29,6 +29,7 @@ next; the TV sees only questions.
 from __future__ import annotations
 
 import datetime
+import json
 
 from server.app.ids import new_ulid
 
@@ -167,8 +168,14 @@ def window_of(cur, device_id: str, topic_id: int) -> list[dict]:
     )
 
 
-def _summarise(rows: list[dict]) -> dict:
-    """acc_x1000, sample and hard_right over window rows, newest first."""
+def summarise(rows: list[dict]) -> dict:
+    """acc_x1000, sample and hard_right over window rows, newest first.
+
+    Public because the offline report (knowledge-eval/scripts/evaluate.py) computes the same numbers
+    from a JSON file. One model, one implementation of the arithmetic: if this is ever wrong, the
+    database report and the file report are wrong together, which is the only kind of wrong that gets
+    noticed.
+    """
     total = sum(int(row["weight_x10"]) for row in rows)
     got = sum(int(row["weight_x10"]) for row in rows if int(row["is_correct"] or 0))
     hard = sum(1 for row in rows
@@ -180,6 +187,10 @@ def _summarise(rows: list[dict]) -> dict:
         "acc_x1000": round(1000 * got / total) if total else 0,
         "hard_right": hard,
     }
+
+
+def _summarise(rows: list[dict]) -> dict:
+    return summarise(rows)
 
 
 def _row(cur, device_id: str, topic_id: int, now_iso: str, lock: str) -> dict:
@@ -198,12 +209,13 @@ def _row(cur, device_id: str, topic_id: int, now_iso: str, lock: str) -> dict:
 def _emit(cur, *, device_id: str, topic_id: int, kind: str, delta: int, score_after: int,
           now_iso: str, seq: int, counted: bool, is_correct: bool | None = None,
           difficulty: int | None = None, weight: int | None = None, acc_after: int | None = None,
-          sample_after: int | None = None, ref_id: str | None = None, note: str = "") -> None:
+          sample_after: int | None = None, ref_id: str | None = None, note: str = "",
+          question_id: int | None = None) -> None:
     cur.execute(
-        "INSERT INTO mastery_event (id, device_id, topic_id, kind, delta, score_after, is_correct,"
-        " difficulty, weight_x10, counted, acc_after, sample_after, seq, ref_id, note, created_at)"
-        " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-        (new_ulid(), device_id, topic_id, kind, delta, score_after,
+        "INSERT INTO mastery_event (id, device_id, topic_id, question_id, kind, delta, score_after,"
+        " is_correct, difficulty, weight_x10, counted, acc_after, sample_after, seq, ref_id, note,"
+        " created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        (new_ulid(), device_id, topic_id, question_id, kind, delta, score_after,
          None if is_correct is None else (1 if is_correct else 0), difficulty, weight,
          1 if counted else 0, acc_after, sample_after, seq, ref_id, note or None, now_iso),
     )
@@ -212,22 +224,121 @@ def _emit(cur, *, device_id: str, topic_id: int, kind: str, delta: int, score_af
 def _store(cur, *, device_id: str, topic_id: int, summary: dict, bias: int, wrong_streak: int,
            paused_until: str | None, total_wrong: int, total_right: int, weak_since: str | None,
            seq: int, now_iso: str) -> dict:
-    """Write the derived columns and hand back what every caller returns."""
+    """Write the derived columns, the drill-down and the weak-list row, then hand back what callers return.
+
+    All four writes are in the caller's transaction: the level, the ability split, the weak row and the
+    ledger entry it came from move together or not at all. A report that reads a level from one and a
+    weakness from another is how a parent ends up looking at two different answers to the same question.
+    """
     level = level_of(summary["acc_x1000"], summary["hard_right"])
     score = score_of(summary["acc_x1000"], bias)
+    abilities = _ability_breakdown(cur, device_id, topic_id)
     cur.execute(
         "UPDATE topic_mastery SET score = ?, level = ?, weight_x10 = ?, target_qty = ?,"
         " sample_count = ?, weight_sum_x10 = ?, correct_weight_x10 = ?, acc_x1000 = ?, hard_right = ?,"
         " seq = ?, bias = ?, right_streak = 0, wrong_streak = ?, paused_until = ?, total_wrong = ?,"
-        " total_right = ?, weak_since = ?, last_event_at = ?, updated_at = ?"
+        " total_right = ?, weak_since = ?, ability_breakdown_json = ?, last_event_at = ?, updated_at = ?"
         " WHERE device_id = ? AND topic_id = ?",
         (score, level, weight_x10(level), target_qty(level), summary["sample_count"],
          summary["weight_sum_x10"], summary["correct_weight_x10"], summary["acc_x1000"],
          summary["hard_right"], seq, bias, wrong_streak, paused_until, total_wrong, total_right,
-         weak_since, now_iso, now_iso, device_id, topic_id),
+         weak_since, json.dumps(abilities, ensure_ascii=False) if abilities else None,
+         now_iso, now_iso, device_id, topic_id),
     )
+    _sync_weakness(cur, device_id=device_id, topic_id=topic_id, level=level,
+                   acc=summary["acc_x1000"], sample=summary["sample_count"], now_iso=now_iso)
     return {"score": score, "level": level, "acc": summary["acc_x1000"] / 1000,
             "sample_count": summary["sample_count"], "paused_until": paused_until}
+
+
+def _window_questions(cur, device_id: str, topic_id: int) -> list[dict]:
+    """The counted rows of the current window that name a question, newest first.
+
+    `question_id` is stored on the event rather than parsed back out of `ref_id`, so this is one join
+    instead of string surgery on '<session>:<question>'.
+    """
+    return cur.query(
+        "SELECT e.question_id, e.is_correct, e.weight_x10, q.ability_tag, q.code AS question_code"
+        "  FROM mastery_event e JOIN question q ON q.id = e.question_id"
+        " WHERE e.device_id = ? AND e.topic_id = ? AND e.counted = 1 AND e.question_id IS NOT NULL"
+        " ORDER BY e.seq DESC LIMIT ?",
+        (device_id, topic_id, MASTERY_WINDOW),
+    )
+
+
+def _ability_breakdown(cur, device_id: str, topic_id: int) -> list[dict]:
+    """Per ability line: acc_x1000 and sample over the same window the level comes from.
+
+    Weakest first, because the caller prints the first one. Two answers is the floor: one answer is an
+    anecdote, and a note built on it would tell a parent to work on a line the child got right once.
+    """
+    slots: dict[str, dict] = {}
+    for row in _window_questions(cur, device_id, topic_id):
+        tag = row.get("ability_tag")
+        if not tag:
+            continue
+        slot = slots.setdefault(tag, {"tag": tag, "weight": 0, "got": 0, "sample": 0})
+        weight = int(row["weight_x10"] or 0)
+        slot["weight"] += weight
+        slot["sample"] += 1
+        if int(row["is_correct"] or 0):
+            slot["got"] += weight
+    out = [{"tag": slot["tag"], "sample": slot["sample"],
+            "acc": round(1000 * slot["got"] / slot["weight"]) if slot["weight"] else 0}
+           for slot in slots.values() if slot["sample"] >= 2]
+    return sorted(out, key=lambda item: (item["acc"], item["tag"]))
+
+
+def _sync_weakness(cur, *, device_id: str, topic_id: int, level: int, acc: int, sample: int,
+                   now_iso: str) -> None:
+    """Keep the weakness row in step with the level just stored.
+
+    Three cases, and only three:
+      * not measured yet (sample < 3) — nothing to say, leave the row as it is;
+      * measured and weak (level <= 1) — upsert, clearing `resolved` if this is a relapse;
+      * measured and not weak — mark `resolved` if a row exists, never delete it.
+
+    Resolved rather than deleted, so "was he weak in September" stays answerable and `opened_at` keeps
+    the first occurrence across relapses.
+    """
+    if int(sample) < MIN_SAMPLE:
+        return
+    existing = cur.query_one(
+        "SELECT weakness_id, opened_at FROM weakness WHERE device_id = ? AND topic_id = ?",
+        (device_id, topic_id),
+    )
+    if level > 1:
+        if existing is not None:
+            cur.execute("UPDATE weakness SET resolved = 1, updated_at = ? WHERE weakness_id = ?",
+                        (now_iso, existing["weakness_id"]))
+        return
+
+    where = cur.query_one(
+        "SELECT t.code AS node_code, u.code AS aggregate_code, u.name_zh AS aggregate_name"
+        " FROM topic t JOIN unit u ON u.id = t.unit_id WHERE t.id = ?",
+        (topic_id,),
+    )
+    if where is None or not where.get("node_code"):
+        return
+    evidence = [row["question_code"] for row in _window_questions(cur, device_id, topic_id)
+                if row.get("question_code")][:3]
+    values = (level, acc, sample, json.dumps(evidence, ensure_ascii=False),
+              where["aggregate_code"], where["aggregate_name"], now_iso)
+    if existing is None:
+        cur.execute(
+            "INSERT INTO weakness (weakness_id, device_id, topic_id, diagnostic_node_id, mastery_level,"
+            " weighted_accuracy, sample_count, evidence_question_ids, parent_aggregate_node_id,"
+            " parent_aggregate_name, resolved, opened_at, updated_at)"
+            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?)",
+            (new_ulid(), device_id, topic_id, where["node_code"], *values, now_iso),
+        )
+    else:
+        cur.execute(
+            "UPDATE weakness SET diagnostic_node_id = ?, mastery_level = ?, weighted_accuracy = ?,"
+            " sample_count = ?, evidence_question_ids = ?, parent_aggregate_node_id = ?,"
+            " parent_aggregate_name = ?, resolved = 0, updated_at = ? WHERE weakness_id = ?",
+            (where["node_code"], *values, existing["weakness_id"]),
+        )
 
 
 def _weak_since(old_level: int | None, new_level: int, current: str | None, now_iso: str) -> str | None:
@@ -242,7 +353,7 @@ def _weak_since(old_level: int | None, new_level: int, current: str | None, now_
 
 def _apply(cur, *, device_id: str, topic_id: int, row: dict, kind: str, is_correct: bool,
            weight: int, difficulty: int | None, counted: bool, ref_id: str | None, note: str,
-           now_iso: str, wrong_streak: int) -> dict:
+           now_iso: str, wrong_streak: int, question_id: int | None = None) -> dict:
     """One evidence row: put it in the window, recompute, store, and write the ledger line."""
     seq = int(row["seq"] or 0) + 1
     bias = int(row["bias"] or 0)
@@ -269,7 +380,7 @@ def _apply(cur, *, device_id: str, topic_id: int, row: dict, kind: str, is_corre
     _emit(cur, device_id=device_id, topic_id=topic_id, kind=kind, delta=score - old_score,
           score_after=score, now_iso=now_iso, seq=seq, counted=counted, is_correct=is_correct,
           difficulty=difficulty, weight=weight, acc_after=summary["acc_x1000"],
-          sample_after=summary["sample_count"], ref_id=ref_id, note=note)
+          sample_after=summary["sample_count"], ref_id=ref_id, note=note, question_id=question_id)
     stored = _store(cur, device_id=device_id, topic_id=topic_id, summary=summary, bias=bias,
                     wrong_streak=wrong_streak, paused_until=paused_until, total_wrong=total_wrong,
                     total_right=total_right, weak_since=weak_since, seq=seq, now_iso=now_iso)
@@ -307,7 +418,7 @@ def record_tv_answer(cur, *, device_id: str, topic_id: int, correct: bool, flagg
                   kind="tv_right" if correct else "tv_wrong", is_correct=correct, weight=weight,
                   difficulty=int(difficulty or 2), counted=True, ref_id=ref,
                   note="标记没学过" if flagged else ("电视答对" if correct else "电视答错"),
-                  now_iso=now_iso, wrong_streak=wrong_streak)
+                  now_iso=now_iso, wrong_streak=wrong_streak, question_id=question_id)
 
 
 def record_paper_wrong(cur, *, device_id: str, topic_id: int, wrong_item_id: str, day_key: str,

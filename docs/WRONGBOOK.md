@@ -37,7 +37,7 @@
 
 | 已有件 | 落点 | 与本功能的关系 |
 |---|---|---|
-| 知识点树 | `server/content/curriculum/grade6-up.json`：3 科 16 单元 **30 个知识点**，`verified=false` | 本功能的统计主键，**不新建** |
+| 知识点树 | `knowledge-eval/data/nodes_<subject>_6up.json`：3 科 28 个聚合单元 + 54 个诊断节点 | 本功能的统计主键，**不新建** |
 | 出题 | `server/app/picker.py`：当前单元 → 前两单元 → 其余三层；排除 7 天内同题；`wrong_count` 降序加权；≥2 科；≤2 题/知识点；5 题 | 本功能的加权点在这里 |
 | 判分 | `server/app/grade.py`：服务端唯一权威，`⌈0.8n⌉` 通过，Fraction 等价比较，幂等 | 掌握度的事件源在这里 |
 | 错题信号 | `topic_signal`：`right_count / wrong_count / unknown_count / unknown_streak` 四个纯计数器 | **只有计数，没有「掌握度」**，也没有衰减与档位 |

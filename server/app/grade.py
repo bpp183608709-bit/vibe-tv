@@ -262,7 +262,7 @@ def grade_session(
         int(row["id"]): dict(row)
         for row in db.query(
             "SELECT q.id, q.topic_id, q.qtype, q.difficulty, q.stem, q.explanation_zh,"
-            "       t.name_zh AS topic, s.name_zh AS subject"
+            "       q.ability_tag, t.code AS node_code, t.name_zh AS topic, s.name_zh AS subject"
             "  FROM question q"
             "  JOIN topic t ON t.id = q.topic_id"
             "  JOIN unit u ON u.id = t.unit_id"
@@ -355,8 +355,10 @@ def grade_session(
         for qid, chosen, correct, flagged in graded:
             cur.execute(
                 "INSERT INTO quiz_answer (session_id, question_id, device_id, answered_day, chosen,"
-                " is_correct, flagged_unknown, answered_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                " is_correct, diagnostic_node_id, ability_tag, flagged_unknown, answered_at)"
+                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 (session_id, qid, device_id, session["day_key"], chosen, 1 if correct else 0,
+                 questions[qid].get("node_code"), questions[qid].get("ability_tag"),
                  1 if flagged else 0, now_iso),
             )
             topic_id = int(questions[qid]["topic_id"])

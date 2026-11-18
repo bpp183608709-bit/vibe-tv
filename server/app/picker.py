@@ -99,12 +99,15 @@ def _candidates(db, device_id: str, difficulty_cap: int,
     """
     rows = db.query(
         "SELECT q.id, q.topic_id, q.qtype, q.stem, q.difficulty, q.angle,"
-        " u.ordinal AS unit_ordinal, b.id AS textbook_id, b.subject_id,"
+        " t.chapter_order AS unit_ordinal, b.id AS textbook_id,"
+        " COALESCE(q.subject_id, b.subject_id) AS subject_id,"
         " COALESCE(ts.wrong_count, 0) AS wrong_count,"
         " (SELECT MAX(a.answered_at) FROM quiz_answer a"
         "   WHERE a.question_id = q.id AND a.device_id = ?) AS last_seen"
         " FROM question q"
-        " JOIN unit u ON u.id = q.unit_id"
+        # No `unit` join: the chapter ordinal lives on the diagnostic node, so a question never has to
+        # point at an aggregate. `chapter_order` is a denormalised unit.ordinal, written at import.
+        " JOIN topic t ON t.id = q.topic_id"
         " JOIN textbook b ON b.id = q.textbook_id"
         " LEFT JOIN topic_signal ts ON ts.topic_id = q.topic_id AND ts.device_id = ?"
         " WHERE q.retired_at IS NULL AND q.verify_status IN ('sympy_ok', 'manual_ok')"

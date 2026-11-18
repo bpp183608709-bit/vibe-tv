@@ -281,6 +281,14 @@ curl -fsSL https://aerial.qust.me/install.sh | TV=192.168.1.20 bash -s restore
 
 电脑上也可以自己跑：`curl -fsSL https://aerial.qust.me/tools/report.sh | TV=<电视IP> bash`（只读）和 `curl -fsSL https://aerial.qust.me/tools/selftest.sh | TV=<电视IP> bash`（按主页键、打开设置，看 Aerial 能不能回来），把两份输出贴进模板。诊断信息不含账号、IP、Wi-Fi 名称和 App 列表。你的电视能正常用，也欢迎用[实测可用模板](https://github.com/pengchujin/aerial-tv/issues/new?template=works.yml)告诉大家。
 
+## 知识掌握评测（Knowledge Evaluation System）
+
+六年级上册（人教版数学 + 统编版语文 + 湘少版英语）的知识掌握度：一套扁平节点树 + 一套题库，按「最近十条作答、难度加权」算出掌握档位，产出「这周该补什么」的薄弱清单。数据、schema、离线评估脚本与负样本测试都在 [`knowledge-eval/`](knowledge-eval/README.md)，服务端运行时仍在 `server/`。
+
+- 入口与一键验证命令：[knowledge-eval/README.md](knowledge-eval/README.md)
+- 数据：[knowledge-eval/data/](knowledge-eval/data/)（节点 / 题库 / 分类法快照）
+- 最近一次验证报告：[knowledge-eval/docs/fix-evidence-2026-11-19.md](knowledge-eval/docs/fix-evidence-2026-11-19.md)
+
 ## 开发
 
 需要 JDK 17、Android SDK 36。

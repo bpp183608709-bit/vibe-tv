@@ -2,9 +2,21 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://aerial.local/schema/question.schema.json",
   "title": "Question",
-  "description": "One entry of server/content/questions/*.json. Matches docs/RULES.md §2.3a for ability_tag and the four 题型. 判断题 is 选择题 with two options; 简答题 does not exist (the TV keypad has no letters).",
+  "description": "One entry of knowledge-eval/data/questions_<subject>_6up.json. Options are plain strings and their label is positional (A = index 0), so the file needs no {label, text} wrapper and no translation before validation. 判断题 is 选择题 with two options; 简答题 does not exist (the TV keypad has no letters).",
   "type": "object",
-  "required": ["question_id", "subject", "diagnostic_node_id", "ability_tag", "cognitive_level", "difficulty_preset", "question_type", "stem", "correct_answer", "explanation", "tags"],
+  "required": [
+    "question_id",
+    "subject",
+    "diagnostic_node_id",
+    "ability_tag",
+    "cognitive_level",
+    "difficulty_preset",
+    "question_type",
+    "stem",
+    "correct_answer",
+    "explanation",
+    "tags"
+  ],
   "additionalProperties": false,
   "properties": {
     "question_id": {
@@ -15,7 +27,7 @@
     "diagnostic_node_id": {
       "type": "string",
       "pattern": "^(math|chinese|english)-6up-d[0-9]{2}$",
-      "description": "A topic `code`, never the auto-increment id. Must point at a diagnostic node, never at a chapter."
+      "description": "A node_id, never the auto-increment id. Must point at a diagnostic node, never at a chapter."
     },
     "ability_tag": {
       "type": "string",
@@ -26,21 +38,18 @@
     "question_type": {"type": "string", "enum": ["选择题", "填空题", "判断题"]},
     "stem": {"type": "string", "minLength": 4},
     "options": {
-      "type": ["array", "null"],
+      "type": "array",
       "minItems": 2,
-      "items": {
-        "type": "object",
-        "required": ["label", "text"],
-        "additionalProperties": false,
-        "properties": {
-          "label": {"type": "string", "pattern": "^[A-D]$"},
-          "text": {"type": "string", "minLength": 1}
-        }
-      }
+      "items": {"type": "string", "minLength": 1},
+      "description": "Choice only, in display order. Label of options[i] is 'A' + i, which is what correct_answer names."
     },
-    "correct_answer": {"type": "string", "minLength": 1},
+    "correct_answer": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Choice: a label (A/B/C/D) that indexes into options. Fill: the canonical answer string, equal to accepted[0]."
+    },
     "accepted": {
-      "type": ["array", "null"],
+      "type": "array",
       "items": {"type": "string", "minLength": 1},
       "description": "Fill only: other strings that count as the same answer. Numeric comparison is exact, so list 7/2 and 3.5 both when both are natural."
     },

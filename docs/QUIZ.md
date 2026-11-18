@@ -111,7 +111,7 @@ DailyLimit 锁屏页
 本期实到：六年级上册，数学（人教）、语文（人教）、英语（湘少版）。科学（教科版）与道法**不入库**（G5 已定：这学期期中期末不考科学）。
 
 规模：**27 个单元 / 53 个诊断节点**（数学 9 章 24 节，语文 8 单元 14 节，英语 10 单元 15 节）。
-节点树源文件 `server/content/curriculum/grade6-up.json`，校验器 `server/tools/check_content.py`。
+节点树源文件 `knowledge-eval/data/nodes_<subject>_6up.json`（§4.1 扁平），校验器 `knowledge-eval/scripts/check_content.py`（`server/tools/check_content.py` 是指向它的旧路径）。
 
 > 2026-11-11 更正：语文由"部编"改为**人教**（户主看课本封面确认）。统编教材本就由人教社出版，"部编"是俗称，`publisher` 统一记 `pep`，与数学同值。这处不是笔误——录题时按 `publisher='pep'` 取册，若沿用旧称 `bubian` 会取不到语文册。
 >

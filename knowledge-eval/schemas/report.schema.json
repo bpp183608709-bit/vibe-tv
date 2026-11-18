@@ -1,0 +1,241 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aerial.local/schema/report.schema.json",
+  "title": "Mastery report, grouped by chapter",
+  "description": "What GET /v1/h5/mastery/report returns and what scripts/evaluate.py writes to a file. student_id carries the device id: the system has no student entity, one TV is one child. diagnostics is the weak list and nothing else; the whole-chapter view, when asked for, goes into full_view.",
+  "type": "object",
+  "required": [
+    "student_id",
+    "period",
+    "aggregate_summary"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "student_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "period": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human label for the window, e.g. 最近 30 天"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "db",
+        "files"
+      ]
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "weak",
+        "all"
+      ],
+      "description": "weak (default) fills only diagnostics; all also fills full_view."
+    },
+    "aggregate_summary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "aggregate_node_id",
+          "aggregate_name",
+          "diagnostic_count",
+          "weak_diagnostic_count",
+          "diagnostics"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "aggregate_node_id": {
+            "type": "string"
+          },
+          "aggregate_name": {
+            "type": "string"
+          },
+          "diagnostic_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "weak_diagnostic_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "diagnostics": {
+            "type": "array",
+            "description": "Weak nodes only: level 0 or 1, sample_count >= 3.",
+            "items": {
+              "type": "object",
+              "required": [
+                "diagnostic_node_id",
+                "diagnostic_name",
+                "mastery_level",
+                "weighted_accuracy",
+                "sample_count",
+                "evidence_question_ids"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "diagnostic_node_id": {
+                  "type": "string"
+                },
+                "diagnostic_name": {
+                  "type": "string"
+                },
+                "mastery_level": {
+                  "type": "string",
+                  "enum": [
+                    "0-未掌握",
+                    "1-基础",
+                    "2-熟练",
+                    "3-拓展"
+                  ]
+                },
+                "weighted_accuracy": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "sample_count": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "ability_breakdown": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "tag",
+                      "weighted_accuracy",
+                      "sample_count"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "tag": {
+                        "type": "string"
+                      },
+                      "weighted_accuracy": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "sample_count": {
+                        "type": "integer",
+                        "minimum": 0
+                      }
+                    }
+                  }
+                },
+                "ability_breakdown_note": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "evidence_question_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "suggestion": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          },
+          "full_view": {
+            "type": "array",
+            "description": "Every measured node in the chapter. Present only when scope=all.",
+            "items": {
+              "type": "object",
+              "required": [
+                "diagnostic_node_id",
+                "diagnostic_name",
+                "mastery_level",
+                "weighted_accuracy",
+                "sample_count",
+                "evidence_question_ids"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "diagnostic_node_id": {
+                  "type": "string"
+                },
+                "diagnostic_name": {
+                  "type": "string"
+                },
+                "mastery_level": {
+                  "type": "string",
+                  "enum": [
+                    "0-未掌握",
+                    "1-基础",
+                    "2-熟练",
+                    "3-拓展"
+                  ]
+                },
+                "weighted_accuracy": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "sample_count": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "ability_breakdown": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "tag",
+                      "weighted_accuracy",
+                      "sample_count"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "tag": {
+                        "type": "string"
+                      },
+                      "weighted_accuracy": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "sample_count": {
+                        "type": "integer",
+                        "minimum": 0
+                      }
+                    }
+                  }
+                },
+                "ability_breakdown_note": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "evidence_question_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "suggestion": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

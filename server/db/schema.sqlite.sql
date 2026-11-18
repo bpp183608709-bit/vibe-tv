@@ -41,9 +41,11 @@ CREATE TABLE unit (
   id           INTEGER PRIMARY KEY AUTOINCREMENT,
   textbook_id  INTEGER NOT NULL,
   ordinal      INTEGER NOT NULL,
+  code         TEXT    NULL,                     -- aggregate node id, 'math-6up-u01' / 'math-6up-u-review'
   name_zh      TEXT    NOT NULL,
   week_start   INTEGER NULL,
   UNIQUE (textbook_id, ordinal),
+  UNIQUE (code),
   FOREIGN KEY (textbook_id) REFERENCES textbook (id)
 );
 
@@ -51,12 +53,14 @@ CREATE TABLE topic (
   id           INTEGER PRIMARY KEY AUTOINCREMENT,
   unit_id      INTEGER NOT NULL,
   ordinal      INTEGER NOT NULL,
+  chapter_order INTEGER NOT NULL DEFAULT 0,      -- copied from unit.ordinal; the picker reads this
   code         TEXT    NULL,                     -- stable business key, 'math-6up-d01'
   name_zh      TEXT    NOT NULL,
   summary_zh   TEXT    NULL,
   -- JSON array of {source_id, name, evidence, assessment_prompt}: the textbook's own sub-points this
   -- node covers. TEXT because SQLite has no JSON type (the MySQL side is JSON).
   micro_nodes_json TEXT NULL,
+  source_ids_json TEXT NULL,                     -- taxonomy ids behind micro_nodes, same order
   prereq_json  TEXT    NULL,                     -- taxonomy ids that should be solid first; advisory
   knowledge_type TEXT  NULL,                     -- procedural/conceptual/grammar/阅读理解/... see RULES
   UNIQUE (unit_id, ordinal),
@@ -67,8 +71,10 @@ CREATE TABLE topic (
 CREATE TABLE question (
   id               INTEGER PRIMARY KEY AUTOINCREMENT,
   textbook_id      INTEGER NOT NULL,
-  unit_id          INTEGER NOT NULL,
+  unit_id          INTEGER NULL,                 -- empty by design: a question hangs from a node, not a chapter
   topic_id         INTEGER NOT NULL,
+  code             TEXT    NULL,                 -- stable business key from the question file
+  subject_id       INTEGER NULL,                 -- denormalised from the textbook
   angle            TEXT    NOT NULL CHECK (angle IN ('recall','understand','apply')),
   ability_tag      TEXT    NULL,                  -- subject-specific ability; see docs/RULES.md §2.3a
   difficulty       INTEGER NOT NULL,
@@ -204,6 +210,8 @@ CREATE TABLE quiz_answer (
   answered_day    TEXT    NULL,
   chosen          TEXT    NULL,
   is_correct      INTEGER NOT NULL DEFAULT 0,
+  diagnostic_node_id TEXT NULL,                  -- topic.code, so the row is readable without a join
+  ability_tag     TEXT    NULL,
   flagged_unknown INTEGER NOT NULL DEFAULT 0,
   answered_at     TEXT    NULL,
   PRIMARY KEY (session_id, question_id),
@@ -401,6 +409,7 @@ CREATE TABLE topic_mastery (
   total_wrong   INTEGER NOT NULL DEFAULT 0,
   total_right   INTEGER NOT NULL DEFAULT 0,
   weak_since    TEXT    NULL,                     -- when it became weak; NULL while it is not
+  ability_breakdown_json TEXT NULL,               -- [{tag, acc, sample}] over the same window
   last_event_at TEXT    NULL,
   updated_at    TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (device_id, topic_id),
@@ -409,10 +418,34 @@ CREATE TABLE topic_mastery (
 );
 CREATE INDEX idx_mastery_weak ON topic_mastery (device_id, level);
 
+-- The weak list, materialised: one row per (device, topic), written in the same transaction as the
+-- mastery update that caused it. `resolved` is a flag, not a delete, so "was he weak last month" stays
+-- answerable; a relapse clears it on the same row.
+CREATE TABLE weakness (
+  weakness_id    TEXT    NOT NULL,
+  device_id      TEXT    NOT NULL,
+  topic_id       INTEGER NOT NULL,
+  diagnostic_node_id TEXT NOT NULL,               -- topic.code
+  mastery_level  INTEGER NOT NULL,                -- 0 or 1
+  weighted_accuracy INTEGER NOT NULL,             -- x1000, same scale as topic_mastery.acc_x1000
+  sample_count   INTEGER NOT NULL,
+  evidence_question_ids TEXT NULL,                -- JSON array of question codes
+  parent_aggregate_node_id TEXT NOT NULL,         -- unit.code
+  parent_aggregate_name    TEXT NOT NULL,
+  resolved       INTEGER NOT NULL DEFAULT 0,
+  opened_at      TEXT    NOT NULL,
+  updated_at     TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (weakness_id),
+  UNIQUE (device_id, topic_id),
+  FOREIGN KEY (device_id) REFERENCES device (id),
+  FOREIGN KEY (topic_id)  REFERENCES topic (id)
+);
+
 CREATE TABLE mastery_event (
   id          TEXT    NOT NULL,
   device_id   TEXT    NOT NULL,
   topic_id    INTEGER NOT NULL,
+  question_id INTEGER NULL,                       -- the question this row is evidence for
   -- One line on purpose: migrate.py reads one column declaration per line.
   kind        TEXT    NOT NULL CHECK (kind IN ('tv_wrong','tv_right','paper_wrong','streak_bonus','parent_adjust','bad_question_void')),
   delta       INTEGER NOT NULL,                   -- score_after - score_before

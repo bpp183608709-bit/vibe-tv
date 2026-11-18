@@ -697,9 +697,12 @@ class H5:
             where, params, tail = "WHERE t.id = ?", (device_id, device_id, topic_id), "ORDER BY t.id"
         elif floor:
             # A node is on the list only once it has been measured (sample_count ≥ 3) and is weak
-            # (level ≤ 1). Worst first: lowest level, then lowest accuracy, then the newest mistake.
-            where = "WHERE COALESCE(m.level, 3) <= ? AND COALESCE(m.sample_count, 0) >= ?"
-            params = (device_id, device_id, WEAK_MAX_LEVEL, WEAK_MIN_SAMPLE)
+            # (level ≤ 1). Membership comes from the `weakness` table rather than being re-derived here:
+            # the page and the number then cannot disagree about what "weak" means, because one write
+            # (mastery._sync_weakness) decides both. Worst first: lowest level, then lowest accuracy.
+            where = ("WHERE EXISTS (SELECT 1 FROM weakness w"
+                     " WHERE w.device_id = ? AND w.topic_id = t.id AND w.resolved = 0)")
+            params = (device_id, device_id, device_id)
             tail = "ORDER BY COALESCE(m.level, 3), COALESCE(m.acc_x1000, 1000), t.name_zh"
         else:
             where, params = "WHERE 1 = 1", (device_id, device_id)
@@ -707,13 +710,13 @@ class H5:
         rows = self.db.query(
             "SELECT t.id AS topic_id, t.name_zh AS topic, t.code AS node_code,"
             "       t.knowledge_type, t.summary_zh,"
-            "       u.ordinal AS unit_ordinal, u.name_zh AS unit,"
+            "       u.ordinal AS unit_ordinal, u.code AS unit_code, u.name_zh AS unit,"
             "       s.name_zh AS subject, s.code AS subject_code, b.id AS textbook_id,"
             "       COALESCE(m.score, 0) AS score, COALESCE(m.total_wrong, 0) AS total_wrong,"
             "       COALESCE(m.total_right, 0) AS total_right, m.paused_until,"
             "       COALESCE(m.level, 0) AS level, COALESCE(m.sample_count, 0) AS sample_count,"
             "       COALESCE(m.acc_x1000, 0) AS acc_x1000, COALESCE(m.hard_right, 0) AS hard_right,"
-            "       COALESCE(m.bias, 0) AS bias,"
+            "       COALESCE(m.bias, 0) AS bias, m.ability_breakdown_json,"
             "       (SELECT MAX(w.occurred_on) FROM wrong_item w"
             "         WHERE w.device_id = ? AND w.topic_id = t.id AND w.status = 'confirmed')"
             "        AS last_wrong_on,"
@@ -774,6 +777,7 @@ class H5:
             "subject_code": row["subject_code"],
             "textbook_id": int(row["textbook_id"]),
             "unit": row["unit"],
+            "unit_code": row.get("unit_code"),
             "unit_ordinal": int(row["unit_ordinal"]),
             "score": int(row["score"] or 0),
             "level": level,
@@ -786,6 +790,7 @@ class H5:
             "sample_count": sample,
             "hard_right": hard_right,
             "bias": bias,
+            "ability_breakdown": self._abilities(row),
             "need_sample": mastery.need_sample(sample),
             "need_right": mastery.need_right(acc, sample, hard_right, bias, window),
             "weight": mastery.weight_x10(level) / 10,
@@ -881,56 +886,44 @@ class H5:
             "week_line": coach.week_line(len(items)),
         }
 
-    def report_by_node(self, device_id: str, period: str = "最近 30 天") -> dict:
-        """The two-level report: chapters as rows, diagnostic nodes as lines (docs/RULES.md §2.6).
+    def _abilities(self, row: dict) -> list[dict]:
+        """The persisted per-ability split of this node's window. [] when it was never measured."""
+        raw = row.get("ability_breakdown_json")
+        if not raw:
+            return []
+        try:
+            value = json.loads(raw) if isinstance(raw, str) else raw
+        except (TypeError, ValueError):
+            return []
+        return [{"tag": item.get("tag"), "sample": int(item.get("sample") or 0),
+                 "acc": int(item.get("acc") or 0)}
+                for item in value if isinstance(item, dict) and item.get("tag")]
 
-        Reads what the weak list reads and hands it to `report.build`, which owns the shape. Two things
-        are gathered here that the list page has no use for: which questions are the evidence behind a
-        number, and how the node's answers split across ability lines. Both come off the window rather
-        than being recomputed — one place decides a level, and it is `mastery`.
+    def report_by_node(self, device_id: str, period: str = "最近 30 天", scope: str = "weak") -> dict:
+        """The two-level report: chapters as rows, weak diagnostic nodes as lines (docs/RULES.md §2.6).
+
+        The weak lines are read from `weakness`, not reassembled from `topic_mastery`: that table is
+        written in the same transaction as the level, so a report cannot print a level the weak list
+        disagrees with. `scope='all'` also fills `full_view` from the mastery rows — the chapter view
+        a parent gets when they ask "and the rest?" — but the weak list does not change.
 
         The chapter is never judged. It has no questions of its own, so "第三章薄弱" would be a claim
         about nothing; it carries only the two counts (`diagnostic_count`, `weak_diagnostic_count`).
         """
         rows = self._topics(device_id, floor=False)
-        events = self.db.query(
-            "SELECT topic_id, ref_id, is_correct, weight_x10 FROM mastery_event"
-            " WHERE device_id = ? AND counted = 1 AND ref_id IS NOT NULL"
-            " ORDER BY topic_id, seq DESC",
-            (device_id,),
-        )
-        ability_of = {int(row["id"]): row["ability_tag"] for row in self.db.query(
-            "SELECT id, ability_tag FROM question WHERE ability_tag IS NOT NULL")}
-
-        evidence: dict[int, list[int]] = {}
-        abilities: dict[int, dict[str, dict]] = {}
-        for event in events:
-            # `ref_id` is `<session>:<question>`; anything else (a paper row, a parent's tap) is not
-            # evidence a question can be named from, and a report that quoted one would be misleading.
-            ref = str(event["ref_id"] or "")
-            if ":" not in ref:
-                continue
-            try:
-                question_id = int(ref.rsplit(":", 1)[-1])
-            except ValueError:
-                continue
-            topic_id = int(event["topic_id"])
-            bucket = evidence.setdefault(topic_id, [])
-            if len(bucket) < 3:
-                bucket.append(question_id)
-            tag = ability_of.get(question_id)
-            if tag:
-                weight = int(event["weight_x10"] or 0)
-                slot = abilities.setdefault(topic_id, {}).setdefault(
-                    tag, {"tag": tag, "weight": 0, "got": 0, "sample": 0})
-                slot["weight"] += weight
-                slot["sample"] += 1
-                if int(event["is_correct"] or 0):
-                    slot["got"] += weight
+        open_weak = {int(row["topic_id"]): row for row in self.db.query(
+            "SELECT * FROM weakness WHERE device_id = ? AND resolved = 0", (device_id,))}
 
         groups: dict[str, dict] = {}
         for row in rows:
-            aggregate_id = f"{row['subject_code']}-6up-u{int(row['unit_ordinal']):02d}"
+            topic_id = int(row["topic_id"])
+            # Read, never assembled: `unit.code` is the aggregate node id, written by the importer. A
+            # missing code means the nodes were not imported from knowledge-eval/data, which is a state
+            # to report, not a string to invent from the subject code and an ordinal.
+            aggregate_id = row.get("unit_code")
+            if not aggregate_id:
+                raise GradeError("node-not-imported", 500,
+                                 f"unit {row['unit_ordinal']} of {row['subject_code']} has no code")
             group = groups.get(aggregate_id)
             if group is None:
                 group = groups[aggregate_id] = {
@@ -941,20 +934,37 @@ class H5:
                     "diagnostics": [],
                 }
             group["diagnostic_count"] += 1
+
+            weakness_row = open_weak.get(topic_id)
+            if weakness_row is not None:
+                try:
+                    evidence = json.loads(weakness_row.get("evidence_question_ids") or "[]")
+                except (TypeError, ValueError):
+                    evidence = []
+                group["diagnostics"].append({
+                    "node_id": weakness_row["diagnostic_node_id"],
+                    "node_name": row["topic"],
+                    "level": int(weakness_row["mastery_level"]),
+                    "acc": int(weakness_row["weighted_accuracy"]),
+                    "sample": int(weakness_row["sample_count"]),
+                    "evidence": [str(item) for item in evidence],
+                    "abilities": self._abilities(row),
+                    "measured": True,
+                })
+                continue
+
+            sample = int(row["sample_count"])
             group["diagnostics"].append({
-                "node_id": row["node_code"] or str(row["topic_id"]),
+                "node_id": row["node_code"] or str(topic_id),
                 "node_name": row["topic"],
                 "level": int(row["level"]),
                 "acc": round(float(row["weighted_accuracy"]) * 1000),
-                "sample": int(row["sample_count"]),
-                "evidence": evidence.get(int(row["topic_id"]), []),
-                "abilities": [
-                    {"tag": slot["tag"], "sample": slot["sample"],
-                     "acc": round(1000 * slot["got"] / slot["weight"]) if slot["weight"] else 0}
-                    for slot in abilities.get(int(row["topic_id"]), {}).values()
-                ],
+                "sample": sample,
+                "measured": sample >= WEAK_MIN_SAMPLE,
+                "evidence": [],
+                "abilities": self._abilities(row),
             })
-        return report.build(list(groups.values()), period)
+        return report.build(list(groups.values()), period, scope=scope, source="db")
 
     def weak_topic(self, device_id: str, topic_id: int, day_key: str, now_ms: int) -> dict:
         """One topic: the score, the arithmetic behind it, and the sentence to say out loud.

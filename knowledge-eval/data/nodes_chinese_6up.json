@@ -1,0 +1,459 @@
+{
+ "schema_version": 3,
+ "shape": "§4.1 flat node list: one array, node_type marks aggregate vs diagnostic",
+ "subject": "chinese",
+ "subject_id": 2,
+ "subject_name_zh": "语文",
+ "publisher": "统编",
+ "publisher_zh": "人民教育出版社",
+ "textbook_title_zh": "义务教育教科书·语文（六年级上册）",
+ "edition": "统编版 current printing (8 units)",
+ "verified": false,
+ "source": "manual",
+ "taxonomy_version": null,
+ "grade": 6,
+ "semester": "up",
+ "nodes": [
+  {
+   "node_id": "chinese-6up-u01",
+   "name": "触摸自然",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "触摸自然",
+   "micro_nodes": [
+    "写景状物类文本的语境词义与情感把握",
+    "古诗词的背诵与理解（宿建德江·六月二十七日望湖楼醉书·西江月·夜行黄沙道中）"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "触摸自然",
+   "status": "active",
+   "chapter_order": 1,
+   "week_start": 1
+  },
+  {
+   "node_id": "chinese-6up-d01",
+   "name": "写景状物类文本的语境词义与情感把握",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "chinese-6up-u01",
+   "chapter_name": "触摸自然",
+   "knowledge_type": "阅读理解",
+   "micro_nodes": [
+    "草原",
+    "丁香结",
+    "古诗词三首"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "能在写景句子里读出词义和作者的心情",
+   "status": "active",
+   "chapter_order": 1
+  },
+  {
+   "node_id": "chinese-6up-d02",
+   "name": "古诗词的背诵与理解（宿建德江·六月二十七日望湖楼醉书·西江月·夜行黄沙道中）",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "chinese-6up-u01",
+   "chapter_name": "触摸自然",
+   "knowledge_type": "字词基础",
+   "micro_nodes": [
+    "宿建德江",
+    "六月二十七日望湖楼醉书",
+    "西江月·夜行黄沙道中"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "三首古诗词的默写、作者与画面",
+   "status": "active",
+   "chapter_order": 1
+  },
+  {
+   "node_id": "chinese-6up-u02",
+   "name": "重温革命岁月",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "重温革命岁月",
+   "micro_nodes": [
+    "革命题材叙事文的场面概括与人物品质",
+    "点面结合写法的辨识"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "重温革命岁月",
+   "status": "active",
+   "chapter_order": 2,
+   "week_start": 3
+  },
+  {
+   "node_id": "chinese-6up-d03",
+   "name": "革命题材叙事文的场面概括与人物品质",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "chinese-6up-u02",
+   "chapter_name": "重温革命岁月",
+   "knowledge_type": "阅读理解",
+   "micro_nodes": [
+    "七律·长征",
+    "狼牙山五壮士",
+    "开国大典",
+    "灯光",
+    "我的战友邱少云"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "能用一句话概括场面，说出人物的品质",
+   "status": "active",
+   "chapter_order": 2
+  },
+  {
+   "node_id": "chinese-6up-d04",
+   "name": "点面结合写法的辨识",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "chinese-6up-u02",
+   "chapter_name": "重温革命岁月",
+   "knowledge_type": "习作方法",
+   "micro_nodes": [
+    "开国大典",
+    "狼牙山五壮士"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "能分出哪句写整体、哪句写个别人物",
+   "status": "active",
+   "chapter_order": 2
+  },
+  {
+   "node_id": "chinese-6up-u03",
+   "name": "有目的地阅读",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "有目的地阅读",
+   "micro_nodes": [
+    "按任务筛选信息与调整阅读速度"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "有目的地阅读",
+   "status": "active",
+   "chapter_order": 3,
+   "week_start": 5
+  },
+  {
+   "node_id": "chinese-6up-d05",
+   "name": "按任务筛选信息与调整阅读速度",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "chinese-6up-u03",
+   "chapter_name": "有目的地阅读",
+   "knowledge_type": "阅读理解",
+   "micro_nodes": [
+    "竹节人",
+    "宇宙生命之谜",
+    "故宫博物院"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "带着问题找段落，与任务无关的部分快速跳过",
+   "status": "active",
+   "chapter_order": 3
+  },
+  {
+   "node_id": "chinese-6up-u04",
+   "name": "小说阅读",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "小说阅读",
+   "micro_nodes": [
+    "小说三要素的识别与分析",
+    "环境描写与人物心理的关系"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "小说阅读",
+   "status": "active",
+   "chapter_order": 4,
+   "week_start": 7
+  },
+  {
+   "node_id": "chinese-6up-d06",
+   "name": "小说三要素的识别与分析",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "chinese-6up-u04",
+   "chapter_name": "小说阅读",
+   "knowledge_type": "阅读理解",
+   "micro_nodes": [
+    "桥",
+    "穷人",
+    "金色的鱼钩"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "找出人物、情节、环境，并说明各自的作用",
+   "status": "active",
+   "chapter_order": 4
+  },
+  {
+   "node_id": "chinese-6up-d07",
+   "name": "环境描写与人物心理的关系",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "chinese-6up-u04",
+   "chapter_name": "小说阅读",
+   "knowledge_type": "阅读理解",
+   "micro_nodes": [
+    "穷人",
+    "桥"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "从环境句里读出人物当时的心情",
+   "status": "active",
+   "chapter_order": 4
+  },
+  {
+   "node_id": "chinese-6up-u05",
+   "name": "围绕中心意思写",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "围绕中心意思写",
+   "micro_nodes": [
+    "围绕中心意思选取材料"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "围绕中心意思写",
+   "status": "active",
+   "chapter_order": 5,
+   "week_start": 9
+  },
+  {
+   "node_id": "chinese-6up-d08",
+   "name": "围绕中心意思选取材料",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "chinese-6up-u05",
+   "chapter_name": "围绕中心意思写",
+   "knowledge_type": "习作方法",
+   "micro_nodes": [
+    "夏天里的成长",
+    "盼"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "能判断哪些事例支撑中心，哪些跑题",
+   "status": "active",
+   "chapter_order": 5
+  },
+  {
+   "node_id": "chinese-6up-u06",
+   "name": "保护环境",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "保护环境",
+   "micro_nodes": [
+    "说明性文章的信息提取与观点依据",
+    "古诗三首的景物与情感（浪淘沙·江南春·书湖阴先生壁）"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "保护环境",
+   "status": "active",
+   "chapter_order": 6,
+   "week_start": 11
+  },
+  {
+   "node_id": "chinese-6up-d09",
+   "name": "说明性文章的信息提取与观点依据",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "chinese-6up-u06",
+   "chapter_name": "保护环境",
+   "knowledge_type": "阅读理解",
+   "micro_nodes": [
+    "只有一个地球",
+    "青山不老",
+    "三黑和土地"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "找出说明方法，说出观点靠什么支撑",
+   "status": "active",
+   "chapter_order": 6
+  },
+  {
+   "node_id": "chinese-6up-d10",
+   "name": "古诗三首的景物与情感（浪淘沙·江南春·书湖阴先生壁）",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "chinese-6up-u06",
+   "chapter_name": "保护环境",
+   "knowledge_type": "字词基础",
+   "micro_nodes": [
+    "浪淘沙（其一）",
+    "江南春",
+    "书湖阴先生壁"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "三首古诗的默写、画面与情感",
+   "status": "active",
+   "chapter_order": 6
+  },
+  {
+   "node_id": "chinese-6up-u07",
+   "name": "艺术之美",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "艺术之美",
+   "micro_nodes": [
+    "文言实词与文意（伯牙鼓琴·书戴嵩画牛）",
+    "艺术类文本的联想与表达"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "艺术之美",
+   "status": "active",
+   "chapter_order": 7,
+   "week_start": 13
+  },
+  {
+   "node_id": "chinese-6up-d11",
+   "name": "文言实词与文意（伯牙鼓琴·书戴嵩画牛）",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "chinese-6up-u07",
+   "chapter_name": "艺术之美",
+   "knowledge_type": "字词基础",
+   "micro_nodes": [
+    "伯牙鼓琴",
+    "书戴嵩画牛"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "鼓、志、巍巍、汤汤等实词，能把句子说通",
+   "status": "active",
+   "chapter_order": 7
+  },
+  {
+   "node_id": "chinese-6up-d12",
+   "name": "艺术类文本的联想与表达",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "chinese-6up-u07",
+   "chapter_name": "艺术之美",
+   "knowledge_type": "阅读理解",
+   "micro_nodes": [
+    "月光曲",
+    "京剧趣谈"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "从音乐、京剧的描写里读出想象和用词的好处",
+   "status": "active",
+   "chapter_order": 7
+  },
+  {
+   "node_id": "chinese-6up-u08",
+   "name": "走近鲁迅",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "走近鲁迅",
+   "micro_nodes": [
+    "鲁迅作品的人物形象与时代背景",
+    "借助资料理解课文"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "走近鲁迅",
+   "status": "active",
+   "chapter_order": 8,
+   "week_start": 15
+  },
+  {
+   "node_id": "chinese-6up-d13",
+   "name": "鲁迅作品的人物形象与时代背景",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "chinese-6up-u08",
+   "chapter_name": "走近鲁迅",
+   "knowledge_type": "阅读理解",
+   "micro_nodes": [
+    "少年闰土",
+    "好的故事",
+    "我的伯父鲁迅先生",
+    "有的人——纪念鲁迅有感"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "闰土、伯父的形象，以及那时社会的样子",
+   "status": "active",
+   "chapter_order": 8
+  },
+  {
+   "node_id": "chinese-6up-d14",
+   "name": "借助资料理解课文",
+   "subject": "chinese",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "chinese-6up-u08",
+   "chapter_name": "走近鲁迅",
+   "knowledge_type": "阅读理解",
+   "micro_nodes": [
+    "少年闰土",
+    "我的伯父鲁迅先生"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "会查背景资料，并用它解释课文里读不懂的地方",
+   "status": "active",
+   "chapter_order": 8
+  }
+ ]
+}

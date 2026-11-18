@@ -29,8 +29,7 @@ server/
   db/
     schema.sql           MySQL 8，生产事实来源
     schema.sqlite.sql    本机验收用的等价物；两份由 tools/check_schema_parity.py 比对防漂移
-  content/curriculum/
-    grade6-up.json       知识点树（三科 16 单元 30 知识点），verified=false 待 OCR 核对
+  # 节点与题库在 knowledge-eval/data/；这里不保留第二份会过期的副本
   app/
     api.py               HTTP 路由：/health /v1/pair/{start,renew,status} /v1/config /v1/heartbeat
                          /v1/quota /v1/quiz/next /v1/quiz/{id}/grade /v1/auth/* /v1/h5/*，
@@ -41,7 +40,7 @@ server/
     picker.py            出题：当前单元 → 本学期已学单元 → 其余，错题加权，≤2 题/知识点
     curriculum.py        当前单元从哪来：日历推算（term_anchor）+ 家长覆盖；学期学完转复习期
     mix.py               三段配比 S0–S3：薄弱规模 × 最深档，当日快照（docs/RULES.md §3）
-    mastery.py           薄弱度：事件权重累加、档位、还要答对几次、连对加成、连错暂停
+    mastery.py           掌握度：最近十条加权窗口、档位、weakness 同步、连错暂停
     grade.py             判分：等价答案、⌈0.8n⌉ 通过线、幂等、上限在事务里扣
     ticket.py            凭证格式 AQ1.<payload>.<sig>，ES256/HS256 两种签名器
     es256.py             ECDSA P-256 + RFC 6979 + DER，标准库
@@ -49,9 +48,8 @@ server/
     db.py                sqlite/mysql 适配 + 事务
   web/                   家长 H5，三个文件没有构建步骤（index.html / app.css / app.js + manifest + icon）
   tools/
-    import_curriculum.py 知识点树 → 库（幂等，按自然键）
+    import_curriculum.py 扁平节点文件 → 库（幂等，按 node_id）
     migrate.py           老库补列补表（used_ms、config_audit），幂等
-    gen_seed_questions.py 种子题：模板 × 参数，数学题过 sympy 才入库
     pdf_outline.py       教材 PDF → 目录文本（需 poppler / tesseract）
     genkey.py            生成 ES256 密钥对，打印 Kotlin 用的公钥常量
     interop_es256.py     与 openssl 四向交叉验签

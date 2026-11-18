@@ -1,0 +1,42 @@
+{
+ "schema_version": 1,
+ "student_id": "demo-child",
+ "note": "合成的样例作答，用于 README 的一键演示；不含真实学生信息。",
+ "answers": [
+  {
+   "question_id": "math-6up-d01-q01",
+   "is_correct": true,
+   "answered_at": "2026-11-01T09:00:00"
+  },
+  {
+   "question_id": "math-6up-d01-q02",
+   "is_correct": false,
+   "answered_at": "2026-11-01T10:00:00"
+  },
+  {
+   "question_id": "math-6up-d01-q03",
+   "is_correct": false,
+   "answered_at": "2026-11-02T09:00:00"
+  },
+  {
+   "question_id": "chinese-6up-d01-q01",
+   "is_correct": true,
+   "answered_at": "2026-11-03T09:00:00"
+  },
+  {
+   "question_id": "chinese-6up-d01-q02",
+   "is_correct": false,
+   "answered_at": "2026-11-03T10:00:00"
+  },
+  {
+   "question_id": "english-6up-d01-q01",
+   "is_correct": true,
+   "answered_at": "2026-11-04T09:00:00"
+  },
+  {
+   "question_id": "english-6up-d01-q02",
+   "is_correct": true,
+   "answered_at": "2026-11-04T11:00:00"
+  }
+ ]
+}

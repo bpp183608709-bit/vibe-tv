@@ -1,0 +1,57 @@
+{
+ "schema_version": 1,
+ "student_id": "demo-child",
+ "note": "合成的样例作答：一个 未掌握 节点、一个 熟练 节点、一个 拓展 节点、一个还不够三个样本的节点。不含任何真实学生信息。",
+ "answers": [
+  {
+   "question_id": "math-6up-d01-q01",
+   "is_correct": false,
+   "answered_at": "2026-11-01T09:00:00"
+  },
+  {
+   "question_id": "math-6up-d01-q02",
+   "is_correct": false,
+   "answered_at": "2026-11-02T09:00:00"
+  },
+  {
+   "question_id": "math-6up-d01-q03",
+   "is_correct": false,
+   "answered_at": "2026-11-03T09:00:00"
+  },
+  {
+   "question_id": "math-6up-d08-q01",
+   "is_correct": true,
+   "answered_at": "2026-11-01T09:00:00"
+  },
+  {
+   "question_id": "math-6up-d08-q02",
+   "is_correct": true,
+   "answered_at": "2026-11-02T09:00:00"
+  },
+  {
+   "question_id": "math-6up-d08-q02",
+   "is_correct": true,
+   "answered_at": "2026-11-04T09:00:00"
+  },
+  {
+   "question_id": "math-6up-d11-q03",
+   "is_correct": true,
+   "answered_at": "2026-11-05T09:00:00"
+  },
+  {
+   "question_id": "math-6up-d11-q03",
+   "is_correct": true,
+   "answered_at": "2026-11-06T09:00:00"
+  },
+  {
+   "question_id": "math-6up-d11-q02",
+   "is_correct": true,
+   "answered_at": "2026-11-07T09:00:00"
+  },
+  {
+   "question_id": "math-6up-d15-q01",
+   "is_correct": false,
+   "answered_at": "2026-11-08T09:00:00"
+  }
+ ]
+}

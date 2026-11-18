@@ -1,0 +1,508 @@
+{
+ "schema_version": 3,
+ "shape": "§4.1 flat node list: one array, node_type marks aggregate vs diagnostic",
+ "subject": "english",
+ "subject_id": 3,
+ "subject_name_zh": "英语",
+ "publisher": "xiangshao",
+ "publisher_zh": "湖南少年儿童出版社",
+ "textbook_title_zh": "义务教育教科书·英语（六年级上册）",
+ "edition": "2026 autumn edition (10 units)",
+ "verified": false,
+ "source": "manual",
+ "taxonomy_version": null,
+ "grade": 6,
+ "semester": "up",
+ "nodes": [
+  {
+   "node_id": "english-6up-u01",
+   "name": "Cities in China",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "Cities in China",
+   "micro_nodes": [
+    "一般过去时（规则与不规则动词）+ 谈假期活动",
+    "假期活动词汇与问答"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "Cities in China",
+   "status": "active",
+   "chapter_order": 1,
+   "week_start": 1
+  },
+  {
+   "node_id": "english-6up-d01",
+   "name": "一般过去时（规则与不规则动词）+ 谈假期活动",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u01",
+   "chapter_name": "Cities in China",
+   "knowledge_type": "grammar",
+   "micro_nodes": [
+    "一般过去时",
+    "不规则动词过去式",
+    "What did you do during the holidays?"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "went/visited/watched 的用法与 What did you do 问答",
+   "status": "active",
+   "chapter_order": 1
+  },
+  {
+   "node_id": "english-6up-d02",
+   "name": "假期活动词汇与问答",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u01",
+   "chapter_name": "Cities in China",
+   "knowledge_type": "vocabulary",
+   "micro_nodes": [
+    "假期活动动词",
+    "城市与家乡名称"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "travelled, visited, climbed, took photos 等假期动词",
+   "status": "active",
+   "chapter_order": 1
+  },
+  {
+   "node_id": "english-6up-u02",
+   "name": "Daily plan",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "Daily plan",
+   "micro_nodes": [
+    "一般现在时第三人称单数",
+    "频度副词"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "Daily plan",
+   "status": "active",
+   "chapter_order": 2,
+   "week_start": 2
+  },
+  {
+   "node_id": "english-6up-d03",
+   "name": "一般现在时第三人称单数",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u02",
+   "chapter_name": "Daily plan",
+   "knowledge_type": "grammar",
+   "micro_nodes": [
+    "一般现在时",
+    "第三人称单数",
+    "Katie always gets up early"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "主语是 he/she/it 时动词加 -s/-es",
+   "status": "active",
+   "chapter_order": 2
+  },
+  {
+   "node_id": "english-6up-d04",
+   "name": "频度副词",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u02",
+   "chapter_name": "Daily plan",
+   "knowledge_type": "vocabulary",
+   "micro_nodes": [
+    "频度副词",
+    "日常作息表达"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "always/usually/often/sometimes/never 的位置与含义",
+   "status": "active",
+   "chapter_order": 2
+  },
+  {
+   "node_id": "english-6up-u03",
+   "name": "I like my computer",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "I like my computer",
+   "micro_nodes": [
+    "There be 句型",
+    "enjoy + doing"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "I like my computer",
+   "status": "active",
+   "chapter_order": 3,
+   "week_start": 4
+  },
+  {
+   "node_id": "english-6up-d05",
+   "name": "There be 句型",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u03",
+   "chapter_name": "I like my computer",
+   "knowledge_type": "sentence_pattern",
+   "micro_nodes": [
+    "There be 句型",
+    "描述房间里有什么"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "There is / There are 与单复数的一致",
+   "status": "active",
+   "chapter_order": 3
+  },
+  {
+   "node_id": "english-6up-d06",
+   "name": "enjoy + doing",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u03",
+   "chapter_name": "I like my computer",
+   "knowledge_type": "grammar",
+   "micro_nodes": [
+    "enjoy doing",
+    "like doing"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "enjoy 后接动名词，以及 like/love + doing",
+   "status": "active",
+   "chapter_order": 3
+  },
+  {
+   "node_id": "english-6up-u04",
+   "name": "The Mid-Autumn Festival",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "The Mid-Autumn Festival",
+   "micro_nodes": [
+    "一般现在时与一般过去时在节日描述中的对比"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "The Mid-Autumn Festival",
+   "status": "active",
+   "chapter_order": 4,
+   "week_start": 5
+  },
+  {
+   "node_id": "english-6up-d07",
+   "name": "一般现在时与一般过去时在节日描述中的对比",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u04",
+   "chapter_name": "The Mid-Autumn Festival",
+   "knowledge_type": "grammar",
+   "micro_nodes": [
+    "一般现在时",
+    "一般过去时",
+    "节日活动表达"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "习俗用现在时，今年的经历用过去时",
+   "status": "active",
+   "chapter_order": 4
+  },
+  {
+   "node_id": "english-6up-u05",
+   "name": "It will be sunny and cool tomorrow",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "It will be sunny and cool tomorrow",
+   "micro_nodes": [
+    "一般将来时 will",
+    "天气词汇与活动安排"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "It will be sunny and cool tomorrow",
+   "status": "active",
+   "chapter_order": 5,
+   "week_start": 7
+  },
+  {
+   "node_id": "english-6up-d08",
+   "name": "一般将来时 will",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u05",
+   "chapter_name": "It will be sunny and cool tomorrow",
+   "knowledge_type": "grammar",
+   "micro_nodes": [
+    "一般将来时 will",
+    "天气描述"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "will + 动词原形，以及 will be 描述天气",
+   "status": "active",
+   "chapter_order": 5
+  },
+  {
+   "node_id": "english-6up-d09",
+   "name": "天气词汇与活动安排",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u05",
+   "chapter_name": "It will be sunny and cool tomorrow",
+   "knowledge_type": "vocabulary",
+   "micro_nodes": [
+    "天气形容词",
+    "天气下的活动"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "sunny/cloudy/rainy/windy 与好天气坏天气下的活动",
+   "status": "active",
+   "chapter_order": 5
+  },
+  {
+   "node_id": "english-6up-u06",
+   "name": "I will bring a big bottle of orange juice",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "I will bring a big bottle of orange juice",
+   "micro_nodes": [
+    "量词表达（a bottle of / a glass of）"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "I will bring a big bottle of orange juice",
+   "status": "active",
+   "chapter_order": 6,
+   "week_start": 8
+  },
+  {
+   "node_id": "english-6up-d10",
+   "name": "量词表达（a bottle of / a glass of）",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u06",
+   "chapter_name": "I will bring a big bottle of orange juice",
+   "knowledge_type": "vocabulary",
+   "micro_nodes": [
+    "量词 a bottle of",
+    "a glass of / a cup of",
+    "不可数名词"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "不可数名词前的量词与复数变化",
+   "status": "active",
+   "chapter_order": 6
+  },
+  {
+   "node_id": "english-6up-u07",
+   "name": "What can I do?",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "What can I do?",
+   "micro_nodes": [
+    "情态动词 can 表能力与请求"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "What can I do?",
+   "status": "active",
+   "chapter_order": 7,
+   "week_start": 10
+  },
+  {
+   "node_id": "english-6up-d11",
+   "name": "情态动词 can 表能力与请求",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u07",
+   "chapter_name": "What can I do?",
+   "knowledge_type": "grammar",
+   "micro_nodes": [
+    "情态动词 can",
+    "提供帮助的表达"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "can + 动词原形，What can I do for you?",
+   "status": "active",
+   "chapter_order": 7
+  },
+  {
+   "node_id": "english-6up-u08",
+   "name": "We shouldn't waste water",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "We shouldn't waste water",
+   "micro_nodes": [
+    "should / shouldn't 表建议"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "We shouldn't waste water",
+   "status": "active",
+   "chapter_order": 8,
+   "week_start": 11
+  },
+  {
+   "node_id": "english-6up-d12",
+   "name": "should / shouldn't 表建议",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u08",
+   "chapter_name": "We shouldn't waste water",
+   "knowledge_type": "grammar",
+   "micro_nodes": [
+    "情态动词 should",
+    "3R 环保表达"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "should + 动词原形，给环保提建议",
+   "status": "active",
+   "chapter_order": 8
+  },
+  {
+   "node_id": "english-6up-u09",
+   "name": "This bird is bigger than the first one",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "This bird is bigger than the first one",
+   "micro_nodes": [
+    "形容词比较级（-er / more）",
+    "比较级句型 than"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "This bird is bigger than the first one",
+   "status": "active",
+   "chapter_order": 9,
+   "week_start": 13
+  },
+  {
+   "node_id": "english-6up-d13",
+   "name": "形容词比较级（-er / more）",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u09",
+   "chapter_name": "This bird is bigger than the first one",
+   "knowledge_type": "grammar",
+   "micro_nodes": [
+    "形容词比较级",
+    "双写辅音",
+    "more + 长形容词"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "big→bigger，双写与 more 的规则",
+   "status": "active",
+   "chapter_order": 9
+  },
+  {
+   "node_id": "english-6up-d14",
+   "name": "比较级句型 than",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u09",
+   "chapter_name": "This bird is bigger than the first one",
+   "knowledge_type": "sentence_pattern",
+   "micro_nodes": [
+    "比较级句型 than",
+    "两者比较"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "A is bigger than B 的完整句子",
+   "status": "active",
+   "chapter_order": 9
+  },
+  {
+   "node_id": "english-6up-u10",
+   "name": "Festivals",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "Festivals",
+   "micro_nodes": [
+    "节日习俗表达与最高级初步"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "Festivals",
+   "status": "active",
+   "chapter_order": 10,
+   "week_start": 15
+  },
+  {
+   "node_id": "english-6up-d15",
+   "name": "节日习俗表达与最高级初步",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u10",
+   "chapter_name": "Festivals",
+   "knowledge_type": "vocabulary",
+   "micro_nodes": [
+    "节日习俗",
+    "形容词最高级"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "春节与圣诞节的习俗，the biggest / the most popular",
+   "status": "active",
+   "chapter_order": 10
+  }
+ ]
+}

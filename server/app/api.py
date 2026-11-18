@@ -621,8 +621,10 @@ def make_handler(api: Api):
                 # Two levels, the way the book is: a chapter is a row, the diagnostic nodes inside it
                 # are the lines. Kept beside `/v1/h5/report` rather than replacing it — that one is the
                 # seven-day activity summary the home page has always drawn.
+                # ?scope=all adds the whole-chapter view; the default is the weak list only.
                 api.h5.device_of(account["id"], device_id)
-                self._send(200, api.h5.report_by_node(device_id))
+                scope = "all" if str(query.get("scope") or "").lower() == "all" else "weak"
+                self._send(200, api.h5.report_by_node(device_id, scope=scope))
             elif H5_TOPIC_PATH.match(path) and method == "GET":
                 api.h5.device_of(account["id"], device_id)
                 self._send(200, api.h5.weak_topic(

@@ -52,3 +52,4 @@ docs/mockups/.chrome-profile/
 
 # Headless-Chrome profile left behind by server/tools/preview_h5.mjs. Scratch, never a source of truth.
 server/tools/.chrome-preview*/
+.pytest_cache/

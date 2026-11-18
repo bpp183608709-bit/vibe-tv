@@ -343,12 +343,11 @@ def main(argv: list[str] | None = None) -> int:
                 file=sys.stderr,
             )
             return 2
-    tree = json.loads((ROOT / "content/curriculum/grade6-up.json").read_text(encoding="utf-8"))
-    import_curriculum.import_tree(db, tree)
-    # The bank is the hand-written one now (content/questions/*.json): 39 questions on 13 diagnostic
-    # nodes, three difficulties each. The template generator is still in the tree for the topics it can
-    # serve, but it is no longer how this suite gets a bank — it would fill nodes the design left at 待测
-    # and hide the coverage the bank is supposed to prove (content/tools/check_content.py).
+    import_curriculum.import_tree(db, import_curriculum.load_files())
+    # The bank is the hand-written one now (knowledge-eval/data/questions_*.json): 42 questions on 15
+    # diagnostic nodes, three difficulties each. The template generator is retired — it would fill nodes
+    # the design left at 待测 and hide the coverage the bank is supposed to prove
+    # (knowledge-eval/scripts/check_content.py).
     if db.scalar("SELECT COUNT(*) FROM question", default=0) == 0:
         import_questions.main(["--dsn", dsn])
     db.close()
@@ -801,6 +800,19 @@ def main(argv: list[str] | None = None) -> int:
                     " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?)",
                     (device_id, topic_id, round(acc / 10), level, mastery.weight_x10(level),
                      mastery.target_qty(level), sample, weight_sum, correct, acc, when, when, when))
+                # The weak list reads `weakness`, so a hand-written row has to appear there too, or the
+                # quota cases would be setting up a state the parent page cannot see.
+                if level <= 1:
+                    meta = cur.query_one(
+                        "SELECT t.code AS node_code, u.code AS aggregate_code, u.name_zh AS aggregate_name"
+                        "  FROM topic t JOIN unit u ON u.id = t.unit_id WHERE t.id = ?", (topic_id,))
+                    cur.execute(
+                        "INSERT INTO weakness (weakness_id, device_id, topic_id, diagnostic_node_id,"
+                        " mastery_level, weighted_accuracy, sample_count, evidence_question_ids,"
+                        " parent_aggregate_node_id, parent_aggregate_name, resolved, opened_at, updated_at)"
+                        " VALUES (?, ?, ?, ?, ?, ?, ?, '', ?, ?, 0, ?, ?)",
+                        (mastery.new_ulid(), device_id, topic_id, meta["node_code"], level, acc, sample,
+                         meta["aggregate_code"], meta["aggregate_name"], when, when))
 
         def split(device_id: str, session: dict) -> tuple[int, int, int]:
             """(review, current-unit, total), read back from the database rather than the response."""
@@ -809,8 +821,8 @@ def main(argv: list[str] | None = None) -> int:
             review = set(json.loads(raw))
             qids = [question["id"] for question in session["questions"]]
             rows = probe.query(
-                "SELECT q.id, u.ordinal, cp.current_unit_ordinal AS current FROM question q"
-                " JOIN unit u ON u.id = q.unit_id"
+                "SELECT q.id, t.chapter_order AS ordinal, cp.current_unit_ordinal AS current FROM question q"
+                " JOIN topic t ON t.id = q.topic_id"
                 " JOIN curriculum_progress cp ON cp.textbook_id = q.textbook_id AND cp.device_id = ?"
                 f" WHERE q.id IN ({','.join('?' for _ in qids)})", [device_id] + qids)
             current = sum(1 for row in rows
@@ -1485,15 +1497,35 @@ def main(argv: list[str] | None = None) -> int:
         check("and carries no level of its own",
               all("mastery_level" not in chapter for chapter in chapters),
               str(sorted(chapters[0])) if chapters else "")
-        check("every measured node has a label, a suggestion and the questions behind it",
+        check("every weak node has a label, a suggestion and the questions behind it",
               bool(named) and all(line["mastery_level"] in report.LABELS and line["suggestion"]
                                   and line["evidence_question_ids"] for line in named),
               str(named[:1]))
         check("the accuracy it prints is the window's own number",
               all(0.0 <= line["weighted_accuracy"] <= 1.0 for line in named), str(named[:1]))
+        check("the default report lists the weak nodes and nothing else",
+              all(line["mastery_level"] in ("0-未掌握", "1-基础") for line in named),
+              str([line["mastery_level"] for line in named]))
+        check("and its count matches the lines it printed",
+              sum(chapter["weak_diagnostic_count"] for chapter in chapters) == len(named),
+              f"{sum(chapter['weak_diagnostic_count'] for chapter in chapters)} vs {len(named)}")
         check("unmeasured nodes are dropped from the lines but still counted in the chapter",
               sum(chapter["diagnostic_count"] for chapter in chapters) >= len(named),
               f"{sum(chapter['diagnostic_count'] for chapter in chapters)} vs {len(named)}")
+
+        # ?scope=all adds the whole-chapter view and must not change the weak list.
+        status, full = dad.call("GET", f"/v1/h5/mastery/report?scope=all&device_id={p2_device}")
+        full_chapters = full.get("aggregate_summary") or []
+        full_lines = [line for chapter in full_chapters for line in chapter.get("full_view", [])]
+        check("?scope=all adds full_view without touching diagnostics",
+              status == 200 and len(full_lines) >= len(named)
+              and [line["diagnostic_node_id"] for chapter in full_chapters
+                   for line in chapter["diagnostics"]]
+              == [line["diagnostic_node_id"] for chapter in chapters for line in chapter["diagnostics"]],
+              f"{status} {len(full_lines)} vs {len(named)}")
+        check("and the full view is a superset of the weak one",
+              {line["diagnostic_node_id"] for line in named} <= {line["diagnostic_node_id"] for line in full_lines},
+              str(sorted({line["diagnostic_node_id"] for line in named})))
 
         # The add sheet's menu is the whole catalog, not the weak list: a parent recording a mistake
         # from a paper is often recording one on a topic that has not gone weak yet.

@@ -19,7 +19,7 @@ and tesseract on the machine that has the PDFs (macOS: `brew install poppler tes
 and run it there before trusting any output.
 
 Output goes to stdout as plain text, deliberately: the next step is a human reading it next to
-`server/content/curriculum/grade6-up.json` and fixing the differences. Automating that comparison is
+`knowledge-eval/data/nodes_<subject>_6up.json` and fixing the differences. Automating that comparison is
 not worth it for 30 rows, and an automatic merge of two unverified lists is how a wrong topic name
 survives into production.
 """

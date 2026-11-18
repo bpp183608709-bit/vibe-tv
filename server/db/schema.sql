@@ -39,12 +39,17 @@ CREATE TABLE unit (
   id           SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
   textbook_id  SMALLINT UNSIGNED NOT NULL,
   ordinal      TINYINT UNSIGNED  NOT NULL,        -- 1-based position in the table of contents
+  -- Stable business key of the aggregate node: 'math-6up-u01', 'math-6up-u-review'. The report prints
+  -- this instead of assembling a string from subject code + ordinal, so an aggregate is addressable
+  -- from outside the database and does not change when the book is re-cut.
+  code         VARCHAR(24)       NULL,
   name_zh      VARCHAR(64)       NOT NULL,
   -- Which school week this unit is normally taught in. Drives the calendar-based auto-advance (C3-B);
   -- the parent only ever overrides it.
   week_start   TINYINT UNSIGNED  NULL,
   PRIMARY KEY (id),
   UNIQUE KEY uk_unit (textbook_id, ordinal),
+  UNIQUE KEY uk_unit_code (code),
   CONSTRAINT fk_unit_textbook FOREIGN KEY (textbook_id) REFERENCES textbook (id)
 ) ENGINE=InnoDB;
 
@@ -53,6 +58,10 @@ CREATE TABLE topic (
   id           INT UNSIGNED      NOT NULL AUTO_INCREMENT,
   unit_id      SMALLINT UNSIGNED NOT NULL,
   ordinal      TINYINT UNSIGNED  NOT NULL,
+  -- The chapter's position in the book, copied from unit.ordinal at import. The picker reads this to
+  -- decide "current / already taught / not yet taught", so it must belong to the node rather than to a
+  -- unit row that a question happens to point at (question.unit_id is now empty by design).
+  chapter_order TINYINT UNSIGNED NOT NULL DEFAULT 0,
   -- Stable business key, 'math-6up-d01'. The question files and docs/data_sources.md name nodes by
   -- this, because the auto-increment id is not known until the tree is imported and must not leak into
   -- content a human maintains.
@@ -64,6 +73,9 @@ CREATE TABLE topic (
   -- {source_id, name, evidence, assessment_prompt}. JSON because nothing joins on it: the picker asks
   -- for topic_id and the report prints names. Empty for a subject with no public taxonomy (语文/英语).
   micro_nodes_json JSON          NULL,
+  -- The taxonomy ids behind micro_nodes, same order. Kept because the file names its sources and an
+  -- export that dropped them could not be checked against the snapshot any more.
+  source_ids_json  JSON          NULL,
   -- Which other diagnostic nodes should be solid first, as taxonomy ids. Advisory: the picker does not
   -- reorder by it (a child should not be blocked from a topic the calendar is teaching today).
   prereq_json  JSON              NULL,
@@ -81,9 +93,18 @@ CREATE TABLE topic (
 CREATE TABLE question (
   id               INT UNSIGNED      NOT NULL AUTO_INCREMENT,
   textbook_id      SMALLINT UNSIGNED NOT NULL,
-  -- Denormalised from the primary topic so "give me the next question of unit 3" is one index scan.
-  unit_id          SMALLINT UNSIGNED NOT NULL,
-  topic_id         INT UNSIGNED      NOT NULL,     -- the primary topic (E4: one label, ~10% multi)
+  -- Nullable, and null for every hand-written question: a question hangs from a diagnostic node, never
+  -- from a chapter. It used to be a NOT NULL pointer to `unit` that the picker joined for the ordinal;
+  -- that made aggregate nodes physical parents of questions, which is exactly what the two-level model
+  -- forbids. The ordinal now comes from topic.chapter_order.
+  unit_id          SMALLINT UNSIGNED NULL,
+  topic_id         INT UNSIGNED      NOT NULL,     -- the diagnostic node (E4: one label, ~10% multi)
+  -- Stable business key from the question file ('math-6up-d01-q01'). The file is the source; the
+  -- database id is an implementation detail and must not leak into an export or an answer record.
+  code             VARCHAR(40)       NULL,
+  -- Denormalised from the textbook so "every English question" is one index scan, and so a question
+  -- carries its subject even if it is ever moved between books.
+  subject_id       SMALLINT UNSIGNED NULL,
   angle            ENUM('recall','understand','apply') NOT NULL,
   -- What the child has to do with the knowledge, per subject (see docs/RULES.md §2.3a). Kept beside
   -- `angle` rather than replacing it: angle is what the picker sorts and indexes on, ability_tag is
@@ -120,7 +141,8 @@ CREATE TABLE question (
   owner_device     CHAR(26)          NULL,         -- NULL = public bank
   PRIMARY KEY (id),
   UNIQUE KEY uk_question_dedup (topic_id, template_key, param_hash),
-  KEY idx_question_pick (unit_id, difficulty, angle, id),
+  UNIQUE KEY uk_question_code (code),
+  KEY idx_question_pick (topic_id, difficulty, angle, id),
   KEY idx_question_topic (topic_id, difficulty),
   CONSTRAINT fk_question_textbook FOREIGN KEY (textbook_id) REFERENCES textbook (id),
   CONSTRAINT fk_question_topic FOREIGN KEY (topic_id) REFERENCES topic (id)
@@ -270,6 +292,11 @@ CREATE TABLE quiz_answer (
   answered_day   DATE         NULL,                -- the TV's day_key, same basis as daily_state
   chosen         VARCHAR(64)  NULL,                -- option label for a choice, normalised text for a fill
   is_correct     TINYINT(1)   NOT NULL DEFAULT 0,  -- decided here and nowhere else
+  -- Denormalised from the question so the answer record is readable on its own: "which node was this,
+  -- and what ability was it testing" is the first question a report asks, and joining three tables to
+  -- answer it is how a wrong join survives unnoticed. NULL on rows written before 2026-11-19.
+  diagnostic_node_id VARCHAR(24) NULL,             -- topic.code
+  ability_tag    VARCHAR(16)  NULL,
   flagged_unknown TINYINT(1)  NOT NULL DEFAULT 0,  -- "没学过" (B7); still answered
   answered_at    DATETIME     NULL,
   PRIMARY KEY (session_id, question_id),
@@ -494,12 +521,47 @@ CREATE TABLE topic_mastery (
   -- When it became weak (level crossed into 0 or 1); NULL while it is not weak. The day's "newcomer"
   -- slot keys on this, never on last_event_at: a right answer refreshes that one too.
   weak_since    DATETIME         NULL,
+  -- The per-ability split of the same window, persisted rather than recomputed when a report is opened:
+  -- [{"tag":"执行计算","acc":750,"sample":4}, ...]. A drill-down that has to be recomputed at read time
+  -- is a drill-down that drifts from the level it is explaining.
+  ability_breakdown_json JSON    NULL,
   last_event_at DATETIME         NULL,
   updated_at    DATETIME         NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (device_id, topic_id),
   KEY idx_mastery_weak (device_id, level),
   CONSTRAINT fk_mastery_device FOREIGN KEY (device_id) REFERENCES device (id),
   CONSTRAINT fk_mastery_topic  FOREIGN KEY (topic_id)  REFERENCES topic (id)
+) ENGINE=InnoDB;
+
+-- The weak list, materialised. Before this table the "what to teach this week" page was reassembled
+-- from topic_mastery on every read, so a weakness had no identity, no history and no status: it was a
+-- row that happened to satisfy `level <= 1 AND sample >= 3`. One row per (device, topic), written in the
+-- same transaction as the mastery update that caused it, so the list and the score can never disagree.
+--
+-- `resolved` is a flag rather than a delete: a parent asking "was he weak in 分数除法 last month" is a
+-- question the row can still answer, and deleting it would answer "no such node". A resolved row is
+-- skipped by the report; a later relapse clears the flag on the same row (`opened_at` keeps the first).
+CREATE TABLE weakness (
+  weakness_id    CHAR(26)      NOT NULL,
+  device_id      CHAR(26)      NOT NULL,             -- the student axis (one TV is one child)
+  topic_id       INT UNSIGNED  NOT NULL,
+  diagnostic_node_id VARCHAR(24) NOT NULL,           -- topic.code, so the row is readable without a join
+  mastery_level  TINYINT UNSIGNED NOT NULL,          -- 0 or 1; the report prints 0-未掌握 / 1-基础
+  -- ×1000, the same scale as topic_mastery.acc_x1000. An integer because the model is integer: two
+  -- representations of one number is how a report ends up disagreeing with its own drill-down.
+  weighted_accuracy SMALLINT UNSIGNED NOT NULL,
+  sample_count   TINYINT UNSIGNED NOT NULL,
+  evidence_question_ids JSON   NULL,                 -- three question codes, newest first
+  parent_aggregate_node_id VARCHAR(24) NOT NULL,     -- unit.code, e.g. math-6up-u01
+  parent_aggregate_name    VARCHAR(64) NOT NULL,
+  resolved       TINYINT(1)    NOT NULL DEFAULT 0,
+  opened_at      DATETIME      NOT NULL,
+  updated_at     DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (weakness_id),
+  UNIQUE KEY uk_weakness (device_id, topic_id),
+  KEY idx_weakness_open (device_id, resolved, mastery_level),
+  CONSTRAINT fk_weakness_device FOREIGN KEY (device_id) REFERENCES device (id),
+  CONSTRAINT fk_weakness_topic  FOREIGN KEY (topic_id)  REFERENCES topic (id)
 ) ENGINE=InnoDB;
 
 -- The ledger. Every change to topic_mastery.score has a row here, so "why is this at 72" is a SELECT
@@ -511,6 +573,9 @@ CREATE TABLE mastery_event (
   id          CHAR(26)       NOT NULL,
   device_id   CHAR(26)       NOT NULL,
   topic_id    INT UNSIGNED   NOT NULL,
+  -- The question this row is evidence for. Kept so a report can name the three answers behind a number
+  -- without parsing `ref_id` ('<session>:<question>') back into parts.
+  question_id INT UNSIGNED   NULL,
   kind        ENUM('tv_wrong','tv_right','paper_wrong','streak_bonus','parent_adjust',
                    'bad_question_void') NOT NULL,
   delta       SMALLINT       NOT NULL,               -- score_after - score_before, signed

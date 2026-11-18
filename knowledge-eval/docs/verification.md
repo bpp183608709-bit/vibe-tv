@@ -1,0 +1,178 @@
+# 验证说明
+
+从仓库根目录跑，按顺序。除特别注明外都只用标准库（`pytest` 需要装一次：`python -m pip install --user pytest`）。
+
+---
+
+## 1. 数据直接过 schema
+
+```bash
+python knowledge-eval/scripts/check_schema.py
+```
+
+```
+schema: 82 nodes, 42 questions checked against knowledge-eval/schemas
+schema: ok
+```
+
+这一步之所以有意义，是因为**没有中间层**：`check_schema.py` 把 `json.load` 得到的对象原样交给校验器。若字段还叫 `name_zh`、`micro_nodes` 还是对象数组，这里就会失败——没有地方可以补一层翻译。
+
+失败样例（删掉一个诊断节点的 `node_type`）：
+
+```
+  x nodes_math_6up.json[1] math-6up-d01: $: missing required field 'node_type'
+schema: 1 problem(s)
+```
+（由 `tests/test_schema_direct.py::test_missing_node_type_fails` 断言）
+
+---
+
+## 2. 双向内容校验
+
+```bash
+python knowledge-eval/scripts/check_content.py
+```
+
+```
+nodes: 28 aggregate, 54 diagnostic
+  math     25 nodes  18 questions  {'易': 6, '中': 6, '难': 6}  ...
+  chinese  14 nodes  12 questions  ...
+  english  15 nodes  12 questions  ...
+coverage pep-math-6up-v2.json: 38/38 micro points referenced
+  mt_g6u_001  math-6up-d01     分数乘整数的意义
+  ...
+  mt_g6u_034  math-6up-d24     节约用水的数据统计
+  mt_g6u_035  math-6up-d14     刘徽割圆术的数学思想
+  mt_g6u_036  math-6up-d25     分数四则混合运算      ← P0 补回的那一个
+  ...
+content: ok
+```
+
+`mt_g6u_036` 这一行就是 P0 的证据：既在快照里，也被一个诊断节点引用，且总数是 38/38。
+
+失败样例（删掉 `source_ids` 里的 `mt_g6u_036`）：
+
+```
+  x coverage: snapshot pep-math-6up-v2.json has 38 micro points, nodes reference 37; missing: mt_g6u_036
+content: 1 problem(s)
+```
+
+失败样例（加一个快照里没有的 id）：
+
+```
+  x coverage: nodes reference 1 micro point(s) the snapshot does not have: mt_g6u_999
+content: 1 problem(s)
+```
+
+两个都由 `tests/test_check_content_negative.py` 断言；第三个测试把快照砍到 10 条，证明校验不依赖 `38` 这个硬编码。
+
+---
+
+## 3. 负样本与回归测试
+
+```bash
+python -m pytest knowledge-eval/tests/ -v          # 仓库根目录
+cd knowledge-eval && python -m pytest tests/ -v    # 或在 knowledge-eval 里跑
+```
+
+```
+15 passed
+```
+
+| 文件 | 断言什么 |
+|---|---|
+| `test_check_content_negative.py` | 缺引用 / 多引用 / 换快照，脚本都必须非零退出并点名 |
+| `test_schema_direct.py` | 缺字段 / 数组形状错 → schema 失败；校验器收到的是原始 dict；`flat_nodes` 不存在 |
+| `test_report_weak_only.py` | 默认只列 L0/L1；`--include-full-view` 时 L2/L3 进 `full_view`；`assert_report_weak_only.py` 对篡改过的报告报错 |
+
+---
+
+## 4. 离线报告（不连数据库）
+
+```bash
+python knowledge-eval/scripts/evaluate.py \
+  --nodes knowledge-eval/data/nodes_math_6up.json \
+  --questions knowledge-eval/data/questions_math_6up.json \
+  --answers knowledge-eval/tests/fixtures/sample_answers_mixed_levels.json \
+  --out /tmp/report.json
+
+python knowledge-eval/scripts/assert_report_weak_only.py /tmp/report.json
+```
+
+```
+report: 10 chapters, 1 weak node(s), scope=weak -> /tmp/report.json
+weak-only: ok (1 weak node(s), every one 0-未掌握 or 1-基础)
+```
+
+fixture 里刻意放了四种状态：`d01` 三道全错（L0）、`d08` 三对但没答对难题（L2）、`d11` 两道难题答对（L3）、`d15` 只有一条作答（不判）。所以「只出 1 个薄弱」本身就是断言。
+
+全貌视图：
+
+```bash
+python knowledge-eval/scripts/evaluate.py ... --out /tmp/full.json --include-full-view
+# → report: 10 chapters, 1 weak node(s), scope=all -> /tmp/full.json
+```
+
+此时 `full_view` 里能看到 `2-熟练` / `3-拓展`，而 `diagnostics` 仍然只有 `0-未掌握`。
+
+---
+
+## 5. 数据库形态与内容规则
+
+需要库里有数据（`QUIZ_DSN`，或本机 `server/local/` 下的 sqlite）：
+
+```bash
+python knowledge-eval/scripts/check_db_parity.py --content
+```
+
+```
+db parity: ok (27 tables, 259 columns, content rules hold)
+```
+
+`--content` 跑的是评审要求的那几条 SQL：
+
+| 规则 | SQL |
+|---|---|
+| 题目不指向章节 | `SELECT COUNT(*) FROM question WHERE unit_id IS NOT NULL` = 0 |
+| 也 reach 不到章节 | `SELECT COUNT(*) FROM question q JOIN unit u ON u.id = q.unit_id` = 0 |
+| 每题有 subject | `SELECT COUNT(*) FROM question WHERE subject_id IS NULL` = 0 |
+| 每题有业务键 | `SELECT COUNT(*) FROM question WHERE code IS NULL` = 0 |
+| 节点有稳定 id / 章节序 | `topic.code IS NULL` = 0，`topic.chapter_order = 0` = 0 |
+| 章节有稳定 id | `unit.code IS NULL` = 0 |
+
+---
+
+## 6. 数据库导出与仓库文件逐字段比对
+
+```bash
+python knowledge-eval/scripts/export_from_db.py --check
+```
+
+```
+export: ok — 35 nodes, 22 nodes, 25 nodes; 18 questions, 12 questions, 12 questions (checked, not written)
+```
+
+`--check` 不写文件，只把库里的行重新投影成 §4.1 / §4.2 的形状，和 `knowledge-eval/data/` 里的文件逐字段比。它比「导回去再导入一遍」强：后者两边共用同一个 bug 时仍然会通过。
+
+---
+
+## 7. 端到端验收（改动服务端时跑）
+
+```bash
+python -m server.tools.acceptance
+```
+
+```
+acceptance: 252/252 passed  (db acceptance-<stamp>.sqlite3)
+```
+
+覆盖：配对、出题、判分、工单、错题本、掌握度、配额混合、两级报告、家长页、账号、排课、作废题目。
+
+---
+
+## 8. 已知限制
+
+- `check_content.py` 的反向覆盖只对**有快照**的科目生效（目前只有数学）。语文/英语没有公开分类法，`source_ids` 为空，反向集合为空集相等，不构成漏检。
+- `export_from_db.py` 不导出题目的 `tags`（写作元数据，库里不存），`--check` 会跳过该字段。
+- `check_db_parity.py` 需要能连上目标库；没有库时请先跑 `acceptance`（它会建一个临时 sqlite 并导入全部内容）。
+- **旧的本地 sqlite 库不能直接升级**：`server/tools/migrate.py` 会补新列和新表，但 SQLite 改不了 `question.unit_id` 的 `NOT NULL`。本机开发库请删掉重建（`Database(init_schema=True)`），生产 MySQL 用 `migrate-2026-11-19-flat-nodes.sql` 里的 `MODIFY COLUMN`。
