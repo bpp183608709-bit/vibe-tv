@@ -9137,6 +9137,496 @@
    "question_id": "math-6up-d14-q12"
   },
   {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一个圆的周长是 9.42 厘米，直径是 3 厘米，这个圆的周长与直径的比值是（  ）。",
+   "accepted": [
+    "3.14"
+   ],
+   "correct_answer": "3.14",
+   "explanation": "周长除以直径：9.42÷3 = 3.14，任何圆的这个比值都相同。",
+   "tags": [
+    "圆周率的意义",
+    "求比值"
+   ],
+   "question_id": "math-6up-d14-q13"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "两个圆的直径不相等，它们的周长与直径的比值（  ）",
+   "options": [
+    "直径大的那个大",
+    "相等",
+    "直径小的那个大",
+    "无法确定"
+   ],
+   "correct_answer": "B",
+   "explanation": "周长与直径的比值就是圆周率，所有圆都一样，约等于 3.14。",
+   "tags": [
+    "圆周率的意义",
+    "比值不变"
+   ],
+   "question_id": "math-6up-d14-q14"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "把半径 4 厘米的圆对折一次，得到的半圆的弧长是（  ）厘米。（π 取 3.14）",
+   "accepted": [
+    "12.56"
+   ],
+   "correct_answer": "12.56",
+   "explanation": "半圆的弧长是圆周长的一半，即 πr = 3.14×4 = 12.56 厘米。",
+   "tags": [
+    "半圆弧长",
+    "圆周率"
+   ],
+   "question_id": "math-6up-d14-q15"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "刘徽用圆内接正多边形来求圆的周长，正多边形的边数越多，它的周长（  ）",
+   "options": [
+    "越接近圆的直径",
+    "与圆的周长无关",
+    "总比圆的周长长",
+    "越接近圆的周长"
+   ],
+   "correct_answer": "D",
+   "explanation": "边数越多，正多边形的边越贴近圆弧，周长就越接近圆的周长。",
+   "tags": [
+    "割圆术",
+    "圆周率"
+   ],
+   "question_id": "math-6up-d14-q16"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一个圆的直径是 8 厘米，它的周长比直径的 3 倍多（  ）厘米。（π 取 3.14）",
+   "accepted": [
+    "1.12"
+   ],
+   "correct_answer": "1.12",
+   "explanation": "周长 3.14×8 = 25.12 厘米，25.12 - 24 = 1.12 厘米。",
+   "tags": [
+    "圆周率的意义",
+    "3倍多一些"
+   ],
+   "question_id": "math-6up-d14-q17"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一个圆的直径扩大到原来的 3 倍，它的周长与直径的比值（  ）",
+   "options": [
+    "不变",
+    "扩大到原来的 3 倍",
+    "缩小到原来的 1/3",
+    "扩大到原来的 9 倍"
+   ],
+   "correct_answer": "A",
+   "explanation": "这个比值就是圆周率，只与图形是不是圆有关，直径怎么变它都不变。",
+   "tags": [
+    "圆周率的意义",
+    "比值不变"
+   ],
+   "question_id": "math-6up-d14-q18"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一个圆的直径是 9 厘米，它的周长是（  ）厘米。（π 取 3.14）",
+   "accepted": [
+    "28.26"
+   ],
+   "correct_answer": "28.26",
+   "explanation": "C = πd = 3.14×9 = 28.26 厘米。",
+   "tags": [
+    "圆的周长",
+    "已知直径"
+   ],
+   "question_id": "math-6up-d14-q19"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一个圆的半径是 1.5 米，它的周长是（  ）米。（π 取 3.14）",
+   "accepted": [
+    "9.42"
+   ],
+   "correct_answer": "9.42",
+   "explanation": "C = 2πr = 2×3.14×1.5 = 9.42 米。",
+   "tags": [
+    "圆的周长",
+    "已知半径"
+   ],
+   "question_id": "math-6up-d14-q20"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一个圆的直径是 25 厘米，它的周长是（  ）厘米。（π 取 3.14）",
+   "options": [
+    "39.25",
+    "157",
+    "62.8",
+    "78.5"
+   ],
+   "correct_answer": "D",
+   "explanation": "C = πd = 3.14×25 = 78.5 厘米；39.25 只乘了半径。",
+   "tags": [
+    "圆的周长",
+    "已知直径"
+   ],
+   "question_id": "math-6up-d14-q21"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个圆的半径是 6.5 分米，它的周长是（  ）分米。（π 取 3.14）",
+   "accepted": [
+    "40.82"
+   ],
+   "correct_answer": "40.82",
+   "explanation": "C = 2πr = 2×3.14×6.5 = 40.82 分米。",
+   "tags": [
+    "圆的周长",
+    "已知半径"
+   ],
+   "question_id": "math-6up-d14-q22"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一个圆的周长是 37.68 米，它的直径是（  ）米。（π 取 3.14）",
+   "accepted": [
+    "12"
+   ],
+   "correct_answer": "12",
+   "explanation": "由 C = πd 得 d = C÷π = 37.68÷3.14 = 12 米。",
+   "tags": [
+    "圆的周长",
+    "逆求直径"
+   ],
+   "question_id": "math-6up-d14-q23"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一个圆的半径增加 1 厘米，它的周长增加（  ）厘米。（π 取 3.14）",
+   "options": [
+    "3.14",
+    "6.28",
+    "1",
+    "12.56"
+   ],
+   "correct_answer": "B",
+   "explanation": "半径每增加 1 厘米，周长增加 2π×1 = 6.28 厘米，与原来的半径多大无关。",
+   "tags": [
+    "圆的周长",
+    "变化规律"
+   ],
+   "question_id": "math-6up-d14-q24"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一辆自行车车轮的直径是 0.5 米，车轮转一圈，自行车前进（  ）米。（π 取 3.14）",
+   "accepted": [
+    "1.57"
+   ],
+   "correct_answer": "1.57",
+   "explanation": "车轮转一圈前进的路程就是车轮的周长：3.14×0.5 = 1.57 米。",
+   "tags": [
+    "滚轮问题",
+    "圆的周长"
+   ],
+   "question_id": "math-6up-d14-q25"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一个圆形花坛的半径是 4 米，沿花坛边围一圈护栏，护栏长（  ）米。（π 取 3.14）",
+   "options": [
+    "12.56",
+    "50.24",
+    "8",
+    "25.12"
+   ],
+   "correct_answer": "D",
+   "explanation": "护栏围一圈就是求周长：C = 2πr = 2×3.14×4 = 25.12 米。",
+   "tags": [
+    "围一圈",
+    "圆的周长"
+   ],
+   "question_id": "math-6up-d14-q26"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个车轮的半径是 0.4 米，滚动 10 圈，车轮前进（  ）米。（π 取 3.14）",
+   "accepted": [
+    "25.12"
+   ],
+   "correct_answer": "25.12",
+   "explanation": "一圈前进 2×3.14×0.4 = 2.512 米，10 圈是 2.512×10 = 25.12 米。",
+   "tags": [
+    "滚轮问题",
+    "多圈"
+   ],
+   "question_id": "math-6up-d14-q27"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一个圆形餐桌的直径是 1.2 米，沿桌边围一圈装饰条，装饰条长（  ）米。（π 取 3.14）",
+   "options": [
+    "1.884",
+    "7.536",
+    "3.768",
+    "3.14"
+   ],
+   "correct_answer": "C",
+   "explanation": "C = πd = 3.14×1.2 = 3.768 米。",
+   "tags": [
+    "围一圈",
+    "已知直径"
+   ],
+   "question_id": "math-6up-d14-q28"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "两个圆形托盘的直径分别是 10 厘米和 8 厘米，大托盘一圈比小托盘一圈长（  ）厘米。（π 取 3.14）",
+   "accepted": [
+    "6.28"
+   ],
+   "correct_answer": "6.28",
+   "explanation": "大圈 31.4 厘米，小圈 25.12 厘米，相差 31.4-25.12 = 6.28 厘米，正好是 3.14×2。",
+   "tags": [
+    "周长比较",
+    "情境"
+   ],
+   "question_id": "math-6up-d14-q29"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一个铁环沿直尺滚动 4 圈，正好滚了 25.12 厘米，这个铁环的直径是（  ）厘米。（π 取 3.14）",
+   "options": [
+    "4",
+    "2",
+    "1",
+    "6.28"
+   ],
+   "correct_answer": "B",
+   "explanation": "一圈滚 25.12÷4 = 6.28 厘米，直径是 6.28÷3.14 = 2 厘米。",
+   "tags": [
+    "滚轮问题",
+    "逆求直径"
+   ],
+   "question_id": "math-6up-d14-q30"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "判断题",
+   "stem": "一个圆的半径是 1 厘米，它的周长是 6.28 厘米。（π 取 3.14）",
+   "options": [
+    "正确",
+    "错误"
+   ],
+   "correct_answer": "A",
+   "explanation": "C = 2πr = 2×3.14×1 = 6.28 厘米，说法正确。",
+   "tags": [
+    "圆的周长",
+    "判断"
+   ],
+   "question_id": "math-6up-d14-q31"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一个圆的半径是 5 厘米，求它的周长，列式正确的是（  ）",
+   "options": [
+    "2 × 3.14 × 5",
+    "3.14 × 5",
+    "3.14 × 5²",
+    "2 × 3.14 × 5²"
+   ],
+   "correct_answer": "A",
+   "explanation": "周长 C = 2πr，半径是 5 厘米，所以列式 2×3.14×5；3.14×5² 求的是面积。",
+   "tags": [
+    "圆的周长",
+    "列式辨析"
+   ],
+   "question_id": "math-6up-d14-q32"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个圆的周长是 15.7 分米，它的半径是（  ）分米。（π 取 3.14）",
+   "accepted": [
+    "2.5"
+   ],
+   "correct_answer": "2.5",
+   "explanation": "由 C = 2πr 得 r = C÷2÷π = 15.7÷2÷3.14 = 2.5 分米。",
+   "tags": [
+    "圆的周长",
+    "逆求半径"
+   ],
+   "question_id": "math-6up-d14-q33"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一个圆的直径是 6 厘米，它的周长比直径多（  ）厘米。（π 取 3.14）",
+   "options": [
+    "18.84",
+    "9.42",
+    "12.84",
+    "6.28"
+   ],
+   "correct_answer": "C",
+   "explanation": "周长 3.14×6 = 18.84 厘米，18.84-6 = 12.84 厘米。",
+   "tags": [
+    "周长与直径",
+    "求相差"
+   ],
+   "question_id": "math-6up-d14-q34"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "把一个直径 4 厘米的圆剪成两个半圆，两个半圆的周长之和比原来圆的周长多（  ）厘米。",
+   "options": [
+    "4",
+    "12.56",
+    "6.28",
+    "8"
+   ],
+   "correct_answer": "D",
+   "explanation": "每个半圆比半个圆周多一条直径，两个半圆一共多出 2 条直径，2×4 = 8 厘米。",
+   "tags": [
+    "半圆周长",
+    "剪开辨析"
+   ],
+   "question_id": "math-6up-d14-q35"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一个半圆的半径是 6 厘米，它的周长是（  ）厘米。（π 取 3.14）",
+   "accepted": [
+    "30.84"
+   ],
+   "correct_answer": "30.84",
+   "explanation": "半圆周长 = 弧长 + 直径 = 3.14×6 + 12 = 18.84+12 = 30.84 厘米。",
+   "tags": [
+    "半圆周长",
+    "易错点"
+   ],
+   "question_id": "math-6up-d14-q36"
+  },
+  {
    "diagnostic_node_id": "math-6up-d15",
    "subject": "math",
    "ability_tag": "理解意义",
@@ -9390,6 +9880,493 @@
     "面积变化"
    ],
    "question_id": "math-6up-d15-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "圆的面积是它的半径平方的（  ）倍。（π 取 3.14）",
+   "accepted": [
+    "3.14"
+   ],
+   "correct_answer": "3.14",
+   "explanation": "S = πr²，面积是半径平方的 π 倍，π 取 3.14。",
+   "tags": [
+    "圆的面积",
+    "面积公式"
+   ],
+   "question_id": "math-6up-d15-q13"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "圆的面积指的是（  ）",
+   "options": [
+    "圆所占平面的大小",
+    "圆一周的长度",
+    "圆的直径的长度",
+    "圆内最长的线段"
+   ],
+   "correct_answer": "A",
+   "explanation": "面积是圆所占平面的大小；圆一周的长度是周长，不是面积。",
+   "tags": [
+    "圆的面积",
+    "面积的意义"
+   ],
+   "question_id": "math-6up-d15-q14"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个圆的半径扩大到原来的 3 倍，它的面积扩大到原来的（  ）倍。",
+   "accepted": [
+    "9"
+   ],
+   "correct_answer": "9",
+   "explanation": "S = πr²，半径乘 3，面积乘 3² = 9 倍。",
+   "tags": [
+    "圆的面积",
+    "变化规律"
+   ],
+   "question_id": "math-6up-d15-q15"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "把半径 4 厘米的圆平均分成 16 份，拼成近似长方形，这个长方形的长是（  ）厘米。（π 取 3.14）",
+   "options": [
+    "25.12",
+    "4",
+    "12.56",
+    "8"
+   ],
+   "correct_answer": "C",
+   "explanation": "长方形的长是圆周长的一半，也就是 πr = 3.14×4 = 12.56 厘米。",
+   "tags": [
+    "面积推导",
+    "化圆为方"
+   ],
+   "question_id": "math-6up-d15-q16"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "把一个半径 5 厘米的圆剪拼成近似长方形，长方形的长是 15.7 厘米，这个长方形的面积是（  ）平方厘米。",
+   "accepted": [
+    "78.5"
+   ],
+   "correct_answer": "78.5",
+   "explanation": "长方形的宽就是半径 5 厘米，面积 = 15.7×5 = 78.5 平方厘米，和圆的面积相等。",
+   "tags": [
+    "面积推导",
+    "化圆为方"
+   ],
+   "question_id": "math-6up-d15-q17"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "把一个圆剪拼成近似长方形后，长方形的周长与原来圆的周长相比（  ）",
+   "options": [
+    "多了两条半径",
+    "一样长",
+    "少了两条半径",
+    "多了两条直径"
+   ],
+   "correct_answer": "A",
+   "explanation": "长方形的两条宽就是圆的两条半径，它们在圆内部，原来不算周长，所以周长多了 2r。",
+   "tags": [
+    "面积推导",
+    "周长辨析"
+   ],
+   "question_id": "math-6up-d15-q18"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一个圆的半径是 10 厘米，它的面积是（  ）平方厘米。（π 取 3.14）",
+   "accepted": [
+    "314"
+   ],
+   "correct_answer": "314",
+   "explanation": "S = πr² = 3.14×10² = 3.14×100 = 314 平方厘米。",
+   "tags": [
+    "圆的面积",
+    "已知半径"
+   ],
+   "question_id": "math-6up-d15-q19"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一个圆的直径是 8 米，它的面积是（  ）平方米。（π 取 3.14）",
+   "accepted": [
+    "50.24"
+   ],
+   "correct_answer": "50.24",
+   "explanation": "半径 8÷2 = 4 米，S = 3.14×4² = 3.14×16 = 50.24 平方米。",
+   "tags": [
+    "圆的面积",
+    "已知直径"
+   ],
+   "question_id": "math-6up-d15-q20"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一个圆的直径是 12 厘米，它的面积是（  ）平方厘米。（π 取 3.14）",
+   "options": [
+    "37.68",
+    "113.04",
+    "452.16",
+    "28.26"
+   ],
+   "correct_answer": "B",
+   "explanation": "半径 12÷2 = 6 厘米，S = 3.14×36 = 113.04 平方厘米。",
+   "tags": [
+    "圆的面积",
+    "已知直径"
+   ],
+   "question_id": "math-6up-d15-q21"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个圆的周长是 43.96 分米，它的面积是（  ）平方分米。（π 取 3.14）",
+   "accepted": [
+    "153.86"
+   ],
+   "correct_answer": "153.86",
+   "explanation": "半径 43.96÷6.28 = 7 分米，S = 3.14×49 = 153.86 平方分米。",
+   "tags": [
+    "圆的面积",
+    "已知周长"
+   ],
+   "question_id": "math-6up-d15-q22"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一个半圆的半径是 4 厘米，它的面积是（  ）平方厘米。（π 取 3.14）",
+   "accepted": [
+    "25.12"
+   ],
+   "correct_answer": "25.12",
+   "explanation": "整圆面积 3.14×16 = 50.24 平方厘米，半圆是它的一半，50.24÷2 = 25.12 平方厘米。",
+   "tags": [
+    "半圆面积",
+    "圆的面积"
+   ],
+   "question_id": "math-6up-d15-q23"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一个圆的面积是 78.5 平方厘米，它的半径是（  ）厘米。（π 取 3.14）",
+   "options": [
+    "10",
+    "2.5",
+    "5",
+    "25"
+   ],
+   "correct_answer": "C",
+   "explanation": "r² = 78.5÷3.14 = 25，因为 5² = 25，所以半径是 5 厘米。",
+   "tags": [
+    "圆的面积",
+    "逆求半径"
+   ],
+   "question_id": "math-6up-d15-q24"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "公园里一个自动喷灌喷头的射程是 3 米，它转动一周能浇到的草地面积是（  ）平方米。（π 取 3.14）",
+   "accepted": [
+    "28.26"
+   ],
+   "correct_answer": "28.26",
+   "explanation": "喷头射程就是半径，S = 3.14 × 3² = 28.26 平方米。",
+   "tags": [
+    "圆的面积",
+    "喷灌"
+   ],
+   "question_id": "math-6up-d15-q25"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一面圆形挂钟的半径是 10 厘米，它的钟面面积是（  ）平方厘米。（π 取 3.14）",
+   "options": [
+    "31.4",
+    "314",
+    "62.8",
+    "157"
+   ],
+   "correct_answer": "B",
+   "explanation": "钟面是圆，S = 3.14 × 10² = 314 平方厘米；31.4 是周长的一半，62.8 才是周长。",
+   "tags": [
+    "圆的面积",
+    "钟面"
+   ],
+   "question_id": "math-6up-d15-q26"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "学校圆形舞台的直径是 12 米，这个舞台的占地面积是（  ）平方米。（π 取 3.14）",
+   "accepted": [
+    "113.04"
+   ],
+   "correct_answer": "113.04",
+   "explanation": "先求半径 12 ÷ 2 = 6 米，S = 3.14 × 6² = 113.04 平方米。",
+   "tags": [
+    "圆的面积",
+    "直径"
+   ],
+   "question_id": "math-6up-d15-q27"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一个圆形井盖的直径是 0.8 米，这个井盖的面积是（  ）平方米。（π 取 3.14）",
+   "options": [
+    "1.0048",
+    "0.2512",
+    "2.0096",
+    "0.5024"
+   ],
+   "correct_answer": "D",
+   "explanation": "半径 0.8 ÷ 2 = 0.4 米，S = 3.14 × 0.4² = 3.14 × 0.16 = 0.5024 平方米。",
+   "tags": [
+    "圆的面积",
+    "小数"
+   ],
+   "question_id": "math-6up-d15-q28"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一个圆形蓄水池的周长是 43.96 米，它的占地面积是（  ）平方米。（π 取 3.14）",
+   "accepted": [
+    "153.86"
+   ],
+   "correct_answer": "153.86",
+   "explanation": "半径 43.96 ÷ 6.28 = 7 米，S = 3.14 × 7² = 153.86 平方米。",
+   "tags": [
+    "圆的面积",
+    "周长求面积"
+   ],
+   "question_id": "math-6up-d15-q29"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一个圆形荷花池的直径是 10 米，池底每平方米要铺 4 块方砖，铺满池底共需（  ）块。",
+   "options": [
+    "314",
+    "78.5",
+    "392.5",
+    "1256"
+   ],
+   "correct_answer": "A",
+   "explanation": "半径 5 米，池底面积 3.14 × 5² = 78.5 平方米，78.5 × 4 = 314 块。",
+   "tags": [
+    "圆的面积",
+    "两步"
+   ],
+   "question_id": "math-6up-d15-q30"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "已知一个圆的直径是 10 厘米，求面积时用的半径是（  ）厘米。",
+   "accepted": [
+    "5"
+   ],
+   "correct_answer": "5",
+   "explanation": "面积公式里的 r 是半径，半径 = 直径 ÷ 2 = 10 ÷ 2 = 5 厘米。",
+   "tags": [
+    "圆的面积",
+    "直径与半径"
+   ],
+   "question_id": "math-6up-d15-q31"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "判断题",
+   "stem": "一个圆的半径是 3 厘米，它的面积是 28.26 平方厘米。（π 取 3.14）",
+   "options": [
+    "正确",
+    "错误"
+   ],
+   "correct_answer": "A",
+   "explanation": "3.14 × 3² = 3.14 × 9 = 28.26 平方厘米，说法正确。",
+   "tags": [
+    "圆的面积",
+    "判断"
+   ],
+   "question_id": "math-6up-d15-q32"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个圆的直径缩小到原来的一半，它的面积缩小到原来的（  ）。",
+   "accepted": [
+    "1/4"
+   ],
+   "correct_answer": "1/4",
+   "explanation": "直径减半，半径也减半，面积要乘 (1/2)² = 1/4。",
+   "tags": [
+    "圆的面积",
+    "倍数"
+   ],
+   "question_id": "math-6up-d15-q33"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一个圆的面积是 28.26 平方厘米，这个圆的半径是（  ）厘米。（π 取 3.14）",
+   "options": [
+    "9",
+    "4.5",
+    "6",
+    "3"
+   ],
+   "correct_answer": "D",
+   "explanation": "3.14 × 3² = 28.26，所以半径是 3 厘米；9 是半径的平方，不是半径。",
+   "tags": [
+    "圆的面积",
+    "逆推"
+   ],
+   "question_id": "math-6up-d15-q34"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一个圆的面积是 12.56 平方米，它的周长是（  ）米。（π 取 3.14）",
+   "accepted": [
+    "12.56"
+   ],
+   "correct_answer": "12.56",
+   "explanation": "3.14 × 2² = 12.56，所以半径 2 米；周长 2 × 3.14 × 2 = 12.56 米。",
+   "tags": [
+    "圆的面积",
+    "周长"
+   ],
+   "question_id": "math-6up-d15-q35"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面各圆的数据中，面积算得对的是（  ）",
+   "options": [
+    "直径 2 厘米，面积 6.28 平方厘米",
+    "半径 1 厘米，面积 3.14 平方厘米",
+    "周长 6.28 厘米，面积 6.28 平方厘米",
+    "面积 12.56 平方厘米，半径 4 厘米"
+   ],
+   "correct_answer": "B",
+   "explanation": "半径 1 厘米时 3.14 × 1² = 3.14；直径 2 厘米、周长 6.28 厘米的圆面积都是 3.14，面积 12.56 的圆半径是 2 厘米。",
+   "tags": [
+    "圆的面积",
+    "辨析"
+   ],
+   "question_id": "math-6up-d15-q36"
   },
   {
    "diagnostic_node_id": "math-6up-d16",
@@ -9647,6 +10624,496 @@
    "question_id": "math-6up-d16-q12"
   },
   {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一个扇形的圆心角是 90°，它的面积占所在圆面积的（  ）。",
+   "accepted": [
+    "1/4"
+   ],
+   "correct_answer": "1/4",
+   "explanation": "整圆圆心角 360°，90° 占 360° 的 90/360 = 1/4。",
+   "tags": [
+    "扇形",
+    "圆心角"
+   ],
+   "question_id": "math-6up-d16-q13"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一个半圆的周长由哪两部分组成（  ）",
+   "options": [
+    "圆周长的一半",
+    "整圆的周长",
+    "圆周长的一半加一条半径",
+    "圆周长的一半加一条直径"
+   ],
+   "correct_answer": "D",
+   "explanation": "半圆的边界是半条弧加一条直径，所以周长是圆周长的一半再加一条直径。",
+   "tags": [
+    "半圆",
+    "周长"
+   ],
+   "question_id": "math-6up-d16-q14"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个扇形的面积占所在圆的 1/8，这个扇形的圆心角是（  ）度。",
+   "accepted": [
+    "45"
+   ],
+   "correct_answer": "45",
+   "explanation": "整圆圆心角 360°，它的 1/8 是 360 ÷ 8 = 45°，圆心角就是 45°。",
+   "tags": [
+    "扇形",
+    "圆心角"
+   ],
+   "question_id": "math-6up-d16-q15"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "在长 8 厘米、宽 5 厘米的长方形里画一个最大的圆，这个圆的直径是（  ）厘米。",
+   "options": [
+    "8",
+    "4",
+    "5",
+    "2.5"
+   ],
+   "correct_answer": "C",
+   "explanation": "圆要完全放进长方形，直径不能超过较短的一边，所以直径是 5 厘米。",
+   "tags": [
+    "组合图形",
+    "最大圆"
+   ],
+   "question_id": "math-6up-d16-q16"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一个圆环，外圆半径是内圆半径的 2 倍，圆环的面积是内圆面积的（  ）倍。",
+   "accepted": [
+    "3"
+   ],
+   "correct_answer": "3",
+   "explanation": "外圆面积是内圆的 4 倍，圆环 = 外圆 - 内圆 = 4 - 1 = 3 倍。",
+   "tags": [
+    "圆环",
+    "倍数"
+   ],
+   "question_id": "math-6up-d16-q17"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "关于半圆的面积和周长，说法正确的是（  ）",
+   "options": [
+    "周长是整圆周长的一半",
+    "面积是整圆的一半，周长是圆周长的一半加一条直径",
+    "面积和周长都正好是整圆的一半",
+    "周长是圆周长的一半加一条半径"
+   ],
+   "correct_answer": "B",
+   "explanation": "面积确实是整圆的一半；周长要沿边界走一整圈，等于圆周长的一半再加一条直径。",
+   "tags": [
+    "半圆",
+    "面积与周长"
+   ],
+   "question_id": "math-6up-d16-q18"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一个半圆的半径是 2 厘米，它的面积是（  ）平方厘米。（π 取 3.14）",
+   "accepted": [
+    "6.28"
+   ],
+   "correct_answer": "6.28",
+   "explanation": "整圆面积 3.14 × 2² = 12.56，半圆是它的一半，6.28 平方厘米。",
+   "tags": [
+    "半圆",
+    "面积"
+   ],
+   "question_id": "math-6up-d16-q19"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一个圆环的外圆半径是 4 厘米，内圆半径是 2 厘米，圆环的面积是（  ）平方厘米。（π 取 3.14）",
+   "options": [
+    "37.68",
+    "12.56",
+    "50.24",
+    "25.12"
+   ],
+   "correct_answer": "A",
+   "explanation": "3.14 × (4² - 2²) = 3.14 × 12 = 37.68 平方厘米。",
+   "tags": [
+    "圆环",
+    "面积"
+   ],
+   "question_id": "math-6up-d16-q20"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一张长 10 厘米、宽 6 厘米的长方形纸，剪下一个最大的圆，剩下部分的面积是（  ）平方厘米。（π 取 3.14）",
+   "accepted": [
+    "31.74"
+   ],
+   "correct_answer": "31.74",
+   "explanation": "最大圆的直径 6 厘米、半径 3 厘米，10 × 6 - 3.14 × 3² = 60 - 28.26 = 31.74。",
+   "tags": [
+    "组合图形",
+    "剪圆"
+   ],
+   "question_id": "math-6up-d16-q21"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一个半径 3 厘米的圆，圆心角 120° 的扇形面积是（  ）平方厘米。（π 取 3.14）",
+   "options": [
+    "28.26",
+    "18.84",
+    "9.42",
+    "4.71"
+   ],
+   "correct_answer": "C",
+   "explanation": "120° 占整圆的 1/3，3.14 × 3² ÷ 3 = 28.26 ÷ 3 = 9.42 平方厘米。",
+   "tags": [
+    "扇形",
+    "面积"
+   ],
+   "question_id": "math-6up-d16-q22"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一个半圆的周长是 15.42 厘米，它的面积是（  ）平方厘米。（π 取 3.14）",
+   "accepted": [
+    "14.13"
+   ],
+   "correct_answer": "14.13",
+   "explanation": "设半径 r，3.14r + 2r = 15.42，得 r = 3 厘米；面积 3.14 × 9 ÷ 2 = 14.13。",
+   "tags": [
+    "半圆",
+    "周长求面积"
+   ],
+   "question_id": "math-6up-d16-q23"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一个边长 8 厘米的正方形，以一条边为直径在正方形内画一个半圆，半圆以外的面积是（  ）平方厘米。（π 取 3.14）",
+   "options": [
+    "25.12",
+    "50.24",
+    "13.76",
+    "38.88"
+   ],
+   "correct_answer": "D",
+   "explanation": "正方形 64 平方厘米，半圆半径 4 厘米、面积 3.14 × 16 ÷ 2 = 25.12，剩下 38.88。",
+   "tags": [
+    "组合图形",
+    "半圆"
+   ],
+   "question_id": "math-6up-d16-q24"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "小区里有一个半圆形的花坛，直径是 8 米，这个花坛的占地面积是（  ）平方米。（π 取 3.14）",
+   "accepted": [
+    "25.12"
+   ],
+   "correct_answer": "25.12",
+   "explanation": "半径 4 米，整圆 3.14 × 16 = 50.24，半圆是它的一半，25.12 平方米。",
+   "tags": [
+    "半圆",
+    "花坛"
+   ],
+   "question_id": "math-6up-d16-q25"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一个圆形转盘被平均分成 4 份，每份都是扇形，转盘半径 20 厘米，其中一份的面积是（  ）平方厘米。（π 取 3.14）",
+   "options": [
+    "314",
+    "1256",
+    "78.5",
+    "157"
+   ],
+   "correct_answer": "A",
+   "explanation": "整圆面积 3.14 × 20² = 1256 平方厘米，平均分成 4 份，每份 314 平方厘米。",
+   "tags": [
+    "扇形",
+    "转盘"
+   ],
+   "question_id": "math-6up-d16-q26"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个圆形水池的直径是 6 米，池外有一圈 2 米宽的观景台，观景台的面积是（  ）平方米。（π 取 3.14）",
+   "accepted": [
+    "50.24"
+   ],
+   "correct_answer": "50.24",
+   "explanation": "内圆半径 3 米、外圆半径 3 + 2 = 5 米，3.14 × (25 - 9) = 50.24 平方米。",
+   "tags": [
+    "圆环",
+    "观景台"
+   ],
+   "question_id": "math-6up-d16-q27"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一块半圆形桌布的直径是 1.2 米，沿它的边缘缝一圈花边，花边长（  ）米。（π 取 3.14）",
+   "options": [
+    "1.884",
+    "3.768",
+    "3.084",
+    "2.484"
+   ],
+   "correct_answer": "C",
+   "explanation": "花边沿半圆边界走：3.14 × 0.6 + 1.2 = 1.884 + 1.2 = 3.084 米。",
+   "tags": [
+    "半圆",
+    "周长"
+   ],
+   "question_id": "math-6up-d16-q28"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一个半圆形鸡舍，直边靠墙，只围弧的一侧用了 18.84 米篱笆，这个鸡舍的占地面积是（  ）平方米。（π 取 3.14）",
+   "accepted": [
+    "56.52"
+   ],
+   "correct_answer": "56.52",
+   "explanation": "篱笆是半圆弧长，半径 18.84 ÷ 3.14 = 6 米；面积 3.14 × 36 ÷ 2 = 56.52。",
+   "tags": [
+    "半圆",
+    "篱笆"
+   ],
+   "question_id": "math-6up-d16-q29"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一个圆形花圃的直径是 24 米，在里面划出一块圆心角 60° 的扇形种月季，月季的占地面积是（  ）平方米。（π 取 3.14）",
+   "options": [
+    "75.36",
+    "452.16",
+    "150.72",
+    "37.68"
+   ],
+   "correct_answer": "A",
+   "explanation": "半径 12 米，整圆 3.14 × 144 = 452.16，60° 占 1/6，452.16 ÷ 6 = 75.36。",
+   "tags": [
+    "扇形",
+    "花圃"
+   ],
+   "question_id": "math-6up-d16-q30"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一个半圆的半径是 2 厘米，它的周长是（  ）厘米。（π 取 3.14）",
+   "accepted": [
+    "10.28"
+   ],
+   "correct_answer": "10.28",
+   "explanation": "半圆弧长 3.14 × 2 = 6.28 厘米，再加一条直径 4 厘米，共 10.28 厘米。",
+   "tags": [
+    "半圆",
+    "周长"
+   ],
+   "question_id": "math-6up-d16-q31"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "判断题",
+   "stem": "半圆的面积等于它所在整圆面积的一半。",
+   "options": [
+    "错误",
+    "正确"
+   ],
+   "correct_answer": "B",
+   "explanation": "半圆是整圆沿直径对折得到的一半，面积正好是整圆的一半。",
+   "tags": [
+    "半圆",
+    "面积"
+   ],
+   "question_id": "math-6up-d16-q32"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个圆环的内圆半径是 3 厘米，环宽是 2 厘米，这个圆环的面积是（  ）平方厘米。（π 取 3.14）",
+   "accepted": [
+    "50.24"
+   ],
+   "correct_answer": "50.24",
+   "explanation": "外圆半径 3 + 2 = 5 厘米，3.14 × (25 - 9) = 50.24 平方厘米。",
+   "tags": [
+    "圆环",
+    "环宽"
+   ],
+   "question_id": "math-6up-d16-q33"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一个圆环的外圆半径是 4 厘米，内圆的直径是 4 厘米，圆环的面积是（  ）平方厘米。（π 取 3.14）",
+   "options": [
+    "0",
+    "37.68",
+    "12.56",
+    "50.24"
+   ],
+   "correct_answer": "B",
+   "explanation": "内圆直径 4 厘米，半径是 2 厘米，3.14 × (16 - 4) = 37.68 平方厘米。",
+   "tags": [
+    "圆环",
+    "直径"
+   ],
+   "question_id": "math-6up-d16-q34"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一个半圆的周长是 35.98 厘米，它的面积是（  ）平方厘米。（π 取 3.14）",
+   "accepted": [
+    "76.93"
+   ],
+   "correct_answer": "76.93",
+   "explanation": "3.14r + 2r = 35.98，得 r = 7 厘米；面积 3.14 × 49 ÷ 2 = 76.93。",
+   "tags": [
+    "半圆",
+    "周长求面积"
+   ],
+   "question_id": "math-6up-d16-q35"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "比较边长 4 厘米的正方形、直径 4 厘米的圆、半径 4 厘米的半圆，面积最大的是（  ）",
+   "options": [
+    "边长 4 厘米的正方形",
+    "直径 4 厘米的圆",
+    "半径 4 厘米的半圆",
+    "三个一样大"
+   ],
+   "correct_answer": "C",
+   "explanation": "半圆 3.14 × 16 ÷ 2 = 25.12，正方形 16，圆 3.14 × 2² = 12.56，半圆最大。",
+   "tags": [
+    "组合图形",
+    "比较面积"
+   ],
+   "question_id": "math-6up-d16-q36"
+  },
+  {
    "diagnostic_node_id": "math-6up-d23",
    "subject": "math",
    "ability_tag": "理解意义",
@@ -9902,6 +11369,495 @@
    "question_id": "math-6up-d23-q12"
   },
   {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "400 米跑道一圈由两条直道和两个半圆弯道组成，两个半圆合起来是一个整圆。弯道共长 240 米，两条直道一共长（  ）米。",
+   "accepted": [
+    "160"
+   ],
+   "correct_answer": "160",
+   "explanation": "一圈 400 米减去弯道的 240 米，两条直道共 160 米，每条直道 80 米。",
+   "tags": [
+    "确定起跑线",
+    "跑道结构"
+   ],
+   "question_id": "math-6up-d23-q13"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "400 米比赛中外道的起跑线要向前移，前移的这一段补上的是（  ）",
+   "options": [
+    "外道直道比内道直道多出的长度",
+    "外道弯道比内道弯道多出的长度",
+    "终点线到起跑线的距离",
+    "相邻跑道的条数差"
+   ],
+   "correct_answer": "B",
+   "explanation": "各道直道一样长，只有弯道随道次变长，所以前移补的正是弯道多出的那一截。",
+   "tags": [
+    "确定起跑线",
+    "起跑线"
+   ],
+   "question_id": "math-6up-d23-q14"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "第 1 道的半圆弯道直径是 70 米，跑道宽 1 米，第 2 道的弯道直径是（  ）米。",
+   "accepted": [
+    "72"
+   ],
+   "correct_answer": "72",
+   "explanation": "外道直径比内道多 2 个跑道宽，70 + 2 × 1 = 72 米。",
+   "tags": [
+    "确定起跑线",
+    "弯道直径"
+   ],
+   "question_id": "math-6up-d23-q15"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "判断题",
+   "stem": "400 米比赛中，第 3 道的起跑线应该在第 1 道起跑线的后面。",
+   "options": [
+    "错",
+    "对"
+   ],
+   "correct_answer": "A",
+   "explanation": "第 3 道弯道更长，起跑线要比第 1 道更靠前才公平，不是靠后。",
+   "tags": [
+    "确定起跑线",
+    "起跑线方向"
+   ],
+   "question_id": "math-6up-d23-q16"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "400 米跑道共 6 条，道宽相同。第 6 道的起跑线比第 1 道向前移了（  ）个相邻跑道的差距。",
+   "options": [
+    "5",
+    "6",
+    "4",
+    "3"
+   ],
+   "correct_answer": "A",
+   "explanation": "从第 1 道到第 6 道跨过 5 个间隔，所以是 5 个相邻差距。",
+   "tags": [
+    "确定起跑线",
+    "间隔数"
+   ],
+   "question_id": "math-6up-d23-q17"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "判断题",
+   "stem": "外道的起跑线向前移以后，各条跑道的运动员仍然跑向同一条终点线。",
+   "options": [
+    "对",
+    "错"
+   ],
+   "correct_answer": "A",
+   "explanation": "终点线只有一条，错开的只是起点，这样每道跑完一圈正好都是 400 米。",
+   "tags": [
+    "确定起跑线",
+    "终点线"
+   ],
+   "question_id": "math-6up-d23-q18"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "400 米跑道上相邻两条跑道的直道一样长。跑道宽 1.2 米，只比较弯道，第 2 道比第 1 道的弯道长（  ）米。（π 取 3.14）",
+   "accepted": [
+    "7.536"
+   ],
+   "correct_answer": "7.536",
+   "explanation": "直道不产生差，弯道差 = 2 × 道宽 × π = 2 × 1.2 × 3.14 = 7.536 米。",
+   "tags": [
+    "确定起跑线",
+    "只算弯道"
+   ],
+   "question_id": "math-6up-d23-q19"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一条跑道的两个半圆弯道合成一个直径 50 米的圆，这条跑道的弯道共长（  ）米。（π 取 3.14）",
+   "accepted": [
+    "157"
+   ],
+   "correct_answer": "157",
+   "explanation": "两个半圆合成一个整圆，弯道长 = π × 直径 = 3.14 × 50 = 157 米。",
+   "tags": [
+    "确定起跑线",
+    "弯道长"
+   ],
+   "question_id": "math-6up-d23-q20"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "第 2 道的弯道共长 210.38 米，这条跑道宽 1 米，内圈直径是（  ）米。（π 取 3.14）",
+   "accepted": [
+    "65"
+   ],
+   "correct_answer": "65",
+   "explanation": "第 2 道直径 210.38 ÷ 3.14 = 67 米，内圈直径 67 - 2 × 1 = 65 米。",
+   "tags": [
+    "确定起跑线",
+    "反求直径"
+   ],
+   "question_id": "math-6up-d23-q21"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "相邻两条跑道的起跑线相差 6.28 米，那么第 1 道与第 5 道的起跑线相差（  ）米。",
+   "options": [
+    "31.4",
+    "25.12",
+    "18.84",
+    "12.56"
+   ],
+   "correct_answer": "B",
+   "explanation": "第 1 道与第 5 道相隔 4 个道宽，6.28 × 4 = 25.12 米。",
+   "tags": [
+    "确定起跑线",
+    "起跑线位置"
+   ],
+   "question_id": "math-6up-d23-q22"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "第 1 道弯道共长 226.08 米，跑道宽 1.25 米，第 4 道的弯道共长（  ）米。（π 取 3.14）",
+   "accepted": [
+    "249.63"
+   ],
+   "correct_answer": "249.63",
+   "explanation": "第 4 道弯道比第 1 道多 2 × 3 × 1.25 × 3.14 = 23.55 米，226.08 + 23.55 = 249.63 米。",
+   "tags": [
+    "确定起跑线",
+    "弯道长"
+   ],
+   "question_id": "math-6up-d23-q23"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "400 米跑道上，第 3 道的起跑线比第 1 道前移 18.84 米，这条跑道的宽是（  ）米。（π 取 3.14）",
+   "options": [
+    "1",
+    "1.5",
+    "1.25",
+    "2"
+   ],
+   "correct_answer": "B",
+   "explanation": "第 3 道跨过 2 个道宽，2 × 2 × 道宽 × 3.14 = 18.84，道宽 = 18.84 ÷ 12.56 = 1.5 米。",
+   "tags": [
+    "确定起跑线",
+    "反求道宽"
+   ],
+   "question_id": "math-6up-d23-q24"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "学校操场每条跑道宽 1.25 米，400 米比赛中第 2 道的起跑线比第 1 道前移（  ）米。（π 取 3.14）",
+   "accepted": [
+    "7.85"
+   ],
+   "correct_answer": "7.85",
+   "explanation": "2 × 1.25 × 3.14 = 7.85 米，外道弯道长，起点要往前挪这么多。",
+   "tags": [
+    "确定起跑线",
+    "学校操场"
+   ],
+   "question_id": "math-6up-d23-q25"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "运动会 400 米比赛，最内圈跑道一圈正好 400 米，相邻跑道宽 1 米，紧挨内圈的那条跑道一圈长（  ）米。（π 取 3.14）",
+   "options": [
+    "400",
+    "402",
+    "406.28",
+    "412.56"
+   ],
+   "correct_answer": "C",
+   "explanation": "外道直径多 2 米，弯道多 3.14 × 2 = 6.28 米，一圈为 400 + 6.28 = 406.28 米。",
+   "tags": [
+    "确定起跑线",
+    "内外圈长度"
+   ],
+   "question_id": "math-6up-d23-q26"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "某校 400 米跑道共 8 条，每条宽 1 米，最外道一圈比最内道一圈长（  ）米。（π 取 3.14）",
+   "accepted": [
+    "43.96"
+   ],
+   "correct_answer": "43.96",
+   "explanation": "最外道与最内道相隔 7 个道宽，一圈的长度差 = 7 × 2 × 3.14 = 43.96 米。",
+   "tags": [
+    "确定起跑线",
+    "内外圈长度"
+   ],
+   "question_id": "math-6up-d23-q27"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "6 条跑道宽都是 1 米，裁判把 400 米比赛的起点画在同一条线上。这样第 6 道运动员每圈要多跑（  ）米。（π 取 3.14）",
+   "options": [
+    "31.4",
+    "37.68",
+    "25.12",
+    "6.28"
+   ],
+   "correct_answer": "A",
+   "explanation": "起点不分开，第 6 道就要多跑 5 个道宽对应的弯道，5 × 6.28 = 31.4 米。",
+   "tags": [
+    "确定起跑线",
+    "起跑线画错"
+   ],
+   "question_id": "math-6up-d23-q28"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "某校 400 米跑道相邻两道起跑线相差 12.56 米，这条跑道的宽是（  ）米。（π 取 3.14）",
+   "accepted": [
+    "2"
+   ],
+   "correct_answer": "2",
+   "explanation": "道宽 = 相差 ÷ (2π) = 12.56 ÷ 6.28 = 2 米。",
+   "tags": [
+    "确定起跑线",
+    "反求道宽"
+   ],
+   "question_id": "math-6up-d23-q29"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "半圆弯道直径 60 米，跑道宽 1.5 米，第 3 道弯道比第 1 道弯道长（  ）米。（π 取 3.14）",
+   "options": [
+    "9.42",
+    "6",
+    "4.71",
+    "18.84"
+   ],
+   "correct_answer": "D",
+   "explanation": "第 3 道比第 1 道多 2 个道宽，直径多 2 × 2 × 1.5 = 6 米，弯道多 3.14 × 6 = 18.84 米。",
+   "tags": [
+    "确定起跑线",
+    "弯道差"
+   ],
+   "question_id": "math-6up-d23-q30"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "判断题",
+   "stem": "400 米比赛中，外道起跑线前移以后，各道的终点线也要相应地错开。",
+   "options": [
+    "对",
+    "错"
+   ],
+   "correct_answer": "B",
+   "explanation": "终点只有一条，各道都在同一条终点线上结束，错开的只是起跑线。",
+   "tags": [
+    "确定起跑线",
+    "终点线"
+   ],
+   "question_id": "math-6up-d23-q31"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "如果把跑道内圈的直道由 100 米改成 84.39 米，那么相邻两条跑道的起跑线差距会（  ）",
+   "options": [
+    "变大",
+    "变小",
+    "不变",
+    "先变大再变小"
+   ],
+   "correct_answer": "C",
+   "explanation": "差距只由道宽和 π 决定，直道改成多长都不改变弯道上多出的那一圈。",
+   "tags": [
+    "确定起跑线",
+    "直道无关"
+   ],
+   "question_id": "math-6up-d23-q32"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "跑道宽由 1 米改成 1.5 米，相邻两条跑道起跑线的差距是原来的（  ）",
+   "options": [
+    "2 倍",
+    "3 倍",
+    "不变",
+    "1.5 倍"
+   ],
+   "correct_answer": "D",
+   "explanation": "差距 = 2π × 道宽，与道宽成正比，道宽变成 1.5 倍，差距也变成 1.5 倍。",
+   "tags": [
+    "确定起跑线",
+    "道宽变化"
+   ],
+   "question_id": "math-6up-d23-q33"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "跑道宽由 1 米改成 2 米，400 米比赛中相邻两条跑道的起跑线相差（  ）米。（π 取 3.14）",
+   "accepted": [
+    "12.56"
+   ],
+   "correct_answer": "12.56",
+   "explanation": "道宽翻倍，差距也翻倍：2 × 2 × 3.14 = 12.56 米。",
+   "tags": [
+    "确定起跑线",
+    "道宽变化"
+   ],
+   "question_id": "math-6up-d23-q34"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "关于 400 米跑道的起跑线，下面说法正确的是（  ）",
+   "options": [
+    "各道直道一样长，弯道越长起跑线越靠前",
+    "各道弯道一样长，直道越长起跑线越靠前",
+    "各道一圈长度相同，所以起跑线相同",
+    "起跑线位置由跑道的条数决定"
+   ],
+   "correct_answer": "A",
+   "explanation": "直道处处相同，只有弯道随道次变长；弯道越长起跑线就越要往前，各道才都跑满 400 米。",
+   "tags": [
+    "确定起跑线",
+    "综合辨析"
+   ],
+   "question_id": "math-6up-d23-q35"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "两条跑道一圈的长度相差 6.28 米，这两条跑道的起跑线应相差（  ）米。",
+   "accepted": [
+    "6.28"
+   ],
+   "correct_answer": "6.28",
+   "explanation": "直道一样长，一圈的长度差就是弯道差，起跑线要补上同样的 6.28 米。",
+   "tags": [
+    "确定起跑线",
+    "长度差"
+   ],
+   "question_id": "math-6up-d23-q36"
+  },
+  {
    "question_id": "math-6up-d17-q01",
    "diagnostic_node_id": "math-6up-d17",
    "subject": "math",
@@ -10150,6 +12106,492 @@
     "意义"
    ],
    "question_id": "math-6up-d17-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "六年级男生 25 人，女生 20 人，男生人数是女生人数的（  ）%。（只填数）",
+   "accepted": [
+    "125"
+   ],
+   "correct_answer": "125",
+   "explanation": "25 ÷ 20 = 1.25 = 125%，男生比女生多，所以这个百分数超过 100%。",
+   "tags": [
+    "百分数的意义",
+    "超过100%"
+   ],
+   "question_id": "math-6up-d17-q13"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一杯糖水的含糖率是 15%，这里的 15% 表示（  ）",
+   "options": [
+    "糖的质量是水的质量的 15%",
+    "糖水质量是糖的质量的 15%",
+    "糖的质量是糖水质量的 15%",
+    "糖有 15 克"
+   ],
+   "correct_answer": "C",
+   "explanation": "百分数表示一个数是另一个数的百分之几，含糖率是糖占糖水的百分之几，不是具体的克数。",
+   "tags": [
+    "百分数的意义",
+    "含糖率"
+   ],
+   "question_id": "math-6up-d17-q14"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "某村今年小麦产量是去年的 120%，今年比去年增产（  ）%。（只填数）",
+   "accepted": [
+    "20"
+   ],
+   "correct_answer": "20",
+   "explanation": "把去年看作 100%，今年是 120%，多出的部分是 120% - 100% = 20%。",
+   "tags": [
+    "百分数的意义",
+    "增产"
+   ],
+   "question_id": "math-6up-d17-q15"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "判断题",
+   "stem": "某班女生人数是男生人数的 105%，说明女生比男生多。",
+   "options": [
+    "对",
+    "错"
+   ],
+   "correct_answer": "A",
+   "explanation": "105% 就是 1.05 倍，超过男生人数的 1 倍，所以女生比男生多。",
+   "tags": [
+    "百分数的意义",
+    "超过100%"
+   ],
+   "question_id": "math-6up-d17-q16"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "某商品第二季度的销量是第一季度的 150%，下面理解正确的是（  ）",
+   "options": [
+    "第二季度销量比第一季度多 50%",
+    "第二季度销量比第一季度多 150%",
+    "第一季度销量是第二季度的 150%",
+    "第二季度销量比第一季度少 50%"
+   ],
+   "correct_answer": "A",
+   "explanation": "150% 表示第二季度是第一季度的 1.5 倍，多出的部分是 150% - 100% = 50%。",
+   "tags": [
+    "百分数的意义",
+    "增长率"
+   ],
+   "question_id": "math-6up-d17-q17"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "判断题",
+   "stem": "某班男生人数是女生人数的 100%，说明男生和女生一样多。",
+   "options": [
+    "错",
+    "对"
+   ],
+   "correct_answer": "B",
+   "explanation": "100% 就是 1 倍，男生人数正好等于女生人数。",
+   "tags": [
+    "百分数的意义",
+    "100%"
+   ],
+   "question_id": "math-6up-d17-q18"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一根 60 厘米长的木条，用去了 45 厘米，用去的长度是全长的（  ）%。（只填数）",
+   "accepted": [
+    "75"
+   ],
+   "correct_answer": "75",
+   "explanation": "求用去的是全长的百分之几用除法：45 ÷ 60 = 0.75 = 75%。",
+   "tags": [
+    "求百分率",
+    "基本计算"
+   ],
+   "question_id": "math-6up-d17-q19"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "六（3）班有 50 人，其中近视的有 12 人，这个班的近视率是（  ）%。（只填数）",
+   "accepted": [
+    "24"
+   ],
+   "correct_answer": "24",
+   "explanation": "近视率 = 近视人数 ÷ 全班人数 = 12 ÷ 50 = 0.24 = 24%。",
+   "tags": [
+    "求百分率",
+    "近视率"
+   ],
+   "question_id": "math-6up-d17-q20"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一批种子 200 粒，发芽的有 196 粒，发芽率是（  ）%。（只填数）",
+   "accepted": [
+    "98"
+   ],
+   "correct_answer": "98",
+   "explanation": "196 ÷ 200 = 0.98 = 98%，发芽粒数不会超过试验总粒数。",
+   "tags": [
+    "求百分率",
+    "发芽率"
+   ],
+   "question_id": "math-6up-d17-q21"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "学校种下 80 棵树，成活了 76 棵，成活率是（  ）",
+   "options": [
+    "76%",
+    "95%",
+    "80%",
+    "105%"
+   ],
+   "correct_answer": "B",
+   "explanation": "76 ÷ 80 = 0.95 = 95%，成活棵数少于总棵数，成活率不到 100%。",
+   "tags": [
+    "求百分率",
+    "成活率"
+   ],
+   "question_id": "math-6up-d17-q22"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "某厂去年生产 240 台机器，今年生产 270 台，今年比去年增产（  ）%。（只填数）",
+   "accepted": [
+    "12.5"
+   ],
+   "correct_answer": "12.5",
+   "explanation": "增产 270 - 240 = 30 台，30 ÷ 240 = 0.125 = 12.5%，比谁增产就除以谁。",
+   "tags": [
+    "求百分率",
+    "增产百分之几"
+   ],
+   "question_id": "math-6up-d17-q23"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一件衣服原价 125 元，现在卖 100 元，现价是原价的（  ）",
+   "options": [
+    "125%",
+    "75%",
+    "25%",
+    "80%"
+   ],
+   "correct_answer": "D",
+   "explanation": "100 ÷ 125 = 0.8 = 80%，求现价是原价的百分之几，就除以原价。",
+   "tags": [
+    "求百分率",
+    "现价与原价"
+   ],
+   "question_id": "math-6up-d17-q24"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "六年级 120 人参加体检，视力正常的有 90 人，视力正常的人数占全年级的（ ）%。",
+   "accepted": [
+    "75"
+   ],
+   "correct_answer": "75",
+   "explanation": "求一个数占另一个数的百分之几用除法：90÷120=0.75=75%。",
+   "tags": [
+    "体检",
+    "求百分率"
+   ],
+   "question_id": "math-6up-d17-q25"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "图书角有故事书 480 本，科技书 120 本，科技书的本数是故事书的（ ）",
+   "options": [
+    "40%",
+    "25%",
+    "20%",
+    "400%"
+   ],
+   "correct_answer": "B",
+   "explanation": "科技书是故事书的几分之几，用 120÷480=0.25，即 25%；用 480÷120 就把被比较的两个数弄反了。",
+   "tags": [
+    "图书",
+    "求百分率"
+   ],
+   "question_id": "math-6up-d17-q26"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "果园里梨树 250 棵，苹果树 400 棵，梨树的棵数是苹果树的（ ）%。",
+   "accepted": [
+    "62.5"
+   ],
+   "correct_answer": "62.5",
+   "explanation": "250÷400=0.625=62.5%，比谁就以谁作标准量。",
+   "tags": [
+    "果园",
+    "求百分率"
+   ],
+   "question_id": "math-6up-d17-q27"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "六（3）班今天有 2 人请病假，其余 48 人都到校，这个班的出勤率是（ ）",
+   "options": [
+    "96%",
+    "98%",
+    "94%",
+    "4%"
+   ],
+   "correct_answer": "A",
+   "explanation": "全班 2+48=50 人，出勤率是 48÷50=0.96=96%，总人数要把请假的算进去。",
+   "tags": [
+    "出勤率",
+    "求百分率"
+   ],
+   "question_id": "math-6up-d17-q28"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一块麦地去年收小麦 8 吨，今年收小麦 10 吨，今年的产量是去年的（ ）%。",
+   "accepted": [
+    "125"
+   ],
+   "correct_answer": "125",
+   "explanation": "10÷8=1.25=125%，今年收得比去年多，结果就大于 100%。",
+   "tags": [
+    "产量",
+    "求百分率"
+   ],
+   "question_id": "math-6up-d17-q29"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "学校先种 80 棵树，成活 76 棵；又补种 20 棵，全部成活。两批合起来算，成活率是（ ）",
+   "options": [
+    "95%",
+    "96%",
+    "76%",
+    "100%"
+   ],
+   "correct_answer": "B",
+   "explanation": "一共 80+20=100 棵，成活 76+20=96 棵，96÷100=96%；只算第一批的 95% 或只看补种的 100% 都不对。",
+   "tags": [
+    "成活率",
+    "求百分率"
+   ],
+   "question_id": "math-6up-d17-q30"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一件上衣现价是原价的 85%，也就是比原价降低了（ ）%。",
+   "accepted": [
+    "15"
+   ],
+   "correct_answer": "15",
+   "explanation": "把原价看作 100%，现价占 85%，降低的部分是 100%-85%=15%。",
+   "tags": [
+    "降低百分之几",
+    "意义"
+   ],
+   "question_id": "math-6up-d17-q31"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "判断题",
+   "stem": "分母是 100 的分数都是百分数。（ ）",
+   "options": [
+    "错误",
+    "正确"
+   ],
+   "correct_answer": "A",
+   "explanation": "百分数只表示两个数的倍比关系，不能带单位；51/100 米是具体长度，不能写成 51% 米。",
+   "tags": [
+    "意义",
+    "取值范围"
+   ],
+   "question_id": "math-6up-d17-q32"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "甲数是 40，乙数是 50，甲数比乙数少（ ）%。",
+   "accepted": [
+    "20"
+   ],
+   "correct_answer": "20",
+   "explanation": "比乙数少就以乙数为标准：(50-40)÷50=0.2=20%；除以 40 得到 25%，那是乙比甲多的百分数。",
+   "tags": [
+    "单位一",
+    "求百分率"
+   ],
+   "question_id": "math-6up-d17-q33"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "把 8 克盐放进 32 克水里，这杯盐水的含盐率是（ ）",
+   "options": [
+    "25%",
+    "20%",
+    "16%",
+    "80%"
+   ],
+   "correct_answer": "B",
+   "explanation": "盐水共 8+32=40 克，含盐率是 8÷40=0.2=20%；8÷32 算的是盐占水的百分之几。",
+   "tags": [
+    "含盐率",
+    "单位一"
+   ],
+   "question_id": "math-6up-d17-q34"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一个数的 120% 是 72，这个数是（ ）。",
+   "accepted": [
+    "60"
+   ],
+   "correct_answer": "60",
+   "explanation": "已知一个数的百分之几是多少，求这个数用除法：72÷1.2=60，不是 72×1.2。",
+   "tags": [
+    "逆运算",
+    "意义"
+   ],
+   "question_id": "math-6up-d17-q35"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "甲数是乙数的 80%，那么乙数是甲数的（ ）",
+   "options": [
+    "120%",
+    "80%",
+    "125%",
+    "20%"
+   ],
+   "correct_answer": "C",
+   "explanation": "设乙数为 1，甲数就是 0.8，乙数是甲数的 1÷0.8=1.25，即 125%。",
+   "tags": [
+    "互换标准量",
+    "意义"
+   ],
+   "question_id": "math-6up-d17-q36"
   },
   {
    "diagnostic_node_id": "math-6up-d18",
@@ -10405,6 +12847,492 @@
     "百分号"
    ],
    "question_id": "math-6up-d18-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "判断题",
+   "stem": "把百分数化成分数，要先写成分母是 100 的分数，能约分的再约分。（ ）",
+   "options": [
+    "错误",
+    "正确"
+   ],
+   "correct_answer": "B",
+   "explanation": "如 75%=75/100，分子分母同除以 25 得 3/4；百分数本来就是分母为 100 的分数。",
+   "tags": [
+    "互化方法",
+    "分数"
+   ],
+   "question_id": "math-6up-d18-q13"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "把 300% 化成小数是（ ）。",
+   "accepted": [
+    "3"
+   ],
+   "correct_answer": "3",
+   "explanation": "去掉百分号，小数点向左移两位：300% 就是 3.00，即 3；百分数可以大于 100%。",
+   "tags": [
+    "百分数化小数",
+    "意义"
+   ],
+   "question_id": "math-6up-d18-q14"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "判断题",
+   "stem": "把 0.6 写成百分数，只要在 0.6 后面直接添上百分号。（ ）",
+   "options": [
+    "错误",
+    "正确"
+   ],
+   "correct_answer": "A",
+   "explanation": "直接添百分号得 0.6%，反而缩小到原来的 1/100；应先把小数点向右移两位得 60，再添百分号。",
+   "tags": [
+    "小数化百分数",
+    "易错"
+   ],
+   "question_id": "math-6up-d18-q15"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "把 0.5% 化成小数是（ ）。",
+   "accepted": [
+    "0.005"
+   ],
+   "correct_answer": "0.005",
+   "explanation": "0.5% 表示 0.5/100，小数点向左移两位得 0.005；百分数也可以比 1% 还小。",
+   "tags": [
+    "百分数化小数",
+    "意义"
+   ],
+   "question_id": "math-6up-d18-q16"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "把 0.4% 化成最简分数是（ ）",
+   "options": [
+    "1/250",
+    "1/25",
+    "2/5",
+    "4/100"
+   ],
+   "correct_answer": "A",
+   "explanation": "0.4%=0.4/100=4/1000，分子分母同除以 4 得 1/250；分母里不能留着小数。",
+   "tags": [
+    "百分数化分数",
+    "约分"
+   ],
+   "question_id": "math-6up-d18-q17"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "判断题",
+   "stem": "因为 1/3 不能化成有限小数，所以 1/3 不能化成百分数。（ ）",
+   "options": [
+    "正确",
+    "错误"
+   ],
+   "correct_answer": "B",
+   "explanation": "1/3=0.333…，可以按要求保留位数写成 33.3% 或 33.33%，除不尽时用约等号，不是不能化。",
+   "tags": [
+    "分数化百分数",
+    "除不尽"
+   ],
+   "question_id": "math-6up-d18-q18"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "把 0.08 化成百分数是（ ）%。",
+   "accepted": [
+    "8"
+   ],
+   "correct_answer": "8",
+   "explanation": "小数点向右移两位得 8，再添百分号：0.08=8%。",
+   "tags": [
+    "小数化百分数",
+    "计算"
+   ],
+   "question_id": "math-6up-d18-q19"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "把 6/5 化成百分数是（ ）%。",
+   "accepted": [
+    "120"
+   ],
+   "correct_answer": "120",
+   "explanation": "6÷5=1.2=120%；假分数化成百分数会超过 100%。",
+   "tags": [
+    "分数化百分数",
+    "计算"
+   ],
+   "question_id": "math-6up-d18-q20"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "把 9/25 化成百分数是（ ）%。",
+   "accepted": [
+    "36"
+   ],
+   "correct_answer": "36",
+   "explanation": "9÷25=0.36=36%；也可把分母 25 扩大到 100，分子同时乘 4 得 36/100。",
+   "tags": [
+    "分数化百分数",
+    "计算"
+   ],
+   "question_id": "math-6up-d18-q21"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "把 145% 化成小数是（ ）",
+   "options": [
+    "14.5",
+    "0.145",
+    "145",
+    "1.45"
+   ],
+   "correct_answer": "D",
+   "explanation": "去掉百分号，小数点向左移两位：145% 就是 1.45。",
+   "tags": [
+    "百分数化小数",
+    "计算"
+   ],
+   "question_id": "math-6up-d18-q22"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "把 2/7 化成百分数，百分号前保留一位小数，约是（ ）%。",
+   "accepted": [
+    "28.6"
+   ],
+   "correct_answer": "28.6",
+   "explanation": "2÷7≈0.2857，乘 100 得 28.57…，保留一位小数约是 28.6%，除不尽要用约等号。",
+   "tags": [
+    "分数化百分数",
+    "保留位数"
+   ],
+   "question_id": "math-6up-d18-q23"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "把 0.625% 化成最简分数是（ ）。",
+   "accepted": [
+    "1/160"
+   ],
+   "correct_answer": "1/160",
+   "explanation": "0.625%=0.625/100=625/100000，分子分母同除以 625 得 1/160。",
+   "tags": [
+    "百分数化分数",
+    "约分"
+   ],
+   "question_id": "math-6up-d18-q24"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "手机显示电量还剩 45%，45% 写成小数是（ ）。",
+   "accepted": [
+    "0.45"
+   ],
+   "correct_answer": "0.45",
+   "explanation": "去掉百分号，小数点向左移两位，45%=0.45。",
+   "tags": [
+    "电量",
+    "百分数化小数"
+   ],
+   "question_id": "math-6up-d18-q25"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "学校抽测 300 名学生的跳绳成绩，合格的有 279 人，合格率是（ ）",
+   "options": [
+    "90%",
+    "95%",
+    "93%",
+    "7%"
+   ],
+   "correct_answer": "C",
+   "explanation": "279÷300=0.93=93%；不合格的 21 人占 7%，7% 不是合格率。",
+   "tags": [
+    "跳绳",
+    "合格率"
+   ],
+   "question_id": "math-6up-d18-q26"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一批种子 250 粒，发芽 240 粒，发芽率是（ ）%。",
+   "accepted": [
+    "96"
+   ],
+   "correct_answer": "96",
+   "explanation": "240÷250=0.96=96%，发芽率是发芽粒数占试验总粒数的百分之几。",
+   "tags": [
+    "种子",
+    "发芽率"
+   ],
+   "question_id": "math-6up-d18-q27"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一根绳子长 4 米，用去全长的 25%，用去了（ ）米",
+   "options": [
+    "0.25",
+    "3",
+    "25",
+    "1"
+   ],
+   "correct_answer": "D",
+   "explanation": "求 4 米的 25% 用乘法：4×0.25=1 米；25% 本身不是长度。",
+   "tags": [
+    "绳子",
+    "百分数应用"
+   ],
+   "question_id": "math-6up-d18-q28"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "全班 40 人，其中 15% 参加了合唱队，参加合唱队的有（ ）人。",
+   "accepted": [
+    "6"
+   ],
+   "correct_answer": "6",
+   "explanation": "40×0.15=6 人；求一个数的百分之几是多少，用乘法。",
+   "tags": [
+    "合唱队",
+    "百分数应用"
+   ],
+   "question_id": "math-6up-d18-q29"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一桶油重 5 升，用去 40%，还剩（ ）升",
+   "options": [
+    "3",
+    "2",
+    "2.5",
+    "3.5"
+   ],
+   "correct_answer": "A",
+   "explanation": "剩下的占 1-40%=60%，5×0.6=3 升；用去的 2 升不是剩下的。",
+   "tags": [
+    "油桶",
+    "百分数应用"
+   ],
+   "question_id": "math-6up-d18-q30"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面各数中，与 3/4 不相等的是（ ）",
+   "options": [
+    "0.75",
+    "75%",
+    "7.5%",
+    "75/100"
+   ],
+   "correct_answer": "C",
+   "explanation": "7.5% 就是 0.075，比 3/4 小得多；0.75、75%、75/100 都等于 3/4。",
+   "tags": [
+    "等值判断",
+    "互化"
+   ],
+   "question_id": "math-6up-d18-q31"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "在 0.6、5/8、62.5%、0.65 中，最大的数写成百分数是（ ）%。",
+   "accepted": [
+    "65"
+   ],
+   "correct_answer": "65",
+   "explanation": "都化成小数：0.6、0.625、0.625、0.65，最大的是 0.65，写成百分数是 65%。",
+   "tags": [
+    "比较大小",
+    "互化"
+   ],
+   "question_id": "math-6up-d18-q32"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面四个数中，最小的是（ ）",
+   "options": [
+    "0.3%",
+    "0.3",
+    "1/3",
+    "30%"
+   ],
+   "correct_answer": "A",
+   "explanation": "0.3% 就是 0.003，而 0.3=30%=0.3，1/3≈0.333，所以 0.3% 最小。",
+   "tags": [
+    "比较大小",
+    "百分数"
+   ],
+   "question_id": "math-6up-d18-q33"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "在 1/4、0.2、25%、2.5% 中，最小的数是（ ）。",
+   "accepted": [
+    "0.025"
+   ],
+   "correct_answer": "0.025",
+   "explanation": "2.5%=0.025，比 1/4=0.25、0.2、25% 都小；2.5% 与 25% 相差 10 倍。",
+   "tags": [
+    "比较大小",
+    "百分数"
+   ],
+   "question_id": "math-6up-d18-q34"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "关于 4/5 的三种写法，说法正确的是（ ）",
+   "options": [
+    "4/5=0.8%，因为 4÷5=0.8",
+    "4/5=0.8=80%，大小相同",
+    "4/5=8%，因为 4/5=0.8",
+    "4/5=0.08，因为 4÷5=0.08"
+   ],
+   "correct_answer": "B",
+   "explanation": "4÷5=0.8，0.8 化成百分数是 80%，三种写法表示的大小一样，都是 0.8。",
+   "tags": [
+    "等值判断",
+    "三种写法"
+   ],
+   "question_id": "math-6up-d18-q35"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "大于 0.6 且小于 65% 的数是（ ）",
+   "options": [
+    "0.58",
+    "0.7",
+    "6.5%",
+    "62%"
+   ],
+   "correct_answer": "D",
+   "explanation": "0.6 就是 60%，要找 60% 到 65% 之间的数；0.58 小于 60%，0.7 和 6.5% 都在范围外。",
+   "tags": [
+    "取值范围",
+    "比较大小"
+   ],
+   "question_id": "math-6up-d18-q36"
   },
   {
    "diagnostic_node_id": "math-6up-d19",
