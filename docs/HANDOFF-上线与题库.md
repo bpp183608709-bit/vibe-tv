@@ -12,7 +12,7 @@
 | 项 | 值 |
 |---|---|
 | 仓库 | 本地 `/Volumes/个人/code/aerial-tv-main`，远端 `github.com/bpp183608709-bit/vibe-tv`，分支 `main` |
-| 同步状态 | 与远端 `main` 同步（2026-11-19 推送至 `1c6a7c2`） |
+| 同步状态 | 与远端 `main` 同步（2026-11-19 推送至 `896bf43`） |
 | 服务器 | 阿里云 ECS，Ubuntu 22.04，`47.95.198.148`，root 用 `~/.ssh/misty_deploy` 登录 |
 | 服务 | systemd `wrong-quiz.service`，`/opt/wrong-quiz`，一进程三监听：**443 家长页（`tvparent.vibedemo.cn`）/ 9443 电视 / 8100 loopback**，没有 nginx。备案前家长页临时在 8443 |
 | 数据库 | MySQL 8 `quiz`（生产）、`quiz_acceptance`（验收库，每次重建）、`quiz_restore`（恢复演练） |
@@ -176,7 +176,7 @@ ssh -i ~/.ssh/misty_deploy root@47.95.198.148 'sh /opt/wrong-quiz/server/tools/a
 
 ### 6.1 待办：下次任何一次部署都要捎带重导题库（2026-11-19 记）
 
-`knowledge-eval/data/` 在 2026-11-19 改了三科结构（语文换成 26 课、英语按 2026 秋新版重建、数学待改），**线上库还是旧内容**：`unit.name_zh` 仍是「艺术之美」「Cities in China」，缺英语 U9，语文 `d11/d12` 还挂着已删除的课文。这是数据与代码不同步，不是代码缺陷——只部署代码不会自愈，H5 报告会继续显示课本里没有的章节。
+`knowledge-eval/data/` 在 2026-11-19 改了三科结构（语文换成 26 课、英语按 2026 秋新版重建、数学按 2024 新版重排成 9 个条目），**线上库还是旧内容**：`unit.name_zh` 仍是「艺术之美」「Cities in China」，缺英语 U9，语文 `d11/d12` 还挂着已删除的课文。这是数据与代码不同步，不是代码缺陷——只部署代码不会自愈，H5 报告会继续显示课本里没有的章节。
 
 **不要单独跑，跟着下一次部署一起做。** 顺序不可颠倒：
 
@@ -195,30 +195,68 @@ su -s /bin/sh wrongquiz -c '.venv/bin/python -m server.tools.import_questions  -
 systemctl restart wrong-quiz
 ```
 
-**第 3 步之后必须处理 `english-6up-d05`。** 英语按新版重建时删掉了「There be 句型」这个诊断节点，但 `import_curriculum` 从不删 topic（删了会孤立作答记录），旧行会留在库里。先确认无人引用，再手工删：
+**第 3 步之后必须清理 7 个残留 topic 和 3 道残留题。** 导入器只 upsert、从不删（删了会孤立作答记录），
+三科重建删掉的内容会留在库里；更麻烦的是**数学的聚合 code 被重新占用了**——`math-6up-u04` 原来是「比」，
+新版是「生活中的负数」，导入后那一行会被就地改写。于是留在库里的「比」诊断节点会挂到「负数」这一章下，
+报告里出现「负数 → 按比分配」这种组合。**必须手工删，不能只靠重导。**
+
+按顺序做，每步先看计数再动手：
 
 ```sql
-SELECT t.id, t.code, t.name_zh FROM topic t WHERE t.code = 'english-6up-d05';
-SELECT COUNT(*) FROM question      WHERE topic_id = (SELECT id FROM topic WHERE code='english-6up-d05'); -- 期望 0
-SELECT COUNT(*) FROM topic_mastery WHERE topic_id = (SELECT id FROM topic WHERE code='english-6up-d05'); -- 期望 0
-SELECT COUNT(*) FROM topic_signal  WHERE topic_id = (SELECT id FROM topic WHERE code='english-6up-d05'); -- 期望 0
-DELETE FROM topic WHERE code = 'english-6up-d05';
+-- 1) 要删的 topic 清单（6 个数学 + 1 个英语）
+SELECT id, code, name_zh, unit_id, chapter_order FROM topic
+ WHERE code IN ('english-6up-d05',
+                'math-6up-d10','math-6up-d11','math-6up-d12',
+                'math-6up-d20','math-6up-d21','math-6up-d22');
+
+-- 2) 先处理挂在上面的 3 道题（math-6up-d11 的「按比分配」），否则外键挡住删 topic
+SELECT q.id, q.stem FROM question q JOIN topic t ON t.id = q.topic_id WHERE t.code = 'math-6up-d11';
+SELECT COUNT(*) FROM quiz_answer a
+  JOIN question q ON q.id = a.question_id JOIN topic t ON t.id = q.topic_id
+ WHERE t.code = 'math-6up-d11';        -- 期望 0
+
+-- 3) 作答记录为 0 才删题（先删子表再删主表；这三道题考的是六下内容，留着只会出现在错题本里）
+DELETE qo FROM question_option qo JOIN question q ON q.id = qo.question_id
+  JOIN topic t ON t.id = q.topic_id WHERE t.code = 'math-6up-d11';
+DELETE qa FROM question_answer qa JOIN question q ON q.id = qa.question_id
+  JOIN topic t ON t.id = q.topic_id WHERE t.code = 'math-6up-d11';
+DELETE qt FROM question_topic qt JOIN question q ON q.id = qt.question_id
+  JOIN topic t ON t.id = q.topic_id WHERE t.code = 'math-6up-d11';
+DELETE q FROM question q JOIN topic t ON t.id = q.topic_id WHERE t.code = 'math-6up-d11';
+
+-- 4) 删 topic 前，每一项引用都必须是 0
+SELECT t.code,
+       (SELECT COUNT(*) FROM question      q WHERE q.topic_id = t.id) AS questions,
+       (SELECT COUNT(*) FROM topic_mastery m WHERE m.topic_id = t.id) AS mastery,
+       (SELECT COUNT(*) FROM topic_signal  s WHERE s.topic_id = t.id) AS signals
+  FROM topic t
+ WHERE t.code IN ('english-6up-d05','math-6up-d10','math-6up-d11','math-6up-d12',
+                  'math-6up-d20','math-6up-d21','math-6up-d22');
+
+-- 5) 三列全 0 的行才删
+DELETE FROM topic WHERE code IN ('english-6up-d05','math-6up-d10','math-6up-d11','math-6up-d12',
+                                 'math-6up-d20','math-6up-d21','math-6up-d22');
+
+-- 6) 旧「综合与实践」这个聚合在新数据里已经不存在了（拆成体育/水/负数三个条目）
+SELECT COUNT(*) FROM topic WHERE unit_id = (SELECT id FROM unit WHERE code = 'math-6up-u09'); -- 期望 0
+DELETE FROM unit WHERE code = 'math-6up-u09';
 ```
 
-三个计数都是 0 才能删；只要有一个非 0，就停下来问人，不要连带删作答记录。
+**任何一步计数非 0 就停下问人**，不要连带删作答记录、也不要靠 `ON DELETE CASCADE` 蒙过去。
+若第 2 步查到作答记录（孩子真的做过这三道题），改成只退不删：`UPDATE question SET retired_at = NOW() …`，
+但那样 topic 删不掉，报告里仍会显示这一章，需要单独决定怎么处理历史作答。
 
 （本次同时改了 `import_curriculum` 的残留检测：原来按 `ordinal` 比对，节点删除后序号被别人占用就静默放过；现在按 `code` 比对，缺节点会打印 `still in the database but gone from the file`，不再无声无息。）
 
-验收（四条都要有输出，数字来自 `check_schema.py` 当前打印的 83 nodes / 46 questions）：
+验收（数字来自 `check_schema.py` 当前打印的 82 nodes / 43 questions）：
 
 ```sql
-SELECT COUNT(*) FROM unit;      -- 期望 28（数学 10 + 语文 8 + 英语 10）
-SELECT COUNT(*) FROM topic;     -- 期望 55
-SELECT COUNT(*) FROM question;  -- 期望 46
+SELECT COUNT(*) FROM unit;      -- 期望 27（数学 9 + 语文 8 + 英语 10）
+SELECT COUNT(*) FROM topic;     -- 期望 55（数学 25 + 语文 14 + 英语 16）
+SELECT COUNT(*) FROM question;  -- 期望 43（数学 15 + 语文 12 + 英语 16）
 SELECT name_zh FROM unit WHERE code='english-6up-u09';  -- 期望 I don't feel well
+SELECT name_zh FROM unit WHERE code='math-6up-u04';     -- 期望 生活中的负数（这一行是被改写的，不是新建的）
 ```
-
-若上一步数学还没改（数学下架 3 个旧单元 + 拆 u09 是第 3 步），上面 28/55 要对不上，以当时 `check_schema.py` 的输出为准对账，不要照抄这四个数字。
 
 ---
 
