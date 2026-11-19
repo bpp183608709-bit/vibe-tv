@@ -584,20 +584,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d01-q01",
     "math-6up-d01-q04",
-    "math-6up-d01-q05"
+    "math-6up-d01-q05",
+    "math-6up-d01-q13",
+    "math-6up-d01-q14",
+    "math-6up-d01-q15",
+    "math-6up-d01-q16",
+    "math-6up-d01-q17",
+    "math-6up-d01-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -608,36 +614,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -657,11 +663,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -674,20 +680,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d01-q02",
     "math-6up-d01-q06",
-    "math-6up-d01-q07"
+    "math-6up-d01-q07",
+    "math-6up-d01-q19",
+    "math-6up-d01-q20",
+    "math-6up-d01-q21",
+    "math-6up-d01-q22",
+    "math-6up-d01-q23",
+    "math-6up-d01-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -698,36 +710,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -747,11 +759,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -764,20 +776,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d01-q08",
     "math-6up-d01-q09",
-    "math-6up-d01-q10"
+    "math-6up-d01-q10",
+    "math-6up-d01-q25",
+    "math-6up-d01-q26",
+    "math-6up-d01-q27",
+    "math-6up-d01-q28",
+    "math-6up-d01-q29",
+    "math-6up-d01-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -788,36 +806,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -837,11 +855,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -854,20 +872,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d01-q03",
     "math-6up-d01-q11",
-    "math-6up-d01-q12"
+    "math-6up-d01-q12",
+    "math-6up-d01-q31",
+    "math-6up-d01-q32",
+    "math-6up-d01-q33",
+    "math-6up-d01-q34",
+    "math-6up-d01-q35",
+    "math-6up-d01-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -878,36 +902,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -927,11 +951,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -944,20 +968,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d02-q01",
     "math-6up-d02-q02",
-    "math-6up-d02-q03"
+    "math-6up-d02-q03",
+    "math-6up-d02-q13",
+    "math-6up-d02-q14",
+    "math-6up-d02-q15",
+    "math-6up-d02-q16",
+    "math-6up-d02-q17",
+    "math-6up-d02-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -968,36 +998,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -1017,11 +1047,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -1034,20 +1064,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d02-q04",
     "math-6up-d02-q05",
-    "math-6up-d02-q06"
+    "math-6up-d02-q06",
+    "math-6up-d02-q19",
+    "math-6up-d02-q20",
+    "math-6up-d02-q21",
+    "math-6up-d02-q22",
+    "math-6up-d02-q23",
+    "math-6up-d02-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -1058,36 +1094,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -1107,11 +1143,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -1124,20 +1160,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d02-q07",
     "math-6up-d02-q08",
-    "math-6up-d02-q09"
+    "math-6up-d02-q09",
+    "math-6up-d02-q25",
+    "math-6up-d02-q26",
+    "math-6up-d02-q27",
+    "math-6up-d02-q28",
+    "math-6up-d02-q29",
+    "math-6up-d02-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -1148,36 +1190,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -1197,11 +1239,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -1214,20 +1256,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d02-q10",
     "math-6up-d02-q11",
-    "math-6up-d02-q12"
+    "math-6up-d02-q12",
+    "math-6up-d02-q31",
+    "math-6up-d02-q32",
+    "math-6up-d02-q33",
+    "math-6up-d02-q34",
+    "math-6up-d02-q35",
+    "math-6up-d02-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -1238,36 +1286,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -1287,11 +1335,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -1304,20 +1352,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d03-q01",
     "math-6up-d03-q02",
-    "math-6up-d03-q03"
+    "math-6up-d03-q03",
+    "math-6up-d03-q13",
+    "math-6up-d03-q14",
+    "math-6up-d03-q15",
+    "math-6up-d03-q16",
+    "math-6up-d03-q17",
+    "math-6up-d03-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -1328,36 +1382,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -1377,11 +1431,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -1394,20 +1448,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d03-q04",
     "math-6up-d03-q05",
-    "math-6up-d03-q06"
+    "math-6up-d03-q06",
+    "math-6up-d03-q19",
+    "math-6up-d03-q20",
+    "math-6up-d03-q21",
+    "math-6up-d03-q22",
+    "math-6up-d03-q23",
+    "math-6up-d03-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -1418,36 +1478,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -1467,11 +1527,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -1484,20 +1544,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d03-q07",
     "math-6up-d03-q08",
-    "math-6up-d03-q09"
+    "math-6up-d03-q09",
+    "math-6up-d03-q25",
+    "math-6up-d03-q26",
+    "math-6up-d03-q27",
+    "math-6up-d03-q28",
+    "math-6up-d03-q29",
+    "math-6up-d03-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -1508,36 +1574,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -1557,11 +1623,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -1574,20 +1640,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d03-q10",
     "math-6up-d03-q11",
-    "math-6up-d03-q12"
+    "math-6up-d03-q12",
+    "math-6up-d03-q31",
+    "math-6up-d03-q32",
+    "math-6up-d03-q33",
+    "math-6up-d03-q34",
+    "math-6up-d03-q35",
+    "math-6up-d03-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -1598,36 +1670,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -1647,11 +1719,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -1664,20 +1736,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d04-q01",
     "math-6up-d04-q02",
-    "math-6up-d04-q03"
+    "math-6up-d04-q03",
+    "math-6up-d04-q13",
+    "math-6up-d04-q14",
+    "math-6up-d04-q15",
+    "math-6up-d04-q16",
+    "math-6up-d04-q17",
+    "math-6up-d04-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -1688,36 +1766,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -1737,11 +1815,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -1754,20 +1832,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d04-q04",
     "math-6up-d04-q05",
-    "math-6up-d04-q06"
+    "math-6up-d04-q06",
+    "math-6up-d04-q19",
+    "math-6up-d04-q20",
+    "math-6up-d04-q21",
+    "math-6up-d04-q22",
+    "math-6up-d04-q23",
+    "math-6up-d04-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -1778,36 +1862,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -1827,11 +1911,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -1844,20 +1928,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d04-q07",
     "math-6up-d04-q08",
-    "math-6up-d04-q09"
+    "math-6up-d04-q09",
+    "math-6up-d04-q25",
+    "math-6up-d04-q26",
+    "math-6up-d04-q27",
+    "math-6up-d04-q28",
+    "math-6up-d04-q29",
+    "math-6up-d04-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -1868,36 +1958,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -1917,11 +2007,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -1934,20 +2024,26 @@
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d04-q10",
     "math-6up-d04-q11",
-    "math-6up-d04-q12"
+    "math-6up-d04-q12",
+    "math-6up-d04-q31",
+    "math-6up-d04-q32",
+    "math-6up-d04-q33",
+    "math-6up-d04-q34",
+    "math-6up-d04-q35",
+    "math-6up-d04-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -1958,36 +2054,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -2007,11 +2103,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -2024,20 +2120,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d06-q01",
     "math-6up-d06-q02",
-    "math-6up-d06-q03"
+    "math-6up-d06-q03",
+    "math-6up-d06-q13",
+    "math-6up-d06-q14",
+    "math-6up-d06-q15",
+    "math-6up-d06-q16",
+    "math-6up-d06-q17",
+    "math-6up-d06-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -2048,36 +2150,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -2097,11 +2199,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -2114,20 +2216,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d06-q04",
     "math-6up-d06-q05",
-    "math-6up-d06-q06"
+    "math-6up-d06-q06",
+    "math-6up-d06-q19",
+    "math-6up-d06-q20",
+    "math-6up-d06-q21",
+    "math-6up-d06-q22",
+    "math-6up-d06-q23",
+    "math-6up-d06-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -2138,36 +2246,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -2187,11 +2295,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -2204,20 +2312,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d06-q07",
     "math-6up-d06-q08",
-    "math-6up-d06-q09"
+    "math-6up-d06-q09",
+    "math-6up-d06-q25",
+    "math-6up-d06-q26",
+    "math-6up-d06-q27",
+    "math-6up-d06-q28",
+    "math-6up-d06-q29",
+    "math-6up-d06-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -2228,36 +2342,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -2277,11 +2391,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -2294,20 +2408,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d06-q10",
     "math-6up-d06-q11",
-    "math-6up-d06-q12"
+    "math-6up-d06-q12",
+    "math-6up-d06-q31",
+    "math-6up-d06-q32",
+    "math-6up-d06-q33",
+    "math-6up-d06-q34",
+    "math-6up-d06-q35",
+    "math-6up-d06-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -2318,36 +2438,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -2367,11 +2487,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -2384,20 +2504,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d07-q01",
     "math-6up-d07-q02",
-    "math-6up-d07-q03"
+    "math-6up-d07-q03",
+    "math-6up-d07-q13",
+    "math-6up-d07-q14",
+    "math-6up-d07-q15",
+    "math-6up-d07-q16",
+    "math-6up-d07-q17",
+    "math-6up-d07-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -2408,36 +2534,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -2457,11 +2583,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -2474,20 +2600,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d07-q04",
     "math-6up-d07-q05",
-    "math-6up-d07-q06"
+    "math-6up-d07-q06",
+    "math-6up-d07-q19",
+    "math-6up-d07-q20",
+    "math-6up-d07-q21",
+    "math-6up-d07-q22",
+    "math-6up-d07-q23",
+    "math-6up-d07-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -2498,36 +2630,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -2547,11 +2679,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -2564,20 +2696,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d07-q07",
     "math-6up-d07-q08",
-    "math-6up-d07-q09"
+    "math-6up-d07-q09",
+    "math-6up-d07-q25",
+    "math-6up-d07-q26",
+    "math-6up-d07-q27",
+    "math-6up-d07-q28",
+    "math-6up-d07-q29",
+    "math-6up-d07-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -2588,36 +2726,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -2637,11 +2775,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -2654,20 +2792,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d07-q10",
     "math-6up-d07-q11",
-    "math-6up-d07-q12"
+    "math-6up-d07-q12",
+    "math-6up-d07-q31",
+    "math-6up-d07-q32",
+    "math-6up-d07-q33",
+    "math-6up-d07-q34",
+    "math-6up-d07-q35",
+    "math-6up-d07-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -2678,36 +2822,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -2727,11 +2871,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -2744,20 +2888,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d08-q01",
     "math-6up-d08-q04",
-    "math-6up-d08-q05"
+    "math-6up-d08-q05",
+    "math-6up-d08-q13",
+    "math-6up-d08-q14",
+    "math-6up-d08-q15",
+    "math-6up-d08-q16",
+    "math-6up-d08-q17",
+    "math-6up-d08-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -2768,36 +2918,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -2817,11 +2967,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -2834,20 +2984,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d08-q02",
     "math-6up-d08-q06",
-    "math-6up-d08-q07"
+    "math-6up-d08-q07",
+    "math-6up-d08-q19",
+    "math-6up-d08-q20",
+    "math-6up-d08-q21",
+    "math-6up-d08-q22",
+    "math-6up-d08-q23",
+    "math-6up-d08-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -2858,36 +3014,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -2907,11 +3063,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -2924,20 +3080,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d08-q08",
     "math-6up-d08-q09",
-    "math-6up-d08-q10"
+    "math-6up-d08-q10",
+    "math-6up-d08-q25",
+    "math-6up-d08-q26",
+    "math-6up-d08-q27",
+    "math-6up-d08-q28",
+    "math-6up-d08-q29",
+    "math-6up-d08-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -2948,36 +3110,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -2997,11 +3159,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -3014,20 +3176,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d08-q03",
     "math-6up-d08-q11",
-    "math-6up-d08-q12"
+    "math-6up-d08-q12",
+    "math-6up-d08-q31",
+    "math-6up-d08-q32",
+    "math-6up-d08-q33",
+    "math-6up-d08-q34",
+    "math-6up-d08-q35",
+    "math-6up-d08-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -3038,36 +3206,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -3087,11 +3255,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -3104,20 +3272,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d09-q01",
     "math-6up-d09-q02",
-    "math-6up-d09-q03"
+    "math-6up-d09-q03",
+    "math-6up-d09-q13",
+    "math-6up-d09-q14",
+    "math-6up-d09-q15",
+    "math-6up-d09-q16",
+    "math-6up-d09-q17",
+    "math-6up-d09-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -3128,36 +3302,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -3177,11 +3351,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -3194,20 +3368,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d09-q04",
     "math-6up-d09-q05",
-    "math-6up-d09-q06"
+    "math-6up-d09-q06",
+    "math-6up-d09-q19",
+    "math-6up-d09-q20",
+    "math-6up-d09-q21",
+    "math-6up-d09-q22",
+    "math-6up-d09-q23",
+    "math-6up-d09-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -3218,36 +3398,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -3267,11 +3447,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -3284,20 +3464,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d09-q07",
     "math-6up-d09-q08",
-    "math-6up-d09-q09"
+    "math-6up-d09-q09",
+    "math-6up-d09-q25",
+    "math-6up-d09-q26",
+    "math-6up-d09-q27",
+    "math-6up-d09-q28",
+    "math-6up-d09-q29",
+    "math-6up-d09-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -3308,36 +3494,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -3357,11 +3543,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -3374,20 +3560,26 @@
    "parent_aggregate_node_id": "math-6up-u03",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d09-q10",
     "math-6up-d09-q11",
-    "math-6up-d09-q12"
+    "math-6up-d09-q12",
+    "math-6up-d09-q31",
+    "math-6up-d09-q32",
+    "math-6up-d09-q33",
+    "math-6up-d09-q34",
+    "math-6up-d09-q35",
+    "math-6up-d09-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -3398,36 +3590,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -3447,11 +3639,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -3464,20 +3656,26 @@
    "parent_aggregate_node_id": "math-6up-u04",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d27-q01",
     "math-6up-d27-q02",
-    "math-6up-d27-q03"
+    "math-6up-d27-q03",
+    "math-6up-d27-q10",
+    "math-6up-d27-q11",
+    "math-6up-d27-q12",
+    "math-6up-d27-q13",
+    "math-6up-d27-q14",
+    "math-6up-d27-q15"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -3488,36 +3686,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -3537,11 +3735,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -3554,20 +3752,26 @@
    "parent_aggregate_node_id": "math-6up-u04",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d27-q04",
     "math-6up-d27-q05",
-    "math-6up-d27-q06"
+    "math-6up-d27-q06",
+    "math-6up-d27-q16",
+    "math-6up-d27-q17",
+    "math-6up-d27-q18",
+    "math-6up-d27-q19",
+    "math-6up-d27-q20",
+    "math-6up-d27-q21"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -3578,36 +3782,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -3627,11 +3831,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -3644,20 +3848,26 @@
    "parent_aggregate_node_id": "math-6up-u04",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d27-q07",
     "math-6up-d27-q08",
-    "math-6up-d27-q09"
+    "math-6up-d27-q09",
+    "math-6up-d27-q22",
+    "math-6up-d27-q23",
+    "math-6up-d27-q24",
+    "math-6up-d27-q25",
+    "math-6up-d27-q26",
+    "math-6up-d27-q27"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -3668,36 +3878,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -3717,11 +3927,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -3734,20 +3944,26 @@
    "parent_aggregate_node_id": "math-6up-u04",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d28-q01",
     "math-6up-d28-q02",
-    "math-6up-d28-q03"
+    "math-6up-d28-q03",
+    "math-6up-d28-q13",
+    "math-6up-d28-q14",
+    "math-6up-d28-q15",
+    "math-6up-d28-q16",
+    "math-6up-d28-q17",
+    "math-6up-d28-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -3758,36 +3974,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -3807,11 +4023,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -3824,20 +4040,26 @@
    "parent_aggregate_node_id": "math-6up-u04",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d28-q04",
     "math-6up-d28-q05",
-    "math-6up-d28-q06"
+    "math-6up-d28-q06",
+    "math-6up-d28-q19",
+    "math-6up-d28-q20",
+    "math-6up-d28-q21",
+    "math-6up-d28-q22",
+    "math-6up-d28-q23",
+    "math-6up-d28-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -3848,36 +4070,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -3897,11 +4119,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -3914,20 +4136,26 @@
    "parent_aggregate_node_id": "math-6up-u04",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d28-q07",
     "math-6up-d28-q08",
-    "math-6up-d28-q09"
+    "math-6up-d28-q09",
+    "math-6up-d28-q25",
+    "math-6up-d28-q26",
+    "math-6up-d28-q27",
+    "math-6up-d28-q28",
+    "math-6up-d28-q29",
+    "math-6up-d28-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -3938,36 +4166,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -3987,11 +4215,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -4004,20 +4232,26 @@
    "parent_aggregate_node_id": "math-6up-u04",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d28-q10",
     "math-6up-d28-q11",
-    "math-6up-d28-q12"
+    "math-6up-d28-q12",
+    "math-6up-d28-q31",
+    "math-6up-d28-q32",
+    "math-6up-d28-q33",
+    "math-6up-d28-q34",
+    "math-6up-d28-q35",
+    "math-6up-d28-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -4028,36 +4262,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -4077,11 +4311,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -4094,20 +4328,26 @@
    "parent_aggregate_node_id": "math-6up-u05",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d13-q01",
     "math-6up-d13-q02",
-    "math-6up-d13-q03"
+    "math-6up-d13-q03",
+    "math-6up-d13-q10",
+    "math-6up-d13-q11",
+    "math-6up-d13-q12",
+    "math-6up-d13-q13",
+    "math-6up-d13-q14",
+    "math-6up-d13-q15"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -4118,36 +4358,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -4167,11 +4407,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -4184,20 +4424,26 @@
    "parent_aggregate_node_id": "math-6up-u05",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d13-q04",
     "math-6up-d13-q05",
-    "math-6up-d13-q06"
+    "math-6up-d13-q06",
+    "math-6up-d13-q16",
+    "math-6up-d13-q17",
+    "math-6up-d13-q18",
+    "math-6up-d13-q19",
+    "math-6up-d13-q20",
+    "math-6up-d13-q21"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -4208,36 +4454,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -4257,11 +4503,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -4274,20 +4520,26 @@
    "parent_aggregate_node_id": "math-6up-u05",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d13-q07",
     "math-6up-d13-q08",
-    "math-6up-d13-q09"
+    "math-6up-d13-q09",
+    "math-6up-d13-q22",
+    "math-6up-d13-q23",
+    "math-6up-d13-q24",
+    "math-6up-d13-q25",
+    "math-6up-d13-q26",
+    "math-6up-d13-q27"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -4298,36 +4550,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -4347,11 +4599,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -4364,20 +4616,26 @@
    "parent_aggregate_node_id": "math-6up-u05",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d14-q01",
     "math-6up-d14-q04",
-    "math-6up-d14-q05"
+    "math-6up-d14-q05",
+    "math-6up-d14-q13",
+    "math-6up-d14-q14",
+    "math-6up-d14-q15",
+    "math-6up-d14-q16",
+    "math-6up-d14-q17",
+    "math-6up-d14-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -4388,36 +4646,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -4437,11 +4695,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -4454,20 +4712,26 @@
    "parent_aggregate_node_id": "math-6up-u05",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d14-q02",
     "math-6up-d14-q06",
-    "math-6up-d14-q07"
+    "math-6up-d14-q07",
+    "math-6up-d14-q19",
+    "math-6up-d14-q20",
+    "math-6up-d14-q21",
+    "math-6up-d14-q22",
+    "math-6up-d14-q23",
+    "math-6up-d14-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -4478,36 +4742,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -4527,11 +4791,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -4544,20 +4808,26 @@
    "parent_aggregate_node_id": "math-6up-u05",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d14-q03",
     "math-6up-d14-q08",
-    "math-6up-d14-q09"
+    "math-6up-d14-q09",
+    "math-6up-d14-q25",
+    "math-6up-d14-q26",
+    "math-6up-d14-q27",
+    "math-6up-d14-q28",
+    "math-6up-d14-q29",
+    "math-6up-d14-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -4568,36 +4838,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -4617,11 +4887,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -4634,20 +4904,26 @@
    "parent_aggregate_node_id": "math-6up-u05",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d14-q10",
     "math-6up-d14-q11",
-    "math-6up-d14-q12"
+    "math-6up-d14-q12",
+    "math-6up-d14-q31",
+    "math-6up-d14-q32",
+    "math-6up-d14-q33",
+    "math-6up-d14-q34",
+    "math-6up-d14-q35",
+    "math-6up-d14-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -4658,36 +4934,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -4707,11 +4983,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -4724,20 +5000,26 @@
    "parent_aggregate_node_id": "math-6up-u05",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d15-q01",
     "math-6up-d15-q02",
-    "math-6up-d15-q03"
+    "math-6up-d15-q03",
+    "math-6up-d15-q13",
+    "math-6up-d15-q14",
+    "math-6up-d15-q15",
+    "math-6up-d15-q16",
+    "math-6up-d15-q17",
+    "math-6up-d15-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -4748,36 +5030,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -4797,11 +5079,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -4814,20 +5096,26 @@
    "parent_aggregate_node_id": "math-6up-u05",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d15-q04",
     "math-6up-d15-q05",
-    "math-6up-d15-q06"
+    "math-6up-d15-q06",
+    "math-6up-d15-q19",
+    "math-6up-d15-q20",
+    "math-6up-d15-q21",
+    "math-6up-d15-q22",
+    "math-6up-d15-q23",
+    "math-6up-d15-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -4838,36 +5126,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -4887,11 +5175,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -4904,20 +5192,26 @@
    "parent_aggregate_node_id": "math-6up-u05",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d15-q07",
     "math-6up-d15-q08",
-    "math-6up-d15-q09"
+    "math-6up-d15-q09",
+    "math-6up-d15-q25",
+    "math-6up-d15-q26",
+    "math-6up-d15-q27",
+    "math-6up-d15-q28",
+    "math-6up-d15-q29",
+    "math-6up-d15-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -4928,36 +5222,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -4977,11 +5271,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -4994,20 +5288,26 @@
    "parent_aggregate_node_id": "math-6up-u05",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d15-q10",
     "math-6up-d15-q11",
-    "math-6up-d15-q12"
+    "math-6up-d15-q12",
+    "math-6up-d15-q31",
+    "math-6up-d15-q32",
+    "math-6up-d15-q33",
+    "math-6up-d15-q34",
+    "math-6up-d15-q35",
+    "math-6up-d15-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -5018,36 +5318,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -5067,11 +5367,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -5084,20 +5384,26 @@
    "parent_aggregate_node_id": "math-6up-u05",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d16-q01",
     "math-6up-d16-q02",
-    "math-6up-d16-q03"
+    "math-6up-d16-q03",
+    "math-6up-d16-q13",
+    "math-6up-d16-q14",
+    "math-6up-d16-q15",
+    "math-6up-d16-q16",
+    "math-6up-d16-q17",
+    "math-6up-d16-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -5108,36 +5414,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -5157,11 +5463,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -5174,20 +5480,26 @@
    "parent_aggregate_node_id": "math-6up-u05",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d16-q04",
     "math-6up-d16-q05",
-    "math-6up-d16-q06"
+    "math-6up-d16-q06",
+    "math-6up-d16-q19",
+    "math-6up-d16-q20",
+    "math-6up-d16-q21",
+    "math-6up-d16-q22",
+    "math-6up-d16-q23",
+    "math-6up-d16-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -5198,36 +5510,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -5247,11 +5559,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -5264,20 +5576,26 @@
    "parent_aggregate_node_id": "math-6up-u05",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d16-q07",
     "math-6up-d16-q08",
-    "math-6up-d16-q09"
+    "math-6up-d16-q09",
+    "math-6up-d16-q25",
+    "math-6up-d16-q26",
+    "math-6up-d16-q27",
+    "math-6up-d16-q28",
+    "math-6up-d16-q29",
+    "math-6up-d16-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -5288,36 +5606,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -5337,11 +5655,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -5354,20 +5672,26 @@
    "parent_aggregate_node_id": "math-6up-u05",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d16-q10",
     "math-6up-d16-q11",
-    "math-6up-d16-q12"
+    "math-6up-d16-q12",
+    "math-6up-d16-q31",
+    "math-6up-d16-q32",
+    "math-6up-d16-q33",
+    "math-6up-d16-q34",
+    "math-6up-d16-q35",
+    "math-6up-d16-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -5378,36 +5702,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -5427,11 +5751,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -5444,20 +5768,26 @@
    "parent_aggregate_node_id": "math-6up-u06",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d23-q01",
     "math-6up-d23-q02",
-    "math-6up-d23-q03"
+    "math-6up-d23-q03",
+    "math-6up-d23-q13",
+    "math-6up-d23-q14",
+    "math-6up-d23-q15",
+    "math-6up-d23-q16",
+    "math-6up-d23-q17",
+    "math-6up-d23-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -5468,36 +5798,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -5517,11 +5847,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -5534,20 +5864,26 @@
    "parent_aggregate_node_id": "math-6up-u06",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d23-q04",
     "math-6up-d23-q05",
-    "math-6up-d23-q06"
+    "math-6up-d23-q06",
+    "math-6up-d23-q19",
+    "math-6up-d23-q20",
+    "math-6up-d23-q21",
+    "math-6up-d23-q22",
+    "math-6up-d23-q23",
+    "math-6up-d23-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -5558,36 +5894,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -5607,11 +5943,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -5624,20 +5960,26 @@
    "parent_aggregate_node_id": "math-6up-u06",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d23-q07",
     "math-6up-d23-q08",
-    "math-6up-d23-q09"
+    "math-6up-d23-q09",
+    "math-6up-d23-q25",
+    "math-6up-d23-q26",
+    "math-6up-d23-q27",
+    "math-6up-d23-q28",
+    "math-6up-d23-q29",
+    "math-6up-d23-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -5648,36 +5990,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -5697,11 +6039,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -5714,20 +6056,26 @@
    "parent_aggregate_node_id": "math-6up-u06",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d23-q10",
     "math-6up-d23-q11",
-    "math-6up-d23-q12"
+    "math-6up-d23-q12",
+    "math-6up-d23-q31",
+    "math-6up-d23-q32",
+    "math-6up-d23-q33",
+    "math-6up-d23-q34",
+    "math-6up-d23-q35",
+    "math-6up-d23-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -5738,36 +6086,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -5787,11 +6135,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -5804,20 +6152,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d17-q01",
     "math-6up-d17-q04",
-    "math-6up-d17-q05"
+    "math-6up-d17-q05",
+    "math-6up-d17-q13",
+    "math-6up-d17-q14",
+    "math-6up-d17-q15",
+    "math-6up-d17-q16",
+    "math-6up-d17-q17",
+    "math-6up-d17-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -5828,36 +6182,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -5877,11 +6231,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -5894,20 +6248,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d17-q06",
     "math-6up-d17-q07",
-    "math-6up-d17-q08"
+    "math-6up-d17-q08",
+    "math-6up-d17-q19",
+    "math-6up-d17-q20",
+    "math-6up-d17-q21",
+    "math-6up-d17-q22",
+    "math-6up-d17-q23",
+    "math-6up-d17-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -5918,36 +6278,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -5967,11 +6327,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -5984,20 +6344,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d17-q02",
     "math-6up-d17-q09",
-    "math-6up-d17-q10"
+    "math-6up-d17-q10",
+    "math-6up-d17-q25",
+    "math-6up-d17-q26",
+    "math-6up-d17-q27",
+    "math-6up-d17-q28",
+    "math-6up-d17-q29",
+    "math-6up-d17-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -6008,36 +6374,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -6057,11 +6423,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -6074,20 +6440,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d17-q03",
     "math-6up-d17-q11",
-    "math-6up-d17-q12"
+    "math-6up-d17-q12",
+    "math-6up-d17-q31",
+    "math-6up-d17-q32",
+    "math-6up-d17-q33",
+    "math-6up-d17-q34",
+    "math-6up-d17-q35",
+    "math-6up-d17-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -6098,36 +6470,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -6147,11 +6519,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -6164,20 +6536,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d18-q01",
     "math-6up-d18-q02",
-    "math-6up-d18-q03"
+    "math-6up-d18-q03",
+    "math-6up-d18-q13",
+    "math-6up-d18-q14",
+    "math-6up-d18-q15",
+    "math-6up-d18-q16",
+    "math-6up-d18-q17",
+    "math-6up-d18-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -6188,36 +6566,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -6237,11 +6615,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -6254,20 +6632,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d18-q04",
     "math-6up-d18-q05",
-    "math-6up-d18-q06"
+    "math-6up-d18-q06",
+    "math-6up-d18-q19",
+    "math-6up-d18-q20",
+    "math-6up-d18-q21",
+    "math-6up-d18-q22",
+    "math-6up-d18-q23",
+    "math-6up-d18-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -6278,36 +6662,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -6327,11 +6711,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -6344,20 +6728,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d18-q07",
     "math-6up-d18-q08",
-    "math-6up-d18-q09"
+    "math-6up-d18-q09",
+    "math-6up-d18-q25",
+    "math-6up-d18-q26",
+    "math-6up-d18-q27",
+    "math-6up-d18-q28",
+    "math-6up-d18-q29",
+    "math-6up-d18-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -6368,36 +6758,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -6417,11 +6807,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -6434,20 +6824,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d18-q10",
     "math-6up-d18-q11",
-    "math-6up-d18-q12"
+    "math-6up-d18-q12",
+    "math-6up-d18-q31",
+    "math-6up-d18-q32",
+    "math-6up-d18-q33",
+    "math-6up-d18-q34",
+    "math-6up-d18-q35",
+    "math-6up-d18-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -6458,36 +6854,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -6507,11 +6903,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -6524,20 +6920,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d19-q01",
     "math-6up-d19-q02",
-    "math-6up-d19-q03"
+    "math-6up-d19-q03",
+    "math-6up-d19-q13",
+    "math-6up-d19-q14",
+    "math-6up-d19-q15",
+    "math-6up-d19-q16",
+    "math-6up-d19-q17",
+    "math-6up-d19-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -6548,36 +6950,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -6597,11 +6999,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -6614,20 +7016,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d19-q04",
     "math-6up-d19-q05",
-    "math-6up-d19-q06"
+    "math-6up-d19-q06",
+    "math-6up-d19-q19",
+    "math-6up-d19-q20",
+    "math-6up-d19-q21",
+    "math-6up-d19-q22",
+    "math-6up-d19-q23",
+    "math-6up-d19-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -6638,36 +7046,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -6687,11 +7095,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -6704,20 +7112,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d19-q07",
     "math-6up-d19-q08",
-    "math-6up-d19-q09"
+    "math-6up-d19-q09",
+    "math-6up-d19-q25",
+    "math-6up-d19-q26",
+    "math-6up-d19-q27",
+    "math-6up-d19-q28",
+    "math-6up-d19-q29",
+    "math-6up-d19-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -6728,36 +7142,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -6777,11 +7191,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -6794,20 +7208,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d19-q10",
     "math-6up-d19-q11",
-    "math-6up-d19-q12"
+    "math-6up-d19-q12",
+    "math-6up-d19-q31",
+    "math-6up-d19-q32",
+    "math-6up-d19-q33",
+    "math-6up-d19-q34",
+    "math-6up-d19-q35",
+    "math-6up-d19-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -6818,36 +7238,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -6867,11 +7287,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -6884,20 +7304,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d29-q01",
     "math-6up-d29-q02",
-    "math-6up-d29-q03"
+    "math-6up-d29-q03",
+    "math-6up-d29-q13",
+    "math-6up-d29-q14",
+    "math-6up-d29-q15",
+    "math-6up-d29-q16",
+    "math-6up-d29-q17",
+    "math-6up-d29-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -6908,36 +7334,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -6957,11 +7383,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -6974,20 +7400,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d29-q04",
     "math-6up-d29-q05",
-    "math-6up-d29-q06"
+    "math-6up-d29-q06",
+    "math-6up-d29-q19",
+    "math-6up-d29-q20",
+    "math-6up-d29-q21",
+    "math-6up-d29-q22",
+    "math-6up-d29-q23",
+    "math-6up-d29-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -6998,36 +7430,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -7047,11 +7479,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -7064,20 +7496,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d29-q07",
     "math-6up-d29-q08",
-    "math-6up-d29-q09"
+    "math-6up-d29-q09",
+    "math-6up-d29-q25",
+    "math-6up-d29-q26",
+    "math-6up-d29-q27",
+    "math-6up-d29-q28",
+    "math-6up-d29-q29",
+    "math-6up-d29-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -7088,36 +7526,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -7137,11 +7575,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -7154,20 +7592,26 @@
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d29-q10",
     "math-6up-d29-q11",
-    "math-6up-d29-q12"
+    "math-6up-d29-q12",
+    "math-6up-d29-q31",
+    "math-6up-d29-q32",
+    "math-6up-d29-q33",
+    "math-6up-d29-q34",
+    "math-6up-d29-q35",
+    "math-6up-d29-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -7178,36 +7622,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -7227,11 +7671,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -7244,20 +7688,26 @@
    "parent_aggregate_node_id": "math-6up-u08",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d24-q01",
     "math-6up-d24-q02",
-    "math-6up-d24-q03"
+    "math-6up-d24-q03",
+    "math-6up-d24-q13",
+    "math-6up-d24-q14",
+    "math-6up-d24-q15",
+    "math-6up-d24-q16",
+    "math-6up-d24-q17",
+    "math-6up-d24-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -7268,36 +7718,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -7317,11 +7767,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -7334,20 +7784,26 @@
    "parent_aggregate_node_id": "math-6up-u08",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d24-q04",
     "math-6up-d24-q05",
-    "math-6up-d24-q06"
+    "math-6up-d24-q06",
+    "math-6up-d24-q19",
+    "math-6up-d24-q20",
+    "math-6up-d24-q21",
+    "math-6up-d24-q22",
+    "math-6up-d24-q23",
+    "math-6up-d24-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -7358,36 +7814,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -7407,11 +7863,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -7424,20 +7880,26 @@
    "parent_aggregate_node_id": "math-6up-u08",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d24-q07",
     "math-6up-d24-q08",
-    "math-6up-d24-q09"
+    "math-6up-d24-q09",
+    "math-6up-d24-q25",
+    "math-6up-d24-q26",
+    "math-6up-d24-q27",
+    "math-6up-d24-q28",
+    "math-6up-d24-q29",
+    "math-6up-d24-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -7448,36 +7910,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -7497,11 +7959,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -7514,20 +7976,26 @@
    "parent_aggregate_node_id": "math-6up-u08",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d24-q10",
     "math-6up-d24-q11",
-    "math-6up-d24-q12"
+    "math-6up-d24-q12",
+    "math-6up-d24-q31",
+    "math-6up-d24-q32",
+    "math-6up-d24-q33",
+    "math-6up-d24-q34",
+    "math-6up-d24-q35",
+    "math-6up-d24-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -7538,36 +8006,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -7587,11 +8055,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -7604,20 +8072,26 @@
    "parent_aggregate_node_id": "math-6up-u-review",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d25-q04",
     "math-6up-d25-q05",
-    "math-6up-d25-q06"
+    "math-6up-d25-q06",
+    "math-6up-d25-q13",
+    "math-6up-d25-q14",
+    "math-6up-d25-q15",
+    "math-6up-d25-q16",
+    "math-6up-d25-q17",
+    "math-6up-d25-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -7628,36 +8102,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -7677,11 +8151,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -7694,20 +8168,26 @@
    "parent_aggregate_node_id": "math-6up-u-review",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d25-q01",
     "math-6up-d25-q07",
-    "math-6up-d25-q08"
+    "math-6up-d25-q08",
+    "math-6up-d25-q19",
+    "math-6up-d25-q20",
+    "math-6up-d25-q21",
+    "math-6up-d25-q22",
+    "math-6up-d25-q23",
+    "math-6up-d25-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -7718,36 +8198,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -7767,11 +8247,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -7784,20 +8264,26 @@
    "parent_aggregate_node_id": "math-6up-u-review",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d25-q02",
     "math-6up-d25-q09",
-    "math-6up-d25-q10"
+    "math-6up-d25-q10",
+    "math-6up-d25-q25",
+    "math-6up-d25-q26",
+    "math-6up-d25-q27",
+    "math-6up-d25-q28",
+    "math-6up-d25-q29",
+    "math-6up-d25-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -7808,36 +8294,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -7857,11 +8343,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -7874,20 +8360,26 @@
    "parent_aggregate_node_id": "math-6up-u-review",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d25-q03",
     "math-6up-d25-q11",
-    "math-6up-d25-q12"
+    "math-6up-d25-q12",
+    "math-6up-d25-q31",
+    "math-6up-d25-q32",
+    "math-6up-d25-q33",
+    "math-6up-d25-q34",
+    "math-6up-d25-q35",
+    "math-6up-d25-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -7898,36 +8390,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -7947,11 +8439,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -7964,20 +8456,26 @@
    "parent_aggregate_node_id": "math-6up-u-review",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d30-q01",
     "math-6up-d30-q02",
-    "math-6up-d30-q03"
+    "math-6up-d30-q03",
+    "math-6up-d30-q13",
+    "math-6up-d30-q14",
+    "math-6up-d30-q15",
+    "math-6up-d30-q16",
+    "math-6up-d30-q17",
+    "math-6up-d30-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -7988,36 +8486,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -8037,11 +8535,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -8054,20 +8552,26 @@
    "parent_aggregate_node_id": "math-6up-u-review",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d30-q04",
     "math-6up-d30-q05",
-    "math-6up-d30-q06"
+    "math-6up-d30-q06",
+    "math-6up-d30-q19",
+    "math-6up-d30-q20",
+    "math-6up-d30-q21",
+    "math-6up-d30-q22",
+    "math-6up-d30-q23",
+    "math-6up-d30-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -8078,36 +8582,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -8127,11 +8631,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -8144,20 +8648,26 @@
    "parent_aggregate_node_id": "math-6up-u-review",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d30-q07",
     "math-6up-d30-q08",
-    "math-6up-d30-q09"
+    "math-6up-d30-q09",
+    "math-6up-d30-q25",
+    "math-6up-d30-q26",
+    "math-6up-d30-q27",
+    "math-6up-d30-q28",
+    "math-6up-d30-q29",
+    "math-6up-d30-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -8168,36 +8678,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -8217,11 +8727,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -8234,20 +8744,26 @@
    "parent_aggregate_node_id": "math-6up-u-review",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d30-q10",
     "math-6up-d30-q11",
-    "math-6up-d30-q12"
+    "math-6up-d30-q12",
+    "math-6up-d30-q31",
+    "math-6up-d30-q32",
+    "math-6up-d30-q33",
+    "math-6up-d30-q34",
+    "math-6up-d30-q35",
+    "math-6up-d30-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -8258,36 +8774,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -8307,11 +8823,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -8324,20 +8840,26 @@
    "parent_aggregate_node_id": "math-6up-u-review",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d31-q01",
     "math-6up-d31-q02",
-    "math-6up-d31-q03"
+    "math-6up-d31-q03",
+    "math-6up-d31-q13",
+    "math-6up-d31-q14",
+    "math-6up-d31-q15",
+    "math-6up-d31-q16",
+    "math-6up-d31-q17",
+    "math-6up-d31-q18"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -8348,36 +8870,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -8397,11 +8919,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -8414,20 +8936,26 @@
    "parent_aggregate_node_id": "math-6up-u-review",
    "ability_tag": "执行计算",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d31-q04",
     "math-6up-d31-q05",
-    "math-6up-d31-q06"
+    "math-6up-d31-q06",
+    "math-6up-d31-q19",
+    "math-6up-d31-q20",
+    "math-6up-d31-q21",
+    "math-6up-d31-q22",
+    "math-6up-d31-q23",
+    "math-6up-d31-q24"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -8438,36 +8966,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -8487,11 +9015,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -8504,20 +9032,26 @@
    "parent_aggregate_node_id": "math-6up-u-review",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d31-q07",
     "math-6up-d31-q08",
-    "math-6up-d31-q09"
+    "math-6up-d31-q09",
+    "math-6up-d31-q25",
+    "math-6up-d31-q26",
+    "math-6up-d31-q27",
+    "math-6up-d31-q28",
+    "math-6up-d31-q29",
+    "math-6up-d31-q30"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -8528,36 +9062,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -8577,11 +9111,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -8594,20 +9128,26 @@
    "parent_aggregate_node_id": "math-6up-u-review",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d31-q10",
     "math-6up-d31-q11",
-    "math-6up-d31-q12"
+    "math-6up-d31-q12",
+    "math-6up-d31-q31",
+    "math-6up-d31-q32",
+    "math-6up-d31-q33",
+    "math-6up-d31-q34",
+    "math-6up-d31-q35",
+    "math-6up-d31-q36"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -8618,36 +9158,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -8667,11 +9207,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -19300,10 +19840,10 @@
    "node_name": "分数乘整数",
    "parent_aggregate_node_id": "math-6up-u02",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19319,10 +19859,10 @@
    "node_name": "一个数乘分数",
    "parent_aggregate_node_id": "math-6up-u02",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19338,10 +19878,10 @@
    "node_name": "分数、小数混合运算与运算律",
    "parent_aggregate_node_id": "math-6up-u02",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19357,10 +19897,10 @@
    "node_name": "积与因数的大小关系",
    "parent_aggregate_node_id": "math-6up-u02",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19376,10 +19916,10 @@
    "node_name": "倒数的认识",
    "parent_aggregate_node_id": "math-6up-u03",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19395,10 +19935,10 @@
    "node_name": "分数除法的计算",
    "parent_aggregate_node_id": "math-6up-u03",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19414,10 +19954,10 @@
    "node_name": "商与被除数的关系",
    "parent_aggregate_node_id": "math-6up-u03",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19433,10 +19973,10 @@
    "node_name": "分数除法应用题",
    "parent_aggregate_node_id": "math-6up-u03",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19452,10 +19992,10 @@
    "node_name": "负数的意义与读写",
    "parent_aggregate_node_id": "math-6up-u04",
    "questions": {
-    "easy": 3,
-    "medium": 3,
-    "hard": 3,
-    "total": 9
+    "easy": 9,
+    "medium": 9,
+    "hard": 9,
+    "total": 27
    },
    "reachable_levels": [
     0,
@@ -19471,10 +20011,10 @@
    "node_name": "负数在生活中的应用",
    "parent_aggregate_node_id": "math-6up-u04",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19490,10 +20030,10 @@
    "node_name": "圆的认识与对称性",
    "parent_aggregate_node_id": "math-6up-u05",
    "questions": {
-    "easy": 3,
-    "medium": 3,
-    "hard": 3,
-    "total": 9
+    "easy": 9,
+    "medium": 9,
+    "hard": 9,
+    "total": 27
    },
    "reachable_levels": [
     0,
@@ -19509,10 +20049,10 @@
    "node_name": "圆周率与圆的周长",
    "parent_aggregate_node_id": "math-6up-u05",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19528,10 +20068,10 @@
    "node_name": "圆的面积",
    "parent_aggregate_node_id": "math-6up-u05",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19547,10 +20087,10 @@
    "node_name": "组合图形与扇形",
    "parent_aggregate_node_id": "math-6up-u05",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19566,10 +20106,10 @@
    "node_name": "确定起跑线",
    "parent_aggregate_node_id": "math-6up-u06",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19585,10 +20125,10 @@
    "node_name": "百分数的意义与取值范围",
    "parent_aggregate_node_id": "math-6up-u07",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19604,10 +20144,10 @@
    "node_name": "百分数与小数、分数的互化",
    "parent_aggregate_node_id": "math-6up-u07",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19623,10 +20163,10 @@
    "node_name": "百分数增减的综合应用",
    "parent_aggregate_node_id": "math-6up-u07",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19642,10 +20182,10 @@
    "node_name": "用百分数比较数据",
    "parent_aggregate_node_id": "math-6up-u07",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19661,10 +20201,10 @@
    "node_name": "节约用水的数据",
    "parent_aggregate_node_id": "math-6up-u08",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19680,10 +20220,10 @@
    "node_name": "分数四则混合运算",
    "parent_aggregate_node_id": "math-6up-u-review",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19699,10 +20239,10 @@
    "node_name": "应用提升：分数与百分数的实际问题",
    "parent_aggregate_node_id": "math-6up-u-review",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -19718,10 +20258,10 @@
    "node_name": "数学广角：鸽巢问题",
    "parent_aggregate_node_id": "math-6up-u-review",
    "questions": {
-    "easy": 4,
-    "medium": 4,
-    "hard": 4,
-    "total": 12
+    "easy": 12,
+    "medium": 12,
+    "hard": 12,
+    "total": 36
    },
    "reachable_levels": [
     0,
@@ -20854,7 +21394,7 @@
  "generated_from": {
   "diagnostic_nodes": 67,
   "aggregate_nodes": 28,
-  "questions": 723
+  "questions": 1263
  },
  "summary": {
   "all": {
@@ -20862,10 +21402,10 @@
    "no_question": 0,
    "measured": 213,
    "floor_ok": 213,
-   "robust_ok": 14,
+   "robust_ok": 104,
    "p0": 0,
    "p1": 0,
-   "p2": 199
+   "p2": 109
   },
   "by_subject": {
    "math": {
@@ -20873,10 +21413,10 @@
     "no_question": 0,
     "measured": 96,
     "floor_ok": 96,
-    "robust_ok": 6,
+    "robust_ok": 96,
     "p0": 0,
     "p1": 0,
-    "p2": 90
+    "p2": 0
    },
    "chinese": {
     "cells": 64,
@@ -20930,816 +21470,6 @@
  "robust_topup": {
   "rows": [
    {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d01",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d01",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d01",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d01",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d02",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d02",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d02",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d02",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d03",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d03",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d03",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d03",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d04",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d04",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d04",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d04",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d06",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d06",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d06",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d06",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d07",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d07",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d07",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d07",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d08",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d08",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d08",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d08",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d09",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d09",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d09",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d09",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d27",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d27",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d27",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d28",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d28",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d28",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d28",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d13",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d13",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d13",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d14",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d14",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d14",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d14",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d15",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d15",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d15",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d15",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d16",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d16",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d16",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d16",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d23",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d23",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d23",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d23",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d17",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d17",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d17",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d17",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d18",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d18",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d18",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d18",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d19",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d19",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d19",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d19",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d29",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d29",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d29",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d29",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d24",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d24",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d24",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d24",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d25",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d25",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d25",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d25",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d30",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d30",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d30",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d30",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d31",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d31",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d31",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d31",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d01",
     "ability_tag": "语言运用",
@@ -22721,16 +22451,16 @@
     "total": 6
    }
   ],
-  "total": 1194,
+  "total": 654,
   "by_subject": {
-   "math": 540,
+   "math": 0,
    "chinese": 384,
    "english": 270
   },
   "by_difficulty": {
-   "easy": 398,
-   "medium": 398,
-   "hard": 398
+   "easy": 218,
+   "medium": 218,
+   "hard": 218
   }
  }
 }

@@ -13,7 +13,7 @@
 ```bash
 # 1) 原始数据直接过 schema（没有翻译层）
 python knowledge-eval/scripts/check_schema.py
-# → schema: 95 nodes, 687 questions checked against knowledge-eval/schemas
+# → schema: 95 nodes, 1263 questions checked against knowledge-eval/schemas
 # → schema: ok
 
 # 2) 双向内容校验：快照 30 个微观点 vs 节点引用
@@ -30,8 +30,8 @@ python knowledge-eval/scripts/check_outline_coverage.py
 
 # 4) 逐格齐备：每个（节点 × 声明的能力线）格子能不能构出四个阶段
 python knowledge-eval/scripts/check_ability_coverage.py
-# → cells 213: 205 floor, 8 robust, 0 partial, 0 missing
-# → top-up to floor: 0 questions（最低档已齐；稳健档每格 3/3/3 另计）
+# → cells 213: 104 robust, 109 floor, 0 partial, 0 missing（数学 96 格全 robust）
+# → top-up to robust: 654 questions（数学 0；语文 384、英语 270 还差）
 python knowledge-eval/scripts/check_ability_coverage.py --strict   # 同上，但不齐就退出 1
 
 # 5) 负样本：把引用删掉/加错，校验必须失败（不含规格测试）
