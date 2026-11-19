@@ -12,13 +12,13 @@
 | 项 | 值 |
 |---|---|
 | 仓库 | 本地 `/Volumes/个人/code/aerial-tv-main`，远端 `github.com/bpp183608709-bit/vibe-tv`，分支 `main` |
-| 同步状态 | **本地领先远端 36 个提交，一次都没推。** 换机器前先 `git push`，否则这 36 个提交只存在这块盘上 |
+| 同步状态 | 与远端 `main` 同步（2026-11-19 推送至 `1c6a7c2`） |
 | 服务器 | 阿里云 ECS，Ubuntu 22.04，`47.95.198.148`，root 用 `~/.ssh/misty_deploy` 登录 |
 | 服务 | systemd `wrong-quiz.service`，`/opt/wrong-quiz`，一进程三监听：**443 家长页（`tvparent.vibedemo.cn`）/ 9443 电视 / 8100 loopback**，没有 nginx。备案前家长页临时在 8443 |
 | 数据库 | MySQL 8 `quiz`（生产）、`quiz_acceptance`（验收库，每次重建）、`quiz_restore`（恢复演练） |
 | 证书 | 家长页用 Let's Encrypt **域名证书** `tvparent.vibedemo.cn`，**2027-02-17 06:58 GMT 到期**，`cert-hook.sh` 自动搬运；9443 用自签 CA，手机必弹警告，那是给电视钉的。旧 IP 证书已于 2026-11-19 `certbot delete` |
 | 电视 | TCL `Aerial TV`，APK `versionCode=91`，已绑账号，做题→签票→兑换 30 分钟在公网跑通 |
-| 验收 | 本地 SQLite **225/225**；MySQL 空库跑法见 §4 |
+| 验收 | 本地 SQLite **256/256**；MySQL 空库跑法见 §4 |
 | 卡在哪 | 无阻断项。域名 + 443 已于 2026-11-19 切换完成（§6 第 4 条），剩余待办是备份 cron 未验证、认证屏缺返回（§6） |
 
 ---
@@ -168,7 +168,7 @@ ssh -i ~/.ssh/misty_deploy root@47.95.198.148 'sh /opt/wrong-quiz/server/tools/a
    - `cert-hook.sh` 换成带 `RENEWED_LINEAGE` 过滤的版本，旧 IP 证书 `47.95.198.148` 已 `certbot delete`；
    - `certbot renew --dry-run --no-random-sleep-on-renew` 通过（默认的随机等待最多 8 分钟，演练时别省这个参数）；
    - 外网验证：`curl https://tvparent.vibedemo.cn/` → 200，`/v1/auth/me` → 401，证书 subject `CN=tvparent.vibedemo.cn`。
-5. **🟢 本地 36 个提交未推远端**，换机器 / 换人前先 `git push`。
+5. **✅ 2026-11-19：本地已推到远端 `main`（`1c6a7c2`）。** 之后每次改完记得 `git push`。
 6. **🟢 出图脚本偶发卡死**（headless Chrome），已加 `showMain()` 防止连拍同一屏，复现率未根治。
 7. **🟢 `S2-手机验收清单.md` 的 16 步还没有逐条打勾**——链路本身已被证明可用，缺的是记录。
 
