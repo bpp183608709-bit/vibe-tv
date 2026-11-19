@@ -106,7 +106,7 @@ sh /opt/wrong-quiz/bin/healthcheck.sh; echo $?
 ```sh
 cd /Volumes/个人/code/aerial-tv-main
 node --check server/web/app.js                     # 前端语法
-.venv/bin/python server/tools/acceptance.py        # 期望 225/225，约 20 秒，自动建新库
+.venv/bin/python server/tools/acceptance.py        # 期望 256/256，约 20 秒，自动建新库
 ```
 
 服务器上跑全量（MySQL，先重建空库）：
@@ -117,6 +117,10 @@ ssh -i ~/.ssh/misty_deploy root@47.95.198.148 'sh /opt/wrong-quiz/server/tools/a
 
 其他自检：`server/tools/check_schema_parity.py --mysql`（真库与 SQLite 列数一致）、
 `server/tools/check_tv_silence.py`（电视端零表达扫描）。
+
+知识数据四条离线校验（不连库，纯文件）：`knowledge-eval/scripts/check_schema.py`、`check_content.py`、
+`check_outline_coverage.py`（课本目录差集：漏 / 错指 / 单元名 / 题干篇名 / 退役篇名，`--strict` 时 gap 也算失败）、
+`check_coverage_matrix.py`。改过 `knowledge-eval/data/` 就跑前三条。
 
 出图（看界面，不是界面稿）：`(python3 -m http.server 8811 --directory server/web &) ; sleep 2; node server/tools/preview_h5.mjs`
 产物在 `docs/mockups/live-*.png`。**这台机器上 headless Chrome 会偶发卡在 `Page.enable`（DevTools attach 超时），

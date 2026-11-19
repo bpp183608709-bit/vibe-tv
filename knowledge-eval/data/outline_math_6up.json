@@ -1,0 +1,24 @@
+{
+ "schema_version": 1,
+ "subject": "math",
+ "textbook": "义务教育教科书·数学（六年级上册）",
+ "edition": "人教版 2024 年审定（6 单元 + 3 个主题活动）",
+ "source": "课本目录照片（2026-11-19，家长提供）",
+ "levels": [
+  "unit"
+ ],
+ "unit_names_from_textbook": true,
+ "note": "数学没有「课」这一层：单元下面是小节，而小节名各家教辅划分不一致，按约定不上到第三层。主题活动是课本自己的顶层条目（标 ☆），单独列 kind=activity。",
+ "units": [
+  {"code": "math-6up-u01", "order": 1, "name": "确定位置", "kind": "unit", "assessable": true, "entries": []},
+  {"code": "math-6up-u02", "order": 2, "name": "分数乘法", "kind": "unit", "assessable": true, "entries": []},
+  {"code": "math-6up-u03", "order": 3, "name": "分数除法", "kind": "unit", "assessable": true, "entries": []},
+  {"code": "math-6up-u04", "order": 4, "name": "生活中的负数", "kind": "activity", "assessable": true, "entries": []},
+  {"code": "math-6up-u05", "order": 5, "name": "圆", "kind": "unit", "assessable": true, "entries": []},
+  {"code": "math-6up-u06", "order": 6, "name": "体育中的数学", "kind": "activity", "assessable": true, "entries": []},
+  {"code": "math-6up-u07", "order": 7, "name": "百分数", "kind": "unit", "assessable": true, "entries": []},
+  {"code": "math-6up-u08", "order": 8, "name": "水是生命之源", "kind": "activity", "assessable": true, "entries": []},
+  {"code": "math-6up-u-review", "order": 9, "name": "复习与关联", "kind": "unit", "assessable": true, "entries": []}
+ ],
+ "book_entries": []
+}

@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aerial.local/schema/outline.schema.json",
+  "title": "Textbook outline",
+  "description": "One entry of knowledge-eval/data/outline_<subject>_6up.json: the textbook's own table of contents, three levels only (unit / text title / board). Deliberately stops above 小节: every 教辅 divides sections differently, so a section-level baseline cannot be agreed on. `assessable: false` is a decision, not an omission, and has to carry a reason — see scripts/check_outline_coverage.py.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "subject",
+    "textbook",
+    "edition",
+    "source",
+    "levels",
+    "unit_names_from_textbook",
+    "units"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"type": "integer", "enum": [1]},
+    "subject": {"type": "string", "enum": ["math", "chinese", "english"]},
+    "textbook": {"type": "string", "minLength": 1},
+    "edition": {"type": "string", "minLength": 1},
+    "source": {"type": "string", "minLength": 1},
+    "note": {"type": "string"},
+    "levels": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "enum": ["unit", "text", "board"]},
+      "description": "Which levels this book actually has. Maths has units only; English has units and boards; 语文 has all three."
+    },
+    "unit_names_from_textbook": {
+      "type": "boolean",
+      "description": "True when the book prints a title for each unit (maths, English), so a chapter node's name must equal it. False for 语文, whose units carry a theme chosen by the editors rather than a printed title."
+    },
+    "unit_name_note": {"type": "string"},
+    "units": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["code", "order", "name", "kind", "assessable", "entries"],
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "^(math|chinese|english)-6up-(u[0-9]{2}|u-review)$",
+            "description": "The aggregate node code this unit maps to. The check fails if no such chapter node exists."
+          },
+          "order": {"type": "integer", "minimum": 1, "maximum": 20},
+          "name": {"type": "string", "minLength": 1},
+          "kind": {
+            "type": "string",
+            "enum": ["unit", "activity"],
+            "description": "activity = the book's own ☆主题活动 (maths: 生活中的负数 / 体育中的数学 / 水是生命之源)."
+          },
+          "assessable": {"type": "boolean"},
+          "reason": {"type": "string", "minLength": 1},
+          "note": {"type": "string"},
+          "entries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "kind", "assessable"],
+              "additionalProperties": false,
+              "properties": {
+                "name": {"type": "string", "minLength": 1},
+                "kind": {
+                  "type": "string",
+                  "enum": ["text", "board"],
+                  "description": "text = 课文标题, board = 习作 / 口语交际 / 语文园地 / 快乐读书吧 / 附录 等板块名."
+                },
+                "assessable": {"type": "boolean"},
+                "reason": {"type": "string", "minLength": 1},
+                "contains": {
+                  "type": "array",
+                  "items": {"type": "string", "minLength": 1},
+                  "description": "Names printed inside this entry: the three poems of 古诗词三首, the two 文言文, a 日积月累 poem, the 快乐读书吧 book title. They count as titles the book contains, and any one of them being referenced covers the entry."
+                },
+                "source_work": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "The larger work a 课文 is taken from (少年闰土 ← 故乡). A question may name it without it being a 课文."
+                },
+                "note": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "book_entries": {
+      "type": "array",
+      "description": "Board-level items that belong to the whole book rather than to one unit (English appendices, Assessment I–III, Let's Know More).",
+      "items": {
+        "type": "object",
+        "required": ["name", "kind", "assessable"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "kind": {"type": "string", "enum": ["text", "board"]},
+          "assessable": {"type": "boolean"},
+          "reason": {"type": "string", "minLength": 1},
+          "contains": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "source_work": {"type": "string", "minLength": 1},
+          "note": {"type": "string"}
+        }
+      }
+    },
+    "retired_titles": {
+      "type": "array",
+      "description": "Titles that used to be in this volume and are not any more. They must not come back — bracketed in a question or bare in a node's micro_nodes. This is the negative list behind the 2026-11 换课文: five texts left the book and the questions about them were still being served.",
+      "items": {
+        "type": "object",
+        "required": ["name", "note"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "note": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

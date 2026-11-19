@@ -1,0 +1,159 @@
+{
+ "schema_version": 1,
+ "subject": "chinese",
+ "textbook": "义务教育教科书·语文（六年级上册）",
+ "edition": "统编版 2026 秋现行修订版（8 单元 / 26 课）",
+ "source": "课本目录照片（2026-11-19，家长提供）；板块名以课本目录为准",
+ "levels": [
+  "unit",
+  "text",
+  "board"
+ ],
+ "unit_names_from_textbook": false,
+ "unit_name_note": "统编版单元没有课本标题，聚合节点的名字取自单元的人文主题（「触摸自然」等），所以不比对单元名，只比对课文名与板块名",
+ "units": [
+  {
+   "code": "chinese-6up-u01",
+   "order": 1,
+   "name": "触摸自然",
+   "kind": "unit",
+   "assessable": true,
+   "entries": [
+    {"name": "草原", "kind": "text", "assessable": true},
+    {"name": "丁香结", "kind": "text", "assessable": true},
+    {"name": "古诗词三首", "kind": "text", "assessable": true,
+     "contains": ["宿建德江", "六月二十七日望湖楼醉书", "西江月·夜行黄沙道中"]},
+    {"name": "习作：变形记", "kind": "board", "assessable": false,
+     "reason": "成篇习作：遥控器只有数字、小数点、斜杠、退格四种键，写不出成段文字"},
+    {"name": "语文园地", "kind": "board", "assessable": true, "contains": ["过故人庄"]}
+   ]
+  },
+  {
+   "code": "chinese-6up-u02",
+   "order": 2,
+   "name": "重温革命岁月",
+   "kind": "unit",
+   "assessable": true,
+   "entries": [
+    {"name": "七律·长征", "kind": "text", "assessable": true},
+    {"name": "狼牙山五壮士", "kind": "text", "assessable": true},
+    {"name": "开国大典", "kind": "text", "assessable": true},
+    {"name": "我的战友邱少云", "kind": "text", "assessable": true},
+    {"name": "口语交际：演讲", "kind": "board", "assessable": false,
+     "reason": "口语交际要成段口头表达，判定口径不是知识掌握，TV 端也收不到语音"},
+    {"name": "习作：多彩的活动", "kind": "board", "assessable": false,
+     "reason": "成篇习作：遥控器只有数字、小数点、斜杠、退格四种键，写不出成段文字"},
+    {"name": "语文园地", "kind": "board", "assessable": true}
+   ]
+  },
+  {
+   "code": "chinese-6up-u03",
+   "order": 3,
+   "name": "有目的地阅读",
+   "kind": "unit",
+   "assessable": true,
+   "entries": [
+    {"name": "竹节人", "kind": "text", "assessable": true},
+    {"name": "宇宙生命之谜", "kind": "text", "assessable": true},
+    {"name": "故宫博物院", "kind": "text", "assessable": true, "note": "略读课文"},
+    {"name": "习作：___让生活更美好", "kind": "board", "assessable": false,
+     "reason": "成篇习作：遥控器只有数字、小数点、斜杠、退格四种键，写不出成段文字"},
+    {"name": "语文园地", "kind": "board", "assessable": true, "contains": ["春日"]}
+   ]
+  },
+  {
+   "code": "chinese-6up-u04",
+   "order": 4,
+   "name": "小说阅读",
+   "kind": "unit",
+   "assessable": true,
+   "entries": [
+    {"name": "桥", "kind": "text", "assessable": true},
+    {"name": "穷人", "kind": "text", "assessable": true},
+    {"name": "金色的鱼钩", "kind": "text", "assessable": true, "note": "略读课文"},
+    {"name": "口语交际：请你支持我", "kind": "board", "assessable": false,
+     "reason": "口语交际要成段口头表达，判定口径不是知识掌握，TV 端也收不到语音"},
+    {"name": "习作：笔尖流出的故事", "kind": "board", "assessable": false,
+     "reason": "成篇习作：遥控器只有数字、小数点、斜杠、退格四种键，写不出成段文字"},
+    {"name": "语文园地", "kind": "board", "assessable": true},
+    {"name": "快乐读书吧：笑与泪，经历与成长", "kind": "board", "assessable": true,
+     "contains": ["童年"]}
+   ]
+  },
+  {
+   "code": "chinese-6up-u05",
+   "order": 5,
+   "name": "围绕中心意思写",
+   "kind": "unit",
+   "assessable": true,
+   "note": "习作单元，课本没有语文园地",
+   "entries": [
+    {"name": "灯光", "kind": "text", "assessable": true},
+    {"name": "盼", "kind": "text", "assessable": true},
+    {"name": "习作：围绕中心意思写", "kind": "board", "assessable": false,
+     "reason": "成篇习作：遥控器只有数字、小数点、斜杠、退格四种键；两篇例文（爸爸的计划、小站）依附习作，不单独出题",
+     "contains": ["爸爸的计划", "小站"]}
+   ]
+  },
+  {
+   "code": "chinese-6up-u06",
+   "order": 6,
+   "name": "保护环境",
+   "kind": "unit",
+   "assessable": true,
+   "entries": [
+    {"name": "只有一个地球", "kind": "text", "assessable": true},
+    {"name": "青山不老", "kind": "text", "assessable": true, "note": "略读课文"},
+    {"name": "三黑和土地", "kind": "text", "assessable": true, "note": "略读课文"},
+    {"name": "古诗三首", "kind": "text", "assessable": true,
+     "contains": ["浪淘沙（其一）", "江南春", "书湖阴先生壁"]},
+    {"name": "口语交际：意见不同怎么办", "kind": "board", "assessable": false,
+     "reason": "口语交际要成段口头表达，判定口径不是知识掌握，TV 端也收不到语音"},
+    {"name": "习作：学写倡议书", "kind": "board", "assessable": false,
+     "reason": "成篇习作：遥控器只有数字、小数点、斜杠、退格四种键，写不出成段文字"},
+    {"name": "语文园地", "kind": "board", "assessable": true}
+   ]
+  },
+  {
+   "code": "chinese-6up-u07",
+   "order": 7,
+   "name": "科学与想象",
+   "kind": "unit",
+   "assessable": true,
+   "entries": [
+    {"name": "文言文二则", "kind": "text", "assessable": true,
+     "contains": ["两小儿辩日", "曹冲称象"]},
+    {"name": "表里的生物", "kind": "text", "assessable": true},
+    {"name": "他们那时候多有趣啊", "kind": "text", "assessable": true, "note": "略读课文"},
+    {"name": "习作：插上科学的翅膀飞", "kind": "board", "assessable": false,
+     "reason": "成篇习作：遥控器只有数字、小数点、斜杠、退格四种键，写不出成段文字"},
+    {"name": "语文园地", "kind": "board", "assessable": true}
+   ]
+  },
+  {
+   "code": "chinese-6up-u08",
+   "order": 8,
+   "name": "走近鲁迅",
+   "kind": "unit",
+   "assessable": true,
+   "entries": [
+    {"name": "少年闰土", "kind": "text", "assessable": true, "source_work": "故乡"},
+    {"name": "好的故事", "kind": "text", "assessable": true},
+    {"name": "我的伯父鲁迅先生", "kind": "text", "assessable": true, "note": "略读课文"},
+    {"name": "有的人——纪念鲁迅有感", "kind": "text", "assessable": true, "note": "略读课文"},
+    {"name": "习作：传承好家风", "kind": "board", "assessable": false,
+     "reason": "成篇习作：遥控器只有数字、小数点、斜杠、退格四种键，写不出成段文字"},
+    {"name": "语文园地", "kind": "board", "assessable": true}
+   ]
+  }
+ ],
+ "book_entries": [],
+ "retired_titles": [
+  {"name": "花之歌", "note": "不是六上课文（纪伯伦）；网络上的「2026 统编版」目录常把它列进来"},
+  {"name": "夏天里的成长", "note": "旧版六上第五单元；现行版第五单元的课文是灯光、盼"},
+  {"name": "伯牙鼓琴", "note": "旧版六上第七单元文言文之一；现行版第七单元是两小儿辩日、曹冲称象"},
+  {"name": "书戴嵩画牛", "note": "同上。这三道题曾在 2026-11 之前一直在测孩子没学过的课文"},
+  {"name": "月光曲", "note": "旧版六上第七单元；现行版同单元是表里的生物、他们那时候多有趣啊"},
+  {"name": "京剧趣谈", "note": "同上"}
+ ]
+}

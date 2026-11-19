@@ -8562,7 +8562,7 @@
   {
    "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d21",
-   "node_name": "鲁迅名言与作品出处",
+   "node_name": "鲁迅名言的积累与用法",
    "knowledge_type": "阅读理解",
    "parent_aggregate_node_id": "chinese-6up-u08",
    "ability_tag": "语言运用",
@@ -8610,7 +8610,7 @@
   {
    "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d21",
-   "node_name": "鲁迅名言与作品出处",
+   "node_name": "鲁迅名言的积累与用法",
    "knowledge_type": "阅读理解",
    "parent_aggregate_node_id": "chinese-6up-u08",
    "ability_tag": "阅读理解",
@@ -8656,7 +8656,7 @@
   {
    "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d21",
-   "node_name": "鲁迅名言与作品出处",
+   "node_name": "鲁迅名言的积累与用法",
    "knowledge_type": "阅读理解",
    "parent_aggregate_node_id": "chinese-6up-u08",
    "ability_tag": "辨析判断",
@@ -8704,7 +8704,7 @@
   {
    "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d21",
-   "node_name": "鲁迅名言与作品出处",
+   "node_name": "鲁迅名言的积累与用法",
    "knowledge_type": "阅读理解",
    "parent_aggregate_node_id": "chinese-6up-u08",
    "ability_tag": "综合表达",
@@ -12450,7 +12450,7 @@
   {
    "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d21",
-   "node_name": "鲁迅名言与作品出处",
+   "node_name": "鲁迅名言的积累与用法",
    "parent_aggregate_node_id": "chinese-6up-u08",
    "questions": {
     "easy": 1,

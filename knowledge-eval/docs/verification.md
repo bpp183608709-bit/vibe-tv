@@ -73,7 +73,54 @@ content: 1 problem(s)
 
 ---
 
-## 3. 负样本与回归测试
+## 3. 课本目录差集（outline vs 节点）
+
+```bash
+python knowledge-eval/scripts/check_outline_coverage.py
+```
+
+```
+outline: 3 subject(s) from knowledge-eval/data
+  math      9 units ·  0 texts ·  0 boards   covered 9/9 · gap 0 · 不测 0
+  chinese   8 units · 26 texts · 19 boards   covered 42/42 · gap 0 · 不测 11
+  english  10 units ·  0 texts · 13 boards   covered 10/14 · gap 4 · 不测 9
+gap (课本有、节点没提):
+  - english Let's Know More 1 — 没有节点提到它
+  …
+outline: ok (4 gap(s) reported as work not done)
+```
+
+`data/outline_<subject>_6up.json` 就是课本目录，只到三层：**单元 / 课文标题 / 板块名**。再往下是小节，
+各家教辅划分互不一致，做不出一致的基准——而基准错了，校验越严格错得越离谱（2026-11 那次三科全错配
+就是抄了网络目录，见 `textbook-coverage-2026-11-19.md` §修订说明）。
+
+五类判决：
+
+| # | 判决 | 例子 | 退出码 |
+|---|---|---|---|
+| 1 | 漏（outline − 节点） | 课本有《草原》，没有节点提到 | 0（`--strict` 时 1）|
+| 2 | 错指（节点 − outline） | 节点微观点里出现《桂树》 | 1 |
+| 3 | 单元名不一致 | 聚合节点叫「位置与方向（二）」，课本印的是「确定位置」 | 1 |
+| 4 | 题目引用了课本没有的篇名 | 题干或选项里出现《花之歌》 | 1 |
+| 5 | 退役篇名复活 | 微观点里还写着伯牙鼓琴（不带书名号也算） | 1 |
+
+`assessable: false` 的条目（8 次习作、3 次口语交际、英语附录与检测页）**必须写 `reason`**，
+写了才不计入 gap。"没建"和"决定不建"是两件事，只有后者是决定。
+
+失败样例（把 `d11` 的微观点换回旧版课文）：
+
+```
+  x chinese-6up-d11: still names '伯牙鼓琴', which left this volume
+  x chinese-6up-d11: mentions 《伯牙鼓琴》, which is not in the outline
+outline: 2 problem(s)
+```
+
+由 `tests/test_outline_coverage_negative.py` 的 7 条用例断言：漏 / 错指 / 退役篇名 / 题干篇名 /
+单元名不一致 / 不测条目不写理由 / 干净数据通过。
+
+---
+
+## 4. 负样本与回归测试
 
 ```bash
 python -m pytest knowledge-eval/tests/ -v          # 仓库根目录
@@ -81,18 +128,19 @@ cd knowledge-eval && python -m pytest tests/ -v    # 或在 knowledge-eval 里�
 ```
 
 ```
-21 passed, 48 xfailed
+28 passed, 48 xfailed
 ```
 
 | 文件 | 断言什么 |
 |---|---|
-| `test_check_content_negative.py` | 缺引用 / 多引用 / 换快照，脚本都必须非零退出并点名 |
+| `test_check_content_negative.py` | 缺引用 / 多引用 / 换快照 / 节点题数超上限，脚本都必须非零退出并点名 |
+| `test_outline_coverage_negative.py` | 漏 / 错指 / 退役篇名 / 题干引用了课本没有的篇名 / 单元名不一致 / 不测不写理由 |
 | `test_schema_direct.py` | 缺字段 / 数组形状错 → schema 失败；校验器收到的是原始 dict；`flat_nodes` 不存在 |
 | `test_report_weak_only.py` | 默认只列 L0/L1；`--include-full-view` 时 L2/L3 进 `full_view`；`assert_report_weak_only.py` 对篡改过的报告报错 |
 
 ---
 
-## 4. 离线报告（不连数据库）
+## 5. 离线报告（不连数据库）
 
 ```bash
 python knowledge-eval/scripts/evaluate.py \
@@ -122,7 +170,7 @@ python knowledge-eval/scripts/evaluate.py ... --out /tmp/full.json --include-ful
 
 ---
 
-## 5. 数据库形态与内容规则
+## 6. 数据库形态与内容规则
 
 需要库里有数据（`QUIZ_DSN`，或本机 `server/local/` 下的 sqlite）：
 
@@ -147,7 +195,7 @@ db parity: ok (27 tables, 259 columns, content rules hold)
 
 ---
 
-## 6. 数据库导出与仓库文件逐字段比对
+## 7. 数据库导出与仓库文件逐字段比对
 
 ```bash
 python knowledge-eval/scripts/export_from_db.py --check
@@ -161,7 +209,7 @@ export: ok — 34 nodes, 30 nodes, 26 nodes; 15 questions, 36 questions, 16 ques
 
 ---
 
-## 7. 端到端验收（改动服务端时跑）
+## 8. 端到端验收（改动服务端时跑）
 
 ```bash
 python -m server.tools.acceptance
@@ -175,9 +223,13 @@ acceptance: 256/256 passed  (db acceptance-<stamp>.sqlite3)
 
 ---
 
-## 8. 已知限制
+## 9. 已知限制
 
 - `check_content.py` 的反向覆盖只对**有快照**的科目生效（目前只有数学）。语文/英语没有公开分类法，`source_ids` 为空，反向集合为空集相等，不构成漏检。
+- 差集只回答「课本里有没有」，不回答「题目对不对」：节点覆盖了《两小儿辩日》就算过，题目仍可能按旧篇目出题。
+  第 4 条规则（题干与选项里的书名号）只覆盖孩子能看到的文字，**不扫解析**——解析里引用《呐喊》《朝花夕拾》
+  这类课外作品是正常的，扫了会到处都是误报。
+- 英语还有 4 条 gap（Let's Know More ×3、Let's Read More）：课本有这个板块，但还没有节点。它们是待建，不是漏检。
 - `export_from_db.py` 不导出题目的 `tags`（写作元数据，库里不存），`--check` 会跳过该字段。
 - `check_db_parity.py` 需要能连上目标库；没有库时请先跑 `acceptance`（它会建一个临时 sqlite 并导入全部内容）。
 - **旧的本地 sqlite 库不能直接升级**：`server/tools/migrate.py` 会补新列和新表，但 SQLite 改不了 `question.unit_id` 的 `NOT NULL`。本机开发库请删掉重建（`Database(init_schema=True)`），生产 MySQL 用 `migrate-2026-11-19-flat-nodes.sql` 里的 `MODIFY COLUMN`。

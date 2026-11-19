@@ -16,18 +16,23 @@ python knowledge-eval/scripts/check_schema.py
 # → schema: 90 nodes, 67 questions checked against knowledge-eval/schemas
 # → schema: ok
 
-# 2) 双向内容校验：快照 38 个微观点 vs 节点引用
+# 2) 双向内容校验：快照 30 个微观点 vs 节点引用
 python knowledge-eval/scripts/check_content.py
 # → nodes: 27 aggregate, 63 diagnostic
 # → coverage pep-math-6up-v3.json: 30/30 micro points referenced
 # →   mt_g6u_036  math-6up-d25     分数四则混合运算      ← 上一版丢掉的那一个
 # → content: ok
 
-# 3) 负样本：把引用删掉/加错，校验必须失败（不含规格测试）
-python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_four_stage_constructible.py
-# → 21 passed
+# 3) 课本目录差集：课本有、节点没提（漏）/ 节点提了、课本没有（错指）
+python knowledge-eval/scripts/check_outline_coverage.py
+# → chinese 42/42 · math 9/9 · english 10/14（4 条 gap 是还没建的 Let's Know More）
+# → outline: ok (4 gap(s) reported as work not done)
 
-# 4) 离线报告：不连数据库，纯文件
+# 4) 负样本：把引用删掉/加错，校验必须失败（不含规格测试）
+python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_four_stage_constructible.py
+# → 28 passed
+
+# 5) 离线报告：不连数据库，纯文件
 python knowledge-eval/scripts/evaluate.py \
   --nodes knowledge-eval/data/nodes_math_6up.json \
   --questions knowledge-eval/data/questions_math_6up.json \
@@ -36,11 +41,11 @@ python knowledge-eval/scripts/evaluate.py \
 python knowledge-eval/scripts/assert_report_weak_only.py /tmp/report.json
 # → weak-only: ok (1 weak node(s), every one 0-未掌握 or 1-基础)
 
-# 5) 数据库形态 + 内容规则（需要库里有数据；默认读 QUIZ_DSN 或 server/local/）
+# 6) 数据库形态 + 内容规则（需要库里有数据；默认读 QUIZ_DSN 或 server/local/）
 python knowledge-eval/scripts/check_db_parity.py --content
 # → db parity: ok (27 tables, 259 columns, content rules hold)
 
-# 6) 数据库导出与仓库文件逐字段比对
+# 7) 数据库导出与仓库文件逐字段比对
 python knowledge-eval/scripts/export_from_db.py --check
 # → export: ok — 34 nodes, 30 nodes, 26 nodes; 15 questions, 36 questions, 16 questions
 ```
@@ -50,11 +55,11 @@ python knowledge-eval/scripts/export_from_db.py --check
 ### 1.1 覆盖审查：题库够不够撑起四阶段
 
 ```bash
-# 1) 生成覆盖矩阵（220 个 诊断节点 × 能力标签 格子）
+# 1) 生成覆盖矩阵（252 个 诊断节点 × 能力标签 格子）
 python knowledge-eval/scripts/check_coverage_matrix.py
-# → cells 220: 182 without a question, 0 measured (n>=3), 0 floor-ok, 0 robust-ok
-# → target chapter math-6up-u01 分数乘法 (4 diagnostics)
-# → top-up to floor: 617 questions; to robust: 1277
+# → cells 252: 190 without a question, 0 measured (n>=3), 0 floor-ok, 0 robust-ok
+# → target chapter math-6up-u02 分数乘法 (4 diagnostics)
+# → top-up to floor: 689 questions; to robust: 1445
 # → 写 reports/coverage-matrix.json 与 reports/coverage-matrix.md
 
 # 2) 负样本：审查脚本必须能判负
@@ -67,23 +72,23 @@ python -m pytest knowledge-eval/tests/test_four_stage_constructible.py -v
 
 # 4) 常规回归必须仍全绿
 python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_four_stage_constructible.py
-# → 20 passed
+# → 28 passed
 ```
 
 结论与补题清单见 [docs/coverage-audit-2026-11-19.md](docs/coverage-audit-2026-11-19.md)：
-当前 **0 / 220 个格子达到最低档**，补齐到最低档需 617 题（目标章节 `math-6up-u02` 分数乘法 前三个节点需 33 题）。
+当前 **0 / 252 个格子达到最低档**，补齐到最低档需 689 题（目标章节 `math-6up-u02` 分数乘法）。
 
 ### 1.2 课本结构覆盖：节点够不够撑起"整册"
 
-上面查的是"题够不够"，这里查的是"节点全不全"——27 个聚合 + 55 个诊断，是否覆盖了三科六年级上册的课本结构。
+上面查的是"题够不够"，这里查的是"节点全不全"——27 个聚合 + 63 个诊断，是否覆盖了三科六年级上册的课本结构。
 
 结论见 [docs/textbook-coverage-2026-11-19.md](docs/textbook-coverage-2026-11-19.md)。**这一版以课本原件（家长拍摄的目录页）为准**，推翻了初版两条凭网络目录得出的结论。三句话：
 
 - **数学已按 2024 新版重排**：9 个顶层条目（6 单元 + 3 个 ☆ 主题活动）按课本顺序排好；"比""扇形统计图""数与形"三个单元连同 6 个诊断节点、3 道题移到 `data/deferred/`（不删、不导入）；补了负数、用有序数对确定位置、用百分数比较数据、鸽巢问题等 6 个新节点；顺带修掉 3 处先修成环。
-- **语文已按新教材换过课文**：旧版 5 篇（夏天里的成长、伯牙鼓琴、书戴嵩画牛、月光曲、京剧趣谈）已不在六上，`d03` `d08` `d11` `d12` 与 4 道题已改成 26 课里的篇目；7 个语文园地 + 快乐读书吧仍待补。
+- **语文已按新教材换过课文**：旧版 5 篇（夏天里的成长、伯牙鼓琴、书戴嵩画牛、月光曲、京剧趣谈）已不在六上，`d03` `d08` `d11` `d12` 与 4 道题已改成 26 课里的篇目；7 个语文园地 + 快乐读书吧已补成 8 个板块节点（`d15`–`d22`），语文 14 → 22 个诊断节点、12 → 36 道题。
 - **英语已按 2026 秋新版重建**：删掉新版不存在的《I like my computer》（含 `d05 There be`），补上 U9《I don't feel well》（`d16` 疾病表达 / `d17` 看病建议），`enjoy doing` 迁进 U3 中秋节，10 个单元名与 `chapter_order` 全部对齐课本；新单元配了 4 道题，不是空壳。
 
-课本目录仍未固化进仓库，所以这一节是人工核对，**不可回归**；把它变成门禁的利弊与限定条件，见该文档 §6。
+课本目录已固化成 `data/outline_<subject>_6up.json`（三层：单元 / 课文标题 / 板块名），`scripts/check_outline_coverage.py` 做双向差集，另加三条：单元名逐字一致、题目引用的篇名必须是课本里的、退役篇名不得复活。这一节从此可回归——限定条件与未覆盖的边界见该文档 §6 与 `docs/verification.md` §3。
 
 ---
 
@@ -96,16 +101,20 @@ knowledge-eval/
 ├── README.md            ← 你在这里
 ├── data/
 │   ├── nodes_math_6up.json        34 个节点（9 聚合 + 25 诊断）
-│   ├── nodes_chinese_6up.json     22 个节点（8 + 14）
+│   ├── nodes_chinese_6up.json     30 个节点（8 + 22）
 │   ├── nodes_english_6up.json     26 个节点（10 + 16）
 │   ├── questions_math_6up.json    15 题
-│   ├── questions_chinese_6up.json 12 题
+│   ├── questions_chinese_6up.json 36 题
 │   ├── questions_english_6up.json 16 题
+│   ├── outline_math_6up.json      课本目录：9 个顶层条目（6 单元 + 3 主题活动）
+│   ├── outline_chinese_6up.json   课本目录：8 单元 / 26 课 / 19 板块 + 6 个退役篇名
+│   ├── outline_english_6up.json   课本目录：10 单元 + 13 个板块
 │   ├── deferred/                  暂存：六下的比/扇形统计图/数与形（不校验、不导入）
 │   └── taxonomy/pep-math-6up-v3.json   人教版数学六上微观点快照（30 点 / 40 边）
 ├── schemas/
 │   ├── node.schema.json
 │   ├── question.schema.json
+│   ├── outline.schema.json
 │   └── report.schema.json
 ├── scripts/
 │   ├── keval.py                共用的读取与 schema 校验（纯文件 I/O）
@@ -115,6 +124,7 @@ knowledge-eval/
 │   ├── export_from_db.py       从库里导出三类 JSON，并可与仓库文件比对
 │   ├── assert_report_weak_only.py
 │   ├── check_db_parity.py      表/列形态 + 内容规则
+│   ├── check_outline_coverage.py 课本目录差集（漏 / 错指 / 单元名 / 题干篇名 / 退役篇名）
 │   └── check_coverage_matrix.py  (诊断节点 × 能力) 四阶段可达矩阵 + 补题清单
 ├── tests/
 │   ├── fixtures/sample_answers.json
@@ -123,6 +133,7 @@ knowledge-eval/
 │   ├── test_schema_direct.py
 │   ├── test_report_weak_only.py
 │   ├── test_coverage_matrix_negative.py    覆盖审查的负样本（3 条）
+│   ├── test_outline_coverage_negative.py   课本目录差集的负样本（7 条）
 │   └── test_four_stage_constructible.py    规格测试：当前 1 passed / 48 xfailed
 ├── reports/                     由脚本生成，勿手改
 │   ├── coverage-matrix.json     全部 220 个格子

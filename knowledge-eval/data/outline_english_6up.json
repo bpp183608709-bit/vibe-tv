@@ -1,0 +1,49 @@
+{
+ "schema_version": 1,
+ "subject": "english",
+ "textbook": "义务教育教科书·英语（六年级上册）",
+ "edition": "湘少版 2026 秋新版（10 单元）",
+ "source": "课本目录照片（2026-11-19，家长提供）",
+ "levels": [
+  "unit",
+  "board"
+ ],
+ "unit_names_from_textbook": true,
+ "note": "英语单元里是 Part A/B/C/D 这样的课时划分，属于小节，按约定不下探；单元之间有 Let's Know More 与 Let's Read More 阅读板块、Assessment I–III 检测页和六项附录，这些是板块级条目。",
+ "units": [
+  {"code": "english-6up-u01", "order": 1, "name": "What did you do during the holidays?", "kind": "unit", "assessable": true, "entries": []},
+  {"code": "english-6up-u02", "order": 2, "name": "Beibei always gets up early", "kind": "unit", "assessable": true, "entries": []},
+  {"code": "english-6up-u03", "order": 3, "name": "The Mid-Autumn Festival", "kind": "unit", "assessable": true, "entries": []},
+  {"code": "english-6up-u04", "order": 4, "name": "It will be sunny and cool tomorrow", "kind": "unit", "assessable": true, "entries": []},
+  {"code": "english-6up-u05", "order": 5, "name": "I will bring a bottle of orange juice", "kind": "unit", "assessable": true, "entries": []},
+  {"code": "english-6up-u06", "order": 6, "name": "What can I do?", "kind": "unit", "assessable": true, "entries": []},
+  {"code": "english-6up-u07", "order": 7, "name": "We shouldn't waste water", "kind": "unit", "assessable": true, "entries": []},
+  {"code": "english-6up-u08", "order": 8, "name": "This bird is bigger than the first one", "kind": "unit", "assessable": true, "entries": []},
+  {"code": "english-6up-u09", "order": 9, "name": "I don't feel well", "kind": "unit", "assessable": true, "entries": []},
+  {"code": "english-6up-u10", "order": 10, "name": "Festivals bring families together", "kind": "unit", "assessable": true, "entries": []}
+ ],
+ "book_entries": [
+  {"name": "Let's Know More 1", "kind": "board", "assessable": true},
+  {"name": "Let's Know More 2", "kind": "board", "assessable": true},
+  {"name": "Let's Know More 3", "kind": "board", "assessable": true},
+  {"name": "Let's Read More", "kind": "board", "assessable": true},
+  {"name": "Assessment I", "kind": "board", "assessable": false,
+   "reason": "单元检测页，本身是测评环节，不是教学内容；把它测一遍等于把考试当知识点"},
+  {"name": "Assessment II", "kind": "board", "assessable": false,
+   "reason": "单元检测页，本身是测评环节，不是教学内容"},
+  {"name": "Assessment III", "kind": "board", "assessable": false,
+   "reason": "单元检测页，本身是测评环节，不是教学内容"},
+  {"name": "附录：Vocabulary", "kind": "board", "assessable": false,
+   "reason": "词汇表是查阅用的参考材料，没有可判定的单点内容"},
+  {"name": "附录：Word List", "kind": "board", "assessable": false,
+   "reason": "词表是查阅用的参考材料，没有可判定的单点内容"},
+  {"name": "附录：Structures", "kind": "board", "assessable": false,
+   "reason": "句型表是查阅用的参考材料，句型本身已落在各单元的语法节点上"},
+  {"name": "附录：Verbs", "kind": "board", "assessable": false,
+   "reason": "动词表是查阅用的参考材料，时态与形式已落在各单元的语法节点上"},
+  {"name": "附录：Songs", "kind": "board", "assessable": false,
+   "reason": "歌谣只用于听说与课堂活动，不构成可判定的知识点"},
+  {"name": "附录：Formative Assessment", "kind": "board", "assessable": false,
+   "reason": "形成性评价表供学生自评，不是知识内容"}
+ ]
+}
