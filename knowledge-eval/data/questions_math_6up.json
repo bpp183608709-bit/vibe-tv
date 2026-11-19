@@ -2372,6 +2372,645 @@
    "question_id": "math-6up-d09-q12"
   },
   {
+   "diagnostic_node_id": "math-6up-d27",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读作“负三点五”的数是（  ）",
+   "options": [
+    "-3.5",
+    "+3.5",
+    "3.5",
+    "-5.3"
+   ],
+   "correct_answer": "A",
+   "explanation": "“负三点五”先写负号，再写 3.5，就是 -3.5。",
+   "tags": [
+    "负数的意义与读写",
+    "读法"
+   ],
+   "question_id": "math-6up-d27-q01"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d27",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "比 0 小 4 的数是（  ）。",
+   "accepted": [
+    "-4"
+   ],
+   "correct_answer": "-4",
+   "explanation": "比 0 小 4 就是 0 - 4 = -4，负数表示比 0 小的数。",
+   "tags": [
+    "负数的意义与读写",
+    "写负数"
+   ],
+   "question_id": "math-6up-d27-q02"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d27",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "关于负数和 0，下面说法正确的是（  ）",
+   "options": [
+    "负数都比 0 小",
+    "最小的负数是 -1",
+    "0 是负数",
+    "负数都比 -1 小"
+   ],
+   "correct_answer": "A",
+   "explanation": "负数都小于 0；没有最小的负数；0 既不是正数也不是负数；-0.5 就比 -1 大。",
+   "tags": [
+    "负数的意义与读写",
+    "0 的分界"
+   ],
+   "question_id": "math-6up-d27-q03"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d27",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "电梯上升 3 层记作 +3 层，那么下降 2 层记作（  ）",
+   "options": [
+    "+2 层",
+    "2 层",
+    "-2 层",
+    "-3 层"
+   ],
+   "correct_answer": "C",
+   "explanation": "上升和下降是一对相反意义的量，上升记正，下降就记负。",
+   "tags": [
+    "负数的意义与读写",
+    "相反意义的量"
+   ],
+   "question_id": "math-6up-d27-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d27",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "某天北京的最高气温是零上 5℃，最低气温是零下 3℃，最低气温记作（  ）℃。",
+   "accepted": [
+    "-3"
+   ],
+   "correct_answer": "-3",
+   "explanation": "零上记作正，零下就记作负，零下 3℃ 写作 -3℃。",
+   "tags": [
+    "负数的意义与读写",
+    "气温记录"
+   ],
+   "question_id": "math-6up-d27-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d27",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "小华家 10 月的收支：爸爸工资收入 6000 元，买菜支出 1200 元。若收入记作正，这两笔账分别记作（  ）",
+   "options": [
+    "+6000 元和 +1200 元",
+    "+6000 元和 -1200 元",
+    "-6000 元和 -1200 元",
+    "+6000 元和 1200 元"
+   ],
+   "correct_answer": "B",
+   "explanation": "收入记正，支出是与它相反意义的量，记作负，所以支出 1200 元记作 -1200 元。",
+   "tags": [
+    "负数的意义与读写",
+    "收支记录"
+   ],
+   "question_id": "math-6up-d27-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d27",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "在 -1、0、1、-2 中，最小的数是（  ）",
+   "options": [
+    "-1",
+    "0",
+    "1",
+    "-2"
+   ],
+   "correct_answer": "D",
+   "explanation": "负数小于 0 和正数；两个负数中，-2 在 -1 左边，所以 -2 最小。",
+   "tags": [
+    "负数的意义与读写",
+    "比较大小"
+   ],
+   "question_id": "math-6up-d27-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d27",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "在 -1、0、-3、2 中，比 -2 小的数是（  ）",
+   "options": [
+    "-1",
+    "0",
+    "-3",
+    "2"
+   ],
+   "correct_answer": "C",
+   "explanation": "在数轴上 -3 在 -2 的左边，所以 -3 < -2；-1 和 0 都比 -2 大。",
+   "tags": [
+    "负数的意义与读写",
+    "比较大小"
+   ],
+   "question_id": "math-6up-d27-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d27",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下列各组数中，大小关系正确的是（  ）",
+   "options": [
+    "-5 > -3",
+    "-0.5 > -0.2",
+    "-2 < -7",
+    "-3 < -1"
+   ],
+   "correct_answer": "D",
+   "explanation": "两个负数比较，离 0 越远越小：-3 在 -1 左边，所以 -3 < -1；其余三组的大小关系都说反了。",
+   "tags": [
+    "负数的意义与读写",
+    "比较大小"
+   ],
+   "question_id": "math-6up-d27-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d28",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "某地海拔 -100 米，表示这个地方（  ）",
+   "options": [
+    "比海平面高 100 米",
+    "比海平面低 100 米",
+    "与海平面一样高",
+    "比海平面低 10 米"
+   ],
+   "correct_answer": "B",
+   "explanation": "海拔以海平面为 0，高于海平面记正，低于海平面记负，所以 -100 米表示比海平面低 100 米。",
+   "tags": [
+    "负数在生活中的应用",
+    "海拔"
+   ],
+   "question_id": "math-6up-d28-q01"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d28",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "冰箱冷冻室的温度显示 -18℃，这里的 -18℃ 表示（  ）",
+   "options": [
+    "零上 18℃",
+    "零上 1.8℃",
+    "零下 18℃",
+    "比 0℃ 高 18℃"
+   ],
+   "correct_answer": "C",
+   "explanation": "温度以 0℃ 为界，零上记正、零下记负，-18℃ 就是零下 18℃。",
+   "tags": [
+    "负数在生活中的应用",
+    "温度"
+   ],
+   "question_id": "math-6up-d28-q02"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d28",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "气温、海拔和收支中的负数，下面的说法正确的是（  ）",
+   "options": [
+    "气温 -5℃ 比 -8℃ 低",
+    "海拔 -20 米比海拔 -10 米高",
+    "收入 -50 元表示支出 50 元",
+    "水位 -0.3 米表示比警戒水位高 0.3 米"
+   ],
+   "correct_answer": "C",
+   "explanation": "记收入为正时，负数就表示支出。其余三句都把大小或方向说反了：-5℃ 比 -8℃ 高，-20 米比 -10 米低，-0.3 米表示低于警戒水位。",
+   "tags": [
+    "负数在生活中的应用",
+    "相反意义"
+   ],
+   "question_id": "math-6up-d28-q03"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d28",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "某天最高气温 6℃，最低气温 -2℃，这一天的温差是（  ）℃。",
+   "accepted": [
+    "8"
+   ],
+   "correct_answer": "8",
+   "explanation": "温差 = 最高气温 - 最低气温 = 6 - (-2) = 8℃，从 -2℃ 升到 0℃ 是 2℃，再升到 6℃ 是 6℃，共 8℃。",
+   "tags": [
+    "负数在生活中的应用",
+    "温差"
+   ],
+   "question_id": "math-6up-d28-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d28",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "电梯从 -2 层上升到 5 层，一共上升了（  ）层。",
+   "accepted": [
+    "7"
+   ],
+   "correct_answer": "7",
+   "explanation": "从 -2 层到 0 层上升 2 层，从 0 层到 5 层上升 5 层，共 2 + 5 = 7 层，也就是 5 - (-2) = 7。",
+   "tags": [
+    "负数在生活中的应用",
+    "层数差"
+   ],
+   "question_id": "math-6up-d28-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d28",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "某账户原有 200 元，取出 250 元后，余额记作（  ）元。",
+   "accepted": [
+    "-50"
+   ],
+   "correct_answer": "-50",
+   "explanation": "200 - 250 = -50，余额不足时用负数表示。",
+   "tags": [
+    "负数在生活中的应用",
+    "收支计算"
+   ],
+   "question_id": "math-6up-d28-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d28",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "冷藏室温度是 4℃，冷冻室比冷藏室低 22℃，冷冻室的温度是（  ）",
+   "options": [
+    "18℃",
+    "26℃",
+    "-26℃",
+    "-18℃"
+   ],
+   "correct_answer": "D",
+   "explanation": "比 4℃ 低 22℃ 就是 4 - 22 = -18℃，从 4℃ 降到 0℃ 用去 4℃，再降 18℃ 到 -18℃。",
+   "tags": [
+    "负数在生活中的应用",
+    "温度"
+   ],
+   "question_id": "math-6up-d28-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d28",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一袋大米的标准质量是 25 千克，质检时称得一袋重 24.6 千克，与标准质量相比记作（  ）千克",
+   "options": [
+    "+0.4",
+    "-0.6",
+    "-0.4",
+    "+0.6"
+   ],
+   "correct_answer": "C",
+   "explanation": "24.6 - 25 = -0.4，比标准质量轻记作负。",
+   "tags": [
+    "负数在生活中的应用",
+    "误差"
+   ],
+   "question_id": "math-6up-d28-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d28",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "某地某天最高气温 4℃、最低气温 -6℃。第二天最高气温比第一天低 3℃、最低气温比第一天低 2℃，第二天最高与最低气温相差（  ）℃",
+   "options": [
+    "7",
+    "8",
+    "9",
+    "10"
+   ],
+   "correct_answer": "C",
+   "explanation": "第二天最高 4 - 3 = 1℃，最低 -6 - 2 = -8℃，相差 1 - (-8) = 9℃。",
+   "tags": [
+    "负数在生活中的应用",
+    "温差"
+   ],
+   "question_id": "math-6up-d28-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d28",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面各句中，把相反意义的量记作负数正确的是（  ）",
+   "options": [
+    "存入 400 元记作 -400 元",
+    "气温下降 2℃ 记作 +2℃",
+    "取出 200 元记作 -200 元",
+    "海拔 -30 米表示高于海平面 30 米"
+   ],
+   "correct_answer": "C",
+   "explanation": "取出、下降、低于海平面都与“正”的方向相反，要记作负数。",
+   "tags": [
+    "负数在生活中的应用",
+    "记法"
+   ],
+   "question_id": "math-6up-d28-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d28",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面各句中，记法错误的是（  ）",
+   "options": [
+    "存入 500 元记作 +500 元",
+    "取出 300 元记作 -300 元",
+    "水位上升 0.2 米记作 +0.2 米",
+    "气温上升 3℃ 记作 -3℃"
+   ],
+   "correct_answer": "D",
+   "explanation": "气温上升与“上升”同向，应记作 +3℃；记作负数的应是下降。",
+   "tags": [
+    "负数在生活中的应用",
+    "记法"
+   ],
+   "question_id": "math-6up-d28-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d28",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "甲、乙两地某天的最低气温分别是 -8℃ 和 -3℃，下面说法正确的是（  ）",
+   "options": [
+    "甲地气温更低",
+    "乙地气温更低",
+    "两地气温相同",
+    "乙地比甲地低 5℃"
+   ],
+   "correct_answer": "A",
+   "explanation": "两个负数比较，-8 在 -3 左边，所以甲地气温更低，低 -3 - (-8) = 5℃。",
+   "tags": [
+    "负数在生活中的应用",
+    "比较大小"
+   ],
+   "question_id": "math-6up-d28-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d13",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "在同一个圆里，半径有（  ）条。",
+   "options": [
+    "1",
+    "2",
+    "4",
+    "无数"
+   ],
+   "correct_answer": "D",
+   "explanation": "从圆心到圆上任意一点的线段都是半径，圆上有无数个点，所以半径有无数条。",
+   "tags": [
+    "圆的认识与对称性",
+    "半径"
+   ],
+   "question_id": "math-6up-d13-q01"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d13",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个圆的半径是 4 厘米，它的直径是（  ）厘米。",
+   "accepted": [
+    "8"
+   ],
+   "correct_answer": "8",
+   "explanation": "直径 d = 2r = 2 × 4 = 8 厘米。",
+   "tags": [
+    "圆的认识与对称性",
+    "直径"
+   ],
+   "question_id": "math-6up-d13-q02"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d13",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "用圆规画一个直径 6 厘米的圆，圆规两脚间的距离应是（  ）厘米。",
+   "options": [
+    "6",
+    "12",
+    "3",
+    "1.5"
+   ],
+   "correct_answer": "C",
+   "explanation": "圆规两脚间的距离是半径，r = d ÷ 2 = 6 ÷ 2 = 3 厘米。",
+   "tags": [
+    "圆的认识与对称性",
+    "画圆"
+   ],
+   "question_id": "math-6up-d13-q03"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d13",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "车轮做成圆形，车轴装在（  ）上，车行驶起来才平稳。",
+   "options": [
+    "圆上任意一点",
+    "直径的一端",
+    "圆心",
+    "半径的中点"
+   ],
+   "correct_answer": "C",
+   "explanation": "圆上任意一点到圆心的距离都等于半径，车轴装在圆心，车轮滚动时车轴离地面的高度不变，所以平稳。",
+   "tags": [
+    "圆的认识与对称性",
+    "圆心"
+   ],
+   "question_id": "math-6up-d13-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d13",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个圆形花坛的直径是 10 米，它的半径是（  ）米。",
+   "accepted": [
+    "5"
+   ],
+   "correct_answer": "5",
+   "explanation": "r = d ÷ 2 = 10 ÷ 2 = 5 米。",
+   "tags": [
+    "圆的认识与对称性",
+    "半径与直径"
+   ],
+   "question_id": "math-6up-d13-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d13",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一张长方形纸长 8 厘米、宽 6 厘米，在纸上剪一个最大的圆，这个圆的半径是（  ）厘米。",
+   "options": [
+    "8",
+    "6",
+    "4",
+    "3"
+   ],
+   "correct_answer": "D",
+   "explanation": "圆要整个落在长方形里，直径不能超过较短的边 6 厘米，所以半径最大是 6 ÷ 2 = 3 厘米。",
+   "tags": [
+    "圆的认识与对称性",
+    "直径"
+   ],
+   "question_id": "math-6up-d13-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d13",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "关于圆的对称轴，下面说法正确的是（  ）",
+   "options": [
+    "圆有 2 条对称轴",
+    "圆有无数条对称轴",
+    "圆没有对称轴",
+    "圆的对称轴是半径"
+   ],
+   "correct_answer": "B",
+   "explanation": "沿任意一条直径对折，两半都能重合，圆里直径有无数条，所以对称轴也有无数条。",
+   "tags": [
+    "圆的认识与对称性",
+    "对称轴"
+   ],
+   "question_id": "math-6up-d13-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d13",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "关于圆的圆心、半径和直径，下面说法正确的是（  ）",
+   "options": [
+    "圆心决定圆的大小",
+    "半径决定圆的位置",
+    "同一个圆里直径是半径的 2 倍",
+    "所有圆的直径都相等"
+   ],
+   "correct_answer": "C",
+   "explanation": "圆心决定位置、半径决定大小；“直径是半径的 2 倍”只在同一个圆或等圆里成立，不同圆的直径并不相等。",
+   "tags": [
+    "圆的认识与对称性",
+    "圆心与半径"
+   ],
+   "question_id": "math-6up-d13-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d13",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面图形中，对称轴条数最多的是（  ）",
+   "options": [
+    "长方形",
+    "等边三角形",
+    "正方形",
+    "圆"
+   ],
+   "correct_answer": "D",
+   "explanation": "长方形有 2 条对称轴，等边三角形有 3 条，正方形有 4 条，圆有无数条，所以圆最多。",
+   "tags": [
+    "圆的认识与对称性",
+    "对称轴"
+   ],
+   "question_id": "math-6up-d13-q09"
+  },
+  {
    "question_id": "math-6up-d15-q01",
    "diagnostic_node_id": "math-6up-d15",
    "subject": "math",
