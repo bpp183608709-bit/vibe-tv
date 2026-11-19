@@ -23,9 +23,9 @@ python knowledge-eval/scripts/check_content.py
 # →   mt_g6u_036  math-6up-d25     分数四则混合运算      ← 上一版丢掉的那一个
 # → content: ok
 
-# 3) 负样本：把引用删掉/加错，校验必须失败
-python -m pytest knowledge-eval/tests/ -v
-# → 15 passed
+# 3) 负样本：把引用删掉/加错，校验必须失败（不含规格测试）
+python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_four_stage_constructible.py
+# → 18 passed
 
 # 4) 离线报告：不连数据库，纯文件
 python knowledge-eval/scripts/evaluate.py \
@@ -47,11 +47,37 @@ python knowledge-eval/scripts/export_from_db.py --check
 
 全部命令的预期输出与失败样例见 [docs/verification.md](docs/verification.md)；逐条修复证据见 [docs/fix-evidence-2026-11-19.md](docs/fix-evidence-2026-11-19.md)。
 
+### 1.1 覆盖审查：题库够不够撑起四阶段
+
+```bash
+# 1) 生成覆盖矩阵（216 个 诊断节点 × 能力标签 格子）
+python knowledge-eval/scripts/check_coverage_matrix.py
+# → cells 216: 179 without a question, 0 measured (n>=3), 0 floor-ok, 0 robust-ok
+# → target chapter math-6up-u01 分数乘法 (4 diagnostics)
+# → top-up to floor: 606 questions; to robust: 1254
+# → 写 reports/coverage-matrix.json 与 reports/coverage-matrix.md
+
+# 2) 负样本：审查脚本必须能判负
+python -m pytest knowledge-eval/tests/test_coverage_matrix_negative.py -v
+# → 3 passed
+
+# 3) 规格测试：题库不达标时出现预期的 xfail
+python -m pytest knowledge-eval/tests/test_four_stage_constructible.py -v
+# → 1 passed, 48 xfailed
+
+# 4) 常规回归必须仍全绿
+python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_four_stage_constructible.py
+# → 18 passed
+```
+
+结论与补题清单见 [docs/coverage-audit-2026-11-19.md](docs/coverage-audit-2026-11-19.md)：
+当前 **0 / 216 个格子达到最低档**，补齐到最低档需 606 题（目标章节 `math-6up-u01` 前三个节点需 33 题）。
+
 ---
 
 ## 2. 目录
 
-直达：[data/](data/) · [schemas/](schemas/) · [scripts/](scripts/) · [tests/](tests/) · [docs/](docs/)
+直达：[data/](data/) · [schemas/](schemas/) · [scripts/](scripts/) · [tests/](tests/) · [reports/](reports/) · [docs/](docs/)
 
 ```
 knowledge-eval/
@@ -75,17 +101,24 @@ knowledge-eval/
 │   ├── evaluate.py             离线报告（不连库）
 │   ├── export_from_db.py       从库里导出三类 JSON，并可与仓库文件比对
 │   ├── assert_report_weak_only.py
-│   └── check_db_parity.py      表/列形态 + 内容规则
+│   ├── check_db_parity.py      表/列形态 + 内容规则
+│   └── check_coverage_matrix.py  (诊断节点 × 能力) 四阶段可达矩阵 + 补题清单
 ├── tests/
 │   ├── fixtures/sample_answers.json
 │   ├── fixtures/sample_answers_mixed_levels.json
 │   ├── test_check_content_negative.py
 │   ├── test_schema_direct.py
-│   └── test_report_weak_only.py
+│   ├── test_report_weak_only.py
+│   ├── test_coverage_matrix_negative.py    覆盖审查的负样本（3 条）
+│   └── test_four_stage_constructible.py    规格测试：当前 1 passed / 48 xfailed
+├── reports/                     由脚本生成，勿手改
+│   ├── coverage-matrix.json     全部 216 个格子
+│   └── coverage-matrix.md       汇总 / 逐格矩阵 / 缺口清单
 └── docs/
     ├── data_sources.md         三科版本、逐节点来源、形态说明
     ├── verification.md         每条命令的预期输出与负样本
-    └── fix-evidence-2026-11-19.md   逐条修复证据表
+    ├── fix-evidence-2026-11-19.md   逐条修复证据表
+    └── coverage-audit-2026-11-19.md 题库四阶段覆盖审查（0/216）与补题清单
 ```
 
 ---
