@@ -68,7 +68,7 @@ def test_weak_count_equals_lines_printed(workdir):
 def test_unmeasured_node_is_nowhere(workdir):
     report = evaluate(workdir, "--include-full-view")
     ids = {line["diagnostic_node_id"] for line in lines(report) + full_lines(report)}
-    assert "math-6up-d15" not in ids, "a node with one answer must not be judged"
+    assert "math-6up-d14" not in ids, "a node with one answer must not be judged"
 
 
 def test_full_view_carries_the_strong_nodes(workdir):

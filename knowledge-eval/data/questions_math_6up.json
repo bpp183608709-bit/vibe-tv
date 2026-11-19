@@ -3011,8 +3011,8 @@
    "question_id": "math-6up-d13-q09"
   },
   {
-   "question_id": "math-6up-d15-q01",
-   "diagnostic_node_id": "math-6up-d15",
+   "question_id": "math-6up-d14-q01",
+   "diagnostic_node_id": "math-6up-d14",
    "subject": "math",
    "ability_tag": "理解意义",
    "cognitive_level": "记忆理解",
@@ -3032,8 +3032,8 @@
    ]
   },
   {
-   "question_id": "math-6up-d15-q02",
-   "diagnostic_node_id": "math-6up-d15",
+   "question_id": "math-6up-d14-q02",
+   "diagnostic_node_id": "math-6up-d14",
    "subject": "math",
    "ability_tag": "执行计算",
    "cognitive_level": "应用",
@@ -3050,8 +3050,8 @@
    ]
   },
   {
-   "question_id": "math-6up-d15-q03",
-   "diagnostic_node_id": "math-6up-d15",
+   "question_id": "math-6up-d14-q03",
+   "diagnostic_node_id": "math-6up-d14",
    "subject": "math",
    "ability_tag": "情境应用",
    "cognitive_level": "分析评价创造",
