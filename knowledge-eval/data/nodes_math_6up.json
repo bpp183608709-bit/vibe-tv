@@ -7,15 +7,77 @@
  "publisher": "pep",
  "publisher_zh": "人民教育出版社",
  "textbook_title_zh": "义务教育教科书·数学（六年级上册）",
- "edition": "current printing (2019 series)",
+ "edition": "2024 edition (6 units + 3 theme activities)",
  "verified": false,
  "source": "manual",
- "taxonomy_version": "pep-primary-math-6up-v2",
+ "taxonomy_version": "pep-primary-math-6up-v3",
  "grade": 6,
  "semester": "up",
  "nodes": [
   {
    "node_id": "math-6up-u01",
+   "name": "确定位置",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "确定位置",
+   "micro_nodes": [
+    "用方向和距离确定位置",
+    "用有序数对确定位置"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "位置：先用数对，再用方向和距离",
+   "status": "active",
+   "chapter_order": 1,
+   "week_start": 1
+  },
+  {
+   "node_id": "math-6up-d05",
+   "name": "用方向和距离确定位置",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "math-6up-u01",
+   "chapter_name": "确定位置",
+   "knowledge_type": "procedural",
+   "micro_nodes": [
+    "方向角表示位置",
+    "描述和绘制运动路线"
+   ],
+   "source_ids": [
+    "mt_g6u_008",
+    "mt_g6u_009"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "参照点、方向角与距离共同确定一个位置，会描述路线",
+   "status": "active",
+   "chapter_order": 1
+  },
+  {
+   "node_id": "math-6up-d26",
+   "name": "用有序数对确定位置",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "math-6up-u01",
+   "chapter_name": "确定位置",
+   "knowledge_type": "procedural",
+   "micro_nodes": [
+    "用数对表示位置",
+    "根据数对在方格纸上找位置"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "先列后行的数对写法，能在方格纸上用数对表示和查找位置。",
+   "status": "active",
+   "chapter_order": 1
+  },
+  {
+   "node_id": "math-6up-u02",
    "name": "分数乘法",
    "subject": "math",
    "grade": 6,
@@ -25,15 +87,15 @@
    "chapter_name": "分数乘法",
    "micro_nodes": [
     "分数乘整数",
-    "一个数乘分数与分数乘分数",
-    "分数乘法的运算律与应用题",
+    "一个数乘分数",
+    "分数、小数混合运算与运算律",
     "积与因数的大小关系"
    ],
    "prerequisite_node_ids": [],
    "description": "分数乘法",
    "status": "active",
-   "chapter_order": 1,
-   "week_start": 1
+   "chapter_order": 2,
+   "week_start": 3
   },
   {
    "node_id": "math-6up-d01",
@@ -42,7 +104,7 @@
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "math-6up-u01",
+   "parent_id": "math-6up-u02",
    "chapter_name": "分数乘法",
    "knowledge_type": "procedural",
    "micro_nodes": [
@@ -56,16 +118,16 @@
    "prerequisite_node_ids": [],
    "description": "整数与分数相乘的意义和算法",
    "status": "active",
-   "chapter_order": 1
+   "chapter_order": 2
   },
   {
    "node_id": "math-6up-d02",
-   "name": "一个数乘分数与分数乘分数",
+   "name": "一个数乘分数",
    "subject": "math",
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "math-6up-u01",
+   "parent_id": "math-6up-u02",
    "chapter_name": "分数乘法",
    "knowledge_type": "procedural",
    "micro_nodes": [
@@ -81,16 +143,16 @@
    ],
    "description": "求一个数的几分之几，分子乘分子、分母乘分母",
    "status": "active",
-   "chapter_order": 1
+   "chapter_order": 2
   },
   {
    "node_id": "math-6up-d03",
-   "name": "分数乘法的运算律与应用题",
+   "name": "分数、小数混合运算与运算律",
    "subject": "math",
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "math-6up-u01",
+   "parent_id": "math-6up-u02",
    "chapter_name": "分数乘法",
    "knowledge_type": "procedural",
    "micro_nodes": [
@@ -106,7 +168,7 @@
    ],
    "description": "交换、结合、分配律，以及连续求几分之几",
    "status": "active",
-   "chapter_order": 1
+   "chapter_order": 2
   },
   {
    "node_id": "math-6up-d04",
@@ -115,7 +177,7 @@
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "math-6up-u01",
+   "parent_id": "math-6up-u02",
    "chapter_name": "分数乘法",
    "knowledge_type": "conceptual",
    "micro_nodes": [
@@ -128,47 +190,6 @@
     "math-6up-d02"
    ],
    "description": "乘数比 1 大还是小，决定积比原数大还是小",
-   "status": "active",
-   "chapter_order": 1
-  },
-  {
-   "node_id": "math-6up-u02",
-   "name": "位置与方向（二）",
-   "subject": "math",
-   "grade": 6,
-   "semester": "up",
-   "node_type": "aggregate",
-   "parent_id": null,
-   "chapter_name": "位置与方向（二）",
-   "micro_nodes": [
-    "用方向和距离确定位置"
-   ],
-   "prerequisite_node_ids": [],
-   "description": "位置与方向（二）",
-   "status": "active",
-   "chapter_order": 2,
-   "week_start": 3
-  },
-  {
-   "node_id": "math-6up-d05",
-   "name": "用方向和距离确定位置",
-   "subject": "math",
-   "grade": 6,
-   "semester": "up",
-   "node_type": "diagnostic",
-   "parent_id": "math-6up-u02",
-   "chapter_name": "位置与方向（二）",
-   "knowledge_type": "procedural",
-   "micro_nodes": [
-    "方向角表示位置",
-    "描述和绘制运动路线"
-   ],
-   "source_ids": [
-    "mt_g6u_008",
-    "mt_g6u_009"
-   ],
-   "prerequisite_node_ids": [],
-   "description": "参照点、方向角与距离共同确定一个位置，会描述路线",
    "status": "active",
    "chapter_order": 2
   },
@@ -290,93 +311,62 @@
   },
   {
    "node_id": "math-6up-u04",
-   "name": "比",
+   "name": "生活中的负数",
    "subject": "math",
    "grade": 6,
    "semester": "up",
    "node_type": "aggregate",
    "parent_id": null,
-   "chapter_name": "比",
+   "chapter_name": "生活中的负数",
    "micro_nodes": [
-    "比的意义与基本性质",
-    "按比分配",
-    "比与分数、除法的联系"
+    "负数的意义与读写",
+    "负数在生活中的应用"
    ],
    "prerequisite_node_ids": [],
-   "description": "比",
+   "description": "主题活动：寻找负数→认识负数→应用负数→小讲堂",
    "status": "active",
    "chapter_order": 4,
-   "week_start": 8
+   "week_start": 7
   },
   {
-   "node_id": "math-6up-d10",
-   "name": "比的意义与基本性质",
+   "node_id": "math-6up-d27",
+   "name": "负数的意义与读写",
    "subject": "math",
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
    "parent_id": "math-6up-u04",
-   "chapter_name": "比",
-   "knowledge_type": "procedural",
-   "micro_nodes": [
-    "比的意义和各部分名称",
-    "比的基本性质与化简比"
-   ],
-   "source_ids": [
-    "mt_g6u_015",
-    "mt_g6u_016"
-   ],
-   "prerequisite_node_ids": [
-    "math-6up-d07"
-   ],
-   "description": "比与除法、分数的关系，化简比",
-   "status": "active",
-   "chapter_order": 4
-  },
-  {
-   "node_id": "math-6up-d11",
-   "name": "按比分配",
-   "subject": "math",
-   "grade": 6,
-   "semester": "up",
-   "node_type": "diagnostic",
-   "parent_id": "math-6up-u04",
-   "chapter_name": "比",
-   "knowledge_type": "procedural",
-   "micro_nodes": [
-    "按比例分配"
-   ],
-   "source_ids": [
-    "mt_g6u_017"
-   ],
-   "prerequisite_node_ids": [
-    "math-6up-d10",
-    "math-6up-d02"
-   ],
-   "description": "把一个量按给定的比分成几份",
-   "status": "active",
-   "chapter_order": 4
-  },
-  {
-   "node_id": "math-6up-d12",
-   "name": "比与分数、除法的联系",
-   "subject": "math",
-   "grade": 6,
-   "semester": "up",
-   "node_type": "diagnostic",
-   "parent_id": "math-6up-u04",
-   "chapter_name": "比",
+   "chapter_name": "生活中的负数",
    "knowledge_type": "conceptual",
    "micro_nodes": [
-    "比与分数、除法的综合联系"
+    "负数的意义",
+    "正负数的读写法与大小比较"
    ],
-   "source_ids": [
-    "mt_g6u_037"
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "0 既不是正数也不是负数；会用正负数表示相反意义的量。",
+   "status": "active",
+   "chapter_order": 4
+  },
+  {
+   "node_id": "math-6up-d28",
+   "name": "负数在生活中的应用",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "math-6up-u04",
+   "chapter_name": "生活中的负数",
+   "knowledge_type": "procedural",
+   "micro_nodes": [
+    "温度中的负数",
+    "海拔与收支中的负数"
    ],
+   "source_ids": [],
    "prerequisite_node_ids": [
-    "math-6up-d13"
+    "math-6up-d27"
    ],
-   "description": "三者的互相转化与在综合题里的换用",
+   "description": "看温度计、海拔高度、收支记录，说清每个负数表示什么。",
    "status": "active",
    "chapter_order": 4
   },
@@ -399,7 +389,7 @@
    "description": "圆",
    "status": "active",
    "chapter_order": 5,
-   "week_start": 10
+   "week_start": 8
   },
   {
    "node_id": "math-6up-d13",
@@ -419,9 +409,7 @@
     "mt_g6u_018",
     "mt_g6u_038"
    ],
-   "prerequisite_node_ids": [
-    "math-6up-d15"
-   ],
+   "prerequisite_node_ids": [],
    "description": "圆心、半径、直径，以及圆是轴对称图形",
    "status": "active",
    "chapter_order": 5
@@ -506,23 +494,65 @@
   },
   {
    "node_id": "math-6up-u06",
-   "name": "百分数（一）",
+   "name": "体育中的数学",
    "subject": "math",
    "grade": 6,
    "semester": "up",
    "node_type": "aggregate",
    "parent_id": null,
-   "chapter_name": "百分数（一）",
+   "chapter_name": "体育中的数学",
+   "micro_nodes": [
+    "确定起跑线"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "主题活动：确定主题→分析研讨→交流分享",
+   "status": "active",
+   "chapter_order": 6,
+   "week_start": 11
+  },
+  {
+   "node_id": "math-6up-d23",
+   "name": "确定起跑线",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "math-6up-u06",
+   "chapter_name": "体育中的数学",
+   "knowledge_type": "procedural",
+   "micro_nodes": [
+    "确定起跑线的数学建模"
+   ],
+   "source_ids": [
+    "mt_g6u_024"
+   ],
+   "prerequisite_node_ids": [
+    "math-6up-d14"
+   ],
+   "description": "跑道弯道长度差与起跑线位置的数学建模",
+   "status": "active",
+   "chapter_order": 6
+  },
+  {
+   "node_id": "math-6up-u07",
+   "name": "百分数",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "百分数",
    "micro_nodes": [
     "百分数的意义与取值范围",
     "百分数与小数、分数的互化",
-    "百分数增减的综合应用"
+    "百分数增减的综合应用",
+    "用百分数比较数据"
    ],
    "prerequisite_node_ids": [],
-   "description": "百分数（一）",
+   "description": "百分数",
    "status": "active",
-   "chapter_order": 6,
-   "week_start": 13
+   "chapter_order": 7,
+   "week_start": 12
   },
   {
    "node_id": "math-6up-d17",
@@ -531,8 +561,8 @@
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "math-6up-u06",
-   "chapter_name": "百分数（一）",
+   "parent_id": "math-6up-u07",
+   "chapter_name": "百分数",
    "knowledge_type": "conceptual",
    "micro_nodes": [
     "百分数的意义",
@@ -542,13 +572,10 @@
     "mt_g6u_025",
     "mt_g6u_029"
    ],
-   "prerequisite_node_ids": [
-    "math-6up-d10",
-    "math-6up-d19"
-   ],
+   "prerequisite_node_ids": [],
    "description": "表示一个数是另一个数的百分之几，以及它的上下界",
    "status": "active",
-   "chapter_order": 6
+   "chapter_order": 7
   },
   {
    "node_id": "math-6up-d18",
@@ -557,8 +584,8 @@
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "math-6up-u06",
-   "chapter_name": "百分数（一）",
+   "parent_id": "math-6up-u07",
+   "chapter_name": "百分数",
    "knowledge_type": "procedural",
    "micro_nodes": [
     "百分数、小数、分数的互化",
@@ -573,7 +600,7 @@
    ],
    "description": "三种写法之间的转换与计算",
    "status": "active",
-   "chapter_order": 6
+   "chapter_order": 7
   },
   {
    "node_id": "math-6up-d19",
@@ -582,8 +609,8 @@
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "math-6up-u06",
-   "chapter_name": "百分数（一）",
+   "parent_id": "math-6up-u07",
+   "chapter_name": "百分数",
    "knowledge_type": "procedural",
    "micro_nodes": [
     "百分数增减的综合应用"
@@ -596,156 +623,46 @@
    ],
    "description": "增加百分之几、减少百分之几的实际问题",
    "status": "active",
-   "chapter_order": 6
-  },
-  {
-   "node_id": "math-6up-u07",
-   "name": "扇形统计图",
-   "subject": "math",
-   "grade": 6,
-   "semester": "up",
-   "node_type": "aggregate",
-   "parent_id": null,
-   "chapter_name": "扇形统计图",
-   "micro_nodes": [
-    "扇形统计图的读图与制作",
-    "三种统计图的选择"
-   ],
-   "prerequisite_node_ids": [],
-   "description": "扇形统计图",
-   "status": "active",
-   "chapter_order": 7,
-   "week_start": 16
-  },
-  {
-   "node_id": "math-6up-d20",
-   "name": "扇形统计图的读图与制作",
-   "subject": "math",
-   "grade": 6,
-   "semester": "up",
-   "node_type": "diagnostic",
-   "parent_id": "math-6up-u07",
-   "chapter_name": "扇形统计图",
-   "knowledge_type": "representational",
-   "micro_nodes": [
-    "扇形统计图的认识与制作"
-   ],
-   "source_ids": [
-    "mt_g6u_030"
-   ],
-   "prerequisite_node_ids": [
-    "math-6up-d18",
-    "math-6up-d16"
-   ],
-   "description": "用百分比表示各部分与整体的关系",
-   "status": "active",
    "chapter_order": 7
   },
   {
-   "node_id": "math-6up-d21",
-   "name": "三种统计图的选择",
+   "node_id": "math-6up-d29",
+   "name": "用百分数比较数据",
    "subject": "math",
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
    "parent_id": "math-6up-u07",
-   "chapter_name": "扇形统计图",
+   "chapter_name": "百分数",
    "knowledge_type": "conceptual",
    "micro_nodes": [
-    "三种统计图的比较与选择"
+    "用百分数确定达标线"
    ],
-   "source_ids": [
-    "mt_g6u_031"
-   ],
+   "source_ids": [],
    "prerequisite_node_ids": [
-    "math-6up-d20"
+    "math-6up-d17"
    ],
-   "description": "条形、折线、扇形各自擅长什么",
+   "description": "用百分数比较数据，合理定出达标线并说明理由。",
    "status": "active",
    "chapter_order": 7
   },
   {
    "node_id": "math-6up-u08",
-   "name": "数学广角——数与形",
+   "name": "水是生命之源",
    "subject": "math",
    "grade": 6,
    "semester": "up",
    "node_type": "aggregate",
    "parent_id": null,
-   "chapter_name": "数学广角——数与形",
+   "chapter_name": "水是生命之源",
    "micro_nodes": [
-    "数与形结合的规律"
-   ],
-   "prerequisite_node_ids": [],
-   "description": "数学广角——数与形",
-   "status": "active",
-   "chapter_order": 8,
-   "week_start": 18
-  },
-  {
-   "node_id": "math-6up-d22",
-   "name": "数与形结合的规律",
-   "subject": "math",
-   "grade": 6,
-   "semester": "up",
-   "node_type": "diagnostic",
-   "parent_id": "math-6up-u08",
-   "chapter_name": "数学广角——数与形",
-   "knowledge_type": "conceptual",
-   "micro_nodes": [
-    "数形结合：奇数求和的图形规律",
-    "数形结合：无限递减分数的极限规律"
-   ],
-   "source_ids": [
-    "mt_g6u_032",
-    "mt_g6u_033"
-   ],
-   "prerequisite_node_ids": [],
-   "description": "从图形规律抽象出数列，用图形解释数的性质",
-   "status": "active",
-   "chapter_order": 8
-  },
-  {
-   "node_id": "math-6up-u09",
-   "name": "综合与实践",
-   "subject": "math",
-   "grade": 6,
-   "semester": "up",
-   "node_type": "aggregate",
-   "parent_id": null,
-   "chapter_name": "综合与实践",
-   "micro_nodes": [
-    "确定起跑线",
     "节约用水的数据"
    ],
    "prerequisite_node_ids": [],
-   "description": "综合与实践",
+   "description": "主题活动：水是生命之源",
    "status": "active",
-   "chapter_order": 9,
-   "week_start": 19
-  },
-  {
-   "node_id": "math-6up-d23",
-   "name": "确定起跑线",
-   "subject": "math",
-   "grade": 6,
-   "semester": "up",
-   "node_type": "diagnostic",
-   "parent_id": "math-6up-u09",
-   "chapter_name": "综合与实践",
-   "knowledge_type": "procedural",
-   "micro_nodes": [
-    "确定起跑线的数学建模"
-   ],
-   "source_ids": [
-    "mt_g6u_024"
-   ],
-   "prerequisite_node_ids": [
-    "math-6up-d14"
-   ],
-   "description": "跑道弯道长度差与起跑线位置的数学建模",
-   "status": "active",
-   "chapter_order": 9
+   "chapter_order": 8,
+   "week_start": 16
   },
   {
    "node_id": "math-6up-d24",
@@ -754,8 +671,8 @@
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "math-6up-u09",
-   "chapter_name": "综合与实践",
+   "parent_id": "math-6up-u08",
+   "chapter_name": "水是生命之源",
    "knowledge_type": "procedural",
    "micro_nodes": [
     "节约用水的数据统计"
@@ -764,27 +681,28 @@
     "mt_g6u_034"
    ],
    "prerequisite_node_ids": [
-    "math-6up-d18",
-    "math-6up-d20"
+    "math-6up-d18"
    ],
    "description": "用统计与百分数处理用水数据",
    "status": "active",
-   "chapter_order": 9
+   "chapter_order": 8
   },
   {
    "node_id": "math-6up-u-review",
-   "name": "总复习",
+   "name": "复习与关联",
    "node_type": "aggregate",
    "parent_id": null,
-   "chapter_name": "总复习",
+   "chapter_name": "复习与关联",
    "micro_nodes": [
-    "分数四则混合运算"
+    "分数四则混合运算",
+    "应用提升：分数与百分数的实际问题",
+    "数学广角：鸽巢问题"
    ],
    "prerequisite_node_ids": [],
-   "description": "总复习",
+   "description": "复习与关联：整理复习、应用提升、数学广角",
    "status": "active",
-   "chapter_order": 10,
-   "week_start": 20,
+   "chapter_order": 9,
+   "week_start": 17,
    "subject": "math",
    "grade": 6,
    "semester": "up"
@@ -794,7 +712,7 @@
    "name": "分数四则混合运算",
    "node_type": "diagnostic",
    "parent_id": "math-6up-u-review",
-   "chapter_name": "总复习",
+   "chapter_name": "复习与关联",
    "knowledge_type": "procedural",
    "micro_nodes": [
     "分数四则混合运算"
@@ -807,10 +725,51 @@
    ],
    "description": "先乘除后加减、有括号先算括号，带分数也能按顺序算对。",
    "status": "active",
-   "chapter_order": 10,
+   "chapter_order": 9,
    "subject": "math",
    "grade": 6,
    "semester": "up"
+  },
+  {
+   "node_id": "math-6up-d30",
+   "name": "应用提升：分数与百分数的实际问题",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "math-6up-u-review",
+   "chapter_name": "复习与关联",
+   "knowledge_type": "procedural",
+   "micro_nodes": [
+    "用分数、百分数解决实际问题"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [
+    "math-6up-d25"
+   ],
+   "description": "把本册的分数、百分数、圆与统计用到综合情境里。",
+   "status": "active",
+   "chapter_order": 9
+  },
+  {
+   "node_id": "math-6up-d31",
+   "name": "数学广角：鸽巢问题",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "math-6up-u-review",
+   "chapter_name": "复习与关联",
+   "knowledge_type": "conceptual",
+   "micro_nodes": [
+    "鸽巢原理的基本形式",
+    "用鸽巢原理解释现象"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "n+1 个物体放进 n 个抽屉，至少有一个抽屉里有两个。",
+   "status": "active",
+   "chapter_order": 9
   }
  ]
 }

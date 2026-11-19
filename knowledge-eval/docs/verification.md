@@ -11,7 +11,7 @@ python knowledge-eval/scripts/check_schema.py
 ```
 
 ```
-schema: 82 nodes, 42 questions checked against knowledge-eval/schemas
+schema: 82 nodes, 43 questions checked against knowledge-eval/schemas
 schema: ok
 ```
 
@@ -34,11 +34,11 @@ python knowledge-eval/scripts/check_content.py
 ```
 
 ```
-nodes: 28 aggregate, 54 diagnostic
-  math     25 nodes  18 questions  {'易': 6, '中': 6, '难': 6}  ...
+nodes: 27 aggregate, 55 diagnostic
+  math     25 nodes  15 questions  {'易': 5, '中': 5, '难': 5}  ...
   chinese  14 nodes  12 questions  ...
   english  15 nodes  12 questions  ...
-coverage pep-math-6up-v2.json: 38/38 micro points referenced
+coverage pep-math-6up-v3.json: 30/30 micro points referenced
   mt_g6u_001  math-6up-d01     分数乘整数的意义
   ...
   mt_g6u_034  math-6up-d24     节约用水的数据统计
@@ -48,12 +48,12 @@ coverage pep-math-6up-v2.json: 38/38 micro points referenced
 content: ok
 ```
 
-`mt_g6u_036` 这一行就是 P0 的证据：既在快照里，也被一个诊断节点引用，且总数是 38/38。
+`mt_g6u_036` 这一行就是 P0 的证据：既在快照里，也被一个诊断节点引用，且总数是 30/30（v2 时代是 38/38）。
 
 失败样例（删掉 `source_ids` 里的 `mt_g6u_036`）：
 
 ```
-  x coverage: snapshot pep-math-6up-v2.json has 38 micro points, nodes reference 37; missing: mt_g6u_036
+  x coverage: snapshot pep-math-6up-v3.json has 30 micro points, nodes reference 29; missing: mt_g6u_036
 content: 1 problem(s)
 ```
 
@@ -76,7 +76,7 @@ cd knowledge-eval && python -m pytest tests/ -v    # 或在 knowledge-eval 里�
 ```
 
 ```
-15 passed
+20 passed
 ```
 
 | 文件 | 断言什么 |
@@ -149,7 +149,7 @@ python knowledge-eval/scripts/export_from_db.py --check
 ```
 
 ```
-export: ok — 35 nodes, 22 nodes, 25 nodes; 18 questions, 12 questions, 12 questions (checked, not written)
+export: ok — 34 nodes, 22 nodes, 26 nodes; 15 questions, 12 questions, 16 questions (checked, not written)
 ```
 
 `--check` 不写文件，只把库里的行重新投影成 §4.1 / §4.2 的形状，和 `knowledge-eval/data/` 里的文件逐字段比。它比「导回去再导入一遍」强：后者两边共用同一个 bug 时仍然会通过。

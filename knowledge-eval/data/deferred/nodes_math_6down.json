@@ -1,0 +1,214 @@
+{
+ "schema_version": 3,
+ "note": [
+  "六下内容暂存，不属于六上，因此不参与任何校验、导入或报告。",
+  "来源：2026-11-19 按人教版 2024 新版清理六上数据时，从 nodes_math_6up.json 整体移出的三个单元。",
+  "原样保留旧 id（math-6up-*）与 chapter_order，便于对照；迁移成正式六下数据时需重新编号、",
+  "改 semester 为 down，并按六下课本重排 chapter_order —— 在这些事做完之前它只是一份存档。"
+ ],
+ "subject": "math",
+ "grade": 6,
+ "semester": "down",
+ "status": "pending_migration",
+ "nodes": [
+  {
+   "node_id": "math-6up-u04",
+   "name": "比",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "比",
+   "micro_nodes": [
+    "比的意义与基本性质",
+    "按比分配",
+    "比与分数、除法的联系"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "比",
+   "status": "active",
+   "chapter_order": 4,
+   "week_start": 8
+  },
+  {
+   "node_id": "math-6up-d10",
+   "name": "比的意义与基本性质",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "math-6up-u04",
+   "chapter_name": "比",
+   "knowledge_type": "procedural",
+   "micro_nodes": [
+    "比的意义和各部分名称",
+    "比的基本性质与化简比"
+   ],
+   "source_ids": [
+    "mt_g6u_015",
+    "mt_g6u_016"
+   ],
+   "prerequisite_node_ids": [
+    "math-6up-d07"
+   ],
+   "description": "比与除法、分数的关系，化简比",
+   "status": "active",
+   "chapter_order": 4
+  },
+  {
+   "node_id": "math-6up-d11",
+   "name": "按比分配",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "math-6up-u04",
+   "chapter_name": "比",
+   "knowledge_type": "procedural",
+   "micro_nodes": [
+    "按比例分配"
+   ],
+   "source_ids": [
+    "mt_g6u_017"
+   ],
+   "prerequisite_node_ids": [
+    "math-6up-d10",
+    "math-6up-d02"
+   ],
+   "description": "把一个量按给定的比分成几份",
+   "status": "active",
+   "chapter_order": 4
+  },
+  {
+   "node_id": "math-6up-d12",
+   "name": "比与分数、除法的联系",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "math-6up-u04",
+   "chapter_name": "比",
+   "knowledge_type": "conceptual",
+   "micro_nodes": [
+    "比与分数、除法的综合联系"
+   ],
+   "source_ids": [
+    "mt_g6u_037"
+   ],
+   "prerequisite_node_ids": [
+    "math-6up-d13"
+   ],
+   "description": "三者的互相转化与在综合题里的换用",
+   "status": "active",
+   "chapter_order": 4
+  },
+  {
+   "node_id": "math-6up-u07",
+   "name": "扇形统计图",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "扇形统计图",
+   "micro_nodes": [
+    "扇形统计图的读图与制作",
+    "三种统计图的选择"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "扇形统计图",
+   "status": "active",
+   "chapter_order": 7,
+   "week_start": 16
+  },
+  {
+   "node_id": "math-6up-d20",
+   "name": "扇形统计图的读图与制作",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "math-6up-u07",
+   "chapter_name": "扇形统计图",
+   "knowledge_type": "representational",
+   "micro_nodes": [
+    "扇形统计图的认识与制作"
+   ],
+   "source_ids": [
+    "mt_g6u_030"
+   ],
+   "prerequisite_node_ids": [
+    "math-6up-d18",
+    "math-6up-d16"
+   ],
+   "description": "用百分比表示各部分与整体的关系",
+   "status": "active",
+   "chapter_order": 7
+  },
+  {
+   "node_id": "math-6up-d21",
+   "name": "三种统计图的选择",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "math-6up-u07",
+   "chapter_name": "扇形统计图",
+   "knowledge_type": "conceptual",
+   "micro_nodes": [
+    "三种统计图的比较与选择"
+   ],
+   "source_ids": [
+    "mt_g6u_031"
+   ],
+   "prerequisite_node_ids": [
+    "math-6up-d20"
+   ],
+   "description": "条形、折线、扇形各自擅长什么",
+   "status": "active",
+   "chapter_order": 7
+  },
+  {
+   "node_id": "math-6up-u08",
+   "name": "数学广角——数与形",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "数学广角——数与形",
+   "micro_nodes": [
+    "数与形结合的规律"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "数学广角——数与形",
+   "status": "active",
+   "chapter_order": 8,
+   "week_start": 18
+  },
+  {
+   "node_id": "math-6up-d22",
+   "name": "数与形结合的规律",
+   "subject": "math",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "math-6up-u08",
+   "chapter_name": "数学广角——数与形",
+   "knowledge_type": "conceptual",
+   "micro_nodes": [
+    "数形结合：奇数求和的图形规律",
+    "数形结合：无限递减分数的极限规律"
+   ],
+   "source_ids": [
+    "mt_g6u_032",
+    "mt_g6u_033"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "从图形规律抽象出数列，用图形解释数的性质",
+   "status": "active",
+   "chapter_order": 8
+  }
+ ]
+}

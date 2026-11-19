@@ -13,19 +13,19 @@
 ```bash
 # 1) 原始数据直接过 schema（没有翻译层）
 python knowledge-eval/scripts/check_schema.py
-# → schema: 82 nodes, 42 questions checked against knowledge-eval/schemas
+# → schema: 82 nodes, 43 questions checked against knowledge-eval/schemas
 # → schema: ok
 
 # 2) 双向内容校验：快照 38 个微观点 vs 节点引用
 python knowledge-eval/scripts/check_content.py
-# → nodes: 28 aggregate, 54 diagnostic
-# → coverage pep-math-6up-v2.json: 38/38 micro points referenced
+# → nodes: 27 aggregate, 55 diagnostic
+# → coverage pep-math-6up-v3.json: 30/30 micro points referenced
 # →   mt_g6u_036  math-6up-d25     分数四则混合运算      ← 上一版丢掉的那一个
 # → content: ok
 
 # 3) 负样本：把引用删掉/加错，校验必须失败（不含规格测试）
 python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_four_stage_constructible.py
-# → 18 passed
+# → 20 passed
 
 # 4) 离线报告：不连数据库，纯文件
 python knowledge-eval/scripts/evaluate.py \
@@ -42,7 +42,7 @@ python knowledge-eval/scripts/check_db_parity.py --content
 
 # 6) 数据库导出与仓库文件逐字段比对
 python knowledge-eval/scripts/export_from_db.py --check
-# → export: ok — 35 nodes, 22 nodes, 26 nodes; 18 questions, 12 questions, 16 questions
+# → export: ok — 34 nodes, 22 nodes, 26 nodes; 15 questions, 12 questions, 16 questions
 ```
 
 全部命令的预期输出与失败样例见 [docs/verification.md](docs/verification.md)；逐条修复证据见 [docs/fix-evidence-2026-11-19.md](docs/fix-evidence-2026-11-19.md)。
@@ -52,9 +52,9 @@ python knowledge-eval/scripts/export_from_db.py --check
 ```bash
 # 1) 生成覆盖矩阵（220 个 诊断节点 × 能力标签 格子）
 python knowledge-eval/scripts/check_coverage_matrix.py
-# → cells 220: 179 without a question, 0 measured (n>=3), 0 floor-ok, 0 robust-ok
+# → cells 220: 182 without a question, 0 measured (n>=3), 0 floor-ok, 0 robust-ok
 # → target chapter math-6up-u01 分数乘法 (4 diagnostics)
-# → top-up to floor: 614 questions; to robust: 1274
+# → top-up to floor: 617 questions; to robust: 1277
 # → 写 reports/coverage-matrix.json 与 reports/coverage-matrix.md
 
 # 2) 负样本：审查脚本必须能判负
@@ -67,19 +67,19 @@ python -m pytest knowledge-eval/tests/test_four_stage_constructible.py -v
 
 # 4) 常规回归必须仍全绿
 python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_four_stage_constructible.py
-# → 18 passed
+# → 20 passed
 ```
 
 结论与补题清单见 [docs/coverage-audit-2026-11-19.md](docs/coverage-audit-2026-11-19.md)：
-当前 **0 / 220 个格子达到最低档**，补齐到最低档需 614 题（目标章节 `math-6up-u01` 前三个节点需 33 题）。
+当前 **0 / 220 个格子达到最低档**，补齐到最低档需 617 题（目标章节 `math-6up-u02` 分数乘法 前三个节点需 33 题）。
 
 ### 1.2 课本结构覆盖：节点够不够撑起"整册"
 
-上面查的是"题够不够"，这里查的是"节点全不全"——28 个聚合 + 55 个诊断，是否覆盖了三科六年级上册的课本结构。
+上面查的是"题够不够"，这里查的是"节点全不全"——27 个聚合 + 55 个诊断，是否覆盖了三科六年级上册的课本结构。
 
 结论见 [docs/textbook-coverage-2026-11-19.md](docs/textbook-coverage-2026-11-19.md)。**这一版以课本原件（家长拍摄的目录页）为准**，推翻了初版两条凭网络目录得出的结论。三句话：
 
-- **数学问题最大**：数据是 2019 旧版，孩子学的是人教版 2024 新版——"比""扇形统计图""数学广角——数与形"本册不存在（移到六下），缺"生活中的负数"这一新主题；`math-6up-u09` 应拆成三个主题活动。
+- **数学已按 2024 新版重排**：9 个顶层条目（6 单元 + 3 个 ☆ 主题活动）按课本顺序排好；"比""扇形统计图""数与形"三个单元连同 6 个诊断节点、3 道题移到 `data/deferred/`（不删、不导入）；补了负数、用有序数对确定位置、用百分数比较数据、鸽巢问题等 6 个新节点；顺带修掉 3 处先修成环。
 - **语文已按新教材换过课文**：旧版 5 篇（夏天里的成长、伯牙鼓琴、书戴嵩画牛、月光曲、京剧趣谈）已不在六上，`d03` `d08` `d11` `d12` 与 4 道题已改成 26 课里的篇目；7 个语文园地 + 快乐读书吧仍待补。
 - **英语已按 2026 秋新版重建**：删掉新版不存在的《I like my computer》（含 `d05 There be`），补上 U9《I don't feel well》（`d16` 疾病表达 / `d17` 看病建议），`enjoy doing` 迁进 U3 中秋节，10 个单元名与 `chapter_order` 全部对齐课本；新单元配了 4 道题，不是空壳。
 
@@ -95,13 +95,14 @@ python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_fou
 knowledge-eval/
 ├── README.md            ← 你在这里
 ├── data/
-│   ├── nodes_math_6up.json        35 个节点（10 聚合 + 25 诊断）
+│   ├── nodes_math_6up.json        34 个节点（9 聚合 + 25 诊断）
 │   ├── nodes_chinese_6up.json     22 个节点（8 + 14）
-│   ├── nodes_english_6up.json     25 个节点（10 + 15）
-│   ├── questions_math_6up.json    18 题
+│   ├── nodes_english_6up.json     26 个节点（10 + 16）
+│   ├── questions_math_6up.json    15 题
 │   ├── questions_chinese_6up.json 12 题
-│   ├── questions_english_6up.json 12 题
-│   └── taxonomy/pep-math-6up-v2.json   人教版数学六上微观点快照（38 点 / 55 边）
+│   ├── questions_english_6up.json 16 题
+│   ├── deferred/                  暂存：六下的比/扇形统计图/数与形（不校验、不导入）
+│   └── taxonomy/pep-math-6up-v3.json   人教版数学六上微观点快照（30 点 / 40 边）
 ├── schemas/
 │   ├── node.schema.json
 │   ├── question.schema.json
@@ -130,7 +131,8 @@ knowledge-eval/
     ├── data_sources.md         三科版本、逐节点来源、形态说明
     ├── verification.md         每条命令的预期输出与负样本
     ├── fix-evidence-2026-11-19.md   逐条修复证据表
-    └── coverage-audit-2026-11-19.md 题库四阶段覆盖审查（0/220）与补题清单
+    ├── coverage-audit-2026-11-19.md 题库四阶段覆盖审查（0/220）与补题清单
+    └── textbook-coverage-2026-11-19.md 三科课本结构逐条对照与执行记录
 ```
 
 ---

@@ -952,8 +952,10 @@ def main(argv: list[str] | None = None) -> int:
 
         autumn, winter = at(2026, 11, 11), at(2027, 1, 20)
         stage14 = curriculum.resolve(probe, device14, autumn)[1]     # textbook 1 is 数学
-        check("by week 11 the calendar has the child in unit 5",
-              (stage14.current, stage14.source, stage14.reviewing) == (5, "calendar", False),
+        # 2024 版六上：圆第 8 周、☆体育中的数学第 11 周，所以第 11 周落在第 6 个条目。
+        # 这不是把断言改成"跟实现一样"——换数据就得改这里，正是它该起的作用。
+        check("by week 11 the calendar has the child in unit 6",
+              (stage14.current, stage14.source, stage14.reviewing) == (6, "calendar", False),
               str(stage14))
 
         late14 = curriculum.resolve(probe, device14, winter)[1]
@@ -970,7 +972,7 @@ def main(argv: list[str] | None = None) -> int:
         curriculum.set_anchor(probe, device14, datetime.date(2026, 9, 1), autumn)
         restored = curriculum.resolve(probe, device14, autumn)[1]
         check("handing the unit back to the calendar restores week 11's answer",
-              (restored.current, restored.source) == (5, "calendar"), str(restored))
+              (restored.current, restored.source) == (6, "calendar"), str(restored))
 
         # Nothing from a unit the class has not reached — that was implicit before and wrong.
         curriculum.set_unit(probe, device14, 1, 2, autumn)

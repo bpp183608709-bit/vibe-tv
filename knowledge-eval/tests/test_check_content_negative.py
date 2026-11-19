@@ -21,7 +21,7 @@ KE = Path(__file__).resolve().parents[1]
 SCRIPT = KE / "scripts" / "check_content.py"
 MATH_NODES = KE / "data" / "nodes_math_6up.json"
 MATH_QUESTIONS = KE / "data" / "questions_math_6up.json"
-SNAPSHOT = KE / "data" / "taxonomy" / "pep-math-6up-v2.json"
+SNAPSHOT = KE / "data" / "taxonomy" / "pep-math-6up-v3.json"
 
 
 @pytest.fixture
@@ -57,7 +57,10 @@ def review_node(payload: dict) -> dict:
 def test_pristine_data_passes():
     result = run(MATH_NODES)
     assert result.returncode == 0, result.stderr
-    assert "38/38" in result.stdout
+    # Read the expected size from the snapshot: hardcoding 38 is how this test would keep passing
+    # after the taxonomy legitimately changes size (2024 版移出比/统计图/数与形后是 30).
+    total = json.loads(SNAPSHOT.read_text(encoding="utf-8"))["topic_count"]
+    assert f"{total}/{total}" in result.stdout
 
 
 def test_missing_source_id_fails(workdir):
@@ -97,6 +100,20 @@ def test_coverage_counts_come_from_the_files(workdir):
          "--snapshot", str(snapshot_path), "--quiet"],
         capture_output=True, text=True,
     )
-    # the small snapshot leaves 28 referenced ids "extra" — the check must notice, not hardcode 38
+    # the small snapshot leaves every referenced id "extra" — the check must notice, not hardcode a size
     assert result.returncode != 0
     assert "does not have" in result.stderr
+
+
+def test_banned_word_in_a_node_name_fails(workdir):
+    """A diagnostic name is rendered on the television as `review[].topic`, so it must stay neutral.
+
+    This is not hypothetical: renaming the review node to 整理复习… made acceptance.py fail on the wire.
+    """
+    payload = load_math()
+    node = next(n for n in payload["nodes"] if n["node_id"] == "math-6up-d25")
+    node["name"] = "整理复习：分数四则混合运算"
+
+    result = run(write(workdir, payload))
+    assert result.returncode != 0
+    assert "复习" in result.stderr

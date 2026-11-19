@@ -3,7 +3,7 @@ micro-point snapshot against the nodes that claim to cover it.
 
     python knowledge-eval/scripts/check_content.py
     python knowledge-eval/scripts/check_content.py --nodes data/nodes_math_6up.json
-    python knowledge-eval/scripts/check_content.py --snapshot data/taxonomy/pep-math-6up-v2.json
+    python knowledge-eval/scripts/check_content.py --snapshot data/taxonomy/pep-math-6up-v3.json
 
 The reverse check is the one that matters. The previous revision only asked "does every source_id a
 node mentions exist in the snapshot?" — which is satisfied by a tree that mentions 37 of 38 and drops
@@ -33,6 +33,11 @@ MIN_PER_SUBJECT, MAX_PER_SUBJECT = 10, 18
 MIN_NODES_PER_SUBJECT = 3
 MAX_STEM = 120
 SUBJECTS = keval.SUBJECTS
+
+#: A diagnostic node's name is not decoration: it is the `topic` string in the graded payload the
+#: television renders (`review[].topic`). The parent page may say 薄弱/复习, the child's screen may not.
+#: acceptance.py catches the word on the wire; this catches it in the data, where it is cheaper to see.
+BANNED_IN_NODE_NAME = ("薄弱", "复习", "巩固", "加强", "强化", "专项", "达标", "过关")
 
 
 def as_number(text: str) -> Fraction | None:
@@ -88,6 +93,11 @@ def check_nodes(payloads: list[tuple[Path, dict]]) -> tuple[list[str], list[dict
                     errors.append(f"node {node_id}: is its own prerequisite")
                 elif prereq not in diagnostics and not prereq.startswith("mt_g6u_"):
                     errors.append(f"node {node_id}: prerequisite {prereq!r} is neither a diagnostic node nor a taxonomy id")
+        if node["node_type"] == "diagnostic":
+            said = [word for word in BANNED_IN_NODE_NAME if word in node["name"]]
+            if said:
+                errors.append(f"node {node_id}: name {node['name']!r} carries {said}; that string is "
+                              "rendered on the television, so it has to stay neutral")
         source_ids = node.get("source_ids")
         if source_ids:  # empty (or absent) is how a subject with no public taxonomy says so
             if len(source_ids) != len(node["micro_nodes"]):

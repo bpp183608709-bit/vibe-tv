@@ -26,7 +26,7 @@ KE = Path(__file__).resolve().parent.parent
 REPO = KE.parent
 DATA = KE / "data"
 SCHEMAS = KE / "schemas"
-TAXONOMY = DATA / "taxonomy" / "pep-math-6up-v2.json"
+TAXONOMY = DATA / "taxonomy" / "pep-math-6up-v3.json"
 
 SUBJECTS = ("math", "chinese", "english")
 

@@ -1,0 +1,69 @@
+{
+ "schema_version": 1,
+ "note": [
+  "与 nodes_math_6down.json 配套：这些题考的是六下才学的内容，随单元一起暂存。"
+ ],
+ "subject": "math",
+ "status": "pending_migration",
+ "questions": [
+  {
+   "question_id": "math-6up-d11-q01",
+   "diagnostic_node_id": "math-6up-d11",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "把 60 按 2 : 3 分配，两份分别是（  ）",
+   "options": [
+    "20 和 40",
+    "24 和 36",
+    "30 和 30",
+    "12 和 48"
+   ],
+   "correct_answer": "B",
+   "explanation": "总份数 2+3=5，每份 60÷5=12，两份是 24 和 36。",
+   "tags": [
+    "按比分配"
+   ]
+  },
+  {
+   "question_id": "math-6up-d11-q02",
+   "diagnostic_node_id": "math-6up-d11",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个长方形的周长是 40 厘米，长与宽的比是 3 : 2，长是多少厘米？",
+   "accepted": [
+    "12"
+   ],
+   "correct_answer": "12",
+   "explanation": "周长 40 厘米，长+宽 = 20 厘米；按 3:2 分，长 = 20×3/5 = 12 厘米。",
+   "tags": [
+    "按比分配",
+    "周长与比结合"
+   ]
+  },
+  {
+   "question_id": "math-6up-d11-q03",
+   "diagnostic_node_id": "math-6up-d11",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "甲、乙两数的比是 3 : 5，乙数比甲数多 20，甲数是多少？",
+   "accepted": [
+    "30"
+   ],
+   "correct_answer": "30",
+   "explanation": "乙比甲多 5−3 = 2 份，2 份是 20，1 份是 10，甲是 3 份 = 30。",
+   "tags": [
+    "按比分配",
+    "差与份数"
+   ]
+  }
+ ]
+}

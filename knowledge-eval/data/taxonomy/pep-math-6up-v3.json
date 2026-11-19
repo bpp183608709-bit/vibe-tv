@@ -1,16 +1,20 @@
 {
  "_note": [
   "Vendored snapshot of the maths micro-topic taxonomy this tree groups into diagnostic nodes.",
-  "Runtime never fetches it: the importer reads this file, and the network is only touched when a",
-  "human re-cuts the snapshot (see docs/data_sources.md).",
-  "Source: https://github.com/xiaowen-pm/pep-primary-math-taxonomy, data/6-up/{topics,dependencies}.json"
+  "v3 (2026-11-19): trimmed to the PEP 2024 six-up book — 比 / 扇形统计图 / 数与形 moved to 六下,",
+  "so their eight micro points leave with them (mt_g6u_015/016/017/030/031/032/033/037).",
+  "The 2024 additions (有序数对、负数、确定达标线、鸽巢问题) have no upstream id in this source,",
+  "so their diagnostic nodes carry an empty source_ids rather than an invented mt_ id.",
+  "topic_count and edge_count are recomputed from the arrays below, never hand-written."
  ],
  "source": "github:xiaowen-pm/pep-primary-math-taxonomy",
  "source_path": "data/6-up",
- "version": "pep-primary-math-6up-v2",
+ "version": "pep-primary-math-6up-v3",
  "fetched_at": "2026-11-18",
- "topic_count": 38,
- "edge_count": 55,
+ "revised_at": "2026-11-19",
+ "trimmed_from": "pep-primary-math-6up-v2",
+ "topic_count": 30,
+ "edge_count": 40,
  "topics": [
   {
    "id": "mt_g6u_001",
@@ -293,66 +297,6 @@
    ]
   },
   {
-   "id": "mt_g6u_015",
-   "type": "CONCEPTUAL",
-   "subject": "Mathematics",
-   "domain": "数与代数",
-   "name": "比的意义和各部分名称",
-   "description": "理解比的意义：两个数的比表示两个数相除；掌握比的记法（a:b）和各部分名称（前项、比号、后项、比值=前项÷后项）；理解比与除法、分数的对应关系。",
-   "ageRangeStart": 11,
-   "ageRangeEnd": 12,
-   "centrality": 0.85,
-   "evidence": [
-    "能说出比的各部分名称",
-    "能说明比与除法、分数的对应关系",
-    "能区分比值和比的概念"
-   ],
-   "assessmentPrompt": "{{name}}能说出3:4中各部分的名称，并说明与3÷4和3/4的关系吗？",
-   "standards": [
-    "pep-math-2022:6上.4.1"
-   ]
-  },
-  {
-   "id": "mt_g6u_016",
-   "type": "PROCEDURAL",
-   "subject": "Mathematics",
-   "domain": "数与代数",
-   "name": "比的基本性质与化简比",
-   "description": "理解比的基本性质：前项和后项同时乘或除以相同的数（0除外），比值不变；掌握将整数比、分数比、小数比化成最简整数比的方法。",
-   "ageRangeStart": 11,
-   "ageRangeEnd": 12,
-   "centrality": 0.8,
-   "evidence": [
-    "能化简整数比",
-    "能化简含分数或小数的比",
-    "能说明化简比与分数基本性质的联系"
-   ],
-   "assessmentPrompt": "{{name}}能化简0.75:1.5和1/2:3/4吗？",
-   "standards": [
-    "pep-math-2022:6上.4.2"
-   ]
-  },
-  {
-   "id": "mt_g6u_017",
-   "type": "PROCEDURAL",
-   "subject": "Mathematics",
-   "domain": "数与代数",
-   "name": "按比例分配",
-   "description": "能根据给定的比将总量分成各部分，掌握两种方法：等份法（总量÷总份数×各部分份数）和分数法（各部分份数/总份数×总量）；能解决三量连比的分配问题。",
-   "ageRangeStart": 11,
-   "ageRangeEnd": 12,
-   "centrality": 0.8,
-   "evidence": [
-    "能用两种方法解决按比例分配问题",
-    "能解决三量连比的分配问题",
-    "能解决实际情境中的按比分配问题"
-   ],
-   "assessmentPrompt": "{{name}}能按3:2的比将100分配给两人，用两种方法解决吗？",
-   "standards": [
-    "pep-math-2022:6上.4.3"
-   ]
-  },
-  {
    "id": "mt_g6u_018",
    "type": "CONCEPTUAL",
    "subject": "Mathematics",
@@ -593,86 +537,6 @@
    ]
   },
   {
-   "id": "mt_g6u_030",
-   "type": "REPRESENTATIONAL",
-   "subject": "Mathematics",
-   "domain": "统计与概率",
-   "name": "扇形统计图的认识与制作",
-   "description": "理解扇形统计图的特点：整圆代表总体，各扇形大小与对应百分比成正比，直观显示各部分占总体的比例关系；能制作简单的扇形统计图（先算百分比，再用量角器画扇形）。",
-   "ageRangeStart": 11,
-   "ageRangeEnd": 12,
-   "centrality": 0.75,
-   "evidence": [
-    "能读懂扇形统计图并回答问题",
-    "能说明扇形统计图与条形、折线统计图的适用场景",
-    "能根据百分比数据制作扇形统计图"
-   ],
-   "assessmentPrompt": "{{name}}能根据'喜欢乒乓球30%，足球20%，跑步50%'的数据画出扇形统计图吗？",
-   "standards": [
-    "pep-math-2022:6上.8.1"
-   ]
-  },
-  {
-   "id": "mt_g6u_031",
-   "type": "CONCEPTUAL",
-   "subject": "Mathematics",
-   "domain": "统计与概率",
-   "name": "三种统计图的比较与选择",
-   "description": "系统比较三种统计图的特点和适用场景：条形统计图（比较各类别数量大小）、折线统计图（反映数量随时间的变化趋势）、扇形统计图（显示各部分占总体的百分比）。",
-   "ageRangeStart": 11,
-   "ageRangeEnd": 12,
-   "centrality": 0.7,
-   "evidence": [
-    "能根据数据类型和分析目的选择合适的统计图",
-    "能说明三种统计图各自的优点和局限",
-    "能从统计图中提取有效信息并分析"
-   ],
-   "assessmentPrompt": "{{name}}能说明：表示一年12个月销售额变化趋势，应选哪种统计图？为什么？",
-   "standards": [
-    "pep-math-2022:6上.8.2"
-   ]
-  },
-  {
-   "id": "mt_g6u_032",
-   "type": "CONCEPTUAL",
-   "subject": "Mathematics",
-   "domain": "数与代数",
-   "name": "数形结合：奇数求和的图形规律",
-   "description": "通过图形发现并理解规律：前n个连续奇数之和等于n²（1+3+5+...+(2n-1)=n²）；能用正方形添加L形的方式直观验证这一规律，体会数形结合思想。",
-   "ageRangeStart": 11,
-   "ageRangeEnd": 12,
-   "centrality": 0.6,
-   "evidence": [
-    "能发现奇数求和与完全平方数的规律",
-    "能用正方形图形验证这一规律",
-    "能用规律计算前n个奇数的和"
-   ],
-   "assessmentPrompt": "{{name}}能用图形说明为什么1+3+5+7=4²吗？",
-   "standards": [
-    "pep-math-2022:6上.10.1"
-   ]
-  },
-  {
-   "id": "mt_g6u_033",
-   "type": "CONCEPTUAL",
-   "subject": "Mathematics",
-   "domain": "数与代数",
-   "name": "数形结合：无限递减分数的极限规律",
-   "description": "通过图形理解1/2+1/4+1/8+...的无限递减分数之和趋近于1的规律；体会无限逼近的数学思想方法，认识到有限操作无法达到极限值，但可以无限接近。",
-   "ageRangeStart": 11,
-   "ageRangeEnd": 12,
-   "centrality": 0.55,
-   "evidence": [
-    "能用图形表示无限递减分数的累加过程",
-    "能说明为什么这些分数之和趋近于1",
-    "能体会无限逼近这一数学思想方法"
-   ],
-   "assessmentPrompt": "{{name}}能用线段图说明1/2+1/4+1/8+...为什么越来越接近1吗？",
-   "standards": [
-    "pep-math-2022:6上.10.2"
-   ]
-  },
-  {
    "id": "mt_g6u_034",
    "type": "PROCEDURAL",
    "subject": "Mathematics",
@@ -730,26 +594,6 @@
    "assessmentPrompt": "{{name}}能计算1/2÷(1/4+1/6)×2/3吗？",
    "standards": [
     "pep-math-2022:6上.总复习.1"
-   ]
-  },
-  {
-   "id": "mt_g6u_037",
-   "type": "CONCEPTUAL",
-   "subject": "Mathematics",
-   "domain": "数与代数",
-   "name": "比与分数、除法的综合联系",
-   "description": "系统理解比、分数、除法三者的关联：a:b=a÷b=a/b（b≠0），前项对应被除数和分子，后项对应除数和分母，比值对应商和分数值；三者有本质区别（比是关系，除法是运算，分数是数）。",
-   "ageRangeStart": 11,
-   "ageRangeEnd": 12,
-   "centrality": 0.75,
-   "evidence": [
-    "能用表格说明比、除法、分数三者的对应关系",
-    "能解释三者的联系与区别",
-    "能灵活在三种形式之间转化"
-   ],
-   "assessmentPrompt": "{{name}}能说明3:4、3÷4和3/4之间的联系与区别吗？",
-   "standards": [
-    "pep-math-2022:6上.4.4"
    ]
   },
   {
@@ -883,42 +727,6 @@
    "reason": "方程解法需要五年级下册用方程解决问题的能力"
   },
   {
-   "topicId": "mt_g6u_015",
-   "prerequisiteId": "mt_g6u_012",
-   "strength": "hard",
-   "reason": "比的意义本质上是除法，需要先掌握分数除法"
-  },
-  {
-   "topicId": "mt_g6u_015",
-   "prerequisiteId": "mt_g5d_006",
-   "strength": "hard",
-   "reason": "比的意义建立在理解除法和分数意义的基础上"
-  },
-  {
-   "topicId": "mt_g6u_016",
-   "prerequisiteId": "mt_g6u_015",
-   "strength": "hard",
-   "reason": "化简比需要先理解比的基本性质"
-  },
-  {
-   "topicId": "mt_g6u_016",
-   "prerequisiteId": "mt_g5d_008",
-   "strength": "hard",
-   "reason": "化简比需要用到最大公因数"
-  },
-  {
-   "topicId": "mt_g6u_017",
-   "prerequisiteId": "mt_g6u_016",
-   "strength": "hard",
-   "reason": "按比分配需要先掌握化简比和比的运算"
-  },
-  {
-   "topicId": "mt_g6u_017",
-   "prerequisiteId": "mt_g6u_003",
-   "strength": "hard",
-   "reason": "分数法解按比分配需要分数乘法"
-  },
-  {
    "topicId": "mt_g6u_018",
    "prerequisiteId": "mt_g3u_010",
    "strength": "hard",
@@ -997,42 +805,6 @@
    "reason": "百分数取值范围的判断建立在理解增减变化的基础上"
   },
   {
-   "topicId": "mt_g6u_030",
-   "prerequisiteId": "mt_g6u_027",
-   "strength": "hard",
-   "reason": "扇形统计图需要先掌握百分数的计算"
-  },
-  {
-   "topicId": "mt_g6u_030",
-   "prerequisiteId": "mt_g6u_023",
-   "strength": "hard",
-   "reason": "扇形统计图的制作需要理解扇形和圆心角"
-  },
-  {
-   "topicId": "mt_g6u_031",
-   "prerequisiteId": "mt_g6u_030",
-   "strength": "hard",
-   "reason": "三种统计图的比较需要先认识扇形统计图"
-  },
-  {
-   "topicId": "mt_g6u_031",
-   "prerequisiteId": "mt_g4d_018",
-   "strength": "hard",
-   "reason": "需要先了解条形统计图和折线统计图"
-  },
-  {
-   "topicId": "mt_g6u_032",
-   "prerequisiteId": "mt_g5d_018",
-   "strength": "soft",
-   "reason": "图形规律探索需要五年级数学广角的数列规律基础"
-  },
-  {
-   "topicId": "mt_g6u_033",
-   "prerequisiteId": "mt_g6u_032",
-   "strength": "soft",
-   "reason": "无限递减分数规律是数形结合思想的延伸"
-  },
-  {
    "topicId": "mt_g6u_034",
    "prerequisiteId": "mt_g6u_036",
    "strength": "hard",
@@ -1057,18 +829,6 @@
    "reason": "比与分数、除法的综合联系是对比的意义的深化"
   },
   {
-   "topicId": "mt_g6u_037",
-   "prerequisiteId": "mt_g6u_018",
-   "strength": "hard",
-   "reason": "圆与对称性的联系需要先认识圆的基本概念"
-  },
-  {
-   "topicId": "mt_g6u_037",
-   "prerequisiteId": "mt_g4u_012",
-   "strength": "hard",
-   "reason": "轴对称图形的概念在四年级已学习"
-  },
-  {
    "topicId": "mt_g6u_038",
    "prerequisiteId": "mt_g6u_021",
    "strength": "soft",
@@ -1085,12 +845,6 @@
    "prerequisiteId": "mt_g6u_030",
    "strength": "soft",
    "reason": "节约用水实践中制作统计图需要扇形统计图知识"
-  },
-  {
-   "topicId": "mt_g6u_017",
-   "prerequisiteId": "mt_g6u_015",
-   "strength": "hard",
-   "reason": "按比分配需要先掌握比的基本性质"
   },
   {
    "topicId": "mt_g6u_013",

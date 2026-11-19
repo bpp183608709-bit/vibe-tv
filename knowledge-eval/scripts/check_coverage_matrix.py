@@ -162,6 +162,7 @@ def analyse(nodes: list[dict], questions: list[dict]) -> dict:
         "subject": node["subject"],
         "diagnostic_count": len(children.get(node["node_id"], [])),
         "diagnostic_node_ids": children.get(node["node_id"], []),
+        "chapter_order": node["chapter_order"],
     } for node in aggregates]
 
     # The same arithmetic one level up: mastery's window is per diagnostic node, so a node whose four
@@ -244,7 +245,9 @@ def pick_target(chapters: list[dict], override: str | None = None) -> dict | Non
         raise SystemExit(f"no aggregate node {override!r}")
     if not usable:
         return None
-    return max(usable, key=lambda c: (c["diagnostic_count"], -int(c["aggregate_node_id"][-2:])))
+    # Ties go to the earliest chapter by chapter_order, not by slicing the id: `-u-review` has no
+    # number to slice, and the review unit is exactly the kind of chapter that reaches this branch.
+    return max(usable, key=lambda c: (c["diagnostic_count"], -c["chapter_order"]))
 
 
 def markdown(result: dict, target: dict | None) -> str:

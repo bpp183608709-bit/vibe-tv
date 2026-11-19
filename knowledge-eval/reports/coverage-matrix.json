@@ -2,10 +2,378 @@
  "cells": [
   {
    "subject": "math",
+   "diagnostic_node_id": "math-6up-d05",
+   "node_name": "用方向和距离确定位置",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u01",
+   "ability_tag": "理解意义",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d05",
+   "node_name": "用方向和距离确定位置",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u01",
+   "ability_tag": "执行计算",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d05",
+   "node_name": "用方向和距离确定位置",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u01",
+   "ability_tag": "情境应用",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d05",
+   "node_name": "用方向和距离确定位置",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u01",
+   "ability_tag": "辨析变式",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d26",
+   "node_name": "用有序数对确定位置",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u01",
+   "ability_tag": "理解意义",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d26",
+   "node_name": "用有序数对确定位置",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u01",
+   "ability_tag": "执行计算",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d26",
+   "node_name": "用有序数对确定位置",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u01",
+   "ability_tag": "情境应用",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d26",
+   "node_name": "用有序数对确定位置",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u01",
+   "ability_tag": "辨析变式",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
    "diagnostic_node_id": "math-6up-d01",
    "node_name": "分数乘整数",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u01",
+   "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "理解意义",
    "questions": {
     "easy": 1,
@@ -53,7 +421,7 @@
    "diagnostic_node_id": "math-6up-d01",
    "node_name": "分数乘整数",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u01",
+   "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "执行计算",
    "questions": {
     "easy": 0,
@@ -101,7 +469,7 @@
    "diagnostic_node_id": "math-6up-d01",
    "node_name": "分数乘整数",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u01",
+   "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "情境应用",
    "questions": {
     "easy": 0,
@@ -147,7 +515,7 @@
    "diagnostic_node_id": "math-6up-d01",
    "node_name": "分数乘整数",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u01",
+   "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "辨析变式",
    "questions": {
     "easy": 0,
@@ -193,559 +561,7 @@
   {
    "subject": "math",
    "diagnostic_node_id": "math-6up-d02",
-   "node_name": "一个数乘分数与分数乘分数",
-   "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u01",
-   "ability_tag": "理解意义",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d02",
-   "node_name": "一个数乘分数与分数乘分数",
-   "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u01",
-   "ability_tag": "执行计算",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d02",
-   "node_name": "一个数乘分数与分数乘分数",
-   "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u01",
-   "ability_tag": "情境应用",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d02",
-   "node_name": "一个数乘分数与分数乘分数",
-   "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u01",
-   "ability_tag": "辨析变式",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d03",
-   "node_name": "分数乘法的运算律与应用题",
-   "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u01",
-   "ability_tag": "理解意义",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d03",
-   "node_name": "分数乘法的运算律与应用题",
-   "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u01",
-   "ability_tag": "执行计算",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d03",
-   "node_name": "分数乘法的运算律与应用题",
-   "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u01",
-   "ability_tag": "情境应用",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d03",
-   "node_name": "分数乘法的运算律与应用题",
-   "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u01",
-   "ability_tag": "辨析变式",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d04",
-   "node_name": "积与因数的大小关系",
-   "knowledge_type": "conceptual",
-   "parent_aggregate_node_id": "math-6up-u01",
-   "ability_tag": "理解意义",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d04",
-   "node_name": "积与因数的大小关系",
-   "knowledge_type": "conceptual",
-   "parent_aggregate_node_id": "math-6up-u01",
-   "ability_tag": "执行计算",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d04",
-   "node_name": "积与因数的大小关系",
-   "knowledge_type": "conceptual",
-   "parent_aggregate_node_id": "math-6up-u01",
-   "ability_tag": "情境应用",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d04",
-   "node_name": "积与因数的大小关系",
-   "knowledge_type": "conceptual",
-   "parent_aggregate_node_id": "math-6up-u01",
-   "ability_tag": "辨析变式",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d05",
-   "node_name": "用方向和距离确定位置",
+   "node_name": "一个数乘分数",
    "knowledge_type": "procedural",
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "理解意义",
@@ -790,8 +606,8 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d05",
-   "node_name": "用方向和距离确定位置",
+   "diagnostic_node_id": "math-6up-d02",
+   "node_name": "一个数乘分数",
    "knowledge_type": "procedural",
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "执行计算",
@@ -836,8 +652,8 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d05",
-   "node_name": "用方向和距离确定位置",
+   "diagnostic_node_id": "math-6up-d02",
+   "node_name": "一个数乘分数",
    "knowledge_type": "procedural",
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "情境应用",
@@ -882,9 +698,377 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d05",
-   "node_name": "用方向和距离确定位置",
+   "diagnostic_node_id": "math-6up-d02",
+   "node_name": "一个数乘分数",
    "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u02",
+   "ability_tag": "辨析变式",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d03",
+   "node_name": "分数、小数混合运算与运算律",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u02",
+   "ability_tag": "理解意义",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d03",
+   "node_name": "分数、小数混合运算与运算律",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u02",
+   "ability_tag": "执行计算",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d03",
+   "node_name": "分数、小数混合运算与运算律",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u02",
+   "ability_tag": "情境应用",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d03",
+   "node_name": "分数、小数混合运算与运算律",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u02",
+   "ability_tag": "辨析变式",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d04",
+   "node_name": "积与因数的大小关系",
+   "knowledge_type": "conceptual",
+   "parent_aggregate_node_id": "math-6up-u02",
+   "ability_tag": "理解意义",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d04",
+   "node_name": "积与因数的大小关系",
+   "knowledge_type": "conceptual",
+   "parent_aggregate_node_id": "math-6up-u02",
+   "ability_tag": "执行计算",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d04",
+   "node_name": "积与因数的大小关系",
+   "knowledge_type": "conceptual",
+   "parent_aggregate_node_id": "math-6up-u02",
+   "ability_tag": "情境应用",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d04",
+   "node_name": "积与因数的大小关系",
+   "knowledge_type": "conceptual",
    "parent_aggregate_node_id": "math-6up-u02",
    "ability_tag": "辨析变式",
    "questions": {
@@ -1670,9 +1854,9 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d10",
-   "node_name": "比的意义与基本性质",
-   "knowledge_type": "procedural",
+   "diagnostic_node_id": "math-6up-d27",
+   "node_name": "负数的意义与读写",
+   "knowledge_type": "conceptual",
    "parent_aggregate_node_id": "math-6up-u04",
    "ability_tag": "理解意义",
    "questions": {
@@ -1716,9 +1900,9 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d10",
-   "node_name": "比的意义与基本性质",
-   "knowledge_type": "procedural",
+   "diagnostic_node_id": "math-6up-d27",
+   "node_name": "负数的意义与读写",
+   "knowledge_type": "conceptual",
    "parent_aggregate_node_id": "math-6up-u04",
    "ability_tag": "执行计算",
    "questions": {
@@ -1762,9 +1946,9 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d10",
-   "node_name": "比的意义与基本性质",
-   "knowledge_type": "procedural",
+   "diagnostic_node_id": "math-6up-d27",
+   "node_name": "负数的意义与读写",
+   "knowledge_type": "conceptual",
    "parent_aggregate_node_id": "math-6up-u04",
    "ability_tag": "情境应用",
    "questions": {
@@ -1808,9 +1992,9 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d10",
-   "node_name": "比的意义与基本性质",
-   "knowledge_type": "procedural",
+   "diagnostic_node_id": "math-6up-d27",
+   "node_name": "负数的意义与读写",
+   "knowledge_type": "conceptual",
    "parent_aggregate_node_id": "math-6up-u04",
    "ability_tag": "辨析变式",
    "questions": {
@@ -1854,199 +2038,9 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d11",
-   "node_name": "按比分配",
+   "diagnostic_node_id": "math-6up-d28",
+   "node_name": "负数在生活中的应用",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u04",
-   "ability_tag": "理解意义",
-   "questions": {
-    "easy": 1,
-    "medium": 0,
-    "hard": 0,
-    "total": 1
-   },
-   "question_ids": [
-    "math-6up-d11-q01"
-   ],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 0,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d11",
-   "node_name": "按比分配",
-   "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u04",
-   "ability_tag": "执行计算",
-   "questions": {
-    "easy": 0,
-    "medium": 1,
-    "hard": 0,
-    "total": 1
-   },
-   "question_ids": [
-    "math-6up-d11-q02"
-   ],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 0,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 1,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d11",
-   "node_name": "按比分配",
-   "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u04",
-   "ability_tag": "情境应用",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 1,
-    "total": 1
-   },
-   "question_ids": [
-    "math-6up-d11-q03"
-   ],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 0
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 1
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d11",
-   "node_name": "按比分配",
-   "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u04",
-   "ability_tag": "辨析变式",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d12",
-   "node_name": "比与分数、除法的联系",
-   "knowledge_type": "conceptual",
    "parent_aggregate_node_id": "math-6up-u04",
    "ability_tag": "理解意义",
    "questions": {
@@ -2090,9 +2084,9 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d12",
-   "node_name": "比与分数、除法的联系",
-   "knowledge_type": "conceptual",
+   "diagnostic_node_id": "math-6up-d28",
+   "node_name": "负数在生活中的应用",
+   "knowledge_type": "procedural",
    "parent_aggregate_node_id": "math-6up-u04",
    "ability_tag": "执行计算",
    "questions": {
@@ -2136,9 +2130,9 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d12",
-   "node_name": "比与分数、除法的联系",
-   "knowledge_type": "conceptual",
+   "diagnostic_node_id": "math-6up-d28",
+   "node_name": "负数在生活中的应用",
+   "knowledge_type": "procedural",
    "parent_aggregate_node_id": "math-6up-u04",
    "ability_tag": "情境应用",
    "questions": {
@@ -2182,9 +2176,9 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d12",
-   "node_name": "比与分数、除法的联系",
-   "knowledge_type": "conceptual",
+   "diagnostic_node_id": "math-6up-d28",
+   "node_name": "负数在生活中的应用",
+   "knowledge_type": "procedural",
    "parent_aggregate_node_id": "math-6up-u04",
    "ability_tag": "辨析变式",
    "questions": {
@@ -2970,10 +2964,194 @@
   },
   {
    "subject": "math",
+   "diagnostic_node_id": "math-6up-d23",
+   "node_name": "确定起跑线",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u06",
+   "ability_tag": "理解意义",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d23",
+   "node_name": "确定起跑线",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u06",
+   "ability_tag": "执行计算",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d23",
+   "node_name": "确定起跑线",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u06",
+   "ability_tag": "情境应用",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d23",
+   "node_name": "确定起跑线",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u06",
+   "ability_tag": "辨析变式",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
    "diagnostic_node_id": "math-6up-d17",
    "node_name": "百分数的意义与取值范围",
    "knowledge_type": "conceptual",
-   "parent_aggregate_node_id": "math-6up-u06",
+   "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "理解意义",
    "questions": {
     "easy": 1,
@@ -3021,7 +3199,7 @@
    "diagnostic_node_id": "math-6up-d17",
    "node_name": "百分数的意义与取值范围",
    "knowledge_type": "conceptual",
-   "parent_aggregate_node_id": "math-6up-u06",
+   "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "执行计算",
    "questions": {
     "easy": 0,
@@ -3067,7 +3245,7 @@
    "diagnostic_node_id": "math-6up-d17",
    "node_name": "百分数的意义与取值范围",
    "knowledge_type": "conceptual",
-   "parent_aggregate_node_id": "math-6up-u06",
+   "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "情境应用",
    "questions": {
     "easy": 0,
@@ -3115,7 +3293,7 @@
    "diagnostic_node_id": "math-6up-d17",
    "node_name": "百分数的意义与取值范围",
    "knowledge_type": "conceptual",
-   "parent_aggregate_node_id": "math-6up-u06",
+   "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "辨析变式",
    "questions": {
     "easy": 0,
@@ -3163,7 +3341,7 @@
    "diagnostic_node_id": "math-6up-d18",
    "node_name": "百分数与小数、分数的互化",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u06",
+   "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "理解意义",
    "questions": {
     "easy": 0,
@@ -3209,7 +3387,7 @@
    "diagnostic_node_id": "math-6up-d18",
    "node_name": "百分数与小数、分数的互化",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u06",
+   "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "执行计算",
    "questions": {
     "easy": 0,
@@ -3255,7 +3433,7 @@
    "diagnostic_node_id": "math-6up-d18",
    "node_name": "百分数与小数、分数的互化",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u06",
+   "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "情境应用",
    "questions": {
     "easy": 0,
@@ -3301,7 +3479,7 @@
    "diagnostic_node_id": "math-6up-d18",
    "node_name": "百分数与小数、分数的互化",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u06",
+   "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "辨析变式",
    "questions": {
     "easy": 0,
@@ -3347,7 +3525,7 @@
    "diagnostic_node_id": "math-6up-d19",
    "node_name": "百分数增减的综合应用",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u06",
+   "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "理解意义",
    "questions": {
     "easy": 0,
@@ -3393,7 +3571,7 @@
    "diagnostic_node_id": "math-6up-d19",
    "node_name": "百分数增减的综合应用",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u06",
+   "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "执行计算",
    "questions": {
     "easy": 0,
@@ -3439,7 +3617,7 @@
    "diagnostic_node_id": "math-6up-d19",
    "node_name": "百分数增减的综合应用",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u06",
+   "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "情境应用",
    "questions": {
     "easy": 0,
@@ -3485,190 +3663,6 @@
    "diagnostic_node_id": "math-6up-d19",
    "node_name": "百分数增减的综合应用",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u06",
-   "ability_tag": "辨析变式",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d20",
-   "node_name": "扇形统计图的读图与制作",
-   "knowledge_type": "representational",
-   "parent_aggregate_node_id": "math-6up-u07",
-   "ability_tag": "理解意义",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d20",
-   "node_name": "扇形统计图的读图与制作",
-   "knowledge_type": "representational",
-   "parent_aggregate_node_id": "math-6up-u07",
-   "ability_tag": "执行计算",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d20",
-   "node_name": "扇形统计图的读图与制作",
-   "knowledge_type": "representational",
-   "parent_aggregate_node_id": "math-6up-u07",
-   "ability_tag": "情境应用",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d20",
-   "node_name": "扇形统计图的读图与制作",
-   "knowledge_type": "representational",
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "辨析变式",
    "questions": {
@@ -3712,8 +3706,8 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d21",
-   "node_name": "三种统计图的选择",
+   "diagnostic_node_id": "math-6up-d29",
+   "node_name": "用百分数比较数据",
    "knowledge_type": "conceptual",
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "理解意义",
@@ -3758,8 +3752,8 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d21",
-   "node_name": "三种统计图的选择",
+   "diagnostic_node_id": "math-6up-d29",
+   "node_name": "用百分数比较数据",
    "knowledge_type": "conceptual",
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "执行计算",
@@ -3804,8 +3798,8 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d21",
-   "node_name": "三种统计图的选择",
+   "diagnostic_node_id": "math-6up-d29",
+   "node_name": "用百分数比较数据",
    "knowledge_type": "conceptual",
    "parent_aggregate_node_id": "math-6up-u07",
    "ability_tag": "情境应用",
@@ -3850,378 +3844,10 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d21",
-   "node_name": "三种统计图的选择",
+   "diagnostic_node_id": "math-6up-d29",
+   "node_name": "用百分数比较数据",
    "knowledge_type": "conceptual",
    "parent_aggregate_node_id": "math-6up-u07",
-   "ability_tag": "辨析变式",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d22",
-   "node_name": "数与形结合的规律",
-   "knowledge_type": "conceptual",
-   "parent_aggregate_node_id": "math-6up-u08",
-   "ability_tag": "理解意义",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d22",
-   "node_name": "数与形结合的规律",
-   "knowledge_type": "conceptual",
-   "parent_aggregate_node_id": "math-6up-u08",
-   "ability_tag": "执行计算",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d22",
-   "node_name": "数与形结合的规律",
-   "knowledge_type": "conceptual",
-   "parent_aggregate_node_id": "math-6up-u08",
-   "ability_tag": "情境应用",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d22",
-   "node_name": "数与形结合的规律",
-   "knowledge_type": "conceptual",
-   "parent_aggregate_node_id": "math-6up-u08",
-   "ability_tag": "辨析变式",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d23",
-   "node_name": "确定起跑线",
-   "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u09",
-   "ability_tag": "理解意义",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d23",
-   "node_name": "确定起跑线",
-   "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u09",
-   "ability_tag": "执行计算",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d23",
-   "node_name": "确定起跑线",
-   "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u09",
-   "ability_tag": "情境应用",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d23",
-   "node_name": "确定起跑线",
-   "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u09",
    "ability_tag": "辨析变式",
    "questions": {
     "easy": 0,
@@ -4267,7 +3893,7 @@
    "diagnostic_node_id": "math-6up-d24",
    "node_name": "节约用水的数据",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u09",
+   "parent_aggregate_node_id": "math-6up-u08",
    "ability_tag": "理解意义",
    "questions": {
     "easy": 0,
@@ -4313,7 +3939,7 @@
    "diagnostic_node_id": "math-6up-d24",
    "node_name": "节约用水的数据",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u09",
+   "parent_aggregate_node_id": "math-6up-u08",
    "ability_tag": "执行计算",
    "questions": {
     "easy": 0,
@@ -4359,7 +3985,7 @@
    "diagnostic_node_id": "math-6up-d24",
    "node_name": "节约用水的数据",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u09",
+   "parent_aggregate_node_id": "math-6up-u08",
    "ability_tag": "情境应用",
    "questions": {
     "easy": 0,
@@ -4405,7 +4031,7 @@
    "diagnostic_node_id": "math-6up-d24",
    "node_name": "节约用水的数据",
    "knowledge_type": "procedural",
-   "parent_aggregate_node_id": "math-6up-u09",
+   "parent_aggregate_node_id": "math-6up-u08",
    "ability_tag": "辨析变式",
    "questions": {
     "easy": 0,
@@ -4627,6 +4253,374 @@
      "easy": 2,
      "medium": 2,
      "hard": 1
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d30",
+   "node_name": "应用提升：分数与百分数的实际问题",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u-review",
+   "ability_tag": "理解意义",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d30",
+   "node_name": "应用提升：分数与百分数的实际问题",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u-review",
+   "ability_tag": "执行计算",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d30",
+   "node_name": "应用提升：分数与百分数的实际问题",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u-review",
+   "ability_tag": "情境应用",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d30",
+   "node_name": "应用提升：分数与百分数的实际问题",
+   "knowledge_type": "procedural",
+   "parent_aggregate_node_id": "math-6up-u-review",
+   "ability_tag": "辨析变式",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d31",
+   "node_name": "数学广角：鸽巢问题",
+   "knowledge_type": "conceptual",
+   "parent_aggregate_node_id": "math-6up-u-review",
+   "ability_tag": "理解意义",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d31",
+   "node_name": "数学广角：鸽巢问题",
+   "knowledge_type": "conceptual",
+   "parent_aggregate_node_id": "math-6up-u-review",
+   "ability_tag": "执行计算",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d31",
+   "node_name": "数学广角：鸽巢问题",
+   "knowledge_type": "conceptual",
+   "parent_aggregate_node_id": "math-6up-u-review",
+   "ability_tag": "情境应用",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d31",
+   "node_name": "数学广角：鸽巢问题",
+   "knowledge_type": "conceptual",
+   "parent_aggregate_node_id": "math-6up-u-review",
+   "ability_tag": "辨析变式",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": [
@@ -10211,9 +10205,37 @@
  "nodes": [
   {
    "subject": "math",
+   "diagnostic_node_id": "math-6up-d05",
+   "node_name": "用方向和距离确定位置",
+   "parent_aggregate_node_id": "math-6up-u01",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "reachable_levels": [],
+   "four_stage": false
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d26",
+   "node_name": "用有序数对确定位置",
+   "parent_aggregate_node_id": "math-6up-u01",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "reachable_levels": [],
+   "four_stage": false
+  },
+  {
+   "subject": "math",
    "diagnostic_node_id": "math-6up-d01",
    "node_name": "分数乘整数",
-   "parent_aggregate_node_id": "math-6up-u01",
+   "parent_aggregate_node_id": "math-6up-u02",
    "questions": {
     "easy": 1,
     "medium": 1,
@@ -10231,8 +10253,8 @@
   {
    "subject": "math",
    "diagnostic_node_id": "math-6up-d02",
-   "node_name": "一个数乘分数与分数乘分数",
-   "parent_aggregate_node_id": "math-6up-u01",
+   "node_name": "一个数乘分数",
+   "parent_aggregate_node_id": "math-6up-u02",
    "questions": {
     "easy": 0,
     "medium": 0,
@@ -10245,8 +10267,8 @@
   {
    "subject": "math",
    "diagnostic_node_id": "math-6up-d03",
-   "node_name": "分数乘法的运算律与应用题",
-   "parent_aggregate_node_id": "math-6up-u01",
+   "node_name": "分数、小数混合运算与运算律",
+   "parent_aggregate_node_id": "math-6up-u02",
    "questions": {
     "easy": 0,
     "medium": 0,
@@ -10260,20 +10282,6 @@
    "subject": "math",
    "diagnostic_node_id": "math-6up-d04",
    "node_name": "积与因数的大小关系",
-   "parent_aggregate_node_id": "math-6up-u01",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "reachable_levels": [],
-   "four_stage": false
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d05",
-   "node_name": "用方向和距离确定位置",
    "parent_aggregate_node_id": "math-6up-u02",
    "questions": {
     "easy": 0,
@@ -10347,8 +10355,8 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d10",
-   "node_name": "比的意义与基本性质",
+   "diagnostic_node_id": "math-6up-d27",
+   "node_name": "负数的意义与读写",
    "parent_aggregate_node_id": "math-6up-u04",
    "questions": {
     "easy": 0,
@@ -10361,27 +10369,8 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d11",
-   "node_name": "按比分配",
-   "parent_aggregate_node_id": "math-6up-u04",
-   "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   "reachable_levels": [
-    0,
-    1,
-    2,
-    3
-   ],
-   "four_stage": true
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d12",
-   "node_name": "比与分数、除法的联系",
+   "diagnostic_node_id": "math-6up-d28",
+   "node_name": "负数在生活中的应用",
    "parent_aggregate_node_id": "math-6up-u04",
    "questions": {
     "easy": 0,
@@ -10455,9 +10444,23 @@
   },
   {
    "subject": "math",
+   "diagnostic_node_id": "math-6up-d23",
+   "node_name": "确定起跑线",
+   "parent_aggregate_node_id": "math-6up-u06",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "reachable_levels": [],
+   "four_stage": false
+  },
+  {
+   "subject": "math",
    "diagnostic_node_id": "math-6up-d17",
    "node_name": "百分数的意义与取值范围",
-   "parent_aggregate_node_id": "math-6up-u06",
+   "parent_aggregate_node_id": "math-6up-u07",
    "questions": {
     "easy": 1,
     "medium": 1,
@@ -10476,7 +10479,7 @@
    "subject": "math",
    "diagnostic_node_id": "math-6up-d18",
    "node_name": "百分数与小数、分数的互化",
-   "parent_aggregate_node_id": "math-6up-u06",
+   "parent_aggregate_node_id": "math-6up-u07",
    "questions": {
     "easy": 0,
     "medium": 0,
@@ -10490,20 +10493,6 @@
    "subject": "math",
    "diagnostic_node_id": "math-6up-d19",
    "node_name": "百分数增减的综合应用",
-   "parent_aggregate_node_id": "math-6up-u06",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "reachable_levels": [],
-   "four_stage": false
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d20",
-   "node_name": "扇形统计图的读图与制作",
    "parent_aggregate_node_id": "math-6up-u07",
    "questions": {
     "easy": 0,
@@ -10516,37 +10505,9 @@
   },
   {
    "subject": "math",
-   "diagnostic_node_id": "math-6up-d21",
-   "node_name": "三种统计图的选择",
+   "diagnostic_node_id": "math-6up-d29",
+   "node_name": "用百分数比较数据",
    "parent_aggregate_node_id": "math-6up-u07",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "reachable_levels": [],
-   "four_stage": false
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d22",
-   "node_name": "数与形结合的规律",
-   "parent_aggregate_node_id": "math-6up-u08",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "reachable_levels": [],
-   "four_stage": false
-  },
-  {
-   "subject": "math",
-   "diagnostic_node_id": "math-6up-d23",
-   "node_name": "确定起跑线",
-   "parent_aggregate_node_id": "math-6up-u09",
    "questions": {
     "easy": 0,
     "medium": 0,
@@ -10560,7 +10521,7 @@
    "subject": "math",
    "diagnostic_node_id": "math-6up-d24",
    "node_name": "节约用水的数据",
-   "parent_aggregate_node_id": "math-6up-u09",
+   "parent_aggregate_node_id": "math-6up-u08",
    "questions": {
     "easy": 0,
     "medium": 0,
@@ -10588,6 +10549,34 @@
     3
    ],
    "four_stage": true
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d30",
+   "node_name": "应用提升：分数与百分数的实际问题",
+   "parent_aggregate_node_id": "math-6up-u-review",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "reachable_levels": [],
+   "four_stage": false
+  },
+  {
+   "subject": "math",
+   "diagnostic_node_id": "math-6up-d31",
+   "node_name": "数学广角：鸽巢问题",
+   "parent_aggregate_node_id": "math-6up-u-review",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "reachable_levels": [],
+   "four_stage": false
   },
   {
    "subject": "chinese",
@@ -11053,6 +11042,17 @@
  "chapters": [
   {
    "aggregate_node_id": "math-6up-u01",
+   "aggregate_name": "确定位置",
+   "subject": "math",
+   "diagnostic_count": 2,
+   "diagnostic_node_ids": [
+    "math-6up-d05",
+    "math-6up-d26"
+   ],
+   "chapter_order": 1
+  },
+  {
+   "aggregate_node_id": "math-6up-u02",
    "aggregate_name": "分数乘法",
    "subject": "math",
    "diagnostic_count": 4,
@@ -11061,16 +11061,8 @@
     "math-6up-d02",
     "math-6up-d03",
     "math-6up-d04"
-   ]
-  },
-  {
-   "aggregate_node_id": "math-6up-u02",
-   "aggregate_name": "位置与方向（二）",
-   "subject": "math",
-   "diagnostic_count": 1,
-   "diagnostic_node_ids": [
-    "math-6up-d05"
-   ]
+   ],
+   "chapter_order": 2
   },
   {
    "aggregate_node_id": "math-6up-u03",
@@ -11082,18 +11074,19 @@
     "math-6up-d07",
     "math-6up-d08",
     "math-6up-d09"
-   ]
+   ],
+   "chapter_order": 3
   },
   {
    "aggregate_node_id": "math-6up-u04",
-   "aggregate_name": "比",
+   "aggregate_name": "生活中的负数",
    "subject": "math",
-   "diagnostic_count": 3,
+   "diagnostic_count": 2,
    "diagnostic_node_ids": [
-    "math-6up-d10",
-    "math-6up-d11",
-    "math-6up-d12"
-   ]
+    "math-6up-d27",
+    "math-6up-d28"
+   ],
+   "chapter_order": 4
   },
   {
    "aggregate_node_id": "math-6up-u05",
@@ -11105,56 +11098,53 @@
     "math-6up-d14",
     "math-6up-d15",
     "math-6up-d16"
-   ]
+   ],
+   "chapter_order": 5
   },
   {
    "aggregate_node_id": "math-6up-u06",
-   "aggregate_name": "百分数（一）",
+   "aggregate_name": "体育中的数学",
    "subject": "math",
-   "diagnostic_count": 3,
+   "diagnostic_count": 1,
    "diagnostic_node_ids": [
-    "math-6up-d17",
-    "math-6up-d18",
-    "math-6up-d19"
-   ]
+    "math-6up-d23"
+   ],
+   "chapter_order": 6
   },
   {
    "aggregate_node_id": "math-6up-u07",
-   "aggregate_name": "扇形统计图",
+   "aggregate_name": "百分数",
    "subject": "math",
-   "diagnostic_count": 2,
+   "diagnostic_count": 4,
    "diagnostic_node_ids": [
-    "math-6up-d20",
-    "math-6up-d21"
-   ]
+    "math-6up-d17",
+    "math-6up-d18",
+    "math-6up-d19",
+    "math-6up-d29"
+   ],
+   "chapter_order": 7
   },
   {
    "aggregate_node_id": "math-6up-u08",
-   "aggregate_name": "数学广角——数与形",
+   "aggregate_name": "水是生命之源",
    "subject": "math",
    "diagnostic_count": 1,
    "diagnostic_node_ids": [
-    "math-6up-d22"
-   ]
-  },
-  {
-   "aggregate_node_id": "math-6up-u09",
-   "aggregate_name": "综合与实践",
-   "subject": "math",
-   "diagnostic_count": 2,
-   "diagnostic_node_ids": [
-    "math-6up-d23",
     "math-6up-d24"
-   ]
+   ],
+   "chapter_order": 8
   },
   {
    "aggregate_node_id": "math-6up-u-review",
-   "aggregate_name": "总复习",
+   "aggregate_name": "复习与关联",
    "subject": "math",
-   "diagnostic_count": 1,
+   "diagnostic_count": 3,
    "diagnostic_node_ids": [
-    "math-6up-d25"
-   ]
+    "math-6up-d25",
+    "math-6up-d30",
+    "math-6up-d31"
+   ],
+   "chapter_order": 9
   },
   {
    "aggregate_node_id": "chinese-6up-u01",
@@ -11164,7 +11154,8 @@
    "diagnostic_node_ids": [
     "chinese-6up-d01",
     "chinese-6up-d02"
-   ]
+   ],
+   "chapter_order": 1
   },
   {
    "aggregate_node_id": "chinese-6up-u02",
@@ -11174,7 +11165,8 @@
    "diagnostic_node_ids": [
     "chinese-6up-d03",
     "chinese-6up-d04"
-   ]
+   ],
+   "chapter_order": 2
   },
   {
    "aggregate_node_id": "chinese-6up-u03",
@@ -11183,7 +11175,8 @@
    "diagnostic_count": 1,
    "diagnostic_node_ids": [
     "chinese-6up-d05"
-   ]
+   ],
+   "chapter_order": 3
   },
   {
    "aggregate_node_id": "chinese-6up-u04",
@@ -11193,7 +11186,8 @@
    "diagnostic_node_ids": [
     "chinese-6up-d06",
     "chinese-6up-d07"
-   ]
+   ],
+   "chapter_order": 4
   },
   {
    "aggregate_node_id": "chinese-6up-u05",
@@ -11202,7 +11196,8 @@
    "diagnostic_count": 1,
    "diagnostic_node_ids": [
     "chinese-6up-d08"
-   ]
+   ],
+   "chapter_order": 5
   },
   {
    "aggregate_node_id": "chinese-6up-u06",
@@ -11212,7 +11207,8 @@
    "diagnostic_node_ids": [
     "chinese-6up-d09",
     "chinese-6up-d10"
-   ]
+   ],
+   "chapter_order": 6
   },
   {
    "aggregate_node_id": "chinese-6up-u07",
@@ -11222,7 +11218,8 @@
    "diagnostic_node_ids": [
     "chinese-6up-d11",
     "chinese-6up-d12"
-   ]
+   ],
+   "chapter_order": 7
   },
   {
    "aggregate_node_id": "chinese-6up-u08",
@@ -11232,7 +11229,8 @@
    "diagnostic_node_ids": [
     "chinese-6up-d13",
     "chinese-6up-d14"
-   ]
+   ],
+   "chapter_order": 8
   },
   {
    "aggregate_node_id": "english-6up-u01",
@@ -11242,7 +11240,8 @@
    "diagnostic_node_ids": [
     "english-6up-d01",
     "english-6up-d02"
-   ]
+   ],
+   "chapter_order": 1
   },
   {
    "aggregate_node_id": "english-6up-u02",
@@ -11252,7 +11251,8 @@
    "diagnostic_node_ids": [
     "english-6up-d03",
     "english-6up-d04"
-   ]
+   ],
+   "chapter_order": 2
   },
   {
    "aggregate_node_id": "english-6up-u03",
@@ -11262,7 +11262,8 @@
    "diagnostic_node_ids": [
     "english-6up-d06",
     "english-6up-d07"
-   ]
+   ],
+   "chapter_order": 3
   },
   {
    "aggregate_node_id": "english-6up-u04",
@@ -11272,7 +11273,8 @@
    "diagnostic_node_ids": [
     "english-6up-d08",
     "english-6up-d09"
-   ]
+   ],
+   "chapter_order": 4
   },
   {
    "aggregate_node_id": "english-6up-u05",
@@ -11281,7 +11283,8 @@
    "diagnostic_count": 1,
    "diagnostic_node_ids": [
     "english-6up-d10"
-   ]
+   ],
+   "chapter_order": 5
   },
   {
    "aggregate_node_id": "english-6up-u06",
@@ -11290,7 +11293,8 @@
    "diagnostic_count": 1,
    "diagnostic_node_ids": [
     "english-6up-d11"
-   ]
+   ],
+   "chapter_order": 6
   },
   {
    "aggregate_node_id": "english-6up-u07",
@@ -11299,7 +11303,8 @@
    "diagnostic_count": 1,
    "diagnostic_node_ids": [
     "english-6up-d12"
-   ]
+   ],
+   "chapter_order": 7
   },
   {
    "aggregate_node_id": "english-6up-u08",
@@ -11309,7 +11314,8 @@
    "diagnostic_node_ids": [
     "english-6up-d13",
     "english-6up-d14"
-   ]
+   ],
+   "chapter_order": 8
   },
   {
    "aggregate_node_id": "english-6up-u09",
@@ -11319,7 +11325,8 @@
    "diagnostic_node_ids": [
     "english-6up-d16",
     "english-6up-d17"
-   ]
+   ],
+   "chapter_order": 9
   },
   {
    "aggregate_node_id": "english-6up-u10",
@@ -11328,18 +11335,19 @@
    "diagnostic_count": 1,
    "diagnostic_node_ids": [
     "english-6up-d15"
-   ]
+   ],
+   "chapter_order": 10
   }
  ],
  "generated_from": {
   "diagnostic_nodes": 55,
-  "aggregate_nodes": 28,
-  "questions": 46
+  "aggregate_nodes": 27,
+  "questions": 43
  },
  "summary": {
   "all": {
    "cells": 220,
-   "no_question": 179,
+   "no_question": 182,
    "measured": 0,
    "floor_ok": 0,
    "robust_ok": 0,
@@ -11350,7 +11358,7 @@
   "by_subject": {
    "math": {
     "cells": 100,
-    "no_question": 82,
+    "no_question": 85,
     "measured": 0,
     "floor_ok": 0,
     "robust_ok": 0,
@@ -11381,7 +11389,7 @@
   }
  },
  "target": {
-  "aggregate_node_id": "math-6up-u01",
+  "aggregate_node_id": "math-6up-u02",
   "aggregate_name": "分数乘法",
   "subject": "math",
   "diagnostic_count": 4,
@@ -11390,12 +11398,85 @@
    "math-6up-d02",
    "math-6up-d03",
    "math-6up-d04"
-  ]
+  ],
+  "chapter_order": 2
  },
  "floor_topup": {
   "rows": [
    {
     "subject": "math",
+    "diagnostic_node_id": "math-6up-d05",
+    "ability_tag": "理解意义",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d05",
+    "ability_tag": "执行计算",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d05",
+    "ability_tag": "情境应用",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d05",
+    "ability_tag": "辨析变式",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d26",
+    "ability_tag": "理解意义",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d26",
+    "ability_tag": "执行计算",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d26",
+    "ability_tag": "情境应用",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d26",
+    "ability_tag": "辨析变式",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
     "diagnostic_node_id": "math-6up-d01",
     "ability_tag": "理解意义",
     "easy": 0,
@@ -11532,42 +11613,6 @@
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d04",
-    "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d05",
-    "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d05",
-    "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d05",
-    "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d05",
     "ability_tag": "辨析变式",
     "easy": 1,
     "medium": 1,
@@ -11720,7 +11765,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d10",
+    "diagnostic_node_id": "math-6up-d27",
     "ability_tag": "理解意义",
     "easy": 1,
     "medium": 1,
@@ -11729,7 +11774,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d10",
+    "diagnostic_node_id": "math-6up-d27",
     "ability_tag": "执行计算",
     "easy": 1,
     "medium": 1,
@@ -11738,7 +11783,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d10",
+    "diagnostic_node_id": "math-6up-d27",
     "ability_tag": "情境应用",
     "easy": 1,
     "medium": 1,
@@ -11747,7 +11792,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d10",
+    "diagnostic_node_id": "math-6up-d27",
     "ability_tag": "辨析变式",
     "easy": 1,
     "medium": 1,
@@ -11756,43 +11801,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d11",
-    "ability_tag": "理解意义",
-    "easy": 0,
-    "medium": 1,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d11",
-    "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 0,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d11",
-    "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 0,
-    "total": 2
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d11",
-    "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d12",
+    "diagnostic_node_id": "math-6up-d28",
     "ability_tag": "理解意义",
     "easy": 1,
     "medium": 1,
@@ -11801,7 +11810,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d12",
+    "diagnostic_node_id": "math-6up-d28",
     "ability_tag": "执行计算",
     "easy": 1,
     "medium": 1,
@@ -11810,7 +11819,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d12",
+    "diagnostic_node_id": "math-6up-d28",
     "ability_tag": "情境应用",
     "easy": 1,
     "medium": 1,
@@ -11819,7 +11828,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d12",
+    "diagnostic_node_id": "math-6up-d28",
     "ability_tag": "辨析变式",
     "easy": 1,
     "medium": 1,
@@ -11972,6 +11981,42 @@
    },
    {
     "subject": "math",
+    "diagnostic_node_id": "math-6up-d23",
+    "ability_tag": "理解意义",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d23",
+    "ability_tag": "执行计算",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d23",
+    "ability_tag": "情境应用",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d23",
+    "ability_tag": "辨析变式",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
     "diagnostic_node_id": "math-6up-d17",
     "ability_tag": "理解意义",
     "easy": 0,
@@ -12080,7 +12125,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d20",
+    "diagnostic_node_id": "math-6up-d29",
     "ability_tag": "理解意义",
     "easy": 1,
     "medium": 1,
@@ -12089,7 +12134,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d20",
+    "diagnostic_node_id": "math-6up-d29",
     "ability_tag": "执行计算",
     "easy": 1,
     "medium": 1,
@@ -12098,7 +12143,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d20",
+    "diagnostic_node_id": "math-6up-d29",
     "ability_tag": "情境应用",
     "easy": 1,
     "medium": 1,
@@ -12107,115 +12152,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d20",
-    "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d21",
-    "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d21",
-    "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d21",
-    "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d21",
-    "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d22",
-    "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d22",
-    "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d22",
-    "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d22",
-    "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d23",
-    "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d23",
-    "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d23",
-    "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d23",
+    "diagnostic_node_id": "math-6up-d29",
     "ability_tag": "辨析变式",
     "easy": 1,
     "medium": 1,
@@ -12293,6 +12230,78 @@
     "medium": 1,
     "hard": 0,
     "total": 2
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d30",
+    "ability_tag": "理解意义",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d30",
+    "ability_tag": "执行计算",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d30",
+    "ability_tag": "情境应用",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d30",
+    "ability_tag": "辨析变式",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d31",
+    "ability_tag": "理解意义",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d31",
+    "ability_tag": "执行计算",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d31",
+    "ability_tag": "情境应用",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d31",
+    "ability_tag": "辨析变式",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
@@ -13375,22 +13384,94 @@
     "total": 3
    }
   ],
-  "total": 614,
+  "total": 617,
   "by_subject": {
-   "math": 282,
+   "math": 285,
    "chinese": 156,
    "english": 176
   },
   "by_difficulty": {
-   "easy": 204,
-   "medium": 204,
-   "hard": 206
+   "easy": 205,
+   "medium": 205,
+   "hard": 207
   }
  },
  "robust_topup": {
   "rows": [
    {
     "subject": "math",
+    "diagnostic_node_id": "math-6up-d05",
+    "ability_tag": "理解意义",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d05",
+    "ability_tag": "执行计算",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d05",
+    "ability_tag": "情境应用",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d05",
+    "ability_tag": "辨析变式",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d26",
+    "ability_tag": "理解意义",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d26",
+    "ability_tag": "执行计算",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d26",
+    "ability_tag": "情境应用",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d26",
+    "ability_tag": "辨析变式",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
     "diagnostic_node_id": "math-6up-d01",
     "ability_tag": "理解意义",
     "easy": 1,
@@ -13527,42 +13608,6 @@
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d04",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d05",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d05",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d05",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d05",
     "ability_tag": "辨析变式",
     "easy": 2,
     "medium": 2,
@@ -13715,7 +13760,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d10",
+    "diagnostic_node_id": "math-6up-d27",
     "ability_tag": "理解意义",
     "easy": 2,
     "medium": 2,
@@ -13724,7 +13769,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d10",
+    "diagnostic_node_id": "math-6up-d27",
     "ability_tag": "执行计算",
     "easy": 2,
     "medium": 2,
@@ -13733,7 +13778,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d10",
+    "diagnostic_node_id": "math-6up-d27",
     "ability_tag": "情境应用",
     "easy": 2,
     "medium": 2,
@@ -13742,7 +13787,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d10",
+    "diagnostic_node_id": "math-6up-d27",
     "ability_tag": "辨析变式",
     "easy": 2,
     "medium": 2,
@@ -13751,43 +13796,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d11",
-    "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 2,
-    "hard": 2,
-    "total": 5
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d11",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 1,
-    "hard": 2,
-    "total": 5
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d11",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 1,
-    "total": 5
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d11",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d12",
+    "diagnostic_node_id": "math-6up-d28",
     "ability_tag": "理解意义",
     "easy": 2,
     "medium": 2,
@@ -13796,7 +13805,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d12",
+    "diagnostic_node_id": "math-6up-d28",
     "ability_tag": "执行计算",
     "easy": 2,
     "medium": 2,
@@ -13805,7 +13814,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d12",
+    "diagnostic_node_id": "math-6up-d28",
     "ability_tag": "情境应用",
     "easy": 2,
     "medium": 2,
@@ -13814,7 +13823,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d12",
+    "diagnostic_node_id": "math-6up-d28",
     "ability_tag": "辨析变式",
     "easy": 2,
     "medium": 2,
@@ -13967,6 +13976,42 @@
    },
    {
     "subject": "math",
+    "diagnostic_node_id": "math-6up-d23",
+    "ability_tag": "理解意义",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d23",
+    "ability_tag": "执行计算",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d23",
+    "ability_tag": "情境应用",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d23",
+    "ability_tag": "辨析变式",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
     "diagnostic_node_id": "math-6up-d17",
     "ability_tag": "理解意义",
     "easy": 1,
@@ -14075,7 +14120,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d20",
+    "diagnostic_node_id": "math-6up-d29",
     "ability_tag": "理解意义",
     "easy": 2,
     "medium": 2,
@@ -14084,7 +14129,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d20",
+    "diagnostic_node_id": "math-6up-d29",
     "ability_tag": "执行计算",
     "easy": 2,
     "medium": 2,
@@ -14093,7 +14138,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d20",
+    "diagnostic_node_id": "math-6up-d29",
     "ability_tag": "情境应用",
     "easy": 2,
     "medium": 2,
@@ -14102,115 +14147,7 @@
    },
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d20",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d21",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d21",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d21",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d21",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d22",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d22",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d22",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d22",
-    "ability_tag": "辨析变式",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d23",
-    "ability_tag": "理解意义",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d23",
-    "ability_tag": "执行计算",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d23",
-    "ability_tag": "情境应用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d23",
+    "diagnostic_node_id": "math-6up-d29",
     "ability_tag": "辨析变式",
     "easy": 2,
     "medium": 2,
@@ -14288,6 +14225,78 @@
     "medium": 2,
     "hard": 1,
     "total": 5
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d30",
+    "ability_tag": "理解意义",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d30",
+    "ability_tag": "执行计算",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d30",
+    "ability_tag": "情境应用",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d30",
+    "ability_tag": "辨析变式",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d31",
+    "ability_tag": "理解意义",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d31",
+    "ability_tag": "执行计算",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d31",
+    "ability_tag": "情境应用",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "math",
+    "diagnostic_node_id": "math-6up-d31",
+    "ability_tag": "辨析变式",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
@@ -15370,16 +15379,16 @@
     "total": 6
    }
   ],
-  "total": 1274,
+  "total": 1277,
   "by_subject": {
-   "math": 582,
+   "math": 585,
    "chinese": 324,
    "english": 368
   },
   "by_difficulty": {
-   "easy": 424,
-   "medium": 424,
-   "hard": 426
+   "easy": 425,
+   "medium": 425,
+   "hard": 427
   }
  }
 }
