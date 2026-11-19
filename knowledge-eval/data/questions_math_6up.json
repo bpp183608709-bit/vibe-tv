@@ -3072,6 +3072,708 @@
    ]
   },
   {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "圆的周长总是它的直径的（  ）倍多一些。",
+   "options": [
+    "3",
+    "4",
+    "2",
+    "6"
+   ],
+   "correct_answer": "A",
+   "explanation": "周长 ÷ 直径 = π，π 约等于 3.14，所以周长总是直径的 3 倍多一些。",
+   "tags": [
+    "圆周率与圆的周长",
+    "圆周率"
+   ],
+   "question_id": "math-6up-d14-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "关于圆周率，下面说法正确的是（  ）",
+   "options": [
+    "π 等于 3.14",
+    "大圆的 π 比小圆的 π 大",
+    "π 是一个固定不变的数",
+    "π 是圆的周长"
+   ],
+   "correct_answer": "C",
+   "explanation": "π 是周长与直径的比值，是一个固定不变的数，3.14 只是它的近似值；圆大圆小，这个比值都一样。",
+   "tags": [
+    "圆周率与圆的周长",
+    "圆周率"
+   ],
+   "question_id": "math-6up-d14-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一个圆的直径是 4 厘米，它的周长是（  ）厘米。（π 取 3.14）",
+   "accepted": [
+    "12.56"
+   ],
+   "correct_answer": "12.56",
+   "explanation": "C = πd = 3.14 × 4 = 12.56 厘米。",
+   "tags": [
+    "圆周率与圆的周长",
+    "周长计算"
+   ],
+   "question_id": "math-6up-d14-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一个圆的半径是 2.5 分米，它的周长是（  ）分米。（π 取 3.14）",
+   "accepted": [
+    "15.7"
+   ],
+   "correct_answer": "15.7",
+   "explanation": "C = 2πr = 2 × 3.14 × 2.5 = 15.7 分米。",
+   "tags": [
+    "圆周率与圆的周长",
+    "周长计算"
+   ],
+   "question_id": "math-6up-d14-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一个圆形水池的直径是 10 米，绕水池边沿走一圈，走了（  ）米。（π 取 3.14）",
+   "options": [
+    "62.8",
+    "31.4",
+    "78.5",
+    "100"
+   ],
+   "correct_answer": "B",
+   "explanation": "走一圈就是求周长：C = πd = 3.14 × 10 = 31.4 米。",
+   "tags": [
+    "圆周率与圆的周长",
+    "周长应用"
+   ],
+   "question_id": "math-6up-d14-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一根长 12.56 米的绳子正好绕树干 1 圈，树干的直径是（  ）米。（π 取 3.14）",
+   "options": [
+    "2",
+    "6.28",
+    "8",
+    "4"
+   ],
+   "correct_answer": "D",
+   "explanation": "绳长就是树干的周长，d = C ÷ π = 12.56 ÷ 3.14 = 4 米。",
+   "tags": [
+    "圆周率与圆的周长",
+    "周长逆推"
+   ],
+   "question_id": "math-6up-d14-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "求圆的周长，下面公式正确的是（  ）",
+   "options": [
+    "C = πr",
+    "C = πr²",
+    "C = 2πr",
+    "C = 2r"
+   ],
+   "correct_answer": "C",
+   "explanation": "圆的周长 C = πd = 2πr；πr² 是面积公式，C = πr 少乘了 2。",
+   "tags": [
+    "圆周率与圆的周长",
+    "周长公式"
+   ],
+   "question_id": "math-6up-d14-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一个圆的半径扩大到原来的 2 倍，它的周长（  ）",
+   "options": [
+    "扩大到原来的 2 倍",
+    "扩大到原来的 4 倍",
+    "不变",
+    "缩小到原来的一半"
+   ],
+   "correct_answer": "A",
+   "explanation": "C = 2πr，周长与半径成正比，半径乘 2，周长也乘 2。",
+   "tags": [
+    "圆周率与圆的周长",
+    "周长变化"
+   ],
+   "question_id": "math-6up-d14-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d14",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "比较下面两个圆的周长：甲圆半径 3 厘米，乙圆直径 5 厘米。正确的是（  ）",
+   "options": [
+    "乙圆周长长",
+    "一样长",
+    "无法比较",
+    "甲圆周长长"
+   ],
+   "correct_answer": "D",
+   "explanation": "甲圆直径 6 厘米，比乙圆的 5 厘米长，直径大的周长大，所以甲圆周长长。",
+   "tags": [
+    "圆周率与圆的周长",
+    "比较周长"
+   ],
+   "question_id": "math-6up-d14-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "圆的面积公式是（  ）",
+   "options": [
+    "S = πr",
+    "S = 2πr",
+    "S = πr²",
+    "S = πd"
+   ],
+   "correct_answer": "C",
+   "explanation": "圆的面积 S = πr²，也就是 π 乘半径的平方；2πr 是周长公式。",
+   "tags": [
+    "圆的面积",
+    "面积公式"
+   ],
+   "question_id": "math-6up-d15-q01"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "把一个圆平均分成若干等份，拼成一个近似的长方形，长方形的长相当于圆的（  ）",
+   "options": [
+    "半径",
+    "周长的一半",
+    "直径",
+    "周长"
+   ],
+   "correct_answer": "B",
+   "explanation": "拼成的长方形，长是圆周长的一半（πr），宽是半径 r，所以面积是 πr × r = πr²。",
+   "tags": [
+    "圆的面积",
+    "面积推导"
+   ],
+   "question_id": "math-6up-d15-q02"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "关于圆的面积，下面说法正确的是（  ）",
+   "options": [
+    "圆的面积等于周长乘半径",
+    "直径扩大 2 倍，面积扩大 2 倍",
+    "圆的面积是它半径平方的 π 倍",
+    "半径越大，面积增加得越慢"
+   ],
+   "correct_answer": "C",
+   "explanation": "S = πr²，面积是半径平方的 π 倍；直径扩大 2 倍，面积要扩大 4 倍。",
+   "tags": [
+    "圆的面积",
+    "面积意义"
+   ],
+   "question_id": "math-6up-d15-q03"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一个圆的半径是 2 厘米，它的面积是（  ）平方厘米。（π 取 3.14）",
+   "accepted": [
+    "12.56"
+   ],
+   "correct_answer": "12.56",
+   "explanation": "S = πr² = 3.14 × 2 × 2 = 12.56 平方厘米。",
+   "tags": [
+    "圆的面积",
+    "面积计算"
+   ],
+   "question_id": "math-6up-d15-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个圆的直径是 6 分米，它的面积是（  ）平方分米。（π 取 3.14）",
+   "accepted": [
+    "28.26"
+   ],
+   "correct_answer": "28.26",
+   "explanation": "先求半径 6 ÷ 2 = 3 分米，S = 3.14 × 3² = 28.26 平方分米。",
+   "tags": [
+    "圆的面积",
+    "面积计算"
+   ],
+   "question_id": "math-6up-d15-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一个圆的周长是 31.4 厘米，它的面积是（  ）平方厘米。（π 取 3.14）",
+   "accepted": [
+    "78.5"
+   ],
+   "correct_answer": "78.5",
+   "explanation": "r = C ÷ 2π = 31.4 ÷ 6.28 = 5 厘米，S = 3.14 × 5² = 78.5 平方厘米。",
+   "tags": [
+    "圆的面积",
+    "由周长求面积"
+   ],
+   "question_id": "math-6up-d15-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一个圆形花坛的半径是 5 米，它的占地面积是（  ）平方米。（π 取 3.14）",
+   "options": [
+    "31.4",
+    "78.5",
+    "15.7",
+    "157"
+   ],
+   "correct_answer": "B",
+   "explanation": "S = πr² = 3.14 × 5² = 78.5 平方米。",
+   "tags": [
+    "圆的面积",
+    "面积应用"
+   ],
+   "question_id": "math-6up-d15-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一个圆形桌面的直径是 1 米，给桌面配一块同样大的玻璃，玻璃的面积是（  ）平方米。（π 取 3.14）",
+   "options": [
+    "3.14",
+    "1.57",
+    "0.5",
+    "0.785"
+   ],
+   "correct_answer": "D",
+   "explanation": "半径 1 ÷ 2 = 0.5 米，S = 3.14 × 0.5² = 3.14 × 0.25 = 0.785 平方米。",
+   "tags": [
+    "圆的面积",
+    "面积应用"
+   ],
+   "question_id": "math-6up-d15-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一个圆形水池的周长是 25.12 米，它的占地面积是（  ）平方米。（π 取 3.14）",
+   "options": [
+    "50.24",
+    "25.12",
+    "200.96",
+    "12.56"
+   ],
+   "correct_answer": "A",
+   "explanation": "r = 25.12 ÷ 6.28 = 4 米，S = 3.14 × 4² = 50.24 平方米。",
+   "tags": [
+    "圆的面积",
+    "由周长求面积"
+   ],
+   "question_id": "math-6up-d15-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一个圆的半径是 4 厘米，求它的面积，列式正确的是（  ）",
+   "options": [
+    "3.14 × 4 × 2",
+    "3.14 × 8",
+    "3.14 × 4²",
+    "2 × 3.14 × 4"
+   ],
+   "correct_answer": "C",
+   "explanation": "面积用 S = πr²，半径是 4，所以列式 3.14 × 4²；3.14 × 4 × 2 算的是周长。",
+   "tags": [
+    "圆的面积",
+    "列式辨析"
+   ],
+   "question_id": "math-6up-d15-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "圆的周长和面积，下面说法正确的是（  ）",
+   "options": [
+    "半径 2 厘米的圆，周长和面积相等",
+    "周长和面积的单位不同",
+    "周长用平方单位",
+    "面积用长度单位"
+   ],
+   "correct_answer": "B",
+   "explanation": "周长是长度，单位是厘米；面积是面积，单位是平方厘米。半径 2 厘米的圆周长 12.56 厘米、面积 12.56 平方厘米，数相同但意义不同，不能说相等。",
+   "tags": [
+    "圆的面积",
+    "周长与面积"
+   ],
+   "question_id": "math-6up-d15-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d15",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "大圆的半径是小圆半径的 2 倍，大圆的面积是小圆面积的（  ）倍",
+   "options": [
+    "2",
+    "4",
+    "6",
+    "8"
+   ],
+   "correct_answer": "B",
+   "explanation": "半径乘 2，面积要乘 2 的平方，也就是 4 倍。",
+   "tags": [
+    "圆的面积",
+    "面积变化"
+   ],
+   "question_id": "math-6up-d15-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一条弧和经过这条弧两端的两条半径所围成的图形叫做（  ）",
+   "options": [
+    "圆",
+    "扇形",
+    "半圆",
+    "圆环"
+   ],
+   "correct_answer": "B",
+   "explanation": "扇形由一条弧和两条半径围成；两条半径所夹的角叫圆心角。",
+   "tags": [
+    "组合图形与扇形",
+    "扇形"
+   ],
+   "question_id": "math-6up-d16-q01"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "在同一个圆里，扇形的大小与它的圆心角（  ）",
+   "options": [
+    "有关，圆心角越大，扇形越大",
+    "有关，圆心角越大，扇形越小",
+    "无关",
+    "无法确定"
+   ],
+   "correct_answer": "A",
+   "explanation": "同一个圆里，圆心角越大，扇形占整圆的部分越大。",
+   "tags": [
+    "组合图形与扇形",
+    "圆心角"
+   ],
+   "question_id": "math-6up-d16-q02"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "关于扇形，下面说法正确的是（  ）",
+   "options": [
+    "扇形的两条边都是弧",
+    "扇形一定有 4 个角",
+    "扇形的周长就是弧长",
+    "半圆可以看作圆心角 180° 的扇形"
+   ],
+   "correct_answer": "D",
+   "explanation": "扇形由一条弧和两条半径围成，它的周长是弧长加两条半径；半圆的圆心角是 180°，也是一个扇形。",
+   "tags": [
+    "组合图形与扇形",
+    "扇形"
+   ],
+   "question_id": "math-6up-d16-q03"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一个圆环的外圆半径是 5 厘米，内圆半径是 3 厘米，圆环的面积是（  ）平方厘米。（π 取 3.14）",
+   "accepted": [
+    "50.24"
+   ],
+   "correct_answer": "50.24",
+   "explanation": "S = π(R² - r²) = 3.14 × (25 - 9) = 50.24 平方厘米。",
+   "tags": [
+    "组合图形与扇形",
+    "圆环"
+   ],
+   "question_id": "math-6up-d16-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个半径 4 厘米的圆，圆心角是 90° 的扇形，它的面积是（  ）平方厘米。（π 取 3.14）",
+   "accepted": [
+    "12.56"
+   ],
+   "correct_answer": "12.56",
+   "explanation": "90° 占整圆的 1/4，扇形面积 = 3.14 × 4² ÷ 4 = 12.56 平方厘米。",
+   "tags": [
+    "组合图形与扇形",
+    "扇形面积"
+   ],
+   "question_id": "math-6up-d16-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一个正方形边长 6 厘米，在它里面剪一个最大的圆，剩下的面积是（  ）平方厘米。（π 取 3.14）",
+   "accepted": [
+    "7.74"
+   ],
+   "correct_answer": "7.74",
+   "explanation": "最大的圆直径等于正方形边长 6 厘米，半径 3 厘米。剩下 6² - 3.14 × 3² = 36 - 28.26 = 7.74 平方厘米。",
+   "tags": [
+    "组合图形与扇形",
+    "组合图形"
+   ],
+   "question_id": "math-6up-d16-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一个圆形花坛的直径是 8 米，花坛外围有一条 1 米宽的小路，小路的面积是（  ）平方米。（π 取 3.14）",
+   "options": [
+    "50.24",
+    "78.5",
+    "28.26",
+    "113.04"
+   ],
+   "correct_answer": "C",
+   "explanation": "外圆半径 4 + 1 = 5 米，内圆半径 4 米，小路面积 3.14 × (25 - 16) = 28.26 平方米。",
+   "tags": [
+    "组合图形与扇形",
+    "圆环"
+   ],
+   "question_id": "math-6up-d16-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一面墙上有一个边长 4 分米的正方形装饰板，板上画了一个直径 4 分米的圆，圆以外的板面面积是（  ）平方分米。（π 取 3.14）",
+   "options": [
+    "12.56",
+    "16",
+    "3.72",
+    "3.44"
+   ],
+   "correct_answer": "D",
+   "explanation": "正方形面积 4 × 4 = 16 平方分米，圆面积 3.14 × 2² = 12.56 平方分米，剩下 16 - 12.56 = 3.44 平方分米。",
+   "tags": [
+    "组合图形与扇形",
+    "组合图形"
+   ],
+   "question_id": "math-6up-d16-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一块半圆形菜地，它的直径是 10 米，这块菜地的面积是（  ）平方米。（π 取 3.14）",
+   "options": [
+    "78.5",
+    "39.25",
+    "31.4",
+    "157"
+   ],
+   "correct_answer": "B",
+   "explanation": "半径 5 米，整圆面积 3.14 × 25 = 78.5 平方米，半圆是它的一半，39.25 平方米。",
+   "tags": [
+    "组合图形与扇形",
+    "半圆"
+   ],
+   "question_id": "math-6up-d16-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "求圆环的面积，正确的列式是（  ）",
+   "options": [
+    "πR² - πr²",
+    "π(R - r)²",
+    "2πR - 2πr",
+    "π(R² + r²)"
+   ],
+   "correct_answer": "A",
+   "explanation": "圆环面积 = 外圆面积 - 内圆面积 = πR² - πr²，也可以写成 π(R² - r²)。",
+   "tags": [
+    "组合图形与扇形",
+    "圆环"
+   ],
+   "question_id": "math-6up-d16-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "把一个圆平均分成 4 份，每份是一个圆心角（  ）的扇形。",
+   "options": [
+    "45°",
+    "180°",
+    "90°",
+    "360°"
+   ],
+   "correct_answer": "C",
+   "explanation": "整圆的圆心角是 360°，平均分成 4 份，每份 360° ÷ 4 = 90°。",
+   "tags": [
+    "组合图形与扇形",
+    "圆心角"
+   ],
+   "question_id": "math-6up-d16-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d16",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一个圆环，外圆半径不变，内圆半径缩小，圆环的面积（  ）",
+   "options": [
+    "变小",
+    "不变",
+    "变大",
+    "无法确定"
+   ],
+   "correct_answer": "C",
+   "explanation": "内圆半径缩小，内圆面积变小，从外圆里减去的部分少了，圆环面积反而变大。",
+   "tags": [
+    "组合图形与扇形",
+    "圆环"
+   ],
+   "question_id": "math-6up-d16-q12"
+  },
+  {
    "question_id": "math-6up-d17-q01",
    "diagnostic_node_id": "math-6up-d17",
    "subject": "math",
