@@ -1386,6 +1386,493 @@
    ]
   },
   {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "把 1/6 + 1/6 + 1/6 + 1/6 + 1/6 写成乘法算式，结果是（  ）。",
+   "accepted": [
+    "5/6"
+   ],
+   "correct_answer": "5/6",
+   "explanation": "5 个 1/6 相加就是 1/6 × 5，分母不变、分子乘 5，得 5/6。",
+   "tags": [
+    "分数乘整数",
+    "意义"
+   ],
+   "question_id": "math-6up-d01-q13"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "4/5 × 3 中的 3 表示（  ）",
+   "options": [
+    "3 个 4/5 相加",
+    "把 4/5 平均分成 3 份",
+    "4/5 的 3/4 是多少",
+    "3 个 5/4 相加"
+   ],
+   "correct_answer": "A",
+   "explanation": "分数乘整数里，整数表示相同加数的个数，所以 3 表示 3 个 4/5 相加，不是平均分，也不是求几分之几。",
+   "tags": [
+    "分数乘整数",
+    "因数含义"
+   ],
+   "question_id": "math-6up-d01-q14"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "7 个 2/15 的和是（  ）。",
+   "accepted": [
+    "14/15"
+   ],
+   "correct_answer": "14/15",
+   "explanation": "7 个 2/15 相加即 2/15 × 7，分母不变，分子 2 乘 7 得 14，结果是 14/15。",
+   "tags": [
+    "分数乘整数",
+    "求和"
+   ],
+   "question_id": "math-6up-d01-q15"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "与 3/7 × 5 结果相等的算式是（  ）",
+   "options": [
+    "3/7 + 5",
+    "3/7 × 1/5",
+    "3/5 × 7",
+    "3/7 + 3/7 + 3/7 + 3/7 + 3/7"
+   ],
+   "correct_answer": "D",
+   "explanation": "3/7 × 5 就是 5 个 3/7 相加，和为 15/7；其余三个分别得 38/7、3/35、21/5，都不相等。",
+   "tags": [
+    "分数乘整数",
+    "乘法的意义"
+   ],
+   "question_id": "math-6up-d01-q16"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一个分数的分子乘 4、分母不变，所得结果相当于原分数（  ）",
+   "options": [
+    "乘 1/4",
+    "加 4",
+    "乘 4",
+    "除以 4"
+   ],
+   "correct_answer": "C",
+   "explanation": "分母不变说明每份大小没变，分子乘 4 说明取 4 倍那么多份，所以结果等于原分数乘 4。",
+   "tags": [
+    "分数乘整数",
+    "算法原理"
+   ],
+   "question_id": "math-6up-d01-q17"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "小明说“3/10 × 20 就是 3/10 的 20 倍”，小红说“是 20 个 3/10 相加”。判断正确的是（  ）",
+   "options": [
+    "只有小明对",
+    "两人都对",
+    "只有小红对",
+    "两人都错"
+   ],
+   "correct_answer": "B",
+   "explanation": "分数乘整数既表示几个相同分数的和，也表示这个分数的几倍，两种说法是同一件事，结果都是 6。",
+   "tags": [
+    "分数乘整数",
+    "两种意义"
+   ],
+   "question_id": "math-6up-d01-q18"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "4/9 的 6 倍是多少？结果是（  ）。",
+   "accepted": [
+    "8/3"
+   ],
+   "correct_answer": "8/3",
+   "explanation": "4/9 × 6，6 与 9 约去 3，得 4 × 2/3 = 8/3。",
+   "tags": [
+    "分数乘整数",
+    "计算"
+   ],
+   "question_id": "math-6up-d01-q19"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "计算 3/10 × 5，结果是（  ）",
+   "options": [
+    "3/50",
+    "3/2",
+    "4/5",
+    "15/50"
+   ],
+   "correct_answer": "B",
+   "explanation": "分子 3 乘 5 得 15，分母不变仍是 10，15/10 约分得 3/2；把整数乘到分母上才会得到 3/50。",
+   "tags": [
+    "分数乘整数",
+    "计算"
+   ],
+   "question_id": "math-6up-d01-q20"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "12 个 5/18 相加，和是（  ）。",
+   "accepted": [
+    "10/3"
+   ],
+   "correct_answer": "10/3",
+   "explanation": "5/18 × 12，12 与 18 约去 6，得 5 × 2/3 = 10/3。",
+   "tags": [
+    "分数乘整数",
+    "计算"
+   ],
+   "question_id": "math-6up-d01-q21"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "计算 9/20 × 15，结果写成最简分数。",
+   "accepted": [
+    "27/4"
+   ],
+   "correct_answer": "27/4",
+   "explanation": "15 与 20 约去 5，得 9 × 3/4 = 27/4，也就是 6 又 3/4。",
+   "tags": [
+    "分数乘整数",
+    "先约分"
+   ],
+   "question_id": "math-6up-d01-q22"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "14/25 与 15 相乘，积写成最简分数是（  ）。",
+   "accepted": [
+    "42/5"
+   ],
+   "correct_answer": "42/5",
+   "explanation": "15 与 25 约去 5，剩下 14 × 3/5 = 42/5，也就是 8 又 2/5。",
+   "tags": [
+    "分数乘整数",
+    "先约分"
+   ],
+   "question_id": "math-6up-d01-q23"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "计算 21/32 × 24，积写成最简分数。",
+   "accepted": [
+    "63/4"
+   ],
+   "correct_answer": "63/4",
+   "explanation": "24 与 32 约去 8，得 21 × 3/4 = 63/4，也就是 15 又 3/4。",
+   "tags": [
+    "分数乘整数",
+    "先约分"
+   ],
+   "question_id": "math-6up-d01-q24"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一根钢管长 3/4 米，同样的 3 根接起来长（  ）米。",
+   "accepted": [
+    "9/4"
+   ],
+   "correct_answer": "9/4",
+   "explanation": "每根 3/4 米，3 根就是 3/4 × 3 = 9/4 米，也就是 2 又 1/4 米。",
+   "tags": [
+    "分数乘整数",
+    "求总长"
+   ],
+   "question_id": "math-6up-d01-q25"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "做一朵花用彩带 5/8 米，做 4 朵一共用（  ）米",
+   "options": [
+    "5/2",
+    "5/12",
+    "9/8",
+    "5/32"
+   ],
+   "correct_answer": "A",
+   "explanation": "5/8 × 4，4 与 8 约去 4，得 5 × 1/2 = 5/2 米。",
+   "tags": [
+    "分数乘整数",
+    "求总量"
+   ],
+   "question_id": "math-6up-d01-q26"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一本练习本厚 3/20 厘米，12 本摞在一起厚（  ）厘米。",
+   "accepted": [
+    "9/5"
+   ],
+   "correct_answer": "9/5",
+   "explanation": "3/20 × 12，12 与 20 约去 4，得 3 × 3/5 = 9/5 厘米。",
+   "tags": [
+    "分数乘整数",
+    "求总厚度"
+   ],
+   "question_id": "math-6up-d01-q27"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "每袋大米重 7/10 千克，6 袋共重（  ）千克",
+   "options": [
+    "7/60",
+    "13/10",
+    "42/5",
+    "21/5"
+   ],
+   "correct_answer": "D",
+   "explanation": "7/10 × 6 = 42/10，约分得 21/5 千克，也就是 4 又 1/5 千克。",
+   "tags": [
+    "分数乘整数",
+    "求总重"
+   ],
+   "question_id": "math-6up-d01-q28"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一辆汽车行驶 1 千米耗油 3/25 升，行驶 12 千米耗油（  ）升。",
+   "accepted": [
+    "36/25"
+   ],
+   "correct_answer": "36/25",
+   "explanation": "求 12 个 3/25 升的和：3/25 × 12 = 36/25 升，也就是 1.44 升。",
+   "tags": [
+    "分数乘整数",
+    "耗油量"
+   ],
+   "question_id": "math-6up-d01-q29"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "小华每分钟走 4/15 千米，先走 25 分钟，又走 5 分钟，一共走了（  ）千米。",
+   "accepted": [
+    "8"
+   ],
+   "correct_answer": "8",
+   "explanation": "先求共走 25 + 5 = 30 分钟，再算 4/15 × 30 = 8 千米。",
+   "tags": [
+    "分数乘整数",
+    "行程"
+   ],
+   "question_id": "math-6up-d01-q30"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "判断题",
+   "stem": "3/7 × 5 与 5 × 3/7 的计算结果相同，表示的意义也相同。",
+   "options": [
+    "错",
+    "对"
+   ],
+   "correct_answer": "A",
+   "explanation": "结果相同是乘法交换律；但 3/7 × 5 表示 5 个 3/7 相加，5 × 3/7 表示 5 的 3/7 是多少，意义不同。",
+   "tags": [
+    "分数乘整数",
+    "意义与交换律"
+   ],
+   "question_id": "math-6up-d01-q31"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "计算 4/9 × 3 时，能先约分的是（  ）",
+   "options": [
+    "4 与 3",
+    "3 与 9",
+    "4 与 9",
+    "没有能约分的"
+   ],
+   "correct_answer": "B",
+   "explanation": "分母 9 和整数 3 有公因数 3，先约去 3，再算 4 × 1/3 = 4/3 更简便。",
+   "tags": [
+    "分数乘整数",
+    "约分"
+   ],
+   "question_id": "math-6up-d01-q32"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "计算 5/12 × 8，过程正确的是（  ）",
+   "options": [
+    "5/12 × 8 = 5/96",
+    "5/12 × 8 = 13/12",
+    "5/12 × 8 = 40/12 = 10/3",
+    "5/12 × 8 = 40/96 = 5/12"
+   ],
+   "correct_answer": "C",
+   "explanation": "分子 5 乘 8 得 40，分母不变是 12，40/12 约分得 10/3。把整数乘到分母上会得到 5/96。",
+   "tags": [
+    "分数乘整数",
+    "计算过程"
+   ],
+   "question_id": "math-6up-d01-q33"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个分数乘 6 得 3/2，这个分数是（  ）。",
+   "accepted": [
+    "1/4"
+   ],
+   "correct_answer": "1/4",
+   "explanation": "求这个分数就用积除以 6：3/2 ÷ 6 = 3/12 = 1/4，验算 1/4 × 6 = 3/2。",
+   "tags": [
+    "分数乘整数",
+    "逆推因数"
+   ],
+   "question_id": "math-6up-d01-q34"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "如果 5/8 × n = 5/2，那么 n = （  ）。",
+   "accepted": [
+    "4"
+   ],
+   "correct_answer": "4",
+   "explanation": "积是 5/2，一个因数是 5/8，另一个因数 = 5/2 ÷ 5/8 = 5/2 × 8/5 = 4。",
+   "tags": [
+    "分数乘整数",
+    "逆推因数"
+   ],
+   "question_id": "math-6up-d01-q35"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d01",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "要使 3/16 × n 的积是整数，n 最小是（  ）",
+   "options": [
+    "8",
+    "4",
+    "16",
+    "2"
+   ],
+   "correct_answer": "C",
+   "explanation": "分母 16 要被 n 约尽，n 最小取 16；n 取 8 时得 3/2，取 4 时得 3/4，都还不是整数。",
+   "tags": [
+    "分数乘整数",
+    "整除条件"
+   ],
+   "question_id": "math-6up-d01-q36"
+  },
+  {
    "question_id": "math-6up-d02-q01",
    "diagnostic_node_id": "math-6up-d02",
    "subject": "math",
@@ -1628,6 +2115,499 @@
     "积与因数的大小关系",
     "逆向推理"
    ]
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "7/8 的 1/2 是（  ）。",
+   "accepted": [
+    "7/16"
+   ],
+   "correct_answer": "7/16",
+   "explanation": "求一个数的几分之几用乘法：7/8 × 1/2，分子乘分子、分母乘分母，得 7/16。",
+   "tags": [
+    "一个数乘分数",
+    "求几分之几"
+   ],
+   "question_id": "math-6up-d02-q13"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "求 12 的 5/6 是多少，正确的算式是（  ）",
+   "options": [
+    "12 × 5/6",
+    "12 ÷ 5/6",
+    "5/6 ÷ 12",
+    "12 + 5/6"
+   ],
+   "correct_answer": "A",
+   "explanation": "求一个数的几分之几是多少，就用这个数乘几分之几，所以是 12 × 5/6 = 10。",
+   "tags": [
+    "一个数乘分数",
+    "列式"
+   ],
+   "question_id": "math-6up-d02-q14"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "8 米的 3/4 是（  ）米。",
+   "accepted": [
+    "6"
+   ],
+   "correct_answer": "6",
+   "explanation": "求 8 的 3/4：8 × 3/4 = 24/4 = 6，也就是把 8 米平均分成 4 份取 3 份。",
+   "tags": [
+    "一个数乘分数",
+    "求几分之几"
+   ],
+   "question_id": "math-6up-d02-q15"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“80 的 3/5”与“3/5 的 80 倍”相比（  ）",
+   "options": [
+    "前者大",
+    "后者大",
+    "无法比较",
+    "结果相同"
+   ],
+   "correct_answer": "D",
+   "explanation": "两个算式都是 80 × 3/5，交换因数位置积不变，都得 48，求的是同一件事。",
+   "tags": [
+    "一个数乘分数",
+    "两种说法"
+   ],
+   "question_id": "math-6up-d02-q16"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "9/10 的 2/3 的 1/2 是多少？正确的列式是（  ）",
+   "options": [
+    "9/10 × 2/3 ÷ 1/2",
+    "9/10 ÷ 2/3 × 1/2",
+    "9/10 × 2/3 × 1/2",
+    "9/10 × (2/3 + 1/2)"
+   ],
+   "correct_answer": "C",
+   "explanation": "连续求一个数的几分之几，就是连续相乘，先取 9/10 的 2/3，再取这个结果的 1/2。",
+   "tags": [
+    "一个数乘分数",
+    "连续求几分之几"
+   ],
+   "question_id": "math-6up-d02-q17"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "如果甲数是乙数的 3/4，那么乙数是甲数的（  ）",
+   "options": [
+    "4/3",
+    "3/4",
+    "1/4",
+    "7/4"
+   ],
+   "correct_answer": "A",
+   "explanation": "把乙数看作 1，甲数就是 3/4；乙数是甲数的 1 ÷ 3/4 = 4/3。互为倒数的两个分数乘积为 1。",
+   "tags": [
+    "一个数乘分数",
+    "反向关系"
+   ],
+   "question_id": "math-6up-d02-q18"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "计算 3/4 × 4/9，结果写成最简分数。",
+   "accepted": [
+    "1/3"
+   ],
+   "correct_answer": "1/3",
+   "explanation": "分子乘分子、分母乘分母得 12/36，约分得 1/3；先约分则 3 与 9、4 与 4 各约一次。",
+   "tags": [
+    "分数乘分数",
+    "计算"
+   ],
+   "question_id": "math-6up-d02-q19"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "计算 5/8 × 4/15，结果是（  ）",
+   "options": [
+    "20/23",
+    "5/120",
+    "9/120",
+    "1/6"
+   ],
+   "correct_answer": "D",
+   "explanation": "先约分：5 与 15 约去 5，4 与 8 约去 4，剩下 1/2 × 1/3 = 1/6。",
+   "tags": [
+    "分数乘分数",
+    "先约分"
+   ],
+   "question_id": "math-6up-d02-q20"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "计算 9/20 × 8/27，结果写成最简分数。",
+   "accepted": [
+    "2/15"
+   ],
+   "correct_answer": "2/15",
+   "explanation": "9 与 27 约去 9，8 与 20 约去 4，剩下 1/5 × 2/3 = 2/15。",
+   "tags": [
+    "分数乘分数",
+    "先约分"
+   ],
+   "question_id": "math-6up-d02-q21"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "计算 14/15 × 25/21，结果写成最简分数。",
+   "accepted": [
+    "10/9"
+   ],
+   "correct_answer": "10/9",
+   "explanation": "14 与 21 约去 7，25 与 15 约去 5，剩下 2/3 × 5/3 = 10/9。",
+   "tags": [
+    "分数乘分数",
+    "先约分"
+   ],
+   "question_id": "math-6up-d02-q22"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "计算 39/40 × 16/65，结果写成最简分数。",
+   "accepted": [
+    "6/25"
+   ],
+   "correct_answer": "6/25",
+   "explanation": "39 与 65 约去 13 得 3/5，16 与 40 约去 8 得 2/5，相乘得 6/25。",
+   "tags": [
+    "分数乘分数",
+    "多次约分"
+   ],
+   "question_id": "math-6up-d02-q23"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "计算 15/28 × 21/25 时，先约分正确的做法是（  ）",
+   "options": [
+    "15 与 28 约去 7，21 与 25 约去 5",
+    "15 与 25 约去 5，21 与 28 约去 7",
+    "只能把 15 与 21 约去 3",
+    "分子分母没有公因数，不能再约"
+   ],
+   "correct_answer": "B",
+   "explanation": "约分要在分子和分母之间进行：15 与 25 的公有因数 5 约掉，21 与 28 的公有因数 7 约掉，得 3/4 × 3/5 = 9/20。",
+   "tags": [
+    "分数乘分数",
+    "约分方法"
+   ],
+   "question_id": "math-6up-d02-q24"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一根彩绳长 4/5 米，做中国结用去了全长的 1/4，用去（  ）米。",
+   "accepted": [
+    "1/5"
+   ],
+   "correct_answer": "1/5",
+   "explanation": "求 4/5 米的 1/4 是多少，用乘法：4/5 × 1/4 = 1/5（米）。",
+   "tags": [
+    "分数乘法应用题",
+    "一步"
+   ],
+   "question_id": "math-6up-d02-q25"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一袋大米重 10 千克，吃了这袋大米的 3/5，吃了（  ）千克。",
+   "options": [
+    "6 千克",
+    "4 千克",
+    "3/5 千克",
+    "6/5 千克"
+   ],
+   "correct_answer": "A",
+   "explanation": "求 10 千克的 3/5 是多少：10 × 3/5 = 6（千克）。4 千克是剩下的重量。",
+   "tags": [
+    "分数乘法应用题",
+    "一步"
+   ],
+   "question_id": "math-6up-d02-q26"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "六年级有 96 人参加植树，其中 5/12 是女生，参加植树的女生有（  ）人。",
+   "accepted": [
+    "40"
+   ],
+   "correct_answer": "40",
+   "explanation": "求 96 人的 5/12 是多少：96 × 5/12，12 与 96 约去 12 得 8，8 × 5 = 40（人）。",
+   "tags": [
+    "分数乘法应用题",
+    "整体与部分"
+   ],
+   "question_id": "math-6up-d02-q27"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一块长方形布料，长 9/10 米，宽是长的 5/6，这块布的面积是（  ）平方米。",
+   "options": [
+    "3/4",
+    "27/40",
+    "3/5",
+    "27/100"
+   ],
+   "correct_answer": "B",
+   "explanation": "先求宽 9/10 × 5/6 = 3/4（米），再求面积 9/10 × 3/4 = 27/40（平方米）。3/4 只是宽。",
+   "tags": [
+    "分数乘法应用题",
+    "面积",
+    "两步"
+   ],
+   "question_id": "math-6up-d02-q28"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "果园里有桃树 240 棵，梨树的棵数是桃树的 5/6，苹果树的棵数是梨树的 3/4，苹果树有（  ）棵。",
+   "accepted": [
+    "150"
+   ],
+   "correct_answer": "150",
+   "explanation": "先求梨树 240 × 5/6 = 200（棵），再求苹果树 200 × 3/4 = 150（棵）。两次的单位 1 不同。",
+   "tags": [
+    "分数乘法应用题",
+    "连续求几分之几"
+   ],
+   "question_id": "math-6up-d02-q29"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "学校买来 120 本图书，1/3 分给一年级，3/8 分给二年级，还剩（  ）本。",
+   "options": [
+    "85 本",
+    "40 本",
+    "45 本",
+    "35 本"
+   ],
+   "correct_answer": "D",
+   "explanation": "一年级 120 × 1/3 = 40（本），二年级 120 × 3/8 = 45（本），还剩 120 − 40 − 45 = 35（本）。85 本是分出去的总数。",
+   "tags": [
+    "分数乘法应用题",
+    "求剩余"
+   ],
+   "question_id": "math-6up-d02-q30"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面算式中，积等于 1/2 的是（  ）",
+   "options": [
+    "3/4 × 1/3",
+    "3/4 × 2/3",
+    "3/4 × 3/4",
+    "3/4 × 4/3"
+   ],
+   "correct_answer": "B",
+   "explanation": "3/4 × 2/3，4 与 2 约去 2，得 3/2 × 1/3 = 1/2。3/4 × 4/3 的两个因数互为倒数，积是 1。",
+   "tags": [
+    "分数乘分数",
+    "约分辨析"
+   ],
+   "question_id": "math-6up-d02-q31"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "计算 6/7 × 7/12 时，先约分再相乘，结果是（  ）。",
+   "accepted": [
+    "1/2"
+   ],
+   "correct_answer": "1/2",
+   "explanation": "6 与 12 约去 6 得 1 和 2，7 与 7 约去 7 得 1 和 1，剩下 1/1 × 1/2 = 1/2。",
+   "tags": [
+    "分数乘分数",
+    "约分辨析"
+   ],
+   "question_id": "math-6up-d02-q32"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "两根同样长 3 米的彩带，第一根用去 1/3 米，第二根用去 1/3，用去的长度（  ）",
+   "options": [
+    "第二根短",
+    "一样长",
+    "第一根短",
+    "无法比较"
+   ],
+   "correct_answer": "C",
+   "explanation": "1/3 米是具体的长度，约 0.33 米；第二根的 1/3 是分率，3 × 1/3 = 1（米）。所以第一根用得短。",
+   "tags": [
+    "分率与具体量",
+    "辨析"
+   ],
+   "question_id": "math-6up-d02-q33"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "两根同样长的铁丝，第一根用去 1/4 米，第二根用去全长的 1/4，当每根长（  ）米时，两根用去的一样长。",
+   "accepted": [
+    "1"
+   ],
+   "correct_answer": "1",
+   "explanation": "第二根用去 全长 × 1/4，要与 1/4 米相等，全长就是 1/4 ÷ 1/4 = 1（米）。",
+   "tags": [
+    "分率与具体量",
+    "逆向"
+   ],
+   "question_id": "math-6up-d02-q34"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一根丝带长 5/6 米，先剪下 1/3 米，又剪下剩下部分的 1/3，两次剪下的长度（  ）",
+   "options": [
+    "第二次长",
+    "一样长",
+    "无法比较",
+    "第一次长"
+   ],
+   "correct_answer": "D",
+   "explanation": "第一次 1/3 米；剩下 5/6 − 1/3 = 1/2（米），第二次是 1/2 × 1/3 = 1/6（米）。1/3 大于 1/6。",
+   "tags": [
+    "单位一变化",
+    "辨析"
+   ],
+   "question_id": "math-6up-d02-q35"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d02",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一根木条长 3/4 米，第一次锯下 1/5 米，第二次锯下剩下部分的 2/5，第二次锯下（  ）米。",
+   "accepted": [
+    "11/50"
+   ],
+   "correct_answer": "11/50",
+   "explanation": "剩下 3/4 − 1/5 = 11/20（米），第二次是 11/20 × 2/5 = 11/50（米）。第二次的单位 1 是剩下的长度。",
+   "tags": [
+    "单位一变化",
+    "辨析"
+   ],
+   "question_id": "math-6up-d02-q36"
   },
   {
    "question_id": "math-6up-d03-q01",
@@ -1873,6 +2853,497 @@
     "乘法分配律",
     "辨析"
    ]
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "计算 5/6 × 7 × 6/5 时，先算 5/6 × 6/5 = 1，这一步用了（  ）",
+   "options": [
+    "乘法交换律和结合律",
+    "乘法分配律",
+    "加法交换律",
+    "减法的性质"
+   ],
+   "correct_answer": "A",
+   "explanation": "把 7 与 6/5 交换位置、再把两个互为倒数的因数结合相乘，既用了交换律又用了结合律，与加法无关。",
+   "tags": [
+    "乘法交换律",
+    "乘法结合律"
+   ],
+   "question_id": "math-6up-d03-q13"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "计算 7/15 × 9 × 15/7 时，先算 7/15 × 15/7 = 1，整个结果是（  ）。",
+   "accepted": [
+    "9"
+   ],
+   "correct_answer": "9",
+   "explanation": "7/15 与 15/7 的积是 1，再用 1 乘 9，得 9。交换因数的位置不改变积。",
+   "tags": [
+    "乘法交换律",
+    "凑整"
+   ],
+   "question_id": "math-6up-d03-q14"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "把 (3/4 + 5/8) × 8 用乘法分配律展开，正确的是（  ）",
+   "options": [
+    "3/4 + 5/8 × 8",
+    "3/4 × 8 + 5/8 × 8",
+    "3/4 × 8 + 5/8",
+    "(3/4 + 5/8) ÷ 8"
+   ],
+   "correct_answer": "B",
+   "explanation": "分配律是括号里的每个加数都要乘 8：3/4 × 8 + 5/8 × 8，两边都等于 11。漏乘其中一项就不是分配律。",
+   "tags": [
+    "乘法分配律",
+    "展开"
+   ],
+   "question_id": "math-6up-d03-q15"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "计算 0.6 × 5/8 + 0.4 × 5/8，结果是（  ）。",
+   "accepted": [
+    "5/8"
+   ],
+   "correct_answer": "5/8",
+   "explanation": "两个积有相同因数 5/8，提出后括号里 0.6 + 0.4 = 1，所以结果就是 5/8 本身。",
+   "tags": [
+    "乘法分配律",
+    "逆用"
+   ],
+   "question_id": "math-6up-d03-q16"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "计算 3/7 × 101 − 3/7 时，把 3/7 提出来后，括号里应是（  ）",
+   "options": [
+    "101",
+    "101 − 1",
+    "101 + 1",
+    "1"
+   ],
+   "correct_answer": "B",
+   "explanation": "后一个 3/7 可以看作 3/7 × 1，提出 3/7 后括号里是 101 − 1，结果是 300/7。",
+   "tags": [
+    "乘法分配律",
+    "减法形式"
+   ],
+   "question_id": "math-6up-d03-q17"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "计算 9/11 × 7 + 9/11 × 4 时，用乘法分配律，结果是（  ）。",
+   "accepted": [
+    "9"
+   ],
+   "correct_answer": "9",
+   "explanation": "提出 9/11，括号里 7 + 4 = 11，9/11 × 11 = 9。比先分别求积再加快。",
+   "tags": [
+    "乘法分配律",
+    "逆用"
+   ],
+   "question_id": "math-6up-d03-q18"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "计算 5/8 × 4/15 × 2，结果写成最简分数。",
+   "accepted": [
+    "1/3"
+   ],
+   "correct_answer": "1/3",
+   "explanation": "先算 5/8 × 4/15：5 与 15 约去 5、4 与 8 约去 4，得 1/6；再乘 2 得 1/3。",
+   "tags": [
+    "分数连乘",
+    "先约分再乘"
+   ],
+   "question_id": "math-6up-d03-q19"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "计算 0.75 × 8/9，结果写成最简分数是（  ）",
+   "options": [
+    "3/2",
+    "1/2",
+    "2/3",
+    "3/4"
+   ],
+   "correct_answer": "C",
+   "explanation": "0.75 = 3/4，3/4 × 8/9 中 3 与 9 约去 3、8 与 4 约去 4，得 1 × 2/3 = 2/3。",
+   "tags": [
+    "分数与小数相乘"
+   ],
+   "question_id": "math-6up-d03-q20"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "计算 12 × (5/6 − 3/4)，结果写成最简分数。",
+   "accepted": [
+    "1"
+   ],
+   "correct_answer": "1",
+   "explanation": "用分配律：12 × 5/6 = 10，12 × 3/4 = 9，相减得 1。先通分要算 12 × 1/12，也可以。",
+   "tags": [
+    "乘法分配律",
+    "带括号"
+   ],
+   "question_id": "math-6up-d03-q21"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "计算 (7/9 + 5/6) × 18 的结果是（  ）",
+   "options": [
+    "34",
+    "31",
+    "29",
+    "26"
+   ],
+   "correct_answer": "C",
+   "explanation": "用分配律：7/9 × 18 = 14，5/6 × 18 = 15，相加得 29。先通分加成 29/18 再乘也一样。",
+   "tags": [
+    "乘法分配律",
+    "带括号"
+   ],
+   "question_id": "math-6up-d03-q22"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "计算 (5/6 + 7/8) × 24 − 5，结果写成最简分数。",
+   "accepted": [
+    "36"
+   ],
+   "correct_answer": "36",
+   "explanation": "先分配：5/6 × 24 = 20，7/8 × 24 = 21，括号得 41，再减 5 得 36。",
+   "tags": [
+    "乘法分配律",
+    "混合运算"
+   ],
+   "question_id": "math-6up-d03-q23"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "计算 7/8 × 4/9 + 7/8 × 5/9 − 7/8 × 1/3 的结果是（  ）",
+   "options": [
+    "7/8",
+    "7/12",
+    "2/3",
+    "7/24"
+   ],
+   "correct_answer": "B",
+   "explanation": "三项都含 7/8，提出后括号里 4/9 + 5/9 − 1/3 = 2/3，7/8 × 2/3 = 7/12。7/24 是只算了 7/8 × 1/3。",
+   "tags": [
+    "乘法分配律",
+    "三项"
+   ],
+   "question_id": "math-6up-d03-q24"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一桶油重 12 千克，用去这桶油的 3/4，用去（  ）千克。",
+   "accepted": [
+    "9"
+   ],
+   "correct_answer": "9",
+   "explanation": "求 12 千克的 3/4：12 × 3/4 = 9（千克）。",
+   "tags": [
+    "分数乘法应用题",
+    "一步"
+   ],
+   "question_id": "math-6up-d03-q25"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "小华家上月用水 15 吨，本月比上月节约了 1/5，本月节约用水（  ）吨。",
+   "options": [
+    "12 吨",
+    "18 吨",
+    "1/5 吨",
+    "3 吨"
+   ],
+   "correct_answer": "D",
+   "explanation": "节约的水量是上月用水的 1/5：15 × 1/5 = 3（吨）。12 吨是本月实际用水量，不是节约量。",
+   "tags": [
+    "分数乘法应用题",
+    "节约量"
+   ],
+   "question_id": "math-6up-d03-q26"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一间长方形教室长 9 米，宽是长的 5/9，这间教室的面积是（  ）平方米。",
+   "accepted": [
+    "45"
+   ],
+   "correct_answer": "45",
+   "explanation": "宽是 9 × 5/9 = 5（米），面积 9 × 5 = 45（平方米）。求宽这一步用的是分数乘法。",
+   "tags": [
+    "分数乘法应用题",
+    "面积"
+   ],
+   "question_id": "math-6up-d03-q27"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一袋面粉重 25 千克，做馒头用去 2/5，做面条用去剩下的 1/2，还剩（  ）千克。",
+   "options": [
+    "15 千克",
+    "5 千克",
+    "25/2 千克",
+    "15/2 千克"
+   ],
+   "correct_answer": "D",
+   "explanation": "做馒头用去 25 × 2/5 = 10（千克），剩 15 千克；做面条后剩 15 × (1 − 1/2) = 15/2（千克）。15 千克是第一次剩下的。",
+   "tags": [
+    "分数乘法应用题",
+    "单位一变化"
+   ],
+   "question_id": "math-6up-d03-q28"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一条水渠长 9/10 千米，第一周修了全长的 1/3，第二周修了全长的 4/9，还剩（  ）千米。",
+   "accepted": [
+    "1/5"
+   ],
+   "correct_answer": "1/5",
+   "explanation": "两周共修全长的 1/3 + 4/9 = 7/9，还剩 9/10 × (1 − 7/9) = 9/10 × 2/9 = 1/5（千米）。",
+   "tags": [
+    "分数乘法应用题",
+    "求剩余"
+   ],
+   "question_id": "math-6up-d03-q29"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一块地 7/8 公顷，第一天耕了这块地的 2/7，第二天耕了余下的 3/5，第二天耕了（  ）公顷。",
+   "options": [
+    "3/8",
+    "5/8",
+    "1/4",
+    "3/14"
+   ],
+   "correct_answer": "A",
+   "explanation": "第一天后余下 7/8 × (1 − 2/7) = 5/8（公顷），第二天耕 5/8 × 3/5 = 3/8（公顷）。5/8 公顷是余下的全部。",
+   "tags": [
+    "分数乘法应用题",
+    "单位一变化"
+   ],
+   "question_id": "math-6up-d03-q30"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面各式中，运用了乘法分配律的是（  ）",
+   "options": [
+    "(5/6 + 3/4) × 12 = 5/6 × 12 + 3/4 × 12",
+    "5/6 × 3/4 × 12 = 5/6 × 12 × 3/4",
+    "(5/6 × 3/4) × 12 = 5/6 × (3/4 × 12)",
+    "5/6 × 3/4 × 12 = 5/6 × 3/4 + 12"
+   ],
+   "correct_answer": "A",
+   "explanation": "分配律是把括号里的每个加数分别乘括号外的数再相加，只有第一式合这一条。第二式是交换律，第三式是结合律，第四式把乘法写成了加法。",
+   "tags": [
+    "乘法分配律",
+    "运算律辨析"
+   ],
+   "question_id": "math-6up-d03-q31"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "计算 4/5 × 0.5 + 1/5 × 0.5 时，先把 0.5 提出来，结果是（  ）。",
+   "accepted": [
+    "1/2"
+   ],
+   "correct_answer": "1/2",
+   "explanation": "提公因数：4/5 + 1/5 = 1，所以结果是 0.5，也就是 1/2。0.5 与 1/2 是同一个数。",
+   "tags": [
+    "乘法分配律",
+    "分数小数互化"
+   ],
+   "question_id": "math-6up-d03-q32"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面的简便计算中，错误的是（  ）",
+   "options": [
+    "2/3 + 1/3 × 6 = (2/3 + 1/3) × 6 = 6",
+    "3/4 × 5 + 1/4 × 5 = (3/4 + 1/4) × 5 = 5",
+    "7/8 × 4/5 + 1/8 × 4/5 = (7/8 + 1/8) × 4/5 = 4/5",
+    "5/6 × 9 + 5/6 = 5/6 × (9 + 1) = 25/3"
+   ],
+   "correct_answer": "A",
+   "explanation": "分配律要求两个加数都乘括号外的数。第一式里 2/3 没有乘 6，正确结果是 2/3 + 2 = 8/3。其余三式提公因数都没漏项。",
+   "tags": [
+    "乘法分配律",
+    "错例辨析"
+   ],
+   "question_id": "math-6up-d03-q33"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "5/8 × 4/5 与 5/8 × 0.8 的结果相同，这个积是（  ）。",
+   "accepted": [
+    "1/2"
+   ],
+   "correct_answer": "1/2",
+   "explanation": "0.8 = 4/5，两个算式其实是同一个；5/8 × 4/5 中 5 与 5、4 与 8 分别约分，得 1/2。",
+   "tags": [
+    "分数与小数互化",
+    "辨析"
+   ],
+   "question_id": "math-6up-d03-q34"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "计算 5/12 × 99 + 5/12 时，下面变形正确的是（  ）",
+   "options": [
+    "5/12 × (99 − 1)",
+    "5/12 × 99 + 1",
+    "5/12 × (99 + 1)",
+    "(5/12 + 5/12) × 99"
+   ],
+   "correct_answer": "C",
+   "explanation": "后面的 5/12 就是 5/12 × 1，提出 5/12 后括号里是 99 + 1 = 100，得 125/3。不能把 5/12 直接写成加 1。",
+   "tags": [
+    "乘法分配律",
+    "提取公因数"
+   ],
+   "question_id": "math-6up-d03-q35"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d03",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "比较 8/9 × 5/6 与 8/9 × 0.8 的大小，较大的积是（  ）。",
+   "accepted": [
+    "20/27"
+   ],
+   "correct_answer": "20/27",
+   "explanation": "两个积的第一个因数相同，比第二个因数：5/6 大于 0.8（即 4/5），所以 8/9 × 5/6 较大，等于 20/27。",
+   "tags": [
+    "积与因数",
+    "分数小数比较"
+   ],
+   "question_id": "math-6up-d03-q36"
   },
   {
    "question_id": "math-6up-d04-q01",
@@ -2137,6 +3608,496 @@
    ]
   },
   {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "积比被乘数大还是小，是由乘数与（  ）的大小关系决定的。",
+   "options": [
+    "1",
+    "0",
+    "被乘数",
+    "积"
+   ],
+   "correct_answer": "A",
+   "explanation": "乘数大于 1 积变大，等于 1 积不变，小于 1 积变小，判断时要看乘数和 1 比。",
+   "tags": [
+    "积与因数的大小关系",
+    "规律"
+   ],
+   "question_id": "math-6up-d04-q13"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "判断题",
+   "stem": "一个大于 0 的数乘 1，积与这个数相等。",
+   "options": [
+    "对",
+    "错"
+   ],
+   "correct_answer": "A",
+   "explanation": "乘 1 不改变大小，例如 8/11 × 1 还是 8/11。",
+   "tags": [
+    "积与因数的大小关系",
+    "乘 1"
+   ],
+   "question_id": "math-6up-d04-q14"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "判断题",
+   "stem": "一个大于 0 的数乘假分数，积一定比这个数大。",
+   "options": [
+    "对",
+    "错"
+   ],
+   "correct_answer": "B",
+   "explanation": "假分数可能正好等于 1，例如 4/4，这时积与原数相等，所以“一定大”不对。",
+   "tags": [
+    "积与因数的大小关系",
+    "假分数"
+   ],
+   "question_id": "math-6up-d04-q15"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个大于 0 的数乘 12/7，乘数比 1 大（  ），所以积比原数大。",
+   "accepted": [
+    "5/7"
+   ],
+   "correct_answer": "5/7",
+   "explanation": "12/7 化成带分数是 1 又 5/7，比 1 大 5/7；乘数大于 1，积就比原数大。",
+   "tags": [
+    "积与因数的大小关系",
+    "乘数比 1 大多少"
+   ],
+   "question_id": "math-6up-d04-q16"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "两个都大于 0 的数相乘，积与其中任何一个因数相比（  ）。",
+   "options": [
+    "一定比两个因数都大",
+    "一定比两个因数都小",
+    "一定等于其中一个因数",
+    "可能大，也可能小"
+   ],
+   "correct_answer": "D",
+   "explanation": "1/2 × 3 = 3/2，比 1/2 大却比 3 小；乘数大于 1 积变大，小于 1 积变小。",
+   "tags": [
+    "积与因数的大小关系",
+    "两个因数"
+   ],
+   "question_id": "math-6up-d04-q17"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "5/6 乘一个大于 1 的数，积比 5/6 大 5/6，这个乘数是（  ）。",
+   "accepted": [
+    "2"
+   ],
+   "correct_answer": "2",
+   "explanation": "积是 5/6 + 5/6 = 5/3，5/3 ÷ 5/6 = 2，所以乘数是 2。",
+   "tags": [
+    "积与因数的大小关系",
+    "逆向推理"
+   ],
+   "question_id": "math-6up-d04-q18"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "5/6 × 8/5 的积比 5/6 大（  ）。",
+   "accepted": [
+    "1/2"
+   ],
+   "correct_answer": "1/2",
+   "explanation": "5/6 × 8/5 = 4/3，4/3 − 5/6 = 1/2。",
+   "tags": [
+    "积与因数的大小关系",
+    "计算比较"
+   ],
+   "question_id": "math-6up-d04-q19"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面算式中，积大于 6/7 的是（  ）。",
+   "options": [
+    "6/7 × 1",
+    "6/7 × 9/8",
+    "6/7 × 7/9",
+    "6/7 × 0"
+   ],
+   "correct_answer": "B",
+   "explanation": "9/8 大于 1，积比 6/7 大；乘 1 积不变，乘 7/9 或 0 积都比 6/7 小。",
+   "tags": [
+    "积与因数的大小关系",
+    "计算比较"
+   ],
+   "question_id": "math-6up-d04-q20"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "13/8 × 4/13 的积比 13/8 小，这个积是（  ）。",
+   "accepted": [
+    "1/2"
+   ],
+   "correct_answer": "1/2",
+   "explanation": "4/13 小于 1，积会变小：13/8 × 4/13 = 1/2。",
+   "tags": [
+    "积与因数的大小关系",
+    "计算比较"
+   ],
+   "question_id": "math-6up-d04-q21"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "5/6 × 3/2 的积与 5/6 × 2/3 的积相比（  ）。",
+   "options": [
+    "后者大",
+    "一样大",
+    "前者大",
+    "无法比较"
+   ],
+   "correct_answer": "C",
+   "explanation": "3/2 大于 1 使积变大得 5/4，2/3 小于 1 使积变小得 5/9。",
+   "tags": [
+    "积与因数的大小关系",
+    "计算比较"
+   ],
+   "question_id": "math-6up-d04-q22"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "7/9 × 18/7 的积比 7/9 大（  ）。",
+   "accepted": [
+    "11/9"
+   ],
+   "correct_answer": "11/9",
+   "explanation": "7/9 × 18/7 = 2，2 − 7/9 = 11/9。",
+   "tags": [
+    "积与因数的大小关系",
+    "计算比较"
+   ],
+   "question_id": "math-6up-d04-q23"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面四个算式中，积最大的是（  ）。",
+   "options": [
+    "5/8 × 7/6",
+    "9/8 × 5/9",
+    "7/8 × 6/7",
+    "5/8 × 1"
+   ],
+   "correct_answer": "C",
+   "explanation": "四个积依次是 3/4、35/48、5/8、5/8，其中 3/4 最大。",
+   "tags": [
+    "积与因数的大小关系",
+    "比较大小"
+   ],
+   "question_id": "math-6up-d04-q24"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "小明跑了 5/6 千米，小华跑的是小明的 3/2 倍，小华跑了（  ）千米。",
+   "accepted": [
+    "5/4"
+   ],
+   "correct_answer": "5/4",
+   "explanation": "3/2 大于 1，小华跑得更远：5/6 × 3/2 = 5/4 千米。",
+   "tags": [
+    "积与因数的大小关系",
+    "跑步"
+   ],
+   "question_id": "math-6up-d04-q25"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "小华有 12 张邮票，小明的邮票是小华的 5/4，小明有（  ）张。",
+   "options": [
+    "15",
+    "12",
+    "9",
+    "14"
+   ],
+   "correct_answer": "A",
+   "explanation": "5/4 大于 1，小明的张数比 12 多：12 × 5/4 = 15 张。",
+   "tags": [
+    "积与因数的大小关系",
+    "邮票"
+   ],
+   "question_id": "math-6up-d04-q26"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一根钢管长 9/10 米，用去它的 2/3，还剩（  ）米。",
+   "accepted": [
+    "3/10"
+   ],
+   "correct_answer": "3/10",
+   "explanation": "剩下的是全长的 1/3，9/10 × 1/3 = 3/10 米。",
+   "tags": [
+    "积与因数的大小关系",
+    "用料"
+   ],
+   "question_id": "math-6up-d04-q27"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "果园里梨树 60 棵，桃树是梨树的 11/10，苹果树是梨树的 9/10，棵数最多的是（  ）。",
+   "options": [
+    "桃树",
+    "苹果树",
+    "梨树",
+    "一样多"
+   ],
+   "correct_answer": "A",
+   "explanation": "11/10 大于 1，桃树比 60 多；9/10 小于 1，苹果树比 60 少。",
+   "tags": [
+    "积与因数的大小关系",
+    "果树"
+   ],
+   "question_id": "math-6up-d04-q28"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一本书，第一天看了全书的 1/4，第二天看的是第一天的 6/5，两天共看了全书的（  ）。",
+   "accepted": [
+    "11/20"
+   ],
+   "correct_answer": "11/20",
+   "explanation": "第二天看了 1/4 × 6/5 = 3/10，两天共 1/4 + 3/10 = 11/20。",
+   "tags": [
+    "积与因数的大小关系",
+    "看书"
+   ],
+   "question_id": "math-6up-d04-q29"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一根绳子，第一次剪去全长的 1/3，第二次剪去剩下的 3/4，两次剪去的长度相比（  ）。",
+   "options": [
+    "第二次长",
+    "第一次长",
+    "一样长",
+    "无法比较"
+   ],
+   "correct_answer": "A",
+   "explanation": "第二次是剩下的 3/4，即 2/3 × 3/4 = 1/2，比第一次的 1/3 长。",
+   "tags": [
+    "积与因数的大小关系",
+    "剪绳"
+   ],
+   "question_id": "math-6up-d04-q30"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "判断题",
+   "stem": "一个大于 0 的数乘真分数，积一定比这个数小。",
+   "options": [
+    "对",
+    "错"
+   ],
+   "correct_answer": "A",
+   "explanation": "真分数小于 1，例如 5/6 × 3/4 = 5/8，比 5/6 小。",
+   "tags": [
+    "积与因数的大小关系",
+    "真分数"
+   ],
+   "question_id": "math-6up-d04-q31"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一个大于 0 的数乘 9/9，积与这个数相比（  ）。",
+   "options": [
+    "变大",
+    "相等",
+    "变小",
+    "无法确定"
+   ],
+   "correct_answer": "B",
+   "explanation": "9/9 就是 1，乘 1 积不变；分子分母相同的分数都等于 1。",
+   "tags": [
+    "积与因数的大小关系",
+    "9/9"
+   ],
+   "question_id": "math-6up-d04-q32"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "判断题",
+   "stem": "一个大于 0 的数乘 7/5，积比这个数大 2/5。",
+   "options": [
+    "对",
+    "错"
+   ],
+   "correct_answer": "B",
+   "explanation": "乘 7/5 后积比原数大原数的 2/5，不是大 2/5。如 10 乘 7/5 得 14，大了 4。",
+   "tags": [
+    "积与因数的大小关系",
+    "辨析"
+   ],
+   "question_id": "math-6up-d04-q33"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个大于 0 的数乘 5/8 的积是 15/16，这个数是（  ）。",
+   "accepted": [
+    "3/2"
+   ],
+   "correct_answer": "3/2",
+   "explanation": "15/16 ÷ 5/8 = 3/2，3/2 × 5/8 = 15/16，积比 3/2 小。",
+   "tags": [
+    "积与因数的大小关系",
+    "逆向推理"
+   ],
+   "question_id": "math-6up-d04-q34"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面算式中，积比两个因数都大的是（  ）。",
+   "options": [
+    "7/6 × 5/8",
+    "7/6 × 8/5",
+    "5/6 × 8/5",
+    "5/6 × 5/8"
+   ],
+   "correct_answer": "B",
+   "explanation": "两个因数都大于 1 时积才比两个因数都大：7/6 × 8/5 = 28/15。",
+   "tags": [
+    "积与因数的大小关系",
+    "辨析"
+   ],
+   "question_id": "math-6up-d04-q35"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d04",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "在 2/3 × 5/4、2/3、2/3 × 4/5 这三个数中，最大的数比最小的数大（  ）。",
+   "accepted": [
+    "3/10"
+   ],
+   "correct_answer": "3/10",
+   "explanation": "最大是 2/3 × 5/4 = 5/6，最小是 2/3 × 4/5 = 8/15，相差 3/10。",
+   "tags": [
+    "积与因数的大小关系",
+    "排序求差"
+   ],
+   "question_id": "math-6up-d04-q36"
+  },
+  {
    "diagnostic_node_id": "math-6up-d06",
    "subject": "math",
    "ability_tag": "理解意义",
@@ -2376,6 +4337,247 @@
     "辨析"
    ],
    "question_id": "math-6up-d06-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d06",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "5/9 与它的倒数相乘，积是（  ）。",
+   "accepted": [
+    "1"
+   ],
+   "correct_answer": "1",
+   "explanation": "互为倒数的两个数乘积是 1：5/9 × 9/5 = 1。",
+   "tags": [
+    "倒数的意义",
+    "乘积是 1"
+   ],
+   "question_id": "math-6up-d06-q13"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d06",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "判断题",
+   "stem": "0 没有倒数，因为 0 乘任何数都得 0，找不到与它相乘得 1 的数。",
+   "options": [
+    "对",
+    "错"
+   ],
+   "correct_answer": "A",
+   "explanation": "倒数要求两个数的乘积是 1，而 0 与任何数相乘都是 0，所以 0 没有倒数。",
+   "tags": [
+    "倒数的意义",
+    "0 没有倒数"
+   ],
+   "question_id": "math-6up-d06-q14"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d06",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "说 4/3 是 3/4 的倒数，也可以说 3/4 是 4/3 的倒数，这说明倒数表示两个数（  ）。",
+   "options": [
+    "大小关系",
+    "加减关系",
+    "倍数关系",
+    "相互依存的关系"
+   ],
+   "correct_answer": "D",
+   "explanation": "倒数总是成对出现，两个数互为倒数，不能说某一个数是倒数。",
+   "tags": [
+    "倒数的意义",
+    "互为倒数"
+   ],
+   "question_id": "math-6up-d06-q15"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d06",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "1 的倒数是（  ），它与原来的数相等。",
+   "accepted": [
+    "1"
+   ],
+   "correct_answer": "1",
+   "explanation": "1 × 1 = 1，所以 1 的倒数是 1，它和原来的数一样大。",
+   "tags": [
+    "倒数的意义",
+    "1 的倒数"
+   ],
+   "question_id": "math-6up-d06-q16"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d06",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "a 的倒数是 b，b 的倒数是 c，那么 a 与 c 相比（  ）。",
+   "options": [
+    "a 大",
+    "相等",
+    "c 大",
+    "无法确定"
+   ],
+   "correct_answer": "B",
+   "explanation": "a 与 b 互为倒数，b 与 c 也互为倒数；一个数的倒数只有一个，所以 a 和 c 是同一个数。",
+   "tags": [
+    "倒数的意义",
+    "互为倒数"
+   ],
+   "question_id": "math-6up-d06-q17"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d06",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "两个数互为倒数，其中较大的一个是 5/2，较小的一个是（  ）。",
+   "accepted": [
+    "2/5"
+   ],
+   "correct_answer": "2/5",
+   "explanation": "5/2 的倒数是 2/5；2/5 小于 1，5/2 大于 1，所以较小的是 2/5。",
+   "tags": [
+    "倒数的意义",
+    "互为倒数"
+   ],
+   "question_id": "math-6up-d06-q18"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d06",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "9/4 的倒数是（  ）。",
+   "accepted": [
+    "4/9"
+   ],
+   "correct_answer": "4/9",
+   "explanation": "把分子和分母交换位置，9/4 的倒数是 4/9，9/4 × 4/9 = 1。",
+   "tags": [
+    "求倒数",
+    "假分数"
+   ],
+   "question_id": "math-6up-d06-q19"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d06",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "1/8 的倒数是（  ）。",
+   "accepted": [
+    "8"
+   ],
+   "correct_answer": "8",
+   "explanation": "1/8 的分子是 1，交换后是 8/1，也就是 8。",
+   "tags": [
+    "求倒数",
+    "分子是 1"
+   ],
+   "question_id": "math-6up-d06-q20"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d06",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "1 又 3/5 的倒数是（  ）。",
+   "accepted": [
+    "5/8"
+   ],
+   "correct_answer": "5/8",
+   "explanation": "1 又 3/5 化成假分数是 8/5，交换分子分母得 5/8。",
+   "tags": [
+    "求倒数",
+    "带分数"
+   ],
+   "question_id": "math-6up-d06-q21"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d06",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "0.4 的倒数是（  ）。",
+   "options": [
+    "2/5",
+    "4",
+    "1/4",
+    "5/2"
+   ],
+   "correct_answer": "D",
+   "explanation": "0.4 化成 2/5，交换分子分母得 5/2，0.4 × 5/2 = 1。",
+   "tags": [
+    "求倒数",
+    "小数"
+   ],
+   "question_id": "math-6up-d06-q22"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d06",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "2.5 的倒数是（  ）。",
+   "accepted": [
+    "2/5"
+   ],
+   "correct_answer": "2/5",
+   "explanation": "2.5 化成 5/2，交换分子分母得 2/5。",
+   "tags": [
+    "求倒数",
+    "小数"
+   ],
+   "question_id": "math-6up-d06-q23"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d06",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面四个数中，倒数最小的是（  ）。",
+   "options": [
+    "3/4",
+    "2/3",
+    "5/8",
+    "1/2"
+   ],
+   "correct_answer": "A",
+   "explanation": "四个倒数依次是 4/3、3/2、8/5、2，最小的是 4/3，来自 3/4。",
+   "tags": [
+    "求倒数",
+    "比较大小"
+   ],
+   "question_id": "math-6up-d06-q24"
   },
   {
    "diagnostic_node_id": "math-6up-d07",
