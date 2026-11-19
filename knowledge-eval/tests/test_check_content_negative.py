@@ -24,6 +24,24 @@ MATH_QUESTIONS = KE / "data" / "questions_math_6up.json"
 SNAPSHOT = KE / "data" / "taxonomy" / "pep-math-6up-v3.json"
 
 
+def _per_cell_ceiling() -> int:
+    """Read the ceiling from the checker instead of hardcoding it.
+
+    It has already moved once (6 → 9 when 稳健档 went from 2/2/2 to 3/3/3). A literal here would
+    have made this test pass for the wrong reason or fail for the wrong reason; the constant is the
+    single place the number is allowed to live.
+    """
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("check_content_under_test", SCRIPT)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.MAX_PER_CELL
+
+
+MAX_PER_CELL = _per_cell_ceiling()
+
+
 @pytest.fixture
 def workdir():
     """A scratch directory. `tmp_path` is not usable here: the sandbox shim this repo runs under
@@ -111,8 +129,8 @@ def test_too_many_questions_on_one_node_fails(workdir):
     Three ceilings have been tried and the first two were wrong for the same reason — they were chosen
     before anyone knew how many cells a node has. `MAX_PER_SUBJECT = 18` only ever held because ten
     nodes had no questions; a flat `MAX_PER_NODE = 6` forbids the 稳健档 of a node with four ability
-    lines (24 questions). Six now means six in one (node × line) cell, and the node ceiling is
-    `ability_lines × 6`.
+    lines (24 questions). Nine now means nine in one (node × line) cell, and the node ceiling is
+    `ability_lines × 9`.
     """
     payload = json.loads(MATH_QUESTIONS.read_text(encoding="utf-8"))
     base = [q for q in payload["questions"] if q["diagnostic_node_id"] == "math-6up-d01"]
@@ -121,7 +139,7 @@ def test_too_many_questions_on_one_node_fails(workdir):
     same_cell = [q for q in base if q["ability_tag"] == hottest["ability_tag"]]
     # One more than 稳健档 in a single cell, whatever that cell already holds — the pilot batch filled
     # some cells to three, so a fixed number of clones would either overshoot or not trip the ceiling.
-    extra = (6 - len(same_cell)) + 1
+    extra = (MAX_PER_CELL - len(same_cell)) + 1
     for repeat in range(extra):
         clone = dict(hottest)
         clone["question_id"] = f"math-6up-d01-q{90 + repeat:02d}"
@@ -131,9 +149,9 @@ def test_too_many_questions_on_one_node_fails(workdir):
 
     result = run(MATH_NODES, questions)
     assert result.returncode != 0
-    # The ceiling is per cell, not per node: seven on one line means the cell has more than 稳健档 while
-    # the other lines of the same node may still have none.
-    assert f"math-6up-d01/{hottest['ability_tag']}: 7 questions" in result.stderr
+    # The ceiling is per cell, not per node: one over 稳健档 on a single line means the cell is full
+    # while the other lines of the same node may still have none.
+    assert f"math-6up-d01/{hottest['ability_tag']}: {MAX_PER_CELL + 1} questions" in result.stderr
 
 def test_banned_word_in_a_node_name_fails(workdir):
     """A diagnostic name is rendered on the television as `review[].topic`, so it must stay neutral.

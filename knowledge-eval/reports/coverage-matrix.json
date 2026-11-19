@@ -18449,6 +18449,774 @@
     }
    },
    "missing_levels": []
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d18",
+   "node_name": "比较事物（Let's compare!）",
+   "knowledge_type": "reading",
+   "parent_aggregate_node_id": "english-6up-u11",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
+   },
+   "question_ids": [
+    "english-6up-d18-q01",
+    "english-6up-d18-q02",
+    "english-6up-d18-q03",
+    "english-6up-d18-q04",
+    "english-6up-d18-q05",
+    "english-6up-d18-q06",
+    "english-6up-d18-q07",
+    "english-6up-d18-q08",
+    "english-6up-d18-q09"
+   ],
+   "measured": true,
+   "stages": {
+    "0": {
+     "sample": 9,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 9,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 3
+     }
+    },
+    "2": {
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 2,
+      "hard": 3
+     }
+    },
+    "3": {
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
+     "correct": {
+      "easy": 1,
+      "medium": 3,
+      "hard": 3
+     }
+    }
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
+   "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "missing_levels": []
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d18",
+   "node_name": "比较事物（Let's compare!）",
+   "knowledge_type": "reading",
+   "parent_aggregate_node_id": "english-6up-u11",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
+   },
+   "question_ids": [
+    "english-6up-d18-q10",
+    "english-6up-d18-q11",
+    "english-6up-d18-q12",
+    "english-6up-d18-q13",
+    "english-6up-d18-q14",
+    "english-6up-d18-q15",
+    "english-6up-d18-q16",
+    "english-6up-d18-q17",
+    "english-6up-d18-q18"
+   ],
+   "measured": true,
+   "stages": {
+    "0": {
+     "sample": 9,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 9,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 3
+     }
+    },
+    "2": {
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 2,
+      "hard": 3
+     }
+    },
+    "3": {
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
+     "correct": {
+      "easy": 1,
+      "medium": 3,
+      "hard": 3
+     }
+    }
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
+   "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "missing_levels": []
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d19",
+   "node_name": "水的用途与节水（Let's save water!）",
+   "knowledge_type": "reading",
+   "parent_aggregate_node_id": "english-6up-u11",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
+   },
+   "question_ids": [
+    "english-6up-d19-q01",
+    "english-6up-d19-q02",
+    "english-6up-d19-q03",
+    "english-6up-d19-q04",
+    "english-6up-d19-q05",
+    "english-6up-d19-q06",
+    "english-6up-d19-q07",
+    "english-6up-d19-q08",
+    "english-6up-d19-q09"
+   ],
+   "measured": true,
+   "stages": {
+    "0": {
+     "sample": 9,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 9,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 3
+     }
+    },
+    "2": {
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 2,
+      "hard": 3
+     }
+    },
+    "3": {
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
+     "correct": {
+      "easy": 1,
+      "medium": 3,
+      "hard": 3
+     }
+    }
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
+   "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "missing_levels": []
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d19",
+   "node_name": "水的用途与节水（Let's save water!）",
+   "knowledge_type": "reading",
+   "parent_aggregate_node_id": "english-6up-u11",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
+   },
+   "question_ids": [
+    "english-6up-d19-q10",
+    "english-6up-d19-q11",
+    "english-6up-d19-q12",
+    "english-6up-d19-q13",
+    "english-6up-d19-q14",
+    "english-6up-d19-q15",
+    "english-6up-d19-q16",
+    "english-6up-d19-q17",
+    "english-6up-d19-q18"
+   ],
+   "measured": true,
+   "stages": {
+    "0": {
+     "sample": 9,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 9,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 3
+     }
+    },
+    "2": {
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 2,
+      "hard": 3
+     }
+    },
+    "3": {
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
+     "correct": {
+      "easy": 1,
+      "medium": 3,
+      "hard": 3
+     }
+    }
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
+   "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "missing_levels": []
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d20",
+   "node_name": "A Helping Hand（地铁站助人）",
+   "knowledge_type": "reading",
+   "parent_aggregate_node_id": "english-6up-u11",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
+   },
+   "question_ids": [
+    "english-6up-d20-q01",
+    "english-6up-d20-q02",
+    "english-6up-d20-q03",
+    "english-6up-d20-q04",
+    "english-6up-d20-q05",
+    "english-6up-d20-q06",
+    "english-6up-d20-q07",
+    "english-6up-d20-q08",
+    "english-6up-d20-q09"
+   ],
+   "measured": true,
+   "stages": {
+    "0": {
+     "sample": 9,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 9,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 3
+     }
+    },
+    "2": {
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 2,
+      "hard": 3
+     }
+    },
+    "3": {
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
+     "correct": {
+      "easy": 1,
+      "medium": 3,
+      "hard": 3
+     }
+    }
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
+   "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "missing_levels": []
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d20",
+   "node_name": "A Helping Hand（地铁站助人）",
+   "knowledge_type": "reading",
+   "parent_aggregate_node_id": "english-6up-u11",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
+   },
+   "question_ids": [
+    "english-6up-d20-q10",
+    "english-6up-d20-q11",
+    "english-6up-d20-q12",
+    "english-6up-d20-q13",
+    "english-6up-d20-q14",
+    "english-6up-d20-q15",
+    "english-6up-d20-q16",
+    "english-6up-d20-q17",
+    "english-6up-d20-q18"
+   ],
+   "measured": true,
+   "stages": {
+    "0": {
+     "sample": 9,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 9,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 3
+     }
+    },
+    "2": {
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 2,
+      "hard": 3
+     }
+    },
+    "3": {
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
+     "correct": {
+      "easy": 1,
+      "medium": 3,
+      "hard": 3
+     }
+    }
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
+   "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "missing_levels": []
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d21",
+   "node_name": "Two Trees（圣诞送树）",
+   "knowledge_type": "reading",
+   "parent_aggregate_node_id": "english-6up-u11",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
+   },
+   "question_ids": [
+    "english-6up-d21-q01",
+    "english-6up-d21-q02",
+    "english-6up-d21-q03",
+    "english-6up-d21-q04",
+    "english-6up-d21-q05",
+    "english-6up-d21-q06",
+    "english-6up-d21-q07",
+    "english-6up-d21-q08",
+    "english-6up-d21-q09"
+   ],
+   "measured": true,
+   "stages": {
+    "0": {
+     "sample": 9,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 9,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 3
+     }
+    },
+    "2": {
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 2,
+      "hard": 3
+     }
+    },
+    "3": {
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
+     "correct": {
+      "easy": 1,
+      "medium": 3,
+      "hard": 3
+     }
+    }
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
+   "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "missing_levels": []
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d21",
+   "node_name": "Two Trees（圣诞送树）",
+   "knowledge_type": "reading",
+   "parent_aggregate_node_id": "english-6up-u11",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
+   },
+   "question_ids": [
+    "english-6up-d21-q10",
+    "english-6up-d21-q11",
+    "english-6up-d21-q12",
+    "english-6up-d21-q13",
+    "english-6up-d21-q14",
+    "english-6up-d21-q15",
+    "english-6up-d21-q16",
+    "english-6up-d21-q17",
+    "english-6up-d21-q18"
+   ],
+   "measured": true,
+   "stages": {
+    "0": {
+     "sample": 9,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 9,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 3
+     }
+    },
+    "2": {
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
+     "correct": {
+      "easy": 0,
+      "medium": 2,
+      "hard": 3
+     }
+    },
+    "3": {
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
+     "correct": {
+      "easy": 1,
+      "medium": 3,
+      "hard": 3
+     }
+    }
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
+   "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "missing_levels": []
   }
  ],
  "nodes": [
@@ -19648,6 +20416,82 @@
     3
    ],
    "four_stage": true
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d18",
+   "node_name": "比较事物（Let's compare!）",
+   "parent_aggregate_node_id": "english-6up-u11",
+   "questions": {
+    "easy": 6,
+    "medium": 6,
+    "hard": 6,
+    "total": 18
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d19",
+   "node_name": "水的用途与节水（Let's save water!）",
+   "parent_aggregate_node_id": "english-6up-u11",
+   "questions": {
+    "easy": 6,
+    "medium": 6,
+    "hard": 6,
+    "total": 18
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d20",
+   "node_name": "A Helping Hand（地铁站助人）",
+   "parent_aggregate_node_id": "english-6up-u11",
+   "questions": {
+    "easy": 6,
+    "medium": 6,
+    "hard": 6,
+    "total": 18
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d21",
+   "node_name": "Two Trees（圣诞送树）",
+   "parent_aggregate_node_id": "english-6up-u11",
+   "questions": {
+    "easy": 6,
+    "medium": 6,
+    "hard": 6,
+    "total": 18
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   }
  ],
  "chapters": [
@@ -19956,20 +20800,33 @@
     "english-6up-d15"
    ],
    "chapter_order": 10
+  },
+  {
+   "aggregate_node_id": "english-6up-u11",
+   "aggregate_name": "阅读拓展板块",
+   "subject": "english",
+   "diagnostic_count": 4,
+   "diagnostic_node_ids": [
+    "english-6up-d18",
+    "english-6up-d19",
+    "english-6up-d20",
+    "english-6up-d21"
+   ],
+   "chapter_order": 11
   }
  ],
  "generated_from": {
-  "diagnostic_nodes": 63,
-  "aggregate_nodes": 27,
-  "questions": 615
+  "diagnostic_nodes": 67,
+  "aggregate_nodes": 28,
+  "questions": 687
  },
  "summary": {
   "all": {
-   "cells": 205,
+   "cells": 213,
    "no_question": 0,
-   "measured": 205,
-   "floor_ok": 205,
-   "robust_ok": 0,
+   "measured": 213,
+   "floor_ok": 213,
+   "robust_ok": 8,
    "p0": 0,
    "p1": 0,
    "p2": 205
@@ -19996,11 +20853,11 @@
     "p2": 64
    },
    "english": {
-    "cells": 45,
+    "cells": 53,
     "no_question": 0,
-    "measured": 45,
-    "floor_ok": 45,
-    "robust_ok": 0,
+    "measured": 53,
+    "floor_ok": 53,
+    "robust_ok": 8,
     "p0": 0,
     "p1": 0,
     "p2": 45

@@ -1,15 +1,15 @@
 # 覆盖矩阵（由 check_coverage_matrix.py 生成，勿手改）
 
-节点 63 个诊断 / 27 个聚合，题目 615 道。
+节点 67 个诊断 / 28 个聚合，题目 687 道。
 
 ## 1. 汇总
 
 | 范围 | 格子 | 0 题 | n≥3 | 最低档达标 | 稳健档达标 | P0（n<3） | P1（阶段不全） | P2（仅缺稳健档） |
 |---|---|---|---|---|---|---|---|---|
-| 全部 | 205 | 0 | 205 | 205 | 0 | 0 | 0 | 205 |
+| 全部 | 213 | 0 | 213 | 213 | 8 | 0 | 0 | 205 |
 | math | 96 | 0 | 96 | 96 | 0 | 0 | 0 | 96 |
 | chinese | 64 | 0 | 64 | 64 | 0 | 0 | 0 | 64 |
-| english | 45 | 0 | 45 | 45 | 0 | 0 | 0 | 45 |
+| english | 53 | 0 | 53 | 53 | 8 | 0 | 0 | 45 |
 
 ## 2. 聚合节点下的诊断节点数
 
@@ -42,6 +42,7 @@
 | `english-6up-u08` This bird is bigger than the first one | english | 2 | 否 | english-6up-d13、english-6up-d14 |
 | `english-6up-u09` I don't feel well | english | 2 | 否 | english-6up-d16、english-6up-d17 |
 | `english-6up-u10` Festivals bring families together | english | 1 | 否 | english-6up-d15 |
+| `english-6up-u11` 阅读拓展板块 | english | 4 | 是 | english-6up-d18、english-6up-d19、english-6up-d20、english-6up-d21 |
 
 ## 3. 目标聚合节点：`math-6up-u02` 分数乘法（4 个诊断节点）
 
@@ -71,9 +72,9 @@
 |---|---|---|---|---|
 | math | 25 | 25 | 25 | 25 |
 | chinese | 22 | 22 | 22 | 22 |
-| english | 16 | 16 | 16 | 16 |
+| english | 20 | 20 | 20 | 20 |
 
-四阶段可达的节点：`math-6up-d05`、`math-6up-d26`、`math-6up-d01`、`math-6up-d02`、`math-6up-d03`、`math-6up-d04`、`math-6up-d06`、`math-6up-d07`、`math-6up-d08`、`math-6up-d09`、`math-6up-d27`、`math-6up-d28`、`math-6up-d13`、`math-6up-d14`、`math-6up-d15`、`math-6up-d16`、`math-6up-d23`、`math-6up-d17`、`math-6up-d18`、`math-6up-d19`、`math-6up-d29`、`math-6up-d24`、`math-6up-d25`、`math-6up-d30`、`math-6up-d31`、`chinese-6up-d01`、`chinese-6up-d02`、`chinese-6up-d15`、`chinese-6up-d03`、`chinese-6up-d04`、`chinese-6up-d16`、`chinese-6up-d05`、`chinese-6up-d17`、`chinese-6up-d06`、`chinese-6up-d07`、`chinese-6up-d18`、`chinese-6up-d22`、`chinese-6up-d08`、`chinese-6up-d09`、`chinese-6up-d10`、`chinese-6up-d19`、`chinese-6up-d11`、`chinese-6up-d12`、`chinese-6up-d20`、`chinese-6up-d13`、`chinese-6up-d14`、`chinese-6up-d21`、`english-6up-d01`、`english-6up-d02`、`english-6up-d03`、`english-6up-d04`、`english-6up-d06`、`english-6up-d07`、`english-6up-d08`、`english-6up-d09`、`english-6up-d10`、`english-6up-d11`、`english-6up-d12`、`english-6up-d13`、`english-6up-d14`、`english-6up-d16`、`english-6up-d17`、`english-6up-d15`。
+四阶段可达的节点：`math-6up-d05`、`math-6up-d26`、`math-6up-d01`、`math-6up-d02`、`math-6up-d03`、`math-6up-d04`、`math-6up-d06`、`math-6up-d07`、`math-6up-d08`、`math-6up-d09`、`math-6up-d27`、`math-6up-d28`、`math-6up-d13`、`math-6up-d14`、`math-6up-d15`、`math-6up-d16`、`math-6up-d23`、`math-6up-d17`、`math-6up-d18`、`math-6up-d19`、`math-6up-d29`、`math-6up-d24`、`math-6up-d25`、`math-6up-d30`、`math-6up-d31`、`chinese-6up-d01`、`chinese-6up-d02`、`chinese-6up-d15`、`chinese-6up-d03`、`chinese-6up-d04`、`chinese-6up-d16`、`chinese-6up-d05`、`chinese-6up-d17`、`chinese-6up-d06`、`chinese-6up-d07`、`chinese-6up-d18`、`chinese-6up-d22`、`chinese-6up-d08`、`chinese-6up-d09`、`chinese-6up-d10`、`chinese-6up-d19`、`chinese-6up-d11`、`chinese-6up-d12`、`chinese-6up-d20`、`chinese-6up-d13`、`chinese-6up-d14`、`chinese-6up-d21`、`english-6up-d01`、`english-6up-d02`、`english-6up-d03`、`english-6up-d04`、`english-6up-d06`、`english-6up-d07`、`english-6up-d08`、`english-6up-d09`、`english-6up-d10`、`english-6up-d11`、`english-6up-d12`、`english-6up-d13`、`english-6up-d14`、`english-6up-d16`、`english-6up-d17`、`english-6up-d15`、`english-6up-d18`、`english-6up-d19`、`english-6up-d20`、`english-6up-d21`。
 
 ## 5. 补题清单（按 节点 × 能力 × 难度）
 

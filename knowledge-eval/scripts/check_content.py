@@ -33,11 +33,15 @@ import keval  # noqa: E402
 MIN_PER_SUBJECT = 10
 MIN_NODES_PER_SUBJECT = 3
 
-#: A per-cell ceiling: one (diagnostic node × ability line) cell holds at most 稳健档 — 2 易 + 2 中 +
-#: 2 难. The node-level ceiling is derived from it (`ability_lines × 6`), never fixed: a node with four
+#: A per-cell ceiling: one (diagnostic node × ability line) cell holds at most 稳健档 — 3 易 + 3 中 +
+#: 3 难. The node-level ceiling is derived from it (`ability_lines × 9`), never fixed: a node with four
 #: lines needs room for four cells, and a fixed 6 forbade exactly the bank this work is building. Past
-#: six in one cell the seventh question is better spent on a cell that has none.
-MAX_PER_CELL = 6
+#: nine in one cell the tenth question is better spent on a cell that has none.
+#:
+#: Nine, not six: the mastery window is ten answers per line (`mastery.MASTERY_WINDOW`), so a cell of
+#: six filled only 60% of it and the L1/L2 boundary — the weak / not-weak line — moved by a whole band
+#: on one standard error. See docs/ability-mastery-2026-11-19.md and D9 in the batch plan.
+MAX_PER_CELL = 9
 MAX_STEM = 120
 SUBJECTS = keval.SUBJECTS
 

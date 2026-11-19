@@ -13,25 +13,25 @@
 ```bash
 # 1) 原始数据直接过 schema（没有翻译层）
 python knowledge-eval/scripts/check_schema.py
-# → schema: 90 nodes, 615 questions checked against knowledge-eval/schemas
+# → schema: 95 nodes, 687 questions checked against knowledge-eval/schemas
 # → schema: ok
 
 # 2) 双向内容校验：快照 30 个微观点 vs 节点引用
 python knowledge-eval/scripts/check_content.py
-# → nodes: 27 aggregate, 63 diagnostic
+# → nodes: 28 aggregate, 67 diagnostic
 # → coverage pep-math-6up-v3.json: 30/30 micro points referenced
 # →   mt_g6u_036  math-6up-d25     分数四则混合运算      ← 上一版丢掉的那一个
 # → content: ok
 
 # 3) 课本目录差集：课本有、节点没提（漏）/ 节点提了、课本没有（错指）
 python knowledge-eval/scripts/check_outline_coverage.py
-# → chinese 42/42 · math 9/9 · english 10/14（4 条 gap 是还没建的 Let's Know More）
-# → outline: ok (4 gap(s) reported as work not done)
+# → chinese 42/42 · math 9/9 · english 12/12（Let's Know More 与 Let's Read More 已建节点）
+# → outline: ok (0 gap(s) reported as work not done)
 
 # 4) 逐格齐备：每个（节点 × 声明的能力线）格子能不能构出四个阶段
 python knowledge-eval/scripts/check_ability_coverage.py
-# → cells 205: 205 floor, 0 robust, 0 partial, 0 missing
-# → top-up to floor: 0 questions（最低档已齐；稳健档每格 2/2/2 另计）
+# → cells 213: 205 floor, 8 robust, 0 partial, 0 missing
+# → top-up to floor: 0 questions（最低档已齐；稳健档每格 3/3/3 另计）
 python knowledge-eval/scripts/check_ability_coverage.py --strict   # 同上，但不齐就退出 1
 
 # 5) 负样本：把引用删掉/加错，校验必须失败（不含规格测试）
@@ -86,7 +86,7 @@ python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_fou
 
 ### 1.2 课本结构覆盖：节点够不够撑起"整册"
 
-上面查的是"题够不够"，这里查的是"节点全不全"——27 个聚合 + 63 个诊断，是否覆盖了三科六年级上册的课本结构。
+上面查的是"题够不够"，这里查的是"节点全不全"——28 个聚合 + 67 个诊断，是否覆盖了三科六年级上册的课本结构。
 
 结论见 [docs/textbook-coverage-2026-11-19.md](docs/textbook-coverage-2026-11-19.md)。**这一版以课本原件（家长拍摄的目录页）为准**，推翻了初版两条凭网络目录得出的结论。三句话：
 

@@ -606,6 +606,126 @@
    "description": "春节与圣诞节的习俗，the biggest / the most popular",
    "status": "active",
    "chapter_order": 10
+  },
+  {
+   "node_id": "english-6up-u11",
+   "name": "阅读拓展板块",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "阅读拓展板块",
+   "micro_nodes": [
+    "Let's Know More",
+    "Let's Read More"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "课本 61–62 页与 66–67 页的跨单元拓展阅读：两页对比与说明专题，两页故事",
+   "status": "active",
+   "chapter_order": 11,
+   "week_start": 11
+  },
+  {
+   "node_id": "english-6up-d18",
+   "name": "比较事物（Let's compare!）",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u11",
+   "chapter_name": "阅读拓展板块",
+   "knowledge_type": "reading",
+   "micro_nodes": [
+    "Let's Know More",
+    "Let's compare!",
+    "比较级与最高级"
+   ],
+   "ability_lines": [
+    "阅读理解",
+    "辨析判断"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "高铁与老式火车、珠峰与勃朗峰、兵马俑与白金汉宫三组真实语料，练比较级和最高级",
+   "status": "active",
+   "chapter_order": 11
+  },
+  {
+   "node_id": "english-6up-d19",
+   "name": "水的用途与节水（Let's save water!）",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u11",
+   "chapter_name": "阅读拓展板块",
+   "knowledge_type": "reading",
+   "micro_nodes": [
+    "Let's Know More",
+    "Let's save water!",
+    "水的用途",
+    "节水做法"
+   ],
+   "ability_lines": [
+    "阅读理解",
+    "辨析判断"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "水的日常用途、地球水资源的有限，以及四条节水做法",
+   "status": "active",
+   "chapter_order": 11
+  },
+  {
+   "node_id": "english-6up-d20",
+   "name": "A Helping Hand（地铁站助人）",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u11",
+   "chapter_name": "阅读拓展板块",
+   "knowledge_type": "reading",
+   "micro_nodes": [
+    "Let's Read More",
+    "A Helping Hand",
+    "故事理解"
+   ],
+   "ability_lines": [
+    "阅读理解",
+    "辨析判断"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "纽约地铁站，Dan 送陌生老人回家，两天后收到一封信和六张电影票",
+   "status": "active",
+   "chapter_order": 11
+  },
+  {
+   "node_id": "english-6up-d21",
+   "name": "Two Trees（圣诞送树）",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u11",
+   "chapter_name": "阅读拓展板块",
+   "knowledge_type": "reading",
+   "micro_nodes": [
+    "Let's Read More",
+    "Two Trees",
+    "故事理解"
+   ],
+   "ability_lines": [
+    "阅读理解",
+    "辨析判断"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "加拿大圣诞节，兄弟俩各送一棵树，父亲把多余的一棵送给 Brown 一家",
+   "status": "active",
+   "chapter_order": 11
   }
  ]
 }
