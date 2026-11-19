@@ -32,12 +32,11 @@ import keval  # noqa: E402
 MIN_PER_SUBJECT = 10
 MIN_NODES_PER_SUBJECT = 3
 
-#: A per-node ceiling, not a per-subject one. The old `MAX_PER_SUBJECT = 18` was written when 语文 had
-#: 14 diagnostic nodes and 12 questions: it passed only because ten of those nodes had none, and it now
-#: forbids the one thing the bank exists for — a question on every node the child can be judged on.
-#: Six is the 稳健档 from check_coverage_matrix (2 易 + 2 中 + 2 难); past six the extra belongs in a
-#: node of its own, or the per-node window stops being well sampled.
-MAX_PER_NODE = 6
+#: A per-cell ceiling: one (diagnostic node × ability line) cell holds at most 稳健档 — 2 易 + 2 中 +
+#: 2 难. The node-level ceiling is derived from it (`ability_lines × 6`), never fixed: a node with four
+#: lines needs room for four cells, and a fixed 6 forbade exactly the bank this work is building. Past
+#: six in one cell the seventh question is better spent on a cell that has none.
+MAX_PER_CELL = 6
 MAX_STEM = 120
 SUBJECTS = keval.SUBJECTS
 
@@ -88,6 +87,8 @@ def check_nodes(payloads: list[tuple[Path, dict]]) -> tuple[list[str], list[dict
             if "knowledge_type" in node:
                 errors.append(f"node {node_id}: an aggregate carries no knowledge_type "
                               "(it would have to be invented per subject)")
+            if "ability_lines" in node:
+                errors.append(f"node {node_id}: an aggregate carries no ability_lines — it has no questions")
             if node["prerequisite_node_ids"]:
                 errors.append(f"node {node_id}: an aggregate cannot declare prerequisites")
         else:
@@ -95,6 +96,20 @@ def check_nodes(payloads: list[tuple[Path, dict]]) -> tuple[list[str], list[dict
                 errors.append(f"node {node_id}: parent {node['parent_id']!r} is not an aggregate")
             if "knowledge_type" not in node:
                 errors.append(f"node {node_id}: a diagnostic node needs knowledge_type")
+            # Without this list nobody knows which cells exist, so the coverage target silently becomes
+            # "four lines for every node" — including lines the node cannot be asked about. Empties are
+            # how a matrix looks full while the bank is guesswork.
+            lines = node.get("ability_lines")
+            if not lines:
+                errors.append(f"node {node_id}: a diagnostic node must declare ability_lines")
+            else:
+                if len(set(lines)) != len(lines):
+                    errors.append(f"node {node_id}: ability_lines repeats an entry: {lines}")
+                allowed = set(keval.ABILITY_LINES.get(node["subject"], ()))
+                for line in lines:
+                    if line not in allowed:
+                        errors.append(f"node {node_id}: ability line {line!r} is not one {node['subject']} uses "
+                                      f"({', '.join(sorted(allowed))})")
             for prereq in node["prerequisite_node_ids"]:
                 if prereq == node_id:
                     errors.append(f"node {node_id}: is its own prerequisite")
@@ -157,7 +172,7 @@ def check_coverage(nodes: list[dict], snapshot: dict, path: Path) -> tuple[list[
 def check_questions(payloads: list[tuple[Path, dict]], nodes: list[dict]) -> tuple[list[str], dict[str, list[dict]]]:
     errors: list[str] = []
     spec = keval.schema("question.schema.json")
-    diagnostics = {n["node_id"] for n in nodes if n["node_type"] == "diagnostic"}
+    diagnostics = {n["node_id"]: n for n in nodes if n["node_type"] == "diagnostic"}
     by_subject: dict[str, list[dict]] = defaultdict(list)
     seen: Counter = Counter()
 
@@ -174,6 +189,12 @@ def check_questions(payloads: list[tuple[Path, dict]], nodes: list[dict]) -> tup
             node_id = question.get("diagnostic_node_id")
             if node_id not in diagnostics:
                 errors.append(f"{label}: node {node_id!r} is not a diagnostic node")
+            else:
+                declared = diagnostics[node_id].get("ability_lines") or []
+                tag = question.get("ability_tag")
+                if declared and tag not in declared:
+                    errors.append(f"{label}: ability_tag {tag!r} is not one of {declared} on {node_id} "
+                                  "— the question would land in a cell the node never claims")
             if len(question.get("stem", "")) > MAX_STEM:
                 errors.append(f"{label}: stem is {len(question['stem'])} characters, over {MAX_STEM}")
 
@@ -216,8 +237,11 @@ def check_questions(payloads: list[tuple[Path, dict]], nodes: list[dict]) -> tup
     return errors, by_subject
 
 
-def check_question_coverage(by_subject: dict[str, list[dict]], subjects=SUBJECTS) -> list[str]:
+def check_question_coverage(by_subject: dict[str, list[dict]], nodes: list[dict],
+                            subjects=SUBJECTS) -> list[str]:
     errors: list[str] = []
+    lines_of = {n["node_id"]: len(n.get("ability_lines") or [])
+                for n in nodes if n["node_type"] == "diagnostic"}
     for subject in subjects:
         questions = by_subject.get(subject, [])
         if len(questions) < MIN_PER_SUBJECT:
@@ -228,11 +252,15 @@ def check_question_coverage(by_subject: dict[str, list[dict]], subjects=SUBJECTS
         if len(per_node) < MIN_NODES_PER_SUBJECT:
             errors.append(f"{subject}: covers {len(per_node)} nodes, want at least {MIN_NODES_PER_SUBJECT}")
         for node_id, items in per_node.items():
-            if len(items) > MAX_PER_NODE:
-                errors.append(f"{node_id}: {len(items)} questions, want at most {MAX_PER_NODE}")
-            tags = {item["ability_tag"] for item in items}
-            if len(tags) < 2:
-                errors.append(f"{node_id}: only one ability_tag ({tags.pop()}), want at least two")
+            declared = max(1, lines_of.get(node_id, 1))
+            ceiling = declared * MAX_PER_CELL
+            if len(items) > ceiling:
+                errors.append(f"{node_id}: {len(items)} questions, want at most {ceiling} "
+                              f"({declared} ability lines × {MAX_PER_CELL})")
+            per_cell: Counter = Counter(item["ability_tag"] for item in items)
+            for tag, count in sorted(per_cell.items()):
+                if count > MAX_PER_CELL:
+                    errors.append(f"{node_id}/{tag}: {count} questions in one cell, want at most {MAX_PER_CELL}")
             if not any(item["difficulty_preset"] == "中" for item in items):
                 errors.append(f"{node_id}: no 中 difficulty question")
     return errors
@@ -256,7 +284,7 @@ def main(argv: list[str] | None = None) -> int:
     # Only the subjects actually loaded: a reviewer checking one file must not be told the other two
     # subjects have no questions.
     present = tuple(payload["subject"] for _, payload in node_payloads)
-    pool_errors = check_question_coverage(by_subject, present)
+    pool_errors = check_question_coverage(by_subject, nodes, present)
     errors = node_errors + coverage_errors + question_errors + pool_errors
 
     diagnostics = [n for n in nodes if n["node_type"] == "diagnostic"]

@@ -61,6 +61,11 @@ class NotEnoughQuestions(Exception):
 #: at most this many questions on one topic inside one group, review segment included (§6.3, C2).
 PER_TOPIC = 2
 
+#: How much more likely a question is to be drawn when it belongs to the topic's weakest ability line.
+#: A boost, not a filter: the line may have one question left, and refusing to ask anything else would
+#: turn "practise the weak line" into "ask the same question every day" — the failure §5.4 warns about.
+TARGETED_LINE_BOOST = 1.5
+
 
 @dataclass
 class Group:
@@ -98,7 +103,7 @@ def _candidates(db, device_id: str, difficulty_cap: int,
     even at cap 2, because they are the only way that node can reach 拓展.
     """
     rows = db.query(
-        "SELECT q.id, q.topic_id, q.qtype, q.stem, q.difficulty, q.angle,"
+        "SELECT q.id, q.topic_id, q.qtype, q.stem, q.difficulty, q.angle, q.ability_tag,"
         " t.chapter_order AS unit_ordinal, b.id AS textbook_id,"
         " COALESCE(q.subject_id, b.subject_id) AS subject_id,"
         " COALESCE(ts.wrong_count, 0) AS wrong_count,"
@@ -223,17 +228,32 @@ def review_used_today(db, device_id: str, day_key: str) -> Counter:
     return _review_used_today(db, device_id, day_key)
 
 
+def _weakest_line(db, device_id: str, topic_id: int) -> str | None:
+    """The topic's weakest ability line, but only once that line has MIN_SAMPLE answers of its own.
+
+    A line with one answer is not evidence of weakness, and steering the next question at it would make
+    the model chase noise. `None` means "no opinion" and the draw stays as it was.
+    """
+    lines = mastery.ability_lines_of(db, device_id, topic_id)
+    usable = [row for row in lines.values() if row["sample_count"] >= mastery.MIN_SAMPLE]
+    if not usable:
+        return None
+    return min(usable, key=lambda row: (row["acc_x1000"], row["tag"]))["tag"]
+
+
 def _review_pick(fresh: list[dict], weak: dict[int, dict], supply: Counter, rng: random.Random,
-                 limit: int, used_today: Counter) -> list[dict]:
+                 limit: int, used_today: Counter, target_line: dict[int, str] | None = None) -> list[dict]:
     """Weighted draw without replacement inside the review segment (§6.7).
 
-    Weight is the level's 2/3/4, discounted by how much of the topic's target the bank still holds.
-    Drawn one at a time rather than by shuffling weights: the per-topic constraints change the
-    available set after every pick, and a weighted shuffle would quietly ignore them.
+    Weight is the level's 2/3/4, discounted by how much of the topic's target the bank still holds, and
+    multiplied when the question belongs to the topic's weakest ability line. Drawn one at a time rather
+    than by shuffling weights: the per-topic constraints change the available set after every pick, and
+    a weighted shuffle would quietly ignore them.
     """
     pool = [row for row in fresh if int(row["topic_id"]) in weak]
     chosen: list[dict] = []
     local: Counter = Counter()
+    targets = target_line or {}
 
     while len(chosen) < limit and pool:
         # The weight belongs to the *topic*, so a topic with ten questions must not out-draw a topic
@@ -252,6 +272,8 @@ def _review_pick(fresh: list[dict], weak: dict[int, dict], supply: Counter, rng:
             weight = mix.weight_of(topic, int(supply.get(topic_id, 0)))
             if weight <= 0:
                 continue
+            if targets.get(topic_id) and row.get("ability_tag") == targets[topic_id]:
+                weight *= TARGETED_LINE_BOOST
             weight /= max(1, rows_per_topic[topic_id])
             weighted.append((row, weight))
             total += weight
@@ -326,8 +348,11 @@ def pick_group(db, device_id: str, day_key: str, now_ms: int, difficulty: int) -
     # Step 2: the review segment takes its slots first, or the course rotation would fill them.
     if plan["r"]:
         used_today = _review_used_today(db, device_id, day_key)
+        # Only for topics the draw may actually use, and only where a line has enough evidence to name.
+        targets = {topic_id: _weakest_line(db, device_id, topic_id) for topic_id in plan["weak"]}
+        targets = {topic_id: line for topic_id, line in targets.items() if line}
         for row in _review_pick(fresh, plan["weak"], supply, random.Random(now_ms), int(plan["r"]),
-                                used_today):
+                                used_today, targets):
             take(row, from_review=True)
 
     subject_order = sorted(by_subject)

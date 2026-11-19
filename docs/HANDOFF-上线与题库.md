@@ -188,8 +188,12 @@ ssh -i ~/.ssh/misty_deploy root@47.95.198.148 'sh /opt/wrong-quiz/server/tools/a
 # 1) 备份（先确认文件新鲜、gzip 能解开）
 deploy/bin/backup.sh
 
-# 2) 部署新代码之后，若 server/db/migrate-2026-11-19-flat-nodes.sql 还没执行过，先跑 DDL
+# 2) 部署新代码之后，先跑 DDL（各跑一次；都是加法，但 MySQL 8 没有 ADD COLUMN IF NOT EXISTS）
 mysql -uroot quiz < server/db/migrate-2026-11-19-flat-nodes.sql
+#    能力线判档：mastery_event 加 ability_tag 并回填，新建 ability_mastery 并回填历史档位。
+#    它依赖 question.ability_tag 已经存在，跑之前先确认：
+#      mysql -uroot quiz -e "SHOW COLUMNS FROM question LIKE 'ability_tag'"   -- 必须有行
+mysql -uroot quiz < server/db/migrate-2026-11-19-ability-mastery.sql
 
 # 3) 重导节点，再导题目（都按 business key upsert，可重复执行）
 su -s /bin/sh wrongquiz -c '.venv/bin/python -m server.tools.import_curriculum --dsn "$DSN"'
@@ -252,12 +256,13 @@ DELETE FROM unit WHERE code = 'math-6up-u09';
 
 （本次同时改了 `import_curriculum` 的残留检测：原来按 `ordinal` 比对，节点删除后序号被别人占用就静默放过；现在按 `code` 比对，缺节点会打印 `still in the database but gone from the file`，不再无声无息。）
 
-验收（数字来自 `check_schema.py` 当前打印的 90 nodes / 67 questions）：
+验收（数字来自 `check_schema.py` 当前打印的 90 nodes / 112 questions）：
 
 ```sql
 SELECT COUNT(*) FROM unit;      -- 期望 27（数学 9 + 语文 8 + 英语 10）
 SELECT COUNT(*) FROM topic;     -- 期望 63（数学 25 + 语文 22 + 英语 16）
-SELECT COUNT(*) FROM question;  -- 期望 67（数学 15 + 语文 36 + 英语 16）
+SELECT COUNT(*) FROM question;  -- 期望 112（数学 60 + 语文 36 + 英语 16）
+SELECT COUNT(*) FROM ability_mastery;  -- 有作答才有行；空库为 0，不是错
 SELECT name_zh FROM unit WHERE code='english-6up-u09';  -- 期望 I don't feel well
 SELECT name_zh FROM unit WHERE code='math-6up-u04';     -- 期望 生活中的负数（这一行是被改写的，不是新建的）
 ```

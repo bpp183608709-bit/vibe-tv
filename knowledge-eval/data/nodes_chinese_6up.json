@@ -49,6 +49,11 @@
     "丁香结",
     "古诗词三首"
    ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "能在写景句子里读出词义和作者的心情",
@@ -69,6 +74,11 @@
     "宿建德江",
     "六月二十七日望湖楼醉书",
     "西江月·夜行黄沙道中"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -91,6 +101,11 @@
     "交流平台：阅读时从所读的内容想开去",
     "词句段运用：排比与分号",
     "日积月累：《过故人庄》"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -134,6 +149,11 @@
     "开国大典",
     "我的战友邱少云"
    ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "能用一句话概括场面，说出人物的品质",
@@ -153,6 +173,12 @@
    "micro_nodes": [
     "开国大典",
     "狼牙山五壮士"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断",
+    "综合表达"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -175,6 +201,11 @@
     "日积月累：鞠躬尽瘁，死而后已等爱国名言",
     "词句段运用：“反复”的表达效果",
     "交流平台：点面结合的梳理"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -216,6 +247,11 @@
     "宇宙生命之谜",
     "故宫博物院"
    ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "带着问题找段落，与任务无关的部分快速跳过",
@@ -237,6 +273,11 @@
     "词句段运用：用“一是……二是……”分条表述",
     "用具体事例说明观点",
     "日积月累：《春日》"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -280,6 +321,11 @@
     "穷人",
     "金色的鱼钩"
    ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "找出人物、情节、环境，并说明各自的作用",
@@ -299,6 +345,11 @@
    "micro_nodes": [
     "穷人",
     "桥"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -321,6 +372,11 @@
     "交流平台：小说三要素的梳理",
     "词句段运用：从语言、动作、神态体会人物内心"
    ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "能圈出人物的语言、动作、神态，推想他当时的想法和心情",
@@ -341,6 +397,10 @@
     "快乐读书吧：笑与泪，经历与成长",
     "《童年》的主要人物：阿廖沙、外祖母",
     "从情节看人物的成长"
+   ],
+   "ability_lines": [
+    "阅读理解",
+    "辨析判断"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -381,6 +441,12 @@
     "盼",
     "爸爸的计划",
     "小站"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断",
+    "综合表达"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -423,6 +489,11 @@
     "青山不老",
     "三黑和土地"
    ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "找出说明方法，说出观点靠什么支撑",
@@ -443,6 +514,11 @@
     "浪淘沙（其一）",
     "江南春",
     "书湖阴先生壁"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -465,6 +541,11 @@
     "交流平台：抓关键句把握主要观点",
     "说明方法：列数字、作比较、举例子",
     "日积月累：五行、五谷、五音、五彩"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -506,6 +587,11 @@
     "两小儿辩日",
     "曹冲称象"
    ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "去、汤、孰、置、咸等实词，能把句子说通并说出故事的道理",
@@ -525,6 +611,10 @@
    "micro_nodes": [
     "表里的生物",
     "他们那时候多有趣啊"
+   ],
+   "ability_lines": [
+    "阅读理解",
+    "辨析判断"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -547,6 +637,10 @@
     "文言文朗读停顿：孰为汝多知乎",
     "文言文朗读停顿：置象大船之上",
     "按意思断句：先懂句意再停顿"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "辨析判断"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -590,6 +684,11 @@
     "我的伯父鲁迅先生",
     "有的人——纪念鲁迅有感"
    ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "闰土、伯父的形象，以及那时社会的样子",
@@ -609,6 +708,10 @@
    "micro_nodes": [
     "少年闰土",
     "我的伯父鲁迅先生"
+   ],
+   "ability_lines": [
+    "阅读理解",
+    "辨析判断"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -631,6 +734,11 @@
     "日积月累：鲁迅名言四句",
     "名言的意思",
     "名言用在什么场合"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],

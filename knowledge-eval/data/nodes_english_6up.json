@@ -48,6 +48,11 @@
     "不规则动词过去式",
     "What did you do during the holidays?"
    ],
+   "ability_lines": [
+    "语言运用",
+    "辨析判断",
+    "阅读理解"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "went/visited/watched 的用法与 What did you do 问答",
@@ -67,6 +72,12 @@
    "micro_nodes": [
     "假期活动动词",
     "城市与家乡名称"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断",
+    "综合表达"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -108,6 +119,11 @@
     "第三人称单数",
     "Beibei always gets up early"
    ],
+   "ability_lines": [
+    "语言运用",
+    "辨析判断",
+    "阅读理解"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "主语是 he/she/it 时动词加 -s/-es（Beibei gets up early）",
@@ -127,6 +143,10 @@
    "micro_nodes": [
     "频度副词",
     "日常作息表达"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "辨析判断"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -168,6 +188,10 @@
     "like / love + doing",
     "enjoy eating mooncakes"
    ],
+   "ability_lines": [
+    "语言运用",
+    "辨析判断"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "enjoy 后接动名词，及 like/love + doing 的同类用法",
@@ -188,6 +212,11 @@
     "一般现在时",
     "一般过去时",
     "节日活动表达"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "辨析判断",
+    "阅读理解"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -230,6 +259,11 @@
     "There will be 句型",
     "天气描述"
    ],
+   "ability_lines": [
+    "语言运用",
+    "辨析判断",
+    "阅读理解"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "will + 动词原形，will be 描述天气，There will be 表示将有",
@@ -249,6 +283,10 @@
    "micro_nodes": [
     "天气形容词",
     "天气下的活动"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "辨析判断"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -289,6 +327,10 @@
     "a glass of / a cup of",
     "不可数名词"
    ],
+   "ability_lines": [
+    "语言运用",
+    "辨析判断"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "不可数名词前的量词与复数变化",
@@ -327,6 +369,10 @@
     "情态动词 can",
     "提供帮助的表达"
    ],
+   "ability_lines": [
+    "语言运用",
+    "辨析判断"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "can + 动词原形，What can I do for you?",
@@ -364,6 +410,11 @@
    "micro_nodes": [
     "情态动词 should",
     "3R 环保表达"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "辨析判断",
+    "阅读理解"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -405,6 +456,10 @@
     "双写辅音",
     "more + 长形容词"
    ],
+   "ability_lines": [
+    "语言运用",
+    "辨析判断"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "big→bigger，双写与 more 的规则",
@@ -424,6 +479,11 @@
    "micro_nodes": [
     "比较级句型 than",
     "两者比较"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "辨析判断",
+    "阅读理解"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -465,6 +525,12 @@
     "have a cold / fever / headache",
     "see a doctor / take medicine"
    ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断",
+    "综合表达"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "问病情与回答，have a cold / have a fever / have a headache 的固定搭配",
@@ -485,6 +551,12 @@
     "should + 动词原形",
     "给建议：You should drink more water.",
     "劝阻：You shouldn't eat too much ice cream."
+   ],
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断",
+    "综合表达"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -523,6 +595,11 @@
    "micro_nodes": [
     "节日习俗",
     "形容词最高级"
+   ],
+   "ability_lines": [
+    "语言运用",
+    "辨析判断",
+    "阅读理解"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],

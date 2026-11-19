@@ -29,7 +29,7 @@ import check_coverage_matrix as ccm  # noqa: E402
 import keval  # noqa: E402
 from server.app import mastery, report  # noqa: E402
 
-TARGET_NODES = 3
+TARGET_NODES = 4
 
 #: ASCII slugs for test ids: pytest escapes non-ASCII ids to \uXXXX, which makes the verification
 #: output unreadable in exactly the place a reviewer is supposed to read it.
@@ -41,10 +41,11 @@ ABILITY_SLUG = {"理解意义": "meaning", "执行计算": "compute", "情境应
 def load():
     nodes = [node for _, payload in keval.load_nodes() for node in payload["nodes"]]
     questions = [q for _, payload in keval.load_questions() for q in payload["questions"]]
-    return ccm.analyse(nodes, questions)
+    return ccm.analyse(nodes, questions), nodes
 
 
-DATA = load()
+DATA, DATA_NODES = load()
+NODES_BY_ID = {node["node_id"]: node for node in DATA_NODES}
 TARGET = ccm.pick_target(DATA["chapters"])
 NODE_IDS = TARGET["diagnostic_node_ids"][:TARGET_NODES]
 CELLS = {(c["diagnostic_node_id"], c["ability_tag"]): c for c in DATA["cells"] if c["diagnostic_node_id"] in NODE_IDS}
@@ -82,7 +83,7 @@ def weak_report_contains(node_id: str, level: int, acc_x1000: int, sample: int) 
 def cases() -> list:
     params = []
     for node_id in NODE_IDS:
-        for ability in ccm.ABILITY_LINES["math"]:
+        for ability in ccm.lines_of(NODES_BY_ID[node_id]):
             cell = CELLS[(node_id, ability)]
             for level in range(4):
                 reason = (f"题库覆盖不足：{node_id}×{ability} 只有 "

@@ -887,7 +887,12 @@ class H5:
         }
 
     def _abilities(self, row: dict) -> list[dict]:
-        """The persisted per-ability split of this node's window. [] when it was never measured."""
+        """The persisted per-ability drill-down. [] when it was never measured.
+
+        Each line carries its own `level`, read from `ability_mastery` through the breakdown JSON. The
+        node's level and a line's level are different numbers on purpose: a node can be 基础 while one
+        of its four lines is 未掌握, and that is the sentence a parent came to the detail page for.
+        """
         raw = row.get("ability_breakdown_json")
         if not raw:
             return []
@@ -896,7 +901,7 @@ class H5:
         except (TypeError, ValueError):
             return []
         return [{"tag": item.get("tag"), "sample": int(item.get("sample") or 0),
-                 "acc": int(item.get("acc") or 0)}
+                 "acc": int(item.get("acc") or 0), "level": int(item.get("level") or 0)}
                 for item in value if isinstance(item, dict) and item.get("tag")]
 
     def report_by_node(self, device_id: str, period: str = "最近 30 天", scope: str = "weak") -> dict:

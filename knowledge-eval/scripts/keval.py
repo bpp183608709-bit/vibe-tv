@@ -30,6 +30,16 @@ TAXONOMY = DATA / "taxonomy" / "pep-math-6up-v3.json"
 
 SUBJECTS = ("math", "chinese", "english")
 
+#: Which ability lines a subject may use at all. A node then declares the subset it actually supports
+#: (`ability_lines` on the node); this is the outer bound, so 数学 can never be asked about 综合表达.
+#: One definition, imported by the checks, because two copies of a taxonomy is how a matrix and the
+#: data start disagreeing about how many cells exist.
+ABILITY_LINES = {
+    "math": ("理解意义", "执行计算", "情境应用", "辨析变式"),
+    "chinese": ("语言运用", "阅读理解", "辨析判断", "综合表达"),
+    "english": ("语言运用", "阅读理解", "辨析判断", "综合表达"),
+}
+
 #: What the repo's JSON-Schema subset understands. Kept here so a schema edit that uses a new keyword
 #: fails loudly instead of being silently ignored.
 SUPPORTED_KEYWORDS = {"$schema", "$id", "title", "description", "type", "required", "properties",

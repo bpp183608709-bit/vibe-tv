@@ -1,5 +1,10 @@
 # 题库覆盖审查：四阶段判定与强化包能否被构造
 
+> **状态（2026-11-19 晚）：本文的结论已被 [ability-mastery-2026-11-19.md](ability-mastery-2026-11-19.md) 部分取代。**
+> §9.2 提出的「能力下钻与判档窗口不同粒度」已按「能力线独立窗口」实现，格子数也从 63×4=252
+> 变成 205（节点声明 `ability_lines`）。本文保留原样，因为它记录的是改造前的实测数字与推理过程；
+> 当前数字请跑 `check_ability_coverage.py`。
+
 > 审查对象：`knowledge-eval/data/` 当前 55 个诊断节点、43 道题。
 > 生成方式：全部数字来自 `scripts/check_coverage_matrix.py` 输出的 `reports/coverage-matrix.json`，没有手工估算值。
 > 判定口径：以 `server/app/mastery.py` 的实现为准，不以文档为准。

@@ -107,6 +107,7 @@
                     "type": "object",
                     "required": [
                       "tag",
+                      "mastery_level",
                       "weighted_accuracy",
                       "sample_count"
                     ],
@@ -114,6 +115,11 @@
                     "properties": {
                       "tag": {
                         "type": "string"
+                      },
+                      "mastery_level": {
+                        "type": "string",
+                        "enum": ["0-未掌握", "1-基础", "2-熟练", "3-拓展"],
+                        "description": "Judged on this line's own window, not sliced out of the node's. A line can be 0-未掌握 while the node it belongs to is 1-基础, and that gap is the drill-down's whole point."
                       },
                       "weighted_accuracy": {
                         "type": "number",
@@ -193,6 +199,7 @@
                     "type": "object",
                     "required": [
                       "tag",
+                      "mastery_level",
                       "weighted_accuracy",
                       "sample_count"
                     ],
@@ -200,6 +207,11 @@
                     "properties": {
                       "tag": {
                         "type": "string"
+                      },
+                      "mastery_level": {
+                        "type": "string",
+                        "enum": ["0-未掌握", "1-基础", "2-熟练", "3-拓展"],
+                        "description": "Judged on this line's own window, not sliced out of the node's. A line can be 0-未掌握 while the node it belongs to is 1-基础, and that gap is the drill-down's whole point."
                       },
                       "weighted_accuracy": {
                         "type": "number",

@@ -533,6 +533,38 @@ CREATE TABLE topic_mastery (
   CONSTRAINT fk_mastery_topic  FOREIGN KEY (topic_id)  REFERENCES topic (id)
 ) ENGINE=InnoDB;
 
+-- Mastery per (device, topic, ability line). A second table rather than a second key on topic_mastery,
+-- because the two answer different questions and are read by different callers: the weak list, the
+-- daily mix quota and the picker's review segment all ask "how is this node" (topic_mastery), while a
+-- drill-down and a targeted re-ask ask "how is this line of it" (here).
+--
+-- The window is per cell, not a slice of the node's window. That is the whole reason this table exists:
+-- with one ten-row window per node, four ability lines cannot each hold MIN_SAMPLE (3) rows — twelve
+-- rows do not fit in ten, and a rolling window forgets the first ones. Each cell therefore keeps its
+-- own last ten `counted=1` events, read from mastery_event by (device, topic, ability).
+--
+-- A paper mistake has no ability line (no question behind it), so it only ever moves the node row.
+CREATE TABLE ability_mastery (
+  device_id     CHAR(26)          NOT NULL,
+  topic_id      INT UNSIGNED      NOT NULL,
+  ability_tag   VARCHAR(16)       NOT NULL,   -- subject-specific; see docs/RULES.md and question.ability_tag
+  score         TINYINT UNSIGNED  NOT NULL DEFAULT 0,   -- 0..100, for the drill-down's own bar
+  level         TINYINT UNSIGNED  NOT NULL DEFAULT 0,   -- 0 未掌握 .. 3 拓展, judged on this cell's window
+  sample_count       TINYINT UNSIGNED  NOT NULL DEFAULT 0, -- 0..10; under 3 the cell reads 待测
+  weight_sum_x10     SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+  correct_weight_x10 SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+  acc_x1000          SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+  hard_right         TINYINT UNSIGNED  NOT NULL DEFAULT 0,
+  -- Per-cell sequence, so "replay this cell's window" does not have to filter the node's ledger by hand.
+  seq           INT UNSIGNED      NOT NULL DEFAULT 0,
+  weak_since    DATETIME          NULL,
+  updated_at    DATETIME          NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (device_id, topic_id, ability_tag),
+  KEY idx_ability_weak (device_id, level),
+  CONSTRAINT fk_ability_mastery_device FOREIGN KEY (device_id) REFERENCES device (id),
+  CONSTRAINT fk_ability_mastery_topic  FOREIGN KEY (topic_id)  REFERENCES topic (id)
+) ENGINE=InnoDB;
+
 -- The weak list, materialised. Before this table the "what to teach this week" page was reassembled
 -- from topic_mastery on every read, so a weakness had no identity, no history and no status: it was a
 -- row that happened to satisfy `level <= 1 AND sample >= 3`. One row per (device, topic), written in the
@@ -576,6 +608,10 @@ CREATE TABLE mastery_event (
   -- The question this row is evidence for. Kept so a report can name the three answers behind a number
   -- without parsing `ref_id` ('<session>:<question>') back into parts.
   question_id INT UNSIGNED   NULL,
+  -- Copied from the question, not joined at read time: the per-cell window is
+  -- ORDER BY seq DESC LIMIT 10 filtered by this column, and a join on every answer would make the
+  -- hottest write path depend on `question`. NULL for a paper mistake, which has no line.
+  ability_tag VARCHAR(16)    NULL,
   kind        ENUM('tv_wrong','tv_right','paper_wrong','streak_bonus','parent_adjust',
                    'bad_question_void') NOT NULL,
   delta       SMALLINT       NOT NULL,               -- score_after - score_before, signed
@@ -602,6 +638,8 @@ CREATE TABLE mastery_event (
   PRIMARY KEY (id),
   KEY idx_mastery_event_topic (device_id, topic_id, created_at),
   KEY idx_event_window (device_id, topic_id, seq),
+  -- The per-cell window: same shape as idx_event_window plus the line, so a cell read is one range scan.
+  KEY idx_event_ability (device_id, topic_id, ability_tag, seq),
   CONSTRAINT fk_event_device FOREIGN KEY (device_id) REFERENCES device (id),
   CONSTRAINT fk_event_topic  FOREIGN KEY (topic_id)  REFERENCES topic (id)
 ) ENGINE=InnoDB;

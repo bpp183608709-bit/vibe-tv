@@ -128,7 +128,7 @@ cd knowledge-eval && python -m pytest tests/ -v    # 或在 knowledge-eval 里�
 ```
 
 ```
-28 passed, 48 xfailed
+95 passed
 ```
 
 | 文件 | 断言什么 |
@@ -223,7 +223,40 @@ acceptance: 256/256 passed  (db acceptance-<stamp>.sqlite3)
 
 ---
 
-## 9. 已知限制
+## 9. 逐格齐备（能力线）
+
+判档的粒度在 2026-11-19 从「节点」扩到「节点 × 能力线」：每条线有自己的十条窗口，自己的档位，
+自己的 `ability_mastery` 行。节点级 `topic_mastery` 不变，薄弱项清单、每日配额、复习段仍按节点算。
+
+为什么必须分表：四条线共用节点的十行窗口时，四条线各要 MIN_SAMPLE(3) 就是十二行，装不进十行，
+滚动窗口还会把最早的挤出去。这不是题量问题，`knowledge-eval/tests/test_ability_mastery.py` 里
+`test_each_line_keeps_its_own_window` 用十二条作答把这件事钉住了——节点窗口剩十条（某条线掉到 2 条，
+判不出档），而四行 `ability_mastery` 各留 4 条。
+
+```bash
+python knowledge-eval/scripts/check_ability_coverage.py            # 报告，恒退出 0
+python knowledge-eval/scripts/check_ability_coverage.py --strict   # 有不齐的格子就退出 1
+python knowledge-eval/scripts/check_ability_coverage.py --subject math --detail
+```
+
+```
+cells 205: 17 floor, 0 robust, 51 partial, 137 missing
+  math      96 cells  floor  16  robust   0  partial  12  missing  68  nodes ready 4/25
+  chinese   64 cells  floor   1  robust   0  partial  27  missing  36  nodes ready 1/22
+  english   45 cells  floor   0  robust   0  partial  12  missing  33  nodes ready 0/16
+top-up to floor: 503 questions (易 167, 中 167, 难 169)
+top-up to robust: 1118 questions (易 372, 中 372, 难 374)
+```
+
+格子数不是 63×4=252，而是 205：每个诊断节点在 `ability_lines` 里声明它真能被问到哪几条线。
+「用有序数对确定位置」没有可执行的计算，「文言朗读停顿」没有习作任务，把它们算进矩阵只会逼着
+出题人硬凑。声明了就必须补题，所以这份清单是**承诺**，不是注释。
+
+`--strict` 是这个批次的验收门：一批题生成完，先跑它，再上库。
+
+---
+
+## 10. 已知限制
 
 - `check_content.py` 的反向覆盖只对**有快照**的科目生效（目前只有数学）。语文/英语没有公开分类法，`source_ids` 为空，反向集合为空集相等，不构成漏检。
 - 差集只回答「课本里有没有」，不回答「题目对不对」：节点覆盖了《两小儿辩日》就算过，题目仍可能按旧篇目出题。

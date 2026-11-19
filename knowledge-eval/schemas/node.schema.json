@@ -57,6 +57,16 @@
       "items": {"type": "string", "minLength": 1},
       "description": "The textbook's own sub-points, as plain strings. At least one: a node nobody can name a sub-point for is not diagnosable."
     },
+    "ability_lines": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string",
+        "enum": ["理解意义", "执行计算", "情境应用", "辨析变式",
+                 "语言运用", "阅读理解", "辨析判断", "综合表达"]
+      },
+      "description": "Diagnostic nodes only, and required there in practice. Which ability lines this node can actually be asked about — the drill-down judges each one on its own window, so a line listed here costs three questions. Two lines minimum: a node with one line has nothing to drill into, and check_content has always required two tags per node. Do not list a line to look complete: 数学的「用有序数对确定位置」没有可执行的计算，语文的「文言朗读停顿」没有习作任务，硬凑出来的格子只会产出废题。Aggregates carry none: a chapter has no questions."
+    },
     "source_ids": {
       "type": "array",
       "items": {"type": "string", "pattern": "^mt_g6u_[0-9]{3}$"},

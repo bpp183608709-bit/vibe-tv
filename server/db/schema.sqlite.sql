@@ -418,6 +418,30 @@ CREATE TABLE topic_mastery (
 );
 CREATE INDEX idx_mastery_weak ON topic_mastery (device_id, level);
 
+-- Mastery per (device, topic, ability line). A separate table, not a second key on topic_mastery: the
+-- node row answers "how is this node" (weak list, mix quota, review segment), this one answers "how is
+-- this line of it" (drill-down, targeted re-ask). The window is per cell — four lines sharing one
+-- ten-row window could never each hold MIN_SAMPLE (3) rows.
+CREATE TABLE ability_mastery (
+  device_id     TEXT    NOT NULL,
+  topic_id      INTEGER NOT NULL,
+  ability_tag   TEXT    NOT NULL,
+  score         INTEGER NOT NULL DEFAULT 0,
+  level         INTEGER NOT NULL DEFAULT 0,
+  sample_count       INTEGER NOT NULL DEFAULT 0,
+  weight_sum_x10     INTEGER NOT NULL DEFAULT 0,
+  correct_weight_x10 INTEGER NOT NULL DEFAULT 0,
+  acc_x1000          INTEGER NOT NULL DEFAULT 0,
+  hard_right         INTEGER NOT NULL DEFAULT 0,
+  seq           INTEGER NOT NULL DEFAULT 0,
+  weak_since    TEXT    NULL,
+  updated_at    TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (device_id, topic_id, ability_tag),
+  FOREIGN KEY (device_id) REFERENCES device (id),
+  FOREIGN KEY (topic_id)  REFERENCES topic (id)
+);
+CREATE INDEX idx_ability_weak ON ability_mastery (device_id, level);
+
 -- The weak list, materialised: one row per (device, topic), written in the same transaction as the
 -- mastery update that caused it. `resolved` is a flag, not a delete, so "was he weak last month" stays
 -- answerable; a relapse clears it on the same row.
@@ -446,6 +470,7 @@ CREATE TABLE mastery_event (
   device_id   TEXT    NOT NULL,
   topic_id    INTEGER NOT NULL,
   question_id INTEGER NULL,                       -- the question this row is evidence for
+  ability_tag TEXT    NULL,                       -- copied from the question; NULL for a paper mistake
   -- One line on purpose: migrate.py reads one column declaration per line.
   kind        TEXT    NOT NULL CHECK (kind IN ('tv_wrong','tv_right','paper_wrong','streak_bonus','parent_adjust','bad_question_void')),
   delta       INTEGER NOT NULL,                   -- score_after - score_before
@@ -465,6 +490,7 @@ CREATE TABLE mastery_event (
   FOREIGN KEY (topic_id)  REFERENCES topic (id)
 );
 CREATE INDEX idx_event_window ON mastery_event (device_id, topic_id, seq);
+CREATE INDEX idx_event_ability ON mastery_event (device_id, topic_id, ability_tag, seq);
 CREATE INDEX idx_mastery_event_topic ON mastery_event (device_id, topic_id, created_at);
 
 CREATE TABLE gen_task (

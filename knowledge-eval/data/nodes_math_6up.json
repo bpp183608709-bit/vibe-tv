@@ -47,6 +47,11 @@
     "方向角表示位置",
     "描述和绘制运动路线"
    ],
+   "ability_lines": [
+    "理解意义",
+    "情境应用",
+    "辨析变式"
+   ],
    "source_ids": [
     "mt_g6u_008",
     "mt_g6u_009"
@@ -69,6 +74,11 @@
    "micro_nodes": [
     "用数对表示位置",
     "根据数对在方格纸上找位置"
+   ],
+   "ability_lines": [
+    "理解意义",
+    "情境应用",
+    "辨析变式"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
@@ -111,6 +121,12 @@
     "分数乘整数的意义",
     "分数乘整数的计算"
    ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
    "source_ids": [
     "mt_g6u_001",
     "mt_g6u_002"
@@ -133,6 +149,12 @@
    "micro_nodes": [
     "一个数乘分数的意义",
     "分数乘分数的计算"
+   ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
    ],
    "source_ids": [
     "mt_g6u_003",
@@ -159,6 +181,12 @@
     "分数乘法的运算律应用",
     "分数乘法应用题"
    ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
    "source_ids": [
     "mt_g6u_005",
     "mt_g6u_006"
@@ -182,6 +210,12 @@
    "knowledge_type": "conceptual",
    "micro_nodes": [
     "乘积与被乘数大小的比较规律"
+   ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
    ],
    "source_ids": [
     "mt_g6u_007"
@@ -227,6 +261,12 @@
    "micro_nodes": [
     "倒数的认识"
    ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
    "source_ids": [
     "mt_g6u_010"
    ],
@@ -250,6 +290,12 @@
    "micro_nodes": [
     "分数除以整数的计算",
     "一个数除以分数的计算"
+   ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
    ],
    "source_ids": [
     "mt_g6u_011",
@@ -275,6 +321,12 @@
    "micro_nodes": [
     "商与被除数大小的关系"
    ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
    "source_ids": [
     "mt_g6u_013"
    ],
@@ -298,6 +350,12 @@
    "knowledge_type": "procedural",
    "micro_nodes": [
     "分数除法应用题"
+   ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
    ],
    "source_ids": [
     "mt_g6u_014"
@@ -342,6 +400,11 @@
     "负数的意义",
     "正负数的读写法与大小比较"
    ],
+   "ability_lines": [
+    "理解意义",
+    "情境应用",
+    "辨析变式"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [],
    "description": "0 既不是正数也不是负数；会用正负数表示相反意义的量。",
@@ -361,6 +424,12 @@
    "micro_nodes": [
     "温度中的负数",
     "海拔与收支中的负数"
+   ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [
@@ -405,6 +474,11 @@
     "圆的认识：圆心、半径、直径",
     "圆与对称性的联系"
    ],
+   "ability_lines": [
+    "理解意义",
+    "情境应用",
+    "辨析变式"
+   ],
    "source_ids": [
     "mt_g6u_018",
     "mt_g6u_038"
@@ -428,6 +502,12 @@
     "圆周率π的认识",
     "圆的周长公式与计算",
     "刘徽割圆术的数学思想"
+   ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
    ],
    "source_ids": [
     "mt_g6u_019",
@@ -456,6 +536,12 @@
    "micro_nodes": [
     "圆的面积公式推导与计算"
    ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
    "source_ids": [
     "mt_g6u_021"
    ],
@@ -479,6 +565,12 @@
    "micro_nodes": [
     "圆形组合图形的面积",
     "扇形的认识"
+   ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
    ],
    "source_ids": [
     "mt_g6u_022",
@@ -522,6 +614,12 @@
    "knowledge_type": "procedural",
    "micro_nodes": [
     "确定起跑线的数学建模"
+   ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
    ],
    "source_ids": [
     "mt_g6u_024"
@@ -568,6 +666,12 @@
     "百分数的意义",
     "百分数的取值范围"
    ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
    "source_ids": [
     "mt_g6u_025",
     "mt_g6u_029"
@@ -590,6 +694,12 @@
    "micro_nodes": [
     "百分数、小数、分数的互化",
     "百分数的基本计算"
+   ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
    ],
    "source_ids": [
     "mt_g6u_026",
@@ -615,6 +725,12 @@
    "micro_nodes": [
     "百分数增减的综合应用"
    ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
    "source_ids": [
     "mt_g6u_028"
    ],
@@ -637,6 +753,12 @@
    "knowledge_type": "conceptual",
    "micro_nodes": [
     "用百分数确定达标线"
+   ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [
@@ -676,6 +798,12 @@
    "knowledge_type": "procedural",
    "micro_nodes": [
     "节约用水的数据统计"
+   ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
    ],
    "source_ids": [
     "mt_g6u_034"
@@ -717,6 +845,12 @@
    "micro_nodes": [
     "分数四则混合运算"
    ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
    "source_ids": [
     "mt_g6u_036"
    ],
@@ -743,6 +877,12 @@
    "micro_nodes": [
     "用分数、百分数解决实际问题"
    ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
    "source_ids": [],
    "prerequisite_node_ids": [
     "math-6up-d25"
@@ -764,6 +904,12 @@
    "micro_nodes": [
     "鸽巢原理的基本形式",
     "用鸽巢原理解释现象"
+   ],
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],

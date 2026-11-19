@@ -85,7 +85,8 @@ def _line(row: dict, level: int, sample: int) -> dict:
         "weighted_accuracy": round(float(row["acc"]) / 1000, 3),
         "sample_count": sample,
         "ability_breakdown": [
-            {"tag": a["tag"], "weighted_accuracy": round(int(a["acc"]) / 1000, 3),
+            {"tag": a["tag"], "mastery_level": LABELS[int(a.get("level") or 0)],
+             "weighted_accuracy": round(int(a["acc"]) / 1000, 3),
              "sample_count": int(a["sample"])}
             for a in abilities
         ],
@@ -98,8 +99,10 @@ def _line(row: dict, level: int, sample: int) -> dict:
 def _note(abilities: list[dict]) -> str | None:
     """The weakest ability line, if there is enough evidence to name one.
 
-    Secondary by design: the unit that gets judged weak is the node, never node × ability. This is the
-    sentence that answers "哪儿最差" once the parent has already accepted that the node is weak.
+    The node stays the unit that becomes a 薄弱项 — the weak list and the daily quota count nodes, and
+    that does not change. The line is the drill-down under it. Since `ability_mastery` each line is
+    judged on its own window, so this sentence names a line that is weak by itself rather than one that
+    only looks weak because the node's ten rows happened to be split its way.
     """
     usable = [a for a in abilities if int(a.get("sample") or 0) >= 2]
     if len(usable) < 2:

@@ -157,14 +157,26 @@ def need_right(acc_x1000: int, sample_count: int, hard_right: int = 0, bias: int
     return MASTERY_WINDOW + 1
 
 
-def window_of(cur, device_id: str, topic_id: int) -> list[dict]:
+def window_of(cur, device_id: str, topic_id: int, ability_tag: str | None = None) -> list[dict]:
     """The rolling window, newest first. Ordering by `seq`, never by created_at: one submit writes five
-    rows with the same timestamp."""
+    rows with the same timestamp.
+
+    `ability_tag` narrows it to one cell. This is the difference the ability_mastery table exists for:
+    a node has one ten-row window, but a cell has its own. Filtering the node's window instead would
+    reproduce the bug this fixes — four lines cannot each hold three rows inside ten.
+    """
+    if ability_tag is None:
+        return cur.query(
+            "SELECT is_correct, weight_x10, seq FROM mastery_event"
+            " WHERE device_id = ? AND topic_id = ? AND counted = 1"
+            " ORDER BY seq DESC LIMIT ?",
+            (device_id, topic_id, MASTERY_WINDOW),
+        )
     return cur.query(
         "SELECT is_correct, weight_x10, seq FROM mastery_event"
-        " WHERE device_id = ? AND topic_id = ? AND counted = 1"
+        " WHERE device_id = ? AND topic_id = ? AND ability_tag = ? AND counted = 1"
         " ORDER BY seq DESC LIMIT ?",
-        (device_id, topic_id, MASTERY_WINDOW),
+        (device_id, topic_id, ability_tag, MASTERY_WINDOW),
     )
 
 
@@ -210,12 +222,12 @@ def _emit(cur, *, device_id: str, topic_id: int, kind: str, delta: int, score_af
           now_iso: str, seq: int, counted: bool, is_correct: bool | None = None,
           difficulty: int | None = None, weight: int | None = None, acc_after: int | None = None,
           sample_after: int | None = None, ref_id: str | None = None, note: str = "",
-          question_id: int | None = None) -> None:
+          question_id: int | None = None, ability_tag: str | None = None) -> None:
     cur.execute(
-        "INSERT INTO mastery_event (id, device_id, topic_id, question_id, kind, delta, score_after,"
-        " is_correct, difficulty, weight_x10, counted, acc_after, sample_after, seq, ref_id, note,"
-        " created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-        (new_ulid(), device_id, topic_id, question_id, kind, delta, score_after,
+        "INSERT INTO mastery_event (id, device_id, topic_id, question_id, ability_tag, kind, delta,"
+        " score_after, is_correct, difficulty, weight_x10, counted, acc_after, sample_after, seq,"
+        " ref_id, note, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        (new_ulid(), device_id, topic_id, question_id, ability_tag, kind, delta, score_after,
          None if is_correct is None else (1 if is_correct else 0), difficulty, weight,
          1 if counted else 0, acc_after, sample_after, seq, ref_id, note or None, now_iso),
     )
@@ -251,6 +263,50 @@ def _store(cur, *, device_id: str, topic_id: int, summary: dict, bias: int, wron
             "sample_count": summary["sample_count"], "paused_until": paused_until}
 
 
+def _refresh_ability(cur, *, device_id: str, topic_id: int, ability_tag: str, now_iso: str,
+                     seq: int | None = None) -> dict:
+    """Recompute one cell from its own window and store it. Never writes the ledger.
+
+    Called after every counted answer, so the cell moves with the node, and again after a question is
+    voided, when the row leaves the window and the level has to fall back. The window is the cell's own
+    `counted=1` rows, never a slice of the node's ten.
+    """
+    existing = cur.query_one(
+        "SELECT level, sample_count, seq, weak_since FROM ability_mastery"
+        " WHERE device_id = ? AND topic_id = ? AND ability_tag = ?",
+        (device_id, topic_id, ability_tag),
+    )
+    rows = window_of(cur, device_id, topic_id, ability_tag=ability_tag)
+    summary = summarise(rows)
+    level = level_of(summary["acc_x1000"], summary["hard_right"])
+    score = score_of(summary["acc_x1000"])
+    last_seq = max([int(row["seq"]) for row in rows]
+                   + [int(seq or 0), int(existing["seq"] or 0) if existing else 0])
+    old_level = (int(existing["level"]) if existing is not None
+                 and int(existing["sample_count"] or 0) >= MIN_SAMPLE else None)
+    weak_since = _weak_since(old_level, level,
+                             existing["weak_since"] if existing else None, now_iso)
+    values = (score, level, summary["sample_count"], summary["weight_sum_x10"],
+              summary["correct_weight_x10"], summary["acc_x1000"], summary["hard_right"],
+              last_seq, weak_since, now_iso)
+    if existing is None:
+        cur.execute(
+            "INSERT INTO ability_mastery (device_id, topic_id, ability_tag, score, level,"
+            " sample_count, weight_sum_x10, correct_weight_x10, acc_x1000, hard_right, seq,"
+            " weak_since, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            (device_id, topic_id, ability_tag, *values),
+        )
+    else:
+        cur.execute(
+            "UPDATE ability_mastery SET score = ?, level = ?, sample_count = ?, weight_sum_x10 = ?,"
+            " correct_weight_x10 = ?, acc_x1000 = ?, hard_right = ?, seq = ?, weak_since = ?,"
+            " updated_at = ? WHERE device_id = ? AND topic_id = ? AND ability_tag = ?",
+            (*values, device_id, topic_id, ability_tag),
+        )
+    return {"tag": ability_tag, "level": level, "acc": summary["acc_x1000"],
+            "sample": summary["sample_count"]}
+
+
 def _window_questions(cur, device_id: str, topic_id: int) -> list[dict]:
     """The counted rows of the current window that name a question, newest first.
 
@@ -267,26 +323,23 @@ def _window_questions(cur, device_id: str, topic_id: int) -> list[dict]:
 
 
 def _ability_breakdown(cur, device_id: str, topic_id: int) -> list[dict]:
-    """Per ability line: acc_x1000 and sample over the same window the level comes from.
+    """Per ability line: its own level, acc and sample, weakest first.
 
-    Weakest first, because the caller prints the first one. Two answers is the floor: one answer is an
-    anecdote, and a note built on it would tell a parent to work on a line the child got right once.
+    Read from ability_mastery rather than carved out of the node's window. The old version grouped the
+    same ten rows by tag, which is why every line read "1-2 samples": ten rows cannot be split four ways
+    and still give each part MIN_SAMPLE. Now each line has ten rows of its own.
+
+    Two answers is still the floor for *showing* a line: one answer is an anecdote. The level is stored
+    regardless, because a caller that asks for the cell's band (a targeted re-ask) wants it.
     """
-    slots: dict[str, dict] = {}
-    for row in _window_questions(cur, device_id, topic_id):
-        tag = row.get("ability_tag")
-        if not tag:
-            continue
-        slot = slots.setdefault(tag, {"tag": tag, "weight": 0, "got": 0, "sample": 0})
-        weight = int(row["weight_x10"] or 0)
-        slot["weight"] += weight
-        slot["sample"] += 1
-        if int(row["is_correct"] or 0):
-            slot["got"] += weight
-    out = [{"tag": slot["tag"], "sample": slot["sample"],
-            "acc": round(1000 * slot["got"] / slot["weight"]) if slot["weight"] else 0}
-           for slot in slots.values() if slot["sample"] >= 2]
-    return sorted(out, key=lambda item: (item["acc"], item["tag"]))
+    rows = cur.query(
+        "SELECT ability_tag, sample_count, acc_x1000, level FROM ability_mastery"
+        " WHERE device_id = ? AND topic_id = ? AND sample_count >= 2"
+        " ORDER BY acc_x1000, ability_tag",
+        (device_id, topic_id),
+    )
+    return [{"tag": row["ability_tag"], "sample": int(row["sample_count"]),
+             "acc": int(row["acc_x1000"]), "level": int(row["level"])} for row in rows]
 
 
 def _sync_weakness(cur, *, device_id: str, topic_id: int, level: int, acc: int, sample: int,
@@ -353,7 +406,8 @@ def _weak_since(old_level: int | None, new_level: int, current: str | None, now_
 
 def _apply(cur, *, device_id: str, topic_id: int, row: dict, kind: str, is_correct: bool,
            weight: int, difficulty: int | None, counted: bool, ref_id: str | None, note: str,
-           now_iso: str, wrong_streak: int, question_id: int | None = None) -> dict:
+           now_iso: str, wrong_streak: int, question_id: int | None = None,
+           ability_tag: str | None = None) -> dict:
     """One evidence row: put it in the window, recompute, store, and write the ledger line."""
     seq = int(row["seq"] or 0) + 1
     bias = int(row["bias"] or 0)
@@ -380,7 +434,13 @@ def _apply(cur, *, device_id: str, topic_id: int, row: dict, kind: str, is_corre
     _emit(cur, device_id=device_id, topic_id=topic_id, kind=kind, delta=score - old_score,
           score_after=score, now_iso=now_iso, seq=seq, counted=counted, is_correct=is_correct,
           difficulty=difficulty, weight=weight, acc_after=summary["acc_x1000"],
-          sample_after=summary["sample_count"], ref_id=ref_id, note=note, question_id=question_id)
+          sample_after=summary["sample_count"], ref_id=ref_id, note=note, question_id=question_id,
+          ability_tag=ability_tag)
+    # The cell moves before `_store` reads it: `_store` persists ability_breakdown_json, and a breakdown
+    # written one answer behind the level it explains is exactly the drift this table exists to stop.
+    if ability_tag and counted:
+        _refresh_ability(cur, device_id=device_id, topic_id=topic_id, ability_tag=ability_tag,
+                         now_iso=now_iso, seq=seq)
     stored = _store(cur, device_id=device_id, topic_id=topic_id, summary=summary, bias=bias,
                     wrong_streak=wrong_streak, paused_until=paused_until, total_wrong=total_wrong,
                     total_right=total_right, weak_since=weak_since, seq=seq, now_iso=now_iso)
@@ -401,6 +461,11 @@ def record_tv_answer(cur, *, device_id: str, topic_id: int, correct: bool, flagg
     row = _row(cur, device_id, topic_id, now_iso, lock)
     ref = f"{session_id}:{question_id}"
     weight = WEIGHT_X10.get(int(difficulty or 2), WEIGHT_X10[2])
+    # Read once, from the question itself: the line is a property of what was asked, and the caller
+    # grades an id, not a tag. A question imported before `ability_tag` existed reads NULL and moves
+    # only the node row, which is the honest outcome — we do not know which line it tested.
+    asked = cur.query_one("SELECT ability_tag FROM question WHERE id = ?", (int(question_id),))
+    ability_tag = asked.get("ability_tag") if asked is not None else None
 
     if correct and flagged:
         # Nothing changes but the pause bookkeeping: reset the streak, keep the score.
@@ -418,7 +483,8 @@ def record_tv_answer(cur, *, device_id: str, topic_id: int, correct: bool, flagg
                   kind="tv_right" if correct else "tv_wrong", is_correct=correct, weight=weight,
                   difficulty=int(difficulty or 2), counted=True, ref_id=ref,
                   note="标记没学过" if flagged else ("电视答对" if correct else "电视答错"),
-                  now_iso=now_iso, wrong_streak=wrong_streak, question_id=question_id)
+                  now_iso=now_iso, wrong_streak=wrong_streak, question_id=question_id,
+                  ability_tag=ability_tag)
 
 
 def record_paper_wrong(cur, *, device_id: str, topic_id: int, wrong_item_id: str, day_key: str,
@@ -481,7 +547,7 @@ def void_question(cur, *, device_id: str, question_id: int, note: str, now_iso: 
     """
     suffix = f":{int(question_id)}"
     rows = cur.query(
-        "SELECT id, topic_id, kind, ref_id FROM mastery_event"
+        "SELECT id, topic_id, kind, ref_id, ability_tag FROM mastery_event"
         " WHERE device_id = ? AND ref_id LIKE ? AND counted = 1",
         (device_id, f"%{suffix}"),
     )
@@ -490,11 +556,14 @@ def void_question(cur, *, device_id: str, question_id: int, note: str, now_iso: 
     per_topic: dict[int, dict] = {}
     for row in rows:
         cur.execute("UPDATE mastery_event SET counted = 0 WHERE id = ?", (row["id"],))
-        slot = per_topic.setdefault(int(row["topic_id"]), {"wrong": 0, "right": 0})
+        slot = per_topic.setdefault(int(row["topic_id"]),
+                                    {"wrong": 0, "right": 0, "abilities": set()})
         if row["kind"] == "tv_wrong":
             slot["wrong"] += 1
         elif row["kind"] == "tv_right":
             slot["right"] += 1
+        if row.get("ability_tag"):
+            slot["abilities"].add(row["ability_tag"])
 
     touched = []
     for topic_id, slot in per_topic.items():
@@ -508,6 +577,11 @@ def void_question(cur, *, device_id: str, question_id: int, note: str, now_iso: 
               delta=new_score - old_score, score_after=new_score, now_iso=now_iso,
               seq=int(row["seq"] or 0), counted=False, ref_id=ref_id,
               note=f"{note}（题目 #{int(question_id)}）" if note else f"题目 #{int(question_id)} 下架")
+        # The voided rows left each cell's window too, so every cell they touched has to fall back.
+        # Before `_store`, which is what persists the breakdown.
+        for ability in sorted(slot["abilities"]):
+            _refresh_ability(cur, device_id=device_id, topic_id=topic_id, ability_tag=ability,
+                             now_iso=now_iso)
         _store(cur, device_id=device_id, topic_id=topic_id, summary=summary, bias=bias,
                wrong_streak=int(row["wrong_streak"] or 0), paused_until=row["paused_until"],
                total_wrong=max(0, int(row["total_wrong"] or 0) - slot["wrong"]),
@@ -558,7 +632,30 @@ def state(db, device_id: str, topic_id: int) -> dict | None:
         "paused_until": row["paused_until"],
         "total_wrong": int(row["total_wrong"] or 0),
         "total_right": int(row["total_right"] or 0),
+        # The drill-down. Each entry carries its own level, because a line can be 未掌握 while the node
+        # it belongs to is 基础 — averaging four lines into one band is what hid that until now.
+        "ability_breakdown": _ability_breakdown(db, device_id, topic_id),
     }
+
+
+def ability_lines_of(db, device_id: str, topic_id: int) -> dict[str, dict]:
+    """Every measured cell of one node, keyed by tag, weakest first when iterated by `acc`.
+
+    The picker uses this to aim a review question at the line that is actually weak instead of at
+    whichever question happened to sort first. Returned with `sample_count` so a caller can decline to
+    act on a cell with one answer in it.
+    """
+    rows = db.query(
+        "SELECT ability_tag, level, score, sample_count, acc_x1000, hard_right"
+        " FROM ability_mastery WHERE device_id = ? AND topic_id = ?"
+        " ORDER BY acc_x1000, ability_tag",
+        (device_id, topic_id),
+    )
+    return {row["ability_tag"]: {
+        "tag": row["ability_tag"], "level": int(row["level"]), "score": int(row["score"]),
+        "sample_count": int(row["sample_count"]), "acc_x1000": int(row["acc_x1000"]),
+        "hard_right": int(row["hard_right"]),
+    } for row in rows}
 
 
 def _selfcheck() -> None:

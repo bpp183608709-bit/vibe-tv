@@ -35,14 +35,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import keval  # noqa: E402
 from server.app import mastery  # noqa: E402
 
-#: Which ability lines a subject is allowed to probe. Maths asks for meaning, execution, context and
-#: variation; 语文/英语 have no execution line, so their four are language use, reading, judgement and
-#: expression. A subject cannot use the other subject's tags (schema allows all eight, data does not).
-ABILITY_LINES = {
-    "math": ("理解意义", "执行计算", "情境应用", "辨析变式"),
-    "chinese": ("语言运用", "阅读理解", "辨析判断", "综合表达"),
-    "english": ("语言运用", "阅读理解", "辨析判断", "综合表达"),
-}
+#: Which ability lines a subject may use. The node's own `ability_lines` decides which of them this
+#: node actually has; the subject tuple is only the fallback for a node that predates the field, so a
+#: half-migrated file is reported as "all four" rather than silently shrinking the matrix.
+ABILITY_LINES = keval.ABILITY_LINES
+
+
+def lines_of(node: dict) -> tuple[str, ...]:
+    """The cells this node has. Declared lines win; the subject's full set is the fallback."""
+    declared = node.get("ability_lines")
+    if declared:
+        return tuple(declared)
+    return tuple(ABILITY_LINES.get(node.get("subject"), ()))
 
 DIFFICULTIES = (("easy", "易", 1), ("medium", "中", 2), ("hard", "难", 3))
 
@@ -123,7 +127,7 @@ def analyse(nodes: list[dict], questions: list[dict]) -> dict:
 
     cells: list[dict] = []
     for node in diagnostics:
-        for ability in ABILITY_LINES.get(node.get("subject"), ()):
+        for ability in lines_of(node):
             items = pool.get((node["node_id"], ability), [])
             counts = {key: sum(1 for q in items if q["difficulty_preset"] == word)
                       for key, word, _ in DIFFICULTIES}
@@ -171,7 +175,7 @@ def analyse(nodes: list[dict], questions: list[dict]) -> dict:
     node_rows = []
     for node in diagnostics:
         counts = {"easy": 0, "medium": 0, "hard": 0}
-        for ability in ABILITY_LINES.get(node.get("subject"), ()):
+        for ability in lines_of(node):
             for item in pool.get((node["node_id"], ability), []):
                 for key, word, _ in DIFFICULTIES:
                     if item["difficulty_preset"] == word:
