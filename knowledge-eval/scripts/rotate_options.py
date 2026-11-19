@@ -55,18 +55,29 @@ def rotate_line(line: dict, target: int) -> dict:
 
 
 def rotate(lines: list[dict], seed: int) -> list[dict]:
-    """Balanced targets, shuffled. Lines keep their order; only `o` and `k` change."""
+    """Balanced targets, shuffled. Lines keep their order; only `o` and `k` change.
+
+    Fills are excluded from the shuffle, not given target 0 and left in the pot. A real batch is about
+    half fills, and when their zeros join the shuffle they take most of the zero slots: the first run
+    of this tool put 12 of 19 choices back on A, which is the very bias it exists to remove.
+    """
     seen: Counter = Counter()
-    targets: list[int] = []
+    targets: list[int | None] = []
     for line in lines:
         size = len([item for item in str(line.get("o", "")).split("|") if item.strip()])
-        if size < 2:  # a fill, or a choice with one option (batch_spec rejects the latter anyway)
-            targets.append(0)
+        if size < 2:
+            targets.append(None)
             continue
         targets.append(seen[size] % size)
         seen[size] += 1
-    random.Random(seed).shuffle(targets)
-    return [rotate_line(line, target) for line, target in zip(lines, targets)]
+
+    choice_slots = [index for index, target in enumerate(targets) if target is not None]
+    shuffled = [targets[index] for index in choice_slots]
+    random.Random(seed).shuffle(shuffled)
+    for index, target in zip(choice_slots, shuffled):
+        targets[index] = target
+
+    return [rotate_line(line, target or 0) for line, target in zip(lines, targets)]
 
 
 def read_spec(path: Path) -> list[dict]:

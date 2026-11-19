@@ -8,20 +8,26 @@
    "parent_aggregate_node_id": "math-6up-u01",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d05-q01",
     "math-6up-d05-q02",
-    "math-6up-d05-q03"
+    "math-6up-d05-q03",
+    "math-6up-d05-q10",
+    "math-6up-d05-q11",
+    "math-6up-d05-q12",
+    "math-6up-d05-q13",
+    "math-6up-d05-q14",
+    "math-6up-d05-q15"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -32,36 +38,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -81,11 +87,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -98,20 +104,26 @@
    "parent_aggregate_node_id": "math-6up-u01",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d05-q04",
     "math-6up-d05-q05",
-    "math-6up-d05-q06"
+    "math-6up-d05-q06",
+    "math-6up-d05-q16",
+    "math-6up-d05-q17",
+    "math-6up-d05-q18",
+    "math-6up-d05-q19",
+    "math-6up-d05-q20",
+    "math-6up-d05-q21"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -122,36 +134,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -171,11 +183,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -188,20 +200,26 @@
    "parent_aggregate_node_id": "math-6up-u01",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d05-q07",
     "math-6up-d05-q08",
-    "math-6up-d05-q09"
+    "math-6up-d05-q09",
+    "math-6up-d05-q22",
+    "math-6up-d05-q23",
+    "math-6up-d05-q24",
+    "math-6up-d05-q25",
+    "math-6up-d05-q26",
+    "math-6up-d05-q27"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -212,36 +230,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -261,11 +279,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -278,20 +296,26 @@
    "parent_aggregate_node_id": "math-6up-u01",
    "ability_tag": "理解意义",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d26-q01",
     "math-6up-d26-q02",
-    "math-6up-d26-q03"
+    "math-6up-d26-q03",
+    "math-6up-d26-q10",
+    "math-6up-d26-q11",
+    "math-6up-d26-q12",
+    "math-6up-d26-q13",
+    "math-6up-d26-q14",
+    "math-6up-d26-q15"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -302,36 +326,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -351,11 +375,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -368,20 +392,26 @@
    "parent_aggregate_node_id": "math-6up-u01",
    "ability_tag": "情境应用",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d26-q04",
     "math-6up-d26-q05",
-    "math-6up-d26-q06"
+    "math-6up-d26-q06",
+    "math-6up-d26-q16",
+    "math-6up-d26-q17",
+    "math-6up-d26-q18",
+    "math-6up-d26-q19",
+    "math-6up-d26-q20",
+    "math-6up-d26-q21"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -392,36 +422,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -441,11 +471,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -458,20 +488,26 @@
    "parent_aggregate_node_id": "math-6up-u01",
    "ability_tag": "辨析变式",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "question_ids": [
     "math-6up-d26-q07",
     "math-6up-d26-q08",
-    "math-6up-d26-q09"
+    "math-6up-d26-q09",
+    "math-6up-d26-q22",
+    "math-6up-d26-q23",
+    "math-6up-d26-q24",
+    "math-6up-d26-q25",
+    "math-6up-d26-q26",
+    "math-6up-d26-q27"
    ],
    "measured": true,
    "stages": {
     "0": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 0,
      "rate": 0.0,
      "hard_right": 0,
@@ -482,36 +518,36 @@
      }
     },
     "1": {
-     "sample": 3,
+     "sample": 9,
      "rate_x1000": 444,
      "rate": 0.444,
-     "hard_right": 1,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
       "medium": 0,
-      "hard": 1
+      "hard": 3
      }
     },
     "2": {
-     "sample": 3,
-     "rate_x1000": 778,
-     "rate": 0.778,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 667,
+     "rate": 0.667,
+     "hard_right": 3,
      "correct": {
       "easy": 0,
-      "medium": 1,
-      "hard": 1
+      "medium": 2,
+      "hard": 3
      }
     },
     "3": {
-     "sample": 3,
-     "rate_x1000": 1000,
-     "rate": 1.0,
-     "hard_right": 1,
+     "sample": 9,
+     "rate_x1000": 852,
+     "rate": 0.852,
+     "hard_right": 3,
      "correct": {
       "easy": 1,
-      "medium": 1,
-      "hard": 1
+      "medium": 3,
+      "hard": 3
      }
     }
    },
@@ -531,11 +567,11 @@
     }
    },
    "robust": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
     }
    },
    "missing_levels": []
@@ -623,9 +659,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -713,9 +749,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -803,9 +839,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -893,9 +929,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -983,9 +1019,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -1073,9 +1109,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -1163,9 +1199,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -1253,9 +1289,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -1343,9 +1379,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -1433,9 +1469,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -1523,9 +1559,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -1613,9 +1649,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -1703,9 +1739,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -1793,9 +1829,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -1883,9 +1919,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -1973,9 +2009,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -2063,9 +2099,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -2153,9 +2189,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -2243,9 +2279,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -2333,9 +2369,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -2423,9 +2459,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -2513,9 +2549,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -2603,9 +2639,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -2693,9 +2729,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -2783,9 +2819,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -2873,9 +2909,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -2963,9 +2999,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -3053,9 +3089,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -3143,9 +3179,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -3233,9 +3269,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -3323,9 +3359,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -3413,9 +3449,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -3503,9 +3539,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -3593,9 +3629,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -3683,9 +3719,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -3773,9 +3809,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -3863,9 +3899,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -3953,9 +3989,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -4043,9 +4079,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -4133,9 +4169,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -4223,9 +4259,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -4313,9 +4349,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -4403,9 +4439,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -4493,9 +4529,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -4583,9 +4619,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -4673,9 +4709,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -4763,9 +4799,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -4853,9 +4889,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -4943,9 +4979,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -5033,9 +5069,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -5123,9 +5159,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -5213,9 +5249,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -5303,9 +5339,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -5393,9 +5429,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -5483,9 +5519,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -5573,9 +5609,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -5663,9 +5699,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -5753,9 +5789,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -5843,9 +5879,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -5933,9 +5969,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -6023,9 +6059,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -6113,9 +6149,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -6203,9 +6239,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -6293,9 +6329,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -6383,9 +6419,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -6473,9 +6509,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -6563,9 +6599,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -6653,9 +6689,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -6743,9 +6779,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -6833,9 +6869,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -6923,9 +6959,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -7013,9 +7049,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -7103,9 +7139,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -7193,9 +7229,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -7283,9 +7319,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -7373,9 +7409,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -7463,9 +7499,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -7553,9 +7589,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -7643,9 +7679,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -7733,9 +7769,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -7823,9 +7859,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -7913,9 +7949,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -8003,9 +8039,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -8093,9 +8129,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -8183,9 +8219,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -8273,9 +8309,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -8363,9 +8399,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -8453,9 +8489,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -8543,9 +8579,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -8633,9 +8669,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -8723,9 +8759,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -8813,9 +8849,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -8903,9 +8939,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -8993,9 +9029,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -9083,9 +9119,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -9173,9 +9209,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -9263,9 +9299,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -9353,9 +9389,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -9443,9 +9479,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -9533,9 +9569,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -9623,9 +9659,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -9713,9 +9749,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -9803,9 +9839,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -9893,9 +9929,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -9983,9 +10019,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -10073,9 +10109,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -10163,9 +10199,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -10253,9 +10289,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -10343,9 +10379,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -10433,9 +10469,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -10523,9 +10559,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -10613,9 +10649,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -10703,9 +10739,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -10793,9 +10829,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -10883,9 +10919,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -10973,9 +11009,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -11063,9 +11099,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -11153,9 +11189,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -11243,9 +11279,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -11333,9 +11369,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -11423,9 +11459,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -11513,9 +11549,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -11603,9 +11639,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -11693,9 +11729,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -11783,9 +11819,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -11873,9 +11909,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -11963,9 +11999,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -12053,9 +12089,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -12143,9 +12179,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -12233,9 +12269,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -12323,9 +12359,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -12413,9 +12449,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -12503,9 +12539,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -12593,9 +12629,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -12683,9 +12719,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -12773,9 +12809,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -12863,9 +12899,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -12953,9 +12989,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -13043,9 +13079,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -13133,9 +13169,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -13223,9 +13259,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -13313,9 +13349,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -13403,9 +13439,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -13493,9 +13529,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -13583,9 +13619,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -13673,9 +13709,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -13763,9 +13799,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -13853,9 +13889,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -13943,9 +13979,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -14033,9 +14069,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -14123,9 +14159,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -14213,9 +14249,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -14303,9 +14339,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -14393,9 +14429,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -14483,9 +14519,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -14573,9 +14609,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -14663,9 +14699,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -14753,9 +14789,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -14843,9 +14879,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -14933,9 +14969,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -15023,9 +15059,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -15113,9 +15149,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -15203,9 +15239,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -15293,9 +15329,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -15383,9 +15419,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -15473,9 +15509,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -15563,9 +15599,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -15653,9 +15689,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -15743,9 +15779,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -15833,9 +15869,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -15923,9 +15959,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -16013,9 +16049,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -16103,9 +16139,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -16193,9 +16229,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -16283,9 +16319,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -16373,9 +16409,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -16463,9 +16499,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -16553,9 +16589,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -16643,9 +16679,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -16733,9 +16769,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -16823,9 +16859,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -16913,9 +16949,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -17003,9 +17039,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -17093,9 +17129,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -17183,9 +17219,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -17273,9 +17309,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -17363,9 +17399,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -17453,9 +17489,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -17543,9 +17579,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -17633,9 +17669,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -17723,9 +17759,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -17813,9 +17849,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -17903,9 +17939,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -17993,9 +18029,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -18083,9 +18119,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -18173,9 +18209,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -18263,9 +18299,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -18353,9 +18389,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -18443,9 +18479,9 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
     }
    },
    "missing_levels": []
@@ -19226,10 +19262,10 @@
    "node_name": "用方向和距离确定位置",
    "parent_aggregate_node_id": "math-6up-u01",
    "questions": {
-    "easy": 3,
-    "medium": 3,
-    "hard": 3,
-    "total": 9
+    "easy": 9,
+    "medium": 9,
+    "hard": 9,
+    "total": 27
    },
    "reachable_levels": [
     0,
@@ -19245,10 +19281,10 @@
    "node_name": "用有序数对确定位置",
    "parent_aggregate_node_id": "math-6up-u01",
    "questions": {
-    "easy": 3,
-    "medium": 3,
-    "hard": 3,
-    "total": 9
+    "easy": 9,
+    "medium": 9,
+    "hard": 9,
+    "total": 27
    },
    "reachable_levels": [
     0,
@@ -20818,7 +20854,7 @@
  "generated_from": {
   "diagnostic_nodes": 67,
   "aggregate_nodes": 28,
-  "questions": 687
+  "questions": 723
  },
  "summary": {
   "all": {
@@ -20826,10 +20862,10 @@
    "no_question": 0,
    "measured": 213,
    "floor_ok": 213,
-   "robust_ok": 8,
+   "robust_ok": 14,
    "p0": 0,
    "p1": 0,
-   "p2": 205
+   "p2": 199
   },
   "by_subject": {
    "math": {
@@ -20837,10 +20873,10 @@
     "no_question": 0,
     "measured": 96,
     "floor_ok": 96,
-    "robust_ok": 0,
+    "robust_ok": 6,
     "p0": 0,
     "p1": 0,
-    "p2": 96
+    "p2": 90
    },
    "chinese": {
     "cells": 64,
@@ -20895,1860 +20931,1806 @@
   "rows": [
    {
     "subject": "math",
-    "diagnostic_node_id": "math-6up-d05",
-    "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d05",
-    "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d05",
-    "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d26",
-    "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d26",
-    "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
-    "diagnostic_node_id": "math-6up-d26",
-    "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "math",
     "diagnostic_node_id": "math-6up-d01",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d01",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d01",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d01",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d02",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d02",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d02",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d02",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d03",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d03",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d03",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d03",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d04",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d04",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d04",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d04",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d06",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d06",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d06",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d06",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d07",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d07",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d07",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d07",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d08",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d08",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d08",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d08",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d09",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d09",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d09",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d09",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d27",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d27",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d27",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d28",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d28",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d28",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d28",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d13",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d13",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d13",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d14",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d14",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d14",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d14",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d15",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d15",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d15",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d15",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d16",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d16",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d16",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d16",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d23",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d23",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d23",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d23",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d17",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d17",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d17",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d17",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d18",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d18",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d18",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d18",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d19",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d19",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d19",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d19",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d29",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d29",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d29",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d29",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d24",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d24",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d24",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d24",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d25",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d25",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d25",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d25",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d30",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d30",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d30",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d30",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d31",
     "ability_tag": "理解意义",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d31",
     "ability_tag": "执行计算",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d31",
     "ability_tag": "情境应用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "math",
     "diagnostic_node_id": "math-6up-d31",
     "ability_tag": "辨析变式",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d01",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d01",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d01",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d02",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d02",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d02",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d15",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d15",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d15",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d03",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d03",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d03",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d04",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d04",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d04",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d04",
     "ability_tag": "综合表达",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d16",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d16",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d16",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d05",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d05",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d05",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d17",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d17",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d17",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d06",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d06",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d06",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d07",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d07",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d07",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d18",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d18",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d18",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d22",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d22",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d08",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d08",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d08",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d08",
     "ability_tag": "综合表达",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d09",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d09",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d09",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d10",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d10",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d10",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d19",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d19",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d19",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d11",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d11",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d11",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d12",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d12",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d20",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d20",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d13",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d13",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d13",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d14",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d14",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d21",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d21",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d21",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d01",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d01",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d01",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d02",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d02",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d02",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d02",
     "ability_tag": "综合表达",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d03",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d03",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d03",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d04",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d04",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d06",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d06",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d07",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d07",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d07",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d08",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d08",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d08",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d09",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d09",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d10",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d10",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d11",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d11",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d12",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d12",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d12",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d13",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d13",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d14",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d14",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d14",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d16",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d16",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d16",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d16",
     "ability_tag": "综合表达",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d17",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d17",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d17",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d17",
     "ability_tag": "综合表达",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d15",
     "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d15",
     "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d15",
     "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    }
   ],
-  "total": 615,
+  "total": 1194,
   "by_subject": {
-   "math": 288,
-   "chinese": 192,
-   "english": 135
+   "math": 540,
+   "chinese": 384,
+   "english": 270
   },
   "by_difficulty": {
-   "easy": 205,
-   "medium": 205,
-   "hard": 205
+   "easy": 398,
+   "medium": 398,
+   "hard": 398
   }
  }
 }

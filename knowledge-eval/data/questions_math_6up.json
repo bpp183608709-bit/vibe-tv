@@ -100,18 +100,18 @@
    "cognitive_level": "应用",
    "difficulty_preset": "中",
    "question_type": "选择题",
-   "stem": "图上量得 A、B 两点相距 4 厘米，比例尺是 1:50000，A 在 B 的北偏东 60° 方向，A、B 的实际距离是（  ）",
+   "stem": "甲地在乙地北偏东 60° 方向 2 千米处，那么乙地在甲地的（  ）",
    "options": [
-    "2 千米",
-    "0.2 千米",
-    "20 千米",
-    "200 千米"
+    "北偏东 60° 方向 2 千米处",
+    "南偏西 60° 方向 2 千米处",
+    "南偏东 60° 方向 2 千米处",
+    "正西方向 2 千米处"
    ],
-   "correct_answer": "A",
-   "explanation": "4 厘米 × 50000 = 200000 厘米 = 2000 米 = 2 千米",
+   "correct_answer": "B",
+   "explanation": "方向相反、角度不变：北偏东 60° 的反方向是南偏西 60°，两地距离也不变。",
    "tags": [
-    "比例尺",
-    "实际距离"
+    "用方向和距离确定位置",
+    "方向相反"
    ],
    "question_id": "math-6up-d05-q05"
   },
@@ -202,6 +202,376 @@
     "辨析"
    ],
    "question_id": "math-6up-d05-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "「东北方向」用方向角表示是「北偏东 ___ 度」，请填出这个度数。",
+   "accepted": [
+    "45"
+   ],
+   "correct_answer": "45",
+   "explanation": "东北方向正好在正东和正北的中间，两者相差 90 度，一半是 45 度，所以东北就是北偏东 45 度。",
+   "tags": [
+    "方向角",
+    "东北方向"
+   ],
+   "question_id": "math-6up-d05-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "「图书馆在少年宫的南面」，这句话是以谁为观测点来说的？",
+   "options": [
+    "少年宫",
+    "图书馆",
+    "南面",
+    "没有观测点，说不清"
+   ],
+   "correct_answer": "A",
+   "explanation": "说「甲在乙的某个方向」，是以乙为中心去看甲，所以观测点是少年宫，图书馆才是被描述的对象。",
+   "tags": [
+    "参照点",
+    "观测点"
+   ],
+   "question_id": "math-6up-d05-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "小明从家到学校，先向正东走 350 米，再向正北走 250 米，他一共走了 ___ 米。",
+   "accepted": [
+    "600"
+   ],
+   "correct_answer": "600",
+   "explanation": "路线分成两段，总路程是两段长度相加：350 + 250 = 600（米）。方向不同不影响路程相加。",
+   "tags": [
+    "路线",
+    "路程"
+   ],
+   "question_id": "math-6up-d05-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "要向同学说清从校门到教学楼怎么走，下面说得最完整的是（ ）",
+   "options": [
+    "先向正东走 80 米，再向正北走 60 米",
+    "一直往前走",
+    "先向东走，再拐个弯",
+    "一共走 140 米"
+   ],
+   "correct_answer": "A",
+   "explanation": "描述路线要逐段说清方向和距离。只说「往前走」「拐个弯」没给方向，只说总路程也画不出路线。",
+   "tags": [
+    "路线",
+    "方向与距离"
+   ],
+   "question_id": "math-6up-d05-q13"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "从 A 地出发，沿北偏东 30° 方向走 8 千米到 B 地，再从 B 地沿同一方向走 5 千米到 C 地。A、C 相距 ___ 千米。",
+   "accepted": [
+    "13"
+   ],
+   "correct_answer": "13",
+   "explanation": "两段在同一条射线上、方向相同，合起来方向不变，距离直接相加：8 + 5 = 13（千米）。",
+   "tags": [
+    "同向叠加",
+    "路线"
+   ],
+   "question_id": "math-6up-d05-q14"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "甲、乙两船同时从港口出发，甲船沿北偏东 50° 方向航行 10 千米，乙船沿北偏西 50° 方向航行 10 千米，停下后（ ）",
+   "options": [
+    "两船到港口的距离相等，但不在同一位置",
+    "两船停在同一个位置",
+    "两船到港口的距离不相等",
+    "两船在港口的同一方向上"
+   ],
+   "correct_answer": "A",
+   "explanation": "两条射线方向不同，虽然都航行了 10 千米，落点也不一样；到港口的距离相等，方向一个偏东、一个偏西。",
+   "tags": [
+    "方向与距离",
+    "对称"
+   ],
+   "question_id": "math-6up-d05-q15"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "渔船从港口出发，沿北偏东 30° 方向航行，每小时行 18 千米，3 小时后到达渔场。港口到渔场有 ___ 千米。",
+   "accepted": [
+    "54"
+   ],
+   "correct_answer": "54",
+   "explanation": "路程 = 速度 × 时间，18 × 3 = 54（千米）。方向只说明往哪走，不改变路程算法。",
+   "tags": [
+    "路程",
+    "方向"
+   ],
+   "question_id": "math-6up-d05-q16"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "小红家在学校北偏东 30° 方向 500 米处，下面说法正确的是（ ）",
+   "options": [
+    "从学校向北偏西 30° 方向走 500 米可到小红家",
+    "从学校向北偏东 30° 方向走 500 米可到小红家",
+    "从小红家向北偏东 30° 方向走 500 米可到学校",
+    "从学校向正东方向走 500 米可到小红家"
+   ],
+   "correct_answer": "B",
+   "explanation": "位置描述可以反过来当路线用：以学校为起点，向北偏东 30° 走 500 米就到小红家。方向偏西或改成正东都到不了。",
+   "tags": [
+    "位置描述",
+    "路线"
+   ],
+   "question_id": "math-6up-d05-q17"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一艘船从 A 港沿北偏东 40° 方向航行 12 千米到 B 港，再沿原路返回 A 港。它一共航行了 ___ 千米。",
+   "accepted": [
+    "24"
+   ],
+   "correct_answer": "24",
+   "explanation": "去和回走的是同一条路，各 12 千米，一共 12 × 2 = 24（千米）。返回时方向相反，路程不变。",
+   "tags": [
+    "往返",
+    "路程"
+   ],
+   "question_id": "math-6up-d05-q18"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "小明从家向东走 200 米，再向北走 200 米到学校。放学沿原路回家，他应该（ ）",
+   "options": [
+    "先向北走 200 米，再向东走 200 米",
+    "先向西走 200 米，再向南走 200 米",
+    "先向南走 200 米，再向西走 200 米",
+    "先向南走 200 米，再向东走 200 米"
+   ],
+   "correct_answer": "C",
+   "explanation": "原路返回要把每一段方向反过来，顺序也倒过来：先向南 200 米，再向西 200 米。方向反了或顺序乱了都回不到家。",
+   "tags": [
+    "原路返回",
+    "路线"
+   ],
+   "question_id": "math-6up-d05-q19"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "从 A 地沿北偏东 40° 方向走 6 千米到 B 地，再从 B 地沿南偏西 40° 方向走 2 千米到 C 地。C 在 A 的同一方向上，距 A ___ 千米。",
+   "accepted": [
+    "4"
+   ],
+   "correct_answer": "4",
+   "explanation": "南偏西 40° 是北偏东 40° 的反方向，等于往回走；6 − 2 = 4（千米），C 仍落在 A 的北偏东 40° 方向上。",
+   "tags": [
+    "反向",
+    "路线"
+   ],
+   "question_id": "math-6up-d05-q20"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "电影院在广场北偏东 30° 方向 800 米处，图书馆在广场北偏西 30° 方向 800 米处。这两处（ ）",
+   "options": [
+    "在同一个位置",
+    "到广场的距离不相等",
+    "到广场的距离相等，两条射线关于正北方向左右对称",
+    "图书馆在电影院的正东方向"
+   ],
+   "correct_answer": "C",
+   "explanation": "两处到广场都是 800 米，方向一个偏东 30°、一个偏西 30°，正好分在正北方向两侧，位置并不相同。",
+   "tags": [
+    "对称",
+    "方向角"
+   ],
+   "question_id": "math-6up-d05-q21"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "判断题",
+   "stem": "「北偏东 45°」和「东偏北 45°」指的是同一个方向。",
+   "options": [
+    "错",
+    "对"
+   ],
+   "correct_answer": "B",
+   "explanation": "从北往东 45° 正好落在东与北的正中间，从东往北 45° 也到这条斜线上，两角加起来是 90°。",
+   "tags": [
+    "等价写法",
+    "45度"
+   ],
+   "question_id": "math-6up-d05-q22"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "书店在学校北偏东 30° 方向 400 米处。若把 400 米改成 600 米，书店的位置（ ）",
+   "options": [
+    "方向不变，离学校更远",
+    "方向也跟着变",
+    "位置不变",
+    "方向不变，离学校更近"
+   ],
+   "correct_answer": "A",
+   "explanation": "方向角说明往哪条射线走，距离说明走多远。只把距离改大，仍在同一条射线上，只是离学校更远。",
+   "tags": [
+    "方向与距离",
+    "变式"
+   ],
+   "question_id": "math-6up-d05-q23"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "甲地在乙地的北偏东 30° 方向上，丙地在乙地的北偏西 30° 方向上。甲、丙两条射线之间的夹角是 ___ 度。",
+   "accepted": [
+    "60"
+   ],
+   "correct_answer": "60",
+   "explanation": "两条射线分在正北方向两侧，各与正北夹 30°，夹角就是 30° + 30° = 60°。",
+   "tags": [
+    "夹角",
+    "方向角"
+   ],
+   "question_id": "math-6up-d05-q24"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "小明说「学校在我家的东偏北 20° 方向」，小红说「我家在学校的西偏南 20° 方向」。两人的说法（ ）",
+   "options": [
+    "互相矛盾，不可能都对",
+    "说的是同一对位置关系，只是观测点互换",
+    "方向角不同，不是同一对位置",
+    "小红把方向说错了"
+   ],
+   "correct_answer": "B",
+   "explanation": "观测点互换后，东与西、南与北都对调，角度不变。两人描述的正是同一对位置，只是各自站在自家看对方。",
+   "tags": [
+    "观测点互换",
+    "相对方向"
+   ],
+   "question_id": "math-6up-d05-q25"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "甲地在乙地的北偏东 40° 方向，丙地在乙地的南偏东 40° 方向。甲、丙两条射线之间的夹角是 ___ 度。",
+   "accepted": [
+    "100"
+   ],
+   "correct_answer": "100",
+   "explanation": "两条射线分别在正北、正南的同侧各偏东 40°，而正北与正南成 180°，所以夹角是 180° − 40° − 40° = 100°。",
+   "tags": [
+    "夹角",
+    "方向角"
+   ],
+   "question_id": "math-6up-d05-q26"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d05",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "A 在 B 的正东 6 千米处。从 A 向北偏西 30° 画一条射线，从 B 向北偏东 30° 画一条射线，两条射线（ ）",
+   "options": [
+    "永远不相交",
+    "在 A、B 之间的北侧相交",
+    "在 A、B 之间的南侧相交",
+    "完全重合"
+   ],
+   "correct_answer": "B",
+   "explanation": "两条射线都向北延伸，一条从 A 偏向西、一条从 B 偏向东，越往北越靠近，最后在 A、B 之间的北侧交于一点。",
+   "tags": [
+    "射线",
+    "相交"
+   ],
+   "question_id": "math-6up-d05-q27"
   },
   {
    "diagnostic_node_id": "math-6up-d26",
@@ -400,6 +770,375 @@
     "图形"
    ],
    "question_id": "math-6up-d26-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "方格纸上点 A 的位置是 (3, 6)。把它向左平移 1 格，得到的新位置的列数是 ___。",
+   "accepted": [
+    "2"
+   ],
+   "correct_answer": "2",
+   "explanation": "数对先列后行，向左平移只改变列，列数 3 − 1 = 2，行数仍是 6，新位置是 (2, 6)。",
+   "tags": [
+    "数对",
+    "平移"
+   ],
+   "question_id": "math-6up-d26-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "用数对表示教室座位时，第 1 列第 1 行的座位记作（ ）",
+   "options": [
+    "(1, 1)",
+    "(0, 0)",
+    "(1, 0)",
+    "(0, 1)"
+   ],
+   "correct_answer": "A",
+   "explanation": "数对先写列、后写行，第 1 列第 1 行就是 (1, 1)。列和行都从 1 开始数，没有第 0 列、第 0 行。",
+   "tags": [
+    "数对",
+    "起点"
+   ],
+   "question_id": "math-6up-d26-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "数对 (6, 2) 中，前一个数表示列、后一个数表示行。这个位置的列数比行数多 ___。",
+   "accepted": [
+    "4"
+   ],
+   "correct_answer": "4",
+   "explanation": "前一个数 6 是列数，后一个数 2 是行数，6 − 2 = 4，列数比行数多 4。",
+   "tags": [
+    "数对",
+    "列与行"
+   ],
+   "question_id": "math-6up-d26-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "数对 (x, 5) 表示的所有点，都落在（ ）",
+   "options": [
+    "第 5 列上",
+    "第 x 行上",
+    "第 5 行上",
+    "同一个点上"
+   ],
+   "correct_answer": "C",
+   "explanation": "数对后一个数是行数，这里固定为 5，所以不管列数是多少，这些点都在第 5 行上，列可以不同。",
+   "tags": [
+    "数对",
+    "变量"
+   ],
+   "question_id": "math-6up-d26-q13"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "方格纸上长方形的四个顶点是 (1, 2)、(5, 2)、(5, 6)、(1, 6)，这个长方形的周长是 ___ 格。",
+   "accepted": [
+    "16"
+   ],
+   "correct_answer": "16",
+   "explanation": "同一行的两个顶点相距 5 − 1 = 4 格，是长；同一列的相距 6 − 2 = 4 格，是宽；周长 (4 + 4) × 2 = 16 格。",
+   "tags": [
+    "数对",
+    "长方形周长"
+   ],
+   "question_id": "math-6up-d26-q14"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "数对 (a, b) 与 (a, b + 2) 表示的两个点，它们的关系是（ ）",
+   "options": [
+    "在同一行，后一个点在前一个点右边 2 格",
+    "在同一列，后一个点比前一个点高 2 格",
+    "是同一个点",
+    "在同一列，后一个点比前一个点低 2 格"
+   ],
+   "correct_answer": "B",
+   "explanation": "两个数对第一个数都是 a，说明在同一列；第二个数从 b 变成 b + 2，行数大 2，所以后一个点高 2 格。",
+   "tags": [
+    "数对",
+    "同一列"
+   ],
+   "question_id": "math-6up-d26-q15"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "做操时小军站在第 3 列第 4 行，记作 (3, 4)。他右边一列的同学与他同一行，这位同学的列数是 ___。",
+   "accepted": [
+    "4"
+   ],
+   "correct_answer": "4",
+   "explanation": "右边一列就是列数大 1，3 + 1 = 4；同一行说明行数仍是 4，这位同学的座位是 (4, 4)。",
+   "tags": [
+    "数对",
+    "相邻列"
+   ],
+   "question_id": "math-6up-d26-q16"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "电影票「5 排 8 号」记作 (5, 8)。另一张票是「5 排 12 号」，与它相比（ ）",
+   "options": [
+    "号数相同，排数大 4",
+    "坐在正后方",
+    "排数相同，号数大 12",
+    "排数相同，号数大 4"
+   ],
+   "correct_answer": "D",
+   "explanation": "两张票排数都是 5，在同一排；号数 12 − 8 = 4，所以号数大 4，座位在右边隔 3 个位置。",
+   "tags": [
+    "数对",
+    "座位"
+   ],
+   "question_id": "math-6up-d26-q17"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "小红的座位是 (5, 4)，小明坐在她正后方第 3 排（行数大 3）。小明座位的数对中，两个数的和是 ___。",
+   "accepted": [
+    "12"
+   ],
+   "correct_answer": "12",
+   "explanation": "正后方只改行数，列数仍是 5，行数 4 + 3 = 7，座位是 (5, 7)，两数之和 5 + 7 = 12。",
+   "tags": [
+    "数对",
+    "座位"
+   ],
+   "question_id": "math-6up-d26-q18"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "小刚的座位是 (3, 5)，小强的座位是 (7, 5)。两人之间隔着（ ）个座位。",
+   "options": [
+    "4",
+    "5",
+    "3",
+    "2"
+   ],
+   "correct_answer": "C",
+   "explanation": "两人在同一行，列数从 3 到 7，中间是第 4、5、6 列，共 3 个座位；7 − 3 − 1 = 3。",
+   "tags": [
+    "数对",
+    "间隔"
+   ],
+   "question_id": "math-6up-d26-q19"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "从 A(1, 1) 出发，先向东走 3 格，再向北走 2 格到 B；从 B 向西走 1 格、向南走 2 格到 C。C 的列数与行数之和是 ___。",
+   "accepted": [
+    "4"
+   ],
+   "correct_answer": "4",
+   "explanation": "列数 1 + 3 − 1 = 3，行数 1 + 2 − 2 = 1，C 是 (3, 1)，两数之和 3 + 1 = 4。",
+   "tags": [
+    "数对",
+    "路线"
+   ],
+   "question_id": "math-6up-d26-q20"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "小明坐在 (4, 3)，他前面第 2 排、右边第 3 列的同学座位是（ ）",
+   "options": [
+    "(7, 1)",
+    "(7, 5)",
+    "(1, 7)",
+    "(6, 3)"
+   ],
+   "correct_answer": "A",
+   "explanation": "前面行数变少，3 − 2 = 1；右边列数变大，4 + 3 = 7；合起来是 (7, 1)。",
+   "tags": [
+    "数对",
+    "座位"
+   ],
+   "question_id": "math-6up-d26-q21"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "数对 (4, 4) 和 (4, 7) 表示的两个点在同一列，它们的行数相差 ___。",
+   "accepted": [
+    "3"
+   ],
+   "correct_answer": "3",
+   "explanation": "两个数对第一个数都是 4，在同一列；行数分别是 4 和 7，相差 7 − 4 = 3。",
+   "tags": [
+    "数对",
+    "同一列"
+   ],
+   "question_id": "math-6up-d26-q22"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "把数对 (3, 5) 的两个数都加 1，得到 (4, 6)。新位置在原位置的（ ）",
+   "options": [
+    "斜向右下一格",
+    "正右方一格",
+    "正上方一格",
+    "斜向右上一格"
+   ],
+   "correct_answer": "D",
+   "explanation": "列数加 1 向右一格，行数加 1 向上一格，两个方向合起来就是斜向右上一格，不是单纯往右或往上。",
+   "tags": [
+    "数对",
+    "变式"
+   ],
+   "question_id": "math-6up-d26-q23"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "数对 (a, b) 中，a 比 b 大 3。下面可能是这个数对的是（ ）",
+   "options": [
+    "(4, 7)",
+    "(3, 3)",
+    "(7, 7)",
+    "(7, 4)"
+   ],
+   "correct_answer": "D",
+   "explanation": "前一个数是列、后一个数是行，要求列数比行数大 3。(7, 4) 中 7 − 4 = 3，符合；其余三组都不满足。",
+   "tags": [
+    "数对",
+    "列与行"
+   ],
+   "question_id": "math-6up-d26-q24"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "数对 (5, 2) 与 (2, 5) 表示不同位置，但两个数的和都是 7。数对 (8, 3) 的两个数的和是 ___。",
+   "accepted": [
+    "11"
+   ],
+   "correct_answer": "11",
+   "explanation": "交换两个数的位置只改变列和行，不改变它们的和；8 + 3 = 11。",
+   "tags": [
+    "数对",
+    "交换"
+   ],
+   "question_id": "math-6up-d26-q25"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "方格纸上 A(1, 2)、B(7, 2)、C(4, 6) 连成三角形，这个三角形的面积是 ___ 个方格。",
+   "accepted": [
+    "12"
+   ],
+   "correct_answer": "12",
+   "explanation": "A、B 在同一行，底长 7 − 1 = 6 格；C 到这一行的高是 6 − 2 = 4 格；面积 6 × 4 ÷ 2 = 12 个方格。",
+   "tags": [
+    "数对",
+    "三角形面积"
+   ],
+   "question_id": "math-6up-d26-q26"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d26",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一个点先向右平移 2 格、再向上平移 5 格，得到点 (6, 8)。原来这个点的数对是（ ）",
+   "options": [
+    "(8, 13)",
+    "(4, 3)",
+    "(8, 3)",
+    "(4, 13)"
+   ],
+   "correct_answer": "B",
+   "explanation": "倒着推：列数 6 − 2 = 4，行数 8 − 5 = 3，原来点是 (4, 3)。顺推回去正好到 (6, 8)。",
+   "tags": [
+    "数对",
+    "逆推"
+   ],
+   "question_id": "math-6up-d26-q27"
   },
   {
    "question_id": "math-6up-d01-q01",

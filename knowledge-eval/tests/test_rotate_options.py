@@ -84,6 +84,28 @@ def test_a_label_beyond_the_options_is_refused_without_writing(spec):
     assert spec.read_bytes() == original
 
 
+def test_fills_do_not_take_the_choices_slots(spec):
+    """A batch is about half fills. Their zeros must not join the shuffle.
+
+    The first version gave every fill target 0 and shuffled all targets together; with 17 fills and
+    19 choices, 23 of the 36 slots were zero, so 12 choices landed back on A — the exact bias the
+    tool exists to remove, and the distribution check below missed it because the fixture had one
+    fill. This runs 14 choices against 22 fills.
+    """
+    lines = [{"n": "d01", "a": "执行计算", "d": "易", "t": "选择题", "s": f"题 {i}",
+              "o": "a|b|c|d", "k": "A", "e": "e", "c": "True"} for i in range(14)]
+    lines += [{"n": "d01", "a": "执行计算", "d": "易", "t": "填空题", "s": f"填 {i}",
+               "k": "1/2", "e": "e", "c": "1/2"} for i in range(22)]
+    spec.write_text("\n".join(json.dumps(line, ensure_ascii=False) for line in lines) + "\n",
+                    encoding="utf-8")
+
+    assert run(spec).returncode == 0
+    after = [json.loads(line) for line in spec.read_text(encoding="utf-8").splitlines() if line.strip()]
+    spread = Counter(line["k"] for line in after if line.get("o"))
+    assert len(spread) == 4, spread
+    assert max(spread.values()) <= 4, spread
+
+
 def test_dry_run_reports_without_writing(spec):
     original = spec.read_bytes()
     result = run(spec, "--dry-run")
