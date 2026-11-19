@@ -174,8 +174,13 @@ def _ordered(rows: list[dict], stages: dict[int, curriculum.BookStage], now_ms: 
     def key(row: dict) -> tuple:
         tier = tiers[id(row)]
         stage = stages.get(int(row["textbook_id"]))
-        last_seen = row.get("last_seen") or ""     # never asked sorts first
-        wrong = -int(row["wrong_count"])
+        # Both branches must put the same types in the same positions. The sort runs over one mixed
+        # list, so a string in position 2 next to an int raises TypeError before any comparison can be
+        # meaningful — which is what happened once a board node (chapter_order 11) put tier 3 rows in
+        # the same pool as tier 0/1 rows. `wrong` is offset and zero-padded so its text sorts like the
+        # number it stands for (bigger wrong_count first, exactly as `-wrong_count` did).
+        last_seen = str(row.get("last_seen") or "")     # never asked sorts first
+        wrong = f"{-int(row['wrong_count']) + 100000:06d}"
         if tier == 1 or (tier == 0 and stage is not None and stage.reviewing):
             return (tier, last_seen, wrong, rng.random())
         return (tier, wrong, last_seen, rng.random())
