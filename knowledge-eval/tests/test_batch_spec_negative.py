@@ -26,13 +26,23 @@ SUBJECTS = ("math", "chinese", "english")
 
 @pytest.fixture
 def sandbox():
-    """A copy of the data directory. `tmp_path` is unusable here — the sandbox shim this repo runs
-    under refuses to create pytest's own base directory."""
+    """A copy of the data directory, with the question banks emptied.
+
+    Nodes come from the real files — the tests are about the expander's rules, not about fixtures. The
+    questions are cleared because these tests must not depend on how full the real bank happens to be:
+    when `d06` reached 9 questions per cell (稳健档), three of them started failing on the per-cell
+    ceiling instead of the rule they were written to assert. A test whose meaning changes as data grows
+    is a test that will one day be "fixed" by loosening the wrong thing.
+    """
     with tempfile.TemporaryDirectory() as directory:
         target = Path(directory)
         for subject in SUBJECTS:
             for kind in ("nodes", "questions"):
                 shutil.copy(DATA / f"{kind}_{subject}_6up.json", target)
+            path = target / f"questions_{subject}_6up.json"
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            payload["questions"] = []
+            path.write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         yield target
 
 
