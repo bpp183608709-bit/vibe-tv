@@ -39,7 +39,7 @@ const TEXTS = {
       net: '连不上服务端，检查手机是不是连在家里的 Wi-Fi 上。',
     },
     auth: {
-      signInTitle: '登录', signUpTitle: '注册账号', claimTitle: '升级成账号',
+      signInTitle: '电视观看时长管控后台', signUpTitle: '注册账号', claimTitle: '升级成账号',
       signIn: '登录', signUp: '注册', claim: '完成升级',
       email: '邮箱', password: '密码', password2: '再输一次密码', newPassword: '新密码',
       questionLabel: '找回密码的问题', answerLabel: '问题的答案', oldPassword: '当前密码',
