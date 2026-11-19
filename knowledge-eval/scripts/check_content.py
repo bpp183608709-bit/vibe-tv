@@ -20,6 +20,7 @@ Exit code 1 on any violation, one line per problem on stderr.
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from collections import Counter, defaultdict
 from fractions import Fraction
@@ -175,6 +176,8 @@ def check_questions(payloads: list[tuple[Path, dict]], nodes: list[dict]) -> tup
     diagnostics = {n["node_id"]: n for n in nodes if n["node_type"] == "diagnostic"}
     by_subject: dict[str, list[dict]] = defaultdict(list)
     seen: Counter = Counter()
+    stems: dict[str, str] = {}
+    repeated: dict[str, str] = {}
 
     for path, payload in payloads:
         file_subject = payload.get("subject")
@@ -185,6 +188,12 @@ def check_questions(payloads: list[tuple[Path, dict]], nodes: list[dict]) -> tup
             label = f"{path.name}[{index}] {question.get('question_id', '?')}"
             errors.extend(f"{label}: {e}" for e in keval.validate(question, spec))
             seen[question.get("question_id")] += 1
+            stem_key = re.sub(r"\s+", "", question.get("stem") or "")
+            if stem_key:
+                if stem_key in stems:
+                    repeated.setdefault(stem_key, question.get("question_id"))
+                else:
+                    stems[stem_key] = question.get("question_id")
 
             node_id = question.get("diagnostic_node_id")
             if node_id not in diagnostics:
@@ -234,6 +243,9 @@ def check_questions(payloads: list[tuple[Path, dict]], nodes: list[dict]) -> tup
     for question_id, count in seen.items():
         if count > 1:
             errors.append(f"question {question_id}: appears {count} times")
+    for stem, later in repeated.items():
+        errors.append(f"question {later}: repeats the stem of {stems[stem]} “{stem}” — two questions "
+                      "the child cannot tell apart, and a generic stem is how a batch stops being read")
     return errors, by_subject
 
 

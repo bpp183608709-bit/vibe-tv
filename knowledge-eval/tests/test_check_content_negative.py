@@ -147,3 +147,25 @@ def test_banned_word_in_a_node_name_fails(workdir):
     result = run(write(workdir, payload))
     assert result.returncode != 0
     assert "复习" in result.stderr
+
+
+def test_repeated_stem_fails(workdir):
+    """Two questions the child cannot tell apart.
+
+    Found in the pilot batch: five maths questions shared two generic stems (下面说法正确的是 / 下面
+    计算正确的是). Nothing caught them — the options differed, so no field was wrong. A batch written
+    in one pass drifts to stems like these, which is exactly when a gate is worth having.
+    """
+    payload = json.loads(MATH_QUESTIONS.read_text(encoding="utf-8"))
+    donor = next(q for q in payload["questions"] if q["diagnostic_node_id"] == "math-6up-d01")
+    clone = dict(donor)
+    clone["question_id"] = "math-6up-d01-q90"
+    clone["stem"] = donor["stem"]
+    payload["questions"].append(clone)
+    questions = workdir / "questions_math_6up.json"
+    questions.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+    result = run(MATH_NODES, questions)
+    assert result.returncode != 0
+    assert "repeats the stem of" in result.stderr
+    assert "math-6up-d01-q90" in result.stderr

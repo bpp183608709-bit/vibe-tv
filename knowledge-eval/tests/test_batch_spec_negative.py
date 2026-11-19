@@ -1,0 +1,113 @@
+"""Negative tests for the batch expander.
+
+The expander writes to the bank, so every test runs against a copy in a scratch directory. What is
+being asserted is not "the tool works" but "the tool refuses": a wrong calculation, an ability line the
+node never declared, and a second application of the same batch.
+
+    pytest knowledge-eval/tests/test_batch_spec_negative.py -v
+"""
+
+from __future__ import annotations
+
+import json
+import shutil
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+import pytest
+
+KE = Path(__file__).resolve().parents[1]
+SCRIPT = KE / "scripts" / "batch_spec.py"
+DATA = KE / "data"
+SUBJECTS = ("math", "chinese", "english")
+
+
+@pytest.fixture
+def sandbox():
+    """A copy of the data directory. `tmp_path` is unusable here — the sandbox shim this repo runs
+    under refuses to create pytest's own base directory."""
+    with tempfile.TemporaryDirectory() as directory:
+        target = Path(directory)
+        for subject in SUBJECTS:
+            for kind in ("nodes", "questions"):
+                shutil.copy(DATA / f"{kind}_{subject}_6up.json", target)
+        yield target
+
+
+def write_spec(sandbox: Path, lines: list[dict], name: str = "spec.jsonl") -> Path:
+    path = sandbox / name
+    path.write_text("\n".join(json.dumps(line, ensure_ascii=False) for line in lines) + "\n",
+                    encoding="utf-8")
+    return path
+
+
+def run(sandbox: Path, spec: Path, *extra: str) -> subprocess.CompletedProcess:
+    return subprocess.run(
+        [sys.executable, str(SCRIPT), "--subject", "math", "--spec", str(spec),
+         "--data-dir", str(sandbox), *extra],
+        capture_output=True, text=True,
+    )
+
+
+def fill(**over) -> dict:
+    """A valid maths fill, so a test can break exactly one field."""
+    line = {"n": "d06", "a": "执行计算", "d": "易", "t": "填空题", "s": "9 的倒数是（  ）。",
+            "k": "1/9", "e": "9 × 1/9 = 1，所以 9 的倒数是 1/9。", "c": "1 / 9"}
+    line.update(over)
+    return line
+
+
+def test_a_valid_line_is_written(sandbox):
+    before = json.loads((sandbox / "questions_math_6up.json").read_text(encoding="utf-8"))
+    result = run(sandbox, write_spec(sandbox, [fill()]))
+    assert result.returncode == 0, result.stderr
+
+    after = json.loads((sandbox / "questions_math_6up.json").read_text(encoding="utf-8"))
+    assert len(after["questions"]) == len(before["questions"]) + 1
+    added = next(q for q in after["questions"] if q["stem"] == "9 的倒数是（  ）。")
+    assert added["correct_answer"] == "1/9"
+    assert added["accepted"] == ["1/9"]
+    assert added["diagnostic_node_id"] == "math-6up-d06"
+
+
+def test_a_wrong_calculation_is_rejected(sandbox):
+    """`c` computes the answer, so a slip in either the expression or the answer shows up here."""
+    result = run(sandbox, write_spec(sandbox, [fill(c="1 / 6")]))
+    assert result.returncode != 0
+    assert "the answer says '1/9'" in result.stderr
+
+
+def test_a_fill_without_a_check_is_rejected(sandbox):
+    line = fill()
+    line.pop("c")
+    result = run(sandbox, write_spec(sandbox, [line]))
+    assert result.returncode != 0
+    assert "needs `c`" in result.stderr
+
+
+def test_an_ability_line_the_node_never_declared_is_rejected(sandbox):
+    result = run(sandbox, write_spec(sandbox, [fill(a="综合表达")]))
+    assert result.returncode != 0
+    assert "is not declared on math-6up-d06" in result.stderr
+
+
+def test_reapplying_the_same_batch_changes_nothing(sandbox):
+    spec = write_spec(sandbox, [fill()])
+    assert run(sandbox, spec).returncode == 0
+    first = (sandbox / "questions_math_6up.json").read_bytes()
+
+    again = run(sandbox, spec)
+    assert again.returncode == 0, again.stderr
+    assert "already applied" in again.stdout
+    assert (sandbox / "questions_math_6up.json").read_bytes() == first
+
+
+def test_one_bad_line_stops_the_whole_batch(sandbox):
+    """Half a batch is harder to reason about than none: the good line must not land either."""
+    before = (sandbox / "questions_math_6up.json").read_bytes()
+    result = run(sandbox, write_spec(sandbox, [fill(s="12 的倒数是（  ）。", k="1/12", c="1 / 12"),
+                                               fill(c="1 / 6")]))
+    assert result.returncode != 0
+    assert (sandbox / "questions_math_6up.json").read_bytes() == before
