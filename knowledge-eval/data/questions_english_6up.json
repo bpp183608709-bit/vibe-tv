@@ -1129,6 +1129,600 @@
    "question_id": "english-6up-d07-q09"
   },
   {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "It ___ sunny and cool tomorrow.（选择正确形式）",
+   "options": [
+    "will",
+    "is",
+    "was",
+    "will be"
+   ],
+   "correct_answer": "D",
+   "explanation": "tomorrow 是将来时间，用 will + 动词原形；说天气要用 be 动词，所以是 will be。will 后面不能直接跟形容词，is 和 was 说的是现在和过去。",
+   "tags": [
+    "一般将来时 will",
+    "天气描述"
+   ],
+   "question_id": "english-6up-d08-q01"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "There ___ a football match in our school next Friday.（选择正确形式）",
+   "options": [
+    "will have",
+    "is going to have",
+    "will is",
+    "will be"
+   ],
+   "correct_answer": "D",
+   "explanation": "“将有”用 There will be，不能写 There will have——have 前面已经有 there 了。next Friday 说明是将来。",
+   "tags": [
+    "There will be",
+    "一般将来时 will"
+   ],
+   "question_id": "english-6up-d08-q02"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "It ___ rainy tomorrow, so we ___ the sports meeting next Saturday.（选择正确形式）",
+   "options": [
+    "will; will hold",
+    "will be; will hold",
+    "will be; hold",
+    "is; will hold"
+   ],
+   "correct_answer": "B",
+   "explanation": "两个空都是将来的事：天气用 will be，举办运动会用 will hold（hold 是实义动词，前面用 will）。时间词 tomorrow 和 next Saturday 都定住了将来。",
+   "tags": [
+    "一般将来时 will",
+    "天气描述"
+   ],
+   "question_id": "english-6up-d08-q03"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句写的是将来的事（  ）",
+   "options": [
+    "We will visit the farm next week.",
+    "We visited the farm last week.",
+    "We visit the farm every week.",
+    "We are visiting the farm now."
+   ],
+   "correct_answer": "A",
+   "explanation": "next week 是将来时间，动词用 will visit。last week 配过去式，every week 配一般现在时，now 配现在进行时。",
+   "tags": [
+    "一般将来时 will",
+    "时态判断"
+   ],
+   "question_id": "english-6up-d08-q04"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 will 后面用错了（  ）",
+   "options": [
+    "He will goes to Beijing tomorrow.",
+    "She will come back next Monday.",
+    "They will have a picnic.",
+    "I will help you."
+   ],
+   "correct_answer": "A",
+   "explanation": "will 后面一律用动词原形，will goes 应改成 will go。will 不随主语变，也没有第三人称单数的形式。",
+   "tags": [
+    "一般将来时 will",
+    "改错"
+   ],
+   "question_id": "english-6up-d08-q05"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句的时间词与 will 不搭配（  ）",
+   "options": [
+    "I will go to the zoo yesterday.",
+    "I will go to the zoo tomorrow.",
+    "I will go to the zoo next Sunday.",
+    "I will go to the zoo this evening."
+   ],
+   "correct_answer": "A",
+   "explanation": "yesterday 是过去的时间，不能和 will 连用，应改成 went。tomorrow、next Sunday、this evening 都是将来时间。",
+   "tags": [
+    "一般将来时 will",
+    "时间词"
+   ],
+   "question_id": "english-6up-d08-q06"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“It will be sunny and cool tomorrow. We will go to the park.” 明天的天气怎么样（  ）",
+   "options": [
+    "刮风，很热",
+    "晴天，天气凉爽",
+    "下雨，有点冷",
+    "下雪，很冷"
+   ],
+   "correct_answer": "B",
+   "explanation": "sunny and cool 就是“晴天，凉爽”。两个词要一起看，只看到 sunny 会漏掉 cool。",
+   "tags": [
+    "天气描述",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d08-q07"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“There will be a party in our classroom on Friday. We will sing and dance.” 星期五教室里会有什么（  ）",
+   "options": [
+    "一场球赛",
+    "什么也没有",
+    "一场聚会",
+    "一场考试"
+   ],
+   "correct_answer": "C",
+   "explanation": "There will be a party 就是“会有一场聚会”，后面 sing and dance 说的正是聚会上的活动。",
+   "tags": [
+    "There will be",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d08-q08"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“It will be rainy tomorrow, so we won't have the picnic. We will stay at home and watch a film.” 从句子可以知道（  ）",
+   "options": [
+    "他们不喜欢看电影",
+    "野餐改不成了，他们在家看电影",
+    "明天他们去野餐",
+    "明天是晴天"
+   ],
+   "correct_answer": "B",
+   "explanation": "won't have the picnic 是“不野餐了”，原因是下雨；后面说在家看电影，说明计划改了。so 前后是原因和结果。",
+   "tags": [
+    "一般将来时 will",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d08-q09"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "It is ___ today. Take your umbrella with you.（选择恰当的天气词）",
+   "options": [
+    "sunny",
+    "windy",
+    "cloudy",
+    "rainy"
+   ],
+   "correct_answer": "D",
+   "explanation": "要带伞说明在下雨，用 rainy。sunny 和 windy 都不需要伞，cloudy 只是多云。",
+   "tags": [
+    "天气形容词",
+    "天气下的活动"
+   ],
+   "question_id": "english-6up-d09-q01"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "It is very ___ today. Let's fly a kite in the park.（选择恰当的天气词）",
+   "options": [
+    "snowy",
+    "cloudy",
+    "windy",
+    "rainy"
+   ],
+   "correct_answer": "C",
+   "explanation": "放风筝要有风，所以是 windy。rainy 和 snowy 都不适合出门放风筝。",
+   "tags": [
+    "天气形容词",
+    "天气下的活动"
+   ],
+   "question_id": "english-6up-d09-q02"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "It is ___ today, so we can't go out. We ___ at home.（选择正确形式）",
+   "options": [
+    "rain; will stay",
+    "rainy; will staying",
+    "rains; will stay",
+    "rainy; will stay"
+   ],
+   "correct_answer": "D",
+   "explanation": "It is 后面要用形容词 rainy，不能用名词 rain 或动词 rains；will 后面要用动词原形 stay，不能加 -ing。",
+   "tags": [
+    "天气形容词",
+    "一般将来时 will"
+   ],
+   "question_id": "english-6up-d09-q03"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句的天气词用对了（  ）",
+   "options": [
+    "It is rain today.",
+    "It is wind today.",
+    "It is sunny today.",
+    "It is sun today."
+   ],
+   "correct_answer": "C",
+   "explanation": "It is 后面接形容词：sunny、rainy、windy。sun、rain、wind 是名词，不能直接放在 It is 后面。",
+   "tags": [
+    "天气形容词",
+    "改错"
+   ],
+   "question_id": "english-6up-d09-q04"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中天气与活动配得不合理（  ）",
+   "options": [
+    "It is windy today. Let's fly a kite.",
+    "It is snowy today. Let's go swimming in the river.",
+    "It is rainy today. Let's stay at home and read.",
+    "It is sunny today. Let's go to the park."
+   ],
+   "correct_answer": "B",
+   "explanation": "下雪天到河里游泳既不安全也不合常理。其余三句：下雨在家看书、晴天去公园、有风放风筝，都对得上。",
+   "tags": [
+    "天气形容词",
+    "天气下的活动"
+   ],
+   "question_id": "english-6up-d09-q05"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一组句子里的天气词全部用对了（  ）",
+   "options": [
+    "It is sun. / It is rain. / It is wind.",
+    "It is sunny. / It is rain. / It is windy.",
+    "It is sun. / It is rainy. / It is wind.",
+    "It is sunny. / It is rainy. / It is windy."
+   ],
+   "correct_answer": "D",
+   "explanation": "三句都要用形容词形式：sunny、rainy、windy。只要有一处写成名词 sun、rain、wind，整组就不对。",
+   "tags": [
+    "天气形容词",
+    "改错"
+   ],
+   "question_id": "english-6up-d09-q06"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "I'd like a ___ of bread for breakfast.（选择正确的量词）",
+   "options": [
+    "glass",
+    "pair",
+    "piece",
+    "bottle"
+   ],
+   "correct_answer": "C",
+   "explanation": "面包论“片、块”，用 a piece of bread。bottle 和 glass 用于水、牛奶这类液体，pair 用于成双的东西。",
+   "tags": [
+    "量词 a bottle of",
+    "不可数名词"
+   ],
+   "question_id": "english-6up-d10-q01"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "There are two ___ of milk on the table.（选择正确形式）",
+   "options": [
+    "glasses",
+    "glass",
+    "glasss",
+    "a glass"
+   ],
+   "correct_answer": "A",
+   "explanation": "two 后面的量词要变复数：glass → glasses（以 s 结尾加 -es）。glasss 是拼错，a glass 是单数。",
+   "tags": [
+    "a glass of",
+    "量词复数"
+   ],
+   "question_id": "english-6up-d10-q02"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "I will bring two ___ of orange juice and three ___ of bread.（选择正确形式）",
+   "options": [
+    "bottles; pieces",
+    "bottle; piece",
+    "bottles; piece",
+    "bottle; pieces"
+   ],
+   "correct_answer": "A",
+   "explanation": "两个空前面都是大于 1 的数，量词都要变复数：two bottles、three pieces。不可数名词本身不变，变的是量词。",
+   "tags": [
+    "量词复数",
+    "不可数名词"
+   ],
+   "question_id": "english-6up-d10-q03"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪个量词与后面的词搭配正确（  ）",
+   "options": [
+    "a pair of paper",
+    "a piece of paper",
+    "a bottle of paper",
+    "a glass of paper"
+   ],
+   "correct_answer": "B",
+   "explanation": "纸论“张、片”，用 a piece of paper。bottle、glass 用于液体，pair 用于成双的东西，都不能配 paper。",
+   "tags": [
+    "量词 a bottle of",
+    "搭配"
+   ],
+   "question_id": "english-6up-d10-q04"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中量词写错了（  ）",
+   "options": [
+    "I'd like a glass of milk.",
+    "I'd like a cup of tea.",
+    "I'd like two bottle of water.",
+    "I'd like two bottles of water."
+   ],
+   "correct_answer": "C",
+   "explanation": "two 后面的 bottle 要变复数：two bottles of water。其余三句的量词都是单数，配 a 或没有数词，用原形。",
+   "tags": [
+    "量词复数",
+    "改错"
+   ],
+   "question_id": "english-6up-d10-q05"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一组里的量词都用了复数形式（  ）",
+   "options": [
+    "three bottle of juice / two cups of tea",
+    "three bottles of juice / two cups of tea",
+    "three bottle of juice / two cup of tea",
+    "three bottles of juice / two cup of tea"
+   ],
+   "correct_answer": "B",
+   "explanation": "两组都有大于 1 的数词，量词都要加 -s：three bottles、two cups。只要有一组漏了复数，整组就不对。",
+   "tags": [
+    "量词复数",
+    "搭配"
+   ],
+   "question_id": "english-6up-d10-q06"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "I ___ swim, but I can't skate.（选择正确形式）",
+   "options": [
+    "can to",
+    "cans",
+    "am can",
+    "can"
+   ],
+   "correct_answer": "D",
+   "explanation": "can 是情态动词，后面接动词原形，也没有第三人称单数形式：I can swim。can to 和 cans 都不对。",
+   "tags": [
+    "情态动词 can",
+    "能力表达"
+   ],
+   "question_id": "english-6up-d11-q01"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "— What can I do for you? — You can ___ me carry the box.（选择正确形式）",
+   "options": [
+    "to help",
+    "helping",
+    "help",
+    "helps"
+   ],
+   "correct_answer": "C",
+   "explanation": "can 后面用动词原形 help。What can I do for you? 是主动提出帮忙的说法，回答也用 can + 原形。",
+   "tags": [
+    "情态动词 can",
+    "提供帮助的表达"
+   ],
+   "question_id": "english-6up-d11-q02"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "Lingling ___ cook noodles, but she ___ make cakes.（选择正确形式）",
+   "options": [
+    "cans; can't",
+    "can; can't",
+    "can; can",
+    "can't; can't"
+   ],
+   "correct_answer": "B",
+   "explanation": "but 表示转折，前后要一正一反：会做面条，不会做蛋糕。can 没有第三人称单数形式，cans 是错的。",
+   "tags": [
+    "情态动词 can",
+    "能力表达"
+   ],
+   "question_id": "english-6up-d11-q03"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 can 用得正确（  ）",
+   "options": [
+    "She cans play the piano.",
+    "She can to play the piano.",
+    "She can play the piano.",
+    "She can plays the piano."
+   ],
+   "correct_answer": "C",
+   "explanation": "can 后面用动词原形 play，can 本身不加 -s，也不接 to。所以只有 She can play the piano 是对的。",
+   "tags": [
+    "情态动词 can",
+    "改错"
+   ],
+   "question_id": "english-6up-d11-q04"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 can 后面用错了（  ）",
+   "options": [
+    "He can sings very well.",
+    "I can help you.",
+    "We can go there by bus.",
+    "They can swim."
+   ],
+   "correct_answer": "A",
+   "explanation": "can 后面要跟动词原形，can sings 应改成 can sing。can 不随主语变，主语是 he 也不加 -s。",
+   "tags": [
+    "情态动词 can",
+    "改错"
+   ],
+   "question_id": "english-6up-d11-q05"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 can 的意思与其他三句不同（  ）",
+   "options": [
+    "Can you help me, please?",
+    "I can swim.",
+    "She can ride a bike.",
+    "He can speak English."
+   ],
+   "correct_answer": "A",
+   "explanation": "Can you help me? 是“请求别人帮忙”，can 表示请求；其余三句的 can 都表示“会、有能力做”。",
+   "tags": [
+    "情态动词 can",
+    "提供帮助的表达"
+   ],
+   "question_id": "english-6up-d11-q06"
+  },
+  {
    "question_id": "english-6up-d12-q01",
    "diagnostic_node_id": "english-6up-d12",
    "subject": "english",

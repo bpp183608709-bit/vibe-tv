@@ -1,15 +1,15 @@
 # 覆盖矩阵（由 check_coverage_matrix.py 生成，勿手改）
 
-节点 63 个诊断 / 27 个聚合，题目 541 道。
+节点 63 个诊断 / 27 个聚合，题目 568 道。
 
 ## 1. 汇总
 
 | 范围 | 格子 | 0 题 | n≥3 | 最低档达标 | 稳健档达标 | P0（n<3） | P1（阶段不全） | P2（仅缺稳健档） |
 |---|---|---|---|---|---|---|---|---|
-| 全部 | 205 | 20 | 177 | 177 | 0 | 28 | 0 | 177 |
+| 全部 | 205 | 11 | 186 | 186 | 0 | 19 | 0 | 186 |
 | math | 96 | 0 | 96 | 96 | 0 | 0 | 0 | 96 |
 | chinese | 64 | 0 | 64 | 64 | 0 | 0 | 0 | 64 |
-| english | 45 | 20 | 17 | 17 | 0 | 28 | 0 | 17 |
+| english | 45 | 11 | 26 | 26 | 0 | 19 | 0 | 26 |
 
 ## 2. 聚合节点下的诊断节点数
 
@@ -71,20 +71,20 @@
 |---|---|---|---|---|
 | math | 25 | 25 | 25 | 25 |
 | chinese | 22 | 22 | 22 | 22 |
-| english | 16 | 10 | 8 | 8 |
+| english | 16 | 14 | 12 | 12 |
 
-四阶段可达的节点：`math-6up-d05`、`math-6up-d26`、`math-6up-d01`、`math-6up-d02`、`math-6up-d03`、`math-6up-d04`、`math-6up-d06`、`math-6up-d07`、`math-6up-d08`、`math-6up-d09`、`math-6up-d27`、`math-6up-d28`、`math-6up-d13`、`math-6up-d14`、`math-6up-d15`、`math-6up-d16`、`math-6up-d23`、`math-6up-d17`、`math-6up-d18`、`math-6up-d19`、`math-6up-d29`、`math-6up-d24`、`math-6up-d25`、`math-6up-d30`、`math-6up-d31`、`chinese-6up-d01`、`chinese-6up-d02`、`chinese-6up-d15`、`chinese-6up-d03`、`chinese-6up-d04`、`chinese-6up-d16`、`chinese-6up-d05`、`chinese-6up-d17`、`chinese-6up-d06`、`chinese-6up-d07`、`chinese-6up-d18`、`chinese-6up-d22`、`chinese-6up-d08`、`chinese-6up-d09`、`chinese-6up-d10`、`chinese-6up-d19`、`chinese-6up-d11`、`chinese-6up-d12`、`chinese-6up-d20`、`chinese-6up-d13`、`chinese-6up-d14`、`chinese-6up-d21`、`english-6up-d01`、`english-6up-d02`、`english-6up-d03`、`english-6up-d04`、`english-6up-d06`、`english-6up-d07`、`english-6up-d12`、`english-6up-d13`。
+四阶段可达的节点：`math-6up-d05`、`math-6up-d26`、`math-6up-d01`、`math-6up-d02`、`math-6up-d03`、`math-6up-d04`、`math-6up-d06`、`math-6up-d07`、`math-6up-d08`、`math-6up-d09`、`math-6up-d27`、`math-6up-d28`、`math-6up-d13`、`math-6up-d14`、`math-6up-d15`、`math-6up-d16`、`math-6up-d23`、`math-6up-d17`、`math-6up-d18`、`math-6up-d19`、`math-6up-d29`、`math-6up-d24`、`math-6up-d25`、`math-6up-d30`、`math-6up-d31`、`chinese-6up-d01`、`chinese-6up-d02`、`chinese-6up-d15`、`chinese-6up-d03`、`chinese-6up-d04`、`chinese-6up-d16`、`chinese-6up-d05`、`chinese-6up-d17`、`chinese-6up-d06`、`chinese-6up-d07`、`chinese-6up-d18`、`chinese-6up-d22`、`chinese-6up-d08`、`chinese-6up-d09`、`chinese-6up-d10`、`chinese-6up-d19`、`chinese-6up-d11`、`chinese-6up-d12`、`chinese-6up-d20`、`chinese-6up-d13`、`chinese-6up-d14`、`chinese-6up-d21`、`english-6up-d01`、`english-6up-d02`、`english-6up-d03`、`english-6up-d04`、`english-6up-d06`、`english-6up-d07`、`english-6up-d08`、`english-6up-d09`、`english-6up-d10`、`english-6up-d11`、`english-6up-d12`、`english-6up-d13`。
 
 ## 5. 补题清单（按 节点 × 能力 × 难度）
 
-### 为达到最低档：共 74 题（math 0，chinese 0，english 74；易 24 / 中 24 / 难 26）
+### 为达到最低档：共 47 题（math 0，chinese 0，english 47；易 15 / 中 15 / 难 17）
 
 | 诊断节点 | 能力标签 | 补易 | 补中 | 补难 | 小计 |
 |---|---|---|---|---|---|
 
 （上表只列数学；语数英全量见 `coverage-matrix.json` 的 `floor_topup.rows`。）
 
-### 为达到稳健档：共 689 题（math 288，chinese 192，english 209；易 229 / 中 229 / 难 231）
+### 为达到稳健档：共 662 题（math 288，chinese 192，english 182；易 220 / 中 220 / 难 222）
 
 | 诊断节点 | 能力标签 | 补易 | 补中 | 补难 | 小计 |
 |---|---|---|---|---|---|
@@ -189,19 +189,10 @@
 
 ## 6. 缺口明细（P0 / P1 / P2 逐格）
 
-### P0 — n<3，连薄弱项都产生不了：28 格
+### P0 — n<3，连薄弱项都产生不了：19 格
 
 | 诊断节点 | 能力标签 | n_e | n_m | n_h | 到最低档 易/中/难 | 原因 |
 |---|---|---|---|---|---|---|
-| `english-6up-d08` | 语言运用 | 0 | 0 | 0 | 1/1/1 | 无题 |
-| `english-6up-d08` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
-| `english-6up-d08` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
-| `english-6up-d09` | 语言运用 | 0 | 0 | 0 | 1/1/1 | 无题 |
-| `english-6up-d09` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
-| `english-6up-d10` | 语言运用 | 0 | 0 | 0 | 1/1/1 | 无题 |
-| `english-6up-d10` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
-| `english-6up-d11` | 语言运用 | 0 | 0 | 0 | 1/1/1 | 无题 |
-| `english-6up-d11` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `english-6up-d12` | 语言运用 | 1 | 1 | 0 | 0/0/1 | 待测：2 题，不足 3 条样本 |
 | `english-6up-d12` | 辨析判断 | 0 | 0 | 1 | 1/1/0 | 待测：1 题，不足 3 条样本 |
 | `english-6up-d12` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
@@ -226,7 +217,7 @@
 
 无。
 
-### P2 — 最低档达标但稳健档不达标：177 格
+### P2 — 最低档达标但稳健档不达标：186 格
 
 | 诊断节点 | 能力标签 | n_e | n_m | n_h | 到最低档 易/中/难 | 原因 |
 |---|---|---|---|---|---|---|
@@ -407,4 +398,13 @@
 | `english-6up-d07` | 语言运用 | 1 | 1 | 1 | 0/0/0 | 稳健档不足：需补 易 1、中 1、难 1 |
 | `english-6up-d07` | 辨析判断 | 1 | 1 | 1 | 0/0/0 | 稳健档不足：需补 易 1、中 1、难 1 |
 | `english-6up-d07` | 阅读理解 | 1 | 1 | 1 | 0/0/0 | 稳健档不足：需补 易 1、中 1、难 1 |
+| `english-6up-d08` | 语言运用 | 1 | 1 | 1 | 0/0/0 | 稳健档不足：需补 易 1、中 1、难 1 |
+| `english-6up-d08` | 辨析判断 | 1 | 1 | 1 | 0/0/0 | 稳健档不足：需补 易 1、中 1、难 1 |
+| `english-6up-d08` | 阅读理解 | 1 | 1 | 1 | 0/0/0 | 稳健档不足：需补 易 1、中 1、难 1 |
+| `english-6up-d09` | 语言运用 | 1 | 1 | 1 | 0/0/0 | 稳健档不足：需补 易 1、中 1、难 1 |
+| `english-6up-d09` | 辨析判断 | 1 | 1 | 1 | 0/0/0 | 稳健档不足：需补 易 1、中 1、难 1 |
+| `english-6up-d10` | 语言运用 | 1 | 1 | 1 | 0/0/0 | 稳健档不足：需补 易 1、中 1、难 1 |
+| `english-6up-d10` | 辨析判断 | 1 | 1 | 1 | 0/0/0 | 稳健档不足：需补 易 1、中 1、难 1 |
+| `english-6up-d11` | 语言运用 | 1 | 1 | 1 | 0/0/0 | 稳健档不足：需补 易 1、中 1、难 1 |
+| `english-6up-d11` | 辨析判断 | 1 | 1 | 1 | 0/0/0 | 稳健档不足：需补 易 1、中 1、难 1 |
 

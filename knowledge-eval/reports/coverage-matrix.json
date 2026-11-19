@@ -15938,22 +15938,79 @@
    "parent_aggregate_node_id": "english-6up-u04",
    "ability_tag": "语言运用",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "english-6up-d08-q01",
+    "english-6up-d08-q02",
+    "english-6up-d08-q03"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -15961,20 +16018,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "english",
@@ -15984,22 +16028,79 @@
    "parent_aggregate_node_id": "english-6up-u04",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "english-6up-d08-q04",
+    "english-6up-d08-q05",
+    "english-6up-d08-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -16007,20 +16108,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "english",
@@ -16030,22 +16118,79 @@
    "parent_aggregate_node_id": "english-6up-u04",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "english-6up-d08-q07",
+    "english-6up-d08-q08",
+    "english-6up-d08-q09"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -16053,20 +16198,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "english",
@@ -16076,22 +16208,79 @@
    "parent_aggregate_node_id": "english-6up-u04",
    "ability_tag": "语言运用",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "english-6up-d09-q01",
+    "english-6up-d09-q02",
+    "english-6up-d09-q03"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -16099,20 +16288,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "english",
@@ -16122,22 +16298,79 @@
    "parent_aggregate_node_id": "english-6up-u04",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "english-6up-d09-q04",
+    "english-6up-d09-q05",
+    "english-6up-d09-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -16145,20 +16378,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "english",
@@ -16168,22 +16388,79 @@
    "parent_aggregate_node_id": "english-6up-u05",
    "ability_tag": "语言运用",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "english-6up-d10-q01",
+    "english-6up-d10-q02",
+    "english-6up-d10-q03"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -16191,20 +16468,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "english",
@@ -16214,22 +16478,79 @@
    "parent_aggregate_node_id": "english-6up-u05",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "english-6up-d10-q04",
+    "english-6up-d10-q05",
+    "english-6up-d10-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -16237,20 +16558,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "english",
@@ -16260,22 +16568,79 @@
    "parent_aggregate_node_id": "english-6up-u06",
    "ability_tag": "语言运用",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "english-6up-d11-q01",
+    "english-6up-d11-q02",
+    "english-6up-d11-q03"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -16283,20 +16648,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "english",
@@ -16306,22 +16658,79 @@
    "parent_aggregate_node_id": "english-6up-u06",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "english-6up-d11-q04",
+    "english-6up-d11-q05",
+    "english-6up-d11-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -16329,20 +16738,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "english",
@@ -18251,13 +18647,18 @@
    "node_name": "一般将来时 will（含 There will be）",
    "parent_aggregate_node_id": "english-6up-u04",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
-   "reachable_levels": [],
-   "four_stage": false
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "english",
@@ -18265,13 +18666,18 @@
    "node_name": "天气词汇与活动安排",
    "parent_aggregate_node_id": "english-6up-u04",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
-   "reachable_levels": [],
-   "four_stage": false
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "english",
@@ -18279,13 +18685,18 @@
    "node_name": "量词表达（a bottle of / a glass of）",
    "parent_aggregate_node_id": "english-6up-u05",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
-   "reachable_levels": [],
-   "four_stage": false
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "english",
@@ -18293,13 +18704,18 @@
    "node_name": "情态动词 can 表能力与请求",
    "parent_aggregate_node_id": "english-6up-u06",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
-   "reachable_levels": [],
-   "four_stage": false
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "english",
@@ -18707,18 +19123,18 @@
  "generated_from": {
   "diagnostic_nodes": 63,
   "aggregate_nodes": 27,
-  "questions": 541
+  "questions": 568
  },
  "summary": {
   "all": {
    "cells": 205,
-   "no_question": 20,
-   "measured": 177,
-   "floor_ok": 177,
+   "no_question": 11,
+   "measured": 186,
+   "floor_ok": 186,
    "robust_ok": 0,
-   "p0": 28,
+   "p0": 19,
    "p1": 0,
-   "p2": 177
+   "p2": 186
   },
   "by_subject": {
    "math": {
@@ -18743,13 +19159,13 @@
    },
    "english": {
     "cells": 45,
-    "no_question": 20,
-    "measured": 17,
-    "floor_ok": 17,
+    "no_question": 11,
+    "measured": 26,
+    "floor_ok": 26,
     "robust_ok": 0,
-    "p0": 28,
+    "p0": 19,
     "p1": 0,
-    "p2": 17
+    "p2": 26
    }
   }
  },
@@ -18770,87 +19186,6 @@
   "rows": [
    {
     "subject": "english",
-    "diagnostic_node_id": "english-6up-d08",
-    "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "english",
-    "diagnostic_node_id": "english-6up-d08",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "english",
-    "diagnostic_node_id": "english-6up-d08",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "english",
-    "diagnostic_node_id": "english-6up-d09",
-    "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "english",
-    "diagnostic_node_id": "english-6up-d09",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "english",
-    "diagnostic_node_id": "english-6up-d10",
-    "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "english",
-    "diagnostic_node_id": "english-6up-d10",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "english",
-    "diagnostic_node_id": "english-6up-d11",
-    "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "english",
-    "diagnostic_node_id": "english-6up-d11",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "english",
     "diagnostic_node_id": "english-6up-d12",
     "ability_tag": "语言运用",
     "easy": 0,
@@ -19021,16 +19356,16 @@
     "total": 3
    }
   ],
-  "total": 74,
+  "total": 47,
   "by_subject": {
    "math": 0,
    "chinese": 0,
-   "english": 74
+   "english": 47
   },
   "by_difficulty": {
-   "easy": 24,
-   "medium": 24,
-   "hard": 26
+   "easy": 15,
+   "medium": 15,
+   "hard": 17
   }
  },
  "robust_topup": {
@@ -20632,82 +20967,82 @@
     "subject": "english",
     "diagnostic_node_id": "english-6up-d08",
     "ability_tag": "语言运用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d08",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d08",
     "ability_tag": "阅读理解",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d09",
     "ability_tag": "语言运用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d09",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d10",
     "ability_tag": "语言运用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d10",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d11",
     "ability_tag": "语言运用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d11",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "english",
@@ -20881,16 +21216,16 @@
     "total": 6
    }
   ],
-  "total": 689,
+  "total": 662,
   "by_subject": {
    "math": 288,
    "chinese": 192,
-   "english": 209
+   "english": 182
   },
   "by_difficulty": {
-   "easy": 229,
-   "medium": 229,
-   "hard": 231
+   "easy": 220,
+   "medium": 220,
+   "hard": 222
   }
  }
 }
