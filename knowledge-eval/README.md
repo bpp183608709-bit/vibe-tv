@@ -13,19 +13,19 @@
 ```bash
 # 1) 原始数据直接过 schema（没有翻译层）
 python knowledge-eval/scripts/check_schema.py
-# → schema: 82 nodes, 43 questions checked against knowledge-eval/schemas
+# → schema: 90 nodes, 67 questions checked against knowledge-eval/schemas
 # → schema: ok
 
 # 2) 双向内容校验：快照 38 个微观点 vs 节点引用
 python knowledge-eval/scripts/check_content.py
-# → nodes: 27 aggregate, 55 diagnostic
+# → nodes: 27 aggregate, 63 diagnostic
 # → coverage pep-math-6up-v3.json: 30/30 micro points referenced
 # →   mt_g6u_036  math-6up-d25     分数四则混合运算      ← 上一版丢掉的那一个
 # → content: ok
 
 # 3) 负样本：把引用删掉/加错，校验必须失败（不含规格测试）
 python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_four_stage_constructible.py
-# → 20 passed
+# → 21 passed
 
 # 4) 离线报告：不连数据库，纯文件
 python knowledge-eval/scripts/evaluate.py \
@@ -42,7 +42,7 @@ python knowledge-eval/scripts/check_db_parity.py --content
 
 # 6) 数据库导出与仓库文件逐字段比对
 python knowledge-eval/scripts/export_from_db.py --check
-# → export: ok — 34 nodes, 22 nodes, 26 nodes; 15 questions, 12 questions, 16 questions
+# → export: ok — 34 nodes, 30 nodes, 26 nodes; 15 questions, 36 questions, 16 questions
 ```
 
 全部命令的预期输出与失败样例见 [docs/verification.md](docs/verification.md)；逐条修复证据见 [docs/fix-evidence-2026-11-19.md](docs/fix-evidence-2026-11-19.md)。

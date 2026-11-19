@@ -11,7 +11,7 @@ python knowledge-eval/scripts/check_schema.py
 ```
 
 ```
-schema: 82 nodes, 43 questions checked against knowledge-eval/schemas
+schema: 90 nodes, 67 questions checked against knowledge-eval/schemas
 schema: ok
 ```
 
@@ -34,10 +34,10 @@ python knowledge-eval/scripts/check_content.py
 ```
 
 ```
-nodes: 27 aggregate, 55 diagnostic
+nodes: 27 aggregate, 63 diagnostic
   math     25 nodes  15 questions  {'易': 5, '中': 5, '难': 5}  ...
-  chinese  14 nodes  12 questions  ...
-  english  15 nodes  12 questions  ...
+  chinese  22 nodes  36 questions  {'易': 12, '中': 12, '难': 12}  ...
+  english  16 nodes  16 questions  ...
 coverage pep-math-6up-v3.json: 30/30 micro points referenced
   mt_g6u_001  math-6up-d01     分数乘整数的意义
   ...
@@ -66,6 +66,11 @@ content: 1 problem(s)
 
 两个都由 `tests/test_check_content_negative.py` 断言；第三个测试把快照砍到 10 条，证明校验不依赖 `38` 这个硬编码。
 
+题量规则是**按节点**的上限而不是按学科：`MAX_PER_NODE = 6`（稳健档 2 易 + 2 中 + 2 难）。
+原来的 `MAX_PER_SUBJECT = 18` 在语文 22 个诊断节点、36 道题时直接失败——它此前能通过，
+靠的是十个节点一道题都没有，而那正是题库要避免的状态。负样本把 `math-6up-d01` 堆到 9 道题，
+断言输出里出现 `math-6up-d01: 9 questions`。
+
 ---
 
 ## 3. 负样本与回归测试
@@ -76,7 +81,7 @@ cd knowledge-eval && python -m pytest tests/ -v    # 或在 knowledge-eval 里�
 ```
 
 ```
-20 passed
+21 passed, 48 xfailed
 ```
 
 | 文件 | 断言什么 |
@@ -149,7 +154,7 @@ python knowledge-eval/scripts/export_from_db.py --check
 ```
 
 ```
-export: ok — 34 nodes, 22 nodes, 26 nodes; 15 questions, 12 questions, 16 questions (checked, not written)
+export: ok — 34 nodes, 30 nodes, 26 nodes; 15 questions, 36 questions, 16 questions (checked, not written)
 ```
 
 `--check` 不写文件，只把库里的行重新投影成 §4.1 / §4.2 的形状，和 `knowledge-eval/data/` 里的文件逐字段比。它比「导回去再导入一遍」强：后者两边共用同一个 bug 时仍然会通过。

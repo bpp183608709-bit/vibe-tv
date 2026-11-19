@@ -1,14 +1,14 @@
 # 覆盖矩阵（由 check_coverage_matrix.py 生成，勿手改）
 
-节点 55 个诊断 / 27 个聚合，题目 43 道。
+节点 63 个诊断 / 27 个聚合，题目 67 道。
 
 ## 1. 汇总
 
 | 范围 | 格子 | 0 题 | n≥3 | 最低档达标 | 稳健档达标 | P0（n<3） | P1（阶段不全） | P2（仅缺稳健档） |
 |---|---|---|---|---|---|---|---|---|
-| 全部 | 220 | 182 | 0 | 0 | 0 | 220 | 0 | 0 |
+| 全部 | 252 | 190 | 0 | 0 | 0 | 252 | 0 | 0 |
 | math | 100 | 85 | 0 | 0 | 0 | 100 | 0 | 0 |
-| chinese | 56 | 45 | 0 | 0 | 0 | 56 | 0 | 0 |
+| chinese | 88 | 53 | 0 | 0 | 0 | 88 | 0 | 0 |
 | english | 64 | 52 | 0 | 0 | 0 | 64 | 0 | 0 |
 
 ## 2. 聚合节点下的诊断节点数
@@ -24,14 +24,14 @@
 | `math-6up-u07` 百分数 | math | 4 | 是 | math-6up-d17、math-6up-d18、math-6up-d19、math-6up-d29 |
 | `math-6up-u08` 水是生命之源 | math | 1 | 否 | math-6up-d24 |
 | `math-6up-u-review` 复习与关联 | math | 3 | 是 | math-6up-d25、math-6up-d30、math-6up-d31 |
-| `chinese-6up-u01` 触摸自然 | chinese | 2 | 否 | chinese-6up-d01、chinese-6up-d02 |
-| `chinese-6up-u02` 重温革命岁月 | chinese | 2 | 否 | chinese-6up-d03、chinese-6up-d04 |
-| `chinese-6up-u03` 有目的地阅读 | chinese | 1 | 否 | chinese-6up-d05 |
-| `chinese-6up-u04` 小说阅读 | chinese | 2 | 否 | chinese-6up-d06、chinese-6up-d07 |
+| `chinese-6up-u01` 触摸自然 | chinese | 3 | 是 | chinese-6up-d01、chinese-6up-d02、chinese-6up-d15 |
+| `chinese-6up-u02` 重温革命岁月 | chinese | 3 | 是 | chinese-6up-d03、chinese-6up-d04、chinese-6up-d16 |
+| `chinese-6up-u03` 有目的地阅读 | chinese | 2 | 否 | chinese-6up-d05、chinese-6up-d17 |
+| `chinese-6up-u04` 小说阅读 | chinese | 4 | 是 | chinese-6up-d06、chinese-6up-d07、chinese-6up-d18、chinese-6up-d22 |
 | `chinese-6up-u05` 围绕中心意思写 | chinese | 1 | 否 | chinese-6up-d08 |
-| `chinese-6up-u06` 保护环境 | chinese | 2 | 否 | chinese-6up-d09、chinese-6up-d10 |
-| `chinese-6up-u07` 科学与想象 | chinese | 2 | 否 | chinese-6up-d11、chinese-6up-d12 |
-| `chinese-6up-u08` 走近鲁迅 | chinese | 2 | 否 | chinese-6up-d13、chinese-6up-d14 |
+| `chinese-6up-u06` 保护环境 | chinese | 3 | 是 | chinese-6up-d09、chinese-6up-d10、chinese-6up-d19 |
+| `chinese-6up-u07` 科学与想象 | chinese | 3 | 是 | chinese-6up-d11、chinese-6up-d12、chinese-6up-d20 |
+| `chinese-6up-u08` 走近鲁迅 | chinese | 3 | 是 | chinese-6up-d13、chinese-6up-d14、chinese-6up-d21 |
 | `english-6up-u01` What did you do during the holidays? | english | 2 | 否 | english-6up-d01、english-6up-d02 |
 | `english-6up-u02` Beibei always gets up early | english | 2 | 否 | english-6up-d03、english-6up-d04 |
 | `english-6up-u03` The Mid-Autumn Festival | english | 2 | 否 | english-6up-d06、english-6up-d07 |
@@ -70,14 +70,14 @@
 | 学科 | 诊断节点 | 有题（n≥1） | n≥3 | 四阶段可达 |
 |---|---|---|---|---|
 | math | 25 | 5 | 5 | 5 |
-| chinese | 14 | 4 | 4 | 4 |
+| chinese | 22 | 12 | 12 | 12 |
 | english | 16 | 6 | 4 | 4 |
 
-四阶段可达的节点：`math-6up-d01`、`math-6up-d08`、`math-6up-d15`、`math-6up-d17`、`math-6up-d25`、`chinese-6up-d01`、`chinese-6up-d03`、`chinese-6up-d06`、`chinese-6up-d11`、`english-6up-d01`、`english-6up-d03`、`english-6up-d12`、`english-6up-d13`。
+四阶段可达的节点：`math-6up-d01`、`math-6up-d08`、`math-6up-d15`、`math-6up-d17`、`math-6up-d25`、`chinese-6up-d01`、`chinese-6up-d15`、`chinese-6up-d03`、`chinese-6up-d16`、`chinese-6up-d17`、`chinese-6up-d06`、`chinese-6up-d18`、`chinese-6up-d22`、`chinese-6up-d19`、`chinese-6up-d11`、`chinese-6up-d20`、`chinese-6up-d21`、`english-6up-d01`、`english-6up-d03`、`english-6up-d12`、`english-6up-d13`。
 
 ## 5. 补题清单（按 节点 × 能力 × 难度）
 
-### 为达到最低档：共 617 题（math 285，chinese 156，english 176；易 205 / 中 205 / 难 207）
+### 为达到最低档：共 689 题（math 285，chinese 228，english 176；易 229 / 中 229 / 难 231）
 
 | 诊断节点 | 能力标签 | 补易 | 补中 | 补难 | 小计 |
 |---|---|---|---|---|---|
@@ -184,7 +184,7 @@
 
 （上表只列数学；语数英全量见 `coverage-matrix.json` 的 `floor_topup.rows`。）
 
-### 为达到稳健档：共 1277 题（math 585，chinese 324，english 368；易 425 / 中 425 / 难 427）
+### 为达到稳健档：共 1445 题（math 585，chinese 492，english 368；易 481 / 中 481 / 难 483）
 
 | 诊断节点 | 能力标签 | 补易 | 补中 | 补难 | 小计 |
 |---|---|---|---|---|---|
@@ -293,7 +293,7 @@
 
 ## 6. 缺口明细（P0 / P1 / P2 逐格）
 
-### P0 — n<3，连薄弱项都产生不了：220 格
+### P0 — n<3，连薄弱项都产生不了：252 格
 
 | 诊断节点 | 能力标签 | n_e | n_m | n_h | 到最低档 易/中/难 | 原因 |
 |---|---|---|---|---|---|---|
@@ -405,6 +405,10 @@
 | `chinese-6up-d02` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d02` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d02` | 综合表达 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `chinese-6up-d15` | 语言运用 | 1 | 0 | 0 | 0/1/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d15` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `chinese-6up-d15` | 辨析判断 | 0 | 1 | 0 | 1/0/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d15` | 综合表达 | 0 | 0 | 1 | 1/1/0 | 待测：1 题，不足 3 条样本 |
 | `chinese-6up-d03` | 语言运用 | 1 | 0 | 0 | 0/1/1 | 待测：1 题，不足 3 条样本 |
 | `chinese-6up-d03` | 阅读理解 | 0 | 1 | 0 | 1/0/1 | 待测：1 题，不足 3 条样本 |
 | `chinese-6up-d03` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
@@ -413,10 +417,18 @@
 | `chinese-6up-d04` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d04` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d04` | 综合表达 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `chinese-6up-d16` | 语言运用 | 1 | 0 | 0 | 0/1/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d16` | 阅读理解 | 0 | 1 | 0 | 1/0/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d16` | 辨析判断 | 0 | 0 | 1 | 1/1/0 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d16` | 综合表达 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d05` | 语言运用 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d05` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d05` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d05` | 综合表达 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `chinese-6up-d17` | 语言运用 | 1 | 0 | 0 | 0/1/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d17` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `chinese-6up-d17` | 辨析判断 | 0 | 1 | 0 | 1/0/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d17` | 综合表达 | 0 | 0 | 1 | 1/1/0 | 待测：1 题，不足 3 条样本 |
 | `chinese-6up-d06` | 语言运用 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d06` | 阅读理解 | 1 | 1 | 0 | 0/0/1 | 待测：2 题，不足 3 条样本 |
 | `chinese-6up-d06` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
@@ -425,6 +437,14 @@
 | `chinese-6up-d07` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d07` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d07` | 综合表达 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `chinese-6up-d18` | 语言运用 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `chinese-6up-d18` | 阅读理解 | 1 | 0 | 0 | 0/1/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d18` | 辨析判断 | 0 | 1 | 0 | 1/0/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d18` | 综合表达 | 0 | 0 | 1 | 1/1/0 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d22` | 语言运用 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `chinese-6up-d22` | 阅读理解 | 1 | 0 | 0 | 0/1/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d22` | 辨析判断 | 0 | 1 | 0 | 1/0/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d22` | 综合表达 | 0 | 0 | 1 | 1/1/0 | 待测：1 题，不足 3 条样本 |
 | `chinese-6up-d08` | 语言运用 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d08` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d08` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
@@ -437,6 +457,10 @@
 | `chinese-6up-d10` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d10` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d10` | 综合表达 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `chinese-6up-d19` | 语言运用 | 1 | 0 | 0 | 0/1/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d19` | 阅读理解 | 0 | 1 | 0 | 1/0/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d19` | 辨析判断 | 0 | 0 | 1 | 1/1/0 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d19` | 综合表达 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d11` | 语言运用 | 1 | 0 | 0 | 0/1/1 | 待测：1 题，不足 3 条样本 |
 | `chinese-6up-d11` | 阅读理解 | 0 | 1 | 0 | 1/0/1 | 待测：1 题，不足 3 条样本 |
 | `chinese-6up-d11` | 辨析判断 | 0 | 0 | 1 | 1/1/0 | 待测：1 题，不足 3 条样本 |
@@ -445,6 +469,10 @@
 | `chinese-6up-d12` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d12` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d12` | 综合表达 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `chinese-6up-d20` | 语言运用 | 1 | 0 | 0 | 0/1/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d20` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `chinese-6up-d20` | 辨析判断 | 0 | 1 | 0 | 1/0/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d20` | 综合表达 | 0 | 0 | 1 | 1/1/0 | 待测：1 题，不足 3 条样本 |
 | `chinese-6up-d13` | 语言运用 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d13` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d13` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
@@ -453,6 +481,10 @@
 | `chinese-6up-d14` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d14` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `chinese-6up-d14` | 综合表达 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `chinese-6up-d21` | 语言运用 | 1 | 0 | 0 | 0/1/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d21` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `chinese-6up-d21` | 辨析判断 | 0 | 1 | 0 | 1/0/1 | 待测：1 题，不足 3 条样本 |
+| `chinese-6up-d21` | 综合表达 | 0 | 0 | 1 | 1/1/0 | 待测：1 题，不足 3 条样本 |
 | `english-6up-d01` | 语言运用 | 1 | 1 | 0 | 0/0/1 | 待测：2 题，不足 3 条样本 |
 | `english-6up-d01` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `english-6up-d01` | 辨析判断 | 0 | 0 | 1 | 1/1/0 | 待测：1 题，不足 3 条样本 |

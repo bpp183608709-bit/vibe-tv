@@ -29,8 +29,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import keval  # noqa: E402
 
-MIN_PER_SUBJECT, MAX_PER_SUBJECT = 10, 18
+MIN_PER_SUBJECT = 10
 MIN_NODES_PER_SUBJECT = 3
+
+#: A per-node ceiling, not a per-subject one. The old `MAX_PER_SUBJECT = 18` was written when 语文 had
+#: 14 diagnostic nodes and 12 questions: it passed only because ten of those nodes had none, and it now
+#: forbids the one thing the bank exists for — a question on every node the child can be judged on.
+#: Six is the 稳健档 from check_coverage_matrix (2 易 + 2 中 + 2 难); past six the extra belongs in a
+#: node of its own, or the per-node window stops being well sampled.
+MAX_PER_NODE = 6
 MAX_STEM = 120
 SUBJECTS = keval.SUBJECTS
 
@@ -211,18 +218,18 @@ def check_questions(payloads: list[tuple[Path, dict]], nodes: list[dict]) -> tup
 
 def check_question_coverage(by_subject: dict[str, list[dict]], subjects=SUBJECTS) -> list[str]:
     errors: list[str] = []
-    total = 0
     for subject in subjects:
         questions = by_subject.get(subject, [])
-        total += len(questions)
-        if not (MIN_PER_SUBJECT <= len(questions) <= MAX_PER_SUBJECT):
-            errors.append(f"{subject}: {len(questions)} questions, want {MIN_PER_SUBJECT}-{MAX_PER_SUBJECT}")
+        if len(questions) < MIN_PER_SUBJECT:
+            errors.append(f"{subject}: {len(questions)} questions, want at least {MIN_PER_SUBJECT}")
         per_node: dict[str, list[dict]] = defaultdict(list)
         for question in questions:
             per_node[question["diagnostic_node_id"]].append(question)
         if len(per_node) < MIN_NODES_PER_SUBJECT:
             errors.append(f"{subject}: covers {len(per_node)} nodes, want at least {MIN_NODES_PER_SUBJECT}")
         for node_id, items in per_node.items():
+            if len(items) > MAX_PER_NODE:
+                errors.append(f"{node_id}: {len(items)} questions, want at most {MAX_PER_NODE}")
             tags = {item["ability_tag"] for item in items}
             if len(tags) < 2:
                 errors.append(f"{node_id}: only one ability_tag ({tags.pop()}), want at least two")

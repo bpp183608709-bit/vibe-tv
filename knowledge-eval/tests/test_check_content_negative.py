@@ -32,9 +32,9 @@ def workdir():
         yield Path(directory)
 
 
-def run(nodes: Path) -> subprocess.CompletedProcess:
+def run(nodes: Path, questions: Path = MATH_QUESTIONS) -> subprocess.CompletedProcess:
     return subprocess.run(
-        [sys.executable, str(SCRIPT), "--nodes", str(nodes), "--questions", str(MATH_QUESTIONS),
+        [sys.executable, str(SCRIPT), "--nodes", str(nodes), "--questions", str(questions),
          "--snapshot", str(SNAPSHOT)],
         capture_output=True, text=True,
     )
@@ -103,6 +103,29 @@ def test_coverage_counts_come_from_the_files(workdir):
     # the small snapshot leaves every referenced id "extra" — the check must notice, not hardcode a size
     assert result.returncode != 0
     assert "does not have" in result.stderr
+
+
+def test_too_many_questions_on_one_node_fails(workdir):
+    """The ceiling is per node, not per subject: one node must not swallow the whole bank.
+
+    `MAX_PER_SUBJECT = 18` could not survive 22 诊断节点 — it only ever held because ten of the
+    nodes had no questions at all. Six is 稳健档 (2 易 + 2 中 + 2 难); a seventh on the same node
+    means some other node went without.
+    """
+    payload = json.loads(MATH_QUESTIONS.read_text(encoding="utf-8"))
+    base = [q for q in payload["questions"] if q["diagnostic_node_id"] == "math-6up-d01"]
+    assert len(base) == 3, "the maths bank is expected to carry three questions on d01"
+    for index, question in enumerate(base):
+        for repeat in range(2):
+            clone = dict(question)
+            clone["question_id"] = f"math-6up-d01-q{4 + index * 2 + repeat:02d}"
+            payload["questions"].append(clone)
+    questions = workdir / "questions_math_6up.json"
+    questions.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+    result = run(MATH_NODES, questions)
+    assert result.returncode != 0
+    assert "math-6up-d01: 9 questions" in result.stderr
 
 
 def test_banned_word_in_a_node_name_fails(workdir):

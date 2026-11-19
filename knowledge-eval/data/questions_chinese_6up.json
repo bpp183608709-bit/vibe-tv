@@ -72,6 +72,72 @@
    ]
   },
   {
+   "question_id": "chinese-6up-d15-q01",
+   "diagnostic_node_id": "chinese-6up-d15",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下列句子中使用了排比的是（  ）",
+   "options": [
+    "漓江的水真静啊，静得让你感觉不到它在流动。",
+    "盼望着，盼望着，东风来了。",
+    "山朗润起来了，水涨起来了，太阳的脸红起来了。",
+    "他像一只被关在笼子里的鸟。"
+   ],
+   "correct_answer": "C",
+   "explanation": "排比是三个或三个以上结构相似的分句连用；C 的三句结构一致。A 是单句，B 是反复，D 是比喻。",
+   "tags": [
+    "排比",
+    "修辞"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d15-q02",
+   "diagnostic_node_id": "chinese-6up-d15",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "分号用在并列分句之间。下列句子中分号使用正确的是（  ）",
+   "options": [
+    "昨天我们去了公园；玩了游戏。",
+    "有的人骑车上班；有的人坐地铁上班。",
+    "他一边唱歌；一边跳舞。",
+    "因为下雨；运动会推迟了。"
+   ],
+   "correct_answer": "B",
+   "explanation": "分号隔开的是并列关系的分句。A 前后不是并列分句，C 是并列短语，D 是因果关系，都该用逗号。",
+   "tags": [
+    "分号",
+    "标点"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d15-q03",
+   "diagnostic_node_id": "chinese-6up-d15",
+   "subject": "chinese",
+   "ability_tag": "综合表达",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《过故人庄》中“绿树村边合，青山郭外斜”的“合”与“斜”，写出的景象是（  ）",
+   "options": [
+    "绿树环绕村庄、青山在城外横斜，有远有近",
+    "绿树把村子围住，所以村里看不见天",
+    "青山挡住了路，村子很闭塞",
+    "主人家的院墙很高，树都长在墙边"
+   ],
+   "correct_answer": "A",
+   "explanation": "“合”写近处绿树环抱村庄，“斜”写远处青山横卧城外，一近一远，画面才有层次。",
+   "tags": [
+    "过故人庄",
+    "画面"
+   ]
+  },
+  {
    "question_id": "chinese-6up-d03-q01",
    "diagnostic_node_id": "chinese-6up-d03",
    "subject": "chinese",
@@ -135,6 +201,138 @@
    "tags": [
     "我的战友邱少云",
     "侧面描写"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d16-q01",
+   "diagnostic_node_id": "chinese-6up-d16",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "“鞠躬尽瘁，死而后已”中“瘁”的意思是（  ）",
+   "options": [
+    "劳累",
+    "疾病",
+    "忧愁",
+    "死亡"
+   ],
+   "correct_answer": "A",
+   "explanation": "“瘁”是劳累。整句说自己竭尽劳苦，直到死才停下。",
+   "tags": [
+    "爱国名言",
+    "词义"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d16-q02",
+   "diagnostic_node_id": "chinese-6up-d16",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《开国大典》中“这庄严的宣告，这雄伟的声音”反复出现，这样写的作用是（  ）",
+   "options": [
+    "说明现场的声音特别大",
+    "强调宣告的分量，突出人们激动自豪的心情",
+    "表示作者记不清原话，只好重复",
+    "为了让文章长一些"
+   ],
+   "correct_answer": "B",
+   "explanation": "同一句话反复出现，是把要强调的意思往重里说，配合场面写出全场振奋的情绪。",
+   "tags": [
+    "开国大典",
+    "反复"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d16-q03",
+   "diagnostic_node_id": "chinese-6up-d16",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下列名言中，与“位卑未敢忘忧国”表达的情感最接近的是（  ）",
+   "options": [
+    "祖宗疆土，当以死守，不可以尺寸与人",
+    "采菊东篱下，悠然见南山",
+    "海内存知己，天涯若比邻",
+    "谁言寸草心，报得三春晖"
+   ],
+   "correct_answer": "A",
+   "explanation": "“位卑未敢忘忧国”写地位低也不忘国家；A 讲以死守土，同属爱国。其余分别是闲适、送别、亲情。",
+   "tags": [
+    "爱国名言",
+    "辨析"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d17-q01",
+   "diagnostic_node_id": "chinese-6up-d17",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《春日》中“等闲识得东风面”的“等闲”意思是（  ）",
+   "options": [
+    "平常、轻易",
+    "等待",
+    "空闲",
+    "随便走走"
+   ],
+   "correct_answer": "A",
+   "explanation": "“等闲”是平常、轻易；这句说很容易就认出了春天的面貌。",
+   "tags": [
+    "春日",
+    "词义"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d17-q02",
+   "diagnostic_node_id": "chinese-6up-d17",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "要把“读书的好处”说清楚，下面分条表述最清楚的一项是（  ）",
+   "options": [
+    "读书有很多好处，比如增长知识，还有很多别的好处。",
+    "读书的好处：一是增长知识；二是开阔眼界；三是让人静下心来。",
+    "读书能增长知识开阔眼界让人静心，好处很多。",
+    "读书的好处很多，一是增长知识，还有很多。"
+   ],
+   "correct_answer": "B",
+   "explanation": "分条表述要给全条目、一条一句；B 三条并列、互不重复，一眼能数清。",
+   "tags": [
+    "分条表述",
+    "条理"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d17-q03",
+   "diagnostic_node_id": "chinese-6up-d17",
+   "subject": "chinese",
+   "ability_tag": "综合表达",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "要说明“我们班同学近视增多的原因”，最能支持观点的一条材料是（  ）",
+   "options": [
+    "有人说近视和遗传有关系。",
+    "我班 45 人中有 32 人每天用眼超过 4 小时，其中 26 人近视。",
+    "眼睛是心灵的窗户。",
+    "我爸爸也戴眼镜。"
+   ],
+   "correct_answer": "B",
+   "explanation": "用具体数据说明用眼时间与近视人数的关系，才叫用事例支撑观点；其余是笼统说法或无关材料。",
+   "tags": [
+    "说明观点",
+    "材料"
    ]
   },
   {
@@ -203,6 +401,204 @@
    ]
   },
   {
+   "question_id": "chinese-6up-d18-q01",
+   "diagnostic_node_id": "chinese-6up-d18",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下列句子中属于心理描写的是（  ）",
+   "options": [
+    "他个子不高，脸黑黑的。",
+    "她心里像揣着一只小兔子，怦怦直跳。",
+    "屋外寒风呼啸，海浪拍击着海岸。",
+    "他一把抓起书包冲了出去。"
+   ],
+   "correct_answer": "B",
+   "explanation": "心理描写写人物心里在想什么、感觉怎样；A 是外貌，C 是环境，D 是动作。",
+   "tags": [
+    "心理描写",
+    "人物"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d18-q02",
+   "diagnostic_node_id": "chinese-6up-d18",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《穷人》中桑娜抱回两个孩子后“脸色苍白，神情激动”，又担心丈夫会揍她。这些描写说明她（  ）",
+   "options": [
+    "后悔把孩子抱回来",
+    "既同情两个孩子，又害怕丈夫责怪，内心矛盾",
+    "身体不舒服，生病了",
+    "在生丈夫的气"
+   ],
+   "correct_answer": "B",
+   "explanation": "脸色与神情写她的紧张，担心挨揍写她的顾虑，两者合起来就是“想救又怕”的矛盾心理。",
+   "tags": [
+    "穷人",
+    "内心矛盾"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d18-q03",
+   "diagnostic_node_id": "chinese-6up-d18",
+   "subject": "chinese",
+   "ability_tag": "综合表达",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读小说时，最能帮助我们理解人物内心的方法是（  ）",
+   "options": [
+    "只记情节，跳过人物说的话",
+    "抓住人物的语言、动作、神态，推想他当时在想什么",
+    "先看结局，再回头读开头",
+    "把不认识的字词都抄下来"
+   ],
+   "correct_answer": "B",
+   "explanation": "人物的内心不会直接写出来，要靠语言、动作、神态去推想，这是读小说理解人物的基本方法。",
+   "tags": [
+    "小说阅读",
+    "方法"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d22-q01",
+   "diagnostic_node_id": "chinese-6up-d22",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《童年》的作者是（  ）",
+   "options": [
+    "高尔基",
+    "亚米契斯",
+    "管桦",
+    "列夫·托尔斯泰"
+   ],
+   "correct_answer": "A",
+   "explanation": "《童年》是苏联作家高尔基的自传体小说；《爱的教育》是亚米契斯，《小英雄雨来》是管桦。",
+   "tags": [
+    "童年",
+    "作者"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d22-q02",
+   "diagnostic_node_id": "chinese-6up-d22",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《童年》中，给阿廖沙温暖和安慰最多的人是（  ）",
+   "options": [
+    "外祖父",
+    "外祖母",
+    "小茨冈",
+    "两个舅舅"
+   ],
+   "correct_answer": "B",
+   "explanation": "外祖母会讲故事、待人宽厚，是阿廖沙童年里最主要的一束光。",
+   "tags": [
+    "童年",
+    "人物"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d22-q03",
+   "diagnostic_node_id": "chinese-6up-d22",
+   "subject": "chinese",
+   "ability_tag": "综合表达",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "阿廖沙在外祖父家经历了许多不幸，却没有变得冷酷。下列理解最恰当的是（  ）",
+   "options": [
+    "他家其实很富裕，所以他不觉得苦",
+    "外祖母等人的善良给了他温暖，让他学会同情和坚强",
+    "他年纪小，还不懂事",
+    "他一直在逃避现实"
+   ],
+   "correct_answer": "B",
+   "explanation": "身边人的善良像种子，让他在苦难里长出同情与坚强，这正是“经历与成长”的意思。",
+   "tags": [
+    "童年",
+    "成长"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d19-q01",
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "“五行”指的是（  ）",
+   "options": [
+    "金、木、水、火、土",
+    "稻、麦、黍、菽、稷",
+    "宫、商、角、徵、羽",
+    "黄、青、赤、白、黑"
+   ],
+   "correct_answer": "A",
+   "explanation": "五行是金木水火土；B 是五谷，C 是五音，D 是五彩。",
+   "tags": [
+    "五行",
+    "传统文化"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d19-q02",
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读说明性文章时，能帮我们快速抓住主要观点的句子通常是（  ）",
+   "options": [
+    "每个自然段的第一句",
+    "集中表达作者看法的关键句，如总起句、总结句",
+    "举例子的小句子",
+    "带数字的句子"
+   ],
+   "correct_answer": "B",
+   "explanation": "关键句是作者把观点说明白的地方，常在段首或段尾；段首句、举例句、数字句不一定都是观点。",
+   "tags": [
+    "关键句",
+    "说明性文章"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d19-q03",
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《只有一个地球》说“我们这个地球太可爱了，同时又太容易破碎了”。把“可爱”和“容易破碎”放在一起，作用是（  ）",
+   "options": [
+    "前后矛盾，说明作者写错了",
+    "既赞美地球的美好，又点出它的脆弱，为“保护地球”提供依据",
+    "只是为了让句式整齐",
+    "说明地球的体积很小"
+   ],
+   "correct_answer": "B",
+   "explanation": "一褒一忧并列，既写出地球值得爱，也写出它经不起破坏，后面的“保护地球”才站得住。",
+   "tags": [
+    "只有一个地球",
+    "观点与依据"
+   ]
+  },
+  {
    "question_id": "chinese-6up-d11-q01",
    "diagnostic_node_id": "chinese-6up-d11",
    "subject": "chinese",
@@ -266,6 +662,138 @@
    "tags": [
     "两小儿辩日",
     "寓意"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d20-q01",
+   "diagnostic_node_id": "chinese-6up-d20",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读“孰为汝多知乎”时，停顿正确的是（  ）",
+   "options": [
+    "孰/为汝/多知乎",
+    "孰为/汝多知乎",
+    "孰为汝/多知乎",
+    "孰为汝多/知乎"
+   ],
+   "correct_answer": "C",
+   "explanation": "“孰为汝多知乎”是说谁说你知识渊博呢：“孰为汝”连读，后面接“多知乎”。",
+   "tags": [
+    "两小儿辩日",
+    "朗读停顿"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d20-q02",
+   "diagnostic_node_id": "chinese-6up-d20",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读“日初出大如车盖，及日中则如盘盂”时，停顿正确的是（  ）",
+   "options": [
+    "日初出大/如车盖，及日中则/如盘盂",
+    "日初出/大如车盖，及日中/则如盘盂",
+    "日初/出大如车盖，及日/中则如盘盂",
+    "日初出大如/车盖，及日中则如/盘盂"
+   ],
+   "correct_answer": "B",
+   "explanation": "“日初出”“及日中”是两个时间，各自断开；“大如车盖”“则如盘盂”是各自的比喻，不能拆开。",
+   "tags": [
+    "两小儿辩日",
+    "朗读停顿"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d20-q03",
+   "diagnostic_node_id": "chinese-6up-d20",
+   "subject": "chinese",
+   "ability_tag": "综合表达",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读“置象大船之上，而刻其水痕所至”时，停顿正确的是（  ）",
+   "options": [
+    "置象/大船之上而/刻其水痕所至",
+    "置象大船之上/而刻其水痕所至",
+    "置/象大船之上而刻/其水痕所至",
+    "置象大船/之上而刻其/水痕所至"
+   ],
+   "correct_answer": "B",
+   "explanation": "“置象大船之上”是完整的一件事，“而”后另起一层，所以断在“而”前——断句先要读懂意思。",
+   "tags": [
+    "曹冲称象",
+    "朗读停顿"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d21-q01",
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下列句子中出自鲁迅的一项是（  ）",
+   "options": [
+    "其实地上本没有路，走的人多了，也便成了路。",
+    "海内存知己，天涯若比邻。",
+    "先天下之忧而忧，后天下之乐而乐。",
+    "落红不是无情物，化作春泥更护花。"
+   ],
+   "correct_answer": "A",
+   "explanation": "这是鲁迅《故乡》结尾的话；B 是王勃，C 是范仲淹，D 是龚自珍。",
+   "tags": [
+    "鲁迅名言",
+    "作者"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d21-q02",
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《少年闰土》节选自鲁迅的小说《故乡》，而《朝花夕拾》是鲁迅的（  ）",
+   "options": [
+    "小说集",
+    "散文集",
+    "散文诗集",
+    "杂文集"
+   ],
+   "correct_answer": "B",
+   "explanation": "《朝花夕拾》是回忆性散文集；《呐喊》《彷徨》是小说集，《野草》是散文诗集。",
+   "tags": [
+    "朝花夕拾",
+    "出处"
+   ]
+  },
+  {
+   "question_id": "chinese-6up-d21-q03",
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "综合表达",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“其实地上本没有路，走的人多了，也便成了路。”对这句话理解最恰当的是（  ）",
+   "options": [
+    "讲修路的道理",
+    "希望人们勇于探索，去开辟还没有的路",
+    "说明人多力量大",
+    "回忆故乡的一条小路"
+   ],
+   "correct_answer": "B",
+   "explanation": "路是人走出来的，比喻希望要靠人去开创——这是鲁迅对青年、对未来的期待。",
+   "tags": [
+    "鲁迅名言",
+    "含义"
    ]
   }
  ]

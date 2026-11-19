@@ -5006,6 +5006,196 @@
   },
   {
    "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d15",
+   "node_name": "排比、分号的运用与《过故人庄》",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u01",
+   "ability_tag": "语言运用",
+   "questions": {
+    "easy": 1,
+    "medium": 0,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d15-q01"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 0,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d15",
+   "node_name": "排比、分号的运用与《过故人庄》",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u01",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d15",
+   "node_name": "排比、分号的运用与《过故人庄》",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u01",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 0,
+    "medium": 1,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d15-q02"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 0,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 1,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d15",
+   "node_name": "排比、分号的运用与《过故人庄》",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u01",
+   "ability_tag": "综合表达",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 1,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d15-q03"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 1
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d03",
    "node_name": "革命题材叙事文的场面概括与人物品质",
    "knowledge_type": "阅读理解",
@@ -5380,6 +5570,196 @@
   },
   {
    "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d16",
+   "node_name": "爱国名言的积累与“反复”的表达效果",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u02",
+   "ability_tag": "语言运用",
+   "questions": {
+    "easy": 1,
+    "medium": 0,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d16-q01"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 0,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d16",
+   "node_name": "爱国名言的积累与“反复”的表达效果",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u02",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 0,
+    "medium": 1,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d16-q02"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 0,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 1,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d16",
+   "node_name": "爱国名言的积累与“反复”的表达效果",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u02",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 1,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d16-q03"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 1
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d16",
+   "node_name": "爱国名言的积累与“反复”的表达效果",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u02",
+   "ability_tag": "综合表达",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d05",
    "node_name": "按任务筛选信息与调整阅读速度",
    "knowledge_type": "阅读理解",
@@ -5553,6 +5933,196 @@
      "easy": 2,
      "medium": 2,
      "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d17",
+   "node_name": "分条表述与《春日》",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u03",
+   "ability_tag": "语言运用",
+   "questions": {
+    "easy": 1,
+    "medium": 0,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d17-q01"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 0,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d17",
+   "node_name": "分条表述与《春日》",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u03",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d17",
+   "node_name": "分条表述与《春日》",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u03",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 0,
+    "medium": 1,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d17-q02"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 0,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 1,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d17",
+   "node_name": "分条表述与《春日》",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u03",
+   "ability_tag": "综合表达",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 1,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d17-q03"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 1
     }
    },
    "missing_levels": [
@@ -5937,6 +6507,386 @@
   },
   {
    "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d18",
+   "node_name": "小说人物内心的体会",
+   "knowledge_type": "阅读理解",
+   "parent_aggregate_node_id": "chinese-6up-u04",
+   "ability_tag": "语言运用",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d18",
+   "node_name": "小说人物内心的体会",
+   "knowledge_type": "阅读理解",
+   "parent_aggregate_node_id": "chinese-6up-u04",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 1,
+    "medium": 0,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d18-q01"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 0,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d18",
+   "node_name": "小说人物内心的体会",
+   "knowledge_type": "阅读理解",
+   "parent_aggregate_node_id": "chinese-6up-u04",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 0,
+    "medium": 1,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d18-q02"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 0,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 1,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d18",
+   "node_name": "小说人物内心的体会",
+   "knowledge_type": "阅读理解",
+   "parent_aggregate_node_id": "chinese-6up-u04",
+   "ability_tag": "综合表达",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 1,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d18-q03"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 1
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d22",
+   "node_name": "《童年》的人物与情节",
+   "knowledge_type": "阅读理解",
+   "parent_aggregate_node_id": "chinese-6up-u04",
+   "ability_tag": "语言运用",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d22",
+   "node_name": "《童年》的人物与情节",
+   "knowledge_type": "阅读理解",
+   "parent_aggregate_node_id": "chinese-6up-u04",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 1,
+    "medium": 0,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d22-q01"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 0,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d22",
+   "node_name": "《童年》的人物与情节",
+   "knowledge_type": "阅读理解",
+   "parent_aggregate_node_id": "chinese-6up-u04",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 0,
+    "medium": 1,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d22-q02"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 0,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 1,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d22",
+   "node_name": "《童年》的人物与情节",
+   "knowledge_type": "阅读理解",
+   "parent_aggregate_node_id": "chinese-6up-u04",
+   "ability_tag": "综合表达",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 1,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d22-q03"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 1
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d08",
    "node_name": "围绕中心意思选取材料",
    "knowledge_type": "习作方法",
@@ -6446,6 +7396,196 @@
    "diagnostic_node_id": "chinese-6up-d10",
    "node_name": "古诗三首的景物与情感（浪淘沙·江南春·书湖阴先生壁）",
    "knowledge_type": "字词基础",
+   "parent_aggregate_node_id": "chinese-6up-u06",
+   "ability_tag": "综合表达",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d19",
+   "node_name": "抓关键句与传统文化常识",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u06",
+   "ability_tag": "语言运用",
+   "questions": {
+    "easy": 1,
+    "medium": 0,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d19-q01"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 0,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d19",
+   "node_name": "抓关键句与传统文化常识",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u06",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 0,
+    "medium": 1,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d19-q02"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 0,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 1,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d19",
+   "node_name": "抓关键句与传统文化常识",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u06",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 1,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d19-q03"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 1
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d19",
+   "node_name": "抓关键句与传统文化常识",
+   "knowledge_type": "语言运用",
    "parent_aggregate_node_id": "chinese-6up-u06",
    "ability_tag": "综合表达",
    "questions": {
@@ -6863,6 +8003,196 @@
   },
   {
    "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d20",
+   "node_name": "文言句子的朗读停顿",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u07",
+   "ability_tag": "语言运用",
+   "questions": {
+    "easy": 1,
+    "medium": 0,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d20-q01"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 0,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d20",
+   "node_name": "文言句子的朗读停顿",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u07",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d20",
+   "node_name": "文言句子的朗读停顿",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u07",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 0,
+    "medium": 1,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d20-q02"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 0,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 1,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d20",
+   "node_name": "文言句子的朗读停顿",
+   "knowledge_type": "语言运用",
+   "parent_aggregate_node_id": "chinese-6up-u07",
+   "ability_tag": "综合表达",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 1,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d20-q03"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 1
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d13",
    "node_name": "鲁迅作品的人物形象与时代背景",
    "knowledge_type": "阅读理解",
@@ -7220,6 +8550,196 @@
      "easy": 2,
      "medium": 2,
      "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d21",
+   "node_name": "鲁迅名言与作品出处",
+   "knowledge_type": "阅读理解",
+   "parent_aggregate_node_id": "chinese-6up-u08",
+   "ability_tag": "语言运用",
+   "questions": {
+    "easy": 1,
+    "medium": 0,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d21-q01"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 0,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d21",
+   "node_name": "鲁迅名言与作品出处",
+   "knowledge_type": "阅读理解",
+   "parent_aggregate_node_id": "chinese-6up-u08",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d21",
+   "node_name": "鲁迅名言与作品出处",
+   "knowledge_type": "阅读理解",
+   "parent_aggregate_node_id": "chinese-6up-u08",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 0,
+    "medium": 1,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d21-q02"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 0,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 1,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d21",
+   "node_name": "鲁迅名言与作品出处",
+   "knowledge_type": "阅读理解",
+   "parent_aggregate_node_id": "chinese-6up-u08",
+   "ability_tag": "综合表达",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 1,
+    "total": 1
+   },
+   "question_ids": [
+    "chinese-6up-d21-q03"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 1
     }
    },
    "missing_levels": [
@@ -10613,6 +12133,25 @@
   },
   {
    "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d15",
+   "node_name": "排比、分号的运用与《过故人庄》",
+   "parent_aggregate_node_id": "chinese-6up-u01",
+   "questions": {
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
+  },
+  {
+   "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d03",
    "node_name": "革命题材叙事文的场面概括与人物品质",
    "parent_aggregate_node_id": "chinese-6up-u02",
@@ -10646,6 +12185,25 @@
   },
   {
    "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d16",
+   "node_name": "爱国名言的积累与“反复”的表达效果",
+   "parent_aggregate_node_id": "chinese-6up-u02",
+   "questions": {
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
+  },
+  {
+   "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d05",
    "node_name": "按任务筛选信息与调整阅读速度",
    "parent_aggregate_node_id": "chinese-6up-u03",
@@ -10657,6 +12215,25 @@
    },
    "reachable_levels": [],
    "four_stage": false
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d17",
+   "node_name": "分条表述与《春日》",
+   "parent_aggregate_node_id": "chinese-6up-u03",
+   "questions": {
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "chinese",
@@ -10690,6 +12267,44 @@
    },
    "reachable_levels": [],
    "four_stage": false
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d18",
+   "node_name": "小说人物内心的体会",
+   "parent_aggregate_node_id": "chinese-6up-u04",
+   "questions": {
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d22",
+   "node_name": "《童年》的人物与情节",
+   "parent_aggregate_node_id": "chinese-6up-u04",
+   "questions": {
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "chinese",
@@ -10735,6 +12350,25 @@
   },
   {
    "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d19",
+   "node_name": "抓关键句与传统文化常识",
+   "parent_aggregate_node_id": "chinese-6up-u06",
+   "questions": {
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
+  },
+  {
+   "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d11",
    "node_name": "文言实词与文意（两小儿辩日·曹冲称象）",
    "parent_aggregate_node_id": "chinese-6up-u07",
@@ -10768,6 +12402,25 @@
   },
   {
    "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d20",
+   "node_name": "文言句子的朗读停顿",
+   "parent_aggregate_node_id": "chinese-6up-u07",
+   "questions": {
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
+  },
+  {
+   "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d13",
    "node_name": "鲁迅作品的人物形象与时代背景",
    "parent_aggregate_node_id": "chinese-6up-u08",
@@ -10793,6 +12446,25 @@
    },
    "reachable_levels": [],
    "four_stage": false
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d21",
+   "node_name": "鲁迅名言与作品出处",
+   "parent_aggregate_node_id": "chinese-6up-u08",
+   "questions": {
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "english",
@@ -11150,10 +12822,11 @@
    "aggregate_node_id": "chinese-6up-u01",
    "aggregate_name": "触摸自然",
    "subject": "chinese",
-   "diagnostic_count": 2,
+   "diagnostic_count": 3,
    "diagnostic_node_ids": [
     "chinese-6up-d01",
-    "chinese-6up-d02"
+    "chinese-6up-d02",
+    "chinese-6up-d15"
    ],
    "chapter_order": 1
   },
@@ -11161,10 +12834,11 @@
    "aggregate_node_id": "chinese-6up-u02",
    "aggregate_name": "重温革命岁月",
    "subject": "chinese",
-   "diagnostic_count": 2,
+   "diagnostic_count": 3,
    "diagnostic_node_ids": [
     "chinese-6up-d03",
-    "chinese-6up-d04"
+    "chinese-6up-d04",
+    "chinese-6up-d16"
    ],
    "chapter_order": 2
   },
@@ -11172,9 +12846,10 @@
    "aggregate_node_id": "chinese-6up-u03",
    "aggregate_name": "有目的地阅读",
    "subject": "chinese",
-   "diagnostic_count": 1,
+   "diagnostic_count": 2,
    "diagnostic_node_ids": [
-    "chinese-6up-d05"
+    "chinese-6up-d05",
+    "chinese-6up-d17"
    ],
    "chapter_order": 3
   },
@@ -11182,10 +12857,12 @@
    "aggregate_node_id": "chinese-6up-u04",
    "aggregate_name": "小说阅读",
    "subject": "chinese",
-   "diagnostic_count": 2,
+   "diagnostic_count": 4,
    "diagnostic_node_ids": [
     "chinese-6up-d06",
-    "chinese-6up-d07"
+    "chinese-6up-d07",
+    "chinese-6up-d18",
+    "chinese-6up-d22"
    ],
    "chapter_order": 4
   },
@@ -11203,10 +12880,11 @@
    "aggregate_node_id": "chinese-6up-u06",
    "aggregate_name": "保护环境",
    "subject": "chinese",
-   "diagnostic_count": 2,
+   "diagnostic_count": 3,
    "diagnostic_node_ids": [
     "chinese-6up-d09",
-    "chinese-6up-d10"
+    "chinese-6up-d10",
+    "chinese-6up-d19"
    ],
    "chapter_order": 6
   },
@@ -11214,10 +12892,11 @@
    "aggregate_node_id": "chinese-6up-u07",
    "aggregate_name": "科学与想象",
    "subject": "chinese",
-   "diagnostic_count": 2,
+   "diagnostic_count": 3,
    "diagnostic_node_ids": [
     "chinese-6up-d11",
-    "chinese-6up-d12"
+    "chinese-6up-d12",
+    "chinese-6up-d20"
    ],
    "chapter_order": 7
   },
@@ -11225,10 +12904,11 @@
    "aggregate_node_id": "chinese-6up-u08",
    "aggregate_name": "走近鲁迅",
    "subject": "chinese",
-   "diagnostic_count": 2,
+   "diagnostic_count": 3,
    "diagnostic_node_ids": [
     "chinese-6up-d13",
-    "chinese-6up-d14"
+    "chinese-6up-d14",
+    "chinese-6up-d21"
    ],
    "chapter_order": 8
   },
@@ -11340,18 +13020,18 @@
   }
  ],
  "generated_from": {
-  "diagnostic_nodes": 55,
+  "diagnostic_nodes": 63,
   "aggregate_nodes": 27,
-  "questions": 43
+  "questions": 67
  },
  "summary": {
   "all": {
-   "cells": 220,
-   "no_question": 182,
+   "cells": 252,
+   "no_question": 190,
    "measured": 0,
    "floor_ok": 0,
    "robust_ok": 0,
-   "p0": 220,
+   "p0": 252,
    "p1": 0,
    "p2": 0
   },
@@ -11367,12 +13047,12 @@
     "p2": 0
    },
    "chinese": {
-    "cells": 56,
-    "no_question": 45,
+    "cells": 88,
+    "no_question": 53,
     "measured": 0,
     "floor_ok": 0,
     "robust_ok": 0,
-    "p0": 56,
+    "p0": 88,
     "p1": 0,
     "p2": 0
    },
@@ -12377,6 +14057,42 @@
    },
    {
     "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d15",
+    "ability_tag": "语言运用",
+    "easy": 0,
+    "medium": 1,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d15",
+    "ability_tag": "阅读理解",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d15",
+    "ability_tag": "辨析判断",
+    "easy": 1,
+    "medium": 0,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d15",
+    "ability_tag": "综合表达",
+    "easy": 1,
+    "medium": 1,
+    "hard": 0,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d03",
     "ability_tag": "语言运用",
     "easy": 0,
@@ -12449,6 +14165,42 @@
    },
    {
     "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d16",
+    "ability_tag": "语言运用",
+    "easy": 0,
+    "medium": 1,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d16",
+    "ability_tag": "阅读理解",
+    "easy": 1,
+    "medium": 0,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d16",
+    "ability_tag": "辨析判断",
+    "easy": 1,
+    "medium": 1,
+    "hard": 0,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d16",
+    "ability_tag": "综合表达",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d05",
     "ability_tag": "语言运用",
     "easy": 1,
@@ -12482,6 +14234,42 @@
     "medium": 1,
     "hard": 1,
     "total": 3
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d17",
+    "ability_tag": "语言运用",
+    "easy": 0,
+    "medium": 1,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d17",
+    "ability_tag": "阅读理解",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d17",
+    "ability_tag": "辨析判断",
+    "easy": 1,
+    "medium": 0,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d17",
+    "ability_tag": "综合表达",
+    "easy": 1,
+    "medium": 1,
+    "hard": 0,
+    "total": 2
    },
    {
     "subject": "chinese",
@@ -12557,6 +14345,78 @@
    },
    {
     "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d18",
+    "ability_tag": "语言运用",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d18",
+    "ability_tag": "阅读理解",
+    "easy": 0,
+    "medium": 1,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d18",
+    "ability_tag": "辨析判断",
+    "easy": 1,
+    "medium": 0,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d18",
+    "ability_tag": "综合表达",
+    "easy": 1,
+    "medium": 1,
+    "hard": 0,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d22",
+    "ability_tag": "语言运用",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d22",
+    "ability_tag": "阅读理解",
+    "easy": 0,
+    "medium": 1,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d22",
+    "ability_tag": "辨析判断",
+    "easy": 1,
+    "medium": 0,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d22",
+    "ability_tag": "综合表达",
+    "easy": 1,
+    "medium": 1,
+    "hard": 0,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d08",
     "ability_tag": "语言运用",
     "easy": 1,
@@ -12657,6 +14517,42 @@
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d10",
+    "ability_tag": "综合表达",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d19",
+    "ability_tag": "语言运用",
+    "easy": 0,
+    "medium": 1,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d19",
+    "ability_tag": "阅读理解",
+    "easy": 1,
+    "medium": 0,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d19",
+    "ability_tag": "辨析判断",
+    "easy": 1,
+    "medium": 1,
+    "hard": 0,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d19",
     "ability_tag": "综合表达",
     "easy": 1,
     "medium": 1,
@@ -12737,6 +14633,42 @@
    },
    {
     "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d20",
+    "ability_tag": "语言运用",
+    "easy": 0,
+    "medium": 1,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d20",
+    "ability_tag": "阅读理解",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d20",
+    "ability_tag": "辨析判断",
+    "easy": 1,
+    "medium": 0,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d20",
+    "ability_tag": "综合表达",
+    "easy": 1,
+    "medium": 1,
+    "hard": 0,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d13",
     "ability_tag": "语言运用",
     "easy": 1,
@@ -12806,6 +14738,42 @@
     "medium": 1,
     "hard": 1,
     "total": 3
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d21",
+    "ability_tag": "语言运用",
+    "easy": 0,
+    "medium": 1,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d21",
+    "ability_tag": "阅读理解",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d21",
+    "ability_tag": "辨析判断",
+    "easy": 1,
+    "medium": 0,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d21",
+    "ability_tag": "综合表达",
+    "easy": 1,
+    "medium": 1,
+    "hard": 0,
+    "total": 2
    },
    {
     "subject": "english",
@@ -13384,16 +15352,16 @@
     "total": 3
    }
   ],
-  "total": 617,
+  "total": 689,
   "by_subject": {
    "math": 285,
-   "chinese": 156,
+   "chinese": 228,
    "english": 176
   },
   "by_difficulty": {
-   "easy": 205,
-   "medium": 205,
-   "hard": 207
+   "easy": 229,
+   "medium": 229,
+   "hard": 231
   }
  },
  "robust_topup": {
@@ -14372,6 +16340,42 @@
    },
    {
     "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d15",
+    "ability_tag": "语言运用",
+    "easy": 1,
+    "medium": 2,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d15",
+    "ability_tag": "阅读理解",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d15",
+    "ability_tag": "辨析判断",
+    "easy": 2,
+    "medium": 1,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d15",
+    "ability_tag": "综合表达",
+    "easy": 2,
+    "medium": 2,
+    "hard": 1,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d03",
     "ability_tag": "语言运用",
     "easy": 1,
@@ -14444,6 +16448,42 @@
    },
    {
     "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d16",
+    "ability_tag": "语言运用",
+    "easy": 1,
+    "medium": 2,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d16",
+    "ability_tag": "阅读理解",
+    "easy": 2,
+    "medium": 1,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d16",
+    "ability_tag": "辨析判断",
+    "easy": 2,
+    "medium": 2,
+    "hard": 1,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d16",
+    "ability_tag": "综合表达",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d05",
     "ability_tag": "语言运用",
     "easy": 2,
@@ -14477,6 +16517,42 @@
     "medium": 2,
     "hard": 2,
     "total": 6
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d17",
+    "ability_tag": "语言运用",
+    "easy": 1,
+    "medium": 2,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d17",
+    "ability_tag": "阅读理解",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d17",
+    "ability_tag": "辨析判断",
+    "easy": 2,
+    "medium": 1,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d17",
+    "ability_tag": "综合表达",
+    "easy": 2,
+    "medium": 2,
+    "hard": 1,
+    "total": 5
    },
    {
     "subject": "chinese",
@@ -14552,6 +16628,78 @@
    },
    {
     "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d18",
+    "ability_tag": "语言运用",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d18",
+    "ability_tag": "阅读理解",
+    "easy": 1,
+    "medium": 2,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d18",
+    "ability_tag": "辨析判断",
+    "easy": 2,
+    "medium": 1,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d18",
+    "ability_tag": "综合表达",
+    "easy": 2,
+    "medium": 2,
+    "hard": 1,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d22",
+    "ability_tag": "语言运用",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d22",
+    "ability_tag": "阅读理解",
+    "easy": 1,
+    "medium": 2,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d22",
+    "ability_tag": "辨析判断",
+    "easy": 2,
+    "medium": 1,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d22",
+    "ability_tag": "综合表达",
+    "easy": 2,
+    "medium": 2,
+    "hard": 1,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d08",
     "ability_tag": "语言运用",
     "easy": 2,
@@ -14652,6 +16800,42 @@
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d10",
+    "ability_tag": "综合表达",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d19",
+    "ability_tag": "语言运用",
+    "easy": 1,
+    "medium": 2,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d19",
+    "ability_tag": "阅读理解",
+    "easy": 2,
+    "medium": 1,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d19",
+    "ability_tag": "辨析判断",
+    "easy": 2,
+    "medium": 2,
+    "hard": 1,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d19",
     "ability_tag": "综合表达",
     "easy": 2,
     "medium": 2,
@@ -14732,6 +16916,42 @@
    },
    {
     "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d20",
+    "ability_tag": "语言运用",
+    "easy": 1,
+    "medium": 2,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d20",
+    "ability_tag": "阅读理解",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d20",
+    "ability_tag": "辨析判断",
+    "easy": 2,
+    "medium": 1,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d20",
+    "ability_tag": "综合表达",
+    "easy": 2,
+    "medium": 2,
+    "hard": 1,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d13",
     "ability_tag": "语言运用",
     "easy": 2,
@@ -14801,6 +17021,42 @@
     "medium": 2,
     "hard": 2,
     "total": 6
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d21",
+    "ability_tag": "语言运用",
+    "easy": 1,
+    "medium": 2,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d21",
+    "ability_tag": "阅读理解",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d21",
+    "ability_tag": "辨析判断",
+    "easy": 2,
+    "medium": 1,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d21",
+    "ability_tag": "综合表达",
+    "easy": 2,
+    "medium": 2,
+    "hard": 1,
+    "total": 5
    },
    {
     "subject": "english",
@@ -15379,16 +17635,16 @@
     "total": 6
    }
   ],
-  "total": 1277,
+  "total": 1445,
   "by_subject": {
    "math": 585,
-   "chinese": 324,
+   "chinese": 492,
    "english": 368
   },
   "by_difficulty": {
-   "easy": 425,
-   "medium": 425,
-   "hard": 427
+   "easy": 481,
+   "medium": 481,
+   "hard": 483
   }
  }
 }
