@@ -13,7 +13,7 @@
 ```bash
 # 1) 原始数据直接过 schema（没有翻译层）
 python knowledge-eval/scripts/check_schema.py
-# → schema: 90 nodes, 175 questions checked against knowledge-eval/schemas
+# → schema: 90 nodes, 340 questions checked against knowledge-eval/schemas
 # → schema: ok
 
 # 2) 双向内容校验：快照 30 个微观点 vs 节点引用
@@ -53,7 +53,7 @@ python knowledge-eval/scripts/check_db_parity.py --content
 
 # 8) 数据库导出与仓库文件逐字段比对
 python knowledge-eval/scripts/export_from_db.py --check
-# → export: ok — 34 nodes, 30 nodes, 26 nodes; 123 questions, 36 questions, 16 questions
+# → export: ok — 34 nodes, 30 nodes, 26 nodes; 288 questions, 36 questions, 16 questions
 ```
 
 全部命令的预期输出与失败样例见 [docs/verification.md](docs/verification.md)；逐条修复证据见 [docs/fix-evidence-2026-11-19.md](docs/fix-evidence-2026-11-19.md)。
@@ -142,7 +142,7 @@ knowledge-eval/
 │   ├── test_outline_coverage_negative.py   课本目录差集的负样本（7 条）
 │   └── test_four_stage_constructible.py    规格测试：当前 1 passed / 48 xfailed
 ├── reports/                     由脚本生成，勿手改
-│   ├── coverage-matrix.json     全部 220 个格子
+│   ├── coverage-matrix.json     全部 205 个格子
 │   └── coverage-matrix.md       汇总 / 逐格矩阵 / 缺口清单
 └── docs/
     ├── data_sources.md         三科版本、逐节点来源、形态说明
