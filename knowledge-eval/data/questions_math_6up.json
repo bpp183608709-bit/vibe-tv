@@ -3774,6 +3774,261 @@
    "question_id": "math-6up-d16-q12"
   },
   {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "在 400 米跑道上比赛，外圈跑道的起跑线要比内圈（  ）",
+   "options": [
+    "靠前",
+    "靠后",
+    "相同",
+    "无法确定"
+   ],
+   "correct_answer": "A",
+   "explanation": "外圈的弯道比内圈长，为了跑够 400 米，外道的起跑线要往前移。",
+   "tags": [
+    "确定起跑线",
+    "起跑线"
+   ],
+   "question_id": "math-6up-d23-q01"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "各条跑道的直道长度相同，弯道部分可以看作（  ）",
+   "options": [
+    "一个半圆",
+    "两个半圆合成一个圆",
+    "四个半圆",
+    "无法合并"
+   ],
+   "correct_answer": "B",
+   "explanation": "每条跑道有两个弯道，各是一个半圆，合起来正好是一个整圆，所以弯道长 = π × 这条跑道的直径。",
+   "tags": [
+    "确定起跑线",
+    "弯道"
+   ],
+   "question_id": "math-6up-d23-q02"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "400 米跑道上，外道一圈比内道长，多出的长度全部来自（  ）",
+   "options": [
+    "两条直道",
+    "起跑线",
+    "两个弯道",
+    "终点线"
+   ],
+   "correct_answer": "C",
+   "explanation": "各条跑道的直道一样长，只有弯道的直径随道次变大，所以多出的长度都在两个弯道上。",
+   "tags": [
+    "确定起跑线",
+    "弯道"
+   ],
+   "question_id": "math-6up-d23-q03"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一条跑道宽 1 米，相邻两条跑道的弯道部分相差（  ）米。（π 取 3.14）",
+   "accepted": [
+    "6.28"
+   ],
+   "correct_answer": "6.28",
+   "explanation": "外道直径比内道多 2 个跑道宽，弯道差 = π × 2 × 1 = 6.28 米。",
+   "tags": [
+    "确定起跑线",
+    "弯道差"
+   ],
+   "question_id": "math-6up-d23-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "跑道宽 1.5 米，相邻两条跑道的起跑线应相差（  ）米。（π 取 3.14）",
+   "accepted": [
+    "9.42"
+   ],
+   "correct_answer": "9.42",
+   "explanation": "起跑线的差距 = 2 × 跑道宽 × π = 2 × 1.5 × 3.14 = 9.42 米。",
+   "tags": [
+    "确定起跑线",
+    "弯道差"
+   ],
+   "question_id": "math-6up-d23-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "内圈直径 60 米，跑道宽 1 米，第 4 道的弯道部分长（  ）米。（π 取 3.14）",
+   "accepted": [
+    "207.24"
+   ],
+   "correct_answer": "207.24",
+   "explanation": "第 4 道比第 1 道多 3 个跑道宽，直径是 60 + 2 × 3 = 66 米，弯道长 3.14 × 66 = 207.24 米。",
+   "tags": [
+    "确定起跑线",
+    "弯道长"
+   ],
+   "question_id": "math-6up-d23-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "400 米比赛，每条跑道宽 1 米。第 2 道的起跑线应比第 1 道向前移（  ）米。（π 取 3.14）",
+   "options": [
+    "3.14",
+    "6.28",
+    "1",
+    "2"
+   ],
+   "correct_answer": "B",
+   "explanation": "相邻两条跑道的弯道差 = π × 2 × 1 = 6.28 米，所以第 2 道往前移 6.28 米。",
+   "tags": [
+    "确定起跑线",
+    "起跑线位置"
+   ],
+   "question_id": "math-6up-d23-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "400 米比赛共 4 条跑道，每条宽 1 米。第 3 道的起跑线比第 1 道向前移（  ）米。（π 取 3.14）",
+   "options": [
+    "6.28",
+    "12.56",
+    "18.84",
+    "25.12"
+   ],
+   "correct_answer": "B",
+   "explanation": "第 3 道与第 1 道相差 2 个跑道宽，移 2 × 6.28 = 12.56 米。",
+   "tags": [
+    "确定起跑线",
+    "起跑线位置"
+   ],
+   "question_id": "math-6up-d23-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "相邻两条跑道的起跑线相差 7.85 米，这条跑道的宽是（  ）米。（π 取 3.14）",
+   "options": [
+    "1",
+    "1.2",
+    "1.5",
+    "1.25"
+   ],
+   "correct_answer": "D",
+   "explanation": "跑道宽 = 差距 ÷ (2π) = 7.85 ÷ 6.28 = 1.25 米。",
+   "tags": [
+    "确定起跑线",
+    "反求道宽"
+   ],
+   "question_id": "math-6up-d23-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "关于起跑线，下面说法正确的是（  ）",
+   "options": [
+    "所有跑道的起跑线都在同一条线上",
+    "外道的起跑线要往前移",
+    "内道的起跑线要往前移",
+    "起跑线位置与跑道无关"
+   ],
+   "correct_answer": "B",
+   "explanation": "外道弯道长，要往前移才能正好跑 400 米；起跑线跟道次有关。",
+   "tags": [
+    "确定起跑线",
+    "起跑线"
+   ],
+   "question_id": "math-6up-d23-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "相邻两条跑道的起跑线相差的距离，与（  ）有关",
+   "options": [
+    "跑道宽",
+    "直道长度",
+    "跑道条数",
+    "终点线位置"
+   ],
+   "correct_answer": "A",
+   "explanation": "差距 = 2 × 跑道宽 × π，只跟跑道宽有关；直道一样长，差不会出现在直道上。",
+   "tags": [
+    "确定起跑线",
+    "跑道宽"
+   ],
+   "question_id": "math-6up-d23-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d23",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "第 1 道与第 2 道的起跑线相差 6.28 米，第 2 道与第 3 道也相差 6.28 米，原因是（  ）",
+   "options": [
+    "每相邻两条跑道的直径都相差 2 个跑道宽",
+    "第 3 道一定比第 2 道长得多",
+    "外道总是比内道多 6.28 米",
+    "起跑线按道次平均分配"
+   ],
+   "correct_answer": "A",
+   "explanation": "道宽处处相同，每相邻两条跑道的直径都相差 2 个跑道宽，所以差距是同一个 2π × 道宽。",
+   "tags": [
+    "确定起跑线",
+    "弯道差"
+   ],
+   "question_id": "math-6up-d23-q12"
+  },
+  {
    "question_id": "math-6up-d17-q01",
    "diagnostic_node_id": "math-6up-d17",
    "subject": "math",
@@ -3833,6 +4088,450 @@
     "百分数增减",
     "单位一变化"
    ]
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "百分数表示一个数是另一个数的（  ）",
+   "options": [
+    "几分之几",
+    "百分之几",
+    "几倍",
+    "多少"
+   ],
+   "correct_answer": "B",
+   "explanation": "百分数表示一个数是另一个数的百分之几，所以后面要带百分号，也不能带单位。",
+   "tags": [
+    "百分数的意义与取值范围",
+    "意义"
+   ],
+   "question_id": "math-6up-d17-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "把 5 米长的绳子平均分成 8 段，每段是全长的（  ）",
+   "options": [
+    "12.5%",
+    "62.5%",
+    "80%",
+    "1.25%"
+   ],
+   "correct_answer": "A",
+   "explanation": "每段占全长的 1/8 = 12.5%；5/8 米是每段的长度，不是占全长的百分之几。",
+   "tags": [
+    "百分数的意义与取值范围",
+    "率与量"
+   ],
+   "question_id": "math-6up-d17-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "20 是 50 的（  ）%。（只填数）",
+   "accepted": [
+    "40"
+   ],
+   "correct_answer": "40",
+   "explanation": "20 ÷ 50 = 0.4 = 40%，求一个数是另一个数的百分之几用除法。",
+   "tags": [
+    "百分数的意义与取值范围",
+    "求百分率"
+   ],
+   "question_id": "math-6up-d17-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "六（1）班有 40 人，今天到校 38 人，出勤率是（  ）%。（只填数）",
+   "accepted": [
+    "95"
+   ],
+   "correct_answer": "95",
+   "explanation": "出勤率 = 到校人数 ÷ 全班人数 = 38 ÷ 40 = 0.95 = 95%。",
+   "tags": [
+    "百分数的意义与取值范围",
+    "出勤率"
+   ],
+   "question_id": "math-6up-d17-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一件商品原价 80 元，现价 100 元，现价比原价提高了（  ）%。（只填数）",
+   "accepted": [
+    "25"
+   ],
+   "correct_answer": "25",
+   "explanation": "提高的部分是 100 - 80 = 20 元，20 ÷ 80 = 0.25 = 25%，比谁提高就除以谁。",
+   "tags": [
+    "百分数的意义与取值范围",
+    "求增加百分之几"
+   ],
+   "question_id": "math-6up-d17-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "六（2）班有 50 人，其中女生 24 人，女生占全班的（  ）",
+   "options": [
+    "24%",
+    "48%",
+    "50%",
+    "52%"
+   ],
+   "correct_answer": "B",
+   "explanation": "24 ÷ 50 = 0.48 = 48%。",
+   "tags": [
+    "百分数的意义与取值范围",
+    "占几分之几"
+   ],
+   "question_id": "math-6up-d17-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "某工厂去年产值 500 万元，今年比去年增加 50 万元，今年产值是去年的（  ）",
+   "options": [
+    "10%",
+    "50%",
+    "110%",
+    "150%"
+   ],
+   "correct_answer": "C",
+   "explanation": "今年产值 500 + 50 = 550 万元，550 ÷ 500 = 1.1 = 110%。",
+   "tags": [
+    "百分数的意义与取值范围",
+    "增长率"
+   ],
+   "question_id": "math-6up-d17-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "0.8、0.85、85%、7/8 中，最大的数是（  ）",
+   "options": [
+    "85%",
+    "0.8",
+    "0.85",
+    "7/8"
+   ],
+   "correct_answer": "D",
+   "explanation": "7/8 = 0.875，比 0.85 和 85% 都大，0.8 最小。",
+   "tags": [
+    "百分数的意义与取值范围",
+    "比较大小"
+   ],
+   "question_id": "math-6up-d17-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d17",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "关于百分数，下面说法正确的是（  ）",
+   "options": [
+    "一根绳子长 80% 米",
+    "百分数后面可以带单位",
+    "百分数一定小于 100%",
+    "男生人数是女生的 120%，说明男生比女生多"
+   ],
+   "correct_answer": "D",
+   "explanation": "百分数表示两个数的倍比关系，不能带单位，也可以大于 100%；120% 就是 1.2 倍，男生比女生多。",
+   "tags": [
+    "百分数的意义与取值范围",
+    "意义"
+   ],
+   "question_id": "math-6up-d17-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "把小数化成百分数，只要把小数点向（  ）移动两位，再添上百分号",
+   "options": [
+    "左",
+    "右",
+    "上",
+    "不移"
+   ],
+   "correct_answer": "B",
+   "explanation": "小数点向右移两位就是乘 100，再添百分号，数的大小不变，如 0.35 → 35%。",
+   "tags": [
+    "百分数与小数、分数的互化",
+    "小数化百分数"
+   ],
+   "question_id": "math-6up-d18-q01"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "把百分数化成小数，要（  ）",
+   "options": [
+    "去掉百分号，小数点向左移两位",
+    "去掉百分号，小数点向右移两位",
+    "只去掉百分号",
+    "乘 100"
+   ],
+   "correct_answer": "A",
+   "explanation": "去掉百分号相当于除以 100，小数点向左移两位，如 65% → 0.65。",
+   "tags": [
+    "百分数与小数、分数的互化",
+    "百分数化小数"
+   ],
+   "question_id": "math-6up-d18-q02"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "0.6 与 60% 相比（  ）",
+   "options": [
+    "0.6 大",
+    "60% 大",
+    "一样大",
+    "无法比较"
+   ],
+   "correct_answer": "C",
+   "explanation": "60% = 60 ÷ 100 = 0.6，两种写法数值相等，只是形式不同。",
+   "tags": [
+    "百分数与小数、分数的互化",
+    "等值"
+   ],
+   "question_id": "math-6up-d18-q03"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "把 0.35 化成百分数是（  ）%。（只填数）",
+   "accepted": [
+    "35"
+   ],
+   "correct_answer": "35",
+   "explanation": "0.35 × 100% = 35%。",
+   "tags": [
+    "百分数与小数、分数的互化",
+    "小数化百分数"
+   ],
+   "question_id": "math-6up-d18-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "把 3/8 化成百分数是（  ）%。（只填数）",
+   "accepted": [
+    "37.5"
+   ],
+   "correct_answer": "37.5",
+   "explanation": "3 ÷ 8 = 0.375 = 37.5%。",
+   "tags": [
+    "百分数与小数、分数的互化",
+    "分数化百分数"
+   ],
+   "question_id": "math-6up-d18-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "12.5% 化成最简分数是 1/（  ）。",
+   "accepted": [
+    "8"
+   ],
+   "correct_answer": "8",
+   "explanation": "12.5% = 125/1000 = 1/8，所以分母是 8。",
+   "tags": [
+    "百分数与小数、分数的互化",
+    "百分数化分数"
+   ],
+   "question_id": "math-6up-d18-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一件衣服的标签上写着含棉 65%，65% 写成小数是（  ）",
+   "options": [
+    "6.5",
+    "0.65",
+    "0.065",
+    "65"
+   ],
+   "correct_answer": "B",
+   "explanation": "去掉百分号，小数点向左移两位：65% = 0.65。",
+   "tags": [
+    "百分数与小数、分数的互化",
+    "含棉量"
+   ],
+   "question_id": "math-6up-d18-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一瓶果汁中果汁的含量是 3/4，用百分数表示是（  ）",
+   "options": [
+    "34%",
+    "43%",
+    "75%",
+    "80%"
+   ],
+   "correct_answer": "C",
+   "explanation": "3 ÷ 4 = 0.75 = 75%。",
+   "tags": [
+    "百分数与小数、分数的互化",
+    "含量"
+   ],
+   "question_id": "math-6up-d18-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "某商品打折后价格是原价的 7 折，也就是原价的（  ）",
+   "options": [
+    "7%",
+    "17%",
+    "70%",
+    "107%"
+   ],
+   "correct_answer": "C",
+   "explanation": "7 折就是 7/10 = 0.7 = 70%，不是 7%。",
+   "tags": [
+    "百分数与小数、分数的互化",
+    "折扣"
+   ],
+   "question_id": "math-6up-d18-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面各数中，与 40% 相等的是（  ）",
+   "options": [
+    "0.04",
+    "0.4",
+    "4",
+    "40"
+   ],
+   "correct_answer": "B",
+   "explanation": "40% = 40 ÷ 100 = 0.4，不是 0.04。",
+   "tags": [
+    "百分数与小数、分数的互化",
+    "等值"
+   ],
+   "question_id": "math-6up-d18-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "在 0.45、45%、0.5、4/9 中，最小的数是（  ）",
+   "options": [
+    "0.45",
+    "45%",
+    "0.5",
+    "4/9"
+   ],
+   "correct_answer": "D",
+   "explanation": "4/9 ≈ 0.444，0.45 和 45% 相等，0.5 最大，所以 4/9 最小。",
+   "tags": [
+    "百分数与小数、分数的互化",
+    "比较大小"
+   ],
+   "question_id": "math-6up-d18-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d18",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "把 5% 的百分号去掉，这个数（  ）",
+   "options": [
+    "大小不变",
+    "扩大到原来的 100 倍",
+    "缩小到原来的 1/100",
+    "扩大到原来的 10 倍"
+   ],
+   "correct_answer": "B",
+   "explanation": "去掉百分号，5% 就写成了 5，5 是 0.05 的 100 倍，所以扩大到原来的 100 倍。",
+   "tags": [
+    "百分数与小数、分数的互化",
+    "百分号"
+   ],
+   "question_id": "math-6up-d18-q12"
   },
   {
    "question_id": "math-6up-d25-q01",
