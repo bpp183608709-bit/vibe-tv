@@ -71,11 +71,20 @@ def rotate(lines: list[dict], seed: int) -> list[dict]:
         targets.append(seen[size] % size)
         seen[size] += 1
 
-    choice_slots = [index for index, target in enumerate(targets) if target is not None]
-    shuffled = [targets[index] for index in choice_slots]
-    random.Random(seed).shuffle(shuffled)
-    for index, target in zip(choice_slots, shuffled):
-        targets[index] = target
+    choice_slots: dict[int, list[int]] = {}
+    for index, line in enumerate(lines):
+        size = len([item for item in str(line.get("o", "")).split("|") if item.strip()])
+        if size >= 2:
+            choice_slots.setdefault(size, []).append(index)
+
+    # Shuffle inside each option count, never across them. A judgement item has two labels, so a
+    # pooled shuffle hands its surplus zeros to the four-option items: one run put 5 of 13 choices on A
+    # while only 1 reached C, which is the bias this tool exists to remove, wearing a different coat.
+    for indexes in choice_slots.values():
+        values = [targets[index] for index in indexes]
+        random.Random(seed).shuffle(values)
+        for index, target in zip(indexes, values):
+            targets[index] = target
 
     return [rotate_line(line, target or 0) for line, target in zip(lines, targets)]
 

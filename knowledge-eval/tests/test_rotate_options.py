@@ -106,6 +106,27 @@ def test_fills_do_not_take_the_choices_slots(spec):
     assert max(spread.values()) <= 4, spread
 
 
+def test_two_option_items_do_not_skew_the_four_option_ones(spec):
+    """Judgement items carry two labels, so the two pools must be shuffled separately.
+
+    Pooled, their surplus zeros land on four-option items: one batch of 13 choices + 7 judgement items
+    came out A5/B5/D2/C1 — C nearly absent while A doubled, which passes the 60% gate and still
+    teaches a child to guess A.
+    """
+    lines = [{"n": "d01", "a": "执行计算", "d": "易", "t": "选择题", "s": f"选 {i}",
+              "o": "a|b|c|d", "k": "A", "e": "e", "c": "True"} for i in range(13)]
+    lines += [{"n": "d01", "a": "执行计算", "d": "易", "t": "判断题", "s": f"判 {i}",
+               "o": "对|错", "k": "A", "e": "e", "c": "True"} for i in range(7)]
+    spec.write_text("\n".join(json.dumps(line, ensure_ascii=False) for line in lines) + "\n",
+                    encoding="utf-8")
+
+    assert run(spec).returncode == 0
+    after = [json.loads(line) for line in spec.read_text(encoding="utf-8").splitlines() if line.strip()]
+    four = Counter(line["k"] for line in after if line["o"] == "a|b|c|d" or len(line["o"].split("|")) == 4)
+    assert set(four) == {"A", "B", "C", "D"}, four
+    assert max(four.values()) - min(four.values()) <= 1, four
+
+
 def test_dry_run_reports_without_writing(spec):
     original = spec.read_bytes()
     result = run(spec, "--dry-run")
