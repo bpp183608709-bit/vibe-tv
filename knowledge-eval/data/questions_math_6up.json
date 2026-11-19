@@ -5356,6 +5356,678 @@
     "分数四则混合运算",
     "有括号先算括号"
    ]
+  },
+  {
+   "diagnostic_node_id": "math-6up-d25",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "计算 3/4 + 1/2 × 2/3 时，应该先算哪一部分？",
+   "options": [
+    "3/4 + 1/2",
+    "3/4 + 2/3",
+    "从左往右依次算",
+    "1/2 × 2/3"
+   ],
+   "correct_answer": "D",
+   "explanation": "分数四则混合运算和整数一样，先算乘除、后算加减，所以第一步是 1/2 × 2/3 = 1/3。",
+   "tags": [
+    "分数四则混合运算",
+    "运算顺序"
+   ],
+   "question_id": "math-6up-d25-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d25",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "在 2/3 + 1/6 ÷ 1/2 中必须先算除法，原因是（  ）",
+   "options": [
+    "乘除是比加减高一级的运算，同级运算从左往右",
+    "分母不同不能直接相加",
+    "算式里只要有除法就一定要先算",
+    "乘除的结果一定是分数"
+   ],
+   "correct_answer": "A",
+   "explanation": "运算顺序由运算级别决定：先乘除后加减，同级从左往右。与分母是否相同无关，也不是看见除法就无条件先算。",
+   "tags": [
+    "分数四则混合运算",
+    "运算顺序"
+   ],
+   "question_id": "math-6up-d25-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d25",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面算式中，去掉括号后计算结果不变的是（  ）",
+   "options": [
+    "3/4 − (1/2 − 2/5)",
+    "(3/4 × 1/2) + 2/5",
+    "(3/4 + 1/2) × 2/5",
+    "3/4 × (1/2 + 2/5)"
+   ],
+   "correct_answer": "B",
+   "explanation": "括号里只有乘法，而乘法本来就要先算，去掉括号仍是先算 3/4 × 1/2。其余三题去掉括号都会改变运算顺序：加法变成后算、减号后面的减法要变号。",
+   "tags": [
+    "分数四则混合运算",
+    "括号的作用"
+   ],
+   "question_id": "math-6up-d25-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d25",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "计算 1/2 + 1/4 × 2/3，结果写成最简分数。",
+   "accepted": [
+    "2/3"
+   ],
+   "correct_answer": "2/3",
+   "explanation": "先算 1/4 × 2/3 = 1/6，再算 1/2 + 1/6 = 2/3。",
+   "tags": [
+    "分数四则混合运算",
+    "先乘后加"
+   ],
+   "question_id": "math-6up-d25-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d25",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "计算 5/2 ÷ (1/2 + 3/4) × 4/5，结果写成最简分数。",
+   "accepted": [
+    "8/5"
+   ],
+   "correct_answer": "8/5",
+   "explanation": "先算括号里 1/2 + 3/4 = 5/4，再算 5/2 ÷ 5/4 = 2，最后 2 × 4/5 = 8/5。除法和乘法同级，从左往右依次算。",
+   "tags": [
+    "分数四则混合运算",
+    "带括号"
+   ],
+   "question_id": "math-6up-d25-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d25",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一桶油重 5/6 千克，先倒出 1/3，又倒出剩下的 1/2，还剩多少千克？",
+   "accepted": [
+    "5/18"
+   ],
+   "correct_answer": "5/18",
+   "explanation": "第一次倒出后剩 5/6 × (1 − 1/3) = 5/9，第二次再剩 5/9 × (1 − 1/2) = 5/18（千克）。两次的单位 1 不一样，第二次是“剩下的”。",
+   "tags": [
+    "分数四则混合运算",
+    "连续取部分"
+   ],
+   "question_id": "math-6up-d25-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d25",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "修一条长 3/4 千米的路，第一天修了全长的 1/3，第二天修了余下的 2/5，两天共修多少千米？",
+   "accepted": [
+    "9/20"
+   ],
+   "correct_answer": "9/20",
+   "explanation": "第一天 3/4 × 1/3 = 1/4；剩下 3/4 − 1/4 = 1/2，第二天 1/2 × 2/5 = 1/5；共 1/4 + 1/5 = 9/20（千米）。第二天要把余下的长度乘 2/5，不能直接用全长的 2/5。",
+   "tags": [
+    "分数四则混合运算",
+    "余下的几分之几"
+   ],
+   "question_id": "math-6up-d25-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d25",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "小明算 4/5 − 4/5 × 1/2 时先算了减法，再把差乘 1/2，他错在（  ）",
+   "options": [
+    "他没有先通分",
+    "他把减号看成了加号",
+    "运算顺序错了，应当先算乘法",
+    "他把 1/2 当成了 0"
+   ],
+   "correct_answer": "C",
+   "explanation": "先乘除后加减，正确结果是 4/5 − 2/5 = 2/5；先减后乘会得到 4/5 − 4/5 = 0，再乘 1/2 仍是 0。",
+   "tags": [
+    "分数四则混合运算",
+    "找错"
+   ],
+   "question_id": "math-6up-d25-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d25",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "计算 (7/8 − 1/2) ÷ 3/4 + 1/6，结果写成最简分数。",
+   "accepted": [
+    "2/3"
+   ],
+   "correct_answer": "2/3",
+   "explanation": "括号里 7/8 − 1/2 = 3/8，3/8 ÷ 3/4 = 1/2，再加 1/6 得 2/3。除法和加法混在一起时先算除法，不能先把 3/4 + 1/6 加起来。",
+   "tags": [
+    "分数四则混合运算",
+    "先除后加"
+   ],
+   "question_id": "math-6up-d25-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d30",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "六（1）班有 40 人，其中男生 24 人，男生人数占全班的（  ）",
+   "options": [
+    "40%",
+    "24%",
+    "166.7%",
+    "60%"
+   ],
+   "correct_answer": "D",
+   "explanation": "求一个数是另一个数的百分之几用除法：24 ÷ 40 = 0.6 = 60%。40% 是女生占的比例。",
+   "tags": [
+    "分数与百分数的实际问题",
+    "求百分比"
+   ],
+   "question_id": "math-6up-d30-q01"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d30",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一条路已经修了全长的 3/5，剩下的比修好的少全长的（  ）",
+   "options": [
+    "20%",
+    "40%",
+    "60%",
+    "25%"
+   ],
+   "correct_answer": "A",
+   "explanation": "剩下 1 − 3/5 = 2/5，两者相差 3/5 − 2/5 = 1/5，也就是全长的 20%。",
+   "tags": [
+    "分数与百分数的实际问题",
+    "部分与剩余"
+   ],
+   "question_id": "math-6up-d30-q02"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d30",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "甲数的 2/3 等于乙数的 3/4，甲数与乙数的比是（  ）",
+   "options": [
+    "3 : 4",
+    "9 : 8",
+    "8 : 9",
+    "2 : 3"
+   ],
+   "correct_answer": "B",
+   "explanation": "甲 × 2/3 = 乙 × 3/4，则甲 : 乙 = 3/4 : 2/3 = 9 : 8，甲比乙大。分数越小的那个数占的份数越多。",
+   "tags": [
+    "分数与百分数的实际问题",
+    "等式转化"
+   ],
+   "question_id": "math-6up-d30-q03"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d30",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "计算 3/4 × 2/5 + 1/2 ÷ 5/6，结果写成最简分数。",
+   "accepted": [
+    "9/10"
+   ],
+   "correct_answer": "9/10",
+   "explanation": "3/4 × 2/5 = 3/10，1/2 ÷ 5/6 = 1/2 × 6/5 = 3/5，3/10 + 3/5 = 9/10。",
+   "tags": [
+    "分数与百分数的实际问题",
+    "混合计算"
+   ],
+   "question_id": "math-6up-d30-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d30",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "计算 60 × (1/3 + 1/4) − 15，结果写成整数。",
+   "accepted": [
+    "20"
+   ],
+   "correct_answer": "20",
+   "explanation": "括号里 1/3 + 1/4 = 7/12，60 × 7/12 = 35，再减 15 得 20。用乘法分配律也可以：60 × 1/3 + 60 × 1/4 = 20 + 15 = 35。",
+   "tags": [
+    "分数与百分数的实际问题",
+    "分配律"
+   ],
+   "question_id": "math-6up-d30-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d30",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "计算 (5/6 − 3/8) ÷ 7/12 × 4/5，结果写成最简分数。",
+   "accepted": [
+    "22/35"
+   ],
+   "correct_answer": "22/35",
+   "explanation": "括号里 5/6 − 3/8 = 20/24 − 9/24 = 11/24，11/24 ÷ 7/12 = 11/24 × 12/7 = 11/14，再乘 4/5 得 44/70 = 22/35。",
+   "tags": [
+    "分数与百分数的实际问题",
+    "混合计算"
+   ],
+   "question_id": "math-6up-d30-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d30",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一本书有 120 页，第一天看了全书的 1/4，第二天看了 30 页，两天一共看了多少页？",
+   "accepted": [
+    "60"
+   ],
+   "correct_answer": "60",
+   "explanation": "第一天 120 × 1/4 = 30（页），两天共 30 + 30 = 60（页）。第二天给的是页数，不是分率，不能写成 1/4 + 30。",
+   "tags": [
+    "分数与百分数的实际问题",
+    "分率与数量"
+   ],
+   "question_id": "math-6up-d30-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d30",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "商店运来一批水果，上午卖出总数的 40%，下午卖出 60 千克，正好卖完。这批水果共多少千克？",
+   "accepted": [
+    "100"
+   ],
+   "correct_answer": "100",
+   "explanation": "下午的 60 千克对应总数的 1 − 40% = 60%，总数 60 ÷ 60% = 100（千克）。已知部分量和它对应的分率，用除法求总量。",
+   "tags": [
+    "分数与百分数的实际问题",
+    "已知部分求总量"
+   ],
+   "question_id": "math-6up-d30-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d30",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "某商品按 20% 的利润定价，再打八折出售，结果亏了 8 元。这件商品的成本是多少元？",
+   "accepted": [
+    "200"
+   ],
+   "correct_answer": "200",
+   "explanation": "把成本看作 1，定价是 1.2，八折后售价 1.2 × 0.8 = 0.96，比成本少 0.04。8 ÷ 0.04 = 200（元）。",
+   "tags": [
+    "分数与百分数的实际问题",
+    "定价与折扣"
+   ],
+   "question_id": "math-6up-d30-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d30",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面四句话中正确的是（  ）",
+   "options": [
+    "3 千克的 25% 是 1.2 千克",
+    "50% 千克就是 0.5 千克",
+    "1 米的 3/5 和 3 米的 1/5 一样长",
+    "1 米的 3/5 比 3 米的 1/5 长"
+   ],
+   "correct_answer": "C",
+   "explanation": "1 × 3/5 = 3/5（米），3 × 1/5 = 3/5（米），一样长。3 千克的 25% 是 0.75 千克；百分数只表示两个数的倍比关系，后面不能带单位名称。",
+   "tags": [
+    "分数与百分数的实际问题",
+    "辨析"
+   ],
+   "question_id": "math-6up-d30-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d30",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "甲班人数的 20% 和乙班人数的 25% 相等，那么（  ）",
+   "options": [
+    "甲班人数少于乙班",
+    "两班人数相等",
+    "无法比较",
+    "甲班人数多于乙班"
+   ],
+   "correct_answer": "D",
+   "explanation": "两部分相等时，所占的分率越小，总数越大。20% < 25%，所以甲班人数多。可设相等的部分为 1，甲班 5 人、乙班 4 人。",
+   "tags": [
+    "分数与百分数的实际问题",
+    "单位 1 变化"
+   ],
+   "question_id": "math-6up-d30-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d30",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "甲数比乙数多 1/5，那么乙数比甲数少多少？（结果写成最简分数）",
+   "accepted": [
+    "1/6"
+   ],
+   "correct_answer": "1/6",
+   "explanation": "设乙数为 1，甲数就是 6/5。乙比甲少 1/5，这 1/5 占甲的 1/5 ÷ 6/5 = 1/6。两次比较的单位 1 不同，所以不是 1/5。",
+   "tags": [
+    "分数与百分数的实际问题",
+    "单位 1 变化"
+   ],
+   "question_id": "math-6up-d30-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d31",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "把 4 个苹果放进 3 个盘子，不管怎么放，总有一个盘子里至少放（  ）个苹果",
+   "options": [
+    "2 个",
+    "1 个",
+    "3 个",
+    "4 个"
+   ],
+   "correct_answer": "A",
+   "explanation": "4 ÷ 3 = 1 余 1，就算平均分，每个盘子放 1 个还剩 1 个，这个剩下的必须放进某个盘子，所以至少有一个盘子放 2 个。",
+   "tags": [
+    "鸽巢问题",
+    "基本形式"
+   ],
+   "question_id": "math-6up-d31-q01"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d31",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "鸽巢原理里说“总有一个抽屉里至少放 2 个物体”，这里的“总有”是指（  ）",
+   "options": [
+    "放得整齐时才会出现",
+    "任何一种放法都一定出现",
+    "只有一种放法会出现",
+    "大多数放法会出现"
+   ],
+   "correct_answer": "B",
+   "explanation": "“总有”说的是必然性：只要物体比抽屉多，不论怎么放这个结论都成立，和运气、放法是否整齐都无关。",
+   "tags": [
+    "鸽巢问题",
+    "结论的含义"
+   ],
+   "question_id": "math-6up-d31-q02"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d31",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "把 10 本书放进 4 个抽屉，总有一个抽屉至少放 3 本，这个 3 是用（  ）算出来的",
+   "options": [
+    "10 与 4 的差",
+    "10 ÷ 4 的余数",
+    "10 ÷ 4 的商加 1",
+    "10 ÷ 4 的商"
+   ],
+   "correct_answer": "C",
+   "explanation": "10 ÷ 4 = 2 余 2，商 2 加 1 得 3。只要余数不为 0，至少数就是商加 1；整除时至少数才是商。",
+   "tags": [
+    "鸽巢问题",
+    "至少数的算法"
+   ],
+   "question_id": "math-6up-d31-q03"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d31",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "把 7 个苹果放进 3 个盘子，总有一个盘子至少放几个苹果？",
+   "accepted": [
+    "3"
+   ],
+   "correct_answer": "3",
+   "explanation": "7 ÷ 3 = 2 余 1，商 2 加 1 得 3，所以至少有一个盘子放 3 个。",
+   "tags": [
+    "鸽巢问题",
+    "基本形式"
+   ],
+   "question_id": "math-6up-d31-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d31",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "箱子里有红、黄、蓝三种颜色的球各若干个，至少摸出几个球，才能保证有 2 个同色？",
+   "accepted": [
+    "4"
+   ],
+   "correct_answer": "4",
+   "explanation": "最不利的情况是三种颜色各摸 1 个，共 3 个还没凑成一对；第 4 个一定和前面某一个同色。3 + 1 = 4。",
+   "tags": [
+    "鸽巢问题",
+    "最不利情况"
+   ],
+   "question_id": "math-6up-d31-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d31",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "六（1）班有 43 名学生，至少有几名学生在同一个月过生日？",
+   "accepted": [
+    "4"
+   ],
+   "correct_answer": "4",
+   "explanation": "一年 12 个月当作 12 个抽屉，43 ÷ 12 = 3 余 7，商加 1 得 4，所以至少有 4 人在同一个月过生日。",
+   "tags": [
+    "鸽巢问题",
+    "月份问题"
+   ],
+   "question_id": "math-6up-d31-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d31",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "袋子里有 5 个红球和 5 个白球，至少摸出几个球，才能保证有 2 个同色？",
+   "accepted": [
+    "3"
+   ],
+   "correct_answer": "3",
+   "explanation": "最坏的情况是先摸到 1 红 1 白，第 3 个球不管是红是白，都会和其中一个同色。颜色只有 2 种，所以 2 + 1 = 3。",
+   "tags": [
+    "鸽巢问题",
+    "摸球问题"
+   ],
+   "question_id": "math-6up-d31-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d31",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一副扑克牌去掉大小王后剩 52 张，分 4 种花色，至少抽出几张，才能保证有 3 张同花色？",
+   "accepted": [
+    "9"
+   ],
+   "correct_answer": "9",
+   "explanation": "每种花色先抽 2 张，共 4 × 2 = 8 张，还凑不出 3 张同花色；第 9 张无论是什么花色，都会让某一种花色达到 3 张。",
+   "tags": [
+    "鸽巢问题",
+    "花色问题"
+   ],
+   "question_id": "math-6up-d31-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d31",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "袋子里有大小相同的红、黄、蓝球各 10 个，至少摸出几个球，才能保证有 4 个同色？",
+   "accepted": [
+    "10"
+   ],
+   "correct_answer": "10",
+   "explanation": "三种颜色各摸 3 个共 9 个，每种都还差 1 个才到 4 个；第 10 个一定是某一种颜色，使那一色达到 4 个。3 × 3 + 1 = 10。",
+   "tags": [
+    "鸽巢问题",
+    "摸球问题"
+   ],
+   "question_id": "math-6up-d31-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d31",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "把 5 个球放进 2 个盒子，下面说法正确的是（  ）",
+   "options": [
+    "每个盒子都至少有 3 个球",
+    "两个盒子各放 2.5 个球",
+    "一定有一个盒子是空的",
+    "至少有一个盒子放了 3 个球"
+   ],
+   "correct_answer": "D",
+   "explanation": "5 ÷ 2 = 2 余 1，至少有一个盒子放 3 个，另一个放 2 个；两个盒子都不会空，球也不能切开。",
+   "tags": [
+    "鸽巢问题",
+    "辨析"
+   ],
+   "question_id": "math-6up-d31-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d31",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "袋子里有 6 个红球和 4 个白球，要保证摸出的球中有 2 个红球，至少摸出几个？",
+   "options": [
+    "6 个",
+    "2 个",
+    "5 个",
+    "7 个"
+   ],
+   "correct_answer": "A",
+   "explanation": "最坏的情况是先把 4 个白球全摸出来，此时一个红球都没有；再摸 2 个才一定是红球。4 + 2 = 6。",
+   "tags": [
+    "鸽巢问题",
+    "最不利情况"
+   ],
+   "question_id": "math-6up-d31-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d31",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "某校六年级有 370 名学生，一年按 365 天算，至少有多少人在同一天过生日？",
+   "options": [
+    "370 人",
+    "2 人",
+    "1 人",
+    "5 人"
+   ],
+   "correct_answer": "B",
+   "explanation": "365 天是 365 个抽屉，370 名学生是物体。370 ÷ 365 = 1 余 5，商加 1 得 2，所以至少有 2 人同一天过生日。",
+   "tags": [
+    "鸽巢问题",
+    "生日问题"
+   ],
+   "question_id": "math-6up-d31-q12"
   }
  ]
 }
