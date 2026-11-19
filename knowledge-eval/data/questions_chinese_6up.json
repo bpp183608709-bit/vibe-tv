@@ -3701,6 +3701,336 @@
    "question_id": "chinese-6up-d20-q06"
   },
   {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《少年闰土》中“项带银圈，手捏一柄钢叉”描写的是（  ）",
+   "options": [
+    "闰土月夜看瓜、捏叉刺猹",
+    "闰土在雪地里支起竹匾捕鸟",
+    "“我”和闰土在厨房初次见面",
+    "闰土跟着父亲进城的那一天"
+   ],
+   "correct_answer": "A",
+   "explanation": "银项圈、钢叉、猹——这是“我”记忆里最鲜亮的一幅画，也是全文的起点。后面所有的事，都从这幅画生出来。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "人物"
+   ],
+   "question_id": "chinese-6up-d13-q01"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《我的伯父鲁迅先生》中“你想，四周黑洞洞的，还不容易碰壁吗”，“四周黑洞洞”指的是（  ）",
+   "options": [
+    "伯父的视力不好",
+    "当时黑暗的社会，让人处处受阻",
+    "屋子里的灯坏了",
+    "那天晚上停电"
+   ],
+   "correct_answer": "B",
+   "explanation": "伯父用“黑洞洞”说旧社会的黑暗，用“碰壁”说自己受到的迫害。这样的话在当时只能绕着说，孩子却听成了玩笑。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "语言"
+   ],
+   "question_id": "chinese-6up-d13-q02"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《好的故事》里反复写“美丽、幽雅、有趣”，而这一切都在“朦胧”中，这样写的用意是（  ）",
+   "options": [
+    "因为作者的眼睛看不清",
+    "只是想把景色写得更漂亮",
+    "说明他睡着了，随手写的",
+    "美景只是梦，醒来仍是昏沉的夜，越美越显出对现实的失望"
+   ],
+   "correct_answer": "D",
+   "explanation": "梦里的“美丽、幽雅、有趣”和醒后的“昏沉的夜”正相对照——向往越真切，现实越难看。这是全文最难读、也最要紧的地方。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "写法"
+   ],
+   "question_id": "chinese-6up-d13-q03"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《有的人——纪念鲁迅有感》中“有的人活着，他已经死了”指的是（  ）",
+   "options": [
+    "有的人得了重病",
+    "骑在人民头上的人，虽然活着，精神已经死了",
+    "人被埋在地下",
+    "鲁迅已经去世"
+   ],
+   "correct_answer": "B",
+   "explanation": "这一句说的是“活着的死人”——欺压人民的人；下一句“有的人死了，他还活着”说的才是鲁迅。两相对照，臧否就出来了。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "内容理解"
+   ],
+   "question_id": "chinese-6up-d13-q04"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《少年闰土》中听闰土讲捕鸟、拾贝、看瓜，“我”心里想的是（  ）",
+   "options": [
+    "自己关在院子里什么也不知道，像井底的蛙",
+    "闰土讲的故事都是编的",
+    "这些事自己早就做过",
+    "闰土不识字，很可怜"
+   ],
+   "correct_answer": "A",
+   "explanation": "课文写“我素不知道天下有这许多新鲜事……只看见院子里高墙上的四角的天空”。“四角的天空”不是写景，是写“我”的处境。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "内容理解"
+   ],
+   "question_id": "chinese-6up-d13-q05"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《有的人——纪念鲁迅有感》中“把名字刻入石头的，名字比尸首烂得更早”，这样说的意思是（  ）",
+   "options": [
+    "石头质量不好，容易风化",
+    "刻字的人手艺太差",
+    "尸首比石头烂得慢",
+    "想靠刻石留名的人，反而被忘得最快；名声不靠石头留住"
+   ],
+   "correct_answer": "D",
+   "explanation": "“刻入石头”本想不朽，结果“比尸首烂得更早”——越想留名越留不住。这与“给人民作牛马的，人民永远记住他”正好相反。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "内容理解"
+   ],
+   "question_id": "chinese-6up-d13-q06"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《少年闰土》中闰土给“我”讲的事，不包括（  ）",
+   "options": [
+    "上学读书",
+    "雪地捕鸟",
+    "海边拾贝",
+    "月夜看瓜"
+   ],
+   "correct_answer": "A",
+   "explanation": "闰土讲的是雪地捕鸟、夏日拾贝、月夜看瓜、潮汛看跳鱼儿，全是“我”没见过的乡野生活——这正是“我”羡慕他的原因。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "内容理解"
+   ],
+   "question_id": "chinese-6up-d13-q07"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "关于《我的伯父鲁迅先生》，说法正确的一项是（  ）",
+   "options": [
+    "课文的中心是“我”很爱读书",
+    "“为自己想得少，为别人想得多”这个印象，是从几件小事里看出来的",
+    "课文主要写鲁迅的文章写得好",
+    "伯父只对家里的人好"
+   ],
+   "correct_answer": "B",
+   "explanation": "谈《水浒传》、笑谈碰壁、救护车夫、关心女佣——四件小事从不同侧面拼出同一个人，最后一句才点出印象。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "人物"
+   ],
+   "question_id": "chinese-6up-d13-q08"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《少年闰土》里“我”羡慕闰土自由，闰土却羡慕“我”能读书，这样写的作用是（  ）",
+   "options": [
+    "说明闰土很虚荣",
+    "只是随口一说，没有用意",
+    "两个孩子各羡慕对方的处境，写出不同生活各自的欠缺",
+    "说明读书没有用处"
+   ],
+   "correct_answer": "C",
+   "explanation": "一个羡慕自由，一个羡慕识字，两条线一交叉，那个时代城乡孩子的处境就出来了。这不只是两个小孩的闲话。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "写法"
+   ],
+   "question_id": "chinese-6up-d13-q09"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读《少年闰土》之前查一查鲁迅小时候的家庭情况，最能帮我们理解（  ）",
+   "options": [
+    "课文一共有多少个自然段",
+    "作者用了几种修辞手法",
+    "为什么“我”被关在院子里，只能看见“四角的天空”",
+    "闰土这个名字是什么意思"
+   ],
+   "correct_answer": "C",
+   "explanation": "资料要用在该用的地方：知道“我”是大户人家的少爷、不许随便往外跑，才懂“四角的天空”不是写景，是写处境。",
+   "tags": [
+    "借助资料理解课文",
+    "用资料"
+   ],
+   "question_id": "chinese-6up-d14-q01"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《我的伯父鲁迅先生》里“四周黑洞洞的”不好懂，查资料后知道当时（  ）",
+   "options": [
+    "社会黑暗，说真话、写文章都可能被迫害",
+    "上海经常停电",
+    "伯父家的房子很旧",
+    "那时候还没有电灯"
+   ],
+   "correct_answer": "A",
+   "explanation": "鲁迅晚年在上海受到通缉和围攻，“碰壁”说的正是这个。知道这一层，“黑洞洞”就不再是写景的话了。",
+   "tags": [
+    "借助资料理解课文",
+    "用资料"
+   ],
+   "question_id": "chinese-6up-d14-q02"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "同样是查资料，下面哪种做法最能帮上读课文（  ）",
+   "options": [
+    "先读课文，遇到读不懂的地方再去找对应的资料",
+    "先把作者年表从头背到尾",
+    "只看别人的读后感，不看课文",
+    "把资料里的每句话都抄进笔记"
+   ],
+   "correct_answer": "A",
+   "explanation": "资料是为读课文服务的：先有问题，再找答案。倒过来做，资料就成了负担——记了一堆年份，课文还是没读懂。",
+   "tags": [
+    "借助资料理解课文",
+    "方法"
+   ],
+   "question_id": "chinese-6up-d14-q03"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读《有的人——纪念鲁迅有感》，要弄清诗里的“有的人”分别指谁，最该查的资料是（  ）",
+   "options": [
+    "作者的出生地",
+    "诗歌的分行规则",
+    "鲁迅写过哪些小说",
+    "这首诗是什么时候、为什么写的"
+   ],
+   "correct_answer": "D",
+   "explanation": "这首诗写于鲁迅逝世十三周年，诗里的“有的人”一头指欺压人民的人，一头指鲁迅。“为什么写”这一条，直接解开“指谁”。",
+   "tags": [
+    "借助资料理解课文",
+    "用资料"
+   ],
+   "question_id": "chinese-6up-d14-q04"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "课文里出现“辛亥革命”这类词，查资料时最该弄清楚的是（  ）",
+   "options": [
+    "这个事件的确切日期和地点",
+    "参与者的完整名单",
+    "后人对此的所有评价",
+    "这件事跟课文里的人和事有什么关系"
+   ],
+   "correct_answer": "D",
+   "explanation": "资料贵在有用：知道辛亥革命后农村依然破败，才懂闰土为什么变得麻木。日期背得再准，接不上课文也是白记。",
+   "tags": [
+    "借助资料理解课文",
+    "方法"
+   ],
+   "question_id": "chinese-6up-d14-q05"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "关于“借助资料”，下面说法最恰当的一项是（  ）",
+   "options": [
+    "资料补上课文没说的部分，但课文的意思还要自己从字句里读出来",
+    "资料查得越多，理解就一定越深",
+    "有了资料就不必细读课文",
+    "资料和课文说法不同时，一律信资料"
+   ],
+   "correct_answer": "A",
+   "explanation": "资料是脚手架，不是房子：它补背景、解典故，但人物为什么这样说话、这样做事，仍要从字句里读。资料读多了反而冲淡课文的，也常见。",
+   "tags": [
+    "借助资料理解课文",
+    "方法"
+   ],
+   "question_id": "chinese-6up-d14-q06"
+  },
+  {
    "question_id": "chinese-6up-d21-q01",
    "diagnostic_node_id": "chinese-6up-d21",
    "subject": "chinese",
@@ -3765,6 +4095,138 @@
     "鲁迅名言",
     "含义"
    ]
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“我们从古以来，就有埋头苦干的人，有拼命硬干的人……这就是中国的脊梁。”这里的“中国的脊梁”指的是（  ）",
+   "options": [
+    "中国人的骨头",
+    "古代的某一位大英雄",
+    "为民族默默付出、敢于担当的人",
+    "中国最高的那座山"
+   ],
+   "correct_answer": "C",
+   "explanation": "“脊梁”是支撑身体的骨头，用来比喻支撑起民族的人。埋头苦干、拼命硬干、为民请命、舍身求法，四类人合起来才叫脊梁。",
+   "tags": [
+    "鲁迅名言的积累与用法",
+    "名言意思"
+   ],
+   "question_id": "chinese-6up-d21-q04"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "鲁迅说“我好像是一只牛，吃的是草，挤出的是牛奶”，这句话是在说（  ）",
+   "options": [
+    "他身体不好，需要营养",
+    "自己要求得少、给出来得多",
+    "他很喜欢喝牛奶",
+    "他养过一头牛"
+   ],
+   "correct_answer": "B",
+   "explanation": "吃草、挤奶是一组对比：索取很少，付出很多。这句话常被用来形容甘愿奉献的人。",
+   "tags": [
+    "鲁迅名言的积累与用法",
+    "名言意思"
+   ],
+   "question_id": "chinese-6up-d21-q05"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“惟有民魂是值得宝贵的，惟有他发扬起来，中国才有真进步。”这句话强调的是（  ）",
+   "options": [
+    "每个人都应该多读书",
+    "进步要靠外国的帮助",
+    "民族精神才是国家进步的根本",
+    "中国的物产很丰富"
+   ],
+   "correct_answer": "C",
+   "explanation": "“民魂”是一个民族的精神。“惟有……才……”把话说得很绝对，正是要强调：没有这一条，别的都谈不上。",
+   "tags": [
+    "鲁迅名言的积累与用法",
+    "名言意思"
+   ],
+   "question_id": "chinese-6up-d21-q06"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "对“这就是中国的脊梁”一句，理解最恰当的一项是（  ）",
+   "options": [
+    "这四类人都在古代，现在没有了",
+    "四类人样子各不同，共同点是都为他人、为民族担当",
+    "只有读过书的人才算脊梁",
+    "脊梁指的是身体特别强壮的人"
+   ],
+   "correct_answer": "B",
+   "explanation": "埋头苦干、拼命硬干、为民请命、舍身求法，四种样子不一样，共同点是把众人放在自己前面。鲁迅说的是“从古以来”，也在说“现在还有”。",
+   "tags": [
+    "鲁迅名言的积累与用法",
+    "名言意思"
+   ],
+   "question_id": "chinese-6up-d21-q07"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "“我好像是一只牛，吃的是草，挤出的是牛奶”这句话，最常用来称赞（  ）",
+   "options": [
+    "喜欢喝牛奶的人",
+    "身体强壮的人",
+    "甘愿奉献、不求回报的人",
+    "养牛专业户"
+   ],
+   "correct_answer": "C",
+   "explanation": "吃进去的是草，给出来的是奶，这组对比就是“奉献”的样子，所以常用来称赞默默付出的人。",
+   "tags": [
+    "鲁迅名言的积累与用法",
+    "名言用法"
+   ],
+   "question_id": "chinese-6up-d21-q08"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面鲁迅的话，用在“纪念为民族献身的人”最合适的一项是（  ）",
+   "options": [
+    "我好像是一只牛，吃的是草，挤出的是牛奶",
+    "其实地上本没有路，走的人多了，也便成了路",
+    "惟有民魂是值得宝贵的，惟有他发扬起来，中国才有真进步",
+    "我们从古以来，就有埋头苦干的人，有拼命硬干的人，有为民请命的人，有舍身求法的人"
+   ],
+   "correct_answer": "D",
+   "explanation": "“为民请命”“舍身求法”直接指向为众人担难的人，用在纪念场合最贴。牛讲个人奉献，路讲开创，民魂讲整体精神，都不如这一句对得上“献身”。",
+   "tags": [
+    "鲁迅名言的积累与用法",
+    "名言用法"
+   ],
+   "question_id": "chinese-6up-d21-q09"
   }
  ]
 }

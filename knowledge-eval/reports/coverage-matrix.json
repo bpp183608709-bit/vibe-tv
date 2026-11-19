@@ -8649,44 +8649,86 @@
    "ability_tag": "语言运用",
    "questions": {
     "easy": 1,
-    "medium": 0,
-    "hard": 0,
-    "total": 1
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d01-q01"
+    "chinese-6up-d01-q01",
+    "chinese-6up-d01-q04",
+    "chinese-6up-d01-q05"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
      "easy": 0,
-     "medium": 1,
-     "hard": 1
+     "medium": 0,
+     "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
      "easy": 1,
-     "medium": 2,
-     "hard": 2
+     "medium": 1,
+     "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -8696,45 +8738,87 @@
    "parent_aggregate_node_id": "chinese-6up-u01",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
+    "easy": 1,
     "medium": 1,
-    "hard": 0,
-    "total": 1
+    "hard": 1,
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d01-q02"
+    "chinese-6up-d01-q02",
+    "chinese-6up-d01-q06",
+    "chinese-6up-d01-q07"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
+     "easy": 0,
      "medium": 0,
-     "hard": 1
+     "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
-     "easy": 2,
+     "easy": 1,
      "medium": 1,
-     "hard": 2
+     "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -8744,45 +8828,87 @@
    "parent_aggregate_node_id": "chinese-6up-u01",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
+    "easy": 1,
+    "medium": 1,
     "hard": 1,
-    "total": 1
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d01-q03"
+    "chinese-6up-d01-q03",
+    "chinese-6up-d01-q08",
+    "chinese-6up-d01-q09"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
-     "medium": 1,
+     "easy": 0,
+     "medium": 0,
      "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
-     "easy": 2,
-     "medium": 2,
+     "easy": 1,
+     "medium": 1,
      "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -8792,22 +8918,79 @@
    "parent_aggregate_node_id": "chinese-6up-u01",
    "ability_tag": "语言运用",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d02-q01",
+    "chinese-6up-d02-q02",
+    "chinese-6up-d02-q03"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -8815,20 +8998,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -8838,22 +9008,79 @@
    "parent_aggregate_node_id": "chinese-6up-u01",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d02-q04",
+    "chinese-6up-d02-q05",
+    "chinese-6up-d02-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -8861,20 +9088,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -8884,22 +9098,79 @@
    "parent_aggregate_node_id": "chinese-6up-u01",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d02-q07",
+    "chinese-6up-d02-q08",
+    "chinese-6up-d02-q09"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -8907,20 +9178,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -8931,44 +9189,86 @@
    "ability_tag": "语言运用",
    "questions": {
     "easy": 1,
-    "medium": 0,
-    "hard": 0,
-    "total": 1
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d15-q01"
+    "chinese-6up-d15-q01",
+    "chinese-6up-d15-q04",
+    "chinese-6up-d15-q05"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
      "easy": 0,
-     "medium": 1,
-     "hard": 1
+     "medium": 0,
+     "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
      "easy": 1,
-     "medium": 2,
-     "hard": 2
+     "medium": 1,
+     "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -8978,45 +9278,87 @@
    "parent_aggregate_node_id": "chinese-6up-u01",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
-    "medium": 0,
+    "easy": 1,
+    "medium": 1,
     "hard": 1,
-    "total": 1
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d15-q03"
+    "chinese-6up-d15-q03",
+    "chinese-6up-d15-q06",
+    "chinese-6up-d15-q07"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
-     "medium": 1,
+     "easy": 0,
+     "medium": 0,
      "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
-     "easy": 2,
-     "medium": 2,
+     "easy": 1,
+     "medium": 1,
      "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9026,45 +9368,87 @@
    "parent_aggregate_node_id": "chinese-6up-u01",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
+    "easy": 1,
     "medium": 1,
-    "hard": 0,
-    "total": 1
+    "hard": 1,
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d15-q02"
+    "chinese-6up-d15-q02",
+    "chinese-6up-d15-q08",
+    "chinese-6up-d15-q09"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
+     "easy": 0,
      "medium": 0,
-     "hard": 1
+     "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
-     "easy": 2,
+     "easy": 1,
      "medium": 1,
-     "hard": 2
+     "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9075,44 +9459,86 @@
    "ability_tag": "语言运用",
    "questions": {
     "easy": 1,
-    "medium": 0,
-    "hard": 0,
-    "total": 1
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d03-q01"
+    "chinese-6up-d03-q01",
+    "chinese-6up-d03-q04",
+    "chinese-6up-d03-q05"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
      "easy": 0,
-     "medium": 1,
-     "hard": 1
+     "medium": 0,
+     "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
      "easy": 1,
-     "medium": 2,
-     "hard": 2
+     "medium": 1,
+     "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9122,28 +9548,74 @@
    "parent_aggregate_node_id": "chinese-6up-u02",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
+    "easy": 1,
     "medium": 1,
     "hard": 1,
-    "total": 2
+    "total": 3
    },
    "question_ids": [
     "chinese-6up-d03-q02",
-    "chinese-6up-d03-q03"
+    "chinese-6up-d03-q03",
+    "chinese-6up-d03-q06"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
+     "easy": 0,
      "medium": 0,
      "hard": 0
     }
@@ -9151,17 +9623,12 @@
    "robust": {
     "ok": false,
     "need": {
-     "easy": 2,
+     "easy": 1,
      "medium": 1,
      "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9171,22 +9638,79 @@
    "parent_aggregate_node_id": "chinese-6up-u02",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d03-q07",
+    "chinese-6up-d03-q08",
+    "chinese-6up-d03-q09"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -9194,20 +9718,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9217,22 +9728,79 @@
    "parent_aggregate_node_id": "chinese-6up-u02",
    "ability_tag": "语言运用",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d04-q01",
+    "chinese-6up-d04-q02",
+    "chinese-6up-d04-q03"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -9240,20 +9808,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9263,22 +9818,79 @@
    "parent_aggregate_node_id": "chinese-6up-u02",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d04-q04",
+    "chinese-6up-d04-q05",
+    "chinese-6up-d04-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -9286,20 +9898,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9309,22 +9908,79 @@
    "parent_aggregate_node_id": "chinese-6up-u02",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d04-q07",
+    "chinese-6up-d04-q08",
+    "chinese-6up-d04-q09"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -9332,20 +9988,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9355,22 +9998,79 @@
    "parent_aggregate_node_id": "chinese-6up-u02",
    "ability_tag": "综合表达",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d04-q10",
+    "chinese-6up-d04-q11",
+    "chinese-6up-d04-q12"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -9378,20 +10078,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9402,44 +10089,86 @@
    "ability_tag": "语言运用",
    "questions": {
     "easy": 1,
-    "medium": 0,
-    "hard": 0,
-    "total": 1
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d16-q01"
+    "chinese-6up-d16-q01",
+    "chinese-6up-d16-q04",
+    "chinese-6up-d16-q05"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
      "easy": 0,
-     "medium": 1,
-     "hard": 1
+     "medium": 0,
+     "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
      "easy": 1,
-     "medium": 2,
-     "hard": 2
+     "medium": 1,
+     "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9449,45 +10178,87 @@
    "parent_aggregate_node_id": "chinese-6up-u02",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
+    "easy": 1,
     "medium": 1,
-    "hard": 0,
-    "total": 1
+    "hard": 1,
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d16-q02"
+    "chinese-6up-d16-q02",
+    "chinese-6up-d16-q06",
+    "chinese-6up-d16-q07"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
+     "easy": 0,
      "medium": 0,
-     "hard": 1
+     "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
-     "easy": 2,
+     "easy": 1,
      "medium": 1,
-     "hard": 2
+     "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9497,45 +10268,87 @@
    "parent_aggregate_node_id": "chinese-6up-u02",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
+    "easy": 1,
+    "medium": 1,
     "hard": 1,
-    "total": 1
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d16-q03"
+    "chinese-6up-d16-q03",
+    "chinese-6up-d16-q08",
+    "chinese-6up-d16-q09"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
-     "medium": 1,
+     "easy": 0,
+     "medium": 0,
      "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
-     "easy": 2,
-     "medium": 2,
+     "easy": 1,
+     "medium": 1,
      "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9545,22 +10358,79 @@
    "parent_aggregate_node_id": "chinese-6up-u03",
    "ability_tag": "语言运用",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d05-q01",
+    "chinese-6up-d05-q02",
+    "chinese-6up-d05-q03"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -9568,20 +10438,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9591,22 +10448,79 @@
    "parent_aggregate_node_id": "chinese-6up-u03",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d05-q04",
+    "chinese-6up-d05-q05",
+    "chinese-6up-d05-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -9614,20 +10528,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9637,22 +10538,79 @@
    "parent_aggregate_node_id": "chinese-6up-u03",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d05-q07",
+    "chinese-6up-d05-q08",
+    "chinese-6up-d05-q09"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -9660,20 +10618,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9684,28 +10629,74 @@
    "ability_tag": "语言运用",
    "questions": {
     "easy": 1,
-    "medium": 0,
+    "medium": 1,
     "hard": 1,
-    "total": 2
+    "total": 3
    },
    "question_ids": [
     "chinese-6up-d17-q01",
-    "chinese-6up-d17-q03"
+    "chinese-6up-d17-q03",
+    "chinese-6up-d17-q04"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
      "easy": 0,
-     "medium": 1,
+     "medium": 0,
      "hard": 0
     }
    },
@@ -9713,16 +10704,11 @@
     "ok": false,
     "need": {
      "easy": 1,
-     "medium": 2,
+     "medium": 1,
      "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9732,22 +10718,79 @@
    "parent_aggregate_node_id": "chinese-6up-u03",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d17-q05",
+    "chinese-6up-d17-q06",
+    "chinese-6up-d17-q07"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -9755,20 +10798,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9778,45 +10808,87 @@
    "parent_aggregate_node_id": "chinese-6up-u03",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
+    "easy": 1,
     "medium": 1,
-    "hard": 0,
-    "total": 1
+    "hard": 1,
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d17-q02"
+    "chinese-6up-d17-q02",
+    "chinese-6up-d17-q08",
+    "chinese-6up-d17-q09"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
+     "easy": 0,
      "medium": 0,
-     "hard": 1
+     "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
-     "easy": 2,
+     "easy": 1,
      "medium": 1,
-     "hard": 2
+     "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9826,22 +10898,79 @@
    "parent_aggregate_node_id": "chinese-6up-u04",
    "ability_tag": "语言运用",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d06-q04",
+    "chinese-6up-d06-q05",
+    "chinese-6up-d06-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -9849,20 +10978,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -9962,22 +11078,79 @@
    "parent_aggregate_node_id": "chinese-6up-u04",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d06-q07",
+    "chinese-6up-d06-q08",
+    "chinese-6up-d06-q09"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -9985,20 +11158,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10008,22 +11168,79 @@
    "parent_aggregate_node_id": "chinese-6up-u04",
    "ability_tag": "语言运用",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d07-q01",
+    "chinese-6up-d07-q02",
+    "chinese-6up-d07-q03"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -10031,20 +11248,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10054,22 +11258,79 @@
    "parent_aggregate_node_id": "chinese-6up-u04",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d07-q04",
+    "chinese-6up-d07-q05",
+    "chinese-6up-d07-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -10077,20 +11338,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10100,22 +11348,79 @@
    "parent_aggregate_node_id": "chinese-6up-u04",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d07-q07",
+    "chinese-6up-d07-q08",
+    "chinese-6up-d07-q09"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -10123,20 +11428,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10146,22 +11438,79 @@
    "parent_aggregate_node_id": "chinese-6up-u04",
    "ability_tag": "语言运用",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d18-q04",
+    "chinese-6up-d18-q05",
+    "chinese-6up-d18-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -10169,20 +11518,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10193,28 +11529,74 @@
    "ability_tag": "阅读理解",
    "questions": {
     "easy": 1,
-    "medium": 0,
+    "medium": 1,
     "hard": 1,
-    "total": 2
+    "total": 3
    },
    "question_ids": [
     "chinese-6up-d18-q01",
-    "chinese-6up-d18-q03"
+    "chinese-6up-d18-q03",
+    "chinese-6up-d18-q07"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
      "easy": 0,
-     "medium": 1,
+     "medium": 0,
      "hard": 0
     }
    },
@@ -10222,16 +11604,11 @@
     "ok": false,
     "need": {
      "easy": 1,
-     "medium": 2,
+     "medium": 1,
      "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10241,45 +11618,87 @@
    "parent_aggregate_node_id": "chinese-6up-u04",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
+    "easy": 1,
     "medium": 1,
-    "hard": 0,
-    "total": 1
+    "hard": 1,
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d18-q02"
+    "chinese-6up-d18-q02",
+    "chinese-6up-d18-q08",
+    "chinese-6up-d18-q09"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
+     "easy": 0,
      "medium": 0,
-     "hard": 1
+     "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
-     "easy": 2,
+     "easy": 1,
      "medium": 1,
-     "hard": 2
+     "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10290,28 +11709,74 @@
    "ability_tag": "阅读理解",
    "questions": {
     "easy": 1,
-    "medium": 0,
+    "medium": 1,
     "hard": 1,
-    "total": 2
+    "total": 3
    },
    "question_ids": [
     "chinese-6up-d22-q01",
-    "chinese-6up-d22-q03"
+    "chinese-6up-d22-q03",
+    "chinese-6up-d22-q04"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
      "easy": 0,
-     "medium": 1,
+     "medium": 0,
      "hard": 0
     }
    },
@@ -10319,16 +11784,11 @@
     "ok": false,
     "need": {
      "easy": 1,
-     "medium": 2,
+     "medium": 1,
      "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10338,45 +11798,87 @@
    "parent_aggregate_node_id": "chinese-6up-u04",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
+    "easy": 1,
     "medium": 1,
-    "hard": 0,
-    "total": 1
+    "hard": 1,
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d22-q02"
+    "chinese-6up-d22-q02",
+    "chinese-6up-d22-q05",
+    "chinese-6up-d22-q06"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
+     "easy": 0,
      "medium": 0,
-     "hard": 1
+     "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
-     "easy": 2,
+     "easy": 1,
      "medium": 1,
-     "hard": 2
+     "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10386,22 +11888,79 @@
    "parent_aggregate_node_id": "chinese-6up-u05",
    "ability_tag": "语言运用",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d08-q01",
+    "chinese-6up-d08-q02",
+    "chinese-6up-d08-q03"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -10409,20 +11968,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10432,22 +11978,79 @@
    "parent_aggregate_node_id": "chinese-6up-u05",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d08-q04",
+    "chinese-6up-d08-q05",
+    "chinese-6up-d08-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -10455,20 +12058,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10478,22 +12068,79 @@
    "parent_aggregate_node_id": "chinese-6up-u05",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d08-q07",
+    "chinese-6up-d08-q08",
+    "chinese-6up-d08-q09"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -10501,20 +12148,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10524,22 +12158,79 @@
    "parent_aggregate_node_id": "chinese-6up-u05",
    "ability_tag": "综合表达",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d08-q10",
+    "chinese-6up-d08-q11",
+    "chinese-6up-d08-q12"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -10547,20 +12238,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10570,22 +12248,79 @@
    "parent_aggregate_node_id": "chinese-6up-u06",
    "ability_tag": "语言运用",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d09-q01",
+    "chinese-6up-d09-q02",
+    "chinese-6up-d09-q03"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -10593,20 +12328,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10616,22 +12338,79 @@
    "parent_aggregate_node_id": "chinese-6up-u06",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d09-q04",
+    "chinese-6up-d09-q05",
+    "chinese-6up-d09-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -10639,20 +12418,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10662,22 +12428,79 @@
    "parent_aggregate_node_id": "chinese-6up-u06",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d09-q07",
+    "chinese-6up-d09-q08",
+    "chinese-6up-d09-q09"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -10685,20 +12508,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10708,22 +12518,79 @@
    "parent_aggregate_node_id": "chinese-6up-u06",
    "ability_tag": "语言运用",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d10-q01",
+    "chinese-6up-d10-q02",
+    "chinese-6up-d10-q03"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -10731,20 +12598,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10754,22 +12608,79 @@
    "parent_aggregate_node_id": "chinese-6up-u06",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d10-q04",
+    "chinese-6up-d10-q05",
+    "chinese-6up-d10-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -10777,20 +12688,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10800,22 +12698,79 @@
    "parent_aggregate_node_id": "chinese-6up-u06",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d10-q07",
+    "chinese-6up-d10-q08",
+    "chinese-6up-d10-q09"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -10823,20 +12778,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10847,44 +12789,86 @@
    "ability_tag": "语言运用",
    "questions": {
     "easy": 1,
-    "medium": 0,
-    "hard": 0,
-    "total": 1
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d19-q01"
+    "chinese-6up-d19-q01",
+    "chinese-6up-d19-q04",
+    "chinese-6up-d19-q05"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
      "easy": 0,
-     "medium": 1,
-     "hard": 1
+     "medium": 0,
+     "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
      "easy": 1,
-     "medium": 2,
-     "hard": 2
+     "medium": 1,
+     "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10894,45 +12878,87 @@
    "parent_aggregate_node_id": "chinese-6up-u06",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
+    "easy": 1,
     "medium": 1,
-    "hard": 0,
-    "total": 1
+    "hard": 1,
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d19-q02"
+    "chinese-6up-d19-q02",
+    "chinese-6up-d19-q06",
+    "chinese-6up-d19-q07"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
+     "easy": 0,
      "medium": 0,
-     "hard": 1
+     "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
-     "easy": 2,
+     "easy": 1,
      "medium": 1,
-     "hard": 2
+     "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10942,45 +12968,87 @@
    "parent_aggregate_node_id": "chinese-6up-u06",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
+    "easy": 1,
+    "medium": 1,
     "hard": 1,
-    "total": 1
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d19-q03"
+    "chinese-6up-d19-q03",
+    "chinese-6up-d19-q08",
+    "chinese-6up-d19-q09"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
-     "medium": 1,
+     "easy": 0,
+     "medium": 0,
      "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
-     "easy": 2,
-     "medium": 2,
+     "easy": 1,
+     "medium": 1,
      "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -10991,140 +13059,266 @@
    "ability_tag": "语言运用",
    "questions": {
     "easy": 1,
-    "medium": 0,
-    "hard": 0,
-    "total": 1
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d11-q01"
+    "chinese-6up-d11-q01",
+    "chinese-6up-d11-q04",
+    "chinese-6up-d11-q05"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
      "easy": 0,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "chinese",
-   "diagnostic_node_id": "chinese-6up-d11",
-   "node_name": "文言实词与文意（两小儿辩日·曹冲称象）",
-   "knowledge_type": "字词基础",
-   "parent_aggregate_node_id": "chinese-6up-u07",
-   "ability_tag": "阅读理解",
-   "questions": {
-    "easy": 0,
-    "medium": 1,
-    "hard": 0,
-    "total": 1
-   },
-   "question_ids": [
-    "chinese-6up-d11-q02"
-   ],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
      "medium": 0,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 1,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "chinese",
-   "diagnostic_node_id": "chinese-6up-d11",
-   "node_name": "文言实词与文意（两小儿辩日·曹冲称象）",
-   "knowledge_type": "字词基础",
-   "parent_aggregate_node_id": "chinese-6up-u07",
-   "ability_tag": "辨析判断",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 1,
-    "total": 1
-   },
-   "question_ids": [
-    "chinese-6up-d11-q03"
-   ],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
      "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
-     "easy": 2,
-     "medium": 2,
+     "easy": 1,
+     "medium": 1,
      "hard": 1
     }
    },
-   "missing_levels": [
+   "missing_levels": []
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d11",
+   "node_name": "文言实词与文意（两小儿辩日·曹冲称象）",
+   "knowledge_type": "字词基础",
+   "parent_aggregate_node_id": "chinese-6up-u07",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   "question_ids": [
+    "chinese-6up-d11-q02",
+    "chinese-6up-d11-q06",
+    "chinese-6up-d11-q07"
+   ],
+   "measured": true,
+   "stages": {
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
+   },
+   "reachable_levels": [
     0,
     1,
     2,
     3
-   ]
+   ],
+   "four_stage": true,
+   "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "missing_levels": []
+  },
+  {
+   "subject": "chinese",
+   "diagnostic_node_id": "chinese-6up-d11",
+   "node_name": "文言实词与文意（两小儿辩日·曹冲称象）",
+   "knowledge_type": "字词基础",
+   "parent_aggregate_node_id": "chinese-6up-u07",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   "question_ids": [
+    "chinese-6up-d11-q03",
+    "chinese-6up-d11-q08",
+    "chinese-6up-d11-q09"
+   ],
+   "measured": true,
+   "stages": {
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
+   },
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
+   "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -11134,22 +13328,79 @@
    "parent_aggregate_node_id": "chinese-6up-u07",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d12-q01",
+    "chinese-6up-d12-q02",
+    "chinese-6up-d12-q03"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -11157,20 +13408,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -11180,22 +13418,79 @@
    "parent_aggregate_node_id": "chinese-6up-u07",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d12-q04",
+    "chinese-6up-d12-q05",
+    "chinese-6up-d12-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -11203,20 +13498,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -11227,28 +13509,74 @@
    "ability_tag": "语言运用",
    "questions": {
     "easy": 1,
-    "medium": 0,
+    "medium": 1,
     "hard": 1,
-    "total": 2
+    "total": 3
    },
    "question_ids": [
     "chinese-6up-d20-q01",
-    "chinese-6up-d20-q03"
+    "chinese-6up-d20-q03",
+    "chinese-6up-d20-q04"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
      "easy": 0,
-     "medium": 1,
+     "medium": 0,
      "hard": 0
     }
    },
@@ -11256,16 +13584,11 @@
     "ok": false,
     "need": {
      "easy": 1,
-     "medium": 2,
+     "medium": 1,
      "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -11275,45 +13598,87 @@
    "parent_aggregate_node_id": "chinese-6up-u07",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
+    "easy": 1,
     "medium": 1,
-    "hard": 0,
-    "total": 1
+    "hard": 1,
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d20-q02"
+    "chinese-6up-d20-q02",
+    "chinese-6up-d20-q05",
+    "chinese-6up-d20-q06"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
+     "easy": 0,
      "medium": 0,
-     "hard": 1
+     "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
-     "easy": 2,
+     "easy": 1,
      "medium": 1,
-     "hard": 2
+     "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -11323,22 +13688,79 @@
    "parent_aggregate_node_id": "chinese-6up-u08",
    "ability_tag": "语言运用",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d13-q01",
+    "chinese-6up-d13-q02",
+    "chinese-6up-d13-q03"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -11346,20 +13768,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -11369,22 +13778,79 @@
    "parent_aggregate_node_id": "chinese-6up-u08",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d13-q04",
+    "chinese-6up-d13-q05",
+    "chinese-6up-d13-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -11392,20 +13858,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -11415,22 +13868,79 @@
    "parent_aggregate_node_id": "chinese-6up-u08",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d13-q07",
+    "chinese-6up-d13-q08",
+    "chinese-6up-d13-q09"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -11438,20 +13948,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -11461,22 +13958,79 @@
    "parent_aggregate_node_id": "chinese-6up-u08",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d14-q01",
+    "chinese-6up-d14-q02",
+    "chinese-6up-d14-q03"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -11484,20 +14038,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -11507,22 +14048,79 @@
    "parent_aggregate_node_id": "chinese-6up-u08",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d14-q04",
+    "chinese-6up-d14-q05",
+    "chinese-6up-d14-q06"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -11530,20 +14128,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -11554,28 +14139,74 @@
    "ability_tag": "语言运用",
    "questions": {
     "easy": 1,
-    "medium": 0,
+    "medium": 1,
     "hard": 1,
-    "total": 2
+    "total": 3
    },
    "question_ids": [
     "chinese-6up-d21-q01",
-    "chinese-6up-d21-q03"
+    "chinese-6up-d21-q03",
+    "chinese-6up-d21-q04"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
      "easy": 0,
-     "medium": 1,
+     "medium": 0,
      "hard": 0
     }
    },
@@ -11583,16 +14214,11 @@
     "ok": false,
     "need": {
      "easy": 1,
-     "medium": 2,
+     "medium": 1,
      "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -11602,22 +14228,79 @@
    "parent_aggregate_node_id": "chinese-6up-u08",
    "ability_tag": "阅读理解",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
-   "question_ids": [],
-   "measured": false,
+   "question_ids": [
+    "chinese-6up-d21-q05",
+    "chinese-6up-d21-q06",
+    "chinese-6up-d21-q07"
+   ],
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
+    "ok": true,
+    "need": {
+     "easy": 0,
+     "medium": 0,
+     "hard": 0
+    }
+   },
+   "robust": {
     "ok": false,
     "need": {
      "easy": 1,
@@ -11625,20 +14308,7 @@
      "hard": 1
     }
    },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "chinese",
@@ -11648,45 +14318,87 @@
    "parent_aggregate_node_id": "chinese-6up-u08",
    "ability_tag": "辨析判断",
    "questions": {
-    "easy": 0,
+    "easy": 1,
     "medium": 1,
-    "hard": 0,
-    "total": 1
+    "hard": 1,
+    "total": 3
    },
    "question_ids": [
-    "chinese-6up-d21-q02"
+    "chinese-6up-d21-q02",
+    "chinese-6up-d21-q08",
+    "chinese-6up-d21-q09"
    ],
-   "measured": false,
+   "measured": true,
    "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
+    "0": {
+     "sample": 3,
+     "rate_x1000": 0,
+     "rate": 0.0,
+     "hard_right": 0,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 0
+     }
+    },
+    "1": {
+     "sample": 3,
+     "rate_x1000": 444,
+     "rate": 0.444,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 0,
+      "hard": 1
+     }
+    },
+    "2": {
+     "sample": 3,
+     "rate_x1000": 778,
+     "rate": 0.778,
+     "hard_right": 1,
+     "correct": {
+      "easy": 0,
+      "medium": 1,
+      "hard": 1
+     }
+    },
+    "3": {
+     "sample": 3,
+     "rate_x1000": 1000,
+     "rate": 1.0,
+     "hard_right": 1,
+     "correct": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1
+     }
+    }
    },
-   "reachable_levels": [],
-   "four_stage": false,
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true,
    "floor": {
-    "ok": false,
+    "ok": true,
     "need": {
-     "easy": 1,
+     "easy": 0,
      "medium": 0,
-     "hard": 1
+     "hard": 0
     }
    },
    "robust": {
     "ok": false,
     "need": {
-     "easy": 2,
+     "easy": 1,
      "medium": 1,
-     "hard": 2
+     "hard": 1
     }
    },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
+   "missing_levels": []
   },
   {
    "subject": "english",
@@ -14269,10 +16981,10 @@
    "node_name": "写景状物类文本的语境词义与情感把握",
    "parent_aggregate_node_id": "chinese-6up-u01",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "reachable_levels": [
     0,
@@ -14288,13 +17000,18 @@
    "node_name": "古诗词的背诵与理解（宿建德江·六月二十七日望湖楼醉书·西江月·夜行黄沙道中）",
    "parent_aggregate_node_id": "chinese-6up-u01",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
-   "reachable_levels": [],
-   "four_stage": false
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "chinese",
@@ -14302,10 +17019,10 @@
    "node_name": "排比、分号的运用与《过故人庄》",
    "parent_aggregate_node_id": "chinese-6up-u01",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "reachable_levels": [
     0,
@@ -14321,10 +17038,10 @@
    "node_name": "革命题材叙事文的场面概括与人物品质",
    "parent_aggregate_node_id": "chinese-6up-u02",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "reachable_levels": [
     0,
@@ -14340,13 +17057,18 @@
    "node_name": "点面结合写法的辨识",
    "parent_aggregate_node_id": "chinese-6up-u02",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 4,
+    "medium": 4,
+    "hard": 4,
+    "total": 12
    },
-   "reachable_levels": [],
-   "four_stage": false
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "chinese",
@@ -14354,10 +17076,10 @@
    "node_name": "爱国名言的积累与“反复”的表达效果",
    "parent_aggregate_node_id": "chinese-6up-u02",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "reachable_levels": [
     0,
@@ -14373,13 +17095,18 @@
    "node_name": "按任务筛选信息与调整阅读速度",
    "parent_aggregate_node_id": "chinese-6up-u03",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
-   "reachable_levels": [],
-   "four_stage": false
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "chinese",
@@ -14387,10 +17114,10 @@
    "node_name": "分条表述与《春日》",
    "parent_aggregate_node_id": "chinese-6up-u03",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "reachable_levels": [
     0,
@@ -14406,10 +17133,10 @@
    "node_name": "小说三要素的识别与分析",
    "parent_aggregate_node_id": "chinese-6up-u04",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "reachable_levels": [
     0,
@@ -14425,13 +17152,18 @@
    "node_name": "环境描写与人物心理的关系",
    "parent_aggregate_node_id": "chinese-6up-u04",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
-   "reachable_levels": [],
-   "four_stage": false
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "chinese",
@@ -14439,10 +17171,10 @@
    "node_name": "小说人物内心的体会",
    "parent_aggregate_node_id": "chinese-6up-u04",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "reachable_levels": [
     0,
@@ -14458,10 +17190,10 @@
    "node_name": "《童年》的人物与情节",
    "parent_aggregate_node_id": "chinese-6up-u04",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    "reachable_levels": [
     0,
@@ -14477,13 +17209,18 @@
    "node_name": "围绕中心意思选取材料",
    "parent_aggregate_node_id": "chinese-6up-u05",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 4,
+    "medium": 4,
+    "hard": 4,
+    "total": 12
    },
-   "reachable_levels": [],
-   "four_stage": false
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "chinese",
@@ -14491,13 +17228,18 @@
    "node_name": "说明性文章的信息提取与观点依据",
    "parent_aggregate_node_id": "chinese-6up-u06",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
-   "reachable_levels": [],
-   "four_stage": false
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "chinese",
@@ -14505,13 +17247,18 @@
    "node_name": "古诗三首的景物与情感（浪淘沙·江南春·书湖阴先生壁）",
    "parent_aggregate_node_id": "chinese-6up-u06",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
-   "reachable_levels": [],
-   "four_stage": false
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "chinese",
@@ -14519,10 +17266,10 @@
    "node_name": "抓关键句与传统文化常识",
    "parent_aggregate_node_id": "chinese-6up-u06",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "reachable_levels": [
     0,
@@ -14538,10 +17285,10 @@
    "node_name": "文言实词与文意（两小儿辩日·曹冲称象）",
    "parent_aggregate_node_id": "chinese-6up-u07",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "reachable_levels": [
     0,
@@ -14557,13 +17304,18 @@
    "node_name": "科学类文本的想象与推理",
    "parent_aggregate_node_id": "chinese-6up-u07",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
-   "reachable_levels": [],
-   "four_stage": false
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "chinese",
@@ -14571,10 +17323,10 @@
    "node_name": "文言句子的朗读停顿",
    "parent_aggregate_node_id": "chinese-6up-u07",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
    "reachable_levels": [
     0,
@@ -14590,13 +17342,18 @@
    "node_name": "鲁迅作品的人物形象与时代背景",
    "parent_aggregate_node_id": "chinese-6up-u08",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
-   "reachable_levels": [],
-   "four_stage": false
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "chinese",
@@ -14604,13 +17361,18 @@
    "node_name": "借助资料理解课文",
    "parent_aggregate_node_id": "chinese-6up-u08",
    "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
    },
-   "reachable_levels": [],
-   "four_stage": false
+   "reachable_levels": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "four_stage": true
   },
   {
    "subject": "chinese",
@@ -14618,10 +17380,10 @@
    "node_name": "鲁迅名言的积累与用法",
    "parent_aggregate_node_id": "chinese-6up-u08",
    "questions": {
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
+    "easy": 3,
+    "medium": 3,
+    "hard": 3,
+    "total": 9
    },
    "reachable_levels": [
     0,
@@ -15187,18 +17949,18 @@
  "generated_from": {
   "diagnostic_nodes": 63,
   "aggregate_nodes": 27,
-  "questions": 340
+  "questions": 496
  },
  "summary": {
   "all": {
    "cells": 205,
-   "no_question": 69,
-   "measured": 97,
-   "floor_ok": 97,
+   "no_question": 33,
+   "measured": 160,
+   "floor_ok": 160,
    "robust_ok": 0,
-   "p0": 108,
+   "p0": 45,
    "p1": 0,
-   "p2": 97
+   "p2": 160
   },
   "by_subject": {
    "math": {
@@ -15213,13 +17975,13 @@
    },
    "chinese": {
     "cells": 64,
-    "no_question": 36,
-    "measured": 1,
-    "floor_ok": 1,
+    "no_question": 0,
+    "measured": 64,
+    "floor_ok": 64,
     "robust_ok": 0,
-    "p0": 63,
+    "p0": 0,
     "p1": 0,
-    "p2": 1
+    "p2": 64
    },
    "english": {
     "cells": 45,
@@ -15249,573 +18011,6 @@
  "floor_topup": {
   "rows": [
    {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d01",
-    "ability_tag": "语言运用",
-    "easy": 0,
-    "medium": 1,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d01",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 0,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d01",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 0,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d02",
-    "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d02",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d02",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d15",
-    "ability_tag": "语言运用",
-    "easy": 0,
-    "medium": 1,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d15",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 0,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d15",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 0,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d03",
-    "ability_tag": "语言运用",
-    "easy": 0,
-    "medium": 1,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d03",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 0,
-    "hard": 0,
-    "total": 1
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d03",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d04",
-    "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d04",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d04",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d04",
-    "ability_tag": "综合表达",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d16",
-    "ability_tag": "语言运用",
-    "easy": 0,
-    "medium": 1,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d16",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 0,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d16",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 0,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d05",
-    "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d05",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d05",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d17",
-    "ability_tag": "语言运用",
-    "easy": 0,
-    "medium": 1,
-    "hard": 0,
-    "total": 1
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d17",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d17",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 0,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d06",
-    "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d06",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d07",
-    "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d07",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d07",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d18",
-    "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d18",
-    "ability_tag": "阅读理解",
-    "easy": 0,
-    "medium": 1,
-    "hard": 0,
-    "total": 1
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d18",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 0,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d22",
-    "ability_tag": "阅读理解",
-    "easy": 0,
-    "medium": 1,
-    "hard": 0,
-    "total": 1
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d22",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 0,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d08",
-    "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d08",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d08",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d08",
-    "ability_tag": "综合表达",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d09",
-    "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d09",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d09",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d10",
-    "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d10",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d10",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d19",
-    "ability_tag": "语言运用",
-    "easy": 0,
-    "medium": 1,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d19",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 0,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d19",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 0,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d11",
-    "ability_tag": "语言运用",
-    "easy": 0,
-    "medium": 1,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d11",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 0,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d11",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 0,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d12",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d12",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d20",
-    "ability_tag": "语言运用",
-    "easy": 0,
-    "medium": 1,
-    "hard": 0,
-    "total": 1
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d20",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 0,
-    "hard": 1,
-    "total": 2
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d13",
-    "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d13",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d13",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d14",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d14",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d21",
-    "ability_tag": "语言运用",
-    "easy": 0,
-    "medium": 1,
-    "hard": 0,
-    "total": 1
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d21",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d21",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 0,
-    "hard": 1,
-    "total": 2
-   },
-   {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d01",
     "ability_tag": "语言运用",
@@ -16221,16 +18416,16 @@
     "total": 3
    }
   ],
-  "total": 275,
+  "total": 119,
   "by_subject": {
    "math": 0,
-   "chinese": 156,
+   "chinese": 0,
    "english": 119
   },
   "by_difficulty": {
-   "easy": 91,
-   "medium": 91,
-   "hard": 93
+   "easy": 39,
+   "medium": 39,
+   "hard": 41
   }
  },
  "robust_topup": {
@@ -17104,234 +19299,234 @@
     "diagnostic_node_id": "chinese-6up-d01",
     "ability_tag": "语言运用",
     "easy": 1,
-    "medium": 2,
-    "hard": 2,
-    "total": 5
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d01",
     "ability_tag": "阅读理解",
-    "easy": 2,
+    "easy": 1,
     "medium": 1,
-    "hard": 2,
-    "total": 5
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d01",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
+    "easy": 1,
+    "medium": 1,
     "hard": 1,
-    "total": 5
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d02",
     "ability_tag": "语言运用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d02",
     "ability_tag": "阅读理解",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d02",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d15",
     "ability_tag": "语言运用",
     "easy": 1,
-    "medium": 2,
-    "hard": 2,
-    "total": 5
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d15",
     "ability_tag": "阅读理解",
-    "easy": 2,
-    "medium": 2,
+    "easy": 1,
+    "medium": 1,
     "hard": 1,
-    "total": 5
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d15",
     "ability_tag": "辨析判断",
-    "easy": 2,
+    "easy": 1,
     "medium": 1,
-    "hard": 2,
-    "total": 5
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d03",
     "ability_tag": "语言运用",
     "easy": 1,
-    "medium": 2,
-    "hard": 2,
-    "total": 5
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d03",
     "ability_tag": "阅读理解",
-    "easy": 2,
+    "easy": 1,
     "medium": 1,
     "hard": 1,
-    "total": 4
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d03",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d04",
     "ability_tag": "语言运用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d04",
     "ability_tag": "阅读理解",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d04",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d04",
     "ability_tag": "综合表达",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d16",
     "ability_tag": "语言运用",
     "easy": 1,
-    "medium": 2,
-    "hard": 2,
-    "total": 5
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d16",
     "ability_tag": "阅读理解",
-    "easy": 2,
+    "easy": 1,
     "medium": 1,
-    "hard": 2,
-    "total": 5
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d16",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
+    "easy": 1,
+    "medium": 1,
     "hard": 1,
-    "total": 5
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d05",
     "ability_tag": "语言运用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d05",
     "ability_tag": "阅读理解",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d05",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d17",
     "ability_tag": "语言运用",
     "easy": 1,
-    "medium": 2,
+    "medium": 1,
     "hard": 1,
-    "total": 4
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d17",
     "ability_tag": "阅读理解",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d17",
     "ability_tag": "辨析判断",
-    "easy": 2,
+    "easy": 1,
     "medium": 1,
-    "hard": 2,
-    "total": 5
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d06",
     "ability_tag": "语言运用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
@@ -17346,334 +19541,334 @@
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d06",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d07",
     "ability_tag": "语言运用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d07",
     "ability_tag": "阅读理解",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d07",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d18",
     "ability_tag": "语言运用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d18",
     "ability_tag": "阅读理解",
     "easy": 1,
-    "medium": 2,
+    "medium": 1,
     "hard": 1,
-    "total": 4
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d18",
     "ability_tag": "辨析判断",
-    "easy": 2,
+    "easy": 1,
     "medium": 1,
-    "hard": 2,
-    "total": 5
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d22",
     "ability_tag": "阅读理解",
     "easy": 1,
-    "medium": 2,
+    "medium": 1,
     "hard": 1,
-    "total": 4
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d22",
     "ability_tag": "辨析判断",
-    "easy": 2,
+    "easy": 1,
     "medium": 1,
-    "hard": 2,
-    "total": 5
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d08",
     "ability_tag": "语言运用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d08",
     "ability_tag": "阅读理解",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d08",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d08",
     "ability_tag": "综合表达",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d09",
     "ability_tag": "语言运用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d09",
     "ability_tag": "阅读理解",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d09",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d10",
     "ability_tag": "语言运用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d10",
     "ability_tag": "阅读理解",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d10",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d19",
     "ability_tag": "语言运用",
     "easy": 1,
-    "medium": 2,
-    "hard": 2,
-    "total": 5
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d19",
     "ability_tag": "阅读理解",
-    "easy": 2,
+    "easy": 1,
     "medium": 1,
-    "hard": 2,
-    "total": 5
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d19",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
+    "easy": 1,
+    "medium": 1,
     "hard": 1,
-    "total": 5
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d11",
     "ability_tag": "语言运用",
     "easy": 1,
-    "medium": 2,
-    "hard": 2,
-    "total": 5
-   },
-   {
-    "subject": "chinese",
-    "diagnostic_node_id": "chinese-6up-d11",
-    "ability_tag": "阅读理解",
-    "easy": 2,
     "medium": 1,
-    "hard": 2,
-    "total": 5
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "chinese",
+    "diagnostic_node_id": "chinese-6up-d11",
+    "ability_tag": "阅读理解",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d11",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
+    "easy": 1,
+    "medium": 1,
     "hard": 1,
-    "total": 5
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d12",
     "ability_tag": "阅读理解",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d12",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d20",
     "ability_tag": "语言运用",
     "easy": 1,
-    "medium": 2,
+    "medium": 1,
     "hard": 1,
-    "total": 4
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d20",
     "ability_tag": "辨析判断",
-    "easy": 2,
+    "easy": 1,
     "medium": 1,
-    "hard": 2,
-    "total": 5
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d13",
     "ability_tag": "语言运用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d13",
     "ability_tag": "阅读理解",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d13",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d14",
     "ability_tag": "阅读理解",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d14",
     "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d21",
     "ability_tag": "语言运用",
     "easy": 1,
-    "medium": 2,
+    "medium": 1,
     "hard": 1,
-    "total": 4
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d21",
     "ability_tag": "阅读理解",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "chinese",
     "diagnostic_node_id": "chinese-6up-d21",
     "ability_tag": "辨析判断",
-    "easy": 2,
+    "easy": 1,
     "medium": 1,
-    "hard": 2,
-    "total": 5
+    "hard": 1,
+    "total": 3
    },
    {
     "subject": "english",
@@ -18081,16 +20276,16 @@
     "total": 6
    }
   ],
-  "total": 890,
+  "total": 734,
   "by_subject": {
    "math": 288,
-   "chinese": 348,
+   "chinese": 192,
    "english": 254
   },
   "by_difficulty": {
-   "easy": 296,
-   "medium": 296,
-   "hard": 298
+   "easy": 244,
+   "medium": 244,
+   "hard": 246
   }
  }
 }
