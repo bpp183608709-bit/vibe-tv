@@ -24,6 +24,9 @@ KE = Path(__file__).resolve().parent.parent
 SCRIPTS = KE / "scripts"
 ABILITIES = ("理解意义", "执行计算", "情境应用", "辨析变式")
 
+sys.path.insert(0, str(SCRIPTS))
+import check_coverage_matrix as ccm  # noqa: E402
+
 
 @pytest.fixture
 def workdir():
@@ -147,4 +150,8 @@ def test_one_of_each_difficulty_meets_the_floor_but_not_robust(workdir):
         assert cell["stages"]["3"]["rate_x1000"] > 800
         assert cell["stages"]["0"]["rate_x1000"] < 400
     assert report["floor_topup"]["total"] == 0
-    assert report["robust_topup"]["total"] == 8 * 3
+    # From one of each to robust. Read the target from the constant: this assertion was `8 * 3` when
+    # 稳健档 meant 2/2/2, and stayed 3 after the target moved to 3/3/3 (D9=B) — a stale number here
+    # would let the report under-count by half without any test going red.
+    per_cell = sum(ccm.ROBUST.values()) - len(ccm.ROBUST)
+    assert report["robust_topup"]["total"] == 8 * per_cell

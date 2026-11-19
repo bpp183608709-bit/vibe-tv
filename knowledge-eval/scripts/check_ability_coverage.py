@@ -32,7 +32,10 @@ import keval  # noqa: E402
 
 DIFFICULTY_WORDS = ("易", "中", "难")
 FLOOR = 1
-ROBUST = 2
+#: Per difficulty, per cell. Three, not two: D9=B. `ccm.ROBUST` is the same decision on the report
+#: side, and `check_content.MAX_PER_CELL` is it seen from the ceiling — all three must agree or the
+#: gate will call a cell finished that the writer was told to take to nine.
+ROBUST = 3
 
 #: Why a cell is not ready, in the order worth fixing: nothing at all, then a missing difficulty.
 def verdict(cell: dict) -> str:

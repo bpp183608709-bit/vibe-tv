@@ -50,9 +50,13 @@ def lines_of(node: dict) -> tuple[str, ...]:
 
 DIFFICULTIES = (("easy", "易", 1), ("medium", "中", 2), ("hard", "难", 3))
 
-#: 最低档: one of each difficulty; 稳健档: two of each, so a pack has something to rotate.
+#: 最低档: one of each difficulty — the four stages can be constructed.
+#: 稳健档: three of each (D9=B). Two was the old target and it was too thin to judge by: the mastery
+#: window is ten answers per line, so six questions fill 60% of it and the standard error of a 6-sample
+#: accuracy is 0.20 — exactly one band. Nine fills 90%, and the L1/L2 boundary (the weak / not-weak
+#: line) stops moving on noise. `check_content.MAX_PER_CELL` is the same 9 seen from the ceiling side.
 FLOOR = {"easy": 1, "medium": 1, "hard": 1}
-ROBUST = {"easy": 2, "medium": 2, "hard": 2}
+ROBUST = {"easy": 3, "medium": 3, "hard": 3}
 
 STAGE_WORDS = ("0-未掌握", "1-基础", "2-熟练", "3-拓展")
 
