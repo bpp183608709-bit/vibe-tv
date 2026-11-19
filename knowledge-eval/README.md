@@ -13,7 +13,7 @@
 ```bash
 # 1) 原始数据直接过 schema（没有翻译层）
 python knowledge-eval/scripts/check_schema.py
-# → schema: 90 nodes, 606 questions checked against knowledge-eval/schemas
+# → schema: 90 nodes, 615 questions checked against knowledge-eval/schemas
 # → schema: ok
 
 # 2) 双向内容校验：快照 30 个微观点 vs 节点引用
@@ -30,8 +30,8 @@ python knowledge-eval/scripts/check_outline_coverage.py
 
 # 4) 逐格齐备：每个（节点 × 声明的能力线）格子能不能构出四个阶段
 python knowledge-eval/scripts/check_ability_coverage.py
-# → cells 205: 39 floor, 0 robust, 48 partial, 118 missing
-# → top-up to floor: 440 questions
+# → cells 205: 205 floor, 0 robust, 0 partial, 0 missing
+# → top-up to floor: 0 questions（最低档已齐；稳健档每格 2/2/2 另计）
 python knowledge-eval/scripts/check_ability_coverage.py --strict   # 同上，但不齐就退出 1
 
 # 5) 负样本：把引用删掉/加错，校验必须失败（不含规格测试）
@@ -53,7 +53,7 @@ python knowledge-eval/scripts/check_db_parity.py --content
 
 # 8) 数据库导出与仓库文件逐字段比对
 python knowledge-eval/scripts/export_from_db.py --check
-# → export: ok — 34 nodes, 30 nodes, 26 nodes; 288 questions, 192 questions, 126 questions
+# → export: ok — 34 nodes, 30 nodes, 26 nodes; 288 questions, 192 questions, 135 questions
 ```
 
 全部命令的预期输出与失败样例见 [docs/verification.md](docs/verification.md)；逐条修复证据见 [docs/fix-evidence-2026-11-19.md](docs/fix-evidence-2026-11-19.md)。

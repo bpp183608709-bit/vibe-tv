@@ -2776,6 +2776,204 @@
     "给建议"
    ],
    "question_id": "english-6up-d17-q12"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "The Spring Festival is the ___ festival in China.（用 big 的正确形式填空）",
+   "options": [
+    "bigger",
+    "big",
+    "most big",
+    "biggest"
+   ],
+   "correct_answer": "D",
+   "explanation": "三者以上相比用最高级；big 是重读闭音节，双写 g 再加 -est：biggest。前面已经有 the，后面不能再加 most。",
+   "tags": [
+    "形容词最高级",
+    "节日习俗"
+   ],
+   "question_id": "english-6up-d15-q01"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "Which festival is ___ in China, the Spring Festival or the Mid-Autumn Festival?（用 important 的正确形式填空）",
+   "options": [
+    "the most important",
+    "important",
+    "more important",
+    "most important"
+   ],
+   "correct_answer": "C",
+   "explanation": "两者相比用比较级 more important，不用最高级。句子里用 or 列出两个节日，说明只在两者之间比。",
+   "tags": [
+    "形容词最高级",
+    "两者比较"
+   ],
+   "question_id": "english-6up-d15-q02"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "The Spring Festival is ___ festival in China, and it is also ___ than the Mid-Autumn Festival.（用 important 的正确形式填空）",
+   "options": [
+    "the most important; the most important",
+    "more important; more important",
+    "the most important; most important",
+    "the most important; more important"
+   ],
+   "correct_answer": "D",
+   "explanation": "前半句说“全国最重要的”，三者以上用最高级 the most important；后半句有 than，两者比较用比较级 more important。同一句里两种形式各管一处。",
+   "tags": [
+    "形容词最高级",
+    "两者比较"
+   ],
+   "question_id": "english-6up-d15-q03"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句用了最高级（  ）",
+   "options": [
+    "The Spring Festival is the most important festival in China.",
+    "The Spring Festival is more important than the Mid-Autumn Festival.",
+    "Families get together at the Spring Festival.",
+    "People eat dumplings at the Spring Festival."
+   ],
+   "correct_answer": "A",
+   "explanation": "the most important 是最高级，表示“最重要的”。more important than 是比较级，后两句只讲习俗，没有比较。",
+   "tags": [
+    "形容词最高级",
+    "形式判断"
+   ],
+   "question_id": "english-6up-d15-q04"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中最高级用错了（  ）",
+   "options": [
+    "It is the best time to visit my grandma.",
+    "This is the most big festival in China.",
+    "This is the most popular festival in China.",
+    "This is the busiest day of the year."
+   ],
+   "correct_answer": "B",
+   "explanation": "big 是单音节词，最高级是 biggest，不能用 most big。popular 是多音节词才加 most，busy 变 y 为 i 加 -est，good 的最高级是不规则的 best。",
+   "tags": [
+    "形容词最高级",
+    "改错"
+   ],
+   "question_id": "english-6up-d15-q05"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句中三个最高级的形式都用对了（  ）",
+   "options": [
+    "It is the biggest festival. / the busiest day. / the most popular one.",
+    "It is the biggest festival. / the busiest day. / the most popularest one.",
+    "It is the bigest festival. / the busiest day. / the most popular one.",
+    "It is the biggest festival. / the busyest day. / the most popular one."
+   ],
+   "correct_answer": "A",
+   "explanation": "三条规则各管一类词：big 双写 g 加 -est，busy 变 y 为 i 加 -est，popular 多音节前加 most。有一处写错，整组就不对。",
+   "tags": [
+    "形容词最高级",
+    "改错"
+   ],
+   "question_id": "english-6up-d15-q06"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“At the Spring Festival, families get together and eat dumplings. Children get red packets.” 春节时孩子们会得到（  ）",
+   "options": [
+    "火鸡",
+    "红包",
+    "月饼",
+    "圣诞礼物"
+   ],
+   "correct_answer": "B",
+   "explanation": "red packets 就是红包，这是春节的习俗。月饼是中秋节的，圣诞礼物和火鸡是圣诞节的。",
+   "tags": [
+    "节日习俗",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d15-q07"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“Christmas is the most popular festival in many Western countries.” 从句子看，圣诞节（  ）",
+   "options": [
+    "在很多西方国家是最受欢迎的节日",
+    "在中国是最重要的节日",
+    "那天孩子们要上学",
+    "那天家人不在一起吃饭"
+   ],
+   "correct_answer": "A",
+   "explanation": "the most popular festival in many Western countries 说的是“在很多西方国家最受欢迎”。在中国最重要的节日是春节，两个国家不要混。",
+   "tags": [
+    "形容词最高级",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d15-q08"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“Both are important. But for Chinese families, the Spring Festival is the most important.” 从句子可以知道（  ）",
+   "options": [
+    "两个节日一样重要",
+    "中国家庭从不过圣诞节",
+    "对中国家庭来说春节最重要",
+    "圣诞节比春节更重要"
+   ],
+   "correct_answer": "C",
+   "explanation": "Both are important 说的是两个都重要，but 之后才给结论：对中国家庭来说春节最重要（the most important）。",
+   "tags": [
+    "形容词最高级",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d15-q09"
   }
  ]
 }
