@@ -1789,6 +1789,138 @@
    ]
   },
   {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "We ___ use both sides of the paper, and we ___ throw the bottles away.（选择正确形式）",
+   "options": [
+    "should; shouldn't",
+    "shouldn't; should",
+    "should; should",
+    "shouldn't; shouldn't"
+   ],
+   "correct_answer": "A",
+   "explanation": "两个空一条建议一条禁止：纸要两面用（should），瓶子不能乱扔（shouldn't）。and 连接的是并列的两条建议，方向相反。",
+   "tags": [
+    "情态动词 should",
+    "3R 环保表达"
+   ],
+   "question_id": "english-6up-d12-q04"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句是在给别人提建议（  ）",
+   "options": [
+    "You should drink more water.",
+    "I can swim very well.",
+    "He is a doctor.",
+    "They will go to the park."
+   ],
+   "correct_answer": "A",
+   "explanation": "should 用来提建议：你应该多喝水。can 说能力，is 说身份，will 说将来，都不是建议。",
+   "tags": [
+    "情态动词 should",
+    "句子作用"
+   ],
+   "question_id": "english-6up-d12-q05"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 should 后面用错了（  ）",
+   "options": [
+    "We should plant more trees.",
+    "We should save water.",
+    "We should use a bag when we shop.",
+    "We should to plant more trees."
+   ],
+   "correct_answer": "D",
+   "explanation": "should 后面直接跟动词原形，不接 to：should plant。should 和 can 一样，后面一律用原形。",
+   "tags": [
+    "情态动词 should",
+    "改错"
+   ],
+   "question_id": "english-6up-d12-q06"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“We shouldn't waste water. We should turn off the tap after washing our hands.” 从句子看，洗完手应该（  ）",
+   "options": [
+    "把水倒掉",
+    "再多用一些水",
+    "关掉水龙头",
+    "一直开着水"
+   ],
+   "correct_answer": "C",
+   "explanation": "turn off the tap 就是关水龙头，这是句子给的具体建议。shouldn't waste water 是总的原则。",
+   "tags": [
+    "情态动词 should",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d12-q07"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“Use both sides of the paper. Don't throw old books away. Give them to younger children.” 这段话主要说的是（  ）",
+   "options": [
+    "怎样在纸上画画",
+    "怎样打扫教室",
+    "怎样节约用纸、让旧书再用",
+    "怎样买新书"
+   ],
+   "correct_answer": "C",
+   "explanation": "三句说的是一件事的三个做法：纸用两面、旧书别扔、送给更小的孩子。合起来就是节约用纸、让书再用一次。",
+   "tags": [
+    "3R 环保表达",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d12-q08"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“It is not easy to save water. We should start with small things. Turning off the tap is a good start.” 从句子可以知道（  ）",
+   "options": [
+    "只有大人才需要节约用水",
+    "节约用水可以从关水龙头这样的小事做起",
+    "关水龙头没有用",
+    "节约用水很容易，不用做什么"
+   ],
+   "correct_answer": "B",
+   "explanation": "start with small things 和 a good start 都说从小事做起；前半句 not easy 说的是不容易，不是做不到。",
+   "tags": [
+    "情态动词 should",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d12-q09"
+  },
+  {
    "question_id": "english-6up-d13-q01",
    "diagnostic_node_id": "english-6up-d13",
    "subject": "english",
@@ -1852,6 +1984,270 @@
     "形容词比较级",
     "多音节词"
    ]
+  },
+  {
+   "diagnostic_node_id": "english-6up-d13",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "hot 和 easy 的比较级分别是（  ）",
+   "options": [
+    "hotter; easier",
+    "hoter; easier",
+    "hotter; easyer",
+    "hotest; easier"
+   ],
+   "correct_answer": "A",
+   "explanation": "hot 是重读闭音节、末尾只有一个辅音字母，双写 t 再加 -er：hotter；easy 以“辅音字母 + y”结尾，变 y 为 i 再加 -er：easier。两种规则不一样。",
+   "tags": [
+    "形容词比较级",
+    "双写辅音"
+   ],
+   "question_id": "english-6up-d13-q04"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d13",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪个比较级写对了（  ）",
+   "options": [
+    "more tall",
+    "taller",
+    "tallor",
+    "talller"
+   ],
+   "correct_answer": "B",
+   "explanation": "tall 直接加 -er：taller。tallor 拼错，talller 多了一个 l（只有重读闭音节才双写），more tall 是多余——单音节词不加 more。",
+   "tags": [
+    "形容词比较级",
+    "-er 形式"
+   ],
+   "question_id": "english-6up-d13-q05"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d13",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中形容词的 -er 形式写错了（  ）",
+   "options": [
+    "This bag is heavyer than that one.",
+    "This bag is heavier than that one.",
+    "My hair is longer than yours.",
+    "This box is bigger than that one."
+   ],
+   "correct_answer": "A",
+   "explanation": "heavy 以“辅音字母 + y”结尾，要变 y 为 i 再加 -er：heavier。heavy 不能直接加 -er。",
+   "tags": [
+    "形容词比较级",
+    "-er 形式"
+   ],
+   "question_id": "english-6up-d13-q06"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "My brother is ___ than me.（用 tall 的正确形式填空）",
+   "options": [
+    "more tall",
+    "taller",
+    "tall",
+    "tallest"
+   ],
+   "correct_answer": "B",
+   "explanation": "有 than 表示两个人比高矮，用比较级 taller。tall 是原级，tallest 是最高级（三者以上才用）。",
+   "tags": [
+    "比较级句型 than",
+    "两者比较"
+   ],
+   "question_id": "english-6up-d14-q01"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "The Yangtze River is ___ than the Yellow River.（用 long 的正确形式填空）",
+   "options": [
+    "long",
+    "longest",
+    "more longer",
+    "longer"
+   ],
+   "correct_answer": "D",
+   "explanation": "两条河相比，用比较级 longer。more longer 是重复——long 已经加了 -er，前面不能再加 more。",
+   "tags": [
+    "比较级句型 than",
+    "两者比较"
+   ],
+   "question_id": "english-6up-d14-q02"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "This box is ___ and ___ than that one.（用 heavy, big 的正确形式填空）",
+   "options": [
+    "more heavy; more big",
+    "heavier; bigger",
+    "heavyer; bigger",
+    "heavier; biger"
+   ],
+   "correct_answer": "B",
+   "explanation": "一个 than 同时带两个比较级：heavy 变 y 为 i 加 -er，big 双写 g 加 -er。两处规则不同，不能只改对一个。",
+   "tags": [
+    "比较级句型 than",
+    "形容词比较级"
+   ],
+   "question_id": "english-6up-d14-q03"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句的比较级句型是完整的（  ）",
+   "options": [
+    "Tom is more tall than Jim.",
+    "Tom taller than Jim.",
+    "Tom is taller than Jim.",
+    "Tom is taller Jim."
+   ],
+   "correct_answer": "C",
+   "explanation": "比较级句型是「甲 is + 比较级 + than + 乙」，三样都不能少：taller、than、Jim。少 than 或漏 is 都不成句。",
+   "tags": [
+    "比较级句型 than",
+    "改错"
+   ],
+   "question_id": "english-6up-d14-q04"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中比较级用错了（  ）",
+   "options": [
+    "This apple is bigger than that one.",
+    "He runs faster than me.",
+    "My hair is more long than yours.",
+    "My hair is longer than yours."
+   ],
+   "correct_answer": "C",
+   "explanation": "long 是单音节词，比较级加 -er：longer，不加 more。more 只用于 interesting、beautiful 这类多音节词。",
+   "tags": [
+    "比较级句型 than",
+    "改错"
+   ],
+   "question_id": "english-6up-d14-q05"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句中两个比较级都用对了（  ）",
+   "options": [
+    "This box is bigger and heavyer than that one.",
+    "This box is more big and heavier than that one.",
+    "This box is biggest and heavier than that one.",
+    "This box is bigger and heavier than that one."
+   ],
+   "correct_answer": "D",
+   "explanation": "big 双写 g 加 -er，heavy 变 y 为 i 加 -er，两个都要对。其余三句各有一处错：heavyer、more big、biggest（最高级）。",
+   "tags": [
+    "形容词比较级",
+    "比较级句型 than"
+   ],
+   "question_id": "english-6up-d14-q06"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“The blue bird is bigger than the yellow one. It is also more beautiful.” 蓝色的鸟比黄色的鸟（  ）",
+   "options": [
+    "一样大，也一样好看",
+    "更大，也更好看",
+    "更小，也更好看",
+    "更大，但更难看"
+   ],
+   "correct_answer": "B",
+   "explanation": "bigger 是更大，more beautiful 是更好看，also 说明两个优点都有。",
+   "tags": [
+    "比较级句型 than",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d14-q07"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“Tom is 12 and Jim is 10. Tom is taller, but Jim runs faster.” 从句子看（  ）",
+   "options": [
+    "汤姆更高，也跑得更快",
+    "吉姆更高，跑得也更快",
+    "两个人一样高",
+    "汤姆更高，吉姆跑得更快"
+   ],
+   "correct_answer": "D",
+   "explanation": "but 表示转折：身高上汤姆占优，跑步上吉姆占优。taller 和 faster 分属两个人，不要都算到一个人头上。",
+   "tags": [
+    "比较级句型 than",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d14-q08"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“My old bike is small. The new one is bigger, but it is heavier, so I ride it more slowly.” 从句子可以知道（  ）",
+   "options": [
+    "新车更大更重，骑起来更慢",
+    "新车更小更轻",
+    "新车骑得更快",
+    "两辆车一样重"
+   ],
+   "correct_answer": "A",
+   "explanation": "bigger、heavier 说的是新车，so 引出结果：骑得更慢（more slowly）。三个比较级连成一条因果链。",
+   "tags": [
+    "比较级句型 than",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d14-q09"
   },
   {
    "question_id": "english-6up-d16-q01",

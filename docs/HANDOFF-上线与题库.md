@@ -256,12 +256,12 @@ DELETE FROM unit WHERE code = 'math-6up-u09';
 
 （本次同时改了 `import_curriculum` 的残留检测：原来按 `ordinal` 比对，节点删除后序号被别人占用就静默放过；现在按 `code` 比对，缺节点会打印 `still in the database but gone from the file`，不再无声无息。）
 
-验收（数字来自 `check_schema.py` 当前打印的 90 nodes / 568 questions；每科题库补完后更新）：
+验收（数字来自 `check_schema.py` 当前打印的 90 nodes / 586 questions；每科题库补完后更新）：
 
 ```sql
 SELECT COUNT(*) FROM unit;      -- 期望 27（数学 9 + 语文 8 + 英语 10）
 SELECT COUNT(*) FROM topic;     -- 期望 63（数学 25 + 语文 22 + 英语 16）
-SELECT COUNT(*) FROM question;  -- 期望 568（数学 288 + 语文 192 + 英语 88）
+SELECT COUNT(*) FROM question;  -- 期望 586（数学 288 + 语文 192 + 英语 106）
 SELECT COUNT(*) FROM ability_mastery;  -- 有作答才有行；空库为 0，不是错
 SELECT name_zh FROM unit WHERE code='english-6up-u09';  -- 期望 I don't feel well
 SELECT name_zh FROM unit WHERE code='math-6up-u04';     -- 期望 生活中的负数（这一行是被改写的，不是新建的）
