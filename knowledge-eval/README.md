@@ -96,6 +96,8 @@ python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_fou
 
 课本目录已固化成 `data/outline_<subject>_6up.json`（三层：单元 / 课文标题 / 板块名），`scripts/check_outline_coverage.py` 做双向差集，另加三条：单元名逐字一致、题目引用的篇名必须是课本里的、退役篇名不得复活。这一节从此可回归——限定条件与未覆盖的边界见该文档 §6 与 `docs/verification.md` §3。
 
+写题的硬约束汇总在 [docs/question-rules-2026-11-20.md](docs/question-rules-2026-11-20.md)：门禁能拦的 20 余条列在 §1（跑脚本即可），真正要背的是 §2 那十条——M1–E6 十六批里的返工全部发生在门禁看不见的地方。
+
 ---
 
 ## 2. 目录
@@ -149,7 +151,8 @@ knowledge-eval/
     ├── verification.md         每条命令的预期输出与负样本
     ├── fix-evidence-2026-11-19.md   逐条修复证据表
     ├── coverage-audit-2026-11-19.md 题库四阶段覆盖审查（0/220）与补题清单
-    └── textbook-coverage-2026-11-19.md 三科课本结构逐条对照与执行记录
+    ├── textbook-coverage-2026-11-19.md 三科课本结构逐条对照与执行记录
+    └── question-rules-2026-11-20.md 生题硬约束（16 批的踩坑汇总，写题前必读）
 ```
 
 ---
