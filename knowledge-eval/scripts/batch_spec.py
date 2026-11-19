@@ -198,6 +198,13 @@ def validate(line: dict, index: int, node: dict | None, seen_stems: dict[str, st
         errors.append(f"{where}: `c` is maths-only; nothing here can evaluate it")
 
     question["explanation"] = str(line["e"]).strip()
+    # 语文和英语的解析里不许用 A/B/C/D 指代选项：这批题的目的就是把答案从 B 上挪开，选项一动，
+    # 解析里的字母就指到别的选项上去了，而且文件里看不出任何异常。改写时引用选项原文。
+    if subject != "math":
+        refs = check_content.option_letter_refs(question["explanation"])
+        if refs:
+            errors.append(f"{where}: explanation points at options by letter {sorted(set(refs))} "
+                          "— quote the option's text instead")
     question["tags"] = split_list(line.get("g")) or [node["name"].strip()]
 
     cell = (node_id, ability)

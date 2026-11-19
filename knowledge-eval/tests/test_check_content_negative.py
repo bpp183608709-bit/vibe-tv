@@ -169,3 +169,53 @@ def test_repeated_stem_fails(workdir):
     assert result.returncode != 0
     assert "repeats the stem of" in result.stderr
     assert "math-6up-d01-q90" in result.stderr
+
+
+CHINESE_NODES = KE / "data" / "nodes_chinese_6up.json"
+CHINESE_QUESTIONS = KE / "data" / "questions_chinese_6up.json"
+ENGLISH_NODES = KE / "data" / "nodes_english_6up.json"
+ENGLISH_QUESTIONS = KE / "data" / "questions_english_6up.json"
+
+
+def run_all(subject_questions: dict[str, Path] | None = None) -> subprocess.CompletedProcess:
+    """All three subjects at once: the coverage rule wants every subject present, so a one-subject
+    run fails for a reason that is not the one under test."""
+    nodes = [MATH_NODES, CHINESE_NODES, ENGLISH_NODES]
+    questions = {"math": MATH_QUESTIONS, "chinese": CHINESE_QUESTIONS, "english": ENGLISH_QUESTIONS}
+    questions.update(subject_questions or {})
+    return subprocess.run(
+        [sys.executable, str(SCRIPT), "--nodes", *map(str, nodes),
+         "--questions", *(str(questions[s]) for s in ("math", "chinese", "english")),
+         "--snapshot", str(SNAPSHOT), "--quiet"],
+        capture_output=True, text=True,
+    )
+
+
+def test_explanation_pointing_at_option_letters_fails(workdir):
+    """“A 是‘想要’，C 是‘欲望’” is a reason that goes stale the moment the options rotate.
+
+    61% of the 语文 answers sat on one label, so every option in that bank was about to move, and
+    seven explanations named options by letter. Rotate first and check later and the bank ships
+    seven wrong explanations that look perfectly normal in the file.
+    """
+    payload = json.loads(CHINESE_QUESTIONS.read_text(encoding="utf-8"))
+    payload["questions"][0]["explanation"] = "“欲”是“将要”；A 是“想要”，C 是“欲望”。"
+    questions = workdir / "questions_chinese_6up.json"
+    questions.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+    result = run_all({"chinese": questions})
+    assert result.returncode != 0
+    assert "points at options by letter" in result.stderr
+    assert payload["questions"][0]["question_id"] in result.stderr
+
+
+def test_letter_about_the_letter_itself_passes(workdir):
+    """“字母 A” names the letter, not an option. A rule that cannot tell these apart would be
+    switched off the first time it got in the way, so the carve-out is tested, not just coded."""
+    payload = json.loads(CHINESE_QUESTIONS.read_text(encoding="utf-8"))
+    payload["questions"][0]["explanation"] = "这类题在问拼音，句子里提到 字母 A 只是指字母本身。"
+    questions = workdir / "questions_chinese_6up.json"
+    questions.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+    result = run_all({"chinese": questions})
+    assert result.returncode == 0, result.stderr

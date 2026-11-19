@@ -128,3 +128,28 @@ def test_all_answers_on_one_label_is_rejected(sandbox):
     result = run(sandbox, write_spec(sandbox, lines))
     assert result.returncode != 0
     assert "answer spread" in result.stderr
+
+
+def run_subject(sandbox: Path, spec: Path, subject: str) -> subprocess.CompletedProcess:
+    return subprocess.run(
+        [sys.executable, str(SCRIPT), "--subject", subject, "--spec", str(spec),
+         "--data-dir", str(sandbox)],
+        capture_output=True, text=True,
+    )
+
+
+def test_an_explanation_pointing_at_option_letters_is_rejected(sandbox):
+    """语文解析里的“A 是‘想要’”会在选项重排后指到别的选项上，而文件里看不出任何异常。
+
+    The 语文 bank was about to have every option rotated (61% of its answers sat on B), so this had
+    to be refused at the moment the batch is written rather than found later by reading 36 questions.
+    """
+    before = (sandbox / "questions_chinese_6up.json").read_bytes()
+    line = {"n": "d01", "a": "语言运用", "d": "易", "t": "选择题",
+            "s": "《草原》中“翠色欲流”的“欲”应当理解为（  ）",
+            "o": "将要|想要|欲望|需要", "k": "A",
+            "e": "“欲”是“将要”；A 是“想要”，C 是“欲望”。"}
+    result = run_subject(sandbox, write_spec(sandbox, [line]), "chinese")
+    assert result.returncode != 0
+    assert "points at options by letter" in result.stderr
+    assert (sandbox / "questions_chinese_6up.json").read_bytes() == before

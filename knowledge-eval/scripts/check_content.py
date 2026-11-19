@@ -41,10 +41,27 @@ MAX_PER_CELL = 6
 MAX_STEM = 120
 SUBJECTS = keval.SUBJECTS
 
+#: An option letter standing alone in an explanation (“C 的三句结构一致”). Reordering the options is
+#: exactly what a bank with 61% of its answers on one label needs, and the letter turns false the
+#: moment the option moves — silently, since the child only sees a wrong reason. Quote the option's
+#: text instead (“山朗润起来了…… 三句结构一致”), which survives any order.
+#: Maths is exempt: there A/B/C name the points of a figure and C is the circumference symbol (C = 2πr).
+OPTION_LETTER = re.compile(r"(?<![A-Za-z])[ABCD](?![A-Za-z])")
+
 #: A diagnostic node's name is not decoration: it is the `topic` string in the graded payload the
 #: television renders (`review[].topic`). The parent page may say 薄弱/复习, the child's screen may not.
 #: acceptance.py catches the word on the wire; this catches it in the data, where it is cheaper to see.
 BANNED_IN_NODE_NAME = ("薄弱", "复习", "巩固", "加强", "强化", "专项", "达标", "过关")
+
+
+def option_letter_refs(text: str) -> list[str]:
+    """Letters standing alone in `text`, minus “字母 A”, which is about the letter itself."""
+    refs: list[str] = []
+    for match in OPTION_LETTER.finditer(text or ""):
+        if (text or "")[:match.start()].rstrip().endswith("字母"):
+            continue
+        refs.append(match.group())
+    return refs
 
 
 def as_number(text: str) -> Fraction | None:
@@ -206,6 +223,11 @@ def check_questions(payloads: list[tuple[Path, dict]], nodes: list[dict]) -> tup
                                   "— the question would land in a cell the node never claims")
             if len(question.get("stem", "")) > MAX_STEM:
                 errors.append(f"{label}: stem is {len(question['stem'])} characters, over {MAX_STEM}")
+            if question.get("subject") != "math":
+                refs = option_letter_refs(question.get("explanation"))
+                if refs:
+                    errors.append(f"{label}: explanation points at options by letter {sorted(set(refs))} "
+                                  "— quote the option's text, a letter goes stale the moment options rotate")
 
             subject = question.get("subject")
             qtype = question.get("question_type")
