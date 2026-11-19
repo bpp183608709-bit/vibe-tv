@@ -4534,6 +4534,771 @@
    "question_id": "math-6up-d18-q12"
   },
   {
+   "diagnostic_node_id": "math-6up-d19",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "求比一个数多百分之几的数，应该用（  ）",
+   "options": [
+    "这个数 × (1 + 百分之几)",
+    "这个数 ÷ (1 + 百分之几)",
+    "这个数 × 百分之几",
+    "这个数 ÷ 百分之几"
+   ],
+   "correct_answer": "A",
+   "explanation": "比原数多 p%，就是原数的 (1 + p%)，所以用原数乘 (1 + p%)。",
+   "tags": [
+    "百分数增减的综合应用",
+    "增减意义"
+   ],
+   "question_id": "math-6up-d19-q01"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d19",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“今年的用水量比去年减少了 20%”，表示今年是去年的（  ）",
+   "options": [
+    "20%",
+    "120%",
+    "80%",
+    "20 倍"
+   ],
+   "correct_answer": "C",
+   "explanation": "减少 20% 就是少掉原来的 20%，剩下 1 - 20% = 80%。",
+   "tags": [
+    "百分数增减的综合应用",
+    "减少百分之几"
+   ],
+   "question_id": "math-6up-d19-q02"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d19",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "甲数比乙数多 25%，那么乙数比甲数少（  ）",
+   "options": [
+    "25%",
+    "20%",
+    "75%",
+    "33%"
+   ],
+   "correct_answer": "B",
+   "explanation": "把乙数看作 1，甲数就是 1.25。乙比甲少 (1.25 - 1) ÷ 1.25 = 20%。“比谁”不同，结果也不同。",
+   "tags": [
+    "百分数增减的综合应用",
+    "单位 1 变化"
+   ],
+   "question_id": "math-6up-d19-q03"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d19",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "80 的 25% 是（  ）。",
+   "accepted": [
+    "20"
+   ],
+   "correct_answer": "20",
+   "explanation": "80 × 25% = 80 × 0.25 = 20。",
+   "tags": [
+    "百分数增减的综合应用",
+    "求百分之几"
+   ],
+   "question_id": "math-6up-d19-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d19",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "比 60 多 20% 的数是（  ）。",
+   "accepted": [
+    "72"
+   ],
+   "correct_answer": "72",
+   "explanation": "60 × (1 + 20%) = 60 × 1.2 = 72。",
+   "tags": [
+    "百分数增减的综合应用",
+    "求增加后"
+   ],
+   "question_id": "math-6up-d19-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d19",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "某商品原价 200 元，先提价 10%，再降价 10%，现价是（  ）元。",
+   "accepted": [
+    "198"
+   ],
+   "correct_answer": "198",
+   "explanation": "200 × 1.1 = 220，220 × 0.9 = 198。两次的 10% 单位 1 不同，所以回不到原价。",
+   "tags": [
+    "百分数增减的综合应用",
+    "先增后减"
+   ],
+   "question_id": "math-6up-d19-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d19",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "学校图书馆原有图书 800 本，今年增加了 25%，现在有（  ）本",
+   "options": [
+    "200",
+    "825",
+    "1000",
+    "1025"
+   ],
+   "correct_answer": "C",
+   "explanation": "800 × (1 + 25%) = 800 × 1.25 = 1000 本。",
+   "tags": [
+    "百分数增减的综合应用",
+    "增加后"
+   ],
+   "question_id": "math-6up-d19-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d19",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "某班今天缺席 2 人，出席 48 人，缺席人数占全班的（  ）",
+   "options": [
+    "2%",
+    "4%",
+    "4.2%",
+    "96%"
+   ],
+   "correct_answer": "B",
+   "explanation": "全班 2 + 48 = 50 人，2 ÷ 50 = 4%。",
+   "tags": [
+    "百分数增减的综合应用",
+    "缺勤率"
+   ],
+   "question_id": "math-6up-d19-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d19",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一件衣服降价 20% 后是 96 元，这件衣服的原价是（  ）元",
+   "options": [
+    "76.8",
+    "116",
+    "104",
+    "120"
+   ],
+   "correct_answer": "D",
+   "explanation": "现价是原价的 80%，原价 = 96 ÷ 0.8 = 120 元。",
+   "tags": [
+    "百分数增减的综合应用",
+    "已知现价求原价"
+   ],
+   "question_id": "math-6up-d19-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d19",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "关于“增加百分之几”，下面说法正确的是（  ）",
+   "options": [
+    "增加百分之几 = 增加的量 ÷ 原来的量",
+    "增加百分之几 = 增加的量 ÷ 现在的量",
+    "增加百分之几 = 原来的量 ÷ 增加的量",
+    "增加百分之几 = 现在的量 ÷ 原来的量"
+   ],
+   "correct_answer": "A",
+   "explanation": "增加百分之几是拿增加的部分去比原来的量，原来的量是单位 1。",
+   "tags": [
+    "百分数增减的综合应用",
+    "增加百分之几"
+   ],
+   "question_id": "math-6up-d19-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d19",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "甲数比乙数少 20%，那么乙数比甲数多（  ）",
+   "options": [
+    "20%",
+    "80%",
+    "25%",
+    "120%"
+   ],
+   "correct_answer": "C",
+   "explanation": "把乙数看作 1，甲数就是 0.8。乙比甲多 (1 - 0.8) ÷ 0.8 = 25%。",
+   "tags": [
+    "百分数增减的综合应用",
+    "单位 1 变化"
+   ],
+   "question_id": "math-6up-d19-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d19",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "某商品先涨价 25%，要恢复原价，需要再降价（  ）",
+   "options": [
+    "25%",
+    "20%",
+    "30%",
+    "75%"
+   ],
+   "correct_answer": "B",
+   "explanation": "原价 100 元涨 25% 是 125 元，降回 100 元要降 25 ÷ 125 = 20%。涨和降的百分比不对称。",
+   "tags": [
+    "百分数增减的综合应用",
+    "恢复原价"
+   ],
+   "question_id": "math-6up-d19-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d29",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "用百分数比较两组数据，前提是（  ）",
+   "options": [
+    "两组数据的单位相同",
+    "要先统一整体量，化成百分数再比",
+    "两组数据的个数相同",
+    "两组数据的和相同"
+   ],
+   "correct_answer": "B",
+   "explanation": "人数、总数不同的两组，直接比个数会失真，要先化成占整体的百分之几。",
+   "tags": [
+    "用百分数比较数据",
+    "比较的前提"
+   ],
+   "question_id": "math-6up-d29-q01"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d29",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "六（1）班 50 人中有 40 人达标，六（2）班 40 人中有 34 人达标。比较两个班的达标情况，应该比（  ）",
+   "options": [
+    "达标人数",
+    "班级人数",
+    "达标率",
+    "总人数"
+   ],
+   "correct_answer": "C",
+   "explanation": "两班人数不同，比人数不公平。达标率：80% 和 85%，六（2）班更好。",
+   "tags": [
+    "用百分数比较数据",
+    "达标率"
+   ],
+   "question_id": "math-6up-d29-q02"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d29",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "定达标线时，如果把线定得过高，会（  ）",
+   "options": [
+    "达标人数偏多，看不出差距",
+    "达标人数偏少，多数人被挡在外面",
+    "不影响结果",
+    "一定更公平"
+   ],
+   "correct_answer": "B",
+   "explanation": "线定得过高，能达标的人太少，比较就失去了区分作用；线太低则人人都达标，同样看不出差距。",
+   "tags": [
+    "用百分数比较数据",
+    "达标线"
+   ],
+   "question_id": "math-6up-d29-q03"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d29",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "20 人中有 15 人达标，达标率是（  ）%。（只填数）",
+   "accepted": [
+    "75"
+   ],
+   "correct_answer": "75",
+   "explanation": "15 ÷ 20 = 0.75 = 75%。",
+   "tags": [
+    "用百分数比较数据",
+    "达标率"
+   ],
+   "question_id": "math-6up-d29-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d29",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "某班 45 人参加测试，达标 36 人，达标率是（  ）%。（只填数）",
+   "accepted": [
+    "80"
+   ],
+   "correct_answer": "80",
+   "explanation": "36 ÷ 45 = 0.8 = 80%。",
+   "tags": [
+    "用百分数比较数据",
+    "达标率"
+   ],
+   "question_id": "math-6up-d29-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d29",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "某小组 25 人，达标线定在 80%，至少要有（  ）人达标才算全组达标。",
+   "accepted": [
+    "20"
+   ],
+   "correct_answer": "20",
+   "explanation": "25 × 80% = 20 人。",
+   "tags": [
+    "用百分数比较数据",
+    "达标人数"
+   ],
+   "question_id": "math-6up-d29-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d29",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "甲组 10 人达标 8 人，乙组 20 人达标 15 人，达标率高的是（  ）",
+   "options": [
+    "甲组",
+    "乙组",
+    "一样高",
+    "无法比较"
+   ],
+   "correct_answer": "A",
+   "explanation": "甲组 8 ÷ 10 = 80%，乙组 15 ÷ 20 = 75%，甲组高。",
+   "tags": [
+    "用百分数比较数据",
+    "比达标率"
+   ],
+   "question_id": "math-6up-d29-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d29",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "小明投篮 20 次命中 12 次，小红投篮 25 次命中 16 次，命中率高的是（  ）",
+   "options": [
+    "小明",
+    "小红",
+    "一样高",
+    "无法比较"
+   ],
+   "correct_answer": "B",
+   "explanation": "小明 12 ÷ 20 = 60%，小红 16 ÷ 25 = 64%，小红高。",
+   "tags": [
+    "用百分数比较数据",
+    "命中率"
+   ],
+   "question_id": "math-6up-d29-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d29",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "某班 50 人，第一次测试达标率 60%，第二次达标率 80%。第二次达标人数比第一次多（  ）人",
+   "options": [
+    "20",
+    "15",
+    "10",
+    "5"
+   ],
+   "correct_answer": "C",
+   "explanation": "第一次 50 × 60% = 30 人，第二次 50 × 80% = 40 人，多 10 人。",
+   "tags": [
+    "用百分数比较数据",
+    "达标人数差"
+   ],
+   "question_id": "math-6up-d29-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d29",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "比较两个班的成绩，下面说法正确的是（  ）",
+   "options": [
+    "人数多的班成绩一定好",
+    "达标率高的班达标情况好",
+    "达标人数多的班达标率一定高",
+    "两个班无法比较"
+   ],
+   "correct_answer": "B",
+   "explanation": "人数不同时，达标率才是可比的量；达标人数多可能只是因为人多。",
+   "tags": [
+    "用百分数比较数据",
+    "比较方法"
+   ],
+   "question_id": "math-6up-d29-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d29",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "甲班达标率 85%，乙班达标率 85%，这说明（  ）",
+   "options": [
+    "两班达标人数相同",
+    "两班人数相同",
+    "两班成绩完全一样",
+    "达标人数占各自全班的百分比相同"
+   ],
+   "correct_answer": "D",
+   "explanation": "达标率相同只说明占各自全班的百分比相同，人数可以不同，具体成绩也可能不同。",
+   "tags": [
+    "用百分数比较数据",
+    "达标率"
+   ],
+   "question_id": "math-6up-d29-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d29",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "三个小组人数不同，要比较它们的达标情况，应当先（  ）",
+   "options": [
+    "把各组的达标人数化成达标率",
+    "比较各组总人数",
+    "比较各组达标人数",
+    "取三组人数的平均数"
+   ],
+   "correct_answer": "A",
+   "explanation": "人数不同就要统一单位 1，先算达标率再比，人数、总个数都不能直接比。",
+   "tags": [
+    "用百分数比较数据",
+    "比较方法"
+   ],
+   "question_id": "math-6up-d29-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d24",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "要看出一个月的用水量是怎样变化的，最好选用（  ）",
+   "options": [
+    "条形统计图",
+    "折线统计图",
+    "扇形统计图",
+    "统计表"
+   ],
+   "correct_answer": "B",
+   "explanation": "折线统计图能看出数量的增减变化，条形图看多少，扇形图看占比。",
+   "tags": [
+    "节约用水的数据",
+    "统计图"
+   ],
+   "question_id": "math-6up-d24-q01"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d24",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "要看出各项用水量各占总用水量的百分之几，最好选用（  ）",
+   "options": [
+    "条形统计图",
+    "折线统计图",
+    "扇形统计图",
+    "统计表"
+   ],
+   "correct_answer": "C",
+   "explanation": "扇形统计图表示各部分占总数的百分比，正好用来表示各项用水的占比。",
+   "tags": [
+    "节约用水的数据",
+    "统计图"
+   ],
+   "question_id": "math-6up-d24-q02"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d24",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "小明家 5 月用水 15 吨，6 月用水 12 吨。下面说法正确的是（  ）",
+   "options": [
+    "6 月用水是 5 月的 80%",
+    "6 月比 5 月多用了 20%",
+    "5 月比 6 月少用了 25%",
+    "两个月一共用了 27%"
+   ],
+   "correct_answer": "A",
+   "explanation": "12 ÷ 15 = 80%，6 月比 5 月少用 20%；反过来 5 月比 6 月多用 25%。",
+   "tags": [
+    "节约用水的数据",
+    "比较用水量"
+   ],
+   "question_id": "math-6up-d24-q03"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d24",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "某户上月用水 10 吨，本月用水 8 吨，本月比上月节约了（  ）%。（只填数）",
+   "accepted": [
+    "20"
+   ],
+   "correct_answer": "20",
+   "explanation": "(10 - 8) ÷ 10 = 0.2 = 20%，比上月节约就除以上月的用水量。",
+   "tags": [
+    "节约用水的数据",
+    "节约率"
+   ],
+   "question_id": "math-6up-d24-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d24",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "某校上月用水 200 吨，本月比上月节约 15%，本月用水（  ）吨。",
+   "accepted": [
+    "170"
+   ],
+   "correct_answer": "170",
+   "explanation": "200 × (1 - 15%) = 200 × 0.85 = 170 吨。",
+   "tags": [
+    "节约用水的数据",
+    "节约后用水"
+   ],
+   "question_id": "math-6up-d24-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d24",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "某户本月用水 24 吨，比上月节约了 20%，上月用水（  ）吨。",
+   "accepted": [
+    "30"
+   ],
+   "correct_answer": "30",
+   "explanation": "本月是上月的 80%，上月 = 24 ÷ 0.8 = 30 吨。",
+   "tags": [
+    "节约用水的数据",
+    "已知本月求上月"
+   ],
+   "question_id": "math-6up-d24-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d24",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一个水龙头没关紧，1 分钟滴 6 毫升水，1 小时浪费（  ）毫升",
+   "options": [
+    "60",
+    "360",
+    "600",
+    "3600"
+   ],
+   "correct_answer": "B",
+   "explanation": "1 小时 = 60 分，6 × 60 = 360 毫升。",
+   "tags": [
+    "节约用水的数据",
+    "滴水"
+   ],
+   "question_id": "math-6up-d24-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d24",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "某小区有 100 户人家，平均每户每月节约 0.5 吨水，全小区一个月节约（  ）吨",
+   "options": [
+    "5",
+    "500",
+    "50",
+    "0.5"
+   ],
+   "correct_answer": "C",
+   "explanation": "100 × 0.5 = 50 吨。",
+   "tags": [
+    "节约用水的数据",
+    "合计"
+   ],
+   "question_id": "math-6up-d24-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d24",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一个水龙头每分钟滴水 0.02 升，一天（24 小时）大约浪费（  ）升水",
+   "options": [
+    "1.2",
+    "2.88",
+    "288",
+    "28.8"
+   ],
+   "correct_answer": "D",
+   "explanation": "一天 24 × 60 = 1440 分钟，0.02 × 1440 = 28.8 升。",
+   "tags": [
+    "节约用水的数据",
+    "累计浪费"
+   ],
+   "question_id": "math-6up-d24-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d24",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面做法中，最能节约用水的是（  ）",
+   "options": [
+    "刷牙时一直开着水龙头",
+    "用洗菜的水浇花",
+    "洗澡时间尽量长",
+    "洗手时把水龙头开到最大"
+   ],
+   "correct_answer": "B",
+   "explanation": "一水多用、随手关水才能真正省水；其余三种都在加大用水量。",
+   "tags": [
+    "节约用水的数据",
+    "节水做法"
+   ],
+   "question_id": "math-6up-d24-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d24",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "关于“本月比上月节约 20%”，下面说法正确的是（  ）",
+   "options": [
+    "本月的用水量是上月的 20%",
+    "节约的水是上月的 80%",
+    "本月的用水量是上月的 80%",
+    "本月的用水量比上月多 20%"
+   ],
+   "correct_answer": "C",
+   "explanation": "节约 20% 就是少用上月的 20%，本月是上月的 1 - 20% = 80%。",
+   "tags": [
+    "节约用水的数据",
+    "节约率"
+   ],
+   "question_id": "math-6up-d24-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d24",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "甲户上月用水 100 吨、本月 90 吨；乙户上月用水 20 吨、本月 16 吨。下面说法正确的是（  ）",
+   "options": [
+    "甲户节约的水多，节约率也高",
+    "乙户节约的水多，节约率也高",
+    "甲户节约的水多，乙户的节约率高",
+    "两户的节约率相同"
+   ],
+   "correct_answer": "C",
+   "explanation": "甲节约 10 吨、节约率 10%；乙节约 4 吨、节约率 20%。节约的水量和节约率不是一回事。",
+   "tags": [
+    "节约用水的数据",
+    "水量与节约率"
+   ],
+   "question_id": "math-6up-d24-q12"
+  },
+  {
    "question_id": "math-6up-d25-q01",
    "diagnostic_node_id": "math-6up-d25",
    "subject": "math",
