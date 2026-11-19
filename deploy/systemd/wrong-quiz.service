@@ -30,6 +30,11 @@ KillSignal=SIGTERM
 
 # 加固
 NoNewPrivileges=true
+# 家长页走 443（<1024）但服务不是 root：只授「绑定低端口」这一项能力，不换用户、不给 root。
+# 少了这两行，ExecStart 会在 bind 443 时拿到 EACCES，日志是「无法绑定 0.0.0.0:443（Permission denied）」。
+# AmbientCapabilities 由 systemd 在 exec 前抬升，和 NoNewPrivileges 不冲突：NNP 禁止的是进程自己再提权。
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
 PrivateTmp=true
 ProtectSystem=strict
 ProtectHome=true

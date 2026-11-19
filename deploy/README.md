@@ -1,19 +1,18 @@
 # 上传：从一台空机器到孩子能做题
 
 > 这台机器：阿里云 ECS，Ubuntu 22.04.5，2 vCPU / 1.6 GB，40 GB 盘，公网 `47.95.198.148`，
-> 域名 `quiz.qust.me`（备案中，见 §7）。所有命令都以 root 执行，`#` 后面的注释是「为什么」。
+> 域名 `vibedemo.cn`，家长页 `tvparent.vibedemo.cn`（备案 2026-11-19 通过，见 §7）。所有命令都以 root 执行，`#` 后面的注释是「为什么」。
 
 ---
 
 ## 0. 这套部署长什么样
 
-**一个进程，三个监听。** 8443 给家长手机（要找公信证书），9443 给电视（它钉的是自家 CA），
+**一个进程，三个监听。** 443 给家长手机（要找公信证书），9443 给电视（它钉的是自家 CA），
 8100 只给本机 curl 和运维脚本。
 
-**手机上的家长页只走 8443。** 9443 那张证书是本机自签 CA 签的（`CN=quiz.qust.me`，签发者
-`Aerial Quiz CA`），手机的系统信任库里没有它，打开必弹「证书不受手机操作系统信任」——那张是给电视钉的。
+**手机上的家长页只走 443。** 9443 那张证书是本机自签 CA 签的（签发者 `Aerial Quiz CA`，SAN 里是这台机器的 IP），手机的系统信任库里没有它，打开必弹「证书不受手机操作系统信任」——那张是给电视钉的。
 两个端口服务同一套路由，所以**打错端口页面照样能进**，这正是它容易被误用的地方：看到警告别急着重装证书，
-先看地址栏的端口。
+先看地址栏的端口。备案前后临时用过 8443，现在 `QUIZ_H5_PORT` 是 443，8443 只在回退时启用。
 
 **没有 nginx。** 一开始计划里有一层反向代理，后来去掉了：代理要买的是「TLS 集中、限速、静态缓存」，
 而这个规模的收益小于它带来的一个额外进程、一份额外配置和一类额外故障。TLS 现在在 Python 里
@@ -69,7 +68,7 @@ GRANT ALL PRIVILEGES ON quiz_acceptance.* TO 'wrongquiz'@'localhost';
 表结构与内容：
 
 ```bash
-mysql -uroot quiz < server/db/schema.sql                     # 26 表 216 列
+mysql -uroot quiz < server/db/schema.sql                     # 27 表 259 列
 su -s /bin/sh wrongquiz -c '.venv/bin/python -m server.tools.import_curriculum --dsn "$DSN"'
 su -s /bin/sh wrongquiz -c '.venv/bin/python -m server.tools.gen_seed_questions --per-topic 5 --dsn "$DSN"'
 ```
@@ -124,7 +123,11 @@ install -m 600 server/local/tls/server.key /opt/wrong-quiz/tls/server.key
 域名和 IP 都进 SAN，所以 DNS 指过来之前用地址、之后用域名，**是同一张证书**。
 重新生成 CA 必须重装 APK：电视钉的是旧那张。
 
-### 家长页那张公信证书（2026-11-17 起在用）
+### 家长页那张公信证书（2026-11-17 起用 IP 版，2026-11-19 换成域名版）
+
+> 下面这段是 IP 证书时期的做法，留作历史与降级参考。现在家长页用的是
+> `tvparent.vibedemo.cn` 的域名证书，签发与切换步骤见 §7；两者在 `cert-hook.sh` 眼里
+> 是同一条终点（`tls/h5.pem`），区别只在 `LIVE=` 指向哪条 lineage。
 
 8443 给手机看，手机不认我们的 CA，所以它单独用一张 Let's Encrypt 的 **IP 证书**：
 免费、不需要域名、不需要备案，但只有 **160 小时（约 6 天）**，必须自动续期。
@@ -197,7 +200,8 @@ journalctl -u wrong-quiz -n 30 --no-pager
 curl -s localhost:8100/readyz                                   # status ok, db true
 curl -s -o /dev/null -w '%{http_code}\n' -X POST localhost:8100/v1/quiz/next -d '{"device_id":"x"}'
                                                                 # 401 —— 没有设备密钥就该拒
-curl -sk https://47.95.198.148:8443/ | head -3                  # 家长页 HTML
+curl -sI https://tvparent.vibedemo.cn/ | head -1               # 家长页 HTML（443）
+curl -sk https://47.95.198.148:8443/ | head -3                  # 仅回退到 8443 时才有监听
 curl -sk -X POST https://47.95.198.148:9443/v1/pair/start -d '{"app_version":"manual"}'
                                                                 # device_id + device_secret + pair_code
 ```
@@ -244,9 +248,8 @@ mysql -uroot -e "DROP DATABASE quiz_restore"
 |---|---|---|
 | 22 | SSH | 你的固定 IP，**不要 0.0.0.0/0** |
 | 80 | 只为签发/续期证书时 ACME 校验用，平时无监听 | 0.0.0.0/0 |
-| 8443 | 家长页（https，Let's Encrypt IP 证书） | 0.0.0.0/0 |
+| 443 | 家长页（https，Let's Encrypt 域名证书） | 0.0.0.0/0 |
 | 9443 | 电视（https，钉 CA） | 0.0.0.0/0 |
-| 443 | 备案下来后的家长页 | 0.0.0.0/0 |
 
 80 平时是空的（`certbot --standalone` 只在续期那几秒绑它），但**安全组必须一直开着**：
 关掉之后某天续期静默失败，六天后所有手机又开始报证书警告。
@@ -255,16 +258,56 @@ MySQL 只听 127.0.0.1（`zz-quiz.cnf` 的 `bind-address`），所以 3306 既�
 
 ---
 
-## 7. 备案没下来之前
+## 7. 域名与 443（备案 2026-11-19 通过）
 
-**8443 已经没有「继续访问」警告了**：它用的是 Let's Encrypt 的 IP 证书（见 §3），手机的系统信任链
-认它，跟有没有域名、有没有备案都无关。电视那条更不受影响——它钉的是自家 CA。
+家长页地址从 `https://47.95.198.148:8443` 换成 **`https://tvparent.vibedemo.cn`**（443，不带端口）。
+APK 不用重出：电视走 9443，钉的是自家 CA，跟域名无关。
 
-备案下来之后要做的只有「换一张叶子」：
+**顺序不能换，先 DNS 后证书**——`http-01` 是 Let's Encrypt 回连域名，解析没生效时签发必然失败。
 
-1. `certbot certonly --standalone -d quiz.qust.me`，拿 `/etc/letsencrypt/live/quiz.qust.me/`；
-2. `cert-hook.sh` 里的 `LIVE=` 改成新目录（或者给这条也写一个 `renew_hook`），重启即可；
-3. 再把 `--listen` 的端口从 8443 换成 443 ——**APK 不用动**，它钉的是 CA，域名换了照旧验得过。
-   IP 证书可以留着当退路：域名解析出事时把地址改回 IP 就行。
+```bash
+# 0) 前置：A 记录 tvparent.vibedemo.cn → 47.95.198.148；安全组放行 443 与 80。
+dig +short tvparent.vibedemo.cn          # 必须是这台机器的公网 IP
 
-备案没通过时的退路写在同一份文件里：`docs/备案降级.md`。
+# 1) 签域名证书（80 只在签发这几秒被 certbot 占用，服务不监听 80，不冲突）
+/snap/bin/certbot certonly --standalone -d tvparent.vibedemo.cn \
+    --agree-tos --register-unsafely-without-email --non-interactive
+
+# 2) 首次签发不会触发 deploy hook，手工跑一次，把证书搬进应用目录
+RENEWED_LINEAGE=/etc/letsencrypt/live/tvparent.vibedemo.cn /opt/wrong-quiz/bin/cert-hook.sh
+
+# 3) 换端口：deploy.env 里 QUIZ_H5_PORT=443（模板已改），单元文件补 CAP_NET_BIND_SERVICE
+scp deploy/systemd/wrong-quiz.service root@47.95.198.148:/etc/systemd/system/
+systemctl daemon-reload && systemctl restart wrong-quiz
+
+# 4) 从外网验（不要带 -k，要的是系统信任链通过）
+curl -sI https://tvparent.vibedemo.cn/ | head -1        # HTTP/1.1 200 OK
+openssl s_client -connect tvparent.vibedemo.cn:443 -servername tvparent.vibedemo.cn \
+  </dev/null 2>/dev/null | openssl x509 -noout -subject -enddate
+```
+
+**已执行（2026-11-19 15:57 CST）**：A 记录生效后签发成功，证书 `CN=tvparent.vibedemo.cn`、到期
+2027-02-17；`deploy.env` 已改 443，**8443 不再监听**；旧 IP 证书 `47.95.198.148` 已 `certbot delete`，
+钩子只剩域名一条 lineage。外网验证 `GET /` → 200、`/v1/auth/me` → 401、9443 仍 200。
+下面的命令保留为「换机器 / 换域名」时的手册，不是待办。
+
+演练续期时务必带 `--no-random-sleep-on-renew`：`certbot renew` 默认随机等最多 8 分钟，
+不加这个参数会误判成卡死（本次就被它坑过一次，还留下了 `.certbot.lock`，需手工清）。
+
+**为什么需要改 systemd 单元**：服务以 `wrongquiz` 非 root 运行，绑定 1024 以下端口会拿到 `EACCES`，
+日志里是「无法绑定 0.0.0.0:443（Permission denied）」。单元里那两行 `AmbientCapabilities` /
+`CapabilityBoundingSet` 只授「绑定低端口」这一项能力，不会把进程变成 root，也与 `NoNewPrivileges` 不冲突。
+
+**旧 IP 证书已删（2026-11-19）**：`certbot delete --cert-name 47.95.198.148`。留着它不会覆盖域名证书
+（`cert-hook.sh` 按 `RENEWED_LINEAGE` 只认域名那条），但它每 6 天续一次、每次刷日志，没有收益。
+
+**回退**：`deploy.env` 改回 `QUIZ_H5_PORT=8443` + 重启即可，证书不用动、APK 不用动。unit 里那两行能力留着无害。
+
+**换域名后有两件事不会自动迁移**：
+
+1. **手机要重新配对一次。** 会话 cookie 是 host-only（`Path=/`，没有 `Domain`），针对 `47.95.198.148` 发的
+   cookie 不会带到新域名。电视上出配对码、手机输一次即可，历史数据全在库里，不受影响。
+2. **PWA 桌面图标要重新添加。** manifest 的 `start_url`/`scope` 是相对的，但图标的 origin 变了，
+   旧图标指向 IP，点开会回到旧地址。
+
+备案没通过时的降级方案（IP + IP 证书）保留在 `docs/备案降级.md`，只作历史记录。

@@ -14,12 +14,12 @@
 | 仓库 | 本地 `/Volumes/个人/code/aerial-tv-main`，远端 `github.com/bpp183608709-bit/vibe-tv`，分支 `main` |
 | 同步状态 | **本地领先远端 36 个提交，一次都没推。** 换机器前先 `git push`，否则这 36 个提交只存在这块盘上 |
 | 服务器 | 阿里云 ECS，Ubuntu 22.04，`47.95.198.148`，root 用 `~/.ssh/misty_deploy` 登录 |
-| 服务 | systemd `wrong-quiz.service`，`/opt/wrong-quiz`，一进程三监听：**8443 家长页 / 9443 电视 / 8100 loopback**，没有 nginx |
+| 服务 | systemd `wrong-quiz.service`，`/opt/wrong-quiz`，一进程三监听：**443 家长页（`tvparent.vibedemo.cn`）/ 9443 电视 / 8100 loopback**，没有 nginx。备案前家长页临时在 8443 |
 | 数据库 | MySQL 8 `quiz`（生产）、`quiz_acceptance`（验收库，每次重建）、`quiz_restore`（恢复演练） |
-| 证书 | 8443 用 Let's Encrypt **IP 证书**（SCT=0，160 小时有效），**2026-11-23 20:42 GMT 到期**；9443 用自签 CA，手机必弹警告，那是给电视钉的 |
+| 证书 | 家长页用 Let's Encrypt **域名证书** `tvparent.vibedemo.cn`，**2027-02-17 06:58 GMT 到期**，`cert-hook.sh` 自动搬运；9443 用自签 CA，手机必弹警告，那是给电视钉的。旧 IP 证书已于 2026-11-19 `certbot delete` |
 | 电视 | TCL `Aerial TV`，APK `versionCode=91`，已绑账号，做题→签票→兑换 30 分钟在公网跑通 |
 | 验收 | 本地 SQLite **225/225**；MySQL 空库跑法见 §4 |
-| 卡在哪 | **证书续期没有部署钩子**（§6 第 1 条），5 天后到期，续了也不会换到线上 |
+| 卡在哪 | 无阻断项。域名 + 443 已于 2026-11-19 切换完成（§6 第 4 条），剩余待办是备份 cron 未验证、认证屏缺返回（§6） |
 
 ---
 
@@ -44,7 +44,7 @@
 ```sh
 systemctl status wrong-quiz --no-pager
 journalctl -u wrong-quiz -n 80 --no-pager
-curl -sk https://127.0.0.1:8443/v1/auth/me -o /dev/null -w '%{http_code}\n'   # 401 = 活着
+curl -sk https://127.0.0.1:443/v1/auth/me -o /dev/null -w '%{http_code}\n'    # 401 = 活着（回退到 8443 时改端口）
 sh /opt/wrong-quiz/bin/healthcheck.sh; echo $?
 ```
 
@@ -96,7 +96,7 @@ sh /opt/wrong-quiz/bin/healthcheck.sh; echo $?
 | `app/`（Android TV） | 出题页、本地验签、兑换 | 发 TCL 版本前先 `versionCode +1`；测试一律 release + `cmd package compile -m speed -f app.orchard.tv` |
 | `lite/` | Android 4.x | 本功能不跟进 |
 
-端口语义（易错）：**8443 家长页（LE 证书，手机不警告）、9443 电视（自签，手机必警告）**。两个端口服务全部路由，
+端口语义（易错）：**443 家长页（LE 域名证书，手机不警告）、9443 电视（自签，手机必警告）**。两个端口服务全部路由，
 所以「打错端口也能打开，但一定弹证书警告」——看到警告先看端口，不要重装证书。
 
 ---
@@ -150,15 +150,75 @@ ssh -i ~/.ssh/misty_deploy root@47.95.198.148 'sh /opt/wrong-quiz/server/tools/a
    `/opt/wrong-quiz/tls/h5.pem`。现在 `90-quiz-h5.sh` 指向 `/opt/wrong-quiz/bin/cert-hook.sh`（进仓库了），
    `snap run certbot renew --dry-run --run-deploy-hooks` 证明钩子被调用，日志见 `/var/log/wrong-quiz-cert.log`。
    **注意 `--dry-run` 默认不跑 deploy hook，必须加 `--run-deploy-hooks`，否则验不出接线。**
-   下一个可观测点：证书 **2026-11-23 20:42 GMT 到期**，到期前续期应写出 `deployed, notAfter=...`。
+   下一个可观测点：域名证书 **2027-02-17 06:58 GMT 到期**，到期前续期应写出 `deployed, notAfter=...`。
+   （2026-11-19 换域名后，旧 IP 证书那条 lineage 已删除，钩子只认 `tvparent.vibedemo.cn`。）
 2. **🟡 备份 cron 从没在 03:00 跑过**（现有那份 `quiz-20261117-092055.sql.gz` 是手工的）。
    等一个凌晨或直接手动执行 `bin/backup.sh`，确认新文件 + `healthcheck.sh` 返回 0。
 3. **🟡 认证屏没有「取消/返回」。** 设置页进「找回问题」「修改密码」后，除了浏览器返回没有出口。
    症状是用户被关在表单里。建议加一个返回箭头，回到设置页。
-4. **🟡 域名 `quiz.qust.me` 仍是 NXDOMAIN**，ICP 备案进行中。备案下来前，所有文档里的地址都必须写 IP+端口。
+4. **✅ 2026-11-19：备案通过，家长页已切到域名。** `vibedemo.cn` 备案已下（阿里云协助、云解析托管），
+   家长页走 `https://tvparent.vibedemo.cn`（443，LE 域名证书）。电视仍是 `https://47.95.198.148:9443`，APK 不用重出。
+   切换步骤与回退见 `deploy/README.md` §7；注意手机上原有的配对被 cookie 绑在旧 IP 上，需要重新配对一次。
+
+   实际执行记录（2026-11-19 15:57 CST）：
+
+   - A 记录 `tvparent → 47.95.198.148` 生效后签证书，`certbot certonly --standalone`，到期 2027-02-17；
+   - unit 补 `AmbientCapabilities=CAP_NET_BIND_SERVICE`（`systemctl show` 已确认 `cap_net_bind_service`），
+     `deploy.env` 的 `QUIZ_H5_PORT` 8443 → 443，**8443 已不再监听**（外网 `ConnectionRefused`）；
+   - `cert-hook.sh` 换成带 `RENEWED_LINEAGE` 过滤的版本，旧 IP 证书 `47.95.198.148` 已 `certbot delete`；
+   - `certbot renew --dry-run --no-random-sleep-on-renew` 通过（默认的随机等待最多 8 分钟，演练时别省这个参数）；
+   - 外网验证：`curl https://tvparent.vibedemo.cn/` → 200，`/v1/auth/me` → 401，证书 subject `CN=tvparent.vibedemo.cn`。
 5. **🟢 本地 36 个提交未推远端**，换机器 / 换人前先 `git push`。
 6. **🟢 出图脚本偶发卡死**（headless Chrome），已加 `showMain()` 防止连拍同一屏，复现率未根治。
 7. **🟢 `S2-手机验收清单.md` 的 16 步还没有逐条打勾**——链路本身已被证明可用，缺的是记录。
+
+---
+
+### 6.1 待办：下次任何一次部署都要捎带重导题库（2026-11-19 记）
+
+`knowledge-eval/data/` 在 2026-11-19 改了三科结构（语文换成 26 课、英语按 2026 秋新版重建、数学待改），**线上库还是旧内容**：`unit.name_zh` 仍是「艺术之美」「Cities in China」，缺英语 U9，语文 `d11/d12` 还挂着已删除的课文。这是数据与代码不同步，不是代码缺陷——只部署代码不会自愈，H5 报告会继续显示课本里没有的章节。
+
+**不要单独跑，跟着下一次部署一起做。** 顺序不可颠倒：
+
+```bash
+# 1) 备份（先确认文件新鲜、gzip 能解开）
+deploy/bin/backup.sh
+
+# 2) 部署新代码之后，若 server/db/migrate-2026-11-19-flat-nodes.sql 还没执行过，先跑 DDL
+mysql -uroot quiz < server/db/migrate-2026-11-19-flat-nodes.sql
+
+# 3) 重导节点，再导题目（都按 business key upsert，可重复执行）
+su -s /bin/sh wrongquiz -c '.venv/bin/python -m server.tools.import_curriculum --dsn "$DSN"'
+su -s /bin/sh wrongquiz -c '.venv/bin/python -m server.tools.import_questions  --dsn "$DSN"'
+
+# 4) 重启
+systemctl restart wrong-quiz
+```
+
+**第 3 步之后必须处理 `english-6up-d05`。** 英语按新版重建时删掉了「There be 句型」这个诊断节点，但 `import_curriculum` 从不删 topic（删了会孤立作答记录），旧行会留在库里。先确认无人引用，再手工删：
+
+```sql
+SELECT t.id, t.code, t.name_zh FROM topic t WHERE t.code = 'english-6up-d05';
+SELECT COUNT(*) FROM question      WHERE topic_id = (SELECT id FROM topic WHERE code='english-6up-d05'); -- 期望 0
+SELECT COUNT(*) FROM topic_mastery WHERE topic_id = (SELECT id FROM topic WHERE code='english-6up-d05'); -- 期望 0
+SELECT COUNT(*) FROM topic_signal  WHERE topic_id = (SELECT id FROM topic WHERE code='english-6up-d05'); -- 期望 0
+DELETE FROM topic WHERE code = 'english-6up-d05';
+```
+
+三个计数都是 0 才能删；只要有一个非 0，就停下来问人，不要连带删作答记录。
+
+（本次同时改了 `import_curriculum` 的残留检测：原来按 `ordinal` 比对，节点删除后序号被别人占用就静默放过；现在按 `code` 比对，缺节点会打印 `still in the database but gone from the file`，不再无声无息。）
+
+验收（四条都要有输出，数字来自 `check_schema.py` 当前打印的 83 nodes / 46 questions）：
+
+```sql
+SELECT COUNT(*) FROM unit;      -- 期望 28（数学 10 + 语文 8 + 英语 10）
+SELECT COUNT(*) FROM topic;     -- 期望 55
+SELECT COUNT(*) FROM question;  -- 期望 46
+SELECT name_zh FROM unit WHERE code='english-6up-u09';  -- 期望 I don't feel well
+```
+
+若上一步数学还没改（数学下架 3 个旧单元 + 拆 u09 是第 3 步），上面 28/55 要对不上，以当时 `check_schema.py` 的输出为准对账，不要照抄这四个数字。
 
 ---
 
@@ -221,7 +281,7 @@ docs/PLAN-上线与题库.md §M2，然后给我范围卡。
    theme-color，保证「添加到主屏幕」后没有地址栏。
 
 验收：acceptance.py 从 225 起只增不减；preview_h5.mjs 出新图证明返回键到位；手机真机从桌面图标打开
-无地址栏。手机侧用 8443，不要用 9443。
+无地址栏。手机侧用 443（`https://tvparent.vibedemo.cn`），不要用 9443。
 ```
 
 ### 通用开头（不确定做什么时用这段）
