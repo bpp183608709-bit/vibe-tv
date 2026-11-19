@@ -72,6 +72,336 @@
    ]
   },
   {
+   "diagnostic_node_id": "chinese-6up-d01",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《草原》中“只用绿色渲染，不用墨线勾勒”说的是中国画的画法，其中“渲染”和“勾勒”分别指（  ）",
+   "options": [
+    "两者都是指涂上绿色",
+    "渲染是用墨色涂染，勾勒是用线条勾画",
+    "渲染是用线条勾画，勾勒是用墨色涂染",
+    "两者都是用线条勾画"
+   ],
+   "correct_answer": "B",
+   "explanation": "渲染是把墨或色涂在纸上，写出小丘颜色的柔美；勾勒是用线条勾出轮廓，“不用墨线勾勒”就是没有画出硬边。两者一个管色，一个管线。",
+   "tags": [
+    "写景状物类文本的语境词义与情感把握",
+    "语境词义"
+   ],
+   "question_id": "chinese-6up-d01-q04"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d01",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《草原》中“在这境界里，连骏马和大牛都有时候静立不动”的“境界”指的是（  ）",
+   "options": [
+    "一个人思想达到的高度",
+    "草原和天空相接的地方",
+    "草原开阔宁静、让人沉醉的情景",
+    "国与国之间的边界"
+   ],
+   "correct_answer": "C",
+   "explanation": "“境界”在这里不是边界，也不是思想高度，而是眼前这片草原给人的整体感受：开阔、安静，安静到连牲畜都不忍打扰。",
+   "tags": [
+    "写景状物类文本的语境词义与情感把握",
+    "语境词义"
+   ],
+   "question_id": "chinese-6up-d01-q05"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d01",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《草原》第一自然段主要写的是（  ）",
+   "options": [
+    "草原的天空、小丘和羊群构成的美丽景色",
+    "蒙古族同胞骑马远迎客人",
+    "主人在蒙古包里敬酒的情景",
+    "作者一路赶车的经过"
+   ],
+   "correct_answer": "A",
+   "explanation": "第一自然段从天空写到小丘、羊群，再写到骏马和大牛，落点全在景色上；迎接客人、敬酒都在后面几个自然段。",
+   "tags": [
+    "写景状物类文本的语境词义与情感把握",
+    "段意概括"
+   ],
+   "question_id": "chinese-6up-d01-q06"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d01",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《丁香结》结尾说“结，是解不完的；人生中的问题也是解不完的，不然，岂不太平淡无味了吗？”这句话表达的态度是（  ）",
+   "options": [
+    "抱怨人生的烦恼太多，无可奈何",
+    "认为人生的烦恼都能一一解决",
+    "劝人干脆不要去解决任何问题",
+    "坦然面对人生中解不完的问题，把它们看作生活本来的样子"
+   ],
+   "correct_answer": "D",
+   "explanation": "作者由花蕾的“结”想到人生的难题，用反问“岂不太平淡无味了吗”说明这些问题是生活本来的味道，要坦然接受，而不是抱怨或者干脆不解决。",
+   "tags": [
+    "写景状物类文本的语境词义与情感把握",
+    "情感把握"
+   ],
+   "question_id": "chinese-6up-d01-q07"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d01",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《草原》中“既大方，又稍有点儿羞涩”写的是（  ）",
+   "options": [
+    "鄂温克族姑娘给客人唱民歌时的样子",
+    "客人刚踏上草原时的拘谨",
+    "小丘柔美的线条给人的感觉",
+    "骏马和大牛静立不动的情态"
+   ],
+   "correct_answer": "A",
+   "explanation": "这句出现在姑娘们戴着尖帽子给客人唱民歌的时候，“大方”是敢唱，“羞涩”是初见客人的不好意思，写的是人，不是景物。",
+   "tags": [
+    "写景状物类文本的语境词义与情感把握",
+    "语境词义"
+   ],
+   "question_id": "chinese-6up-d01-q08"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d01",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "关于《丁香结》的写法，下面说法正确的是（  ）",
+   "options": [
+    "全文只写丁香花的样子，没有写任何联想",
+    "先写人生感悟，再回过头写丁香花",
+    "文章只写了丁香的颜色，没有写它的气味",
+    "先写丁香花的样子、颜色和香味，再由“结”想到人生的问题"
+   ],
+   "correct_answer": "D",
+   "explanation": "文章前半部分写城里、城外、雨中的丁香，写它的形、色和香气；后半部分才由花蕾的“结”引出“人生中解不完的问题”，是由景到情、由物到理。",
+   "tags": [
+    "写景状物类文本的语境词义与情感把握",
+    "写法辨析"
+   ],
+   "question_id": "chinese-6up-d01-q09"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d02",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《宿建德江》的作者是（  ）",
+   "options": [
+    "孟浩然",
+    "苏轼",
+    "辛弃疾",
+    "王维"
+   ],
+   "correct_answer": "A",
+   "explanation": "《宿建德江》是唐代孟浩然所作；《六月二十七日望湖楼醉书》是苏轼，《西江月·夜行黄沙道中》是辛弃疾。",
+   "tags": [
+    "古诗词的背诵与理解",
+    "作者"
+   ],
+   "question_id": "chinese-6up-d02-q01"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d02",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《宿建德江》中“日暮客愁新”的“客”指的是（  ）",
+   "options": [
+    "旅居在外的诗人自己",
+    "来建德江边游玩的客人",
+    "船上撑船的艄公",
+    "江边村子里的人家"
+   ],
+   "correct_answer": "A",
+   "explanation": "诗人漂泊在外，把自己称作“客”；“客愁新”就是天晚了，旅途中的愁绪又添了一层。",
+   "tags": [
+    "古诗词的背诵与理解",
+    "字词理解"
+   ],
+   "question_id": "chinese-6up-d02-q02"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d02",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《六月二十七日望湖楼醉书》中“白雨跳珠乱入船”的“白雨”指的是（  ）",
+   "options": [
+    "颜色发白的雨水",
+    "雨中的白雾",
+    "江面上泛起的白浪",
+    "又大又急、雨点发亮的夏雨"
+   ],
+   "correct_answer": "D",
+   "explanation": "夏日的阵雨雨点大而亮，打在船上又溅起来，所以用“白雨”“跳珠”来形容；不是说雨有白色，也不是雾或浪。",
+   "tags": [
+    "古诗词的背诵与理解",
+    "字词理解"
+   ],
+   "question_id": "chinese-6up-d02-q03"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d02",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《西江月·夜行黄沙道中》“稻花香里说丰年，听取蛙声一片”写的季节是（  ）",
+   "options": [
+    "冬天",
+    "夏天",
+    "春天",
+    "秋天"
+   ],
+   "correct_answer": "B",
+   "explanation": "稻子正在扬花，蛙声成片，是夏夜乡村的景象；“说丰年”是人们对着即将到来的收成说的。",
+   "tags": [
+    "古诗词的背诵与理解",
+    "画面"
+   ],
+   "question_id": "chinese-6up-d02-q04"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d02",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《六月二十七日望湖楼醉书》按顺序写了这场雨的变化，正确的一项是（  ）",
+   "options": [
+    "水如天—白雨跳珠—黑云翻墨—卷地风吹散",
+    "黑云翻墨—白雨跳珠—卷地风吹散—水如天",
+    "白雨跳珠—黑云翻墨—水如天—卷地风吹散",
+    "卷地风吹散—黑云翻墨—白雨跳珠—水如天"
+   ],
+   "correct_answer": "B",
+   "explanation": "先是乌云翻涌还没遮住山，接着大雨砸下来，一阵大风把云雨吹散，最后湖面平静得像天空——雨来得快、去得也快。",
+   "tags": [
+    "古诗词的背诵与理解",
+    "画面"
+   ],
+   "question_id": "chinese-6up-d02-q05"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d02",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《宿建德江》中“野旷天低树，江清月近人”表达的情感是（  ）",
+   "options": [
+    "与朋友分别时的不舍",
+    "漂泊在外的孤独，只有江上的月亮与人相近",
+    "看到原野辽阔时的喜悦",
+    "对农家丰收的关心"
+   ],
+   "correct_answer": "B",
+   "explanation": "天比树还低、月亮仿佛离人很近，都是因为四周空无一人；月“近人”正说明身边没有别人，写的是旅途中的孤单。",
+   "tags": [
+    "古诗词的背诵与理解",
+    "情感"
+   ],
+   "question_id": "chinese-6up-d02-q06"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d02",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面诗句与作者对应正确的一项是（  ）",
+   "options": [
+    "野旷天低树——苏轼",
+    "白雨跳珠乱入船——孟浩然",
+    "移舟泊烟渚——王维",
+    "稻花香里说丰年——辛弃疾"
+   ],
+   "correct_answer": "D",
+   "explanation": "“稻花香里说丰年”出自辛弃疾的《西江月·夜行黄沙道中》；野旷天低树是孟浩然，白雨跳珠是苏轼，移舟泊烟渚也是孟浩然——其余三句都配错了人。",
+   "tags": [
+    "古诗词的背诵与理解",
+    "作者"
+   ],
+   "question_id": "chinese-6up-d02-q07"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d02",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "关于“西江月·夜行黄沙道中”，下面说法正确的是（  ）",
+   "options": [
+    "两部分都是词牌名",
+    "两部分都是题目",
+    "“西江月”是词牌名，“夜行黄沙道中”是题目",
+    "“西江月”是题目，“夜行黄沙道中”是词牌名"
+   ],
+   "correct_answer": "C",
+   "explanation": "词牌规定这首词的格律曲调，“夜行黄沙道中”才说明这首词写的是什么，中间用间隔号隔开。",
+   "tags": [
+    "古诗词的背诵与理解",
+    "体裁"
+   ],
+   "question_id": "chinese-6up-d02-q08"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d02",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《宿建德江》和《西江月·夜行黄沙道中》都写了月夜，对这两处月夜的比较，正确的一项是（  ）",
+   "options": [
+    "两者都写热闹的夏夜",
+    "两者都只写对故乡的思念",
+    "前者写丰收的喜悦，后者写旅途的愁苦",
+    "前者写独自在外的孤寂，后者写乡村夏夜的热闹生机"
+   ],
+   "correct_answer": "D",
+   "explanation": "“江清月近人”是空无一人的江边；“明月别枝惊鹊，清风半夜鸣蝉”却有鹊、有蝉、有蛙、有稻花香。一个静得孤单，一个闹得有生气。",
+   "tags": [
+    "古诗词的背诵与理解",
+    "比较辨析"
+   ],
+   "question_id": "chinese-6up-d02-q09"
+  },
+  {
    "question_id": "chinese-6up-d15-q01",
    "diagnostic_node_id": "chinese-6up-d15",
    "subject": "chinese",
@@ -136,6 +466,138 @@
     "过故人庄",
     "画面"
    ]
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d15",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "要把“公园里的花很多”说得更有气势，下面改写最恰当的一项是（  ）",
+   "options": [
+    "公园里的花有红、黄、紫。",
+    "公园里的花真多啊！",
+    "公园里的花真多：有的是红的，有的是黄的，有的是紫的。",
+    "公园里的花很多很多，多得数不清。"
+   ],
+   "correct_answer": "C",
+   "explanation": "把“很多”拆成三个结构相同的分句连起来，才是排比，读起来才有层层推进的气势；其余几句只是把“多”重复一遍，或者列了个清单。",
+   "tags": [
+    "排比、分号的运用与《过故人庄》",
+    "排比"
+   ],
+   "question_id": "chinese-6up-d15-q04"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d15",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《过故人庄》中写诗人与主人一边喝酒一边谈农事的一句是（  ）",
+   "options": [
+    "待到重阳日，还来就菊花",
+    "开轩面场圃，把酒话桑麻",
+    "故人具鸡黍，邀我至田家",
+    "绿树村边合，青山郭外斜"
+   ],
+   "correct_answer": "B",
+   "explanation": "“开轩”是打开窗子，“场圃”是打谷场和菜园，“把酒”是端着酒杯，“桑麻”指农事——开窗对着场地菜园，边喝边聊庄稼，正是这一句。",
+   "tags": [
+    "排比、分号的运用与《过故人庄》",
+    "诗句理解"
+   ],
+   "question_id": "chinese-6up-d15-q05"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d15",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《过故人庄》中，能看出主人待客热情的一句是（  ）",
+   "options": [
+    "故人具鸡黍，邀我至田家",
+    "绿树村边合，青山郭外斜",
+    "开轩面场圃，把酒话桑麻",
+    "待到重阳日，还来就菊花"
+   ],
+   "correct_answer": "A",
+   "explanation": "老朋友杀了鸡、备好饭，专门请诗人到家里来，“邀我至田家”一句就把这份朴素的热情写出来了；后面几句写的是村里的景和两人的约定。",
+   "tags": [
+    "排比、分号的运用与《过故人庄》",
+    "诗句理解"
+   ],
+   "question_id": "chinese-6up-d15-q06"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d15",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《过故人庄》最后两句“待到重阳日，还来就菊花”表达了（  ）",
+   "options": [
+    "与朋友相约重阳节再来赏菊，舍不得就此分别",
+    "诗人不喜欢这里，想早点回家",
+    "重阳节要登高望远",
+    "主人请诗人留下来帮忙种菊花"
+   ],
+   "correct_answer": "A",
+   "explanation": "“就菊花”是靠近菊花、来赏菊。这话是诗人说的：等到重阳节我还要再来——把不舍写成了下一次的约定。",
+   "tags": [
+    "排比、分号的运用与《过故人庄》",
+    "诗句理解"
+   ],
+   "question_id": "chinese-6up-d15-q07"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d15",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面句子中，不是排比句的一项是（  ）",
+   "options": [
+    "书籍是朋友，书籍是老师，书籍是钥匙。",
+    "为了理想，我们努力；为了理想，我们坚持；为了理想，我们奋斗。",
+    "他跑得快，跳得高。",
+    "春天来了，小草绿了，花儿开了，燕子回来了。"
+   ],
+   "correct_answer": "C",
+   "explanation": "排比要三个或三个以上结构相似的分句连用。“他跑得快，跳得高”只有两项，是并列短语，撑不起排比的气势。",
+   "tags": [
+    "排比、分号的运用与《过故人庄》",
+    "排比"
+   ],
+   "question_id": "chinese-6up-d15-q08"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d15",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“盼望着，盼望着，东风来了”和“山朗润起来了，水涨起来了，太阳的脸红起来了”，对这两句判断正确的是（  ）",
+   "options": [
+    "两者都是排比",
+    "两者都是反复",
+    "前者是反复，后者是排比",
+    "前者是排比，后者是反复"
+   ],
+   "correct_answer": "C",
+   "explanation": "“盼望着，盼望着”是同一个词语重复出现，强调急切的心情，是反复；“山朗润起来了……”是三个结构相同的分句连用，是排比。反复看的是“同一个词重复”，排比看的是“多个相似结构连用”。",
+   "tags": [
+    "排比、分号的运用与《过故人庄》",
+    "排比与反复"
+   ],
+   "question_id": "chinese-6up-d15-q09"
   },
   {
    "question_id": "chinese-6up-d03-q01",
@@ -204,6 +666,402 @@
    ]
   },
   {
+   "diagnostic_node_id": "chinese-6up-d03",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《七律·长征》中“五岭逶迤腾细浪”的“逶迤”形容五岭（  ）",
+   "options": [
+    "奔腾向前、势不可挡",
+    "弯弯曲曲、连绵不断",
+    "高耸陡峭、直插云天",
+    "平坦宽阔、一望无际"
+   ],
+   "correct_answer": "B",
+   "explanation": "“逶迤”是弯弯曲曲、连绵不断的样子。山越显得绵长难行，越能衬出红军把它看作“细浪”的豪迈。",
+   "tags": [
+    "革命题材叙事文的场面概括与人物品质",
+    "字词理解"
+   ],
+   "question_id": "chinese-6up-d03-q04"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d03",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《狼牙山五壮士》中“班长斩钉截铁地说”的“斩钉截铁”形容班长说话（  ）",
+   "options": [
+    "把话说得很慢，一字一顿",
+    "果断干脆，一点不含糊",
+    "声音特别大，盖过别人",
+    "态度生硬，不讲道理"
+   ],
+   "correct_answer": "B",
+   "explanation": "“斩钉截铁”是比喻说话做事坚决果断、没有商量的余地。这里写班长下决心把敌人引上绝路时的不容置疑。",
+   "tags": [
+    "革命题材叙事文的场面概括与人物品质",
+    "字词理解"
+   ],
+   "question_id": "chinese-6up-d03-q05"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d03",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《七律·长征》是一首（  ）",
+   "options": [
+    "五言律诗",
+    "词",
+    "散文诗",
+    "七言律诗"
+   ],
+   "correct_answer": "D",
+   "explanation": "每句七个字，共八句，中间两联对仗，是七言律诗。“七律”就是七言律诗的简称。",
+   "tags": [
+    "革命题材叙事文的场面概括与人物品质",
+    "体裁"
+   ],
+   "question_id": "chinese-6up-d03-q06"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d03",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面人物与事迹对应正确的一项是（  ）",
+   "options": [
+    "狼牙山五壮士——飞夺泸定桥",
+    "郝副营长——舍身炸碉堡",
+    "雨来——把敌人带进八路军的埋伏圈",
+    "邱少云——在烈火中一动不动，直到牺牲"
+   ],
+   "correct_answer": "D",
+   "explanation": "邱少云为了不暴露潜伏部队，在烈火中一动不动；飞夺泸定桥是红军长征中的事，舍身炸碉堡是董存瑞，把敌人带进埋伏圈的是王二小。",
+   "tags": [
+    "革命题材叙事文的场面概括与人物品质",
+    "人物与事迹"
+   ],
+   "question_id": "chinese-6up-d03-q07"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d03",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "要把一个场面用一句话概括下来，下面做法最恰当的一项是（  ）",
+   "options": [
+    "先说清“谁、在哪里、做什么”，再补一个最突出的细节",
+    "把场面里每个人的动作都写上一遍",
+    "只写自己当时的感受，不写别人",
+    "按顺序把看到的每句话都抄下来"
+   ],
+   "correct_answer": "A",
+   "explanation": "概括要先抓住主干：谁、在哪里、做什么，一句话就能立住；细节只留最突出的一个，其余的交给孩子去读原文。",
+   "tags": [
+    "革命题材叙事文的场面概括与人物品质",
+    "场面概括"
+   ],
+   "question_id": "chinese-6up-d03-q08"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d03",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《我的战友邱少云》主要借“我”的眼睛来写邱少云，《狼牙山五壮士》则直接写五位壮士的语言和动作。对这两种写法的比较，正确的一项是（  ）",
+   "options": [
+    "前者是正面描写，后者是侧面描写",
+    "前者写得不好，因为没有写主人公",
+    "后者不能表现人物品质，因为没有旁人在场",
+    "前者是侧面描写，后者是正面描写，两者都能表现人物的品质"
+   ],
+   "correct_answer": "D",
+   "explanation": "写旁人的担心与不忍，是把主人公烘托出来，属于侧面描写；直接写人物的语言、动作，是正面描写。两条路都能把人物立起来。",
+   "tags": [
+    "革命题材叙事文的场面概括与人物品质",
+    "正面与侧面"
+   ],
+   "question_id": "chinese-6up-d03-q09"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d04",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "“点面结合”里的“面”指的是（  ）",
+   "options": [
+    "场面中的一个角落",
+    "整体、全局的场面",
+    "个别人物的具体表现",
+    "一个细微的动作"
+   ],
+   "correct_answer": "B",
+   "explanation": "“面”是整体，“点”是从整体里挑出来的个别人或细节。点面结合，就是既写全体又写个别。",
+   "tags": [
+    "点面结合写法的辨识",
+    "点与面"
+   ],
+   "question_id": "chinese-6up-d04-q01"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d04",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面句子中，写“面”（整体场面）的一句是（  ）",
+   "options": [
+    "那位老人的手套磨破了，露出里面的棉线",
+    "举牌的少年把牌子举得笔直，胳膊一动不动",
+    "受阅部队迈着整齐的步伐，一队接一队地走过天安门广场",
+    "一个战士昂着头，眼睛一眨不眨地盯着前方"
+   ],
+   "correct_answer": "C",
+   "explanation": "“一队接一队走过广场”写的是整支队伍，是“面”；后三句的镜头都对着一个人，是“点”。",
+   "tags": [
+    "点面结合写法的辨识",
+    "点与面"
+   ],
+   "question_id": "chinese-6up-d04-q02"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d04",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "要把“操场上很热闹”写成一个“点”，下面写法最恰当的一项是（  ）",
+   "options": [
+    "一个男孩抱着球从人缝里挤出来，额头上全是汗，笑得露出两颗门牙",
+    "操场上人很多，到处都是声音",
+    "同学们都在操场上玩",
+    "操场上热闹极了，像一锅烧开的水"
+   ],
+   "correct_answer": "A",
+   "explanation": "“点”要落到一个具体的人身上，写出他的动作和样子；“像一锅烧开的水”仍然是给整体打比方，镜头没有对准任何人。",
+   "tags": [
+    "点面结合写法的辨识",
+    "把面写成点"
+   ],
+   "question_id": "chinese-6up-d04-q03"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d04",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《开国大典》写阅兵式先写整个受阅部队，再写其中一个方阵，这样写的好处是（  ）",
+   "options": [
+    "让读者只记住那一个方阵",
+    "既看到全场的壮观，又能看清具体的细节",
+    "可以少写一些内容，让文章短一点",
+    "为了把字数凑够"
+   ],
+   "correct_answer": "B",
+   "explanation": "先写“面”给人全貌和气势，再写“点”让人看见细节，两者合起来才既宏大又不空。",
+   "tags": [
+    "点面结合写法的辨识",
+    "表达效果"
+   ],
+   "question_id": "chinese-6up-d04-q04"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d04",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《狼牙山五壮士》中“五位壮士屹立在狼牙山顶峰，眺望着群众和部队主力远去的方向”这一句属于（  ）",
+   "options": [
+    "既不是“点”也不是“面”",
+    "写“面”的句子，写的是五位壮士这个整体",
+    "写“点”的句子，因为只写了班长一个人",
+    "写“点”的句子，因为写了他们的眼睛"
+   ],
+   "correct_answer": "B",
+   "explanation": "五个人一起出现、一起眺望，呈现的是一个整体形象，属于“面”；如果只写班长马宝玉一个人的动作神情，那才是“点”。",
+   "tags": [
+    "点面结合写法的辨识",
+    "点与面"
+   ],
+   "question_id": "chinese-6up-d04-q05"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d04",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读这段话：“入场式开始了。各个班的方阵依次走过主席台，彩旗一片连着一片。走在最前面的是六（1）班，举牌的同学把牌子举得笔直，胳膊一动不动。”这段话点面结合的顺序是（  ）",
+   "options": [
+    "先写面（各班方阵依次走过），再写点（举牌的同学）",
+    "先写点（举牌的同学），再写面（各班方阵）",
+    "只有面，没有点",
+    "只有点，没有面"
+   ],
+   "correct_answer": "A",
+   "explanation": "先总写各班方阵，“彩旗一片连着一片”是整体；再把镜头推近到六（1）班举牌的同学，是点。这是先面后点。",
+   "tags": [
+    "点面结合写法的辨识",
+    "顺序"
+   ],
+   "question_id": "chinese-6up-d04-q06"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d04",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "关于“点面结合”，下面说法正确的是（  ）",
+   "options": [
+    "“面”写得越长越显得热闹",
+    "点面结合只能用在一篇文章的开头",
+    "既写整体又写个别，文章才有全貌也有细节",
+    "只要写了人物，就是点面结合"
+   ],
+   "correct_answer": "C",
+   "explanation": "点面结合的关键是两者都在：缺了“面”没有气势，缺了“点”没有画面；而且它可以用在文章任何需要铺开场面的地方。",
+   "tags": [
+    "点面结合写法的辨识",
+    "说法辨析"
+   ],
+   "question_id": "chinese-6up-d04-q07"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d04",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面四段文字的写法，属于“先点后面”的一项是（  ）",
+   "options": [
+    "李老师一个人把教室打扫干净了",
+    "教室很干净，因为大家都在打扫",
+    "李老师弯腰捡起地上的一片纸放进垃圾桶；随后，全班同学都动起手来，教室很快干干净净",
+    "全班同学都动起手来；李老师也弯腰捡起一片纸"
+   ],
+   "correct_answer": "C",
+   "explanation": "先出现的是李老师一个人（点），再扩到全班（面），这是先点后面；第二段反过来，是先面后点。",
+   "tags": [
+    "点面结合写法的辨识",
+    "顺序"
+   ],
+   "question_id": "chinese-6up-d04-q08"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d04",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“运动会上，同学们有的跑步，有的跳远，有的扔垒球，有的跳绳，有的打乒乓球，大家都很开心。”这段话的主要问题是（  ）",
+   "options": [
+    "只有“点”，看不到整体",
+    "用了排比，所以显得乱",
+    "写得太短，交代不清楚",
+    "只有“面”，没有一个具体的人，读完记不住任何画面"
+   ],
+   "correct_answer": "D",
+   "explanation": "一口气罗列五件事，全是整体扫描，镜头始终没有对准一个人；补上一个同学的动作和神情，这段才有“点”。",
+   "tags": [
+    "点面结合写法的辨识",
+    "诊断"
+   ],
+   "question_id": "chinese-6up-d04-q09"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d04",
+   "subject": "chinese",
+   "ability_tag": "综合表达",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "要写“课间十分钟的操场”，下面安排最恰当的一项是（  ）",
+   "options": [
+    "先写操场上到处是人、声音很杂，再选一个正在跳绳的同学具体写",
+    "只写一个同学跳绳，不写操场其他地方",
+    "先写一个同学跳绳，最后才说操场上人很多",
+    "把操场上每个同学都写一遍"
+   ],
+   "correct_answer": "A",
+   "explanation": "先“面”后“点”是最稳的顺序：先让人看见操场的整体气氛，再把镜头推近到一个人。",
+   "tags": [
+    "点面结合写法的辨识",
+    "谋篇"
+   ],
+   "question_id": "chinese-6up-d04-q10"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d04",
+   "subject": "chinese",
+   "ability_tag": "综合表达",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "写“课间十分钟的操场”，下面作为“点”最合适的一项是（  ）",
+   "options": [
+    "同学们玩得很开心",
+    "下课铃响了",
+    "一个女生把绳子甩得飞快，马尾辫一上一下，数数的同学跟着喊“三十八、三十九”",
+    "操场上很热闹"
+   ],
+   "correct_answer": "C",
+   "explanation": "“点”要具体到一个人、一个动作、一个声音；后三句要么是笼统的评价，要么只是交代时间，落不到人身上。",
+   "tags": [
+    "点面结合写法的辨识",
+    "选材"
+   ],
+   "question_id": "chinese-6up-d04-q11"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d04",
+   "subject": "chinese",
+   "ability_tag": "综合表达",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一位同学写：“操场上非常热闹，同学们跑来跑去，有的打球，有的聊天，有的追逐，有的看书，热闹极了。我也在操场上玩。”老师建议他把“点”写具体，下面修改最恰当的一项是（  ）",
+   "options": [
+    "再加十个“有的……”，让场面更热闹",
+    "在结尾加一句“这一天真快乐”",
+    "保留一两句写整体，然后选一个同学，写清他的动作、神情和说的话",
+    "把所有的“有的……”都删掉，只写自己"
+   ],
+   "correct_answer": "C",
+   "explanation": "“面”要收，“点”要立：整体一两句交代清楚就够，剩下的笔墨给一个具体的人，写出动作、神情、语言，画面才立得住。",
+   "tags": [
+    "点面结合写法的辨识",
+    "修改"
+   ],
+   "question_id": "chinese-6up-d04-q12"
+  },
+  {
    "question_id": "chinese-6up-d16-q01",
    "diagnostic_node_id": "chinese-6up-d16",
    "subject": "chinese",
@@ -268,6 +1126,138 @@
     "爱国名言",
     "辨析"
    ]
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d16",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“祖宗疆土，当以死守，不可以尺寸与人”中“尺寸”的意思是（  ）",
+   "options": [
+    "量长短的工具",
+    "规矩和法度",
+    "很小的一块土地",
+    "长度单位，一尺一寸"
+   ],
+   "correct_answer": "C",
+   "explanation": "“尺寸”在这里极言其小：哪怕一寸土地也不能让给别人。整句说祖宗留下的疆土要用生命守住。",
+   "tags": [
+    "爱国名言的积累与“反复”的表达效果",
+    "字词理解"
+   ],
+   "question_id": "chinese-6up-d16-q04"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d16",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“位卑未敢忘忧国”中“卑”的意思是（  ）",
+   "options": [
+    "自卑，看不起自己",
+    "品行卑鄙",
+    "态度谦卑有礼",
+    "地位低下"
+   ],
+   "correct_answer": "D",
+   "explanation": "“位卑”是职位低。陆游说自己官职虽小，却不敢忘记为国家担忧——重点在“位”，不在品行。",
+   "tags": [
+    "爱国名言的积累与“反复”的表达效果",
+    "字词理解"
+   ],
+   "question_id": "chinese-6up-d16-q05"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d16",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "“鞠躬尽瘁，死而后已”这句话是谁说的（  ）",
+   "options": [
+    "文天祥",
+    "陆游",
+    "李纲",
+    "诸葛亮"
+   ],
+   "correct_answer": "D",
+   "explanation": "这八个字是诸葛亮说的，写他竭尽劳苦、到死方休。文天祥、陆游、李纲各有另外几句爱国名言，别记混。",
+   "tags": [
+    "爱国名言的积累与“反复”的表达效果",
+    "名言作者"
+   ],
+   "question_id": "chinese-6up-d16-q06"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d16",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "反复能加强语气。下面句子中，删去重复的部分后语气明显变弱的一项是（  ）",
+   "options": [
+    "盼望着，盼望着，东风来了。",
+    "他慢慢地走过来。",
+    "这本书很有意思。",
+    "我们班的同学都喜欢打篮球。"
+   ],
+   "correct_answer": "A",
+   "explanation": "“盼望着，盼望着”重复一次，把等待的急切顶了上去，删掉一半语气立刻就平了；其余三句本来就没有重复的部分。",
+   "tags": [
+    "爱国名言的积累与“反复”的表达效果",
+    "反复"
+   ],
+   "question_id": "chinese-6up-d16-q07"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d16",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "“捐躯赴国难，视死忽如归”的意思是（  ）",
+   "options": [
+    "躲开国家的难事，保全自己",
+    "为国家危难献出生命，把死看得像回家一样",
+    "离开国家远走他乡，把家忘在脑后",
+    "为国家四处奔走，把死者送回故乡"
+   ],
+   "correct_answer": "B",
+   "explanation": "“捐躯”是舍弃身躯，“忽如归”是看作回家。曹植这句写的是为国赴难时的从容。",
+   "tags": [
+    "爱国名言的积累与“反复”的表达效果",
+    "名言理解"
+   ],
+   "question_id": "chinese-6up-d16-q08"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d16",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面名言与作者的对应，正确的一项是（  ）",
+   "options": [
+    "位卑未敢忘忧国——陆游",
+    "鞠躬尽瘁，死而后已——文天祥",
+    "捐躯赴国难，视死忽如归——诸葛亮",
+    "祖宗疆土，当以死守——陆游"
+   ],
+   "correct_answer": "A",
+   "explanation": "“位卑未敢忘忧国”是陆游的诗句；鞠躬尽瘁出自诸葛亮，捐躯赴国难是曹植，“祖宗疆土，当以死守”出自李纲。",
+   "tags": [
+    "爱国名言的积累与“反复”的表达效果",
+    "名言作者"
+   ],
+   "question_id": "chinese-6up-d16-q09"
   },
   {
    "question_id": "chinese-6up-d17-q01",
