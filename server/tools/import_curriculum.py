@@ -146,13 +146,22 @@ def import_tree(db: Database, payloads: list[dict]) -> dict[str, int]:
                         " name_zh = ?, summary_zh = ?, knowledge_type = ?, micro_nodes_json = ?,"
                         " source_ids_json = ?, prereq_json = ? WHERE id = ?",
                         (*payload_values, int(row["id"])))
-            stale = db.query("SELECT id, ordinal, name_zh FROM topic WHERE unit_id = ?", (unit_id,))
+            # Compare by business key, not by ordinal. Ordinals are reassigned on every import, so a
+            # topic that vanished from the file can sit on an ordinal another topic just took — the
+            # ordinal check then says nothing and the row survives silently. That is exactly what
+            # happened to english-6up-d05 when the 2026 edition dropped its unit.
+            stale = db.query("SELECT id, code, ordinal, name_zh FROM topic WHERE unit_id = ?", (unit_id,))
+            file_codes = {n["node_id"] for n in mine}
             for row in stale:
-                if int(row["ordinal"]) not in seen:
-                    print(f"  skipped: {code} unit {parent_id} topic {row['ordinal']}"
-                          f" ({row['name_zh']}) still in the database but gone from the file",
-                          file=sys.stderr)
-                    stats["skipped_topics"] += 1
+                if row["code"] is not None:
+                    if row["code"] in file_codes:
+                        continue
+                elif int(row["ordinal"]) in seen:
+                    continue
+                print(f"  skipped: {code} unit {parent_id} topic {row['code'] or row['ordinal']}"
+                      f" ({row['name_zh']}) still in the database but gone from the file",
+                      file=sys.stderr)
+                stats["skipped_topics"] += 1
 
         orphans = [(n["node_id"], n["parent_id"]) for n in diagnostics if n["parent_id"] not in unit_ids]
         for node_id, parent_id in orphans:

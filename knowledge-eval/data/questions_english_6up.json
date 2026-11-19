@@ -268,6 +268,94 @@
     "形容词比较级",
     "多音节词"
    ]
+  },
+  {
+   "question_id": "english-6up-d16-q01",
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "— What's wrong with you?  — I ___ a headache.",
+   "options": [
+    "have",
+    "has",
+    "having",
+    "had"
+   ],
+   "correct_answer": "A",
+   "explanation": "问病情用 What's wrong with you，回答是一般现在时；主语 I 用 have，不用 has。",
+   "tags": [
+    "疾病表达",
+    "问病情"
+   ]
+  },
+  {
+   "question_id": "english-6up-d16-q02",
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句表示「我感冒了」，说法正确？",
+   "options": [
+    "I have a cold.",
+    "I have cold.",
+    "I am a cold.",
+    "I have a colds."
+   ],
+   "correct_answer": "A",
+   "explanation": "have a cold 是固定搭配：cold 前要加 a，且 cold 在这里不可数，不能加 -s；be 动词不能和 cold 搭配表示生病。",
+   "tags": [
+    "疾病表达",
+    "固定搭配"
+   ]
+  },
+  {
+   "question_id": "english-6up-d17-q01",
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "You have a cold. You ___ drink more water.",
+   "options": [
+    "should",
+    "shouldn't",
+    "can't",
+    "aren't"
+   ],
+   "correct_answer": "A",
+   "explanation": "感冒了多喝水是建议，用 should + 动词原形；shouldn't 意思相反，can't 表能力，aren't 后不能直接接动词原形。",
+   "tags": [
+    "should",
+    "给建议"
+   ]
+  },
+  {
+   "question_id": "english-6up-d17-q02",
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "You shouldn't ___ too much ice cream when you have a fever.",
+   "options": [
+    "eat",
+    "eats",
+    "eating",
+    "ate"
+   ],
+   "correct_answer": "A",
+   "explanation": "shouldn't 是情态动词的否定形式，后面一律接动词原形，不加 -s、-ing 或 -ed。",
+   "tags": [
+    "should",
+    "动词原形"
+   ]
   }
  ]
 }

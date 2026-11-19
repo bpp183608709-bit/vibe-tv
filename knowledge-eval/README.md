@@ -42,7 +42,7 @@ python knowledge-eval/scripts/check_db_parity.py --content
 
 # 6) 数据库导出与仓库文件逐字段比对
 python knowledge-eval/scripts/export_from_db.py --check
-# → export: ok — 35 nodes, 22 nodes, 25 nodes; 18 questions, 12 questions, 12 questions
+# → export: ok — 35 nodes, 22 nodes, 26 nodes; 18 questions, 12 questions, 16 questions
 ```
 
 全部命令的预期输出与失败样例见 [docs/verification.md](docs/verification.md)；逐条修复证据见 [docs/fix-evidence-2026-11-19.md](docs/fix-evidence-2026-11-19.md)。
@@ -50,11 +50,11 @@ python knowledge-eval/scripts/export_from_db.py --check
 ### 1.1 覆盖审查：题库够不够撑起四阶段
 
 ```bash
-# 1) 生成覆盖矩阵（216 个 诊断节点 × 能力标签 格子）
+# 1) 生成覆盖矩阵（220 个 诊断节点 × 能力标签 格子）
 python knowledge-eval/scripts/check_coverage_matrix.py
-# → cells 216: 179 without a question, 0 measured (n>=3), 0 floor-ok, 0 robust-ok
+# → cells 220: 179 without a question, 0 measured (n>=3), 0 floor-ok, 0 robust-ok
 # → target chapter math-6up-u01 分数乘法 (4 diagnostics)
-# → top-up to floor: 606 questions; to robust: 1254
+# → top-up to floor: 614 questions; to robust: 1274
 # → 写 reports/coverage-matrix.json 与 reports/coverage-matrix.md
 
 # 2) 负样本：审查脚本必须能判负
@@ -71,7 +71,19 @@ python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_fou
 ```
 
 结论与补题清单见 [docs/coverage-audit-2026-11-19.md](docs/coverage-audit-2026-11-19.md)：
-当前 **0 / 216 个格子达到最低档**，补齐到最低档需 606 题（目标章节 `math-6up-u01` 前三个节点需 33 题）。
+当前 **0 / 220 个格子达到最低档**，补齐到最低档需 614 题（目标章节 `math-6up-u01` 前三个节点需 33 题）。
+
+### 1.2 课本结构覆盖：节点够不够撑起"整册"
+
+上面查的是"题够不够"，这里查的是"节点全不全"——28 个聚合 + 55 个诊断，是否覆盖了三科六年级上册的课本结构。
+
+结论见 [docs/textbook-coverage-2026-11-19.md](docs/textbook-coverage-2026-11-19.md)。**这一版以课本原件（家长拍摄的目录页）为准**，推翻了初版两条凭网络目录得出的结论。三句话：
+
+- **数学问题最大**：数据是 2019 旧版，孩子学的是人教版 2024 新版——"比""扇形统计图""数学广角——数与形"本册不存在（移到六下），缺"生活中的负数"这一新主题；`math-6up-u09` 应拆成三个主题活动。
+- **语文已按新教材换过课文**：旧版 5 篇（夏天里的成长、伯牙鼓琴、书戴嵩画牛、月光曲、京剧趣谈）已不在六上，`d03` `d08` `d11` `d12` 与 4 道题已改成 26 课里的篇目；7 个语文园地 + 快乐读书吧仍待补。
+- **英语已按 2026 秋新版重建**：删掉新版不存在的《I like my computer》（含 `d05 There be`），补上 U9《I don't feel well》（`d16` 疾病表达 / `d17` 看病建议），`enjoy doing` 迁进 U3 中秋节，10 个单元名与 `chapter_order` 全部对齐课本；新单元配了 4 道题，不是空壳。
+
+课本目录仍未固化进仓库，所以这一节是人工核对，**不可回归**；把它变成门禁的利弊与限定条件，见该文档 §6。
 
 ---
 
@@ -112,13 +124,13 @@ knowledge-eval/
 │   ├── test_coverage_matrix_negative.py    覆盖审查的负样本（3 条）
 │   └── test_four_stage_constructible.py    规格测试：当前 1 passed / 48 xfailed
 ├── reports/                     由脚本生成，勿手改
-│   ├── coverage-matrix.json     全部 216 个格子
+│   ├── coverage-matrix.json     全部 220 个格子
 │   └── coverage-matrix.md       汇总 / 逐格矩阵 / 缺口清单
 └── docs/
     ├── data_sources.md         三科版本、逐节点来源、形态说明
     ├── verification.md         每条命令的预期输出与负样本
     ├── fix-evidence-2026-11-19.md   逐条修复证据表
-    └── coverage-audit-2026-11-19.md 题库四阶段覆盖审查（0/216）与补题清单
+    └── coverage-audit-2026-11-19.md 题库四阶段覆盖审查（0/220）与补题清单
 ```
 
 ---

@@ -1,15 +1,15 @@
 # 覆盖矩阵（由 check_coverage_matrix.py 生成，勿手改）
 
-节点 54 个诊断 / 28 个聚合，题目 42 道。
+节点 55 个诊断 / 28 个聚合，题目 46 道。
 
 ## 1. 汇总
 
 | 范围 | 格子 | 0 题 | n≥3 | 最低档达标 | 稳健档达标 | P0（n<3） | P1（阶段不全） | P2（仅缺稳健档） |
 |---|---|---|---|---|---|---|---|---|
-| 全部 | 216 | 179 | 0 | 0 | 0 | 216 | 0 | 0 |
+| 全部 | 220 | 179 | 0 | 0 | 0 | 220 | 0 | 0 |
 | math | 100 | 82 | 0 | 0 | 0 | 100 | 0 | 0 |
 | chinese | 56 | 45 | 0 | 0 | 0 | 56 | 0 | 0 |
-| english | 60 | 52 | 0 | 0 | 0 | 60 | 0 | 0 |
+| english | 64 | 52 | 0 | 0 | 0 | 64 | 0 | 0 |
 
 ## 2. 聚合节点下的诊断节点数
 
@@ -31,18 +31,18 @@
 | `chinese-6up-u04` 小说阅读 | chinese | 2 | 否 | chinese-6up-d06、chinese-6up-d07 |
 | `chinese-6up-u05` 围绕中心意思写 | chinese | 1 | 否 | chinese-6up-d08 |
 | `chinese-6up-u06` 保护环境 | chinese | 2 | 否 | chinese-6up-d09、chinese-6up-d10 |
-| `chinese-6up-u07` 艺术之美 | chinese | 2 | 否 | chinese-6up-d11、chinese-6up-d12 |
+| `chinese-6up-u07` 科学与想象 | chinese | 2 | 否 | chinese-6up-d11、chinese-6up-d12 |
 | `chinese-6up-u08` 走近鲁迅 | chinese | 2 | 否 | chinese-6up-d13、chinese-6up-d14 |
-| `english-6up-u01` Cities in China | english | 2 | 否 | english-6up-d01、english-6up-d02 |
-| `english-6up-u02` Daily plan | english | 2 | 否 | english-6up-d03、english-6up-d04 |
-| `english-6up-u03` I like my computer | english | 2 | 否 | english-6up-d05、english-6up-d06 |
-| `english-6up-u04` The Mid-Autumn Festival | english | 1 | 否 | english-6up-d07 |
-| `english-6up-u05` It will be sunny and cool tomorrow | english | 2 | 否 | english-6up-d08、english-6up-d09 |
-| `english-6up-u06` I will bring a big bottle of orange juice | english | 1 | 否 | english-6up-d10 |
-| `english-6up-u07` What can I do? | english | 1 | 否 | english-6up-d11 |
-| `english-6up-u08` We shouldn't waste water | english | 1 | 否 | english-6up-d12 |
-| `english-6up-u09` This bird is bigger than the first one | english | 2 | 否 | english-6up-d13、english-6up-d14 |
-| `english-6up-u10` Festivals | english | 1 | 否 | english-6up-d15 |
+| `english-6up-u01` What did you do during the holidays? | english | 2 | 否 | english-6up-d01、english-6up-d02 |
+| `english-6up-u02` Beibei always gets up early | english | 2 | 否 | english-6up-d03、english-6up-d04 |
+| `english-6up-u03` The Mid-Autumn Festival | english | 2 | 否 | english-6up-d06、english-6up-d07 |
+| `english-6up-u04` It will be sunny and cool tomorrow | english | 2 | 否 | english-6up-d08、english-6up-d09 |
+| `english-6up-u05` I will bring a bottle of orange juice | english | 1 | 否 | english-6up-d10 |
+| `english-6up-u06` What can I do? | english | 1 | 否 | english-6up-d11 |
+| `english-6up-u07` We shouldn't waste water | english | 1 | 否 | english-6up-d12 |
+| `english-6up-u08` This bird is bigger than the first one | english | 2 | 否 | english-6up-d13、english-6up-d14 |
+| `english-6up-u09` I don't feel well | english | 2 | 否 | english-6up-d16、english-6up-d17 |
+| `english-6up-u10` Festivals bring families together | english | 1 | 否 | english-6up-d15 |
 
 ## 3. 目标聚合节点：`math-6up-u01` 分数乘法（4 个诊断节点）
 
@@ -72,13 +72,13 @@
 |---|---|---|---|---|
 | math | 25 | 6 | 6 | 6 |
 | chinese | 14 | 4 | 4 | 4 |
-| english | 15 | 4 | 4 | 4 |
+| english | 16 | 6 | 4 | 4 |
 
 四阶段可达的节点：`math-6up-d01`、`math-6up-d08`、`math-6up-d11`、`math-6up-d15`、`math-6up-d17`、`math-6up-d25`、`chinese-6up-d01`、`chinese-6up-d03`、`chinese-6up-d06`、`chinese-6up-d11`、`english-6up-d01`、`english-6up-d03`、`english-6up-d12`、`english-6up-d13`。
 
 ## 5. 补题清单（按 节点 × 能力 × 难度）
 
-### 为达到最低档：共 606 题（math 282，chinese 156，english 168；易 202 / 中 202 / 难 202）
+### 为达到最低档：共 614 题（math 282，chinese 156，english 176；易 204 / 中 204 / 难 206）
 
 | 诊断节点 | 能力标签 | 补易 | 补中 | 补难 | 小计 |
 |---|---|---|---|---|---|
@@ -185,7 +185,7 @@
 
 （上表只列数学；语数英全量见 `coverage-matrix.json` 的 `floor_topup.rows`。）
 
-### 为达到稳健档：共 1254 题（math 582，chinese 324，english 348；易 418 / 中 418 / 难 418）
+### 为达到稳健档：共 1274 题（math 582，chinese 324，english 368；易 424 / 中 424 / 难 426）
 
 | 诊断节点 | 能力标签 | 补易 | 补中 | 补难 | 小计 |
 |---|---|---|---|---|---|
@@ -294,7 +294,7 @@
 
 ## 6. 缺口明细（P0 / P1 / P2 逐格）
 
-### P0 — n<3，连薄弱项都产生不了：216 格
+### P0 — n<3，连薄弱项都产生不了：220 格
 
 | 诊断节点 | 能力标签 | n_e | n_m | n_h | 到最低档 易/中/难 | 原因 |
 |---|---|---|---|---|---|---|
@@ -470,10 +470,6 @@
 | `english-6up-d04` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `english-6up-d04` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `english-6up-d04` | 综合表达 | 0 | 0 | 0 | 1/1/1 | 无题 |
-| `english-6up-d05` | 语言运用 | 0 | 0 | 0 | 1/1/1 | 无题 |
-| `english-6up-d05` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
-| `english-6up-d05` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
-| `english-6up-d05` | 综合表达 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `english-6up-d06` | 语言运用 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `english-6up-d06` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `english-6up-d06` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
@@ -510,6 +506,14 @@
 | `english-6up-d14` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `english-6up-d14` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `english-6up-d14` | 综合表达 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `english-6up-d16` | 语言运用 | 1 | 0 | 0 | 0/1/1 | 待测：1 题，不足 3 条样本 |
+| `english-6up-d16` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `english-6up-d16` | 辨析判断 | 0 | 1 | 0 | 1/0/1 | 待测：1 题，不足 3 条样本 |
+| `english-6up-d16` | 综合表达 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `english-6up-d17` | 语言运用 | 1 | 0 | 0 | 0/1/1 | 待测：1 题，不足 3 条样本 |
+| `english-6up-d17` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
+| `english-6up-d17` | 辨析判断 | 0 | 1 | 0 | 1/0/1 | 待测：1 题，不足 3 条样本 |
+| `english-6up-d17` | 综合表达 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `english-6up-d15` | 语言运用 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `english-6up-d15` | 阅读理解 | 0 | 0 | 0 | 1/1/1 | 无题 |
 | `english-6up-d15` | 辨析判断 | 0 | 0 | 0 | 1/1/1 | 无题 |

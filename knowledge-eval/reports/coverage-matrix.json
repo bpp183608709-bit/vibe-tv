@@ -6496,7 +6496,7 @@
   {
    "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d11",
-   "node_name": "文言实词与文意（伯牙鼓琴·书戴嵩画牛）",
+   "node_name": "文言实词与文意（两小儿辩日·曹冲称象）",
    "knowledge_type": "字词基础",
    "parent_aggregate_node_id": "chinese-6up-u07",
    "ability_tag": "语言运用",
@@ -6544,7 +6544,7 @@
   {
    "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d11",
-   "node_name": "文言实词与文意（伯牙鼓琴·书戴嵩画牛）",
+   "node_name": "文言实词与文意（两小儿辩日·曹冲称象）",
    "knowledge_type": "字词基础",
    "parent_aggregate_node_id": "chinese-6up-u07",
    "ability_tag": "阅读理解",
@@ -6592,7 +6592,7 @@
   {
    "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d11",
-   "node_name": "文言实词与文意（伯牙鼓琴·书戴嵩画牛）",
+   "node_name": "文言实词与文意（两小儿辩日·曹冲称象）",
    "knowledge_type": "字词基础",
    "parent_aggregate_node_id": "chinese-6up-u07",
    "ability_tag": "辨析判断",
@@ -6640,7 +6640,7 @@
   {
    "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d11",
-   "node_name": "文言实词与文意（伯牙鼓琴·书戴嵩画牛）",
+   "node_name": "文言实词与文意（两小儿辩日·曹冲称象）",
    "knowledge_type": "字词基础",
    "parent_aggregate_node_id": "chinese-6up-u07",
    "ability_tag": "综合表达",
@@ -6686,7 +6686,7 @@
   {
    "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d12",
-   "node_name": "艺术类文本的联想与表达",
+   "node_name": "科学类文本的想象与推理",
    "knowledge_type": "阅读理解",
    "parent_aggregate_node_id": "chinese-6up-u07",
    "ability_tag": "语言运用",
@@ -6732,7 +6732,7 @@
   {
    "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d12",
-   "node_name": "艺术类文本的联想与表达",
+   "node_name": "科学类文本的想象与推理",
    "knowledge_type": "阅读理解",
    "parent_aggregate_node_id": "chinese-6up-u07",
    "ability_tag": "阅读理解",
@@ -6778,7 +6778,7 @@
   {
    "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d12",
-   "node_name": "艺术类文本的联想与表达",
+   "node_name": "科学类文本的想象与推理",
    "knowledge_type": "阅读理解",
    "parent_aggregate_node_id": "chinese-6up-u07",
    "ability_tag": "辨析判断",
@@ -6824,7 +6824,7 @@
   {
    "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d12",
-   "node_name": "艺术类文本的联想与表达",
+   "node_name": "科学类文本的想象与推理",
    "knowledge_type": "阅读理解",
    "parent_aggregate_node_id": "chinese-6up-u07",
    "ability_tag": "综合表达",
@@ -7983,192 +7983,8 @@
   },
   {
    "subject": "english",
-   "diagnostic_node_id": "english-6up-d05",
-   "node_name": "There be 句型",
-   "knowledge_type": "sentence_pattern",
-   "parent_aggregate_node_id": "english-6up-u03",
-   "ability_tag": "语言运用",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "english",
-   "diagnostic_node_id": "english-6up-d05",
-   "node_name": "There be 句型",
-   "knowledge_type": "sentence_pattern",
-   "parent_aggregate_node_id": "english-6up-u03",
-   "ability_tag": "阅读理解",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "english",
-   "diagnostic_node_id": "english-6up-d05",
-   "node_name": "There be 句型",
-   "knowledge_type": "sentence_pattern",
-   "parent_aggregate_node_id": "english-6up-u03",
-   "ability_tag": "辨析判断",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "english",
-   "diagnostic_node_id": "english-6up-d05",
-   "node_name": "There be 句型",
-   "knowledge_type": "sentence_pattern",
-   "parent_aggregate_node_id": "english-6up-u03",
-   "ability_tag": "综合表达",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "english",
    "diagnostic_node_id": "english-6up-d06",
-   "node_name": "enjoy + doing",
+   "node_name": "enjoy + doing（节日活动）",
    "knowledge_type": "grammar",
    "parent_aggregate_node_id": "english-6up-u03",
    "ability_tag": "语言运用",
@@ -8214,7 +8030,7 @@
   {
    "subject": "english",
    "diagnostic_node_id": "english-6up-d06",
-   "node_name": "enjoy + doing",
+   "node_name": "enjoy + doing（节日活动）",
    "knowledge_type": "grammar",
    "parent_aggregate_node_id": "english-6up-u03",
    "ability_tag": "阅读理解",
@@ -8260,7 +8076,7 @@
   {
    "subject": "english",
    "diagnostic_node_id": "english-6up-d06",
-   "node_name": "enjoy + doing",
+   "node_name": "enjoy + doing（节日活动）",
    "knowledge_type": "grammar",
    "parent_aggregate_node_id": "english-6up-u03",
    "ability_tag": "辨析判断",
@@ -8306,7 +8122,7 @@
   {
    "subject": "english",
    "diagnostic_node_id": "english-6up-d06",
-   "node_name": "enjoy + doing",
+   "node_name": "enjoy + doing（节日活动）",
    "knowledge_type": "grammar",
    "parent_aggregate_node_id": "english-6up-u03",
    "ability_tag": "综合表达",
@@ -8354,7 +8170,7 @@
    "diagnostic_node_id": "english-6up-d07",
    "node_name": "一般现在时与一般过去时在节日描述中的对比",
    "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u04",
+   "parent_aggregate_node_id": "english-6up-u03",
    "ability_tag": "语言运用",
    "questions": {
     "easy": 0,
@@ -8400,7 +8216,7 @@
    "diagnostic_node_id": "english-6up-d07",
    "node_name": "一般现在时与一般过去时在节日描述中的对比",
    "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u04",
+   "parent_aggregate_node_id": "english-6up-u03",
    "ability_tag": "阅读理解",
    "questions": {
     "easy": 0,
@@ -8446,7 +8262,7 @@
    "diagnostic_node_id": "english-6up-d07",
    "node_name": "一般现在时与一般过去时在节日描述中的对比",
    "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u04",
+   "parent_aggregate_node_id": "english-6up-u03",
    "ability_tag": "辨析判断",
    "questions": {
     "easy": 0,
@@ -8492,6 +8308,190 @@
    "diagnostic_node_id": "english-6up-d07",
    "node_name": "一般现在时与一般过去时在节日描述中的对比",
    "knowledge_type": "grammar",
+   "parent_aggregate_node_id": "english-6up-u03",
+   "ability_tag": "综合表达",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d08",
+   "node_name": "一般将来时 will（含 There will be）",
+   "knowledge_type": "grammar",
+   "parent_aggregate_node_id": "english-6up-u04",
+   "ability_tag": "语言运用",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d08",
+   "node_name": "一般将来时 will（含 There will be）",
+   "knowledge_type": "grammar",
+   "parent_aggregate_node_id": "english-6up-u04",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d08",
+   "node_name": "一般将来时 will（含 There will be）",
+   "knowledge_type": "grammar",
+   "parent_aggregate_node_id": "english-6up-u04",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d08",
+   "node_name": "一般将来时 will（含 There will be）",
+   "knowledge_type": "grammar",
    "parent_aggregate_node_id": "english-6up-u04",
    "ability_tag": "综合表达",
    "questions": {
@@ -8535,194 +8535,10 @@
   },
   {
    "subject": "english",
-   "diagnostic_node_id": "english-6up-d08",
-   "node_name": "一般将来时 will",
-   "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u05",
-   "ability_tag": "语言运用",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "english",
-   "diagnostic_node_id": "english-6up-d08",
-   "node_name": "一般将来时 will",
-   "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u05",
-   "ability_tag": "阅读理解",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "english",
-   "diagnostic_node_id": "english-6up-d08",
-   "node_name": "一般将来时 will",
-   "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u05",
-   "ability_tag": "辨析判断",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "english",
-   "diagnostic_node_id": "english-6up-d08",
-   "node_name": "一般将来时 will",
-   "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u05",
-   "ability_tag": "综合表达",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "question_ids": [],
-   "measured": false,
-   "stages": {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null
-   },
-   "reachable_levels": [],
-   "four_stage": false,
-   "floor": {
-    "ok": false,
-    "need": {
-     "easy": 1,
-     "medium": 1,
-     "hard": 1
-    }
-   },
-   "robust": {
-    "ok": false,
-    "need": {
-     "easy": 2,
-     "medium": 2,
-     "hard": 2
-    }
-   },
-   "missing_levels": [
-    0,
-    1,
-    2,
-    3
-   ]
-  },
-  {
-   "subject": "english",
    "diagnostic_node_id": "english-6up-d09",
    "node_name": "天气词汇与活动安排",
    "knowledge_type": "vocabulary",
-   "parent_aggregate_node_id": "english-6up-u05",
+   "parent_aggregate_node_id": "english-6up-u04",
    "ability_tag": "语言运用",
    "questions": {
     "easy": 0,
@@ -8768,7 +8584,7 @@
    "diagnostic_node_id": "english-6up-d09",
    "node_name": "天气词汇与活动安排",
    "knowledge_type": "vocabulary",
-   "parent_aggregate_node_id": "english-6up-u05",
+   "parent_aggregate_node_id": "english-6up-u04",
    "ability_tag": "阅读理解",
    "questions": {
     "easy": 0,
@@ -8814,7 +8630,7 @@
    "diagnostic_node_id": "english-6up-d09",
    "node_name": "天气词汇与活动安排",
    "knowledge_type": "vocabulary",
-   "parent_aggregate_node_id": "english-6up-u05",
+   "parent_aggregate_node_id": "english-6up-u04",
    "ability_tag": "辨析判断",
    "questions": {
     "easy": 0,
@@ -8860,7 +8676,7 @@
    "diagnostic_node_id": "english-6up-d09",
    "node_name": "天气词汇与活动安排",
    "knowledge_type": "vocabulary",
-   "parent_aggregate_node_id": "english-6up-u05",
+   "parent_aggregate_node_id": "english-6up-u04",
    "ability_tag": "综合表达",
    "questions": {
     "easy": 0,
@@ -8906,7 +8722,7 @@
    "diagnostic_node_id": "english-6up-d10",
    "node_name": "量词表达（a bottle of / a glass of）",
    "knowledge_type": "vocabulary",
-   "parent_aggregate_node_id": "english-6up-u06",
+   "parent_aggregate_node_id": "english-6up-u05",
    "ability_tag": "语言运用",
    "questions": {
     "easy": 0,
@@ -8952,7 +8768,7 @@
    "diagnostic_node_id": "english-6up-d10",
    "node_name": "量词表达（a bottle of / a glass of）",
    "knowledge_type": "vocabulary",
-   "parent_aggregate_node_id": "english-6up-u06",
+   "parent_aggregate_node_id": "english-6up-u05",
    "ability_tag": "阅读理解",
    "questions": {
     "easy": 0,
@@ -8998,7 +8814,7 @@
    "diagnostic_node_id": "english-6up-d10",
    "node_name": "量词表达（a bottle of / a glass of）",
    "knowledge_type": "vocabulary",
-   "parent_aggregate_node_id": "english-6up-u06",
+   "parent_aggregate_node_id": "english-6up-u05",
    "ability_tag": "辨析判断",
    "questions": {
     "easy": 0,
@@ -9044,7 +8860,7 @@
    "diagnostic_node_id": "english-6up-d10",
    "node_name": "量词表达（a bottle of / a glass of）",
    "knowledge_type": "vocabulary",
-   "parent_aggregate_node_id": "english-6up-u06",
+   "parent_aggregate_node_id": "english-6up-u05",
    "ability_tag": "综合表达",
    "questions": {
     "easy": 0,
@@ -9090,7 +8906,7 @@
    "diagnostic_node_id": "english-6up-d11",
    "node_name": "情态动词 can 表能力与请求",
    "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u07",
+   "parent_aggregate_node_id": "english-6up-u06",
    "ability_tag": "语言运用",
    "questions": {
     "easy": 0,
@@ -9136,7 +8952,7 @@
    "diagnostic_node_id": "english-6up-d11",
    "node_name": "情态动词 can 表能力与请求",
    "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u07",
+   "parent_aggregate_node_id": "english-6up-u06",
    "ability_tag": "阅读理解",
    "questions": {
     "easy": 0,
@@ -9182,7 +8998,7 @@
    "diagnostic_node_id": "english-6up-d11",
    "node_name": "情态动词 can 表能力与请求",
    "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u07",
+   "parent_aggregate_node_id": "english-6up-u06",
    "ability_tag": "辨析判断",
    "questions": {
     "easy": 0,
@@ -9228,7 +9044,7 @@
    "diagnostic_node_id": "english-6up-d11",
    "node_name": "情态动词 can 表能力与请求",
    "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u07",
+   "parent_aggregate_node_id": "english-6up-u06",
    "ability_tag": "综合表达",
    "questions": {
     "easy": 0,
@@ -9272,9 +9088,9 @@
   {
    "subject": "english",
    "diagnostic_node_id": "english-6up-d12",
-   "node_name": "should / shouldn't 表建议",
+   "node_name": "should / shouldn't 表建议（环保）",
    "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u08",
+   "parent_aggregate_node_id": "english-6up-u07",
    "ability_tag": "语言运用",
    "questions": {
     "easy": 1,
@@ -9321,9 +9137,9 @@
   {
    "subject": "english",
    "diagnostic_node_id": "english-6up-d12",
-   "node_name": "should / shouldn't 表建议",
+   "node_name": "should / shouldn't 表建议（环保）",
    "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u08",
+   "parent_aggregate_node_id": "english-6up-u07",
    "ability_tag": "阅读理解",
    "questions": {
     "easy": 0,
@@ -9367,9 +9183,9 @@
   {
    "subject": "english",
    "diagnostic_node_id": "english-6up-d12",
-   "node_name": "should / shouldn't 表建议",
+   "node_name": "should / shouldn't 表建议（环保）",
    "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u08",
+   "parent_aggregate_node_id": "english-6up-u07",
    "ability_tag": "辨析判断",
    "questions": {
     "easy": 0,
@@ -9415,9 +9231,9 @@
   {
    "subject": "english",
    "diagnostic_node_id": "english-6up-d12",
-   "node_name": "should / shouldn't 表建议",
+   "node_name": "should / shouldn't 表建议（环保）",
    "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u08",
+   "parent_aggregate_node_id": "english-6up-u07",
    "ability_tag": "综合表达",
    "questions": {
     "easy": 0,
@@ -9463,7 +9279,7 @@
    "diagnostic_node_id": "english-6up-d13",
    "node_name": "形容词比较级（-er / more）",
    "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u09",
+   "parent_aggregate_node_id": "english-6up-u08",
    "ability_tag": "语言运用",
    "questions": {
     "easy": 1,
@@ -9512,7 +9328,7 @@
    "diagnostic_node_id": "english-6up-d13",
    "node_name": "形容词比较级（-er / more）",
    "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u09",
+   "parent_aggregate_node_id": "english-6up-u08",
    "ability_tag": "阅读理解",
    "questions": {
     "easy": 0,
@@ -9558,7 +9374,7 @@
    "diagnostic_node_id": "english-6up-d13",
    "node_name": "形容词比较级（-er / more）",
    "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u09",
+   "parent_aggregate_node_id": "english-6up-u08",
    "ability_tag": "辨析判断",
    "questions": {
     "easy": 0,
@@ -9606,7 +9422,7 @@
    "diagnostic_node_id": "english-6up-d13",
    "node_name": "形容词比较级（-er / more）",
    "knowledge_type": "grammar",
-   "parent_aggregate_node_id": "english-6up-u09",
+   "parent_aggregate_node_id": "english-6up-u08",
    "ability_tag": "综合表达",
    "questions": {
     "easy": 0,
@@ -9652,7 +9468,7 @@
    "diagnostic_node_id": "english-6up-d14",
    "node_name": "比较级句型 than",
    "knowledge_type": "sentence_pattern",
-   "parent_aggregate_node_id": "english-6up-u09",
+   "parent_aggregate_node_id": "english-6up-u08",
    "ability_tag": "语言运用",
    "questions": {
     "easy": 0,
@@ -9698,7 +9514,7 @@
    "diagnostic_node_id": "english-6up-d14",
    "node_name": "比较级句型 than",
    "knowledge_type": "sentence_pattern",
-   "parent_aggregate_node_id": "english-6up-u09",
+   "parent_aggregate_node_id": "english-6up-u08",
    "ability_tag": "阅读理解",
    "questions": {
     "easy": 0,
@@ -9744,7 +9560,7 @@
    "diagnostic_node_id": "english-6up-d14",
    "node_name": "比较级句型 than",
    "knowledge_type": "sentence_pattern",
-   "parent_aggregate_node_id": "english-6up-u09",
+   "parent_aggregate_node_id": "english-6up-u08",
    "ability_tag": "辨析判断",
    "questions": {
     "easy": 0,
@@ -9790,6 +9606,382 @@
    "diagnostic_node_id": "english-6up-d14",
    "node_name": "比较级句型 than",
    "knowledge_type": "sentence_pattern",
+   "parent_aggregate_node_id": "english-6up-u08",
+   "ability_tag": "综合表达",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d16",
+   "node_name": "疾病与身体不适表达",
+   "knowledge_type": "vocabulary",
+   "parent_aggregate_node_id": "english-6up-u09",
+   "ability_tag": "语言运用",
+   "questions": {
+    "easy": 1,
+    "medium": 0,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "english-6up-d16-q01"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 0,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d16",
+   "node_name": "疾病与身体不适表达",
+   "knowledge_type": "vocabulary",
+   "parent_aggregate_node_id": "english-6up-u09",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d16",
+   "node_name": "疾病与身体不适表达",
+   "knowledge_type": "vocabulary",
+   "parent_aggregate_node_id": "english-6up-u09",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 0,
+    "medium": 1,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "english-6up-d16-q02"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 0,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 1,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d16",
+   "node_name": "疾病与身体不适表达",
+   "knowledge_type": "vocabulary",
+   "parent_aggregate_node_id": "english-6up-u09",
+   "ability_tag": "综合表达",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d17",
+   "node_name": "should / shouldn't 表建议（看病）",
+   "knowledge_type": "grammar",
+   "parent_aggregate_node_id": "english-6up-u09",
+   "ability_tag": "语言运用",
+   "questions": {
+    "easy": 1,
+    "medium": 0,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "english-6up-d17-q01"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 0,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d17",
+   "node_name": "should / shouldn't 表建议（看病）",
+   "knowledge_type": "grammar",
+   "parent_aggregate_node_id": "english-6up-u09",
+   "ability_tag": "阅读理解",
+   "questions": {
+    "easy": 0,
+    "medium": 0,
+    "hard": 0,
+    "total": 0
+   },
+   "question_ids": [],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 1,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 2,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d17",
+   "node_name": "should / shouldn't 表建议（看病）",
+   "knowledge_type": "grammar",
+   "parent_aggregate_node_id": "english-6up-u09",
+   "ability_tag": "辨析判断",
+   "questions": {
+    "easy": 0,
+    "medium": 1,
+    "hard": 0,
+    "total": 1
+   },
+   "question_ids": [
+    "english-6up-d17-q02"
+   ],
+   "measured": false,
+   "stages": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null
+   },
+   "reachable_levels": [],
+   "four_stage": false,
+   "floor": {
+    "ok": false,
+    "need": {
+     "easy": 1,
+     "medium": 0,
+     "hard": 1
+    }
+   },
+   "robust": {
+    "ok": false,
+    "need": {
+     "easy": 2,
+     "medium": 1,
+     "hard": 2
+    }
+   },
+   "missing_levels": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d17",
+   "node_name": "should / shouldn't 表建议（看病）",
+   "knowledge_type": "grammar",
    "parent_aggregate_node_id": "english-6up-u09",
    "ability_tag": "综合表达",
    "questions": {
@@ -9834,7 +10026,7 @@
   {
    "subject": "english",
    "diagnostic_node_id": "english-6up-d15",
-   "node_name": "节日习俗表达与最高级初步",
+   "node_name": "节日习俗表达与最高级",
    "knowledge_type": "vocabulary",
    "parent_aggregate_node_id": "english-6up-u10",
    "ability_tag": "语言运用",
@@ -9880,7 +10072,7 @@
   {
    "subject": "english",
    "diagnostic_node_id": "english-6up-d15",
-   "node_name": "节日习俗表达与最高级初步",
+   "node_name": "节日习俗表达与最高级",
    "knowledge_type": "vocabulary",
    "parent_aggregate_node_id": "english-6up-u10",
    "ability_tag": "阅读理解",
@@ -9926,7 +10118,7 @@
   {
    "subject": "english",
    "diagnostic_node_id": "english-6up-d15",
-   "node_name": "节日习俗表达与最高级初步",
+   "node_name": "节日习俗表达与最高级",
    "knowledge_type": "vocabulary",
    "parent_aggregate_node_id": "english-6up-u10",
    "ability_tag": "辨析判断",
@@ -9972,7 +10164,7 @@
   {
    "subject": "english",
    "diagnostic_node_id": "english-6up-d15",
-   "node_name": "节日习俗表达与最高级初步",
+   "node_name": "节日习俗表达与最高级",
    "knowledge_type": "vocabulary",
    "parent_aggregate_node_id": "english-6up-u10",
    "ability_tag": "综合表达",
@@ -10555,7 +10747,7 @@
   {
    "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d11",
-   "node_name": "文言实词与文意（伯牙鼓琴·书戴嵩画牛）",
+   "node_name": "文言实词与文意（两小儿辩日·曹冲称象）",
    "parent_aggregate_node_id": "chinese-6up-u07",
    "questions": {
     "easy": 1,
@@ -10574,7 +10766,7 @@
   {
    "subject": "chinese",
    "diagnostic_node_id": "chinese-6up-d12",
-   "node_name": "艺术类文本的联想与表达",
+   "node_name": "科学类文本的想象与推理",
    "parent_aggregate_node_id": "chinese-6up-u07",
    "questions": {
     "easy": 0,
@@ -10681,22 +10873,8 @@
   },
   {
    "subject": "english",
-   "diagnostic_node_id": "english-6up-d05",
-   "node_name": "There be 句型",
-   "parent_aggregate_node_id": "english-6up-u03",
-   "questions": {
-    "easy": 0,
-    "medium": 0,
-    "hard": 0,
-    "total": 0
-   },
-   "reachable_levels": [],
-   "four_stage": false
-  },
-  {
-   "subject": "english",
    "diagnostic_node_id": "english-6up-d06",
-   "node_name": "enjoy + doing",
+   "node_name": "enjoy + doing（节日活动）",
    "parent_aggregate_node_id": "english-6up-u03",
    "questions": {
     "easy": 0,
@@ -10711,7 +10889,7 @@
    "subject": "english",
    "diagnostic_node_id": "english-6up-d07",
    "node_name": "一般现在时与一般过去时在节日描述中的对比",
-   "parent_aggregate_node_id": "english-6up-u04",
+   "parent_aggregate_node_id": "english-6up-u03",
    "questions": {
     "easy": 0,
     "medium": 0,
@@ -10724,8 +10902,8 @@
   {
    "subject": "english",
    "diagnostic_node_id": "english-6up-d08",
-   "node_name": "一般将来时 will",
-   "parent_aggregate_node_id": "english-6up-u05",
+   "node_name": "一般将来时 will（含 There will be）",
+   "parent_aggregate_node_id": "english-6up-u04",
    "questions": {
     "easy": 0,
     "medium": 0,
@@ -10739,7 +10917,7 @@
    "subject": "english",
    "diagnostic_node_id": "english-6up-d09",
    "node_name": "天气词汇与活动安排",
-   "parent_aggregate_node_id": "english-6up-u05",
+   "parent_aggregate_node_id": "english-6up-u04",
    "questions": {
     "easy": 0,
     "medium": 0,
@@ -10753,7 +10931,7 @@
    "subject": "english",
    "diagnostic_node_id": "english-6up-d10",
    "node_name": "量词表达（a bottle of / a glass of）",
-   "parent_aggregate_node_id": "english-6up-u06",
+   "parent_aggregate_node_id": "english-6up-u05",
    "questions": {
     "easy": 0,
     "medium": 0,
@@ -10767,7 +10945,7 @@
    "subject": "english",
    "diagnostic_node_id": "english-6up-d11",
    "node_name": "情态动词 can 表能力与请求",
-   "parent_aggregate_node_id": "english-6up-u07",
+   "parent_aggregate_node_id": "english-6up-u06",
    "questions": {
     "easy": 0,
     "medium": 0,
@@ -10780,8 +10958,8 @@
   {
    "subject": "english",
    "diagnostic_node_id": "english-6up-d12",
-   "node_name": "should / shouldn't 表建议",
-   "parent_aggregate_node_id": "english-6up-u08",
+   "node_name": "should / shouldn't 表建议（环保）",
+   "parent_aggregate_node_id": "english-6up-u07",
    "questions": {
     "easy": 1,
     "medium": 1,
@@ -10800,7 +10978,7 @@
    "subject": "english",
    "diagnostic_node_id": "english-6up-d13",
    "node_name": "形容词比较级（-er / more）",
-   "parent_aggregate_node_id": "english-6up-u09",
+   "parent_aggregate_node_id": "english-6up-u08",
    "questions": {
     "easy": 1,
     "medium": 1,
@@ -10819,7 +10997,7 @@
    "subject": "english",
    "diagnostic_node_id": "english-6up-d14",
    "node_name": "比较级句型 than",
-   "parent_aggregate_node_id": "english-6up-u09",
+   "parent_aggregate_node_id": "english-6up-u08",
    "questions": {
     "easy": 0,
     "medium": 0,
@@ -10831,8 +11009,36 @@
   },
   {
    "subject": "english",
+   "diagnostic_node_id": "english-6up-d16",
+   "node_name": "疾病与身体不适表达",
+   "parent_aggregate_node_id": "english-6up-u09",
+   "questions": {
+    "easy": 1,
+    "medium": 1,
+    "hard": 0,
+    "total": 2
+   },
+   "reachable_levels": [],
+   "four_stage": false
+  },
+  {
+   "subject": "english",
+   "diagnostic_node_id": "english-6up-d17",
+   "node_name": "should / shouldn't 表建议（看病）",
+   "parent_aggregate_node_id": "english-6up-u09",
+   "questions": {
+    "easy": 1,
+    "medium": 1,
+    "hard": 0,
+    "total": 2
+   },
+   "reachable_levels": [],
+   "four_stage": false
+  },
+  {
+   "subject": "english",
    "diagnostic_node_id": "english-6up-d15",
-   "node_name": "节日习俗表达与最高级初步",
+   "node_name": "节日习俗表达与最高级",
    "parent_aggregate_node_id": "english-6up-u10",
    "questions": {
     "easy": 0,
@@ -11010,7 +11216,7 @@
   },
   {
    "aggregate_node_id": "chinese-6up-u07",
-   "aggregate_name": "艺术之美",
+   "aggregate_name": "科学与想象",
    "subject": "chinese",
    "diagnostic_count": 2,
    "diagnostic_node_ids": [
@@ -11030,7 +11236,7 @@
   },
   {
    "aggregate_node_id": "english-6up-u01",
-   "aggregate_name": "Cities in China",
+   "aggregate_name": "What did you do during the holidays?",
    "subject": "english",
    "diagnostic_count": 2,
    "diagnostic_node_ids": [
@@ -11040,7 +11246,7 @@
   },
   {
    "aggregate_node_id": "english-6up-u02",
-   "aggregate_name": "Daily plan",
+   "aggregate_name": "Beibei always gets up early",
    "subject": "english",
    "diagnostic_count": 2,
    "diagnostic_node_ids": [
@@ -11050,25 +11256,16 @@
   },
   {
    "aggregate_node_id": "english-6up-u03",
-   "aggregate_name": "I like my computer",
+   "aggregate_name": "The Mid-Autumn Festival",
    "subject": "english",
    "diagnostic_count": 2,
    "diagnostic_node_ids": [
-    "english-6up-d05",
-    "english-6up-d06"
-   ]
-  },
-  {
-   "aggregate_node_id": "english-6up-u04",
-   "aggregate_name": "The Mid-Autumn Festival",
-   "subject": "english",
-   "diagnostic_count": 1,
-   "diagnostic_node_ids": [
+    "english-6up-d06",
     "english-6up-d07"
    ]
   },
   {
-   "aggregate_node_id": "english-6up-u05",
+   "aggregate_node_id": "english-6up-u04",
    "aggregate_name": "It will be sunny and cool tomorrow",
    "subject": "english",
    "diagnostic_count": 2,
@@ -11078,8 +11275,8 @@
    ]
   },
   {
-   "aggregate_node_id": "english-6up-u06",
-   "aggregate_name": "I will bring a big bottle of orange juice",
+   "aggregate_node_id": "english-6up-u05",
+   "aggregate_name": "I will bring a bottle of orange juice",
    "subject": "english",
    "diagnostic_count": 1,
    "diagnostic_node_ids": [
@@ -11087,7 +11284,7 @@
    ]
   },
   {
-   "aggregate_node_id": "english-6up-u07",
+   "aggregate_node_id": "english-6up-u06",
    "aggregate_name": "What can I do?",
    "subject": "english",
    "diagnostic_count": 1,
@@ -11096,7 +11293,7 @@
    ]
   },
   {
-   "aggregate_node_id": "english-6up-u08",
+   "aggregate_node_id": "english-6up-u07",
    "aggregate_name": "We shouldn't waste water",
    "subject": "english",
    "diagnostic_count": 1,
@@ -11105,7 +11302,7 @@
    ]
   },
   {
-   "aggregate_node_id": "english-6up-u09",
+   "aggregate_node_id": "english-6up-u08",
    "aggregate_name": "This bird is bigger than the first one",
    "subject": "english",
    "diagnostic_count": 2,
@@ -11115,8 +11312,18 @@
    ]
   },
   {
+   "aggregate_node_id": "english-6up-u09",
+   "aggregate_name": "I don't feel well",
+   "subject": "english",
+   "diagnostic_count": 2,
+   "diagnostic_node_ids": [
+    "english-6up-d16",
+    "english-6up-d17"
+   ]
+  },
+  {
    "aggregate_node_id": "english-6up-u10",
-   "aggregate_name": "Festivals",
+   "aggregate_name": "Festivals bring families together",
    "subject": "english",
    "diagnostic_count": 1,
    "diagnostic_node_ids": [
@@ -11125,18 +11332,18 @@
   }
  ],
  "generated_from": {
-  "diagnostic_nodes": 54,
+  "diagnostic_nodes": 55,
   "aggregate_nodes": 28,
-  "questions": 42
+  "questions": 46
  },
  "summary": {
   "all": {
-   "cells": 216,
+   "cells": 220,
    "no_question": 179,
    "measured": 0,
    "floor_ok": 0,
    "robust_ok": 0,
-   "p0": 216,
+   "p0": 220,
    "p1": 0,
    "p2": 0
   },
@@ -11162,12 +11369,12 @@
     "p2": 0
    },
    "english": {
-    "cells": 60,
+    "cells": 64,
     "no_question": 52,
     "measured": 0,
     "floor_ok": 0,
     "robust_ok": 0,
-    "p0": 60,
+    "p0": 64,
     "p1": 0,
     "p2": 0
    }
@@ -12737,42 +12944,6 @@
    },
    {
     "subject": "english",
-    "diagnostic_node_id": "english-6up-d05",
-    "ability_tag": "语言运用",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "english",
-    "diagnostic_node_id": "english-6up-d05",
-    "ability_tag": "阅读理解",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "english",
-    "diagnostic_node_id": "english-6up-d05",
-    "ability_tag": "辨析判断",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "english",
-    "diagnostic_node_id": "english-6up-d05",
-    "ability_tag": "综合表达",
-    "easy": 1,
-    "medium": 1,
-    "hard": 1,
-    "total": 3
-   },
-   {
-    "subject": "english",
     "diagnostic_node_id": "english-6up-d06",
     "ability_tag": "语言运用",
     "easy": 1,
@@ -13089,6 +13260,78 @@
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d14",
+    "ability_tag": "综合表达",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d16",
+    "ability_tag": "语言运用",
+    "easy": 0,
+    "medium": 1,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d16",
+    "ability_tag": "阅读理解",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d16",
+    "ability_tag": "辨析判断",
+    "easy": 1,
+    "medium": 0,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d16",
+    "ability_tag": "综合表达",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d17",
+    "ability_tag": "语言运用",
+    "easy": 0,
+    "medium": 1,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d17",
+    "ability_tag": "阅读理解",
+    "easy": 1,
+    "medium": 1,
+    "hard": 1,
+    "total": 3
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d17",
+    "ability_tag": "辨析判断",
+    "easy": 1,
+    "medium": 0,
+    "hard": 1,
+    "total": 2
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d17",
     "ability_tag": "综合表达",
     "easy": 1,
     "medium": 1,
@@ -13132,16 +13375,16 @@
     "total": 3
    }
   ],
-  "total": 606,
+  "total": 614,
   "by_subject": {
    "math": 282,
    "chinese": 156,
-   "english": 168
+   "english": 176
   },
   "by_difficulty": {
-   "easy": 202,
-   "medium": 202,
-   "hard": 202
+   "easy": 204,
+   "medium": 204,
+   "hard": 206
   }
  },
  "robust_topup": {
@@ -14696,42 +14939,6 @@
    },
    {
     "subject": "english",
-    "diagnostic_node_id": "english-6up-d05",
-    "ability_tag": "语言运用",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "english",
-    "diagnostic_node_id": "english-6up-d05",
-    "ability_tag": "阅读理解",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "english",
-    "diagnostic_node_id": "english-6up-d05",
-    "ability_tag": "辨析判断",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "english",
-    "diagnostic_node_id": "english-6up-d05",
-    "ability_tag": "综合表达",
-    "easy": 2,
-    "medium": 2,
-    "hard": 2,
-    "total": 6
-   },
-   {
-    "subject": "english",
     "diagnostic_node_id": "english-6up-d06",
     "ability_tag": "语言运用",
     "easy": 2,
@@ -15048,6 +15255,78 @@
    {
     "subject": "english",
     "diagnostic_node_id": "english-6up-d14",
+    "ability_tag": "综合表达",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d16",
+    "ability_tag": "语言运用",
+    "easy": 1,
+    "medium": 2,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d16",
+    "ability_tag": "阅读理解",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d16",
+    "ability_tag": "辨析判断",
+    "easy": 2,
+    "medium": 1,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d16",
+    "ability_tag": "综合表达",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d17",
+    "ability_tag": "语言运用",
+    "easy": 1,
+    "medium": 2,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d17",
+    "ability_tag": "阅读理解",
+    "easy": 2,
+    "medium": 2,
+    "hard": 2,
+    "total": 6
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d17",
+    "ability_tag": "辨析判断",
+    "easy": 2,
+    "medium": 1,
+    "hard": 2,
+    "total": 5
+   },
+   {
+    "subject": "english",
+    "diagnostic_node_id": "english-6up-d17",
     "ability_tag": "综合表达",
     "easy": 2,
     "medium": 2,
@@ -15091,16 +15370,16 @@
     "total": 6
    }
   ],
-  "total": 1254,
+  "total": 1274,
   "by_subject": {
    "math": 582,
    "chinese": 324,
-   "english": 348
+   "english": 368
   },
   "by_difficulty": {
-   "easy": 418,
-   "medium": 418,
-   "hard": 418
+   "easy": 424,
+   "medium": 424,
+   "hard": 426
   }
  }
 }

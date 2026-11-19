@@ -7,7 +7,7 @@
  "publisher": "xiangshao",
  "publisher_zh": "湖南少年儿童出版社",
  "textbook_title_zh": "义务教育教科书·英语（六年级上册）",
- "edition": "2026 autumn edition (10 units)",
+ "edition": "湘少版 2026 秋新版（10 单元）",
  "verified": false,
  "source": "manual",
  "taxonomy_version": null,
@@ -16,19 +16,19 @@
  "nodes": [
   {
    "node_id": "english-6up-u01",
-   "name": "Cities in China",
+   "name": "What did you do during the holidays?",
    "subject": "english",
    "grade": 6,
    "semester": "up",
    "node_type": "aggregate",
    "parent_id": null,
-   "chapter_name": "Cities in China",
+   "chapter_name": "What did you do during the holidays?",
    "micro_nodes": [
     "一般过去时（规则与不规则动词）+ 谈假期活动",
     "假期活动词汇与问答"
    ],
    "prerequisite_node_ids": [],
-   "description": "Cities in China",
+   "description": "What did you do during the holidays?",
    "status": "active",
    "chapter_order": 1,
    "week_start": 1
@@ -41,7 +41,7 @@
    "semester": "up",
    "node_type": "diagnostic",
    "parent_id": "english-6up-u01",
-   "chapter_name": "Cities in China",
+   "chapter_name": "What did you do during the holidays?",
    "knowledge_type": "grammar",
    "micro_nodes": [
     "一般过去时",
@@ -62,7 +62,7 @@
    "semester": "up",
    "node_type": "diagnostic",
    "parent_id": "english-6up-u01",
-   "chapter_name": "Cities in China",
+   "chapter_name": "What did you do during the holidays?",
    "knowledge_type": "vocabulary",
    "micro_nodes": [
     "假期活动动词",
@@ -76,19 +76,19 @@
   },
   {
    "node_id": "english-6up-u02",
-   "name": "Daily plan",
+   "name": "Beibei always gets up early",
    "subject": "english",
    "grade": 6,
    "semester": "up",
    "node_type": "aggregate",
    "parent_id": null,
-   "chapter_name": "Daily plan",
+   "chapter_name": "Beibei always gets up early",
    "micro_nodes": [
     "一般现在时第三人称单数",
     "频度副词"
    ],
    "prerequisite_node_ids": [],
-   "description": "Daily plan",
+   "description": "Beibei always gets up early",
    "status": "active",
    "chapter_order": 2,
    "week_start": 2
@@ -101,16 +101,16 @@
    "semester": "up",
    "node_type": "diagnostic",
    "parent_id": "english-6up-u02",
-   "chapter_name": "Daily plan",
+   "chapter_name": "Beibei always gets up early",
    "knowledge_type": "grammar",
    "micro_nodes": [
     "一般现在时",
     "第三人称单数",
-    "Katie always gets up early"
+    "Beibei always gets up early"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
-   "description": "主语是 he/she/it 时动词加 -s/-es",
+   "description": "主语是 he/she/it 时动词加 -s/-es（Beibei gets up early）",
    "status": "active",
    "chapter_order": 2
   },
@@ -122,7 +122,7 @@
    "semester": "up",
    "node_type": "diagnostic",
    "parent_id": "english-6up-u02",
-   "chapter_name": "Daily plan",
+   "chapter_name": "Beibei always gets up early",
    "knowledge_type": "vocabulary",
    "micro_nodes": [
     "频度副词",
@@ -136,65 +136,6 @@
   },
   {
    "node_id": "english-6up-u03",
-   "name": "I like my computer",
-   "subject": "english",
-   "grade": 6,
-   "semester": "up",
-   "node_type": "aggregate",
-   "parent_id": null,
-   "chapter_name": "I like my computer",
-   "micro_nodes": [
-    "There be 句型",
-    "enjoy + doing"
-   ],
-   "prerequisite_node_ids": [],
-   "description": "I like my computer",
-   "status": "active",
-   "chapter_order": 3,
-   "week_start": 4
-  },
-  {
-   "node_id": "english-6up-d05",
-   "name": "There be 句型",
-   "subject": "english",
-   "grade": 6,
-   "semester": "up",
-   "node_type": "diagnostic",
-   "parent_id": "english-6up-u03",
-   "chapter_name": "I like my computer",
-   "knowledge_type": "sentence_pattern",
-   "micro_nodes": [
-    "There be 句型",
-    "描述房间里有什么"
-   ],
-   "source_ids": [],
-   "prerequisite_node_ids": [],
-   "description": "There is / There are 与单复数的一致",
-   "status": "active",
-   "chapter_order": 3
-  },
-  {
-   "node_id": "english-6up-d06",
-   "name": "enjoy + doing",
-   "subject": "english",
-   "grade": 6,
-   "semester": "up",
-   "node_type": "diagnostic",
-   "parent_id": "english-6up-u03",
-   "chapter_name": "I like my computer",
-   "knowledge_type": "grammar",
-   "micro_nodes": [
-    "enjoy doing",
-    "like doing"
-   ],
-   "source_ids": [],
-   "prerequisite_node_ids": [],
-   "description": "enjoy 后接动名词，以及 like/love + doing",
-   "status": "active",
-   "chapter_order": 3
-  },
-  {
-   "node_id": "english-6up-u04",
    "name": "The Mid-Autumn Festival",
    "subject": "english",
    "grade": 6,
@@ -203,13 +144,35 @@
    "parent_id": null,
    "chapter_name": "The Mid-Autumn Festival",
    "micro_nodes": [
-    "一般现在时与一般过去时在节日描述中的对比"
+    "一般现在时与一般过去时在节日描述中的对比",
+    "enjoy + doing 与节日饮食表达"
    ],
    "prerequisite_node_ids": [],
    "description": "The Mid-Autumn Festival",
    "status": "active",
-   "chapter_order": 4,
-   "week_start": 5
+   "chapter_order": 3,
+   "week_start": 4
+  },
+  {
+   "node_id": "english-6up-d06",
+   "name": "enjoy + doing（节日活动）",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u03",
+   "chapter_name": "The Mid-Autumn Festival",
+   "knowledge_type": "grammar",
+   "micro_nodes": [
+    "enjoy doing",
+    "like / love + doing",
+    "enjoy eating mooncakes"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "enjoy 后接动名词，及 like/love + doing 的同类用法",
+   "status": "active",
+   "chapter_order": 3
   },
   {
    "node_id": "english-6up-d07",
@@ -218,7 +181,7 @@
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "english-6up-u04",
+   "parent_id": "english-6up-u03",
    "chapter_name": "The Mid-Autumn Festival",
    "knowledge_type": "grammar",
    "micro_nodes": [
@@ -230,10 +193,10 @@
    "prerequisite_node_ids": [],
    "description": "习俗用现在时，今年的经历用过去时",
    "status": "active",
-   "chapter_order": 4
+   "chapter_order": 3
   },
   {
-   "node_id": "english-6up-u05",
+   "node_id": "english-6up-u04",
    "name": "It will be sunny and cool tomorrow",
    "subject": "english",
    "grade": 6,
@@ -243,33 +206,35 @@
    "chapter_name": "It will be sunny and cool tomorrow",
    "micro_nodes": [
     "一般将来时 will",
+    "There will be 句型",
     "天气词汇与活动安排"
    ],
    "prerequisite_node_ids": [],
    "description": "It will be sunny and cool tomorrow",
    "status": "active",
-   "chapter_order": 5,
-   "week_start": 7
+   "chapter_order": 4,
+   "week_start": 6
   },
   {
    "node_id": "english-6up-d08",
-   "name": "一般将来时 will",
+   "name": "一般将来时 will（含 There will be）",
    "subject": "english",
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "english-6up-u05",
+   "parent_id": "english-6up-u04",
    "chapter_name": "It will be sunny and cool tomorrow",
    "knowledge_type": "grammar",
    "micro_nodes": [
     "一般将来时 will",
+    "There will be 句型",
     "天气描述"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
-   "description": "will + 动词原形，以及 will be 描述天气",
+   "description": "will + 动词原形，will be 描述天气，There will be 表示将有",
    "status": "active",
-   "chapter_order": 5
+   "chapter_order": 4
   },
   {
    "node_id": "english-6up-d09",
@@ -278,7 +243,7 @@
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "english-6up-u05",
+   "parent_id": "english-6up-u04",
    "chapter_name": "It will be sunny and cool tomorrow",
    "knowledge_type": "vocabulary",
    "micro_nodes": [
@@ -289,25 +254,25 @@
    "prerequisite_node_ids": [],
    "description": "sunny/cloudy/rainy/windy 与好天气坏天气下的活动",
    "status": "active",
-   "chapter_order": 5
+   "chapter_order": 4
   },
   {
-   "node_id": "english-6up-u06",
-   "name": "I will bring a big bottle of orange juice",
+   "node_id": "english-6up-u05",
+   "name": "I will bring a bottle of orange juice",
    "subject": "english",
    "grade": 6,
    "semester": "up",
    "node_type": "aggregate",
    "parent_id": null,
-   "chapter_name": "I will bring a big bottle of orange juice",
+   "chapter_name": "I will bring a bottle of orange juice",
    "micro_nodes": [
     "量词表达（a bottle of / a glass of）"
    ],
    "prerequisite_node_ids": [],
-   "description": "I will bring a big bottle of orange juice",
+   "description": "I will bring a bottle of orange juice",
    "status": "active",
-   "chapter_order": 6,
-   "week_start": 8
+   "chapter_order": 5,
+   "week_start": 7
   },
   {
    "node_id": "english-6up-d10",
@@ -316,8 +281,8 @@
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "english-6up-u06",
-   "chapter_name": "I will bring a big bottle of orange juice",
+   "parent_id": "english-6up-u05",
+   "chapter_name": "I will bring a bottle of orange juice",
    "knowledge_type": "vocabulary",
    "micro_nodes": [
     "量词 a bottle of",
@@ -328,10 +293,10 @@
    "prerequisite_node_ids": [],
    "description": "不可数名词前的量词与复数变化",
    "status": "active",
-   "chapter_order": 6
+   "chapter_order": 5
   },
   {
-   "node_id": "english-6up-u07",
+   "node_id": "english-6up-u06",
    "name": "What can I do?",
    "subject": "english",
    "grade": 6,
@@ -345,8 +310,8 @@
    "prerequisite_node_ids": [],
    "description": "What can I do?",
    "status": "active",
-   "chapter_order": 7,
-   "week_start": 10
+   "chapter_order": 6,
+   "week_start": 9
   },
   {
    "node_id": "english-6up-d11",
@@ -355,7 +320,7 @@
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "english-6up-u07",
+   "parent_id": "english-6up-u06",
    "chapter_name": "What can I do?",
    "knowledge_type": "grammar",
    "micro_nodes": [
@@ -366,10 +331,10 @@
    "prerequisite_node_ids": [],
    "description": "can + 动词原形，What can I do for you?",
    "status": "active",
-   "chapter_order": 7
+   "chapter_order": 6
   },
   {
-   "node_id": "english-6up-u08",
+   "node_id": "english-6up-u07",
    "name": "We shouldn't waste water",
    "subject": "english",
    "grade": 6,
@@ -378,22 +343,22 @@
    "parent_id": null,
    "chapter_name": "We shouldn't waste water",
    "micro_nodes": [
-    "should / shouldn't 表建议"
+    "should / shouldn't 表建议（环保）"
    ],
    "prerequisite_node_ids": [],
    "description": "We shouldn't waste water",
    "status": "active",
-   "chapter_order": 8,
-   "week_start": 11
+   "chapter_order": 7,
+   "week_start": 10
   },
   {
    "node_id": "english-6up-d12",
-   "name": "should / shouldn't 表建议",
+   "name": "should / shouldn't 表建议（环保）",
    "subject": "english",
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "english-6up-u08",
+   "parent_id": "english-6up-u07",
    "chapter_name": "We shouldn't waste water",
    "knowledge_type": "grammar",
    "micro_nodes": [
@@ -404,10 +369,10 @@
    "prerequisite_node_ids": [],
    "description": "should + 动词原形，给环保提建议",
    "status": "active",
-   "chapter_order": 8
+   "chapter_order": 7
   },
   {
-   "node_id": "english-6up-u09",
+   "node_id": "english-6up-u08",
    "name": "This bird is bigger than the first one",
    "subject": "english",
    "grade": 6,
@@ -422,8 +387,8 @@
    "prerequisite_node_ids": [],
    "description": "This bird is bigger than the first one",
    "status": "active",
-   "chapter_order": 9,
-   "week_start": 13
+   "chapter_order": 8,
+   "week_start": 12
   },
   {
    "node_id": "english-6up-d13",
@@ -432,7 +397,7 @@
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "english-6up-u09",
+   "parent_id": "english-6up-u08",
    "chapter_name": "This bird is bigger than the first one",
    "knowledge_type": "grammar",
    "micro_nodes": [
@@ -444,7 +409,7 @@
    "prerequisite_node_ids": [],
    "description": "big→bigger，双写与 more 的规则",
    "status": "active",
-   "chapter_order": 9
+   "chapter_order": 8
   },
   {
    "node_id": "english-6up-d14",
@@ -453,7 +418,7 @@
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
-   "parent_id": "english-6up-u09",
+   "parent_id": "english-6up-u08",
    "chapter_name": "This bird is bigger than the first one",
    "knowledge_type": "sentence_pattern",
    "micro_nodes": [
@@ -464,35 +429,96 @@
    "prerequisite_node_ids": [],
    "description": "A is bigger than B 的完整句子",
    "status": "active",
-   "chapter_order": 9
+   "chapter_order": 8
   },
   {
-   "node_id": "english-6up-u10",
-   "name": "Festivals",
+   "node_id": "english-6up-u09",
+   "name": "I don't feel well",
    "subject": "english",
    "grade": 6,
    "semester": "up",
    "node_type": "aggregate",
    "parent_id": null,
-   "chapter_name": "Festivals",
+   "chapter_name": "I don't feel well",
    "micro_nodes": [
-    "节日习俗表达与最高级初步"
+    "疾病与身体不适表达",
+    "should / shouldn't 表建议（看病）"
    ],
    "prerequisite_node_ids": [],
-   "description": "Festivals",
+   "description": "I don't feel well",
+   "status": "active",
+   "chapter_order": 9,
+   "week_start": 14
+  },
+  {
+   "node_id": "english-6up-d16",
+   "name": "疾病与身体不适表达",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u09",
+   "chapter_name": "I don't feel well",
+   "knowledge_type": "vocabulary",
+   "micro_nodes": [
+    "What's wrong with you?",
+    "have a cold / fever / headache",
+    "see a doctor / take medicine"
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "问病情与回答，have a cold / have a fever / have a headache 的固定搭配",
+   "status": "active",
+   "chapter_order": 9
+  },
+  {
+   "node_id": "english-6up-d17",
+   "name": "should / shouldn't 表建议（看病）",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "diagnostic",
+   "parent_id": "english-6up-u09",
+   "chapter_name": "I don't feel well",
+   "knowledge_type": "grammar",
+   "micro_nodes": [
+    "should + 动词原形",
+    "给建议：You should drink more water.",
+    "劝阻：You shouldn't eat too much ice cream."
+   ],
+   "source_ids": [],
+   "prerequisite_node_ids": [],
+   "description": "看病情境下给建议与劝阻，与第七单元环保建议同形不同境",
+   "status": "active",
+   "chapter_order": 9
+  },
+  {
+   "node_id": "english-6up-u10",
+   "name": "Festivals bring families together",
+   "subject": "english",
+   "grade": 6,
+   "semester": "up",
+   "node_type": "aggregate",
+   "parent_id": null,
+   "chapter_name": "Festivals bring families together",
+   "micro_nodes": [
+    "节日习俗表达与最高级"
+   ],
+   "prerequisite_node_ids": [],
+   "description": "Festivals bring families together",
    "status": "active",
    "chapter_order": 10,
-   "week_start": 15
+   "week_start": 16
   },
   {
    "node_id": "english-6up-d15",
-   "name": "节日习俗表达与最高级初步",
+   "name": "节日习俗表达与最高级",
    "subject": "english",
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
    "parent_id": "english-6up-u10",
-   "chapter_name": "Festivals",
+   "chapter_name": "Festivals bring families together",
    "knowledge_type": "vocabulary",
    "micro_nodes": [
     "节日习俗",

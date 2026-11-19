@@ -7,7 +7,7 @@
  "publisher": "统编",
  "publisher_zh": "人民教育出版社",
  "textbook_title_zh": "义务教育教科书·语文（六年级上册）",
- "edition": "统编版 current printing (8 units)",
+ "edition": "统编版 2026 秋现行修订版（8 单元 / 26 课）",
  "verified": false,
  "source": "manual",
  "taxonomy_version": null,
@@ -108,7 +108,6 @@
     "七律·长征",
     "狼牙山五壮士",
     "开国大典",
-    "灯光",
     "我的战友邱少云"
    ],
    "source_ids": [],
@@ -265,12 +264,14 @@
    "chapter_name": "围绕中心意思写",
    "knowledge_type": "习作方法",
    "micro_nodes": [
-    "夏天里的成长",
-    "盼"
+    "灯光",
+    "盼",
+    "爸爸的计划",
+    "小站"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
-   "description": "能判断哪些事例支撑中心，哪些跑题",
+   "description": "能判断哪些事例支撑中心、哪些跑题，能借《爸爸的计划》《小站》看出选材怎么服务中心",
    "status": "active",
    "chapter_order": 5
   },
@@ -337,60 +338,60 @@
   },
   {
    "node_id": "chinese-6up-u07",
-   "name": "艺术之美",
+   "name": "科学与想象",
    "subject": "chinese",
    "grade": 6,
    "semester": "up",
    "node_type": "aggregate",
    "parent_id": null,
-   "chapter_name": "艺术之美",
+   "chapter_name": "科学与想象",
    "micro_nodes": [
-    "文言实词与文意（伯牙鼓琴·书戴嵩画牛）",
-    "艺术类文本的联想与表达"
+    "文言实词与文意（两小儿辩日·曹冲称象）",
+    "科学类文本的想象与推理"
    ],
    "prerequisite_node_ids": [],
-   "description": "艺术之美",
+   "description": "科学与想象",
    "status": "active",
    "chapter_order": 7,
    "week_start": 13
   },
   {
    "node_id": "chinese-6up-d11",
-   "name": "文言实词与文意（伯牙鼓琴·书戴嵩画牛）",
+   "name": "文言实词与文意（两小儿辩日·曹冲称象）",
    "subject": "chinese",
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
    "parent_id": "chinese-6up-u07",
-   "chapter_name": "艺术之美",
+   "chapter_name": "科学与想象",
    "knowledge_type": "字词基础",
    "micro_nodes": [
-    "伯牙鼓琴",
-    "书戴嵩画牛"
+    "两小儿辩日",
+    "曹冲称象"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
-   "description": "鼓、志、巍巍、汤汤等实词，能把句子说通",
+   "description": "去、汤、孰、置、咸等实词，能把句子说通并说出故事的道理",
    "status": "active",
    "chapter_order": 7
   },
   {
    "node_id": "chinese-6up-d12",
-   "name": "艺术类文本的联想与表达",
+   "name": "科学类文本的想象与推理",
    "subject": "chinese",
    "grade": 6,
    "semester": "up",
    "node_type": "diagnostic",
    "parent_id": "chinese-6up-u07",
-   "chapter_name": "艺术之美",
+   "chapter_name": "科学与想象",
    "knowledge_type": "阅读理解",
    "micro_nodes": [
-    "月光曲",
-    "京剧趣谈"
+    "表里的生物",
+    "他们那时候多有趣啊"
    ],
    "source_ids": [],
    "prerequisite_node_ids": [],
-   "description": "从音乐、京剧的描写里读出想象和用词的好处",
+   "description": "从科学小品与科幻故事的描写里读出想象、推理和用词的好处",
    "status": "active",
    "chapter_order": 7
   },
