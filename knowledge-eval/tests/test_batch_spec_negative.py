@@ -111,3 +111,20 @@ def test_one_bad_line_stops_the_whole_batch(sandbox):
                                                fill(c="1 / 6")]))
     assert result.returncode != 0
     assert (sandbox / "questions_math_6up.json").read_bytes() == before
+
+
+def test_all_answers_on_one_label_is_rejected(sandbox):
+    """The first real batch came out 24 A's out of 24 choices: always picking A passed the quiz.
+
+    Options are written in reading order, so the correct one drifts to the top and stays there. The
+    fix is to rotate, and the gate is what makes anyone rotate.
+    """
+    # One question per cell: the per-cell ceiling would otherwise fire first and hide this check.
+    cells = [("d06", "理解意义"), ("d06", "辨析变式"), ("d07", "理解意义"), ("d07", "辨析变式"),
+             ("d08", "理解意义"), ("d08", "辨析变式")]
+    lines = [{"n": node, "a": ability, "d": "易", "t": "选择题",
+              "s": f"第 {index} 题：下面说法正确的是（  ）", "o": "甲|乙|丙|丁", "k": "A",
+              "e": "甲对，其余三个都把算法说反了。"} for index, (node, ability) in enumerate(cells, 1)]
+    result = run(sandbox, write_spec(sandbox, lines))
+    assert result.returncode != 0
+    assert "answer spread" in result.stderr

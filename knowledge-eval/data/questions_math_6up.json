@@ -36,12 +36,12 @@
    "question_type": "选择题",
    "stem": "“灯塔在轮船北偏东 35° 方向 12 千米处”，其中 35° 是从（  ）量起的",
    "options": [
+    "灯塔的正北方向",
     "正北方向向东转过的角",
     "正东方向向北转过的角",
-    "轮船的正东方向",
-    "灯塔的正北方向"
+    "轮船的正东方向"
    ],
-   "correct_answer": "A",
+   "correct_answer": "B",
    "explanation": "北偏东就是把正北方向作为始边、向东旋转 35°，读数从北边起算",
    "tags": [
     "方向角",
@@ -58,12 +58,12 @@
    "question_type": "选择题",
    "stem": "同一方向“北偏东 30°”也可以说成（  ）",
    "options": [
-    "东偏北 60°",
-    "东偏北 30°",
     "南偏东 60°",
-    "北偏西 60°"
+    "北偏西 60°",
+    "东偏北 60°",
+    "东偏北 30°"
    ],
-   "correct_answer": "A",
+   "correct_answer": "C",
    "explanation": "北偏东 30° 与正北夹 30°，与正东就夹 90°−30°=60°，所以写成东偏北 60°",
    "tags": [
     "方向角",
@@ -80,12 +80,12 @@
    "question_type": "选择题",
    "stem": "从学校出发先向正北走 200 米，再向正东走 200 米到达书店，书店在学校的（  ）",
    "options": [
-    "北偏东 45° 方向",
     "北偏东 30° 方向",
     "正东方向",
-    "正北方向"
+    "正北方向",
+    "北偏东 45° 方向"
    ],
-   "correct_answer": "A",
+   "correct_answer": "D",
    "explanation": "向北、向东走的路程相等，合起来的方向正好在东和北的正中间，即北偏东 45°",
    "tags": [
     "路线描述",
@@ -124,12 +124,12 @@
    "question_type": "选择题",
    "stem": "A 点在参照点北偏东 30° 方向 6 厘米处，B 点在参照点北偏东 30° 方向 3 厘米处，下面说法正确的是（  ）",
    "options": [
+    "A 与 B 在同一位置",
     "A 在 B 的北偏东 30° 方向 3 厘米处",
     "A 在 B 的正北方向 3 厘米处",
-    "A 在 B 的正东方向 3 厘米处",
-    "A 与 B 在同一位置"
+    "A 在 B 的正东方向 3 厘米处"
    ],
-   "correct_answer": "A",
+   "correct_answer": "B",
    "explanation": "两点在同一条射线上，方向相同只是远近不同，相差 6−3=3 厘米，A 仍在 B 的北偏东 30° 方向 3 厘米处",
    "tags": [
     "方向与距离",
@@ -146,12 +146,12 @@
    "question_type": "选择题",
    "stem": "下面两种写法指的是同一条射线的是（  ）",
    "options": [
-    "北偏东 30° 与东偏北 60°",
-    "北偏东 30° 与东偏北 30°",
     "北偏东 30° 与南偏东 30°",
-    "北偏东 30° 与北偏西 30°"
+    "北偏东 30° 与北偏西 30°",
+    "北偏东 30° 与东偏北 60°",
+    "北偏东 30° 与东偏北 30°"
    ],
-   "correct_answer": "A",
+   "correct_answer": "C",
    "explanation": "从北量 30° 和从东量 60°，加起来正好 90°，指的是同一条射线",
    "tags": [
     "方向角",
@@ -168,12 +168,12 @@
    "question_type": "选择题",
    "stem": "从甲地看，乙地在南偏西 40° 方向，那么从乙地看，甲地在（  ）方向",
    "options": [
-    "北偏东 40°",
     "南偏东 40°",
     "北偏西 40°",
-    "南偏西 40°"
+    "南偏西 40°",
+    "北偏东 40°"
    ],
-   "correct_answer": "A",
+   "correct_answer": "D",
    "explanation": "互相观察时方向相反：南与北对调、西与东对调，角度不变，所以是北偏东 40°",
    "tags": [
     "相对方向",
@@ -212,12 +212,12 @@
    "question_type": "选择题",
    "stem": "数对 (4, 2) 表示的位置是（  ）",
    "options": [
+    "第 4 列第 4 行",
     "第 4 列第 2 行",
     "第 2 列第 4 行",
-    "第 4 行第 2 列",
-    "第 4 列第 4 行"
+    "第 4 行第 2 列"
    ],
-   "correct_answer": "A",
+   "correct_answer": "B",
    "explanation": "数对先写列再写行，前一个数是列，后一个数是行",
    "tags": [
     "数对",
@@ -234,12 +234,12 @@
    "question_type": "选择题",
    "stem": "关于数对 (a, b)，下面说法正确的是（  ）",
    "options": [
-    "a 表示列，b 表示行，交换后位置通常不同",
-    "a 表示行，b 表示列",
     "a 与 b 一定相等",
-    "(a, b) 与 (b, a) 总表示同一位置"
+    "(a, b) 与 (b, a) 总表示同一位置",
+    "a 表示列，b 表示行，交换后位置通常不同",
+    "a 表示行，b 表示列"
    ],
-   "correct_answer": "A",
+   "correct_answer": "C",
    "explanation": "前一个数记列、后一个数记行，顺序固定；(3, 5) 与 (5, 3) 是两个不同的点",
    "tags": [
     "数对",
@@ -256,12 +256,12 @@
    "question_type": "选择题",
    "stem": "在方格纸上点 A 用数对 (3, 5) 表示，下面说法正确的是（  ）",
    "options": [
-    "点 A 在第 3 列第 5 行，与点 (5, 3) 不是同一个点",
     "点 A 与点 (5, 3) 是同一个点",
     "点 A 在第 5 列第 3 行",
-    "点 A 在第 3 行第 5 列"
+    "点 A 在第 3 行第 5 列",
+    "点 A 在第 3 列第 5 行，与点 (5, 3) 不是同一个点"
    ],
-   "correct_answer": "A",
+   "correct_answer": "D",
    "explanation": "(3, 5) 是第 3 列第 5 行，(5, 3) 是第 5 列第 3 行，列和行都不同，所以不是同一个点",
    "tags": [
     "数对",
@@ -300,12 +300,12 @@
    "question_type": "选择题",
    "stem": "点 P 在第 4 列第 7 行，点 Q 与 P 在同一行、且在 P 右边第 3 列，Q 的数对是（  ）",
    "options": [
+    "(1, 7)",
     "(7, 7)",
     "(4, 10)",
-    "(7, 10)",
-    "(1, 7)"
+    "(7, 10)"
    ],
-   "correct_answer": "A",
+   "correct_answer": "B",
    "explanation": "同一行说明第二个数不变，仍是 7；向右 3 列，第一个数 4+3=7，所以是 (7, 7)",
    "tags": [
     "数对",
@@ -322,12 +322,12 @@
    "question_type": "选择题",
    "stem": "点 A 用数对 (2, 5) 表示，先向右平移 3 格、再向下平移 2 格得到点 B，B 的数对是（  ）",
    "options": [
-    "(5, 3)",
-    "(5, 7)",
     "(1, 3)",
-    "(2, 3)"
+    "(2, 3)",
+    "(5, 3)",
+    "(5, 7)"
    ],
-   "correct_answer": "A",
+   "correct_answer": "C",
    "explanation": "向右平移列加 3，2+3=5；向下平移行减 2，5−2=3，所以 B 是 (5, 3)",
    "tags": [
     "数对",
@@ -344,12 +344,12 @@
    "question_type": "选择题",
    "stem": "数对 (5, 2) 与 (2, 5) 表示的位置（  ）",
    "options": [
-    "不同，一个是第 5 列第 2 行，另一个是第 2 列第 5 行",
     "相同",
     "都在第 5 行",
-    "都在第 2 列"
+    "都在第 2 列",
+    "不同，一个是第 5 列第 2 行，另一个是第 2 列第 5 行"
    ],
-   "correct_answer": "A",
+   "correct_answer": "D",
    "explanation": "数对的顺序不能交换，(5, 2) 是第 5 列第 2 行，(2, 5) 是第 2 列第 5 行",
    "tags": [
     "数对",
@@ -388,12 +388,12 @@
    "question_type": "选择题",
    "stem": "把点 A(1, 1)、B(4, 1)、C(4, 3) 依次连成三角形，这个三角形是（  ）",
    "options": [
+    "不能确定",
     "直角三角形",
     "等边三角形",
-    "钝角三角形",
-    "不能确定"
+    "钝角三角形"
    ],
-   "correct_answer": "A",
+   "correct_answer": "B",
    "explanation": "A、B 在同一行，边长 4−1=3 格；B、C 在同一列，边长 3−1=2 格；两条边互相垂直，所以是直角三角形",
    "tags": [
     "数对",
@@ -1406,12 +1406,12 @@
    "question_type": "选择题",
    "stem": "下面关于倒数的说法正确的是（  ）",
    "options": [
-    "乘积是 1 的两个数互为倒数",
-    "和是 1 的两个数互为倒数",
     "差是 1 的两个数互为倒数",
-    "商是 1 的两个数互为倒数"
+    "商是 1 的两个数互为倒数",
+    "乘积是 1 的两个数互为倒数",
+    "和是 1 的两个数互为倒数"
    ],
-   "correct_answer": "A",
+   "correct_answer": "C",
    "explanation": "倒数的定义是乘积为 1：3/5 × 5/3 = 1，所以 3/5 和 5/3 互为倒数",
    "tags": [
     "倒数的意义"
@@ -1427,12 +1427,12 @@
    "question_type": "选择题",
    "stem": "关于 1 和 0 的倒数，下面说法正确的是（  ）",
    "options": [
-    "1 的倒数是 1，0 没有倒数",
     "1 没有倒数，0 的倒数是 0",
     "1 和 0 的倒数都是 1",
-    "0 的倒数是 0"
+    "0 的倒数是 0",
+    "1 的倒数是 1，0 没有倒数"
    ],
-   "correct_answer": "A",
+   "correct_answer": "D",
    "explanation": "1 × 1 = 1，所以 1 的倒数是 1；0 乘任何数都得 0，凑不出 1，所以 0 没有倒数",
    "tags": [
     "倒数的意义",
@@ -1581,12 +1581,12 @@
    "question_type": "选择题",
    "stem": "真分数的倒数（  ）",
    "options": [
+    "无法确定",
     "一定大于 1",
     "一定小于 1",
-    "一定等于 1",
-    "无法确定"
+    "一定等于 1"
    ],
-   "correct_answer": "A",
+   "correct_answer": "B",
    "explanation": "真分数的分子小于分母，交换后分子大于分母，得到假分数，所以大于 1，如 3/5 的倒数是 5/3",
    "tags": [
     "倒数与大小",
@@ -1603,12 +1603,12 @@
    "question_type": "选择题",
    "stem": "关于假分数和真分数的倒数，下面说法正确的是（  ）",
    "options": [
-    "假分数的倒数一定不大于 1",
-    "假分数的倒数一定大于 1",
     "真分数的倒数一定小于 1",
-    "1 的倒数是 0"
+    "1 的倒数是 0",
+    "假分数的倒数一定不大于 1",
+    "假分数的倒数一定大于 1"
    ],
-   "correct_answer": "A",
+   "correct_answer": "C",
    "explanation": "假分数的分子不小于分母，交换后分子不大于分母，所以倒数不大于 1：5/5 的倒数是 1，3/2 的倒数是 2/3",
    "tags": [
     "倒数与大小",
@@ -1625,18 +1625,261 @@
    "question_type": "选择题",
    "stem": "一个大于 0 的数与它的倒数比较，下面说法正确的是（  ）",
    "options": [
-    "这个数小于 1 时，它的倒数比它大",
     "这个数大于 1 时，它的倒数也比它大",
     "任何数的倒数都比它本身小",
-    "这个数等于 1 时，它的倒数比它小"
+    "这个数等于 1 时，它的倒数比它小",
+    "这个数小于 1 时，它的倒数比它大"
    ],
-   "correct_answer": "A",
+   "correct_answer": "D",
    "explanation": "3/4 的倒数是 4/3，比 3/4 大；5/2 的倒数是 2/5，比 5/2 小；1 的倒数是 1，相等",
    "tags": [
     "倒数与大小",
     "辨析"
    ],
    "question_id": "math-6up-d06-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d07",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "“4/5 ÷ 2”表示的意义是（  ）",
+   "options": [
+    "求 2 个 4/5 是多少",
+    "把 4/5 平均分成 2 份，求每份是多少",
+    "求 4/5 的 2 倍是多少",
+    "把 2 平均分成 4/5 份"
+   ],
+   "correct_answer": "B",
+   "explanation": "分数除以整数，就是把这个分数平均分成若干份、求其中一份；求 2 个 4/5 用乘法",
+   "tags": [
+    "分数除以整数",
+    "意义"
+   ],
+   "question_id": "math-6up-d07-q01"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d07",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "计算 6/7 ÷ 3 时，可以转化成 6/7 × （  ）。",
+   "accepted": [
+    "1/3"
+   ],
+   "correct_answer": "1/3",
+   "explanation": "除以一个不为 0 的整数，等于乘这个整数的倒数，3 的倒数是 1/3",
+   "tags": [
+    "分数除以整数",
+    "转化"
+   ],
+   "question_id": "math-6up-d07-q02"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d07",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一个数除以分数，等于这个数乘分数的倒数。把 5/8 ÷ 2/3 转化正确的是（  ）",
+   "options": [
+    "5/8 × 2/3",
+    "8/5 × 2/3",
+    "5/8 ÷ 3/2",
+    "5/8 × 3/2"
+   ],
+   "correct_answer": "D",
+   "explanation": "2/3 的倒数是 3/2，除以 2/3 就是乘 3/2",
+   "tags": [
+    "除以分数",
+    "转化"
+   ],
+   "question_id": "math-6up-d07-q03"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d07",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "5/6 ÷ 4 = （  ）。",
+   "accepted": [
+    "5/24"
+   ],
+   "correct_answer": "5/24",
+   "explanation": "除以 4 等于乘 1/4，5/6 × 1/4 = 5/24",
+   "tags": [
+    "分数除以整数",
+    "计算"
+   ],
+   "question_id": "math-6up-d07-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d07",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "7/8 ÷ 7/16 = （  ）。",
+   "accepted": [
+    "2"
+   ],
+   "correct_answer": "2",
+   "explanation": "7/8 × 16/7，7 与 7 约掉，16 ÷ 8 = 2",
+   "tags": [
+    "除以分数",
+    "计算"
+   ],
+   "question_id": "math-6up-d07-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d07",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "9/10 ÷ 3/5 ÷ 3 = （  ）。",
+   "accepted": [
+    "1/2"
+   ],
+   "correct_answer": "1/2",
+   "explanation": "9/10 ÷ 3/5 = 9/10 × 5/3 = 3/2；3/2 ÷ 3 = 1/2",
+   "tags": [
+    "连除",
+    "计算"
+   ],
+   "question_id": "math-6up-d07-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d07",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一根 3/4 米长的彩带平均剪成 3 段，每段长（  ）米。",
+   "accepted": [
+    "1/4"
+   ],
+   "correct_answer": "1/4",
+   "explanation": "把 3/4 平均分成 3 份，3/4 ÷ 3 = 3/4 × 1/3 = 1/4 米",
+   "tags": [
+    "平均分",
+    "分数除法"
+   ],
+   "question_id": "math-6up-d07-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d07",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一瓶果汁有 4/5 升，每 1/5 升倒一杯，可以倒（  ）杯。",
+   "accepted": [
+    "4"
+   ],
+   "correct_answer": "4",
+   "explanation": "求 4/5 里面有几个 1/5，用除法：4/5 ÷ 1/5 = 4",
+   "tags": [
+    "包含除",
+    "分数除法"
+   ],
+   "question_id": "math-6up-d07-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d07",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "小明 2/3 小时走了 8/5 千米，他 1 小时走（  ）千米。",
+   "accepted": [
+    "12/5"
+   ],
+   "correct_answer": "12/5",
+   "explanation": "求 1 小时走的路程，用路程除以时间：8/5 ÷ 2/3 = 8/5 × 3/2 = 12/5 千米",
+   "tags": [
+    "速度",
+    "分数除法"
+   ],
+   "question_id": "math-6up-d07-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d07",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面算式中，结果大于 1 的是（  ）",
+   "options": [
+    "5/6 ÷ 1/2",
+    "5/6 ÷ 3",
+    "1/2 ÷ 5/6",
+    "5/6 × 1/2"
+   ],
+   "correct_answer": "A",
+   "explanation": "5/6 ÷ 1/2 = 5/6 × 2 = 5/3，大于 1；其余三个分别是 5/18、3/5、5/12",
+   "tags": [
+    "计算结果比较",
+    "辨析"
+   ],
+   "question_id": "math-6up-d07-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d07",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "计算 4/5 ÷ 2/3，下面过程正确的是（  ）",
+   "options": [
+    "4/5 ÷ 2/3 = 4/5 × 2/3 = 8/15",
+    "4/5 ÷ 2/3 = 5/4 × 3/2 = 15/8",
+    "4/5 ÷ 2/3 = 4/5 × 3/2 = 6/5",
+    "4/5 ÷ 2/3 = 4/5 ÷ 3/2 = 8/15"
+   ],
+   "correct_answer": "C",
+   "explanation": "除以 2/3 要乘它的倒数 3/2，4/5 × 3/2 = 12/10 = 6/5",
+   "tags": [
+    "除以分数",
+    "典型错误"
+   ],
+   "question_id": "math-6up-d07-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d07",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "a ÷ 2/3 = b，且 a、b 都大于 0，那么 a 与 b 的关系是（  ）",
+   "options": [
+    "a 大于 b",
+    "a 小于 b",
+    "a 等于 b",
+    "无法确定"
+   ],
+   "correct_answer": "B",
+   "explanation": "a ÷ 2/3 = a × 3/2，3/2 大于 1，所以积比 a 大，即 b 大于 a",
+   "tags": [
+    "商与被除数",
+    "辨析"
+   ],
+   "question_id": "math-6up-d07-q12"
   },
   {
    "question_id": "math-6up-d08-q01",
@@ -1698,6 +1941,435 @@
     "商与被除数的关系",
     "辨析"
    ]
+  },
+  {
+   "diagnostic_node_id": "math-6up-d08",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "一个大于 0 的数除以一个大于 1 的数，商与被除数比（  ）",
+   "options": [
+    "商比被除数小",
+    "商比被除数大",
+    "商与被除数相等",
+    "无法确定"
+   ],
+   "correct_answer": "A",
+   "explanation": "除以大于 1 的数等于乘一个小于 1 的数，积就变小，所以商比被除数小",
+   "tags": [
+    "商与被除数",
+    "规律"
+   ],
+   "question_id": "math-6up-d08-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d08",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一个大于 0 的数除以一个真分数，商（  ）",
+   "options": [
+    "一定小于被除数",
+    "一定等于被除数",
+    "可能大于也可能小于被除数",
+    "一定大于被除数"
+   ],
+   "correct_answer": "D",
+   "explanation": "真分数小于 1，它的倒数大于 1，除以它就等于乘一个大于 1 的数，商一定变大",
+   "tags": [
+    "商与被除数",
+    "规律"
+   ],
+   "question_id": "math-6up-d08-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d08",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "3/5 ÷ 1 = （  ）。",
+   "accepted": [
+    "3/5"
+   ],
+   "correct_answer": "3/5",
+   "explanation": "任何数除以 1 都得它本身",
+   "tags": [
+    "商与被除数",
+    "计算"
+   ],
+   "question_id": "math-6up-d08-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d08",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "4/9 ÷ 8/27 ÷ 2 = （  ）。",
+   "accepted": [
+    "3/4"
+   ],
+   "correct_answer": "3/4",
+   "explanation": "4/9 ÷ 8/27 = 4/9 × 27/8 = 3/2；3/2 ÷ 2 = 3/4",
+   "tags": [
+    "连除",
+    "计算"
+   ],
+   "question_id": "math-6up-d08-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d08",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "把 1 米长的绳子平均分成 4 段，每段长（  ）米。",
+   "accepted": [
+    "1/4"
+   ],
+   "correct_answer": "1/4",
+   "explanation": "1 ÷ 4 = 1/4 米",
+   "tags": [
+    "平均分",
+    "分数除法"
+   ],
+   "question_id": "math-6up-d08-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d08",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一个数的 2/5 是 6，这个数是（  ）。",
+   "accepted": [
+    "15"
+   ],
+   "correct_answer": "15",
+   "explanation": "已知一个数的几分之几是多少，用除法：6 ÷ 2/5 = 6 × 5/2 = 15",
+   "tags": [
+    "已知部分求整体",
+    "分数除法"
+   ],
+   "question_id": "math-6up-d08-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d08",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "某数的 3/4 与 9 的 1/2 相等，这个数是（  ）。",
+   "accepted": [
+    "6"
+   ],
+   "correct_answer": "6",
+   "explanation": "9 的 1/2 是 9/2；这个数是 9/2 ÷ 3/4 = 9/2 × 4/3 = 6",
+   "tags": [
+    "已知部分求整体",
+    "分数除法"
+   ],
+   "question_id": "math-6up-d08-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d08",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "一个数除以 1/2，商与被除数比（  ）",
+   "options": [
+    "商与被除数相等",
+    "商比被除数小",
+    "商是被除数的 2 倍",
+    "商是被除数的一半"
+   ],
+   "correct_answer": "C",
+   "explanation": "除以 1/2 等于乘 2，所以商是被除数的 2 倍",
+   "tags": [
+    "商与被除数",
+    "辨析"
+   ],
+   "question_id": "math-6up-d08-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d08",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "在 a ÷ b = c 中，a 大于 0，b 大于 0 且小于 1，那么（  ）",
+   "options": [
+    "c 小于 a",
+    "c 大于 a",
+    "c 等于 a",
+    "c 与 a 的关系无法确定"
+   ],
+   "correct_answer": "B",
+   "explanation": "b 小于 1，它的倒数大于 1，c = a × (1 ÷ b) 比 a 大",
+   "tags": [
+    "商与被除数",
+    "字母表示"
+   ],
+   "question_id": "math-6up-d08-q12"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d09",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "已知一个数的几分之几是多少，求这个数，用（  ）",
+   "options": [
+    "除法",
+    "乘法",
+    "加法",
+    "减法"
+   ],
+   "correct_answer": "A",
+   "explanation": "已知的是部分，要求的是整体，用部分除以它占整体的分率",
+   "tags": [
+    "已知部分求整体",
+    "意义"
+   ],
+   "question_id": "math-6up-d09-q01"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d09",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“甲数是乙数的 3/4”，求乙数时用（  ）",
+   "options": [
+    "甲数 × 3/4",
+    "甲数 × 4/3",
+    "甲数 ÷ 4/3",
+    "甲数 ÷ 3/4"
+   ],
+   "correct_answer": "D",
+   "explanation": "把乙数看作单位「1」，甲数就是乙数的 3/4，求单位「1」用除法：甲数 ÷ 3/4",
+   "tags": [
+    "单位1",
+    "分数除法"
+   ],
+   "question_id": "math-6up-d09-q02"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d09",
+   "subject": "math",
+   "ability_tag": "理解意义",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“今年比去年增产 1/5”，今年产量是去年的（  ）",
+   "options": [
+    "1/5",
+    "6/5",
+    "4/5",
+    "5/6"
+   ],
+   "correct_answer": "B",
+   "explanation": "把去年产量看作单位「1」，今年是去年的 1 + 1/5 = 6/5",
+   "tags": [
+    "单位1",
+    "增产问题"
+   ],
+   "question_id": "math-6up-d09-q03"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d09",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "一根绳子的 2/3 是 8 米，这根绳子长（  ）米。",
+   "accepted": [
+    "12"
+   ],
+   "correct_answer": "12",
+   "explanation": "绳子的 2/3 是 8 米，绳子全长是 8 ÷ 2/3 = 12 米",
+   "tags": [
+    "已知部分求整体",
+    "列式"
+   ],
+   "question_id": "math-6up-d09-q04"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d09",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "一本书看了 3/5，正好是 60 页，这本书共（  ）页。",
+   "accepted": [
+    "100"
+   ],
+   "correct_answer": "100",
+   "explanation": "60 页占全书的 3/5，全书是 60 ÷ 3/5 = 100 页",
+   "tags": [
+    "已知部分求整体",
+    "列式"
+   ],
+   "question_id": "math-6up-d09-q05"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d09",
+   "subject": "math",
+   "ability_tag": "执行计算",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "一桶油用去 1/4 后还剩 9 千克，这桶油原有（  ）千克。",
+   "accepted": [
+    "12"
+   ],
+   "correct_answer": "12",
+   "explanation": "用去 1/4，剩下的是原来的 3/4；9 ÷ 3/4 = 9 × 4/3 = 12 千克",
+   "tags": [
+    "剩余问题",
+    "分数除法"
+   ],
+   "question_id": "math-6up-d09-q06"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d09",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "填空题",
+   "stem": "小明有 15 元，是小红的 3/5，小红有（  ）元。",
+   "accepted": [
+    "25"
+   ],
+   "correct_answer": "25",
+   "explanation": "15 元是小红的 3/5，小红有 15 ÷ 3/5 = 25 元",
+   "tags": [
+    "零花钱",
+    "分数除法"
+   ],
+   "question_id": "math-6up-d09-q07"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d09",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "填空题",
+   "stem": "果园里桃树 40 棵，是梨树的 4/5，梨树有（  ）棵。",
+   "accepted": [
+    "50"
+   ],
+   "correct_answer": "50",
+   "explanation": "40 棵是梨树的 4/5，梨树有 40 ÷ 4/5 = 50 棵",
+   "tags": [
+    "果树",
+    "分数除法"
+   ],
+   "question_id": "math-6up-d09-q08"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d09",
+   "subject": "math",
+   "ability_tag": "情境应用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "填空题",
+   "stem": "六年级有学生 120 人，其中男生占 7/12，男生比女生多（  ）人。",
+   "accepted": [
+    "20"
+   ],
+   "correct_answer": "20",
+   "explanation": "男生 120 × 7/12 = 70 人，女生 120 − 70 = 50 人，多 70 − 50 = 20 人",
+   "tags": [
+    "人数分配",
+    "两步计算"
+   ],
+   "question_id": "math-6up-d09-q09"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d09",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面问题中，要用除法计算的是（  ）",
+   "options": [
+    "求 8 的 2/3 是多少",
+    "求 8 个 2/3 是多少",
+    "已知一个数的 2/3 是 8，求这个数",
+    "求 2/3 的 8 倍是多少"
+   ],
+   "correct_answer": "C",
+   "explanation": "已知部分和它占整体的分率求整体，用除法 8 ÷ 2/3；其余三个都是求一个数的几分之几，用乘法",
+   "tags": [
+    "乘除辨析",
+    "意义"
+   ],
+   "question_id": "math-6up-d09-q10"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d09",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“男生人数是女生的 5/6”，下面说法正确的是（  ）",
+   "options": [
+    "女生人数是男生的 6/5",
+    "女生人数是男生的 5/6",
+    "男生比女生多",
+    "女生比男生少 1/2"
+   ],
+   "correct_answer": "A",
+   "explanation": "男生是女生的 5/6，反过来女生是男生的 6/5；男生比女生少，不是多",
+   "tags": [
+    "单位1",
+    "互换"
+   ],
+   "question_id": "math-6up-d09-q11"
+  },
+  {
+   "diagnostic_node_id": "math-6up-d09",
+   "subject": "math",
+   "ability_tag": "辨析变式",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“甲比乙多 1/4”，那么乙比甲少（  ）",
+   "options": [
+    "1/4",
+    "1/3",
+    "4/5",
+    "1/5"
+   ],
+   "correct_answer": "D",
+   "explanation": "设乙为 4 份，甲就是 5 份；乙比甲少 1 份，这 1 份占甲的 1/5",
+   "tags": [
+    "单位1",
+    "谁比谁多"
+   ],
+   "question_id": "math-6up-d09-q12"
   },
   {
    "question_id": "math-6up-d15-q01",

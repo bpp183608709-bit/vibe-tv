@@ -286,6 +286,16 @@ def main(argv: list[str] | None = None) -> int:
         if question is not None:
             accepted.append(question)
 
+    # Options are written in reading order, so the correct one drifts to A and stays there: the first
+    # batch of 24 choices came out 24 A's, which makes "always pick A" a passing strategy. Rotating the
+    # options is free, so the spread is a gate rather than a note.
+    spread = Counter(question["correct_answer"] for question in accepted if question["question_type"] != "填空题")
+    total_choices = sum(spread.values())
+    if total_choices >= 6 and max(spread.values()) / total_choices > 0.6:
+        worst = max(spread, key=spread.get)
+        rejects.append(f"answer spread: {worst} holds {spread[worst]}/{total_choices} of this batch's "
+                       f"choices ({dict(sorted(spread.items()))}) — rotate options before writing")
+
     if reused:
         print(f"{len(reused)} line(s) already in the bank, nothing to add: "
               + ", ".join(sorted({qid for _, qid in reused})[:6])

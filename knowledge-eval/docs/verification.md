@@ -240,11 +240,11 @@ python knowledge-eval/scripts/check_ability_coverage.py --subject math --detail
 ```
 
 ```
-cells 205: 17 floor, 0 robust, 51 partial, 137 missing
-  math      96 cells  floor  16  robust   0  partial  12  missing  68  nodes ready 4/25
+cells 205: 39 floor, 0 robust, 48 partial, 118 missing
+  math      96 cells  floor  38  robust   0  partial   9  missing  49  nodes ready 10/25
   chinese   64 cells  floor   1  robust   0  partial  27  missing  36  nodes ready 1/22
   english   45 cells  floor   0  robust   0  partial  12  missing  33  nodes ready 0/16
-top-up to floor: 503 questions (易 167, 中 167, 难 169)
+top-up to floor: 440 questions (易 146, 中 146, 难 148)
 top-up to robust: 1118 questions (易 372, 中 372, 难 374)
 ```
 
