@@ -7411,6 +7411,534 @@
    "question_id": "chinese-6up-d08-q12"
   },
   {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "中心意思是“蕾蕾盼雨盼得入了神”，下面材料最能支撑这个中心的一项是（  ）",
+   "options": [
+    "她连着几天盯窗外的天，作业写错两道",
+    "她的书包是妈妈去年买的，颜色特别鲜亮",
+    "她们班上一共有四十多个同学",
+    "那件新雨衣叠起来只有巴掌那么大"
+   ],
+   "correct_answer": "A",
+   "explanation": "盯天、写错作业，都是“入了神”的样子。书包、班里人数、雨衣大小，写的都不是盼，放进文章里只会把中心冲淡。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "选材"
+   ],
+   "question_id": "chinese-6up-d08-q13"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "中心意思是“郝副营长心里装着孩子们的将来”，下面能支撑这个中心的一则材料是（  ）",
+   "options": [
+    "他打仗的时候很勇敢，总是冲在队伍最前面",
+    "他指着插图说，胜利后让孩子在灯下读书",
+    "他平时话很少，可烟却抽得很厉害",
+    "他牺牲的时候，年纪只有二十二岁"
+   ],
+   "correct_answer": "B",
+   "explanation": "“让孩子在灯下读书”正是他心里装着的将来。勇敢、话少、牺牲的年纪都真实，却都落在别处，撑不起这个中心。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "选材"
+   ],
+   "question_id": "chinese-6up-d08-q14"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "中心是“爸爸订计划一丝不苟”，下面安排详略最恰当的一项是（  ）",
+   "options": [
+    "详写他的工作单位，略写他排的那张时间表",
+    "把订计划、买菜、上班这三件事写得都同样详细",
+    "只写计划表贴在哪儿，不写表上写了什么",
+    "详写他怎样排全家的时间表，略写他在厂里的事"
+   ],
+   "correct_answer": "D",
+   "explanation": "中心在“订计划”，笔墨就该压在怎么排表上；工作单位是旁枝，三件事平均用力会把中心摊薄，只写贴表位置则连计划本身都没写。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "安排材料"
+   ],
+   "question_id": "chinese-6up-d08-q15"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "中心是“小站把旅客放在心上”，下面材料放不进去的一项是（  ）",
+   "options": [
+    "站台上放着一把供人取用的雨伞",
+    "值班室备着针线，扣子掉了能缝",
+    "候车室的长凳每天都擦得干净",
+    "站房后面的山坡上种着几棵果树"
+   ],
+   "correct_answer": "B",
+   "explanation": "针线、雨伞、擦净的长凳，都是替旅客想到的；山坡上的果树与旅客无关，是一处闲笔。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "选材"
+   ],
+   "question_id": "chinese-6up-d08-q16"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "围绕“他没见过电灯，却为电灯牺牲”，最恰当的一组材料是（  ）",
+   "options": [
+    "先写他的籍贯和家庭，再写他哪一年参军",
+    "先写这场战斗的经过，再写战斗结束以后的清点人数",
+    "先写他看插图上的孩子，再写他点火引路，最后倒下",
+    "先写插图的样子，再写这幅插图是谁画的"
+   ],
+   "correct_answer": "C",
+   "explanation": "看孩子、点火、倒下，三步都扣着“为电灯牺牲”。籍贯年表、战斗经过、插图作者，都没有接住这个对照。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "安排材料"
+   ],
+   "question_id": "chinese-6up-d08-q17"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "三则材料：①她一天几次跑到窗前看天 ②她把雨衣拿出来又放回去 ③她在门口一直站到雨停。它们共同支撑的中心是（  ）",
+   "options": [
+    "那件新雨衣的颜色和式样很好",
+    "那几天的天气一直不好",
+    "妈妈不让她雨天出门",
+    "盼得难受，心里却是满的"
+   ],
+   "correct_answer": "D",
+   "explanation": "看天、看雨衣、站到雨停，写的都是“等”；等得难受，心里又装着盼头，这就是三则材料的共同点。颜色、天气、妈妈的禁令都只是一句话的背景。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "选材"
+   ],
+   "question_id": "chinese-6up-d08-q18"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《盼》围绕“盼”写了好几件事，下面属于其中一件的是（  ）",
+   "options": [
+    "我借买酱油的由头，想穿上雨衣出门",
+    "我和同学约好，周末去公园里放风筝",
+    "妈妈带我去商店挑了一条新裙子",
+    "我在雨里帮邻居收了一床被子"
+   ],
+   "correct_answer": "A",
+   "explanation": "借买酱油出门，正是“盼”到忍不住时的举动。放风筝、买裙子、收被子都不在这篇文章里，也不是“盼雨衣”的事。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "内容理解"
+   ],
+   "question_id": "chinese-6up-d08-q19"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《爸爸的计划》里，爸爸订的计划最大的特点是（  ）",
+   "options": [
+    "只订家里的大事，小事一概不管",
+    "细到每一天的每个小时都排好",
+    "订完就锁进抽屉，不再看它",
+    "只给“我”一个人订计划"
+   ],
+   "correct_answer": "B",
+   "explanation": "计划细到每个小时，才配得上“计划迷”这个称呼。只订大事、订完不管、只给一个人订，都不像他。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "内容理解"
+   ],
+   "question_id": "chinese-6up-d08-q20"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《灯光》中“多好啊”在开头、回忆和战斗中各出现一次。这样安排的作用是（  ）",
+   "options": [
+    "为了表明“多好啊”就是整篇文章的中心句",
+    "让三次赞叹互相照应，把灯与牺牲连起来",
+    "说明郝副营长说话有个口头习惯",
+    "为了把文章分成三个部分来写"
+   ],
+   "correct_answer": "B",
+   "explanation": "三次“多好啊”一次比一次沉：路人赞灯，郝副营长盼灯，最后灯亮着人却不在。连成一条线，怀念才有了着落；说口头习惯、说分段，都读浅了。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "写法"
+   ],
+   "question_id": "chinese-6up-d08-q21"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《爸爸的计划》把计划写得极细，家里执行起来却常常走样。这样对照着写的好处是（  ）",
+   "options": [
+    "说明爸爸工作太忙，顾不上家",
+    "说明家里人都不愿意听他的安排",
+    "计划越细越难做到，读着有点好笑",
+    "为了让文章有开头、中间和结尾三段"
+   ],
+   "correct_answer": "C",
+   "explanation": "表排得越细，日子越不按表走，计划与执行一对照，“计划迷”的可爱与可笑就出来了。读成顾不上家、家人不听话，就把一个有趣的人读成了矛盾。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "写法"
+   ],
+   "question_id": "chinese-6up-d08-q22"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《小站》只写一座两间平房的小站，却让人看见一种精神。这种“以小见大”靠的是（  ）",
+   "options": [
+    "把小站和北京、上海的大站逐一比较",
+    "详细交代小站建成的年代和经过",
+    "从小站的干净、有序，写出人的认真",
+    "引用旅客临走时留下的几句夸奖"
+   ],
+   "correct_answer": "C",
+   "explanation": "小站的样子就是人的样子：月台干净，花坛有人照料，秩序自己长出来。从这点小景里看见人的精神，才叫以小见大；列年代、比大站、引夸奖，都还停在表面。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "写法"
+   ],
+   "question_id": "chinese-6up-d08-q23"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《盼》的结尾写“雨点儿都特别爱往我的雨衣上落”。这样写的好处是（  ）",
+   "options": [
+    "说明那天的雨比前几天都要大",
+    "把盼到之后的欢喜，落在雨声上",
+    "交代这件雨衣是绿色的，很显眼",
+    "为下文写放学回家埋下伏笔"
+   ],
+   "correct_answer": "B",
+   "explanation": "雨点“爱往雨衣上落”，其实是人心里高兴，把欢喜交给了声音。写雨大、写颜色、说伏笔，都没有接住这份盼到之后的轻快。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "写法"
+   ],
+   "question_id": "chinese-6up-d08-q24"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "中心句是“爸爸是个‘计划迷’”，下面与这个中心对不上的一项是（  ）",
+   "options": [
+    "他给全家人的作息时间排过一张表",
+    "他把买菜的时间也写进表里",
+    "他连给花浇水都定好几点钟",
+    "他个子很高，走路的时候脚步很重"
+   ],
+   "correct_answer": "D",
+   "explanation": "看报纸是闲事，与“爱订计划”无关。排作息、记买菜、定浇水时间，三件都落在那张表上，才叫计划迷。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "辨析"
+   ],
+   "question_id": "chinese-6up-d08-q25"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "围绕一个中心选材，下面说法正确的一项是（  ）",
+   "options": [
+    "材料越多，文章的中心就越清楚",
+    "只要写满字数，材料跑题也不要紧",
+    "同一个意思的材料，多写几遍更保险",
+    "材料要挑最能说明中心的那几件"
+   ],
+   "correct_answer": "D",
+   "explanation": "中心靠几件顶用的事立起来，不靠数量。材料再多，跑题的就只是累赘；同一个意思反复写，中心反而更单薄。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "辨析"
+   ],
+   "question_id": "chinese-6up-d08-q26"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "写“爷爷爱种花”，已经写了他给月季剪枝。下面再选哪一则，材料才有层次（  ）",
+   "options": [
+    "他把各种花的花期记在小本上",
+    "他又给另一盆月季剪了一回枝",
+    "他给第三盆月季也剪了枝",
+    "他把剪下的月季枝条插进瓶里"
+   ],
+   "correct_answer": "A",
+   "explanation": "剪枝是同一个动作，换一盆再剪还是原地打转；记花期是从另一个角度写他懂花、上心，材料才立得起来。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "辨析"
+   ],
+   "question_id": "chinese-6up-d08-q27"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "中心是“盼而不得，也是一种滋味”，下面材料对不上的一项是（  ）",
+   "options": [
+    "雨衣的标签上印着厂家的名字和尺码",
+    "雨停了，我只好把雨衣叠好放回柜子",
+    "我站在门口，看别人穿着雨衣走过",
+    "妈妈说下周可能还有雨，我又高兴起来"
+   ],
+   "correct_answer": "A",
+   "explanation": "叠雨衣、看别人穿、听说明天有雨又高兴，都是“不得”里的滋味。只写雨衣的颜色和缝线，是外形说明，撑不起这种心情。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "辨析"
+   ],
+   "question_id": "chinese-6up-d08-q28"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "三则材料：①洗菜水留着冲厕所 ②淘米水留着浇花 ③洗澡水留着拖地。它们的共同问题是（  ）",
+   "options": [
+    "都是同一类省水的事，反复说，中心单薄",
+    "都写得太短了，应该每一则都写得长一些",
+    "都和“节俭”这个中心没有关系",
+    "顺序乱了，应该按时间重新排一遍"
+   ],
+   "correct_answer": "A",
+   "explanation": "三件事都是省水，角度完全一样，写得再多也只是一件事。换成省电、省布、修旧物，材料才铺得开，“节俭”才立得住。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "辨析"
+   ],
+   "question_id": "chinese-6up-d08-q29"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "中心句是“小站的安静让赶路的人慢下来”，下面看似有关、其实偏题的一项是（  ）",
+   "options": [
+    "候车的人说话都压低了声音",
+    "有人把行李放下，坐在长凳上歇了很久",
+    "站房是青砖砌的，墙上爬满了爬山虎",
+    "值班员报站不拿喇叭，只提高嗓门"
+   ],
+   "correct_answer": "C",
+   "explanation": "爬山虎只写了站房的样子，热闹还是安静看不出来；压低声音、放下行李歇着、不用喇叭，才写出“安静”和“慢”。",
+   "tags": [
+    "围绕中心意思选取材料",
+    "辨析"
+   ],
+   "question_id": "chinese-6up-d08-q30"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "综合表达",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "要写“外婆的厨房真忙”，下面开头最合适的一项是（  ）",
+   "options": [
+    "灶上炖着汤，案板上剁着馅，外婆翻锅喊我递盘子",
+    "外婆的厨房在东边，是一间不大的屋子，收拾得很整齐",
+    "我最喜欢外婆做的饭，她做的菜比饭店里的还香",
+    "这篇文章我要写外婆，先介绍一下她家的厨房"
+   ],
+   "correct_answer": "A",
+   "explanation": "开头就让锅、案板、喊声一起动起来，“忙”不必说出来也看得见。写方位、写菜好吃、写“先介绍”，都还在门外打转。",
+   "tags": [
+    "围绕中心",
+    "开头"
+   ],
+   "question_id": "chinese-6up-d08-q31"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "综合表达",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "围绕“我家阳台的春天”写一段话，下面结尾最切合中心的一项是（  ）",
+   "options": [
+    "这就是我家阳台的春天，写到这里也就该收笔了",
+    "风一吹，满架绿叶都在动，春天站在阳台上",
+    "阳台不大，只放得下两把椅子和一个花架",
+    "春天过去就是夏天，夏天的阳台晒得人不敢站"
+   ],
+   "correct_answer": "B",
+   "explanation": "结尾把“春天”落到还在动的叶子上，中心就收住了。“写到这里就结束”是空话；写家具、写夏天热，都离开了春天。",
+   "tags": [
+    "围绕中心",
+    "结尾"
+   ],
+   "question_id": "chinese-6up-d08-q32"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "综合表达",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "写“爷爷的院子真热闹”，下面三则材料的组合最恰当的一项是（  ）",
+   "options": [
+    "①画眉从早叫到晚 ②邻居的狗每天路过院门口 ③爷爷六点起床扫院子",
+    "①老人下棋争得脸红 ②石榴树秋天结满果子 ③爷爷六点起床扫院子",
+    "①画眉从早叫到晚 ②石榴树秋天结满红果子 ③邻居家的狗每天路过院门口",
+    "①画眉从早叫到晚 ②老人下棋争得脸红 ③我和表弟追着跑撞翻小凳"
+   ],
+   "correct_answer": "D",
+   "explanation": "鸟叫是声响，下棋争吵是人声，孩子追跑是动静，三样都落在“热闹”上又不重复。狗在院外、扫院子、结果子，写的都不是院里的热闹。",
+   "tags": [
+    "围绕中心",
+    "选材"
+   ],
+   "question_id": "chinese-6up-d08-q33"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "综合表达",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "围绕“这个小站真温暖”列提纲，下面安排最恰当的一项是（  ）",
+   "options": [
+    "开头写小站的历史；中间写每天经过的车次和时刻；结尾写车站明年就要改建",
+    "开头写清晨的小站；中间写值班员给老人搬凳子、给旅客续热水；结尾写车开走了，站台还留着热气",
+    "开头写小站很小；中间写站台有多长、房屋有几间；结尾写它在铁路线上的位置",
+    "开头写我常来小站；中间写我坐过的那几趟火车、遇见的几位旅客；结尾写我最喜欢的那个靠窗座位"
+   ],
+   "correct_answer": "B",
+   "explanation": "搬凳子、续热水两件事都落在“温暖”上，结尾那点热气又把中心收住。写历史、写车次、写尺寸、写座位，都是介绍，不是温暖。",
+   "tags": [
+    "围绕中心",
+    "提纲"
+   ],
+   "question_id": "chinese-6up-d08-q34"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "综合表达",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "写“外婆的厨房真忙”，下面哪一组里有两则材料其实在说同一件事（  ）",
+   "options": [
+    "①她一边择菜一边看钟 ②油热了赶紧下锅 ③端上桌又回身去端汤",
+    "①清早去菜场买菜 ②回来洗菜切菜 ③中午一桌饭上了桌",
+    "①灶上炖着汤 ②汤锅咕嘟咕嘟直冒气 ③她顺手把火调小",
+    "①她哼着歌翻锅 ②她把碗筷摆好 ③她坐下喝一口水"
+   ],
+   "correct_answer": "C",
+   "explanation": "冒气和炖汤说的是同一锅汤，写两遍只是把一句话拉长；其余几组各写一件事，删了会缺。判断重复，看两则材料是不是在说同一个意思。",
+   "tags": [
+    "围绕中心",
+    "选材重复"
+   ],
+   "question_id": "chinese-6up-d08-q35"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d08",
+   "subject": "chinese",
+   "ability_tag": "综合表达",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "围绕“我家阳台的春天”列提纲，下面哪一份写到中间跑题了（  ）",
+   "options": [
+    "开头写阳台的春天；中间写晾着的衣服怎么收、怎么叠；结尾写阳台收拾得很整齐",
+    "开头写风从窗缝里进来；中间写土松了、芽顶出来了；结尾写我盼它再长高",
+    "开头写清早的阳台；中间写蜜蜂绕着花盆转；结尾写阳光一点点挪过花架",
+    "开头写花开了；中间写我蹲着数新芽；结尾写春天在阳台上停住了"
+   ],
+   "correct_answer": "D",
+   "explanation": "收衣服、叠衣服、收拾整齐，写的是家务，与春天无关；中间一跑，结尾的“整齐”也接不上。其余几份中间都在写芽、花、蜂、阳光。",
+   "tags": [
+    "围绕中心",
+    "跑题"
+   ],
+   "question_id": "chinese-6up-d08-q36"
+  },
+  {
    "diagnostic_node_id": "chinese-6up-d09",
    "subject": "chinese",
    "ability_tag": "语言运用",
@@ -7609,6 +8137,402 @@
    "question_id": "chinese-6up-d09-q09"
   },
   {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "“在群星璀璨的宇宙中，地球就像一叶扁舟。”这句话用打比方，是为了说明（  ）",
+   "options": [
+    "地球在宇宙中十分渺小",
+    "地球的表面像船底一样平",
+    "宇宙里漂着许多小船",
+    "地球上的水多得能行船"
+   ],
+   "correct_answer": "A",
+   "explanation": "扁舟是喻体，取的是“小”：宇宙无边，地球像一条小船那样不起眼。说表面平、说漂着小船、说水多能行船，都是把比喻当成了实写。",
+   "tags": [
+    "说明方法",
+    "打比方"
+   ],
+   "question_id": "chinese-6up-d09-q10"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《只有一个地球》课文说“人类生活所需要的水资源、森林资源、生物资源、大气资源，本来是可以不断再生，长期给人类作贡献的”。这句话的意思是（  ）",
+   "options": [
+    "这些资源永远用不完，不用珍惜",
+    "这些资源原本能再生，前提是不被破坏",
+    "这些资源比矿产资源更加稀少",
+    "这些资源只能在海洋中形成"
+   ],
+   "correct_answer": "B",
+   "explanation": "“本来”是关键：能再生是有条件的，条件就是人类不去毁坏。说永远用不完，与下文“不能再生”正好相反；说更稀少、只能在海洋形成，文中没有依据。",
+   "tags": [
+    "提取信息",
+    "再生资源"
+   ],
+   "question_id": "chinese-6up-d09-q11"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《只有一个地球》“科学家们提出了许多设想，例如，在火星或者月球上建造移民基地。”举火星、月球为例，是为了说明（  ）",
+   "options": [
+    "火星的条件比月球更适合人住",
+    "人类很快就能整体搬到火星去",
+    "地球上的资源已经全部用光了",
+    "设想不止一个，火星月球只是其中两例"
+   ],
+   "correct_answer": "D",
+   "explanation": "“例如”后面是举例，例子用来证明前面“许多设想”这个判断。说火星更合适、很快能搬走，与下文“即使实现也是遥远的事情”相违；说资源全用光，文中只说有限。",
+   "tags": [
+    "说明方法",
+    "举例子"
+   ],
+   "question_id": "chinese-6up-d09-q12"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《只有一个地球》课文先写地球“美丽壮观，和蔼可亲”，接着用“但是”一转，写“在群星璀璨的宇宙中，地球是渺小的”。这个转折的作用是（  ）",
+   "options": [
+    "否定前文对地球美丽的描写",
+    "由赞美转向客观说明，引出地球的有限",
+    "表明作者其实并不喜欢地球",
+    "只是为了让句子读起来更有文采"
+   ],
+   "correct_answer": "B",
+   "explanation": "“但是”不是推翻前文，而是把话往实处推：从感受写到尺度，为下文说资源有限、无处可去铺路。说否定美丽、说不喜欢、说只为文采，都读错了方向。",
+   "tags": [
+    "说明语言",
+    "结构"
+   ],
+   "question_id": "chinese-6up-d09-q13"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《只有一个地球》课文里的“40万亿千米”“5.1亿平方千米”“6400千米”这些数字，共同的作用是（  ）",
+   "options": [
+    "证明地球是宇宙中最大的星球",
+    "说明人类已经测遍了整个宇宙",
+    "用可查的尺度说明地球的有限与珍贵",
+    "让文章显得知识丰富、可信"
+   ],
+   "correct_answer": "C",
+   "explanation": "数字把“小”“少”“远”变成可以核对的量：范围有限、陆地有限、无处可迁，结论才站得住。说地球最大、说测遍宇宙，都与数字抵触；说只为显得可信，是舍本逐末。",
+   "tags": [
+    "说明方法",
+    "列数字"
+   ],
+   "question_id": "chinese-6up-d09-q14"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《只有一个地球》课文把地球称作“人类的母亲”“生命的摇篮”。这两个称呼在说明性文章里的作用是（  ）",
+   "options": [
+    "用来证明地球比别的星球更大",
+    "为了交代地球的形状和颜色",
+    "为了代替数字和事例作依据",
+    "在说明之外注入情感，唤起珍惜"
+   ],
+   "correct_answer": "D",
+   "explanation": "称呼不是数据，它把“地球养育人类”这层关系说出来，让读者在道理之外生出感情。说证明大小、交代形状、代替数字，都把修辞误当成了说明方法。",
+   "tags": [
+    "说明语言",
+    "表达效果"
+   ],
+   "question_id": "chinese-6up-d09-q15"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《青山不老》开头写“这是中国的晋西北，是西伯利亚大风常来肆虐的地方”。这句交代的是（  ）",
+   "options": [
+    "老人种树所面对的恶劣环境",
+    "老人的籍贯以及他的年龄",
+    "大风一年要刮多少次的规律",
+    "晋西北一共有多少个村庄"
+   ],
+   "correct_answer": "A",
+   "explanation": "大风肆虐、干旱少雨，正因为环境这样坏，后面十五年种出一片绿才称得上奇迹。籍贯年龄、刮风次数、村庄数目，都不是这句话要交代的内容。",
+   "tags": [
+    "提取信息",
+    "环境"
+   ],
+   "question_id": "chinese-6up-d09-q16"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《三黑和土地》写“三黑从来没睡过这么好的床，今天准备好了，叫麦籽儿睡上”。“好床”指的是（  ）",
+   "options": [
+    "三黑新打的一张大木床",
+    "三黑耙得又平又顺溜的土地",
+    "麦子收割后堆起来的草垛",
+    "三黑在田边搭起的窝棚"
+   ],
+   "correct_answer": "B",
+   "explanation": "前文写他把地耙得又平又顺溜，像妇女刚梳的头；麦籽儿要睡的就是这块地。说木床、草垛、窝棚，都把诗里的比喻坐实成了真家具。",
+   "tags": [
+    "理解词句",
+    "比喻"
+   ],
+   "question_id": "chinese-6up-d09-q17"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《只有一个地球》课文说“我们这个地球太可爱了，同时又太容易破碎了”。“容易破碎”的依据是（  ）",
+   "options": [
+    "地球只是一个半径6400千米的星球",
+    "资源有限，破坏后难恢复，也无处可迁",
+    "宇宙中的星球多得数也数不清",
+    "人类已经能够造出宇宙飞船了"
+   ],
+   "correct_answer": "B",
+   "explanation": "说它破碎，是因为资源被毁就难以再生，而40万亿千米内找不到第二个家。半径小只是“渺小”，不是“破碎”；星球多、飞船能造，恰是课文要反驳的指望。",
+   "tags": [
+    "提取信息",
+    "观点依据"
+   ],
+   "question_id": "chinese-6up-d09-q18"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《青山不老》中老人说“保住了这黄土，我们才有这绿树；有了这绿树，我们才守住了这片土”。这句话说的是（  ）",
+   "options": [
+    "土比树重要，树可以不要",
+    "树比土重要，土可以不要",
+    "树和土互相依存，谁也离不开谁",
+    "树和土互不相干，各管各的"
+   ],
+   "correct_answer": "C",
+   "explanation": "两句话一正一反，把树和土拴成一圈：土养树，树固土。单说土重要或树重要，都只取了半句；说两者无关，与“才有”正好相违。",
+   "tags": [
+    "理解句意",
+    "树与土"
+   ],
+   "question_id": "chinese-6up-d09-q19"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《青山不老》结尾写“这位普通老人让我领悟到：青山是不会老的”。这句话的意思是（  ）",
+   "options": [
+    "晋西北的青山永远不会风化",
+    "山上的树木从来不会生病",
+    "种下的绿会延续，老人的精神长存",
+    "老人身子硬朗，还能活很多年"
+   ],
+   "correct_answer": "C",
+   "explanation": "青山不老，说的是这片绿和种绿的人：树在长，老人的劲头留在山上。说山不风化、树不生病、人能长寿，都把“不老”当成了字面上的年岁。",
+   "tags": [
+    "理解句意",
+    "主旨"
+   ],
+   "question_id": "chinese-6up-d09-q20"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《三黑和土地》写“这么松散的地，简直是一张软床，叫人想在上面打滚，想在上面躺一躺”。这样写表现的是（  ）",
+   "options": [
+    "三黑干活累了，只想躺下睡觉",
+    "土地好得让人想亲近，写出珍爱之情",
+    "这块地高低不平，根本没法种",
+    "三黑家里穷，连一张床也没有"
+   ],
+   "correct_answer": "B",
+   "explanation": "“想打滚、想躺一躺”是欢喜到极点的念头，地好得让人舍不得走开。说累了想睡、说地不平、说家里没床，都把诗人的心情读成了实情。",
+   "tags": [
+    "情感",
+    "夸张"
+   ],
+   "question_id": "chinese-6up-d09-q21"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一组“观点＋材料”搭配得当（  ）",
+   "options": [
+    "观点：地球的资源取之不尽。材料：矿产几百万年才形成",
+    "观点：地球很美。材料：半径约6400千米",
+    "观点：无处可迁。材料：表面积约5.1亿平方千米",
+    "观点：地球容易破碎。材料：资源有限，破坏后难再生"
+   ],
+   "correct_answer": "D",
+   "explanation": "资源有限、破坏后难再生，撑得起“容易破碎”。形成慢正说明资源有限，与“取之不尽”相反；半径和表面积只说大小，与美、与迁移都搭不上。",
+   "tags": [
+    "观点与材料",
+    "搭配"
+   ],
+   "question_id": "chinese-6up-d09-q22"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面四句中，属于作者的看法而不是可查证的事实的是（  ）",
+   "options": [
+    "地球的表面积约5.1亿平方千米",
+    "地球的半径约为6400千米",
+    "矿产资源要经过几百万年才形成",
+    "我们要精心地保护地球的生态环境"
+   ],
+   "correct_answer": "D",
+   "explanation": "半径、表面积、形成年代都是能核对的数；“要保护”是作者提出的主张，带着态度。分不清这两种句子，就会把看法当成事实来引用。",
+   "tags": [
+    "观点与依据",
+    "事实与看法"
+   ],
+   "question_id": "chinese-6up-d09-q23"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "有人说：“老人能在晋西北种出林子，说明只要肯下力气，哪片荒漠都能变绿洲。”这个说法的问题是（  ）",
+   "options": [
+    "把一个人的成功推及所有荒漠",
+    "老人其实没种活多少树",
+    "晋西北本来就不缺林木",
+    "种树只要力气，不必讲技术"
+   ],
+   "correct_answer": "A",
+   "explanation": "一个例子只能证明“这件事办得到”，不能证明“处处都办得到”。说老人没种活、说晋西北不缺树，都与课文相违；说不用讲技术，也不是这句话的毛病。",
+   "tags": [
+    "以偏概全",
+    "辨析"
+   ],
+   "question_id": "chinese-6up-d09-q24"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "课文说火星、月球上的移民基地“即使实现了，也是遥远的事情”。有人却说“人类已经有能力移居火星”，错在（  ）",
+   "options": [
+    "把还没实现的设想当成已有的能力",
+    "把火星和月球当成了同一颗星",
+    "科学家从来没有提出过这类设想",
+    "地球资源枯竭的说法没有根据"
+   ],
+   "correct_answer": "A",
+   "explanation": "设想是“可以这样想”，能力是“已经办得到”，中间隔着技术和时间；课文还说这些设想即使实现也遥远。另外三项在课文里都站不住。",
+   "tags": [
+    "推测与结论",
+    "辨析"
+   ],
+   "question_id": "chinese-6up-d09-q25"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《只有一个地球》呼吁“精心地保护地球”，《青山不老》写老人十五年种树。把两者放在一起，最恰当的理解是（  ）",
+   "options": [
+    "保护环境既要有认识，更要有行动",
+    "两篇文章都在说明地球的大小",
+    "老人种树证明地球其实不会破碎",
+    "两篇文章都反对科学家的设想"
+   ],
+   "correct_answer": "A",
+   "explanation": "一篇讲清“为什么必须护”，一篇做出“怎样一直护”，认识和行动正好接上。说都在讲大小、说证明地球不破碎、说都反对设想，都与原文对不上。",
+   "tags": [
+    "综合",
+    "主旨"
+   ],
+   "question_id": "chinese-6up-d09-q26"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d09",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "有同学说：“只要人人动手种树，地球的资源就不会枯竭。”这个说法站不住脚，是因为（  ）",
+   "options": [
+    "种树对环境其实没有任何好处",
+    "资源枯竭与人的行为毫无关系",
+    "把种树当成万能药，看漏了别的原因",
+    "种树的人太少，根本不值得提倡"
+   ],
+   "correct_answer": "C",
+   "explanation": "种树能固土防风，却管不住滥采滥用；资源枯竭的原因不止一处，一副药治不了所有的病。说种树没用、说与人无关、说不值得提倡，都说过头了。",
+   "tags": [
+    "以偏概全",
+    "辨析"
+   ],
+   "question_id": "chinese-6up-d09-q27"
+  },
+  {
    "diagnostic_node_id": "chinese-6up-d10",
    "subject": "chinese",
    "ability_tag": "语言运用",
@@ -7805,6 +8729,402 @@
     "比较"
    ],
    "question_id": "chinese-6up-d10-q09"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《浪淘沙（其一）》中“如今直上银河去”的下一句是（  ）",
+   "options": [
+    "同到牵牛织女家",
+    "同上牵牛织女家",
+    "同看牵牛织女星",
+    "同去牵牛织女家"
+   ],
+   "correct_answer": "A",
+   "explanation": "原句是“同到牵牛织女家”。其余三句把“到”改成“上”“去”，或把“家”改成“星”，都不是原诗的字。",
+   "tags": [
+    "浪淘沙（其一）",
+    "默写"
+   ],
+   "question_id": "chinese-6up-d10-q10"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《江南春》中与“多少楼台烟雨中”相连的上一句是（  ）",
+   "options": [
+    "南朝四百八十庙",
+    "南朝四百八十寺",
+    "南朝四百八十楼",
+    "南朝四百八十塔"
+   ],
+   "correct_answer": "B",
+   "explanation": "原句是“南朝四百八十寺，多少楼台烟雨中”。庙、楼、塔都换了原诗的字，这一句写的正是南朝留下的寺庙。",
+   "tags": [
+    "江南春",
+    "默写"
+   ],
+   "question_id": "chinese-6up-d10-q11"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《书湖阴先生壁》中“茅檐长扫净无苔”的“长”意思是（  ）",
+   "options": [
+    "长久",
+    "生长",
+    "长远",
+    "经常"
+   ],
+   "correct_answer": "D",
+   "explanation": "“长”在这里读 cháng，是“常常、经常”：屋檐下经常打扫，干净得连青苔都不生。写成长久、生长、长远，都接不上“扫”这个动作。",
+   "tags": [
+    "书湖阴先生壁",
+    "词义"
+   ],
+   "question_id": "chinese-6up-d10-q12"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面《书湖阴先生壁》后两句的默写，完全正确的一项是（  ）",
+   "options": [
+    "一水护田将绿抱，两山排闼送青来",
+    "一水护田将绿绕，两山排闼送青来",
+    "一水绕田将绿护，两山排闼送青来",
+    "一水护田将绿绕，两山推门送青来"
+   ],
+   "correct_answer": "B",
+   "explanation": "原句是“一水护田将绿绕，两山排闼送青来”。“抱”换了“绕”，“推门”换了“排闼”，把“护”“绕”对调也改了原句。",
+   "tags": [
+    "书湖阴先生壁",
+    "默写"
+   ],
+   "question_id": "chinese-6up-d10-q13"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《江南春》“绿映红”与《书湖阴先生壁》“将绿绕”中的“绿”，所指对象分别是（  ）",
+   "options": [
+    "绿水、山里青翠的树木",
+    "绿草、门前流动的溪水",
+    "绿叶、田里绿色的庄稼",
+    "绿树、天上飘动的云彩"
+   ],
+   "correct_answer": "C",
+   "explanation": "“绿映红”是绿叶衬着红花，写草木；“将绿绕”是溪水绕着田走，绿指田里长着的庄稼。说成水、溪流或云彩，都对不上原句。",
+   "tags": [
+    "三首诗",
+    "用字"
+   ],
+   "question_id": "chinese-6up-d10-q14"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《浪淘沙（其一）》后两句“如今直上银河去，同到牵牛织女家”的想象，妙在（  ）",
+   "options": [
+    "照实记下诗人乘船升空、直到银河的经历",
+    "借牛郎织女说明黄河泛滥多在秋天的时节",
+    "用神话故事证明黄河的源头本来就在天上",
+    "借黄河通天的传说，把水势写成登天的路"
+   ],
+   "correct_answer": "D",
+   "explanation": "黄河自古有通天河的传说，诗人借它把眼前波涛写成一条登天的路，并不是真去天上。说成写实、说成点时节、说成证源头，都把这层想象读没了。",
+   "tags": [
+    "浪淘沙（其一）",
+    "想象"
+   ],
+   "question_id": "chinese-6up-d10-q15"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《江南春》首句“千里莺啼绿映红”是从哪些感官来写春景的（  ）",
+   "options": [
+    "听觉和视觉",
+    "嗅觉和触觉",
+    "只有视觉",
+    "只有听觉"
+   ],
+   "correct_answer": "A",
+   "explanation": "“莺啼”是耳朵听见的，“绿映红”是眼睛看见的，一句里声音和颜色都有。说只有视觉或只有听觉，都漏了一半；嗅觉、触觉原句没写。",
+   "tags": [
+    "江南春",
+    "画面"
+   ],
+   "question_id": "chinese-6up-d10-q16"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《书湖阴先生壁》前两句“茅檐长扫净无苔，花木成畦手自栽”的意思是（  ）",
+   "options": [
+    "茅草屋檐又长又干净，一畦畦花木都长在院墙外面",
+    "屋檐常扫，干净无苔；花木成畦，主人亲手栽",
+    "屋檐下的青苔怎么也扫不尽，花木全靠别人帮着栽",
+    "茅屋多年没人住，青苔长满，花木早已荒芜了"
+   ],
+   "correct_answer": "B",
+   "explanation": "“长扫”是常打扫，“手自栽”是亲手栽：院子干净、花木整齐，都是主人自己打理的。说花木长在墙外、青苔扫不尽、屋子荒芜，都与原句相反。",
+   "tags": [
+    "书湖阴先生壁",
+    "句意"
+   ],
+   "question_id": "chinese-6up-d10-q17"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《江南春》后两句“南朝四百八十寺，多少楼台烟雨中”寄寓的感慨是（  ）",
+   "options": [
+    "江南的寺庙太多，占去了大片农田",
+    "寺庙再多，也隐没在烟雨中，繁华易逝",
+    "烟雨下得太久，寺庙的楼台都被淋坏了",
+    "诗人惋惜自己没能亲眼见到南朝的盛况"
+   ],
+   "correct_answer": "B",
+   "explanation": "南朝留下的寺庙还在烟雨里，当年的繁华却已无处可寻。“多少”是叹息，不是数数。说占农田、说淋坏楼台、说遗憾没赶上，都没接住这层兴亡之感。",
+   "tags": [
+    "江南春",
+    "情感"
+   ],
+   "question_id": "chinese-6up-d10-q18"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《书湖阴先生壁》先写“茅檐”“花木”，再写“一水护田”“两山排闼”，这样安排的作用是（  ）",
+   "options": [
+    "由远及近，先看山再看屋檐",
+    "按时间顺序写一天里的景物变化",
+    "由院内写到院外，视野一步步推开",
+    "先写景物再写人，最后回到主人身上"
+   ],
+   "correct_answer": "C",
+   "explanation": "前两句写屋檐下、花木间，是主人日日打理的院子；后两句视线越过院墙，落到水和山。由近及远，景一步步铺开，人的胸怀也跟着开阔。",
+   "tags": [
+    "书湖阴先生壁",
+    "顺序"
+   ],
+   "question_id": "chinese-6up-d10-q19"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《江南春》前两句写眼前春色，后两句忽然写到“南朝四百八十寺”，这样转折的用意是（  ）",
+   "options": [
+    "说明江南的春天比南朝时候更加繁华热闹",
+    "交代这些寺庙建造的年代和具体数目",
+    "由眼前春景牵出历史，画面带上兴亡之感",
+    "把前两句的春色一笔否定，说春天其实不美"
+   ],
+   "correct_answer": "C",
+   "explanation": "前两句是眼前的莺啼花红，后两句借南朝留下的寺庙把时间拉远：楼台还在烟雨里，朝代已经换了。写繁华、写年代、否定春色，都读偏了这层今昔之叹。",
+   "tags": [
+    "江南春",
+    "结构"
+   ],
+   "question_id": "chinese-6up-d10-q20"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《书湖阴先生壁》中“两山排闼送青来”若改成“两山青青入眼来”，表达效果的变化是（  ）",
+   "options": [
+    "只是字数变多，意思和原来那一句完全一样",
+    "少了推门而入的主动，山水亲近人的情味淡了",
+    "由写山变成写水，描写的对象整个换掉了",
+    "语气更委婉，更能写出主人待客的客气与周到"
+   ],
+   "correct_answer": "B",
+   "explanation": "“排闼”是推门，山像老邻居推门进来送一片青翠，主动又亲热。改成“入眼来”，山只是被动地进入视线，那股人情味就没有了。",
+   "tags": [
+    "书湖阴先生壁",
+    "炼字"
+   ],
+   "question_id": "chinese-6up-d10-q21"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "“千里莺啼绿映红”是七个字一句，全诗共四句，这样的诗体是（  ）",
+   "options": [
+    "五言绝句",
+    "七言律诗",
+    "长短句的词",
+    "七言绝句"
+   ],
+   "correct_answer": "D",
+   "explanation": "每句七个字、共四句，就是七言绝句。五言每句五个字，律诗有八句，词的句子长短不齐，都与题干说的不合。",
+   "tags": [
+    "三首诗",
+    "体裁"
+   ],
+   "question_id": "chinese-6up-d10-q22"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《书湖阴先生壁》的作者王安石，是（  ）的诗人",
+   "options": [
+    "唐代",
+    "元代",
+    "明代",
+    "宋代"
+   ],
+   "correct_answer": "D",
+   "explanation": "王安石是北宋人，这首诗写在他晚年居住的钟山附近。杜牧、刘禹锡都是唐代人，三家的朝代不要记混。",
+   "tags": [
+    "书湖阴先生壁",
+    "作者"
+   ],
+   "question_id": "chinese-6up-d10-q23"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "对《江南春》“千里莺啼绿映红”的“千里”，理解正确的一项是（  ）",
+   "options": [
+    "夸张地写春色铺展极广，不是实数",
+    "确实量过，从村口到江边正好一千里",
+    "指诗人走了整整一千里路才看见春色",
+    "指江南的河道纵横，总长有一千里"
+   ],
+   "correct_answer": "A",
+   "explanation": "“千里”是夸张，极言江南春色之广，不是拿尺子量出来的数。读成量过的距离、走过的路、河道的总长，都把这句诗的夸张坐实了。",
+   "tags": [
+    "江南春",
+    "虚指"
+   ],
+   "question_id": "chinese-6up-d10-q24"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面诗句与情感的对应，不恰当的一项是（  ）",
+   "options": [
+    "“两山排闼送青来”——写山势险峻，让人望而生畏",
+    "“浪淘风簸自天涯”——写黄河风浪之大、来路之远",
+    "“水村山郭酒旗风”——写江南春日的明丽与热闹",
+    "“多少楼台烟雨中”——写楼台隐在烟雨里的迷蒙"
+   ],
+   "correct_answer": "A",
+   "explanation": "“排闼”是推门，山像主动送青的邻居，写得亲热，并非险峻可畏。另外三句分别写浪大路远、春日热闹、楼台迷蒙，都对得上。",
+   "tags": [
+    "三首诗",
+    "景与情"
+   ],
+   "question_id": "chinese-6up-d10-q25"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "三首诗都写景，所寄的情感却不同。下列概括不恰当的一项是（  ）",
+   "options": [
+    "《江南春》只赏春色，“多少楼台烟雨中”无寄寓",
+    "《浪淘沙（其一）》借“浪淘风簸”写豪迈气概",
+    "《书湖阴先生壁》借“净无苔”“手自栽”写主人品格",
+    "《江南春》由“千里莺啼”牵出南朝旧事，寄盛衰之叹"
+   ],
+   "correct_answer": "A",
+   "explanation": "“多少楼台烟雨中”由眼前春色牵出南朝旧事，藏着今昔盛衰的叹息，说毫无寄寓就抹掉了这层意思。另外三项都能在原句里找到落点。",
+   "tags": [
+    "三首诗",
+    "情感"
+   ],
+   "question_id": "chinese-6up-d10-q26"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d10",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "结合具体诗句判断，下列对三首诗的理解，正确的一项是（  ）",
+   "options": [
+    "《浪淘沙（其一）》“直上银河”记诗人真的乘船到银河边",
+    "《江南春》“千里莺啼”写的是秋日草木凋零的萧瑟",
+    "《书湖阴先生壁》“排闼送青”把山水写成上门的邻居",
+    "《浪淘沙（其一）》“浪淘风簸”写江南水乡风平浪静"
+   ],
+   "correct_answer": "C",
+   "explanation": "“排闼”是推门进来，山像邻居送青，水像守着田，都主动亲近人。说真到了银河、说秋日萧瑟、说风平浪静，都与原句相矛盾。",
+   "tags": [
+    "三首诗",
+    "判断"
+   ],
+   "question_id": "chinese-6up-d10-q27"
   },
   {
    "question_id": "chinese-6up-d19-q01",
@@ -8333,6 +9653,270 @@
     "评价"
    ],
    "question_id": "chinese-6up-d12-q06"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d12",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“在我的面前立即呈现出一个美丽的世界。”这里的“美丽的世界”指的是（  ）",
+   "options": [
+    "表盖里的小宝石和金黄色的齿轮",
+    "窗外那座开满花的春天花园",
+    "父亲书房里摆着的几件小摆设",
+    "“我”想象中蝉和蝎子住的那个地方"
+   ],
+   "correct_answer": "A",
+   "explanation": "“美丽的世界”是表盖一开露出的机件：宝石、齿轮、玻璃，孩子用看世界的眼光看它。花园、摆设都在别处，蝉和蝎子是猜想，不是眼前所见。",
+   "tags": [
+    "表里的生物",
+    "词句理解"
+   ],
+   "question_id": "chinese-6up-d12-q07"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d12",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "故事里，托米从阁楼上找到一本“真正的书”，纸页发黄。这本书特别在（  ）",
+   "options": [
+    "字会在屏幕上自己滚动，翻过去就没了",
+    "字印在纸上，要一页一页翻着读",
+    "一翻开就有声音，一句一句读给他听",
+    "书里的故事每天都会换一个新的"
+   ],
+   "correct_answer": "B",
+   "explanation": "玛琪的世界里故事都在屏幕上，字会动；纸印的书反倒成了稀罕物。会滚动的屏幕、能发声的机器，正是玛琪熟悉的东西。",
+   "tags": [
+    "他们那时候多有趣啊",
+    "细节理解"
+   ],
+   "question_id": "chinese-6up-d12-q08"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d12",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“钟楼上的钟不是活的，有时却洪亮地响起来，那是有一个老人在敲。”这句在“我”的推理中起的作用是（  ）",
+   "options": [
+    "说明“我”当时其实早就知道表里没有生物",
+    "先承认响声是人弄的，再拿“自己会动”当标准",
+    "证明钟楼上的钟声比表里发出的声音好听得多",
+    "交代“我”家就住在钟楼旁边那条安静的小巷里"
+   ],
+   "correct_answer": "B",
+   "explanation": "他并不糊涂，知道钟声是人敲的；可他把“自己会走动、自己发声”另立一条标准，表就成了活的。其余几项都读不出这层转折。",
+   "tags": [
+    "表里的生物",
+    "推理过程"
+   ],
+   "question_id": "chinese-6up-d12-q09"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d12",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "故事里，玛琪的机器老师被换过好几次，一次比一次调得慢。这说明（  ）",
+   "options": [
+    "她常换学校，因此认识了很多新同学",
+    "机器老师讲得太快，她一直跟不上它的讲课进度",
+    "她的学习进度由机器判定，跟不上就被往下调",
+    "她很聪明，机器老师已经教不了她了"
+   ],
+   "correct_answer": "C",
+   "explanation": "“越调越慢”是机器给她的判词：进度由机器定，落后就降一档，难怪她羡慕有人一起学的过去。换学校、讲太快、教不了，都与原句对不上。",
+   "tags": [
+    "他们那时候多有趣啊",
+    "推断"
+   ],
+   "question_id": "chinese-6up-d12-q10"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d12",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《表里的生物》结尾写：“这样的话我不知说了多久，也不知道到什么时候才不说了。”这样收尾的好处是（  ）",
+   "options": [
+    "说明“我”记性不好，早就忘了自己说过什么",
+    "表明父亲始终没有正面回答“我”提出的那个问题",
+    "不点破“我”何时明白，让童年猜想悄悄消失",
+    "交代那块表后来被父亲修好了，从此再也不会响"
+   ],
+   "correct_answer": "C",
+   "explanation": "猜想是怎么停的，作者一字不写：孩子长大了，话就淡了。这种不点破比“我明白了原理”更有余味。忘性、父亲没答、表被修好，都不是这句的意思。",
+   "tags": [
+    "表里的生物",
+    "结尾"
+   ],
+   "question_id": "chinese-6up-d12-q11"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d12",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "故事里，玛琪听托米讲过去的学校，越听越羡慕；托米却只觉得那很古怪。这样对照着写，用意是（  ）",
+   "options": [
+    "说明托米比玛琪懂得多，读过的书也多得多",
+    "两种眼光一对照，才显出被机器教着的孩子缺什么",
+    "表明过去的学校其实很乱，一点也不值得羡慕",
+    "为了让两个孩子吵起来，故事读起来也就更热闹一些"
+   ],
+   "correct_answer": "B",
+   "explanation": "托米只是照书念，玛琪却是被机器教着的那个：一个觉得古怪，一个觉得有趣，对照之下，作者要说的“缺同伴”才浮出来。比谁懂得多、说学校乱、图热闹，都没读到这层。",
+   "tags": [
+    "他们那时候多有趣啊",
+    "写法"
+   ],
+   "question_id": "chinese-6up-d12-q12"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d12",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "父亲拨开表盖，“我”看见的是齿轮和宝石。下面哪一句才是“我”先前的想象（  ）",
+   "options": [
+    "表盖里有蓝色、红色的小宝石",
+    "里面钉着几个金黄色的齿轮，还会转",
+    "父亲用小刀把表盖拨开了",
+    "表里住着一只被父亲关起来的蝉或虫"
+   ],
+   "correct_answer": "D",
+   "explanation": "蝉、虫是孩子推出来的“住户”，表里并没有；宝石、齿轮、拨表盖，都是眼睛看见、手上发生的事。分清这两类，才看得懂他错在哪。",
+   "tags": [
+    "表里的生物",
+    "想象与事实"
+   ],
+   "question_id": "chinese-6up-d12-q13"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d12",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "故事里，玛琪在家对着屏幕上课，托米从旧书里读到“孩子们一块儿上学”。其中属于作者想象的是（  ）",
+   "options": [
+    "孩子们到学校，和同学坐在同一间教室里",
+    "字印在纸上，要一页一页翻着读",
+    "放学以后背着书包一路走回家",
+    "孩子各自在家里，由机器老师上课"
+   ],
+   "correct_answer": "D",
+   "explanation": "在家对着机器上课，是作者往未来推出去的一步；到校上课、纸印的书、背书包回家，都是当时孩子每天过的日子。",
+   "tags": [
+    "他们那时候多有趣啊",
+    "想象与事实"
+   ],
+   "question_id": "chinese-6up-d12-q14"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d12",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《表里的生物》写表里是“蓝色、红色的小宝石”和“金黄色的齿轮”。颜色写得这样具体，好处是（  ）",
+   "options": [
+    "细节越具体，想象越站得住，读者才信那是“美丽的世界”",
+    "颜色只是让句子显得华丽，其实与想象没有关系",
+    "说明“我”的眼力特别好，能看清表里那些很小很小的零件",
+    "为了让读者知道这块表很贵重、值不少钱"
+   ],
+   "correct_answer": "A",
+   "explanation": "颜色、形状写得越清，那个“美丽的世界”就越像真的：想象不是空话，得靠细节站住。说华丽、说眼力、说价钱，都绕开了这一点。",
+   "tags": [
+    "表里的生物",
+    "用词准确"
+   ],
+   "question_id": "chinese-6up-d12-q15"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d12",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "父亲说表里有一只蝎子，“一动就要蜇你”，“我”就信了。这句话能骗住“我”，是因为（  ）",
+   "options": [
+    "“我”已信表里有活物，蝎子补上了“不让动”的缘由",
+    "蝎子确实是那块表里真装着的一只活物",
+    "父亲从来不说假话，“我”从没见他骗过人",
+    "“我”从没见过真的蝎子，不知道它究竟长什么样子"
+   ],
+   "correct_answer": "A",
+   "explanation": "孩子缺的正是“为什么不能动”这一环，蝎子一填，链条就闭合了。表里没有蝎子；说父亲不说假话、说孩子没见过蝎子，都不是这句话生效的原因。",
+   "tags": [
+    "表里的生物",
+    "因果"
+   ],
+   "question_id": "chinese-6up-d12-q16"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d12",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“表会自己走、自己响，所以表里有活物。”这个推理站不住，是因为（  ）",
+   "options": [
+    "会动、会响也能来自发条和齿轮，前提不成立",
+    "表里的齿轮太小，孩子根本看不清楚",
+    "父亲始终没有把表盖打开过，让他看清里面的样子",
+    "他说这话时年纪太小，说出的话不能算数"
+   ],
+   "correct_answer": "A",
+   "explanation": "错在前提：会动、会响不等于活的，发条和齿轮也能做到。指出这一点才算找到病根；说看不清、没打开、年纪小，都只是旁枝。",
+   "tags": [
+    "表里的生物",
+    "推理漏洞"
+   ],
+   "question_id": "chinese-6up-d12-q17"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d12",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "故事里机器老师能讲课、能批改、能按进度调整。这些设想的依据是（  ）",
+   "options": [
+    "作者凭空想出来的，跟机器和屏幕都没有任何关系",
+    "今天已经全部实现，作者只是照实记录",
+    "当时已有的机器和屏幕，作者把它们往前推了一步",
+    "过去私塾里先生摇头晃脑地讲课的情形"
+   ],
+   "correct_answer": "C",
+   "explanation": "机器、屏幕当时都已存在，作者顺着它们往前推，才想出会教书的老师：这是有依据的想象，既不是照实记录，也不是胡编。",
+   "tags": [
+    "他们那时候多有趣啊",
+    "科学依据"
+   ],
+   "question_id": "chinese-6up-d12-q18"
   },
   {
    "question_id": "chinese-6up-d20-q01",
