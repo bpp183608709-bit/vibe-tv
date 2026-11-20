@@ -9325,6 +9325,402 @@
    "question_id": "chinese-6up-d19-q09"
   },
   {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面句子中，用“列数字”来说明事物特点的是（  ）",
+   "options": [
+    "这座桥长 1200 米，宽 12 米",
+    "这座桥像一条长龙，静静地卧在宽阔的水面上",
+    "这座桥比村口那棵老榕树还要长",
+    "这座桥的桥墩用花岗岩一块块砌成"
+   ],
+   "correct_answer": "A",
+   "explanation": "句中用“1200 米”“12 米”这样具体的数字说明桥的长和宽，是列数字；说桥像长龙是打比方，和老榕树比长短是作比较。",
+   "tags": [
+    "说明方法",
+    "列数字"
+   ],
+   "question_id": "chinese-6up-d19-q10"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "农谚说“五谷丰登”，这里的“五谷”指的是（  ）",
+   "options": [
+    "金、木、水、火、土",
+    "稻、黍、稷、麦、菽",
+    "宫、商、角、徵、羽",
+    "青、赤、黄、白、黑"
+   ],
+   "correct_answer": "B",
+   "explanation": "五谷是稻、黍、稷、麦、菽五种粮食作物；金木水火土是五行，宫商角徵羽是五音，青赤黄白黑是五彩。",
+   "tags": [
+    "传统文化",
+    "五谷"
+   ],
+   "question_id": "chinese-6up-d19-q11"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读段落：“做读书笔记是积累知识的好办法。读完一段，可以摘抄下精彩的句子；读完全书，可以写下自己的感受；过些日子再翻看，印象就更深了。”这段话的关键句是（  ）",
+   "options": [
+    "读完一段可以摘抄下精彩的句子",
+    "读完全书可以写下自己的感受",
+    "过些日子再翻看印象就更深了",
+    "做读书笔记是积累知识的好办法"
+   ],
+   "correct_answer": "D",
+   "explanation": "第一句提出“做读书笔记是积累知识的好办法”，后面三句都在说怎样做笔记、有什么好处，是围绕它展开的。其余几句只是具体做法。",
+   "tags": [
+    "关键句",
+    "总起句"
+   ],
+   "question_id": "chinese-6up-d19-q12"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“保护环境，就是保护人类自己。”与这句话意思最接近的是（  ）",
+   "options": [
+    "环境好坏，与人们的日常生活没有关系",
+    "善待自然，其实就是在善待我们人类",
+    "只要保护环境，生活就一定会富裕起来",
+    "保护环境，主要是环卫工人的分内事"
+   ],
+   "correct_answer": "B",
+   "explanation": "原句说的是环境与人类命运相连；善待自然就是善待人类，意思一致。说与环境无关、保护环境必然富裕、只是环卫工人的事，都偏离了原意。",
+   "tags": [
+    "关键句",
+    "换说法"
+   ],
+   "question_id": "chinese-6up-d19-q13"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读段落：“垃圾分类能减少污染、节约资源。那么，具体应该怎样做才好呢？每个家庭可以先备好分类桶，把厨余和可回收物分开投放。”其中起过渡作用的句子是（  ）",
+   "options": [
+    "垃圾分类能减少污染、节约资源",
+    "每个家庭可以先备好分类桶",
+    "那么，具体应该怎样做才好呢",
+    "把厨余和可回收物分开投放"
+   ],
+   "correct_answer": "C",
+   "explanation": "中间一句用“那么……呢”把上文说的好处转到下文的具体做法，起承上启下的过渡作用；其余几句分别说好处和做法，都不是过渡。",
+   "tags": [
+    "关键句",
+    "过渡句"
+   ],
+   "question_id": "chinese-6up-d19-q14"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“这棵银杏高约 25 米，比旁边那棵香樟高出近一倍。”这句话用到的说明方法是（  ）",
+   "options": [
+    "列数字和举例子两种",
+    "作比较和举例子两种",
+    "列数字、作比较、举例子三种",
+    "列数字和作比较两种"
+   ],
+   "correct_answer": "D",
+   "explanation": "句中的“25 米”“近一倍”是数字，属于列数字；拿银杏和香樟比高矮，属于作比较。句中没有举出例子，所以不是三种方法都用。",
+   "tags": [
+    "说明方法",
+    "综合"
+   ],
+   "question_id": "chinese-6up-d19-q15"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "古人所说的“五音”，指的是（  ）",
+   "options": [
+    "宫、商、角、徵、羽",
+    "金、木、水、火、土",
+    "稻、黍、稷、麦、菽",
+    "青、赤、黄、白、黑"
+   ],
+   "correct_answer": "A",
+   "explanation": "五音是宫、商、角、徵、羽五个音级；金木水火土是五行，稻黍稷麦菽是五谷，青赤黄白黑是五彩。",
+   "tags": [
+    "传统文化",
+    "五音"
+   ],
+   "question_id": "chinese-6up-d19-q16"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读段落：“社区图书馆每天开放到晚上九点，节假日也不休息；管理员还定期把新书摆到门口。居民借书、还书都很方便，这里成了大家常来的地方。”能概括这段话主要意思的句子是（  ）",
+   "options": [
+    "图书馆每天开放到晚上九点，节假日不休息",
+    "这里成了大家常来的地方，借书还书都方便",
+    "管理员定期把新书摆到门口最显眼的位置",
+    "图书馆只在节假日才把新书摆到门口"
+   ],
+   "correct_answer": "B",
+   "explanation": "最后一句把前面的开放时间、新书摆放收在一起，说这里方便、居民常来，能概括全段。其余几句只说了开放时间或摆书这一件事，最后一句则与原文相反。",
+   "tags": [
+    "关键句",
+    "总结句"
+   ],
+   "question_id": "chinese-6up-d19-q17"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读段落：“保护环境，人人有责。少用一只塑料袋，少开一次车，看起来微不足道，积累起来却能减轻地球的负担。”开头一句在段中的作用是（  ）",
+   "options": [
+    "举出具体例子，说明塑料袋的用处",
+    "提出全段观点，后文用具体做法来证明",
+    "总结全段内容，点明保护环境的好处",
+    "用数字说明问题，让读者相信作者的话"
+   ],
+   "correct_answer": "B",
+   "explanation": "开头一句直接提出“保护环境，人人有责”这个观点，后面用少用塑料袋、少开车这些做法说明它。它不是举例，也不是总结，更没有列数字。",
+   "tags": [
+    "关键句",
+    "段首"
+   ],
+   "question_id": "chinese-6up-d19-q18"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读段落：“他每天天不亮就上山，一棵一棵地补种树苗；下雨天路滑，他就拄着棍子慢慢走。十几年过去，荒坡终于绿了。”最后一句的作用是（  ）",
+   "options": [
+    "总起全段，引出老人每天上山种树这件事",
+    "举出例子，说明下雨天走路很危险",
+    "收束全段，用结果说明老人坚持的意义",
+    "提出问题，让读者自己去寻找答案"
+   ],
+   "correct_answer": "C",
+   "explanation": "最后一句写荒坡变绿的结果，把前面每天补种、雨天也上山的叙述收束起来，说明老人坚持的价值。它不在段首，也不是举例或提问。",
+   "tags": [
+    "关键句",
+    "段尾"
+   ],
+   "question_id": "chinese-6up-d19-q19"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读段落：“许多同学认为，作文写得越长越好。其实，好作文不在长短，而在有没有把话说到点子上。三百字的短文，只要观点清楚、例子贴切，同样能打动人。”这段话的主要观点是（  ）",
+   "options": [
+    "作文写得越长，越能打动读者",
+    "三百字左右的短文最容易得高分",
+    "好作文的关键是把话说到点子上",
+    "写作文一定要举一个贴切的例子"
+   ],
+   "correct_answer": "C",
+   "explanation": "段落先反驳“越长越好”，再提出“好作文不在长短，而在把话说到点子上”，这是主要观点。说越长越好与原意相反，说三百字最容易得高分、必须举例子，都只是文中的局部信息。",
+   "tags": [
+    "主要观点",
+    "概括"
+   ],
+   "question_id": "chinese-6up-d19-q20"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "一段话的关键句是“地球所拥有的自然资源是有限的”，后面举了矿产资源越采越少的例子。如果删去这个关键句，这段话（  ）",
+   "options": [
+    "例子会变得更具体，作者的观点也更加鲜明",
+    "只剩例子，读者要自己归纳才能得出观点",
+    "数字会失去作用，段落变成记叙文",
+    "意思完全不变，只是字数少了一些"
+   ],
+   "correct_answer": "B",
+   "explanation": "关键句把观点直接说出来，例子是为它服务的。删掉以后，读者只能从矿产越采越少的事例里自己归纳，观点不再一目了然。",
+   "tags": [
+    "关键句",
+    "作用"
+   ],
+   "question_id": "chinese-6up-d19-q21"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面句子中，用“作比较”来说明事物特点的是（  ）",
+   "options": [
+    "这片森林里长着松树、柏树和桦树",
+    "这片森林的树冠连成一片遮住阳光",
+    "这片森林像一块绿色的地毯铺在山坡上",
+    "这片森林的面积比三个足球场还大"
+   ],
+   "correct_answer": "D",
+   "explanation": "把森林面积和三个足球场放在一起比大小，是作比较；说森林像绿色的地毯是打比方，列出松树、柏树、桦树是分类，写树冠遮住阳光是描写。",
+   "tags": [
+    "说明方法",
+    "作比较"
+   ],
+   "question_id": "chinese-6up-d19-q22"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "说明性文章里，“比如”“例如”这类词语后面，往往跟着（  ）",
+   "options": [
+    "一组用来说明大小的具体数字",
+    "一个概括整段内容的主要观点",
+    "一句总结全文意思的简短结论",
+    "一个用来证明观点的具体例子"
+   ],
+   "correct_answer": "D",
+   "explanation": "“比如”“例如”是举例子的标志，后面接一个具体事例，用来说明前面的观点。数字、观点、结论都不会靠这两个词引出。",
+   "tags": [
+    "说明方法",
+    "举例子"
+   ],
+   "question_id": "chinese-6up-d19-q23"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "有同学认为，一段话里句子写得越多，主要观点就越清楚。这个看法（  ）",
+   "options": [
+    "不对，观点清楚靠关键句，不靠句子多少",
+    "对，句子越多，包含的信息自然就越全面",
+    "对，只要每句话都写满，观点自然清楚",
+    "不对，句子越少，观点才越显得清楚"
+   ],
+   "correct_answer": "A",
+   "explanation": "观点清不清楚，看有没有一句能统摄全段的关键句，和句子数量没有关系。句子多而散，反而让人抓不住重点；但一味求少也不等于清楚。",
+   "tags": [
+    "关键句",
+    "辨析"
+   ],
+   "question_id": "chinese-6up-d19-q24"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "关于关键句和中心句，说法正确的一项是（  ）",
+   "options": [
+    "关键句体现主要观点，中心句概括段落中心，二者常重合",
+    "关键句就是中心句，两种说法完全一样，没有什么区别",
+    "关键句只能出现在段首，中心句只能出现在段尾",
+    "关键句用来举例子，中心句用来列数字，两者的作用不同"
+   ],
+   "correct_answer": "A",
+   "explanation": "关键句是能体现一段话主要观点的句子，中心句是概括段落中心的句子，两者常常是同一句，但并不完全等同。说二者完全一样、位置固定、分别举例和列数字，都不准确。",
+   "tags": [
+    "关键句",
+    "中心句"
+   ],
+   "question_id": "chinese-6up-d19-q25"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读段落：“垃圾分类能减少污染。厨余垃圾可以沤肥，废纸可以再造新纸，废电池要专门处理。可见，分类投放能让垃圾各得其所。”有同学把关键句写成“废电池要专门处理”，问题在于（  ）",
+   "options": [
+    "只抓了一个例子，没有概括全段主要观点",
+    "概括得太宽，远远超出了全段所写的内容",
+    "与原段要表达的意思正好相反",
+    "没有说明垃圾分类的具体做法和步骤"
+   ],
+   "correct_answer": "A",
+   "explanation": "废电池只是文中三个例子之一，用它当关键句，抓的是局部。全段的主要观点是分类投放能让垃圾各得其所，概括应当覆盖几个例子。",
+   "tags": [
+    "关键句",
+    "概括"
+   ],
+   "question_id": "chinese-6up-d19-q26"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d19",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下列传统文化常识的配对，完全正确的一项是（  ）",
+   "options": [
+    "五行——稻黍稷麦菽；五谷——金木水火土",
+    "五音——青赤黄白黑；五彩——宫商角徵羽",
+    "五行——金木水火土；五音——宫商角徵羽",
+    "五谷——宫商角徵羽；五彩——稻黍稷麦菽"
+   ],
+   "correct_answer": "C",
+   "explanation": "五行是金木水火土，五音是宫商角徵羽，配对正确。其余几项都把两组常识调换了：五谷是稻黍稷麦菽，五彩是青赤黄白黑。",
+   "tags": [
+    "传统文化",
+    "综合"
+   ],
+   "question_id": "chinese-6up-d19-q27"
+  },
+  {
    "question_id": "chinese-6up-d11-q01",
    "diagnostic_node_id": "chinese-6up-d11",
    "subject": "chinese",
@@ -9521,6 +9917,402 @@
     "道理"
    ],
    "question_id": "chinese-6up-d11-q09"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《两小儿辩日》中“及日中则如盘盂”的“及”意思是（  ）",
+   "options": [
+    "等到",
+    "趁着",
+    "涉及",
+    "以及"
+   ],
+   "correct_answer": "A",
+   "explanation": "“及”是“到、等到”：到了正午，太阳就像盘盂那么小。“趁着”“涉及”“以及”放进这句都讲不通。",
+   "tags": [
+    "两小儿辩日",
+    "实词"
+   ],
+   "question_id": "chinese-6up-d11-q10"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《两小儿辩日》中“见两小儿辩斗，问其故”的“故”意思是（  ）",
+   "options": [
+    "故意",
+    "原因",
+    "旧的",
+    "所以"
+   ],
+   "correct_answer": "B",
+   "explanation": "“故”是缘故、原因，孔子问的是两个小孩争论的原因。写成“故意”“旧的”或“所以”，都和“问”接不上。",
+   "tags": [
+    "两小儿辩日",
+    "实词"
+   ],
+   "question_id": "chinese-6up-d11-q11"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《曹冲称象》中“置象大船之上，而刻其水痕所至”的意思是（  ）",
+   "options": [
+    "把大象抬到船边，量一量船有多长",
+    "把大象赶上大船，记下船走了多远",
+    "把大象放在船旁，刻下大象的身高",
+    "把大象放上大船，刻下水面到达的痕迹"
+   ],
+   "correct_answer": "D",
+   "explanation": "“置”是放，“水痕所至”是水在船身上涨到的位置。整句说大象上船后刻下这条痕迹，为后面换石头做准备。",
+   "tags": [
+    "曹冲称象",
+    "译句"
+   ],
+   "question_id": "chinese-6up-d11-q12"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《曹冲称象》中“太祖悦，即施行焉”的意思是（  ）",
+   "options": [
+    "曹操很惊讶，叫人把船收起来",
+    "曹操很高兴，立刻照这个办法去做",
+    "曹操很生气，把大臣都赶走了",
+    "曹操很犹豫，让大家再商量一下"
+   ],
+   "correct_answer": "B",
+   "explanation": "“悦”是高兴，“即”是立刻，“施行”是实行。曹操听懂了曹冲的办法，马上照办，说明这办法被认可。",
+   "tags": [
+    "曹冲称象",
+    "译句"
+   ],
+   "question_id": "chinese-6up-d11-q13"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《两小儿辩日》中“孰为汝多知乎”的“知”通“智”，意思是（  ）",
+   "options": [
+    "知道",
+    "知识",
+    "智慧",
+    "听说"
+   ],
+   "correct_answer": "C",
+   "explanation": "这里的“知”通“智”，指智慧、聪明。小孩是说：谁说你智慧多呢？按“知道”“知识”讲，就漏掉了通假这一层。",
+   "tags": [
+    "两小儿辩日",
+    "通假"
+   ],
+   "question_id": "chinese-6up-d11-q14"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《曹冲称象》中“称物以载之，则校可知矣”的“校”意思是（  ）",
+   "options": [
+    "学校",
+    "校正",
+    "考核",
+    "比较"
+   ],
+   "correct_answer": "D",
+   "explanation": "“校”在这里是比较、核对：把石头的重量和船上的痕迹一对，大象多重就知道了。“学校”“考核”都是别的意思。",
+   "tags": [
+    "曹冲称象",
+    "实词"
+   ],
+   "question_id": "chinese-6up-d11-q15"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《两小儿辩日》中“孔子不能决也”的意思是（  ）",
+   "options": [
+    "孔子不能判断谁对谁错",
+    "孔子不想回答两个小孩",
+    "孔子认为两个小孩都错",
+    "孔子听不懂小孩说的话"
+   ],
+   "correct_answer": "A",
+   "explanation": "“决”是判断、裁决。“不能决”是判断不了谁是谁非，不是不肯回答，也不是两个都错——两小儿各有依据。",
+   "tags": [
+    "两小儿辩日",
+    "文意"
+   ],
+   "question_id": "chinese-6up-d11-q16"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“我以日始出时去人近，而日中时远也”“我以日初出远，而日中时近也”，两个小孩争论的是（  ）",
+   "options": [
+    "太阳为什么东升西落",
+    "太阳什么时候离人近",
+    "太阳什么时候最明亮",
+    "太阳到底有多大"
+   ],
+   "correct_answer": "B",
+   "explanation": "一个说太阳刚出来时近、中午远，另一个说法正好相反，争的就是太阳什么时候离人近。其余几项引文里都没有提到。",
+   "tags": [
+    "两小儿辩日",
+    "文意"
+   ],
+   "question_id": "chinese-6up-d11-q17"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《两小儿辩日》中“日初出大如车盖，及日中则如盘盂”把太阳比作车盖和盘盂，是为了说明（  ）",
+   "options": [
+    "太阳中午看起来比早晨更大",
+    "太阳离人近时看着大，远时看着小",
+    "车盖和盘盂的大小其实差不多",
+    "太阳的大小从早到晚不变"
+   ],
+   "correct_answer": "B",
+   "explanation": "这是用看得见的大小打比方：近的显大，远的显小，所以早晨太阳近。说中午更大、两者一样大、大小不变，都和原句相反。",
+   "tags": [
+    "两小儿辩日",
+    "写法"
+   ],
+   "question_id": "chinese-6up-d11-q18"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《曹冲称象》中“曹冲生五六岁，智意所及，有若成人之智”说明曹冲（  ）",
+   "options": [
+    "五六岁就长成了大人",
+    "五六岁才开始读书识字",
+    "五六岁时见识就像成年人",
+    "五六岁就当上了官员"
+   ],
+   "correct_answer": "C",
+   "explanation": "“智意所及”指见识、想法达到的程度，“有若”是好像。句子夸他五六岁的见识已比得上成年人，不是说个子或身份。",
+   "tags": [
+    "曹冲称象",
+    "文意"
+   ],
+   "question_id": "chinese-6up-d11-q19"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《两小儿辩日》中，孔子“不能决也”，这表现出他（  ）",
+   "options": [
+    "学问不如两个小孩",
+    "不愿管小孩的闲事",
+    "实事求是，不装懂",
+    "怕说错被人笑话"
+   ],
+   "correct_answer": "C",
+   "explanation": "“不能决”说明这个难题连孔子也判断不了，他坦然承认，正是不装懂。说他学问不如小孩或不愿管闲事，都把这句话读窄了。",
+   "tags": [
+    "两小儿辩日",
+    "人物"
+   ],
+   "question_id": "chinese-6up-d11-q20"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《曹冲称象》中，称石头时还必须用原来那条船，是因为（  ）",
+   "options": [
+    "只有那条船装得下许多石头",
+    "同一条船、同样水痕，重量才相等",
+    "换一条船会被曹操一眼发现",
+    "别的船都还没有造好，用不了"
+   ],
+   "correct_answer": "B",
+   "explanation": "船一样、下沉到同一水痕，说明排开的水一样多，石头才和大象一样重。换了船，两条水痕没法比，替换就不成立。",
+   "tags": [
+    "曹冲称象",
+    "道理"
+   ],
+   "question_id": "chinese-6up-d11-q21"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《两小儿辩日》中“此不为远者小而近者大乎”的意思是（  ）",
+   "options": [
+    "这不就是近的显小、远的显大吗",
+    "太阳难道不是又大又圆吗",
+    "太阳离人到底是远还是近",
+    "这不就是远的显小、近的显大吗"
+   ],
+   "correct_answer": "D",
+   "explanation": "“此不为……乎”是反问，等于说“这不正是……吗”。原句是远的显小、近的显大，读反了，后面的推论就全拧了。",
+   "tags": [
+    "两小儿辩日",
+    "句式"
+   ],
+   "question_id": "chinese-6up-d11-q22"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《两小儿辩日》中“两小儿笑曰：‘孰为汝多知乎？’”这句话表现出两个小孩（  ）",
+   "options": [
+    "蛮横无礼，存心嘲笑孔子",
+    "害怕孔子，赶紧认错",
+    "不服气，要和孔子比学问",
+    "天真直率，不是存心嘲笑"
+   ],
+   "correct_answer": "D",
+   "explanation": "小孩是脱口反问：谁说你智慧多呢？这是天真直率，不是辱骂。说他们害怕或要比学问，原句里都找不到根据。",
+   "tags": [
+    "两小儿辩日",
+    "人物"
+   ],
+   "question_id": "chinese-6up-d11-q23"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《曹冲称象》中“有若成人之智”与“称物以载之”的两个“之”，用法（  ）",
+   "options": [
+    "前者是“的”，后者代指石头",
+    "前者代指成年人，后者是“的”",
+    "两处都是“的”，没有代词",
+    "两处都是代词，都指人"
+   ],
+   "correct_answer": "A",
+   "explanation": "“成人之智”是成年人的见识，“之”相当于“的”；“载之”是把石头装上去，“之”代指石头。两处用法不同。",
+   "tags": [
+    "曹冲称象",
+    "虚词"
+   ],
+   "question_id": "chinese-6up-d11-q24"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《两小儿辩日》“问其故”与《曹冲称象》“欲知其斤重”的两个“其”，所指（  ）",
+   "options": [
+    "前者指两小儿，后者指大象",
+    "前者指孔子，后者指曹冲",
+    "前者指太阳，后者指大船",
+    "两处都指人，不指物"
+   ],
+   "correct_answer": "A",
+   "explanation": "“问其故”是问两个小孩争论的原因，“其”指两小儿；“知其斤重”是想知道大象的重量，“其”指大象。",
+   "tags": [
+    "两小儿辩日·曹冲称象",
+    "虚词"
+   ],
+   "question_id": "chinese-6up-d11-q25"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《两小儿辩日》中，两小儿依据“日初出大如车盖”和“及其日中如探汤”说理，共同的不足是（  ）",
+   "options": [
+    "都只凭一种感觉下结论，理由不全面",
+    "两个人都只凭眼睛看到的大小来判断",
+    "两个人都只凭太阳的颜色判断远近",
+    "两个人都认为太阳早晚一样远"
+   ],
+   "correct_answer": "A",
+   "explanation": "一个凭眼睛看大小，一个凭身体觉冷热，都只抓住一种感觉就下结论，所以谁也说服不了谁。说都凭眼睛或都说一样远，都不符合原句。",
+   "tags": [
+    "两小儿辩日",
+    "评价"
+   ],
+   "question_id": "chinese-6up-d11-q26"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d11",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "两小儿“辩斗”而“孔子不能决”，曹冲面对“咸莫能出其理”却想出办法，两者的差别主要在（  ）",
+   "options": [
+    "一个年纪小，一个年纪大",
+    "一个懂天文，一个懂算术",
+    "一个只争论，一个动手替换",
+    "一个有人帮，一个没人帮"
+   ],
+   "correct_answer": "C",
+   "explanation": "两小儿停在各自的观察上争不出结果；曹冲把称不了的大象换成能一次次称的石头，靠的是动手换办法，不是年龄或帮手。",
+   "tags": [
+    "两小儿辩日·曹冲称象",
+    "评价"
+   ],
+   "question_id": "chinese-6up-d11-q27"
   },
   {
    "diagnostic_node_id": "chinese-6up-d12",
@@ -9972,13 +10764,13 @@
    "question_type": "选择题",
    "stem": "读“置象大船之上，而刻其水痕所至”时，停顿正确的是（  ）",
    "options": [
-    "置象/大船之上而/刻其水痕所至",
-    "置象大船之上/而刻其水痕所至",
-    "置/象大船之上而刻/其水痕所至",
-    "置象大船/之上而刻其/水痕所至"
+    "置象/大船之上，而/刻其水痕所至",
+    "置象大船之上而/刻其水痕所至",
+    "置/象大船之上，而刻/其水痕所至",
+    "置象大船/之上，而刻其/水痕所至"
    ],
-   "correct_answer": "B",
-   "explanation": "“置象大船之上”是完整的一件事，“而”后另起一层，所以断在“而”前——断句先要读懂意思。",
+   "correct_answer": "A",
+   "explanation": "“置象”已说完一件事，先断一处；“大船之上”连读交代位置；“而”前后是两层意思，断在“而”前；末句“刻其水痕所至”意思完整，不能再拆。",
    "tags": [
     "曹冲称象",
     "朗读停顿"
@@ -10049,6 +10841,271 @@
     "断句"
    ],
    "question_id": "chinese-6up-d20-q06"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d20",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "把「孰为汝多知乎」读成「孰/为汝多知乎」，“孰”和“为”被拆开以后，这句话（  ）",
+   "options": [
+    "“谁说”连不起来，问话不成句",
+    "意思不变，只是读得慢一些",
+    "变成“谁给了你很多知识”",
+    "变成“你究竟知道多少”"
+   ],
+   "correct_answer": "A",
+   "explanation": "“孰为”是“谁说”，两个字连读才成词。拆成“孰／为汝多知乎”以后，“孰”（谁）悬在半空，“为”接不上，问话就散了；说意思不变，是没有注意停顿跟着意思走。",
+   "tags": [
+    "孰为汝多知乎",
+    "按意思断句"
+   ],
+   "question_id": "chinese-6up-d20-q07"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d20",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "「置象大船之上」的意思是“把大象放到大船上”。照这个意思读，停顿正确的是（  ）",
+   "options": [
+    "置/象大船之上",
+    "置象大船/之上",
+    "置象大/船之上",
+    "置象/大船之上"
+   ],
+   "correct_answer": "D",
+   "explanation": "“置象”是“把大象放上去”，意思完整，不能拆开；“大船之上”说的是放在哪里，四个字也要连读。在“置”后断开，或把“大船”拆成两半，读出来都不成话。",
+   "tags": [
+    "置象大船之上",
+    "按意思断句"
+   ],
+   "question_id": "chinese-6up-d20-q08"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d20",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读「置象大船之上」时，要在“置象”后面停一下，原因是（  ）",
+   "options": [
+    "“置象”意思完整，后面才说放在哪里",
+    "两个字一停，读起来最整齐顺口",
+    "读到第三个字，正好该换一口气",
+    "“象”字读得重，重音后面自然该停一下"
+   ],
+   "correct_answer": "A",
+   "explanation": "停顿跟着意思走：“置象”已经说完把大象放上去这件事，下面“大船之上”才交代放在哪里，所以断在这里。按字数切、按换气切、按重音切，都可能把词拆开。",
+   "tags": [
+    "置象大船之上",
+    "停顿依据"
+   ],
+   "question_id": "chinese-6up-d20-q09"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d20",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "「孰为汝多知乎」中的“多知”是“知识渊博”一个意思。读这句话时，“多”和“知”之间（  ）",
+   "options": [
+    "要停一下，强调“多”",
+    "可以停，也可以不停",
+    "要停，并把“多”拖长",
+    "不能停，要连起来读"
+   ],
+   "correct_answer": "D",
+   "explanation": "“多知”是一个词，说的是知识渊博；拆成“多”“知”，就成了“知道得多”，意思走样。停顿要落在词与词之间，一个词的内部不能断开。",
+   "tags": [
+    "孰为汝多知乎",
+    "不拆词"
+   ],
+   "question_id": "chinese-6up-d20-q10"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d20",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "「孰为汝多知乎」和「置象大船之上」这两句，朗读停顿共同的依据是（  ）",
+   "options": [
+    "按字数把句子平均分成几段，读得整齐",
+    "按换气的地方，憋不住就停一下",
+    "按意思把完整的词和词组留在同一处",
+    "按标点来停，见一个标点就停一次"
+   ],
+   "correct_answer": "C",
+   "explanation": "两句都要先读懂意思：“孰为汝”是一层，“置象”是一层，下面再接着说。按字数平均分、按换气停、按标点停，都不看词，容易把词拆开。",
+   "tags": [
+    "孰为汝多知乎",
+    "置象大船之上",
+    "停顿依据"
+   ],
+   "question_id": "chinese-6up-d20-q11"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d20",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读「置象大船之上」时一口气读到底、中间不停，会（  ）",
+   "options": [
+    "读起来更流畅，整句话的意思也更连贯",
+    "“置象”和“大船之上”粘连，听不清地点",
+    "把“大船”单独读成一个词，听起来反而更准确",
+    "让句子变短，一口气读到底也更省力"
+   ],
+   "correct_answer": "B",
+   "explanation": "“置象”是一件事，“大船之上”是地点，中间这一停把两层意思分开。不停，两层粘成一片，听的人就分不清象放在哪里了。",
+   "tags": [
+    "置象大船之上",
+    "停顿与读破"
+   ],
+   "question_id": "chinese-6up-d20-q12"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d20",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪种停顿把「孰为汝多知乎」中的“孰”和“为”拆开了（  ）",
+   "options": [
+    "孰为汝/多知乎",
+    "孰/为汝多知乎",
+    "孰为汝/多知/乎",
+    "孰为汝多/知乎"
+   ],
+   "correct_answer": "B",
+   "explanation": "“孰为”就是“谁说”，两个字要连读。读成“孰/为汝多知乎”，把“谁”和“说”分在两处，问话就断了。另外几种都没有在“孰”后停。",
+   "tags": [
+    "孰为汝多知乎",
+    "拆词"
+   ],
+   "question_id": "chinese-6up-d20-q13"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d20",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪种停顿把「置象大船之上」中的“置象”拆开了（  ）",
+   "options": [
+    "置/象大船之上",
+    "置象/大船之上",
+    "置象大船/之上",
+    "置象大/船之上"
+   ],
+   "correct_answer": "A",
+   "explanation": "“置象”是“把大象放上去”，是一个整体。在“置”后停，句子就成了“置”和“象大船之上”两截，听不出放的是什么。",
+   "tags": [
+    "置象大船之上",
+    "拆词"
+   ],
+   "question_id": "chinese-6up-d20-q14"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d20",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "有同学把「孰为汝多知乎」读成「孰为/汝/多知乎」。这样读，错在（  ）",
+   "options": [
+    "把“多知”拆开，句意变成“知道得多”",
+    "把“孰为”连读，句子就没有主语",
+    "把“汝”读成单独一顿，问话被切成碎片",
+    "把“乎”提前，问句读成了感叹句"
+   ],
+   "correct_answer": "C",
+   "explanation": "“汝”是“你”，在这里作“为（说）”的对象，要跟后面的“多知”连在一起。把它读成单独一顿，等于把问话从中间劈开，意思也散了。",
+   "tags": [
+    "孰为汝多知乎",
+    "错因判断"
+   ],
+   "question_id": "chinese-6up-d20-q15"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d20",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "「孰为汝多知乎」读成「孰为汝/多知乎」和「孰为汝多/知乎」，差别在于（  ）",
+   "options": [
+    "前者把“多知”当一个词，后者拆开了",
+    "前者停顿更少，后者停顿更多",
+    "前者读成陈述句，后者读成问句",
+    "前者重音在“汝”，后者重音在“乎”"
+   ],
+   "correct_answer": "A",
+   "explanation": "“多知”是“知识渊博”。前一种读法把它完整留住；后一种在“多”后停，“多”和“知”成了两截，问话的意思就散了。",
+   "tags": [
+    "孰为汝多知乎",
+    "停顿与意思"
+   ],
+   "question_id": "chinese-6up-d20-q16"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d20",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "「置象大船之上」中间没有标点，朗读时却要停一下。这说明（  ）",
+   "options": [
+    "停顿只看标点，两个标点之间要一口气读完",
+    "停顿跟着意思走，和标点位置不完全一致",
+    "没有标点的地方一律不能停，要连读",
+    "停顿多少，全看句子用了几个标点"
+   ],
+   "correct_answer": "B",
+   "explanation": "停顿落在意思的层次上：“置象”和“大船之上”之间虽无标点，意思却在那里断开，读时就要停一下。标点是书面的，不能反过来决定停顿。",
+   "tags": [
+    "置象大船之上",
+    "停顿与标点"
+   ],
+   "question_id": "chinese-6up-d20-q17"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d20",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "有人把「置象大船之上」读成「置象大船/之上」。这样断，最直接的后果是（  ）",
+   "options": [
+    "“置象”被切开，听不出放上去的是什么",
+    "“大船”读成了一个动作，句子里没有船",
+    "“之上”读成了主语，句子没有谓语",
+    "“大船之上”被切开，听不出象放在哪里"
+   ],
+   "correct_answer": "D",
+   "explanation": "“大船之上”是“在大船上面”，四个字合起来才说清地点。在“大船”后停，地点被切成两截，听的人就抓不住象放到哪里去了。",
+   "tags": [
+    "置象大船之上",
+    "停顿与意思"
+   ],
+   "question_id": "chinese-6up-d20-q18"
   },
   {
    "diagnostic_node_id": "chinese-6up-d13",
@@ -10249,6 +11306,402 @@
    "question_id": "chinese-6up-d13-q09"
   },
   {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“深蓝的天空中挂着一轮金黄的圆月，下面是海边的沙地，都种着一望无际的碧绿的西瓜。”这些色彩词的作用是（  ）",
+   "options": [
+    "色彩鲜明，眼前像有一幅画",
+    "交代西瓜的价钱和收成好坏",
+    "说明“我”当时年纪还小",
+    "证明闰土种瓜的本事大"
+   ],
+   "correct_answer": "A",
+   "explanation": "深蓝、金黄、碧绿把夜里的沙地写得亮起来，读的人眼前先有画，才跟着走进这个故事。价钱、年龄、种瓜本事，这几句都没写。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "语言"
+   ],
+   "question_id": "chinese-6up-d13-q10"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《少年闰土》中闰土说：“我们沙地里，潮汛要来的时候，就有许多跳鱼儿只是跳，都有青蛙似的两个脚……”这句属于（  ）",
+   "options": [
+    "外貌描写",
+    "语言描写",
+    "动作描写",
+    "环境描写"
+   ],
+   "correct_answer": "B",
+   "explanation": "这是闰土亲口讲的话，写下来就是语言描写。句中虽有“跳”字，那是跳鱼儿在跳，不是写闰土的动作，也没有写相貌和景物。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "写法"
+   ],
+   "question_id": "chinese-6up-d13-q11"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "把《少年闰土》中“我那时并不知道这所谓猹的是怎么一件东西——便是现在也没有知道”换成通顺的说法，最恰当的是（  ）",
+   "options": [
+    "我小时候见过猹，现在记不太清了",
+    "我知道猹是什么东西，只是嘴上说不明白",
+    "我到现在才第一次弄明白猹是啥东西",
+    "我那时不知道猹是什么，到现在也不知道"
+   ],
+   "correct_answer": "D",
+   "explanation": "原句前后两个“没有知道”，说的是从那时一直到现在都不知道。见过、说不明白、才弄懂，都和原意不合，也把“不知道”改成了别的意思。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "语言"
+   ],
+   "question_id": "chinese-6up-d13-q12"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《少年闰土》写捕鸟：“扫出一块空地来，用短棒支起一个大竹匾，撒下秕谷……将缚在棒上的绳子只一拉”，这串动作主要表现（  ）",
+   "options": [
+    "捕鸟要用的工具和步骤很多",
+    "闰土捕鸟熟练，很有经验",
+    "闰土家靠捕鸟过日子",
+    "“我”看得有些不耐烦"
+   ],
+   "correct_answer": "B",
+   "explanation": "扫、支、撒、拉，一步接一步，写得利落，正见出闰土做惯了这件事。工具多、靠捕鸟过活、旁人不耐烦，句里都没有。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "写法"
+   ],
+   "question_id": "chinese-6up-d13-q13"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《我的伯父鲁迅先生》中“我”把书中人物讲错了，伯父笑着说“还是我的记性好”。他这样说不直接批评，好处是（  ）",
+   "options": [
+    "让孩子自己猜，猜不出就算了",
+    "显得伯父的记性确实比孩子好得多",
+    "点出“我”读书马虎，又不伤面子",
+    "免得孩子回家被大人责骂"
+   ],
+   "correct_answer": "C",
+   "explanation": "伯父把批评包在玩笑里，孩子听得出自己读书不细心，又不至于当场难堪。记性好是字面话，不是这句话的用意。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "语言"
+   ],
+   "question_id": "chinese-6up-d13-q14"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《好的故事》写的是梦，开头却说“我仿佛记得曾坐小船经过山阴道”。用“仿佛记得”的好处是（  ）",
+   "options": [
+    "说明作者其实从没去过那里",
+    "为了把句子写得长一些",
+    "表示他不想把梦告诉读者",
+    "似真似幻，正合梦境的朦胧"
+   ],
+   "correct_answer": "D",
+   "explanation": "“仿佛记得”把话说得不确定，梦里的景象就是这样似有似无。说没去过，与“经过”相抵；拉长句子、不肯明说，都从字面推不出来。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "语言"
+   ],
+   "question_id": "chinese-6up-d13-q15"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《少年闰土》中“我于是日日盼望新年，新年到，闰土也就到了”，这句话写出“我”盼望的是（  ）",
+   "options": [
+    "早一点见到闰土",
+    "过年能放鞭炮",
+    "能吃到许多好东西",
+    "能去海边看瓜"
+   ],
+   "correct_answer": "A",
+   "explanation": "后半句把话说明白了：新年一到，闰土就来了。“我”盼的是这个人，不是鞭炮、吃食，也不是去海边。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "内容理解"
+   ],
+   "question_id": "chinese-6up-d13-q16"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《好的故事》中“我闭了眼睛，向后一仰，靠在椅背上”，随后“我”看见的是（  ）",
+   "options": [
+    "窗外真实的夜景",
+    "一个美丽幽雅的梦",
+    "书中读到的一幅插图",
+    "朋友讲过的一个故事"
+   ],
+   "correct_answer": "B",
+   "explanation": "闭眼之后出现的山阴道风景，是梦里的景象，课文用“美丽、幽雅、有趣”来形容它。窗外夜景、插图、朋友的故事，都不是这段写的内容。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "内容理解"
+   ],
+   "question_id": "chinese-6up-d13-q17"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《少年闰土》写闰土“紫色的圆脸，头戴一顶小毡帽，颈上套一个明晃晃的银项圈”，又写“我”是一个少爷，这样对照最想让人看出（  ）",
+   "options": [
+    "闰土家比“我”家更有钱",
+    "两个孩子的日子过得大不一样",
+    "“我”长得比闰土要好看些",
+    "闰土不爱读书，成天只想着玩"
+   ],
+   "correct_answer": "B",
+   "explanation": "一边是海边农家的孩子，一边是城里的少爷，穿戴和身份摆在一处，日子过得怎样就不言自明。银项圈不说明有钱，相貌和爱不爱读书，这两句都没写。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "人物"
+   ],
+   "question_id": "chinese-6up-d13-q18"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《有的人——纪念鲁迅有感》中“骑在人民头上的，人民把他摔垮；给人民作牛马的，人民永远记住他”，这两句说明（  ）",
+   "options": [
+    "骑在人民头上的人技术不好",
+    "做牛马很辛苦，没有人愿意去做这种事",
+    "人民心里有数，记得为他们做事的人",
+    "人民记性很好，过去的事全都记得清楚"
+   ],
+   "correct_answer": "C",
+   "explanation": "摔垮和记住，是人民对两类人的两种回答：欺压人的被推倒，为众人做事的被记住。骑马技术、做牛马的辛苦、记性好不好，都是把比喻当成真事在读。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "内容理解"
+   ],
+   "question_id": "chinese-6up-d13-q19"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《好的故事》中“我正要凝视他们时，骤然一惊，睁开眼，云锦也已皱蹙，凌乱”，这句在全文中的作用是（  ）",
+   "options": [
+    "说明作者睡觉的时候受了凉，感冒了",
+    "交代屋子里的东西摆得很乱",
+    "写出梦被惊醒、美景散去的转折",
+    "说明屋里的灯忽然全灭了"
+   ],
+   "correct_answer": "C",
+   "explanation": "前文一路写梦里的美，这一句骤然收住，梦碎了，景也乱了，下文才接上醒后的昏暗。受凉、屋里乱、灯灭了，都是照字面读，原文没有这些意思。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "写法"
+   ],
+   "question_id": "chinese-6up-d13-q20"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《我的伯父鲁迅先生》结尾说“他为自己想得少，为别人想得多”。这句和前面四件小事的关系是（  ）",
+   "options": [
+    "这句是原因，四件小事是结果",
+    "四件小事作证，这句是总的归纳",
+    "两者不是一回事，前后有点矛盾",
+    "这句是伯父说的，与四件小事无关"
+   ],
+   "correct_answer": "B",
+   "explanation": "谈书、笑谈碰壁、救护车夫、关心女佣，四件事各写一面，最后一句才把印象收拢。说它是原因、说两者矛盾、说这话出自伯父，都不合原文。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "写法"
+   ],
+   "question_id": "chinese-6up-d13-q21"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面四句中，属于对人物形象的概括、而不是具体描写的一句是（  ）",
+   "options": [
+    "阿三说周先生病得厉害还半夜写文章",
+    "闰土紫色的圆脸，头戴小毡帽",
+    "闰土扫出空地，支起竹匾撒秕谷",
+    "伯父是个善良、心里装着别人的人"
+   ],
+   "correct_answer": "D",
+   "explanation": "概括是对人的总体判断，不再写他做了什么、长什么样。其余三句分别写了阿三的话、闰土的相貌和动作，都是具体描写。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "人物"
+   ],
+   "question_id": "chinese-6up-d13-q22"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《有的人——纪念鲁迅有感》中“有的人情愿作野草，等着地下的火烧”，这里的“野草”是指（  ）",
+   "options": [
+    "路边自己长出来的野草",
+    "被火烧过的一片荒地",
+    "一种很普通的植物",
+    "甘愿牺牲自己的人"
+   ],
+   "correct_answer": "D",
+   "explanation": "野草等着火烧，是把自己交出去，诗里说的是甘愿牺牲的人。把它读成真的草、真的荒地，就把比喻当成了事实。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "人物"
+   ],
+   "question_id": "chinese-6up-d13-q23"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《少年闰土》中说闰土的父亲“是一个忙月”，只在过节和收租时到富人家做工。这说明当时（  ）",
+   "options": [
+    "农家日子紧，要靠打短工过活",
+    "农民家里都很富裕，不愁吃穿",
+    "城里人喜欢请人吃饭做客",
+    "闰土家里雇了很多长工干活"
+   ],
+   "correct_answer": "A",
+   "explanation": "忙月不是长工，是过节和收租时出去找活干的人。要靠这样的零工贴补，可见农家日子并不宽裕，这正是那时农村的样子。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "背景"
+   ],
+   "question_id": "chinese-6up-d13-q24"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《我的伯父鲁迅先生》写伯父“半跪着”给拉车的夹出碎玻璃、洗伤口，这一动作最能看出他（  ）",
+   "options": [
+    "对穷苦人真心关怀，不嫌脏累",
+    "手脚麻利，平时常给人看病",
+    "年纪大了，蹲不下去才这样跪",
+    "怕车夫讹他，只好自己动手"
+   ],
+   "correct_answer": "A",
+   "explanation": "半跪在地上，是要凑近伤口把碎玻璃夹干净，身份和脏累都没顾上。常给人看病、蹲不下去、怕被讹，原文都没有这些意思。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "人物"
+   ],
+   "question_id": "chinese-6up-d13-q25"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《好的故事》说梦里的景象“错综起来像一天云锦”，有人以为真有一匹锦。这样读错在（  ）",
+   "options": [
+    "把比喻当实物，没看出写的是梦境",
+    "不知道云锦是一种很名贵的丝织品",
+    "没数清梦里到底有多少样东西",
+    "把“一天”错当成了一整天的意思"
+   ],
+   "correct_answer": "A",
+   "explanation": "云锦是把梦里的景象比作满天云霞，说的还是那片景。真去找一匹锦，就是把比喻当成了实物；知道云锦名贵，也改不了这个错。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "写法"
+   ],
+   "question_id": "chinese-6up-d13-q26"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d13",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "用“半殖民地半封建”来解释课文，最贴切的一项是（  ）",
+   "options": [
+    "闰土会捕鸟、拾贝，乡下的生活很有趣味",
+    "“我”家年年值年祭祀，亲戚来得很多",
+    "车夫光脚拉车、农家打短工，穷人难翻身",
+    "伯父的文章写得深，孩子听不太懂"
+   ],
+   "correct_answer": "C",
+   "explanation": "半殖民地半封建，说的是国家受列强欺压、农村凋敝，穷苦人再卖力也翻不了身。捕鸟拾贝的乐趣、祭祀的热闹、文章深浅，都解释不了这个词。",
+   "tags": [
+    "鲁迅作品的人物形象与时代背景",
+    "背景"
+   ],
+   "question_id": "chinese-6up-d13-q27"
+  },
+  {
    "diagnostic_node_id": "chinese-6up-d14",
    "subject": "chinese",
    "ability_tag": "阅读理解",
@@ -10379,6 +11832,270 @@
     "方法"
    ],
    "question_id": "chinese-6up-d14-q06"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《少年闰土》写“我家只有一个忙月”。旧时绍兴把只在过节和收租时来帮工、平时自己种地的人叫忙月。这里的“忙月”指（  ）",
+   "options": [
+    "整年给一家做工、吃住在他家的长工",
+    "按天算工钱、当天来回的短工",
+    "只在过节和收租时来帮工的人",
+    "主持祭祖仪式、张罗供品的族长"
+   ],
+   "correct_answer": "C",
+   "explanation": "资料说得明白：忙月平时自己种地，只在过节、收租时来帮工。整年住家的是长年，按天算钱的是短工，族长管祭祀，都不是忙月。",
+   "tags": [
+    "借助资料理解课文",
+    "少年闰土"
+   ],
+   "question_id": "chinese-6up-d14-q07"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读《少年闰土》里“那一年，我家是一件大祭祀的值年”，旧时大家族轮流主办祭祖，轮到的一家就叫值年。这里的“值年”指（  ）",
+   "options": [
+    "那一年“我”家的收成最好",
+    "闰土的父亲到“我”家来过年",
+    "祭祖那几天全家人都要守夜",
+    "那一年轮到“我”家主办祭祖"
+   ],
+   "correct_answer": "D",
+   "explanation": "值年说的是轮到谁家主办祭祖。正因为轮到“我”家，才忙不过来请忙月，闰土才有机会进城；收成、过年、守夜都不沾边。",
+   "tags": [
+    "借助资料理解课文",
+    "少年闰土"
+   ],
+   "question_id": "chinese-6up-d14-q08"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《少年闰土》中，“我”听闰土讲完海边拾贝，说“我素不知道天下有这许多新鲜事”。资料：鲁迅小时候在家读书，大人不许他随便出门。据此，“素不知道”的原因是（  ）",
+   "options": [
+    "他常年在院里读书，没见过外面的世界",
+    "闰土故意瞒着，这些事一件也不讲给他听",
+    "他年纪太小，听过就忘得干净",
+    "海边本来就没有这些新鲜事"
+   ],
+   "correct_answer": "A",
+   "explanation": "“素”是一直、向来。资料说明“我”被关在院里读书，海边的事自然一件也没见过；闰土正讲得眉飞色舞，谈不上瞒他。",
+   "tags": [
+    "借助资料理解课文",
+    "少年闰土"
+   ],
+   "question_id": "chinese-6up-d14-q09"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《我的伯父鲁迅先生》中阿三说“周先生自己病得那么厉害，还三更半夜地写文章”。资料：鲁迅晚年患严重肺病，医生多次要他静养。阿三说这话时的心情是（  ）",
+   "options": [
+    "嫌他夜里写字吵得人睡不着",
+    "担心他病好以后就不再雇自己做工",
+    "觉得他白天睡够了，夜里才忙",
+    "心疼他带病熬夜，又敬重他做的事"
+   ],
+   "correct_answer": "D",
+   "explanation": "病得厉害还写到半夜，是拿命在写。资料里医生劝静养，正衬出他不肯停笔；阿三看着他咳嗽，既心疼又敬重。",
+   "tags": [
+    "借助资料理解课文",
+    "我的伯父鲁迅先生"
+   ],
+   "question_id": "chinese-6up-d14-q10"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《少年闰土》结尾写“其实地上本没有路，走的人多了，也便成了路”。资料：鲁迅这次回故乡是卖屋搬家，见到的农村凋敝，儿时伙伴也被生活压得麻木。这里的“路”指（  ）",
+   "options": [
+    "他回乡时走过的那条土路",
+    "闰土去海边拾贝踩出的小径",
+    "众人一起走出来的新生活",
+    "一句顺口说出、没想清楚的闲话"
+   ],
+   "correct_answer": "C",
+   "explanation": "眼前是破败的故乡，他偏说路是人走出来的：路不现成，要靠人一步步去开。土路、小径都是实指，撑不起这个结尾。",
+   "tags": [
+    "借助资料理解课文",
+    "少年闰土"
+   ],
+   "question_id": "chinese-6up-d14-q11"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《少年闰土》开头写“深蓝的天空中挂着一轮金黄的圆月”，月下是一个捏叉刺猹的少年。资料：这是鲁迅四十多岁时回忆三十年前的伙伴。这幅图景是（  ）",
+   "options": [
+    "“我”在自家院里抬头看见的夜景",
+    "三十年前的旧事留在记忆里的画面",
+    "闰土进城那天下雪时的村口景象",
+    "作者从别人的文章里抄来的一段"
+   ],
+   "correct_answer": "B",
+   "explanation": "人到中年回望少年，深蓝、金黄这样亮的颜色是记忆滤过的。院里抬头看不到海和瓜地，下雪是捕鸟那段，抄来的更说不通。",
+   "tags": [
+    "借助资料理解课文",
+    "少年闰土"
+   ],
+   "question_id": "chinese-6up-d14-q12"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《少年闰土》写他“颈上套一个明晃晃的银项圈”。要弄清闰土为什么戴银项圈，最该查的资料是（  ）",
+   "options": [
+    "鲁迅在兄弟中排行第几、几岁开始上学",
+    "旧时绍兴给孩子戴银项圈求平安的风俗",
+    "鲁迅小时候在哪一所私塾读书",
+    "闰土家一年能收多少担稻谷"
+   ],
+   "correct_answer": "B",
+   "explanation": "银项圈是当地把孩子“圈住”、求平安的旧俗，查风俗才对得上；排行、私塾、收成，都解释不了脖子上为什么套个圈子。",
+   "tags": [
+    "借助资料理解课文",
+    "少年闰土"
+   ],
+   "question_id": "chinese-6up-d14-q13"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "《少年闰土》里“我”是少爷，闰土是忙月的儿子。要弄清两人的身份差别，下面哪条资料帮助最小（  ）",
+   "options": [
+    "绍兴黄酒用什么米、酿多少天",
+    "旧时大户人家请忙月帮工的情形",
+    "旧时少爷在家读书、不许出门的规矩",
+    "旧时农家孩子从小跟大人下地的情形"
+   ],
+   "correct_answer": "A",
+   "explanation": "身份差别要靠“少爷怎么过”“农家孩子怎么过”去对照；黄酒怎么酿是地方物产，和谁自由、谁被关着没有关系。",
+   "tags": [
+    "借助资料理解课文",
+    "少年闰土"
+   ],
+   "question_id": "chinese-6up-d14-q14"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "《少年闰土》里“我”是城里的少爷。闰土对“我”说“我们日里到海边检贝壳去，红的绿的都有，鬼见怕也有，观音手也有”。资料：绍兴靠海，海边孩子识贝壳。有同学据此说“我”也常去海边，错在（  ）",
+   "options": [
+    "资料本身不可靠，绍兴其实并不靠海，这条资料查了也没用",
+    "贝壳的名字不该出现在课文里，那只是闲笔",
+    "把闰土的日子安到“我”头上，课文写“我”没去过海边",
+    "“我”其实常去海边，只是后来把这些事忘了"
+   ],
+   "correct_answer": "C",
+   "explanation": "资料只说绍兴靠海、孩子识贝壳，说的是闰土的家乡；课文里“我”是城里的少爷，从没到过海边，两回事不能并成一件。",
+   "tags": [
+    "借助资料理解课文",
+    "少年闰土"
+   ],
+   "question_id": "chinese-6up-d14-q15"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "闰土讲捕鸟，说要“撒下秕谷”。资料：秕谷是扬场时飘出来的瘪谷，人不能吃。有同学说“拿坏谷子糊弄鸟，可见闰土不老实”。这个说法（  ）",
+   "options": [
+    "站不住：秕谷本是诱鸟的饵，说不上糊弄",
+    "站得住：舍不得用好谷，正是小气",
+    "站得住：捕鸟本来就是骗鸟的把戏",
+    "说不清：课文里没有交代秕谷到底有什么用"
+   ],
+   "correct_answer": "A",
+   "explanation": "资料只说人不能吃，没说鸟不能吃；引文里秕谷撒在地上做饵，用处明明白白。把“人不能吃”读成“存心糊弄”，是拿资料替掉了思考。",
+   "tags": [
+    "借助资料理解课文",
+    "少年闰土"
+   ],
+   "question_id": "chinese-6up-d14-q16"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "《我的伯父鲁迅先生》中，“我”把书里的人物张冠李戴，伯父笑着说“还是我的记性好”。资料：鲁迅批评人常不直说，爱用玩笑点一下。这句话的意思是（  ）",
+   "options": [
+    "伯父记性确实比“我”好得多",
+    "用玩笑提醒“我”读书太马虎",
+    "伯父嫌“我”笨，不肯再教“我”",
+    "伯父夸“我”把书读得很熟"
+   ],
+   "correct_answer": "B",
+   "explanation": "张冠李戴的是“我”，伯父偏说记性好的是自己，这是绕着弯的提醒。资料说他批评人不直说，正合这一句的口气。",
+   "tags": [
+    "借助资料理解课文",
+    "我的伯父鲁迅先生"
+   ],
+   "question_id": "chinese-6up-d14-q17"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d14",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "资料：鲁迅生活的年代，农民受地主剥削，交完租所剩无几。有人据此断定“闰土的父亲一定恨透了‘我’家”。这个断定（  ）",
+   "options": [
+    "成立：受剥削的人没有不恨雇主的",
+    "成立：资料比课文可靠，读课文前应先看资料",
+    "不成立：闰土的父亲后来告发了“我”家",
+    "越出资料：课文写他送儿子来帮工，看不出恨"
+   ],
+   "correct_answer": "D",
+   "explanation": "资料讲的是一个阶层的处境，落不到某一个人的心思上。课文里他父亲把闰土送来帮工，两家照常来往，恨是无中生有。",
+   "tags": [
+    "借助资料理解课文",
+    "少年闰土"
+   ],
+   "question_id": "chinese-6up-d14-q18"
   },
   {
    "question_id": "chinese-6up-d21-q01",
@@ -10577,6 +12294,402 @@
     "名言用法"
    ],
    "question_id": "chinese-6up-d21-q09"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "补出鲁迅名言的后半句：其实地上本没有路，（  ）",
+   "options": [
+    "走的人多了，也便成了路",
+    "走的人多了，也便有了路",
+    "走的人少了，也便没了路",
+    "路修好了，自然有人走"
+   ],
+   "correct_answer": "A",
+   "explanation": "原句是“走的人多了，也便成了路”。其余几项把“成了路”换成“有了路”，或把“多”“少”说反，或说成修路，都不是原句。",
+   "tags": [
+    "鲁迅名言",
+    "补原句"
+   ],
+   "question_id": "chinese-6up-d21-q10"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "补全鲁迅这句话：我们从古以来，就有埋头苦干的人，有拼命硬干的人，有为民请命的人，有（  ）",
+   "options": [
+    "打抱不平的人",
+    "舍身求法的人",
+    "能文能武的人",
+    "埋头读书的人"
+   ],
+   "correct_answer": "B",
+   "explanation": "鲁迅原文的第四类是“舍身求法的人”，指为追求真理不惜牺牲的人。另外三项意思虽好，却不在原句里。",
+   "tags": [
+    "鲁迅名言",
+    "补原句"
+   ],
+   "question_id": "chinese-6up-d21-q11"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "村里老支书修了四十年水渠，从没上过表彰名单。要赞美这样的人，最合适的一句是（  ）",
+   "options": [
+    "其实地上本没有路，走的人多了，也便成了路。",
+    "时间就是性命。无端的空耗别人的时间，其实是无异于谋财害命的。",
+    "惟有民魂是值得宝贵的，惟有他发扬起来，中国才有真进步。",
+    "我们从古以来，就有埋头苦干的人……这就是中国的脊梁。"
+   ],
+   "correct_answer": "D",
+   "explanation": "老支书埋头修渠、不求名声，正是“埋头苦干的人”，也就是撑起民族的脊梁。开路、惜时、民魂三句都说不到这一层。",
+   "tags": [
+    "鲁迅名言",
+    "语境运用"
+   ],
+   "question_id": "chinese-6up-d21-q12"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "班会讨论“国家真正的进步靠什么”，有同学说靠高楼和汽车。要反驳他，最合适引用的是（  ）",
+   "options": [
+    "其实地上本没有路，走的人多了，也便成了路。",
+    "惟有民魂是值得宝贵的，惟有他发扬起来，中国才有真进步。",
+    "时间就是性命。无端的空耗别人的时间，其实是无异于谋财害命的。",
+    "我们从古以来，就有埋头苦干的人，有拼命硬干的人……"
+   ],
+   "correct_answer": "B",
+   "explanation": "这句把民族精神看作国家进步的根本，正对“靠什么进步”的讨论。其余几句分别讲开路、惜时和脊梁，接不上这个话题。",
+   "tags": [
+    "鲁迅名言",
+    "语境运用"
+   ],
+   "question_id": "chinese-6up-d21-q13"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面四个人引用鲁迅名言，引用恰当的一项是（  ）",
+   "options": [
+    "他字写得漂亮，可见“惟有民魂是值得宝贵的”这句话说得对。",
+    "祝你考上理想的中学，“其实地上本没有路”。",
+    "快递员风雨无阻，正是“埋头苦干的人”，是中国的脊梁。",
+    "别熬夜打游戏了，“无端的空耗别人的时间”要不得。"
+   ],
+   "correct_answer": "C",
+   "explanation": "“埋头苦干的人”正对风雨无阻的快递员。字写得好与民魂无关，考学与开路无关，熬夜耗的是自己的时间，都对不上所引的句子。",
+   "tags": [
+    "鲁迅名言",
+    "引用辨析"
+   ],
+   "question_id": "chinese-6up-d21-q14"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面名言与理解配对正确的一项是（  ）",
+   "options": [
+    "“其实地上本没有路，走的人多了，也便成了路。”——走的人越多，路就修得越宽，也越好走",
+    "“惟有民魂是值得宝贵的，惟有他发扬起来，中国才有真进步。”——国家进步要靠人人多读书、读好书，才有希望",
+    "“我们从古以来，就有埋头苦干的人……”——这样的人只在古代才有，今天已经见不到了",
+    "“时间就是性命。无端的空耗别人的时间，其实是无异于谋财害命的。”——空耗别人的时间，害处近于害命"
+   ],
+   "correct_answer": "D",
+   "explanation": "空耗别人的时间，害处大到近乎害命，这一组的理解才对得上原句。其余三组把路说成好走、把民魂说成读书、把脊梁说成只剩古代，都解错了。",
+   "tags": [
+    "鲁迅名言",
+    "名言与理解"
+   ],
+   "question_id": "chinese-6up-d21-q15"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "“时间就是性命。无端的空耗别人的时间，其实是无异于谋财害命的。”句中“无异于”的意思是（  ）",
+   "options": [
+    "等同于",
+    "超过了",
+    "不同于",
+    "比不上"
+   ],
+   "correct_answer": "A",
+   "explanation": "“无异于”就是“等同于、等于”。全句是说空耗别人的时间和谋财害命的害处差不多，并非真去害人。",
+   "tags": [
+    "鲁迅名言",
+    "词义"
+   ],
+   "question_id": "chinese-6up-d21-q16"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "“其实地上本没有路，走的人多了，也便成了路。”这里的“路”，字面上指的是（  ）",
+   "options": [
+    "人生的出路和希望",
+    "供人行走的道路",
+    "做事情的具体办法",
+    "前进的方向和目标"
+   ],
+   "correct_answer": "B",
+   "explanation": "字面上说的就是人踩出来的道路；鲁迅借它比喻人生和社会的出路，那是后一层意思。",
+   "tags": [
+    "鲁迅名言",
+    "字面义"
+   ],
+   "question_id": "chinese-6up-d21-q17"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“惟有民魂是值得宝贵的，惟有他发扬起来，中国才有真进步。”句中“他”指的是（  ）",
+   "options": [
+    "说这句话的鲁迅本人",
+    "民魂，也就是民族精神",
+    "当时中国的青年学生",
+    "古代传说中的圣贤英雄"
+   ],
+   "correct_answer": "B",
+   "explanation": "前一句说“民魂”宝贵，后一句的“他”承接的就是民魂，指一个民族的精神。",
+   "tags": [
+    "鲁迅名言",
+    "指代"
+   ],
+   "question_id": "chinese-6up-d21-q18"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“我们从古以来，就有埋头苦干的人，有拼命硬干的人，有为民请命的人，有舍身求法的人……”其中“为民请命”“舍身求法”分别是（  ）",
+   "options": [
+    "替百姓做主的人和出家修行求佛的人",
+    "为民伸冤的人和为钱财卖命的人",
+    "替百姓呼吁的人和为真理献身的人",
+    "向朝廷邀功的人和云游四方的人"
+   ],
+   "correct_answer": "C",
+   "explanation": "“为民请命”是为百姓呼吁、替百姓说话；“舍身求法”指为追求真理不惜牺牲自己。其余几项都解偏了。",
+   "tags": [
+    "鲁迅名言",
+    "词义"
+   ],
+   "question_id": "chinese-6up-d21-q19"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“其实地上本没有路，走的人多了，也便成了路。”句中“路”的两层意思是（  ）",
+   "options": [
+    "乡间的小路和城里的大道",
+    "过去的旧路和将来的新路",
+    "脚下的道路和人生的出路",
+    "别人走的路和自己走的路"
+   ],
+   "correct_answer": "C",
+   "explanation": "字面上说地上本无路，人走得多了便踩出道路；深层是比喻希望和出路要靠人闯出来。",
+   "tags": [
+    "鲁迅名言",
+    "双关"
+   ],
+   "question_id": "chinese-6up-d21-q20"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“这就是中国的脊梁”用“脊梁”作比，妙在（  ）",
+   "options": [
+    "脊梁是人身上最长的骨头，写出人数之多",
+    "脊梁支撑全身，写出这些人撑起民族",
+    "脊梁最坚硬，写出这些人从不弯腰",
+    "脊梁长在身体中间，写出这些人地位居中"
+   ],
+   "correct_answer": "B",
+   "explanation": "脊梁的作用是支撑，用来说这些人撑起了整个民族。其余几项从长短、软硬、位置去解，都没落到“支撑”上。",
+   "tags": [
+    "鲁迅名言",
+    "比喻"
+   ],
+   "question_id": "chinese-6up-d21-q21"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "“我们从古以来，就有埋头苦干的人，有拼命硬干的人……这就是中国的脊梁。”这句话的作者是（  ）",
+   "options": [
+    "巴金",
+    "老舍",
+    "冰心",
+    "鲁迅"
+   ],
+   "correct_answer": "D",
+   "explanation": "这是鲁迅的话，收在语文园地“日积月累”里；巴金、老舍、冰心的作品里都没有这一句。",
+   "tags": [
+    "鲁迅名言",
+    "作者"
+   ],
+   "question_id": "chinese-6up-d21-q22"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "鲁迅说空耗别人的时间“无异于谋财害命”，这里的“谋财害命”是（  ）",
+   "options": [
+    "真的动手去抢钱害人",
+    "法律条文里的一项罪名",
+    "朋友之间随口说的一句玩笑",
+    "一种比喻，形容害处极大"
+   ],
+   "correct_answer": "D",
+   "explanation": "“无异于”是打比方，说害处大到差不多一样，并不是真去抢钱害人，也不是法律上的罪名。",
+   "tags": [
+    "鲁迅名言",
+    "辨析"
+   ],
+   "question_id": "chinese-6up-d21-q23"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“惟有民魂是值得宝贵的，惟有他发扬起来，中国才有真进步。”这句话最适合用在（  ）",
+   "options": [
+    "讨论民族精神与国家进步的座谈",
+    "同学在学科竞赛中获奖的庆功会",
+    "学校秋季运动会的开幕式上",
+    "朋友过生日时的祝福赠言"
+   ],
+   "correct_answer": "A",
+   "explanation": "全句讲民族精神与国家进步的关系，只有讨论这个问题的场合才对得上；庆功、运动会、生日都不涉及民魂。",
+   "tags": [
+    "鲁迅名言",
+    "用法"
+   ],
+   "question_id": "chinese-6up-d21-q24"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "小明在作文里写：“其实地上本没有路，走的人少了，也便成了路。”这句话的错误是（  ）",
+   "options": [
+    "把“走的人多了”改成了“走的人少了”，意思正好相反",
+    "把句中的“路”误写成“道路”，与原句不符",
+    "句末的句号漏写了，标点也用得不够规范，读着别扭",
+    "把“也便成了路”写成了“便成了路”，整整少了一个字"
+   ],
+   "correct_answer": "A",
+   "explanation": "原句是“走的人多了”，改成“少了”，路就越走越没有，与鲁迅要说的正相反。其余几项指出的都不是这处错误。",
+   "tags": [
+    "鲁迅名言",
+    "改字辨析"
+   ],
+   "question_id": "chinese-6up-d21-q25"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "有同学说：“鲁迅讲空耗别人时间‘无异于谋财害命’，说明浪费时间是犯罪行为。”这个说法错在（  ）",
+   "options": [
+    "把比喻当成事实，误解了鲁迅的用意",
+    "没有弄清这句话是鲁迅在什么时候写下的",
+    "把“时间”和“性命”的先后顺序弄反了",
+    "误以为这句话是别人转述鲁迅的"
+   ],
+   "correct_answer": "A",
+   "explanation": "“无异于”只是打比方，说害处大到接近，并不是说真构成犯罪。其余几项都没碰到“把比喻当事实”这个要害。",
+   "tags": [
+    "鲁迅名言",
+    "辨析"
+   ],
+   "question_id": "chinese-6up-d21-q26"
+  },
+  {
+   "diagnostic_node_id": "chinese-6up-d21",
+   "subject": "chinese",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面四句话都提到鲁迅的名言，理解没有错误的一项是（  ）",
+   "options": [
+    "“无异于谋财害命”说明浪费别人的时间要负法律责任，会被追究",
+    "“中国的脊梁”指的就是中国古代四位家喻户晓的英雄人物",
+    "“时间就是性命”把时间看得和生命一样重，强调不能白白耗掉别人的时间",
+    "“走的人多了，也便成了路”是说人多就一定能办成事，靠的是人数多少这一点"
+   ],
+   "correct_answer": "C",
+   "explanation": "把时间比作性命，是提醒人别白白耗掉别人的时间。另外三句分别错在：说成要负法律责任、说成四位英雄、说成人多就必能成事。",
+   "tags": [
+    "鲁迅名言",
+    "辨析"
+   ],
+   "question_id": "chinese-6up-d21-q27"
   }
  ]
 }
