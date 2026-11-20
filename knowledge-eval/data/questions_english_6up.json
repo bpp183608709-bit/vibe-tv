@@ -205,6 +205,402 @@
    "question_id": "english-6up-d01-q09"
   },
   {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "We ___ a lot of photos in the park last Sunday.（选择正确形式）",
+   "options": [
+    "took",
+    "take",
+    "takes",
+    "taken"
+   ],
+   "correct_answer": "A",
+   "explanation": "last Sunday 是过去的时间，拍照要用过去式。take 的过去式是不规则变化 took；take 是原形，takes 是第三人称单数，taken 是过去分词，不能单独作谓语。",
+   "tags": [
+    "一般过去时",
+    "不规则动词"
+   ],
+   "question_id": "english-6up-d01-q10"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "It ___ sunny during the holidays.（选择正确形式）",
+   "options": [
+    "were",
+    "was",
+    "are",
+    "been"
+   ],
+   "correct_answer": "B",
+   "explanation": "during the holidays 指已经过去的假期，要用过去式。主语 It 是单数，be 动词用 was；were 用于复数或 you，are 是现在时，been 是过去分词，都不能单独作谓语。",
+   "tags": [
+    "一般过去时",
+    "be 动词过去式"
+   ],
+   "question_id": "english-6up-d01-q11"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "— Did you ___ your homework last night? — Yes, I did.（选择正确形式）",
+   "options": [
+    "finished",
+    "finishing",
+    "finishes",
+    "finish"
+   ],
+   "correct_answer": "D",
+   "explanation": "Did 开头的疑问句里，动词要用原形，所以填 finish。finished 本身是过去式，不能再跟在 did 后面；finishing 不能作谓语；finishes 是第三人称单数形式，和 you 不搭。",
+   "tags": [
+    "一般过去时",
+    "助动词 did"
+   ],
+   "question_id": "english-6up-d01-q12"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "把 “I go to school by bus every day.” 改成昨天发生的事，正确的一项是（  ）",
+   "options": [
+    "Yesterday I go to school by bus.",
+    "Yesterday I went to school by bus.",
+    "Yesterday I goed to school by bus.",
+    "Yesterday I am going to school by bus."
+   ],
+   "correct_answer": "B",
+   "explanation": "yesterday 要求动词用过去式，go 的过去式是 went。保留 go 没有改时态；goed 是错误拼写，go 属不规则动词；am going 是现在进行时，不能和 yesterday 搭配。",
+   "tags": [
+    "一般过去时",
+    "句型转换"
+   ],
+   "question_id": "english-6up-d01-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "你想问同学假期里做了什么，最恰当的一句是（  ）",
+   "options": [
+    "What do you did during the holidays?",
+    "What did you during the holidays?",
+    "What did you do during the holidays?",
+    "What are you doing during the holidays?"
+   ],
+   "correct_answer": "C",
+   "explanation": "问过去做了什么，要用 What did you do... 的句式，did 后面跟动词原形 do。第二项把 do 又变成 did，重复了过去式；第三项缺了实义动词 do，句子不完整；第四项是现在进行时，问的是正在做的事。",
+   "tags": [
+    "一般过去时",
+    "特殊疑问句"
+   ],
+   "question_id": "english-6up-d01-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "— Did you have a good time in the park? — ___（选择最恰当的答语）",
+   "options": [
+    "Yes, we did had a great time.",
+    "Yes, we have a great time.",
+    "Yes, we are having a great time.",
+    "Yes, we had a great time."
+   ],
+   "correct_answer": "D",
+   "explanation": "问句用 Did 问过去的事，肯定回答要用过去式 had。did 后面不能再接过去式 had；have 是现在时，和过去的问题不符；are having 是现在进行时，也没有回答过去的事。",
+   "tags": [
+    "一般过去时",
+    "日常应答"
+   ],
+   "question_id": "english-6up-d01-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪个词是 go 的过去式（  ）",
+   "options": [
+    "went",
+    "goes",
+    "going",
+    "gone"
+   ],
+   "correct_answer": "A",
+   "explanation": "go 的变化是 go—went—gone，过去式是 went。goes 是第三人称单数形式；going 是现在分词；gone 是过去分词，常和 have 连用，不是过去式。",
+   "tags": [
+    "不规则动词",
+    "动词形式"
+   ],
+   "question_id": "english-6up-d01-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一组动词的过去式都是不规则变化（  ）",
+   "options": [
+    "play—played, watch—watched",
+    "go—went, see—saw",
+    "visit—visited, clean—cleaned",
+    "help—helped, cook—cooked"
+   ],
+   "correct_answer": "B",
+   "explanation": "go 和 see 的过去式 went、saw 都不是加 -ed 得来的，属于不规则变化。其余三组里的 play、watch、visit、clean、help、cook 都是直接加 -ed，属于规则变化。",
+   "tags": [
+    "不规则动词",
+    "规则动词"
+   ],
+   "question_id": "english-6up-d01-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句的时间词和动词形式不搭配（  ）",
+   "options": [
+    "I visited my uncle yesterday.",
+    "I visit my uncle yesterday.",
+    "I watched TV last night.",
+    "We played football last Sunday."
+   ],
+   "correct_answer": "B",
+   "explanation": "yesterday 表示过去，动词要用过去式，不能用原形 visit，所以这一句不搭配。其余选项都用了一般过去式，和句中的过去时间一致。",
+   "tags": [
+    "一般过去时",
+    "时间状语"
+   ],
+   "question_id": "english-6up-d01-q18"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "— Did you see the film last night? 下面哪个答语正确（  ）",
+   "options": [
+    "No, I don't.",
+    "No, I didn't saw.",
+    "No, I didn't.",
+    "No, I wasn't."
+   ],
+   "correct_answer": "C",
+   "explanation": "Did 问的是过去的事，否定回答用 didn't，后面不再跟动词。don't 是现在时；didn't 后面又加 saw，重复了过去式；wasn't 是 be 动词的否定，不能回答用 did 提问的句子。",
+   "tags": [
+    "一般过去时",
+    "否定回答"
+   ],
+   "question_id": "english-6up-d01-q19"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句既表达了“去年夏天我去了北京”，动词形式又正确（  ）",
+   "options": [
+    "I go to Beijing last summer.",
+    "I went to Beijing next summer.",
+    "I went to Beijing last summer.",
+    "I am going to Beijing last summer."
+   ],
+   "correct_answer": "C",
+   "explanation": "“去年夏天”要用过去式 went，时间词 last summer 也要对得上。go 是原形，时态不对；next summer 指明年夏天，和“去年”矛盾；am going 是现在进行时，同样不能配 last summer。",
+   "tags": [
+    "一般过去时",
+    "时态与时间"
+   ],
+   "question_id": "english-6up-d01-q20"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“— Where did you go last summer? — I go to Hainan.” 这句答语错在哪里（  ）",
+   "options": [
+    "问句该用 do，却用了 did",
+    "答语该用 went，却用了 go",
+    "Hainan 前面不该有 to",
+    "时间词要改成 next summer"
+   ],
+   "correct_answer": "B",
+   "explanation": "问句用 did 问去年夏天，答语也要用过去式，go 应改成 went。问句里的 did 用得对；go to Hainan 搭配正确；last summer 和问句一致，不需要改。",
+   "tags": [
+    "一般过去时",
+    "错误分析"
+   ],
+   "question_id": "english-6up-d01-q21"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“Last Sunday I went to the zoo with my sister. We saw pandas and monkeys.” 从句子看，他们去了哪里（  ）",
+   "options": [
+    "公园",
+    "学校",
+    "图书馆",
+    "动物园"
+   ],
+   "correct_answer": "D",
+   "explanation": "句子里的 zoo 就是动物园，还提到看到了熊猫和猴子。公园、学校、图书馆在句子里都没有出现。",
+   "tags": [
+    "一般过去时",
+    "地点理解"
+   ],
+   "question_id": "english-6up-d01-q22"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“During the holidays, Lily visited her grandma and helped her cook.” 从句子看，Lily 假期里做了什么（  ）",
+   "options": [
+    "和父母一起去了北京",
+    "每天去公园跑步",
+    "在家看动画片",
+    "看奶奶并帮她做饭"
+   ],
+   "correct_answer": "D",
+   "explanation": "visited her grandma 是看望奶奶，helped her cook 是帮她做饭，合起来就是答案。去北京、去公园跑步、看动画片，句子里都没有提到。",
+   "tags": [
+    "一般过去时",
+    "细节理解"
+   ],
+   "question_id": "english-6up-d01-q23"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“Amy went to the park last Saturday. It rained in the afternoon, so she went home.” 从句子看，Amy 为什么回家（  ）",
+   "options": [
+    "因为下午下雨了",
+    "因为她太累了",
+    "因为公园关门了",
+    "因为她要去做作业"
+   ],
+   "correct_answer": "A",
+   "explanation": "so 前面说 It rained，说明下雨是她提早回家的原因。累了、公园关门、要做作业这三个原因，句子里都没有依据。",
+   "tags": [
+    "一般过去时",
+    "原因推断"
+   ],
+   "question_id": "english-6up-d01-q24"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“I had eggs and milk for breakfast, then I walked to school.” 从句子看，他先做了什么（  ）",
+   "options": [
+    "先吃早饭，再走去学校",
+    "先走去学校，再吃早饭",
+    "先吃午饭，再走去学校",
+    "先看电视，再吃早饭"
+   ],
+   "correct_answer": "A",
+   "explanation": "then 前面的 had eggs and milk for breakfast 是先发生的事，then 后面的 walked to school 是后发生的事。其余选项把顺序倒过来，或换成了句子里没有的活动。",
+   "tags": [
+    "一般过去时",
+    "顺序理解"
+   ],
+   "question_id": "english-6up-d01-q25"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“Peter planned to swim last Sunday. But it was cold, so he stayed at home.” 从句子看，Peter 上周日（  ）",
+   "options": [
+    "因为天冷，在家待着",
+    "去游泳了，玩得很开心",
+    "和朋友一起踢足球",
+    "去学校上课，很晚才回"
+   ],
+   "correct_answer": "A",
+   "explanation": "planned 只是原计划，But 说明计划没实现：天冷，所以他待在家里。去游泳、踢足球、去上课都和 stayed at home 矛盾。",
+   "tags": [
+    "一般过去时",
+    "转折推断"
+   ],
+   "question_id": "english-6up-d01-q26"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d01",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“Mike usually walks to school, but last Monday he went by bus because he got up late.” 从句子看，Mike 那天早上（  ）",
+   "options": [
+    "起得很早，所以走去学校",
+    "脚受伤了，坐公交车",
+    "起晚了，所以坐公交车",
+    "下雨了，坐公交车"
+   ],
+   "correct_answer": "C",
+   "explanation": "because he got up late 说明他起晚了，所以改坐公交车。走路是他平时的做法；脚受伤、下雨，句子里都没有提到。",
+   "tags": [
+    "一般过去时",
+    "原因推断"
+   ],
+   "question_id": "english-6up-d01-q27"
+  },
+  {
    "diagnostic_node_id": "english-6up-d02",
    "subject": "english",
    "ability_tag": "语言运用",
@@ -469,6 +865,534 @@
    "question_id": "english-6up-d02-q12"
   },
   {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "单词 hometown 的意思是（  ）",
+   "options": [
+    "城市",
+    "村庄",
+    "海边",
+    "家乡"
+   ],
+   "correct_answer": "D",
+   "explanation": "hometown 指一个人出生、长大的地方，意思是“家乡”。城市是 city，村庄是 village，海边是 beach。",
+   "tags": [
+    "假期活动词汇",
+    "城市与家乡名称"
+   ],
+   "question_id": "english-6up-d02-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "短语 have a picnic 的意思是（  ）",
+   "options": [
+    "爬山",
+    "拍照",
+    "野餐",
+    "参观"
+   ],
+   "correct_answer": "C",
+   "explanation": "have a picnic 是“进行野餐”，picnic 本身就是野餐。爬山是 climb a hill，拍照是 take photos，参观是 visit。",
+   "tags": [
+    "假期活动动词",
+    "短语搭配"
+   ],
+   "question_id": "english-6up-d02-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "It was hot. We went to the beach and ___ in the sea.（选择正确形式）",
+   "options": [
+    "went swimming",
+    "go swimming",
+    "goes swimming",
+    "going swimming"
+   ],
+   "correct_answer": "A",
+   "explanation": "前一句 It was hot 和 went 都是过去，and 连接的两件事时态要一致，所以用 went swimming。go 和 goes 是现在时，going 不能单独作谓语。",
+   "tags": [
+    "一般过去时",
+    "假期活动动词"
+   ],
+   "question_id": "english-6up-d02-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "想告诉同学你假期去乡下看望了爷爷奶奶，下面哪句最合适？",
+   "options": [
+    "I visited my grandparents in the village.",
+    "I visit my grandparents in the city.",
+    "I will visit my grandparents tomorrow.",
+    "My grandparents live in a small village now."
+   ],
+   "correct_answer": "A",
+   "explanation": "讲已经过去的假期要用过去式 visited，地点是乡下 village。另外几句要么用现在时 visit，要么用将来 will visit，要么只说祖父母住在村里，没有回答“我做了什么”。",
+   "tags": [
+    "一般过去时",
+    "假期活动动词"
+   ],
+   "question_id": "english-6up-d02-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "想告诉同学“假期我们没去海边，在家看书”，下面哪句最合适？",
+   "options": [
+    "We don't go to the beach. We stayed at home and read books.",
+    "We didn't go to the beach. We stayed at home and read books.",
+    "We didn't go to the beach. We stayed at school and read books.",
+    "We went to the beach. We stayed at home and read books."
+   ],
+   "correct_answer": "B",
+   "explanation": "假期是已经过去的事，两个动作都要用过去式：didn't go 和 stayed。用 don't 是现在时；说去了海边与“没去海边”意思相反；把在家换成在学校，也不符合这个情景。",
+   "tags": [
+    "一般过去时",
+    "情景表达"
+   ],
+   "question_id": "english-6up-d02-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "哪一句正确表达“去年暑假我去了北京，参观了博物馆”？",
+   "options": [
+    "I go to Beijing and visit the museum last summer.",
+    "I went to Beijing and visit the museum last summer.",
+    "I will go to Beijing and visited the museum last summer.",
+    "I went to Beijing and visited the museum last summer."
+   ],
+   "correct_answer": "D",
+   "explanation": "去年暑假是过去时间，两个动作都要用过去式：went 和 visited。用 go、visit 是现在时；will go 与 visited 一个将来一个过去，前后不一致。",
+   "tags": [
+    "一般过去时",
+    "动词过去式"
+   ],
+   "question_id": "english-6up-d02-q18"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“Last Sunday we went to the park. We had a picnic and took photos.” 他们在公园里做了什么？",
+   "options": [
+    "游泳和看书",
+    "野餐和拍照",
+    "爬山和拍照",
+    "参观博物馆"
+   ],
+   "correct_answer": "B",
+   "explanation": "引文里 had a picnic 是野餐，took photos 是拍照。游泳、看书、爬山、参观博物馆这些活动引文都没有提到。",
+   "tags": [
+    "假期活动动词",
+    "细节理解"
+   ],
+   "question_id": "english-6up-d02-q19"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“Yesterday we visited the museum. We saw many old things there.” 他们昨天去了哪里？",
+   "options": [
+    "动物园",
+    "博物馆",
+    "公园",
+    "海边"
+   ],
+   "correct_answer": "B",
+   "explanation": "visited the museum 就是参观博物馆，saw many old things 也说明地点在博物馆。动物园是 zoo，公园是 park，海边是 beach。",
+   "tags": [
+    "城市与家乡名称",
+    "地点词汇"
+   ],
+   "question_id": "english-6up-d02-q20"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“We went to the beach. The water was warm, so we swam for a long time.” 他们为什么游了很久？",
+   "options": [
+    "因为天气很冷",
+    "因为海滩很近",
+    "因为他们很累",
+    "因为水很温暖"
+   ],
+   "correct_answer": "D",
+   "explanation": "引文用 so 说明原因：水很温暖，所以他们游了很久。天气冷、海滩近、人很累这些原因引文都没有说，也不合逻辑。",
+   "tags": [
+    "因果关系",
+    "细节推断"
+   ],
+   "question_id": "english-6up-d02-q21"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“My hometown is near the sea. Every summer I go back and swim with my cousins.” 作者的家乡在哪里？",
+   "options": [
+    "山村",
+    "城里",
+    "河边",
+    "海边"
+   ],
+   "correct_answer": "D",
+   "explanation": "near the sea 说明家乡在海边，所以夏天能回去游泳。山村在山里，城里是城市，河边在 river 旁边，引文都没有说。",
+   "tags": [
+    "城市与家乡名称",
+    "地点推断"
+   ],
+   "question_id": "english-6up-d02-q22"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“I wanted to go to the zoo, but it rained all day. So I stayed at home and read books.” 可以知道什么？",
+   "options": [
+    "因为生病没去动物园",
+    "因为下雨没去动物园",
+    "因为动物园关门没去",
+    "因为作业太多没去"
+   ],
+   "correct_answer": "B",
+   "explanation": "but it rained all day 说明下了一整天雨，所以只能待在家里看书，没去成动物园。生病、动物园关门、作业多这些原因引文都没有提到。",
+   "tags": [
+    "转折关系",
+    "因果推断"
+   ],
+   "question_id": "english-6up-d02-q23"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“I visited my grandparents in the village. We picked fruit and had a picnic there.” 下面哪一项与这段话不符？",
+   "options": [
+    "他去了海边度假",
+    "他去乡下看爷爷奶奶",
+    "他帮爷爷奶奶摘水果",
+    "他们一起野餐了"
+   ],
+   "correct_answer": "A",
+   "explanation": "引文说去了 village 看 grandparents，还摘了水果、一起野餐，没有去海边，所以“他去了海边度假”与这段话不符。其余三项都能在引文里找到依据。",
+   "tags": [
+    "细节判断",
+    "假期活动动词"
+   ],
+   "question_id": "english-6up-d02-q24"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪个词与其他三个不同类？",
+   "options": [
+    "city",
+    "town",
+    "swim",
+    "park"
+   ],
+   "correct_answer": "C",
+   "explanation": "city、town、park 都是表示地点的名词，swim 是表示动作的动词，所以它不同类。",
+   "tags": [
+    "词性辨析",
+    "城市与家乡名称"
+   ],
+   "question_id": "english-6up-d02-q25"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪个短语的搭配是正确的？",
+   "options": [
+    "make photos",
+    "do photos",
+    "take photos",
+    "play photos"
+   ],
+   "correct_answer": "C",
+   "explanation": "“拍照”的固定搭配是 take photos，take 在这里表示“拍摄”。make、do、play 都不能和 photos 这样搭配。",
+   "tags": [
+    "短语搭配",
+    "假期活动动词"
+   ],
+   "question_id": "english-6up-d02-q26"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "把“We went to the park.”和“We had a picnic.”合成一句，用哪个词连接最合适？",
+   "options": [
+    "but",
+    "or",
+    "so",
+    "and"
+   ],
+   "correct_answer": "D",
+   "explanation": "去公园和野餐是先后发生的两件事，意思顺接，用 and 连接。but 表转折，or 表选择，so 表结果，都不符合这里的关系。",
+   "tags": [
+    "连词",
+    "句子衔接"
+   ],
+   "question_id": "english-6up-d02-q27"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪个活动与地点搭配不当？",
+   "options": [
+    "read books in the park",
+    "take photos at the beach",
+    "climb a hill in the village",
+    "swim in the museum"
+   ],
+   "correct_answer": "D",
+   "explanation": "博物馆是参观展品的地方，不能在里面游泳，所以“在博物馆游泳”搭配不当。在公园看书、在海边拍照、在村里爬山都合情合理。",
+   "tags": [
+    "活动与地点",
+    "语义搭配"
+   ],
+   "question_id": "english-6up-d02-q28"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“Last summer I went to the beach with my family. We swam and ate seafood.” 下面哪一项与这段话不符？",
+   "options": [
+    "We swam at the beach.",
+    "We went there in winter.",
+    "We went there with my family.",
+    "We ate seafood there."
+   ],
+   "correct_answer": "B",
+   "explanation": "引文说 Last summer，暑假在夏天，而“冬天去那里”与它直接矛盾。在海滩游泳、和家人一起去、在那里吃海鲜，这三项都能从引文找到依据。",
+   "tags": [
+    "细节判断",
+    "季节词汇"
+   ],
+   "question_id": "english-6up-d02-q29"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“My hometown is a small village. I love the clean river and the kind people there.” 作者对家乡的态度是？",
+   "options": [
+    "喜欢自己的家乡",
+    "想搬到城市去住",
+    "觉得家乡很无聊",
+    "不喜欢村里的人"
+   ],
+   "correct_answer": "A",
+   "explanation": "引文用 love 直接表达了对家乡小河和乡亲的喜爱。想搬去城市、觉得无聊、不喜欢村里人，这些态度引文都没有，而且与 love 相反。",
+   "tags": [
+    "情感态度",
+    "综合推断"
+   ],
+   "question_id": "english-6up-d02-q30"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "想向外国朋友介绍“这是我的家乡”，下面哪句最合适？",
+   "options": [
+    "This is my city.",
+    "That is a small village.",
+    "This is my hometown.",
+    "Here is my park."
+   ],
+   "correct_answer": "C",
+   "explanation": "介绍家乡用 hometown 最准确，This is my hometown 就是“这是我的家乡”。city 指城市，village 指村庄，park 指公园，都不能表达“家乡”。",
+   "tags": [
+    "介绍家乡",
+    "词汇运用"
+   ],
+   "question_id": "english-6up-d02-q31"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "想邀请同学周末一起去公园野餐，下面哪句最合适？",
+   "options": [
+    "You must have a picnic in the park with me.",
+    "Let's have a picnic in the park this weekend.",
+    "We had a picnic in the park last weekend.",
+    "Let's having a picnic in the park this weekend."
+   ],
+   "correct_answer": "B",
+   "explanation": "Let's 后面跟动词原形，是提出邀请、商量的说法，最自然。用 must 是命令，不像邀请；说上周末野餐是讲过去的事，没有发出邀请；Let's 后面要用 have，不能用 having。",
+   "tags": [
+    "邀请用语",
+    "口语表达"
+   ],
+   "question_id": "english-6up-d02-q32"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "向同学介绍自己的家乡，下面哪一句最得体（  ）",
+   "options": [
+    "My hometown is a beautiful small village.",
+    "My hometown is poor and ugly.",
+    "My hometown is much better than yours.",
+    "I don't know where my hometown is."
+   ],
+   "correct_answer": "A",
+   "explanation": "介绍家乡要说清它是什么样子，beautiful small village 既明白又亲切。说自己家乡穷、不好看，或拿来和别人比高低，都不够得体；说不知道家乡在哪里也不是介绍。",
+   "tags": [
+    "介绍家乡",
+    "表达得体"
+   ],
+   "question_id": "english-6up-d02-q33"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "同学问“Where did you go last summer?”，下面回答最合适的是？",
+   "options": [
+    "I went back to my hometown.",
+    "I go back to my hometown every year.",
+    "I went there with my parents.",
+    "It is a small village near the river."
+   ],
+   "correct_answer": "A",
+   "explanation": "问的是去年夏天去了哪里，要直接说出地点，并用过去式 went。说每年都回去是讲习惯，时态与问句不符；说和父母一起去、说村子在河边，都没有回答“去了哪里”。",
+   "tags": [
+    "情景问答",
+    "假期活动动词"
+   ],
+   "question_id": "english-6up-d02-q34"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“Last week I went back to my hometown. I helped my grandparents pick fruit.” 下面哪一句接在后面最连贯？",
+   "options": [
+    "I will help them next week.",
+    "My hometown is a big city.",
+    "We had a great time.",
+    "She likes apples very much."
+   ],
+   "correct_answer": "C",
+   "explanation": "引文用过去式讲回家乡帮爷爷奶奶摘水果，再接一句“我们在一起很开心”，也是过去式，顺着事情的结果说，最连贯。说下周要去帮忙是将来，与前面的过去不一致；说家乡是大城市、说她很喜欢苹果，都接不上摘水果这件事。",
+   "tags": [
+    "句子衔接",
+    "表达式"
+   ],
+   "question_id": "english-6up-d02-q35"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d02",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "同学问你假期去了哪里，你其实一直待在家里，下面回答最得体的是（  ）",
+   "options": [
+    "I went nowhere, and I felt really bored.",
+    "You will never know where I went.",
+    "I stayed at home and read books.",
+    "I won't tell you, so stop asking me."
+   ],
+   "correct_answer": "C",
+   "explanation": "如实说出在家的活动，既回答了问题，又显得假期过得充实。说“很无聊”带着抱怨，说“你永远不会知道”“别问了”会让人觉得不友好。",
+   "tags": [
+    "假期问答",
+    "表达得体"
+   ],
+   "question_id": "english-6up-d02-q36"
+  },
+  {
    "question_id": "english-6up-d03-q01",
    "diagnostic_node_id": "english-6up-d03",
    "subject": "english",
@@ -667,6 +1591,402 @@
    "question_id": "english-6up-d03-q09"
   },
   {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "My mother ___ dinner every evening.（选择正确形式）",
+   "options": [
+    "cooks",
+    "cook",
+    "cooking",
+    "cooked"
+   ],
+   "correct_answer": "A",
+   "explanation": "every evening 说明是经常做的事，用一般现在时。主语 My mother 是第三人称单数，cook 要加 -s 变成 cooks；cook 是原形，cooking 不能单独作谓语，cooked 是过去式。",
+   "tags": [
+    "一般现在时",
+    "第三人称单数"
+   ],
+   "question_id": "english-6up-d03-q10"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "Tom ___ his teeth twice a day.（选择正确形式）",
+   "options": [
+    "brush",
+    "brushes",
+    "brushing",
+    "brushed"
+   ],
+   "correct_answer": "B",
+   "explanation": "twice a day 表示习惯，用一般现在时。主语 Tom 是第三人称单数，以 sh 结尾的 brush 要加 -es 变成 brushes；brush 是原形，brushing 不能作谓语，brushed 是过去式。",
+   "tags": [
+    "一般现在时",
+    "动词加 -es"
+   ],
+   "question_id": "english-6up-d03-q11"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "On Sundays my parents ___ me to the park.（选择正确形式）",
+   "options": [
+    "takes",
+    "taking",
+    "took",
+    "take"
+   ],
+   "correct_answer": "D",
+   "explanation": "On Sundays 表示经常发生，用一般现在时。主语 my parents 是复数，动词用原形 take，不加 -s；takes 只配第三人称单数；taking 不能单独作谓语；took 是过去式。",
+   "tags": [
+    "一般现在时",
+    "复数主语"
+   ],
+   "question_id": "english-6up-d03-q12"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "My sister ___. She rides it to school.（选择正确形式）",
+   "options": [
+    "have a new bike",
+    "has a new bike",
+    "haves a new bike",
+    "having a new bike"
+   ],
+   "correct_answer": "B",
+   "explanation": "主语 My sister 是第三人称单数，have 要变成 has。have 配 I、you 或复数主语；haves 不是正确形式；having 是现在分词，不能单独作谓语。",
+   "tags": [
+    "第三人称单数",
+    "have 的变化"
+   ],
+   "question_id": "english-6up-d03-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "你想说“我爸爸每天开车上班”，最恰当的一句是（  ）",
+   "options": [
+    "My father drive to work every day.",
+    "My father drives to work every days.",
+    "My father drives to work every day.",
+    "My father is drive to work every day."
+   ],
+   "correct_answer": "C",
+   "explanation": "主语 My father 是第三人称单数，drive 要加 -s 变成 drives；every day 用单数 day。drive 没加 -s；every days 搭配错误；is drive 把 be 动词和原形混在一起，形式不对。",
+   "tags": [
+    "第三人称单数",
+    "日常表达"
+   ],
+   "question_id": "english-6up-d03-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "把 “She likes apples.” 改成否定句，正确的一项是（  ）",
+   "options": [
+    "She don't like apples.",
+    "She doesn't likes apples.",
+    "She not likes apples.",
+    "She doesn't like apples."
+   ],
+   "correct_answer": "D",
+   "explanation": "主语 She 是第三人称单数，否定句用 doesn't，后面的动词回到原形 like。don't 配复数或 I、you；doesn't 后面又加 -s 是重复；not 不能直接放在 likes 前面。",
+   "tags": [
+    "一般现在时",
+    "否定句"
+   ],
+   "question_id": "english-6up-d03-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪个动词的第三人称单数形式写对了（  ）",
+   "options": [
+    "go—goes",
+    "go—gos",
+    "go—goies",
+    "go—going"
+   ],
+   "correct_answer": "A",
+   "explanation": "go 以 o 结尾，第三人称单数要加 -es，写成 goes。gos 少了一个 e；goies 是乱加字母；going 是现在分词，不是第三人称单数。",
+   "tags": [
+    "第三人称单数",
+    "动词拼写"
+   ],
+   "question_id": "english-6up-d03-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪个句子的主语是第三人称单数（  ）",
+   "options": [
+    "My parents",
+    "My brother",
+    "The students",
+    "Tom and Jim"
+   ],
+   "correct_answer": "B",
+   "explanation": "My brother 指的是一个人，可以用 he 代替，属于第三人称单数。My parents、The students 都是复数；Tom and Jim 是两个人，也属于复数。",
+   "tags": [
+    "第三人称单数",
+    "主语判断"
+   ],
+   "question_id": "english-6up-d03-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 every day 和动词形式不搭配（  ）",
+   "options": [
+    "He plays football every day.",
+    "She go to school every day.",
+    "My mother cooks dinner every day.",
+    "They read books every day."
+   ],
+   "correct_answer": "B",
+   "explanation": "every day 表示经常，用一般现在时；主语 She 是第三人称单数，go 应变成 goes，不能用原形。其余选项的主语和动词形式都搭配：单数主语用 plays、cooks，复数主语用 read。",
+   "tags": [
+    "一般现在时",
+    "主谓一致"
+   ],
+   "question_id": "english-6up-d03-q18"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一组动词的第三人称单数都加 -es（  ）",
+   "options": [
+    "play, read",
+    "visit, help",
+    "go, watch",
+    "like, live"
+   ],
+   "correct_answer": "C",
+   "explanation": "go 变成 goes，watch 变成 watches，都是以 -es 结尾。play 变 plays、read 变 reads，只加 -s；visit、help、like、live 也都是直接加 -s，不加 -es。",
+   "tags": [
+    "第三人称单数",
+    "动词加 -es"
+   ],
+   "question_id": "english-6up-d03-q19"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 have 的形式用对了（  ）",
+   "options": [
+    "She have a new bike.",
+    "She haves a new bike.",
+    "She has a new bike.",
+    "She having a new bike."
+   ],
+   "correct_answer": "C",
+   "explanation": "主语 She 是第三人称单数，have 的特殊变化是 has。have 只能配 I、you 或复数主语；haves 不是正确形式；having 是现在分词，不能单独作谓语。",
+   "tags": [
+    "第三人称单数",
+    "have 的变化"
+   ],
+   "question_id": "english-6up-d03-q20"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“My sister go to school by bus.” 这句错在哪里（  ）",
+   "options": [
+    "go 应改成过去式 went",
+    "主语是三单，动词要加 -es",
+    "by bus 前面要加 the",
+    "主语是复数，动词不用变"
+   ],
+   "correct_answer": "B",
+   "explanation": "My sister 是第三人称单数，一般现在时里 go 要变成 goes，以 o 结尾加 -es。改成 went 会变成过去时，和句子想说的习惯不符；by bus 是固定搭配，不加 the；主语明明是单数。",
+   "tags": [
+    "第三人称单数",
+    "错误分析"
+   ],
+   "question_id": "english-6up-d03-q21"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“Sam gets up at six every morning and runs for twenty minutes.” 从句子看，Sam 起床后做什么（  ）",
+   "options": [
+    "游泳",
+    "读书",
+    "看电视",
+    "跑步"
+   ],
+   "correct_answer": "D",
+   "explanation": "gets up 之后连着 runs for twenty minutes，说明他起床后去跑步。游泳、读书、看电视在句子里都没有出现。",
+   "tags": [
+    "一般现在时",
+    "细节理解"
+   ],
+   "question_id": "english-6up-d03-q22"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“My sister has breakfast at seven and then goes to school.” 从句子看，她吃完早饭后（  ）",
+   "options": [
+    "去睡觉",
+    "看电视",
+    "做作业",
+    "去上学"
+   ],
+   "correct_answer": "D",
+   "explanation": "then 后面是 goes to school，说明吃完早饭后去上学。睡觉、看电视、做作业在句子里都没有提到。",
+   "tags": [
+    "一般现在时",
+    "顺序理解"
+   ],
+   "question_id": "english-6up-d03-q23"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“Lucy usually walks to school, but on rainy days she takes a bus.” 从句子看，下雨天 Lucy（  ）",
+   "options": [
+    "坐公交上学",
+    "走路去上学",
+    "不去上学",
+    "骑车去上学"
+   ],
+   "correct_answer": "A",
+   "explanation": "but 后面说 on rainy days she takes a bus，takes a bus 就是坐公交上学。走路是平时 usually 的做法；不去上学和骑车，句子里都没有说。",
+   "tags": [
+    "一般现在时",
+    "转折理解"
+   ],
+   "question_id": "english-6up-d03-q24"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“Mr Wang has three English classes in the morning and one in the afternoon.” 从句子看，他一天上几节英语课（  ）",
+   "options": [
+    "四节",
+    "三节",
+    "两节",
+    "五节"
+   ],
+   "correct_answer": "A",
+   "explanation": "上午三节，下午一节，加起来是四节。三节只说出了上午的数量；两节和五节都和句子里的数字对不上。",
+   "tags": [
+    "一般现在时",
+    "数量计算"
+   ],
+   "question_id": "english-6up-d03-q25"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“Amy wants to stay healthy, so she doesn't eat ice cream. She has an apple after dinner.” 从句子看，Amy 为什么不吃冰淇淋（  ）",
+   "options": [
+    "她想保持健康",
+    "她不喜欢甜食",
+    "她已经吃过晚饭",
+    "她对冰淇淋过敏"
+   ],
+   "correct_answer": "A",
+   "explanation": "so 前面说 wants to stay healthy，说明为了健康才不吃冰淇淋。不喜欢甜食、已经吃过晚饭、对冰淇淋过敏，句子里都没有依据。",
+   "tags": [
+    "一般现在时",
+    "原因推断"
+   ],
+   "question_id": "english-6up-d03-q26"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d03",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“Ben's father works in a hospital. He rests on Sundays and takes Ben to the park.” 从句子看，星期天 Ben 的爸爸（  ）",
+   "options": [
+    "在医院上班，很晚才回家",
+    "一个人去公园散步",
+    "带 Ben 去公园",
+    "在家睡觉，不出门"
+   ],
+   "correct_answer": "C",
+   "explanation": "rests on Sundays 说明星期天休息，takes Ben to the park 说明他带 Ben 去公园。在医院上班是平时的事；一个人去公园、在家睡觉都和句子相反。",
+   "tags": [
+    "一般现在时",
+    "细节推断"
+   ],
+   "question_id": "english-6up-d03-q27"
+  },
+  {
    "diagnostic_node_id": "english-6up-d04",
    "subject": "english",
    "ability_tag": "语言运用",
@@ -799,6 +2119,270 @@
    "question_id": "english-6up-d04-q06"
   },
   {
+   "diagnostic_node_id": "english-6up-d04",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "“从不”对应的频度副词是（  ）",
+   "options": [
+    "always",
+    "often",
+    "never",
+    "usually"
+   ],
+   "correct_answer": "C",
+   "explanation": "never 的意思是“从不”，表示一次也没有。always 是“总是”，often 是“经常”，usually 是“通常”，都不是“从不”。",
+   "tags": [
+    "频度副词",
+    "词义"
+   ],
+   "question_id": "english-6up-d04-q07"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d04",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "Tom ___ reads English in the morning. He does it every day.（选择恰当的频度副词）",
+   "options": [
+    "never",
+    "often",
+    "usually",
+    "always"
+   ],
+   "correct_answer": "D",
+   "explanation": "He does it every day 说明每天都这样做，用 always（总是）。never 是从不，often 是经常，usually 是通常，都没有“每天”的意思。",
+   "tags": [
+    "频度副词",
+    "日常作息表达"
+   ],
+   "question_id": "english-6up-d04-q08"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d04",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "She ___ at school.（选择正确形式）",
+   "options": [
+    "is always happy",
+    "always is happy",
+    "is happy always",
+    "always happy"
+   ],
+   "correct_answer": "A",
+   "explanation": "频度副词要放在 be 动词后面、其他形容词前面，所以是 is always happy。放在 is 前面或句末都不对，少了 is 句子也没有谓语。",
+   "tags": [
+    "频度副词位置",
+    "be 动词"
+   ],
+   "question_id": "english-6up-d04-q09"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d04",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "She ___ late. She is always on time.（选择正确形式）",
+   "options": [
+    "never is",
+    "is not never",
+    "never isn't",
+    "is never"
+   ],
+   "correct_answer": "D",
+   "explanation": "频度副词放在 be 动词后面，never 本身已是否定，不能再加 not，所以是 is never late。never is 语序不对，另外两项把否定重复了一次。",
+   "tags": [
+    "频度副词位置",
+    "否定表达"
+   ],
+   "question_id": "english-6up-d04-q10"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d04",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "On school days I ___ get up at six, but ___ I get up at seven on Sunday.（选择正确形式）",
+   "options": [
+    "sometimes; usually",
+    "never; always",
+    "usually; sometimes",
+    "always; never"
+   ],
+   "correct_answer": "C",
+   "explanation": "平时六点起床是通常的情况，用 usually；周日七点起床是偶尔，用 sometimes。两个词对调，或者换成 never、always，都与后半句矛盾。",
+   "tags": [
+    "频度副词",
+    "语义搭配"
+   ],
+   "question_id": "english-6up-d04-q11"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d04",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "Jack ___ eats sweets. He says they are bad for his teeth.（选择恰当的频度副词）",
+   "options": [
+    "always",
+    "never",
+    "often",
+    "usually"
+   ],
+   "correct_answer": "B",
+   "explanation": "后半句说糖对牙齿不好，说明他从不吃糖，用 never。always、often、usually 都表示经常吃，与后半句的意思矛盾。",
+   "tags": [
+    "频度副词",
+    "因果推断"
+   ],
+   "question_id": "english-6up-d04-q12"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d04",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪个频度副词表示的频率最高？",
+   "options": [
+    "usually",
+    "always",
+    "often",
+    "never"
+   ],
+   "correct_answer": "B",
+   "explanation": "always 表示“总是”，频率最高。usually 是“通常”，often 是“经常”，never 是“从不”，频率最低。",
+   "tags": [
+    "频度副词",
+    "词义辨析"
+   ],
+   "question_id": "english-6up-d04-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d04",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "哪一句与“I always get up early.”意思相同？",
+   "options": [
+    "I get up early every day.",
+    "I sometimes get up early.",
+    "I never get up early.",
+    "I get up early today."
+   ],
+   "correct_answer": "A",
+   "explanation": "always 是“总是”，也就是每天都这样，所以“我每天早起”意思相同。sometimes 是“有时”，never 是“从不”，只说今天早起也没有“每天”的意思。",
+   "tags": [
+    "频度副词",
+    "同义表达"
+   ],
+   "question_id": "english-6up-d04-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d04",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "— Does he often play chess? — Yes, he ___.（选择正确形式）",
+   "options": [
+    "does often",
+    "is often",
+    "often does",
+    "often is"
+   ],
+   "correct_answer": "C",
+   "explanation": "简略回答里频度副词要放在助动词前面，说成 he often does。语序颠倒，或者换成 is，都不符合问句里的 does。",
+   "tags": [
+    "频度副词位置",
+    "简略回答"
+   ],
+   "question_id": "english-6up-d04-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d04",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“My sister never eats meat, so she often eats vegetables.” 下面理解正确的是（  ）",
+   "options": [
+    "她不吃肉，常吃蔬菜",
+    "她常吃肉，不吃蔬菜",
+    "她从来不吃蔬菜",
+    "她既不吃肉也不吃菜"
+   ],
+   "correct_answer": "A",
+   "explanation": "never 是“从不”，often 是“经常”，合起来就是她不吃肉、常吃蔬菜。其余说法把这两个词的意思弄反了，或者添加了引文里没有的内容。",
+   "tags": [
+    "频度副词",
+    "句意理解"
+   ],
+   "question_id": "english-6up-d04-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d04",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“Lily says she never eats fast food, but I saw her eating hamburgers yesterday.” 可以知道什么？",
+   "options": [
+    "她昨天什么也没有吃",
+    "她说的和做的不一样",
+    "她每天都吃汉堡包",
+    "她从来不碰任何食物"
+   ],
+   "correct_answer": "B",
+   "explanation": "她嘴上说从不吃快餐，却被看到在吃汉堡，说明说的和做的不一样。引文没有说她昨天什么都没吃，也没有说她每天吃汉堡，更不能推出她从不碰食物。",
+   "tags": [
+    "转折关系",
+    "推断"
+   ],
+   "question_id": "english-6up-d04-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d04",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“He is always the first to arrive, and he never leaves before others.” 这句话说明他（  ）",
+   "options": [
+    "有时早到，常常早走",
+    "从来不到，也从不离开",
+    "偶尔第一个到，偶尔早走",
+    "总是最早到，也从不早走"
+   ],
+   "correct_answer": "D",
+   "explanation": "always 是“总是”，never 是“从不”，两个词说明他每天最早到，而且从不提前离开。其余说法把这两个词的意思改掉了。",
+   "tags": [
+    "频度副词",
+    "句意理解"
+   ],
+   "question_id": "english-6up-d04-q18"
+  },
+  {
    "diagnostic_node_id": "english-6up-d06",
    "subject": "english",
    "ability_tag": "语言运用",
@@ -929,6 +2513,270 @@
     "第三人称单数"
    ],
    "question_id": "english-6up-d06-q06"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d06",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "At the Spring Festival, we enjoy ___ together.（选择正确形式）",
+   "options": [
+    "to making dumplings",
+    "make dumplings",
+    "making dumplings",
+    "makes dumplings"
+   ],
+   "correct_answer": "C",
+   "explanation": "enjoy 后面接动名词，用 making；to making 把 to 和 ing 混在一起，make 是原形，makes 是第三人称单数，都不能直接跟在 enjoy 后面。",
+   "tags": [
+    "enjoy doing",
+    "节日活动"
+   ],
+   "question_id": "english-6up-d06-q07"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d06",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "把 “I like to eat mooncakes.” 改成用 enjoy 说，意思不变，哪一句正确（  ）",
+   "options": [
+    "I enjoy to eat mooncakes.",
+    "I enjoy eat mooncakes.",
+    "I enjoy eats mooncakes.",
+    "I enjoy eating mooncakes."
+   ],
+   "correct_answer": "D",
+   "explanation": "like to eat 和 enjoy eating 意思相同；enjoy 后面要接动名词 eating，to eat、eat、eats 都不能直接跟在 enjoy 后面。",
+   "tags": [
+    "enjoy doing",
+    "同义改写"
+   ],
+   "question_id": "english-6up-d06-q08"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d06",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "— Do you enjoy watching the moon? — No, ___（选择正确答句）",
+   "options": [
+    "I don't",
+    "I'm not",
+    "I can't",
+    "I didn't"
+   ],
+   "correct_answer": "A",
+   "explanation": "Do you enjoy ...? 的否定回答用 No, I don't.；I'm not 对应 Are you ...?，I can't 对应 Can you ...?，I didn't 对应 Did you ...?。",
+   "tags": [
+    "enjoy doing",
+    "疑问句"
+   ],
+   "question_id": "english-6up-d06-q09"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d06",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "春节时，孩子们喜欢一起做灯笼。下面哪一句最自然（  ）",
+   "options": [
+    "Children enjoy to make lanterns together.",
+    "Children enjoy make lanterns together.",
+    "Children enjoy makes lanterns together.",
+    "Children enjoy making lanterns together."
+   ],
+   "correct_answer": "D",
+   "explanation": "enjoy 后面接动名词 making；to make 是不定式，make 是原形，makes 是第三人称单数，都不能直接跟在 enjoy 后面。",
+   "tags": [
+    "enjoy doing",
+    "情景选句"
+   ],
+   "question_id": "english-6up-d06-q10"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d06",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 enjoy 后面直接接了名词（  ）",
+   "options": [
+    "We enjoy watching the moon at night.",
+    "We enjoy eating mooncakes together.",
+    "We enjoy the moon at the festival.",
+    "We enjoy making lanterns together."
+   ],
+   "correct_answer": "C",
+   "explanation": "the moon 是名词，直接作 enjoy 的宾语；另外三句 enjoy 后面都是动名词短语 watching、eating、making。",
+   "tags": [
+    "enjoy doing",
+    "名词宾语"
+   ],
+   "question_id": "english-6up-d06-q11"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d06",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "— What do you enjoy doing at the festival? — ___（选择正确答句）",
+   "options": [
+    "I enjoy to get together with my family.",
+    "I enjoy getting together with family.",
+    "I enjoy get together with my family.",
+    "I enjoy gets together with my family."
+   ],
+   "correct_answer": "B",
+   "explanation": "问句问 enjoy doing，回答也用 enjoy doing：getting together 是动名词；to get 是不定式，get 是原形，gets 是第三人称单数，都不能直接跟在 enjoy 后面。",
+   "tags": [
+    "enjoy doing",
+    "对话补全"
+   ],
+   "question_id": "english-6up-d06-q12"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d06",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句的意思与其他三句相反（  ）",
+   "options": [
+    "I love eating mooncakes very much.",
+    "I don't like eating mooncakes.",
+    "I like eating mooncakes very much.",
+    "I enjoy eating mooncakes very much."
+   ],
+   "correct_answer": "B",
+   "explanation": "don't like 是不喜欢；love、like、enjoy 都表示喜欢，所以这一句意思相反。",
+   "tags": [
+    "enjoy doing",
+    "like / love + doing"
+   ],
+   "question_id": "english-6up-d06-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d06",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 like 后面的形式不对（  ）",
+   "options": [
+    "My sister likes draw lanterns.",
+    "My sister likes drawing lanterns.",
+    "My sister likes making dumplings.",
+    "My sister likes singing songs."
+   ],
+   "correct_answer": "A",
+   "explanation": "like 后面接动名词，likes drawing、likes making、likes singing 都对；likes draw 少了 ing，这一句不对。",
+   "tags": [
+    "like + doing",
+    "改错"
+   ],
+   "question_id": "english-6up-d06-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d06",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 enjoy 和 like 都用对了（  ）",
+   "options": [
+    "I enjoy to read stories and I like drawing pictures.",
+    "I enjoy reading stories and I like to drawing pictures.",
+    "I enjoy reading stories and I like drawing pictures.",
+    "I enjoy read stories and I like draw pictures."
+   ],
+   "correct_answer": "C",
+   "explanation": "enjoy 和 like 后面都接动名词，reading 和 drawing 都对；to read 是不定式，to drawing 混了结构，read 和 draw 是原形。",
+   "tags": [
+    "enjoy doing",
+    "like + doing"
+   ],
+   "question_id": "english-6up-d06-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d06",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 enjoy 后面的词需要改成 ing 形式（  ）",
+   "options": [
+    "We enjoy play games at the festival.",
+    "We enjoy playing games at the festival.",
+    "We enjoy making lanterns at the festival.",
+    "We enjoy eating mooncakes at the festival."
+   ],
+   "correct_answer": "A",
+   "explanation": "enjoy 后面要接动名词，play 要改成 playing；其余三句已经用了 playing、making、eating，形式都对。",
+   "tags": [
+    "enjoy doing",
+    "改错"
+   ],
+   "question_id": "english-6up-d06-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d06",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 enjoy 后面接名词和接动名词都用对了（  ）",
+   "options": [
+    "We enjoy the lanterns and we enjoy to make dumplings.",
+    "We enjoy the lanterns and we enjoy making dumplings.",
+    "We enjoy to see the lanterns and we enjoy making dumplings.",
+    "We enjoy see the lanterns and we enjoy make dumplings."
+   ],
+   "correct_answer": "B",
+   "explanation": "the lanterns 是名词，可以直接作 enjoy 的宾语；making 是动名词。to make 是不定式，see 和 make 是原形，都不能直接跟在 enjoy 后面。",
+   "tags": [
+    "enjoy doing",
+    "名词宾语"
+   ],
+   "question_id": "english-6up-d06-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d06",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“My sister enjoys to sing and she loves dancing.” 下面哪一种改法把句子改对了（  ）",
+   "options": [
+    "My sister enjoys to singing and she loves dancing.",
+    "My sister enjoy singing and she loves dancing.",
+    "My sister enjoys sing and she loves dancing.",
+    "My sister enjoys singing and she loves dancing."
+   ],
+   "correct_answer": "D",
+   "explanation": "enjoy 后面接动名词，to sing 要改成 singing；to singing 混了结构，enjoy 少了 s 与主语不一致，enjoys sing 少了 ing。后半句 loves dancing 是对的。",
+   "tags": [
+    "enjoy doing",
+    "改错"
+   ],
+   "question_id": "english-6up-d06-q18"
   },
   {
    "diagnostic_node_id": "english-6up-d07",
@@ -1129,6 +2977,402 @@
    "question_id": "english-6up-d07-q09"
   },
   {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "Every Lantern Festival, my cousin ___ with us.（选择正确形式）",
+   "options": [
+    "watches the dragon dance",
+    "watch the dragon dance",
+    "watched the dragon dance",
+    "watching the dragon dance"
+   ],
+   "correct_answer": "A",
+   "explanation": "every Lantern Festival 表示每年都这样，用一般现在时；主语 my cousin 是第三人称单数，动词加 es，用 watches the dragon dance。watch 是原形，watched 是过去式，watching 不能单独作谓语。",
+   "tags": [
+    "一般现在时",
+    "节日活动"
+   ],
+   "question_id": "english-6up-d07-q10"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "We usually ___ fireworks at the Spring Festival, but last year we ___ them in the park.（选择正确形式）",
+   "options": [
+    "set off; watch",
+    "set off; watched",
+    "set off; watching",
+    "sets off; watched"
+   ],
+   "correct_answer": "B",
+   "explanation": "usually 指习惯，用一般现在时 set off，them 指 fireworks；but 后面 last year 是过去，用过去式 watched。watch 是现在时，watching 不能单独作谓语，sets off 和主语 we 不搭配。",
+   "tags": [
+    "一般现在时",
+    "一般过去时"
+   ],
+   "question_id": "english-6up-d07-q11"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "My uncle visits us every Spring Festival, but last year he ___ to our home.（选择正确形式）",
+   "options": [
+    "doesn't come",
+    "doesn't came",
+    "not come",
+    "didn't come"
+   ],
+   "correct_answer": "D",
+   "explanation": "every Spring Festival 说的是习惯，用 visits；but 后面 last year 是过去，否定要用 didn't come。doesn't come 是现在时，doesn't came 混了两种形式，not come 少了助动词。",
+   "tags": [
+    "一般过去时",
+    "否定句"
+   ],
+   "question_id": "english-6up-d07-q12"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "—Did your family go to see the lanterns last night? —___（选择正确答语）",
+   "options": [
+    "Yes, we do.",
+    "Yes, we did.",
+    "Yes, we were.",
+    "Yes, we are."
+   ],
+   "correct_answer": "B",
+   "explanation": "问句用 Did 开头问过去的事，答句也要用 did；do 是现在时，were 和 are 与 go 不搭配。",
+   "tags": [
+    "一般过去时",
+    "疑问句"
+   ],
+   "question_id": "english-6up-d07-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "Last year my family ___ dumplings every day during the Spring Festival.（选择正确形式）",
+   "options": [
+    "make dumplings",
+    "makes dumplings",
+    "made dumplings",
+    "making dumplings"
+   ],
+   "correct_answer": "C",
+   "explanation": "句首 last year 把整件事放在过去，every day 只是那段时间里的频率，所以用过去式 made；make 和 makes 是现在时，making 不能单独作谓语。",
+   "tags": [
+    "一般过去时",
+    "时间信号"
+   ],
+   "question_id": "english-6up-d07-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“My family eats tangyuan at the Lantern Festival.” 要改成去年发生的事，正确的是（  ）",
+   "options": [
+    "My family eat tangyuan at the Lantern Festival last year.",
+    "My family eats tangyuan at the Lantern Festival last year.",
+    "My family eating tangyuan at the Lantern Festival last year.",
+    "My family ate tangyuan at the Lantern Festival last year."
+   ],
+   "correct_answer": "D",
+   "explanation": "改成去年，要在句子里加 last year，并把 eats 变成过去式 ate；eat 是原形，eats 还是现在时，eating 不能单独作谓语。",
+   "tags": [
+    "一般过去时",
+    "改写"
+   ],
+   "question_id": "english-6up-d07-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句说的是过去发生的事（  ）",
+   "options": [
+    "We watched the moon last night.",
+    "We watch the moon every night.",
+    "We watch the moon after dinner.",
+    "We often watch the moon together."
+   ],
+   "correct_answer": "A",
+   "explanation": "last night 是过去时间，watched 是过去式，说的是过去；every night、after dinner、often 都表示习惯，用现在时 watch。",
+   "tags": [
+    "一般过去时",
+    "时间信号"
+   ],
+   "question_id": "english-6up-d07-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句说的是经常发生的事（  ）",
+   "options": [
+    "My family got together last Spring Festival.",
+    "My family gets together every Spring Festival.",
+    "My family got together last night with friends.",
+    "My family got together yesterday afternoon."
+   ],
+   "correct_answer": "B",
+   "explanation": "every Spring Festival 表示每年都这样，是习惯，用一般现在时 gets；其余三句都有 last 或 yesterday，是过去的事，用 got。",
+   "tags": [
+    "一般现在时",
+    "时间信号"
+   ],
+   "question_id": "english-6up-d07-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 last year 和动词形式不搭配（  ）",
+   "options": [
+    "We ate mooncakes last year.",
+    "We eat mooncakes last year.",
+    "We watched the moon last year.",
+    "We visited our grandma last year."
+   ],
+   "correct_answer": "B",
+   "explanation": "last year 是过去时间，动词要用过去式 ate；eat 是原形，和 last year 不搭配。其余三句都用了过去式 ate、watched、visited。",
+   "tags": [
+    "一般过去时",
+    "搭配"
+   ],
+   "question_id": "english-6up-d07-q18"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "同一件事的现在时句与过去时句，哪一组配对正确（  ）",
+   "options": [
+    "Every year we watched the lanterns. Last year we watch them.",
+    "Every year we watches the lanterns. Last year we watched them.",
+    "Every year we watch the lanterns. Last year we watched them.",
+    "Every year we watch the lanterns. Last year we watch them."
+   ],
+   "correct_answer": "C",
+   "explanation": "说每年都看灯，用一般现在时 watch；说去年看灯，用一般过去时 watched。把两个时态交换、用 watches 配 we、或两句都用 watch，都不正确。",
+   "tags": [
+    "一般现在时",
+    "一般过去时"
+   ],
+   "question_id": "english-6up-d07-q19"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“My aunt lives in Beijing. Last Spring Festival she comes to our home by train.” 这句话的问题是（  ）",
+   "options": [
+    "前半句的动词应改成过去式",
+    "两个动词都应改成过去式",
+    "后半句的动词应改成过去式",
+    "两个动词的形式都已正确"
+   ],
+   "correct_answer": "C",
+   "explanation": "前半句 lives 说的是现在的常住地，用现在时正确；后半句 last Spring Festival 是过去，comes 要改成 came，所以问题在后半句。",
+   "tags": [
+    "一般现在时",
+    "一般过去时"
+   ],
+   "question_id": "english-6up-d07-q20"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“We usually visit my grandma at the Spring Festival, but last year we stay at home.” 这句话应该怎么改（  ）",
+   "options": [
+    "只把前半句的动词改成过去式",
+    "只把后半句的动词改成过去式",
+    "两个动词都要改成过去式才对",
+    "两个动词都不用改，原句正确"
+   ],
+   "correct_answer": "B",
+   "explanation": "前半句 usually visit 是习惯，用现在时正确；后半句 last year 是过去，stay 要改成 stayed，所以只需改后半句。",
+   "tags": [
+    "一般现在时",
+    "一般过去时"
+   ],
+   "question_id": "english-6up-d07-q21"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“At the Spring Festival, my family gets together and eats dumplings. We also watch TV.” 春节时这家人会做什么（  ）",
+   "options": [
+    "一起做月饼、赏月",
+    "一起赛龙舟、吃粽子",
+    "一起放风筝、爬山",
+    "一起吃饺子、看电视"
+   ],
+   "correct_answer": "D",
+   "explanation": "引文说一家人 get together、eat dumplings，还 watch TV。做月饼和赏月是中秋节，赛龙舟和吃粽子是端午节，放风筝和爬山引文没有提到。",
+   "tags": [
+    "一般现在时",
+    "节日活动"
+   ],
+   "question_id": "english-6up-d07-q22"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“Last Mid-Autumn Festival, we visited my uncle and ate mooncakes on his balcony.” 去年中秋节他们做了什么（  ）",
+   "options": [
+    "去公园放风筝、野餐",
+    "在家包饺子、看电视",
+    "去商店买月饼，还买了灯笼",
+    "看望叔叔，在阳台吃月饼"
+   ],
+   "correct_answer": "D",
+   "explanation": "引文说 visited my uncle、ate mooncakes on his balcony；公园野餐、在家包饺子、买灯笼都没有提到。",
+   "tags": [
+    "一般过去时",
+    "节日活动"
+   ],
+   "question_id": "english-6up-d07-q23"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“Every Spring Festival, our family goes to Grandma's home. Last year we went there by car.” 下面哪一项说法正确（  ）",
+   "options": [
+    "去年是坐汽车去的",
+    "每年都是坐汽车去的",
+    "去年没有去奶奶家",
+    "今年要坐火车去"
+   ],
+   "correct_answer": "A",
+   "explanation": "引文说每年春节都去奶奶家，去年是坐汽车去的；不能推出每年都坐汽车，也没有说去年没去或今年坐火车。",
+   "tags": [
+    "一般现在时",
+    "一般过去时"
+   ],
+   "question_id": "english-6up-d07-q24"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“Mother usually makes dumplings. Last year Grandma made them because Mother was ill.” 去年是谁包饺子，为什么（  ）",
+   "options": [
+    "奶奶包的，因为妈妈病了",
+    "妈妈包的，因为奶奶病了",
+    "奶奶包的，因为她喜欢包",
+    "妈妈包的，因为她不忙"
+   ],
+   "correct_answer": "A",
+   "explanation": "引文说 because Mother was ill，所以去年是奶奶包；妈妈病了，不是奶奶病了，也不是奶奶喜欢包或妈妈不忙。",
+   "tags": [
+    "一般过去时",
+    "因果关系"
+   ],
+   "question_id": "english-6up-d07-q25"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“Dad usually drives us to Grandma's. Last year the car was broken, so we went by train.” 这说明什么（  ）",
+   "options": [
+    "去年他们不能开车去",
+    "去年他们买了新车",
+    "去年爸爸不会开车",
+    "去年奶奶家没有汽车"
+   ],
+   "correct_answer": "A",
+   "explanation": "引文说 the car was broken，所以去年改坐火车，说明不能开车去；买新车、爸爸不会开车、奶奶家没有汽车都没有根据。",
+   "tags": [
+    "一般过去时",
+    "推理"
+   ],
+   "question_id": "english-6up-d07-q26"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d07",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“My brother usually watches the moon at home. Last year he was in Beijing and saw it on TV.” 去年弟弟为什么在电视上看月亮（  ）",
+   "options": [
+    "因为他生病了",
+    "因为家里没有电视",
+    "因为他当时在北京",
+    "因为他不喜欢月亮"
+   ],
+   "correct_answer": "C",
+   "explanation": "引文说他去年在北京，所以只能在电视上看月亮；生病、家里没有电视、不喜欢月亮都没有根据。",
+   "tags": [
+    "一般过去时",
+    "因果关系"
+   ],
+   "question_id": "english-6up-d07-q27"
+  },
+  {
    "diagnostic_node_id": "english-6up-d08",
    "subject": "english",
    "ability_tag": "语言运用",
@@ -1327,6 +3571,402 @@
    "question_id": "english-6up-d08-q09"
   },
   {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "We ___ a picnic in the park next Sunday.（选择正确形式）",
+   "options": [
+    "will have",
+    "wills have",
+    "will has",
+    "will to have"
+   ],
+   "correct_answer": "A",
+   "explanation": "next Sunday 指将来，用 will + 动词原形，所以是 will have。wills 不是词；will has 把原形写成了第三人称单数；will to have 多了 to，will 后面直接跟原形。",
+   "tags": [
+    "一般将来时 will",
+    "will + 动词原形"
+   ],
+   "question_id": "english-6up-d08-q10"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "There ___ two new shops near my home next month.（选择正确形式）",
+   "options": [
+    "will have",
+    "will be",
+    "will is",
+    "wills be"
+   ],
+   "correct_answer": "B",
+   "explanation": "There will be 表示“将有”，后面接名词，所以是 will be。There will have 是常错写法，there be 句型里不能用 have；will is 把 be 写成了 is；wills 不是词。",
+   "tags": [
+    "There will be 句型",
+    "一般将来时 will"
+   ],
+   "question_id": "english-6up-d08-q11"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "Look at the black clouds. It ___ rainy this afternoon.（选择正确形式）",
+   "options": [
+    "will is",
+    "is will",
+    "will was",
+    "will be"
+   ],
+   "correct_answer": "D",
+   "explanation": "this afternoon 指还没到的下午，描述天气用 will be + 形容词 rainy。will is 和 is will 都把 be 与 is 混在一起；will was 把过去式放在 will 后面，will 后要用原形。",
+   "tags": [
+    "天气描述",
+    "will be + 形容词"
+   ],
+   "question_id": "english-6up-d08-q12"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "Tom ___ to school tomorrow because he is ill.（选择正确形式）",
+   "options": [
+    "will not comes",
+    "won't come",
+    "doesn't come",
+    "not will come"
+   ],
+   "correct_answer": "B",
+   "explanation": "tomorrow 指将来，否定用 won't（也就是 will not）加动词原形，所以是 won't come。will not comes 多加了 -s；doesn't come 是现在的否定，和 tomorrow 不搭；not will come 语序错了。",
+   "tags": [
+    "will 的否定形式",
+    "一般将来时 will"
+   ],
+   "question_id": "english-6up-d08-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "There ___ a book show next week, and we ___ some new books there.（选择正确形式）",
+   "options": [
+    "will have; will buy",
+    "will be; will buys",
+    "will be; will buy",
+    "will be; will buying"
+   ],
+   "correct_answer": "C",
+   "explanation": "“将有”用 There will be，第一空填 will be；and 后面主语是 we，will 后接原形 buy。There will have 不是正确句型；will buys 和 will buying 都没有用动词原形。",
+   "tags": [
+    "There will be 句型",
+    "will + 动词原形"
+   ],
+   "question_id": "english-6up-d08-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "Don't worry. The rain ___ soon, and it ___ sunny again.（选择正确形式）",
+   "options": [
+    "will stops; will be",
+    "will stop; will is",
+    "stops; will be",
+    "will stop; will be"
+   ],
+   "correct_answer": "D",
+   "explanation": "soon 指马上就要发生，用 will 加原形，第一空是 will stop；第二空描述天气，用 will be 加形容词。will stops 没有用原形；will is 把 be 写成了 is；stops 是现在时，和 soon 的将来意思不合。",
+   "tags": [
+    "will + 动词原形",
+    "天气描述"
+   ],
+   "question_id": "english-6up-d08-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句的 will 后面接的是动词原形（  ）",
+   "options": [
+    "We will visit the museum tomorrow.",
+    "We will visits the museum tomorrow.",
+    "We will to visit the museum tomorrow.",
+    "We will visiting the museum tomorrow."
+   ],
+   "correct_answer": "A",
+   "explanation": "will 后面跟动词原形，visit 就是原形。visits 多了 -s；to visit 多了 to；visiting 是 -ing 形式，三者都不符合 will 加原形。",
+   "tags": [
+    "will + 动词原形",
+    "句子辨析"
+   ],
+   "question_id": "english-6up-d08-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句表示“将有一个新图书馆”（  ）",
+   "options": [
+    "There will have a new library in our town.",
+    "There will be a new library in our town.",
+    "There is will a new library in our town.",
+    "There will a new library in our town."
+   ],
+   "correct_answer": "B",
+   "explanation": "“将有”用 There will be 加名词，所以 There will be a new library 是对的。There will have 混进了 have；There is will 把 is 和 will 叠在一起；There will a new library 少了 be。",
+   "tags": [
+    "There will be 句型",
+    "句子辨析"
+   ],
+   "question_id": "english-6up-d08-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句的否定形式写对了（  ）",
+   "options": [
+    "She willn't go to the zoo this Saturday.",
+    "She won't go to the zoo this Saturday.",
+    "She don't will go to the zoo this Saturday.",
+    "She not will go to the zoo this Saturday."
+   ],
+   "correct_answer": "B",
+   "explanation": "will 的否定是 will not，缩写成 won't，后面接原形 go。willn't 不是正确缩写；don't will 把两个助动词叠在一起；not will 的语序不对。",
+   "tags": [
+    "will 的否定形式",
+    "句子辨析"
+   ],
+   "question_id": "english-6up-d08-q18"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句的一般疑问句写对了（  ）",
+   "options": [
+    "Do you will come to my party tomorrow?",
+    "Will you coming to my party tomorrow?",
+    "Will you come to my party tomorrow?",
+    "Are you will come to my party tomorrow?"
+   ],
+   "correct_answer": "C",
+   "explanation": "把 will 提到句首就构成疑问句，后面接原形 come，所以 Will you come 是对的。Do you will 多了 do；Will you coming 没有用原形；Are you will 把 be 和 will 混在一起。",
+   "tags": [
+    "will 的疑问形式",
+    "句子辨析"
+   ],
+   "question_id": "english-6up-d08-q19"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句中两个 will 都用对了（  ）",
+   "options": [
+    "We will go to the park, and we will took some photos.",
+    "We will went to the park, and we will take some photos.",
+    "We will go to the park, and we will take some photos.",
+    "We will going to the park, and we will take some photos."
+   ],
+   "correct_answer": "C",
+   "explanation": "will 后面一律接动词原形，所以 will go 和 will take 都对。took 和 went 是过去式，going 是 -ing 形式，都不能跟在 will 后面。",
+   "tags": [
+    "一般将来时",
+    "will + 原形"
+   ],
+   "question_id": "english-6up-d08-q20"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句用 will be 描述天气是正确的（  ）",
+   "options": [
+    "It will be rain and cool in Changsha tomorrow.",
+    "It will be rainy and cool tomorrow.",
+    "It will rainy and cool in Changsha tomorrow.",
+    "It will rains and cool in Changsha tomorrow."
+   ],
+   "correct_answer": "B",
+   "explanation": "描述天气用 will be 加形容词 rainy，所以 It will be rainy and cool 是对的。will be rain 把形容词换成了名词；will rainy 少了 be；will rains 既少了 be，又用了第三人称单数。",
+   "tags": [
+    "天气描述",
+    "will be + 形容词"
+   ],
+   "question_id": "english-6up-d08-q21"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“There will be a new park near our school next year.” 明年学校附近会有什么（  ）",
+   "options": [
+    "一座新图书馆",
+    "一个新操场",
+    "一座新医院",
+    "一座新公园"
+   ],
+   "correct_answer": "D",
+   "explanation": "There will be a new park 是“将有一个新公园”，near our school 是学校附近。图书馆、操场、医院都换掉了 park 这个词。",
+   "tags": [
+    "There will be 句型",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d08-q22"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“It will be snowy and cold in Harbin tomorrow.” 明天哈尔滨会下雨吗（  ）",
+   "options": [
+    "会下雨，不会下雪",
+    "会下雨，也会下雪",
+    "是晴天，不冷也不热",
+    "会下雪，不会下雨"
+   ],
+   "correct_answer": "D",
+   "explanation": "snowy 是下雪，cold 是冷，句子里没有 rain 这个词。所以明天会下雪、不会下雨；说有雨或者说是晴天，都不符合句子。",
+   "tags": [
+    "天气描述",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d08-q23"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“We will have a sports meeting next Friday. Every student will run and jump.” 运动会什么时候开（  ）",
+   "options": [
+    "下周五",
+    "下周一",
+    "这周五",
+    "明天"
+   ],
+   "correct_answer": "A",
+   "explanation": "next Friday 是下周五，sports meeting 是运动会。下周一、这周五和明天都和 next Friday 对不上。",
+   "tags": [
+    "时间词 next Friday",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d08-q24"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“Mum will buy a birthday cake. Dad will cook noodles, and I will make a card.” 妈妈将做什么（  ）",
+   "options": [
+    "买一个生日蛋糕",
+    "煮一锅长寿面",
+    "做一张生日贺卡",
+    "买一张生日贺卡"
+   ],
+   "correct_answer": "A",
+   "explanation": "Mum will buy a birthday cake 是妈妈要买一个生日蛋糕。煮面条的是 Dad，做贺卡的是 I；买贺卡这件事句子里没有说。",
+   "tags": [
+    "will 表将来",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d08-q25"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“It will be windy tomorrow. We will fly kites, but we won't go swimming.” 从句子可以知道（  ）",
+   "options": [
+    "明天有风，他们要去放风筝",
+    "明天有风，他们要去游泳",
+    "明天很热，他们要去放风筝",
+    "明天有雨，他们不去游泳"
+   ],
+   "correct_answer": "A",
+   "explanation": "windy 是有风，fly kites 是放风筝；but 后面说 won't go swimming，就是不去游泳。句子没有说热，也没有说下雨。",
+   "tags": [
+    "天气描述",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d08-q26"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d08",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“There will be a party at six. Please come at five thirty and bring some fruit.” 从句子可以知道（  ）",
+   "options": [
+    "聚会五点半开始，要带水果",
+    "聚会六点开始，要带饮料",
+    "聚会六点开始，要带水果",
+    "聚会五点半开始，不用带东西"
+   ],
+   "correct_answer": "C",
+   "explanation": "at six 是六点开始，bring some fruit 是带些水果，所以聚会在六点、要带水果。五点半是到场时间，不是开始时间；饮料和“不用带东西”都和句子相反。",
+   "tags": [
+    "There will be 句型",
+    "句子理解"
+   ],
+   "question_id": "english-6up-d08-q27"
+  },
+  {
    "diagnostic_node_id": "english-6up-d09",
    "subject": "english",
    "ability_tag": "语言运用",
@@ -1457,6 +4097,270 @@
     "改错"
    ],
    "question_id": "english-6up-d09-q06"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "The ground is white. It is ___ today.（选出最合适的天气词）",
+   "options": [
+    "sunny",
+    "windy",
+    "snowy",
+    "cloudy"
+   ],
+   "correct_answer": "C",
+   "explanation": "地上白了说明下过雪，snowy 是下雪的。sunny 是晴朗，windy 是刮风，cloudy 是多云，都解释不了满地白色。",
+   "tags": [
+    "天气形容词",
+    "snowy"
+   ],
+   "question_id": "english-6up-d09-q07"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "It is ___ today. The trees are moving and my hat flies away.（选出最合适的天气词）",
+   "options": [
+    "sunny",
+    "snowy",
+    "rainy",
+    "windy"
+   ],
+   "correct_answer": "D",
+   "explanation": "树在摇、帽子被吹走，说明风很大，windy 是刮风的。sunny、snowy、rainy 都不会把帽子吹走。",
+   "tags": [
+    "天气形容词",
+    "windy"
+   ],
+   "question_id": "english-6up-d09-q08"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "It is ___ today. We can make a snowman in the garden.（选出最合适的天气词）",
+   "options": [
+    "snowy",
+    "rainy",
+    "windy",
+    "sunny"
+   ],
+   "correct_answer": "A",
+   "explanation": "make a snowman 是堆雪人，要有雪，所以用 snowy。rainy 是下雨，windy 是刮风，sunny 是晴朗，都没有雪可以堆雪人。",
+   "tags": [
+    "天气形容词",
+    "天气与活动"
+   ],
+   "question_id": "english-6up-d09-q09"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "It is ___ today. The water in the bottle turns to ice.（选出最合适的天气词）",
+   "options": [
+    "cloudy",
+    "rainy",
+    "warm",
+    "cold"
+   ],
+   "correct_answer": "D",
+   "explanation": "水结成冰说明天气很冷，用 cold。cloudy 是多云，rainy 是下雨，warm 是暖和，都不会让瓶里的水结冰。",
+   "tags": [
+    "天气形容词",
+    "cold"
+   ],
+   "question_id": "english-6up-d09-q10"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“今天下雨，我们将在家里看书。”下面哪一句英语最合适（  ）",
+   "options": [
+    "It is rainy today. We will read books at school.",
+    "It is sunny today. We will read books at home.",
+    "It is rainy today. We will read books at home.",
+    "It is rainy today. We read books at home tomorrow."
+   ],
+   "correct_answer": "C",
+   "explanation": "“下雨”是 rainy，“在家里看书”是 read books at home，用 will 表示将要做。说到学校、说成晴天，或者把 tomorrow 硬塞进句子里的写法，都和原句意思或语法不合。",
+   "tags": [
+    "天气与活动",
+    "will 表将来"
+   ],
+   "question_id": "english-6up-d09-q11"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "It is snowy today. The children are very happy because they can ___ outside.（选出最合适的活动）",
+   "options": [
+    "fly a kite",
+    "make a snowman",
+    "go swimming",
+    "wear sunglasses"
+   ],
+   "correct_answer": "B",
+   "explanation": "snowy 是下雪，下雪天可以在外面堆雪人。fly a kite 要有风，go swimming 是游泳，wear sunglasses 是戴太阳镜，都不是下雪天在外面高兴地玩的事。",
+   "tags": [
+    "天气与活动",
+    "snowy"
+   ],
+   "question_id": "english-6up-d09-q12"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句写的是晴天（  ）",
+   "options": [
+    "It is rainy today.",
+    "It is sunny today.",
+    "It is snowy today.",
+    "It is cloudy today."
+   ],
+   "correct_answer": "B",
+   "explanation": "sunny 是晴朗的，It is sunny today. 就是“今天是晴天”。rainy 是下雨，snowy 是下雪，cloudy 是多云。",
+   "tags": [
+    "天气形容词",
+    "句子辨析"
+   ],
+   "question_id": "english-6up-d09-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句的天气词用错了（  ）",
+   "options": [
+    "It is sunny today. The sun is shining.",
+    "It is rainy today. The rain is heavy.",
+    "It is snowy today. The sun is very hot.",
+    "It is windy today. The wind is very strong."
+   ],
+   "correct_answer": "A",
+   "explanation": "下雪天不可能太阳很热，snowy 和 hot sun 自相矛盾。其余三句里，sunny 配太阳出来、rainy 配大雨、windy 配大风，都对得上。",
+   "tags": [
+    "天气形容词",
+    "句子辨析"
+   ],
+   "question_id": "english-6up-d09-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句最适合在雨天说（  ）",
+   "options": [
+    "Let's go out and make a snowman.",
+    "Let's fly a kite in the park.",
+    "Take an umbrella with you.",
+    "Put on your sunglasses and hat."
+   ],
+   "correct_answer": "C",
+   "explanation": "雨天要带伞，Take an umbrella with you. 正合适。堆雪人要有雪，放风筝要有风，戴太阳镜要有太阳，都不适合雨天。",
+   "tags": [
+    "天气与活动",
+    "句子辨析"
+   ],
+   "question_id": "english-6up-d09-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一组“天气＋活动”搭配正确（  ）",
+   "options": [
+    "雪天——堆雪人",
+    "雨天——放风筝",
+    "晴天——穿雨衣",
+    "刮风天——游泳"
+   ],
+   "correct_answer": "A",
+   "explanation": "下雪天可以堆雪人，这一组对得上。雨天放风筝、晴天穿雨衣、刮风天游泳，天气和活动都配不上。",
+   "tags": [
+    "天气与活动",
+    "搭配判断"
+   ],
+   "question_id": "english-6up-d09-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句的天气词和活动都合理（  ）",
+   "options": [
+    "It is sunny. We will wear raincoats.",
+    "It is rainy. We stay at home.",
+    "It is snowy. We will go swimming.",
+    "It is hot. We will make a snowman."
+   ],
+   "correct_answer": "B",
+   "explanation": "下雨天待在家里最合理。晴天穿雨衣、下雪天去游泳、大热天堆雪人，天气和活动都对不上。",
+   "tags": [
+    "天气与活动",
+    "句子辨析"
+   ],
+   "question_id": "english-6up-d09-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d09",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读对话：“It's rainy today.” “Let's fly a kite in the park.” 下面哪一句说得对（  ）",
+   "options": [
+    "雨天放风筝是很好的选择",
+    "他们约好一起去游泳",
+    "今天天气晴朗，适合放风筝",
+    "雨天应该带伞，不该放风筝"
+   ],
+   "correct_answer": "D",
+   "explanation": "对话说今天下雨，却提议去放风筝，这不合理；下雨天应该带伞。对话里没有说去游泳，也没有说今天是晴天。",
+   "tags": [
+    "天气与活动",
+    "对话理解"
+   ],
+   "question_id": "english-6up-d09-q18"
   },
   {
    "diagnostic_node_id": "english-6up-d10",
