@@ -806,11 +806,14 @@ def main(argv: list[str] | None = None) -> int:
                     meta = cur.query_one(
                         "SELECT t.code AS node_code, u.code AS aggregate_code, u.name_zh AS aggregate_name"
                         "  FROM topic t JOIN unit u ON u.id = t.unit_id WHERE t.id = ?", (topic_id,))
+                    # '[]' rather than '': the column is JSON on MySQL, and MySQL rejects an empty
+                    # string there ("Invalid JSON text at position 0"). SQLite stores TEXT and never
+                    # complained, which is why this only surfaced on the MySQL empty-database run.
                     cur.execute(
                         "INSERT INTO weakness (weakness_id, device_id, topic_id, diagnostic_node_id,"
                         " mastery_level, weighted_accuracy, sample_count, evidence_question_ids,"
                         " parent_aggregate_node_id, parent_aggregate_name, resolved, opened_at, updated_at)"
-                        " VALUES (?, ?, ?, ?, ?, ?, ?, '', ?, ?, 0, ?, ?)",
+                        " VALUES (?, ?, ?, ?, ?, ?, ?, '[]', ?, ?, 0, ?, ?)",
                         (mastery.new_ulid(), device_id, topic_id, meta["node_code"], level, acc, sample,
                          meta["aggregate_code"], meta["aggregate_name"], when, when))
 
