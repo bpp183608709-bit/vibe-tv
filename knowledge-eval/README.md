@@ -13,7 +13,7 @@
 ```bash
 # 1) 原始数据直接过 schema（没有翻译层）
 python knowledge-eval/scripts/check_schema.py
-# → schema: 95 nodes, 1647 questions checked against knowledge-eval/schemas
+# → schema: 95 nodes, 1917 questions checked against knowledge-eval/schemas
 # → schema: ok
 
 # 2) 双向内容校验：快照 30 个微观点 vs 节点引用
@@ -30,13 +30,13 @@ python knowledge-eval/scripts/check_outline_coverage.py
 
 # 4) 逐格齐备：每个（节点 × 声明的能力线）格子能不能构出四个阶段
 python knowledge-eval/scripts/check_ability_coverage.py
-# → cells 213: 168 robust, 45 floor, 0 partial, 0 missing（数学 96、语文 64 全 robust）
-# → top-up to robust: 270 questions（数学 0、语文 0；英语 45 格各差 6 题）
+# → cells 213: 213 robust, 0 floor, 0 partial, 0 missing（数学 96、语文 64、英语 53）
+# → top-up to robust: 0 questions
 python knowledge-eval/scripts/check_ability_coverage.py --strict   # 同上，但不齐就退出 1
 
 # 5) 负样本：把引用删掉/加错，校验必须失败（不含规格测试）
 python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_four_stage_constructible.py
-# → 30 passed
+# → 58 passed
 
 # 6) 离线报告：不连数据库，纯文件
 python knowledge-eval/scripts/evaluate.py \
@@ -61,11 +61,11 @@ python knowledge-eval/scripts/export_from_db.py --check
 ### 1.1 覆盖审查：题库够不够撑起四阶段
 
 ```bash
-# 1) 生成覆盖矩阵（252 个 诊断节点 × 能力标签 格子）
+# 1) 生成覆盖矩阵（213 个 诊断节点 × 能力线 格子）
 python knowledge-eval/scripts/check_coverage_matrix.py
-# → cells 252: 190 without a question, 0 measured (n>=3), 0 floor-ok, 0 robust-ok
+# → cells 213: 0 without a question, 213 measured (n>=3), 213 floor-ok, 213 robust-ok
 # → target chapter math-6up-u02 分数乘法 (4 diagnostics)
-# → top-up to floor: 689 questions; to robust: 1445
+# → top-up to floor: 0 questions; to robust: 0
 # → 写 reports/coverage-matrix.json 与 reports/coverage-matrix.md
 
 # 2) 负样本：审查脚本必须能判负
@@ -78,11 +78,12 @@ python -m pytest knowledge-eval/tests/test_four_stage_constructible.py -v
 
 # 4) 常规回归必须仍全绿
 python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_four_stage_constructible.py
-# → 28 passed
+# → 58 passed
 ```
 
 结论与补题清单见 [docs/coverage-audit-2026-11-19.md](docs/coverage-audit-2026-11-19.md)：
-当前 **0 / 252 个格子达到最低档**，补齐到最低档需 689 题（目标章节 `math-6up-u02` 分数乘法）。
+**2026-11-20 全库 213 格已全部到稳健档（3 易 3 中 3 难）**，共 1917 题（数学 864 + 语文 576 + 英语 477），
+等于 D9=B 定的 213 × 9。补题过程见 `docs/batch-plan-robust-math|chinese|english-2026-11-20.md`。
 
 ### 1.2 课本结构覆盖：节点够不够撑起"整册"
 
