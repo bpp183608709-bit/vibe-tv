@@ -182,7 +182,12 @@ ssh -i ~/.ssh/misty_deploy root@47.95.198.148 'sh /opt/wrong-quiz/server/tools/a
 
 `knowledge-eval/data/` 在 2026-11-19 改了三科结构（语文换成 26 课、英语按 2026 秋新版重建、数学按 2024 新版重排成 9 个条目），**线上库还是旧内容**：`unit.name_zh` 仍是「艺术之美」「Cities in China」，缺英语 U9，语文 `d11/d12` 还挂着已删除的课文。这是数据与代码不同步，不是代码缺陷——只部署代码不会自愈，H5 报告会继续显示课本里没有的章节。
 
-**不要单独跑，跟着下一次部署一起做。** 顺序不可颠倒：
+**不要单独跑，跟着下一次部署一起做。** 顺序不可颠倒。
+
+> **2026-11-20 已在生产副本上完整演练过一遍**，记录、可复制命令与修订清单见
+> [`docs/migration-drill-2026-11-20.md`](migration-drill-2026-11-20.md)。
+> 演练跑出两处只有"库里有数据"才会撞的唯一键冲突（已修在 `import_curriculum` / `import_questions` 里），
+> 另有两处本文件的说明已过期，下面用 ⚠ 标出。
 
 ```bash
 # 1) 备份（先确认文件新鲜、gzip 能解开）
@@ -196,8 +201,15 @@ mysql -uroot quiz < server/db/migrate-2026-11-19-flat-nodes.sql
 mysql -uroot quiz < server/db/migrate-2026-11-19-ability-mastery.sql
 
 # 3) 重导节点，再导题目（都按 business key upsert，可重复执行）
+#    ⚠ 导入器按 <repo>/knowledge-eval/data 找题库文件，而 /opt/wrong-quiz 下没有 knowledge-eval/。
+#      部署必须把 knowledge-eval/data/*.json 一起放上去，只传 server/ 会导 0 题。
 su -s /bin/sh wrongquiz -c '.venv/bin/python -m server.tools.import_curriculum --dsn "$DSN"'
 su -s /bin/sh wrongquiz -c '.venv/bin/python -m server.tools.import_questions  --dsn "$DSN"'
+#    预期输出（相对旧库，不是空库）：
+#      import: ok — 1 textbooks, 1 units, 21 topics, 7 skipped_topics
+#      questions: ok — 1881 created, 36 updated, 6046 options, 390 answers
+#    ⚠ skipped 必须是 7 条。若看到 14 条，说明用的是旧版导入器（它在每个单元处理时就判残留，
+#      把"只是从 u01 搬到 u02"的 d01–d04 也算进去了），那种情况只能按下面的 code 清单删。
 
 # 4) 重启
 systemctl restart wrong-quiz
@@ -245,9 +257,13 @@ SELECT t.code,
 DELETE FROM topic WHERE code IN ('english-6up-d05','math-6up-d10','math-6up-d11','math-6up-d12',
                                  'math-6up-d20','math-6up-d21','math-6up-d22');
 
--- 6) 旧「综合与实践」这个聚合在新数据里已经不存在了（拆成体育/水/负数三个条目）
-SELECT COUNT(*) FROM topic WHERE unit_id = (SELECT id FROM unit WHERE code = 'math-6up-u09'); -- 期望 0
-DELETE FROM unit WHERE code = 'math-6up-u09';
+-- 6) ⚠ 这一步已经失效，等于空操作。
+--    旧「综合与实践」(math-6up-u09) 确实没了，但新版数学第 9 个条目 math-6up-u-review（复习与关联）
+--    在导入时按 (textbook_id, ordinal=9) 兜底匹配，就地接管了那一行（row id 不变，code 被改写）。
+--    所以 math-6up-u09 根本不存在，下面两条都不该有输出/影响。
+SELECT COUNT(*) FROM unit WHERE code = 'math-6up-u09';    -- 期望 0
+SELECT name_zh FROM unit WHERE code = 'math-6up-u-review'; -- 期望 复习与关联
+-- 不要为了"看起来做完了"去 DELETE 这一行：删掉就少一个单元（27 而不是 28）。
 ```
 
 **任何一步计数非 0 就停下问人**，不要连带删作答记录、也不要靠 `ON DELETE CASCADE` 蒙过去。
@@ -265,6 +281,12 @@ SELECT COUNT(*) FROM question;  -- 期望 1917（数学 864 + 语文 576 + 英�
 SELECT COUNT(*) FROM ability_mastery;  -- 有作答才有行；空库为 0，不是错
 SELECT name_zh FROM unit WHERE code='english-6up-u09';  -- 期望 I don't feel well
 SELECT name_zh FROM unit WHERE code='math-6up-u04';     -- 期望 生活中的负数（这一行是被改写的，不是新建的）
+SELECT name_zh FROM unit WHERE code='math-6up-u-review';-- 期望 复习与关联（接管了旧「综合与实践」那一行）
+-- 空格子反例应为 0 行：
+SELECT t.code, q.ability_tag, SUM(q.difficulty=1), SUM(q.difficulty=2), SUM(q.difficulty=3)
+  FROM question q JOIN topic t ON t.id=q.topic_id
+ GROUP BY t.code, q.ability_tag
+HAVING SUM(q.difficulty=1)<>3 OR SUM(q.difficulty=2)<>3 OR SUM(q.difficulty=3)<>3;
 ```
 
 ---
