@@ -34,11 +34,17 @@ python knowledge-eval/scripts/check_ability_coverage.py
 # → top-up to robust: 0 questions
 python knowledge-eval/scripts/check_ability_coverage.py --strict   # 同上，但不齐就退出 1
 
-# 5) 负样本：把引用删掉/加错，校验必须失败（不含规格测试）
-python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_four_stage_constructible.py
-# → 58 passed
+# 5) 选项长度平衡（B11）：正确项不能是唯一最长的那一项
+python knowledge-eval/scripts/option_audit.py
+# → math 295 prose, 0 unique-longest, guess-longest 25%
+# → chinese 576 prose, 0, 15% · english 465 prose, 0, 10%
+python knowledge-eval/scripts/option_audit.py --strict     # 有违规就退出 1
 
-# 6) 离线报告：不连数据库，纯文件
+# 6) 负样本：把引用删掉/加错，校验必须失败（不含规格测试）
+python -m pytest knowledge-eval/tests/ -q --ignore=knowledge-eval/tests/test_four_stage_constructible.py
+# → 141 passed
+
+# 7) 离线报告：不连数据库，纯文件
 python knowledge-eval/scripts/evaluate.py \
   --nodes knowledge-eval/data/nodes_math_6up.json \
   --questions knowledge-eval/data/questions_math_6up.json \

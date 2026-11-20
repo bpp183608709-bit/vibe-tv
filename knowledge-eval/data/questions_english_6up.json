@@ -147,9 +147,9 @@
    "question_type": "选择题",
    "stem": "读句子：“Last summer I went to Beijing with my parents. We visited the Great Wall.” 这句话说的是（  ）",
    "options": [
-    "今年夏天“我”要去北京",
-    "“我”一个人去了北京",
-    "“我”每天都要去长城",
+    "今年夏天“我”和父母要去北京，一起去爬长城",
+    "“我”一个人去了北京，没有和父母一起去",
+    "“我”每天都要去长城走一走，不去别的地方",
     "去年夏天“我”和父母去了北京，参观了长城"
    ],
    "correct_answer": "D",
@@ -169,10 +169,10 @@
    "question_type": "选择题",
    "stem": "读对话：“— Did you go swimming yesterday? — No, I didn't. I stayed at home and read a book.” 从回答看，“我”昨天（  ）",
    "options": [
-    "什么也没做",
+    "在家睡了一整天，什么也没做",
     "待在家里看书，没有去游泳",
-    "去游泳了",
-    "去了图书馆"
+    "和同学一起去游泳了，玩得很开心",
+    "去图书馆借书，一整天都没回家"
    ],
    "correct_answer": "B",
    "explanation": "No, I didn't 是否定回答，后面 stayed（待在家里）和 read（读书）才是实际做的事。回答里的动词全是过去式。",
@@ -191,10 +191,10 @@
    "question_type": "选择题",
    "stem": "读句子：“Tom usually gets up at six, but yesterday he got up at eight.” 这句话告诉我们（  ）",
    "options": [
-    "汤姆昨天六点就起来了",
-    "汤姆昨天没有起床",
+    "汤姆昨天六点就起床了，比平时还早",
+    "汤姆昨天一直睡到中午，根本没有起床",
     "汤姆平时六点起床，昨天八点才起",
-    "汤姆每天都是八点起床"
+    "汤姆每天都是八点起床，从来没早过"
    ],
    "correct_answer": "C",
    "explanation": "usually 配一般现在时 gets，yesterday 配过去式 got——两个时间对两种时态，这是英语里最要紧的一条线。",
@@ -676,9 +676,9 @@
    "stem": "读句子：“My hometown is a small village near the river. There are many trees and a big lake.” 这段话说的是（  ）",
    "options": [
     "“我”的家乡是河边的小村庄，有很多树和一个大湖",
-    "“我”住在一个很大的城市",
-    "“我”的家乡没有水",
-    "“我”的家乡在一座高山上"
+    "“我”住在一座很大的城市里，高楼很多，车也很多",
+    "“我”的家乡没有水，村里人喝水都很困难",
+    "“我”的家乡在一座很高的山上，山下没有河也没有湖"
    ],
    "correct_answer": "A",
    "explanation": "village 是村庄，near the river 在河边，lake 是湖。按词找信息，不要凭“家乡”两个字想当然。",
@@ -697,10 +697,10 @@
    "question_type": "选择题",
    "stem": "读句子：“I went to Shanghai with my family. We visited the Bund and ate delicious food. We had a great time.” 这段话主要讲（  ）",
    "options": [
-    "“我”没有去上海",
+    "“我”没有去上海，一直待在家里",
     "“我”和家人去上海，玩得很开心",
-    "“我”一个人去了上海",
-    "“我”在上海吃的东西不好吃"
+    "“我”一个人去了上海，没有带家人",
+    "“我”在上海吃的东西不好吃，很失望"
    ],
    "correct_answer": "B",
    "explanation": "三句分别是地点、活动、感受，合起来就是“去了上海、玩得开心”。主要意思看整体，不能只盯一个词。",
@@ -720,9 +720,9 @@
    "stem": "读句子：“I went back to my hometown. It is a small town, but it is much more beautiful than before.” 从这句可以知道（  ）",
    "options": [
     "家乡是个小镇，现在比以前漂亮多了",
-    "家乡是个很大的城市",
-    "家乡和以前一模一样",
-    "说话人假期没有出过门"
+    "家乡是个很大的城市，人口比镇上多得多",
+    "家乡和以前一模一样，一点变化也没有",
+    "说话人假期没有回家乡，一直留在学校"
    ],
    "correct_answer": "A",
    "explanation": "went back 是“回去了”，but 之后才是重点：small town，而且 more beautiful than before——转折词后面常是说话人真正想说的。",
@@ -741,8 +741,8 @@
    "question_type": "选择题",
    "stem": "下面哪一组全是“假期活动”的短语（  ）",
    "options": [
-    "Monday / Tuesday / Wednesday",
-    "red / blue / green",
+    "Monday / Tuesday / Wednesday / Thursday / Friday",
+    "red / blue / green / yellow / black",
     "go swimming / visit grandparents / take photos",
     "get up / brush teeth / go to bed"
    ],
@@ -763,10 +763,10 @@
    "question_type": "选择题",
    "stem": "— What did you do during the holidays?  下面回答最恰当的一项是（  ）",
    "options": [
-    "Yes, I did.",
-    "It is Monday.",
+    "Yes, I did, but the weather was very hot that day.",
+    "It is Monday today, so we have to go to school early.",
     "I visited my grandparents and read some books.",
-    "I am a student."
+    "I am a student in Grade Six, and I like English very much."
    ],
    "correct_answer": "C",
    "explanation": "问“做了什么”，就要答做过的事，动词用过去式。答“我是学生”答非所问；Yes, I did 只能回答一般疑问句。",
@@ -786,7 +786,7 @@
    "stem": "对话中有一处不当：“— Where did you go last week? — I go to Beijing. — Did you have a good time? — Yes, I did.” 不当之处是（  ）",
    "options": [
     "第二句的 go 应改成 went",
-    "第一句的 did 应改成 do",
+    "第一句中的 did 应该改成 do",
     "第三句的 Did 应改成 Do",
     "第四句的 did 应改成 do"
    ],
@@ -808,9 +808,9 @@
    "stem": "要向同学介绍自己的假期，下面开头最合适的一项是（  ）",
    "options": [
     "During the holidays, I went to my hometown with my parents.",
-    "I am a student in Grade Six.",
-    "My name is Li Ming.",
-    "Holidays are very good."
+    "I am a student in Grade Six, and I go to school by bus every day.",
+    "My name is Li Ming, and I am twelve years old this year.",
+    "Holidays are very good, and I like holidays very much."
    ],
    "correct_answer": "A",
    "explanation": "介绍假期，第一句就该说清“什么时候、和谁、去了哪里”。只报姓名、只说“假期很好”，都还没进正题。",
@@ -851,10 +851,10 @@
    "question_type": "选择题",
    "stem": "要把假期的三件事说成一段连贯的话，下面顺序最合理的一项是（  ）",
    "options": [
-    "只说感受，别的一句不说",
-    "把三件事倒着说一遍",
+    "只说自己的感受，去了哪里、做了什么一句都不说",
+    "把三件事倒着说一遍，先讲结果再讲开头",
     "先说去了哪里，再说做了什么，最后说感受",
-    "先说感受，再说去了哪里，再说做了什么"
+    "先说感受，再说去了哪里，最后说做了什么"
    ],
    "correct_answer": "C",
    "explanation": "英语叙事也讲顺序：地点、活动、感受。先讲感受，听话的人还不知道你在说哪一段经历。",
@@ -1314,9 +1314,9 @@
    "stem": "向同学介绍自己的家乡，下面哪一句最得体（  ）",
    "options": [
     "My hometown is a beautiful small village.",
-    "My hometown is poor and ugly.",
-    "My hometown is much better than yours.",
-    "I don't know where my hometown is."
+    "My hometown is poor and a little ugly, I think.",
+    "My hometown is much better and nicer than yours.",
+    "I don't know where my hometown is, so I can't say."
    ],
    "correct_answer": "A",
    "explanation": "介绍家乡要说清它是什么样子，beautiful small village 既明白又亲切。说自己家乡穷、不好看，或拿来和别人比高低，都不够得体；说不知道家乡在哪里也不是介绍。",
@@ -1555,9 +1555,9 @@
    "question_type": "选择题",
    "stem": "读句子：“Mr Li gets up at five. He runs for half an hour, and then he has breakfast.” 从句子看，李先生吃早饭之前先（  ）",
    "options": [
-    "去上班了",
-    "看了电视",
-    "又睡了一觉",
+    "已经出门上班去了",
+    "看了一会儿电视",
+    "又睡了一觉才起床",
     "跑了半小时步"
    ],
    "correct_answer": "D",
@@ -2105,9 +2105,9 @@
    "question_type": "选择题",
    "stem": "读句子：“My sister often helps my mother cook, but today she is busy with her homework.” 下面理解正确的是（  ）",
    "options": [
-    "她从来不做饭",
-    "她每天都帮妈妈做饭",
-    "她不喜欢做饭",
+    "她从来不做饭，也不帮妈妈做家务",
+    "她每天都帮妈妈做饭，从来不休息",
+    "她不喜欢做饭，所以从来不进厨房",
     "她不是每天都帮妈妈做饭"
    ],
    "correct_answer": "D",
@@ -2897,10 +2897,10 @@
    "question_type": "选择题",
    "stem": "下面哪一句中两个动词的时态都用对了（  ）",
    "options": [
-    "Every year we ate mooncakes and watched the moon.",
+    "Every year we ate mooncakes and watched the moon in the garden.",
     "Every Mid-Autumn Festival we eat mooncakes, and last year we ate them in the garden.",
-    "Every year we ate mooncakes, and last year we eat them.",
-    "Last year we eat mooncakes and watch the moon."
+    "Every year we ate mooncakes with my family, and last year we eat them in the garden.",
+    "Last year we eat mooncakes and watch the moon in the garden with my family."
    ],
    "correct_answer": "B",
    "explanation": "前一句说习俗用 eat，后一句说去年用 ate；一句话里两种时间各配各的时态才对。其余三句都把两种时间配错了。",
@@ -2919,10 +2919,10 @@
    "question_type": "选择题",
    "stem": "读句子：“The Mid-Autumn Festival is in autumn. On that day families get together and eat mooncakes.” 中秋节这天，一家人会（  ）",
    "options": [
-    "一起打扫教室",
+    "一起打扫教室的卫生",
     "聚在一起吃月饼",
-    "一起上学",
-    "一起上班"
+    "一起背着书包去上学",
+    "一起去公司上班"
    ],
    "correct_answer": "B",
    "explanation": "get together and eat mooncakes 就是“聚在一起吃月饼”，这是中秋节的习俗。",
@@ -2941,10 +2941,10 @@
    "question_type": "选择题",
    "stem": "读句子：“We went to my grandma's home. We ate mooncakes in the garden and looked at the moon.” 去年他们是在哪里吃月饼（  ）",
    "options": [
-    "公园里",
+    "公园里的大树下",
     "奶奶家的院子里",
-    "自己家里",
-    "学校里"
+    "自己家的客厅里",
+    "学校里的操场上"
    ],
    "correct_answer": "B",
    "explanation": "去了奶奶家，吃月饼的地点是 in the garden，也就是院子里。公园是另一篇短文里的地点，不要混。",
@@ -3448,9 +3448,9 @@
    "stem": "下面哪一句写的是将来的事（  ）",
    "options": [
     "We will visit the farm next week.",
-    "We visited the farm last week.",
-    "We visit the farm every week.",
-    "We are visiting the farm now."
+    "We visited the farm last week with our teacher.",
+    "We visit the farm every week with our classmates.",
+    "We are visiting the farm now with our teacher."
    ],
    "correct_answer": "A",
    "explanation": "next week 是将来时间，动词用 will visit。last week 配过去式，every week 配一般现在时，now 配现在进行时。",
@@ -3470,9 +3470,9 @@
    "stem": "下面哪一句中 will 后面用错了（  ）",
    "options": [
     "He will goes to Beijing tomorrow.",
-    "She will come back next Monday.",
-    "They will have a picnic.",
-    "I will help you."
+    "She will come back next Monday with her sister.",
+    "They will have a picnic in the park this Sunday.",
+    "I will help you with your English homework."
    ],
    "correct_answer": "A",
    "explanation": "will 后面一律用动词原形，will goes 应改成 will go。will 不随主语变，也没有第三人称单数的形式。",
@@ -3513,10 +3513,10 @@
    "question_type": "选择题",
    "stem": "读句子：“It will be sunny and cool tomorrow. We will go to the park.” 明天的天气怎么样（  ）",
    "options": [
-    "刮风，很热",
+    "刮着大风，天气很热",
     "晴天，天气凉爽",
-    "下雨，有点冷",
-    "下雪，很冷"
+    "下着大雨，天气有点冷",
+    "下着大雪，天气非常冷"
    ],
    "correct_answer": "B",
    "explanation": "sunny and cool 就是“晴天，凉爽”。两个词要一起看，只看到 sunny 会漏掉 cool。",
@@ -3557,10 +3557,10 @@
    "question_type": "选择题",
    "stem": "读句子：“It will be rainy tomorrow, so we won't have the picnic. We will stay at home and watch a film.” 从句子可以知道（  ）",
    "options": [
-    "他们不喜欢看电影",
+    "他们不喜欢看电影，所以在家睡觉",
     "野餐改不成了，他们在家看电影",
-    "明天他们去野餐",
-    "明天是晴天"
+    "明天天气很好，他们按计划去野餐",
+    "明天是晴天，他们要去公园野餐"
    ],
    "correct_answer": "B",
    "explanation": "won't have the picnic 是“不野餐了”，原因是下雨；后面说在家看电影，说明计划改了。so 前后是原因和结果。",
@@ -4063,10 +4063,10 @@
    "question_type": "选择题",
    "stem": "下面哪一句中天气与活动配得不合理（  ）",
    "options": [
-    "It is windy today. Let's fly a kite.",
+    "It is windy today. Let's fly a kite in the park with my sister.",
     "It is snowy today. Let's go swimming in the river.",
-    "It is rainy today. Let's stay at home and read.",
-    "It is sunny today. Let's go to the park."
+    "It is rainy today. Let's stay at home and read some books.",
+    "It is sunny today. Let's go to the park with our teacher."
    ],
    "correct_answer": "B",
    "explanation": "下雪天到河里游泳既不安全也不合常理。其余三句：下雨在家看书、晴天去公园、有风放风筝，都对得上。",
@@ -4878,9 +4878,9 @@
    "stem": "下面哪一句中 can 的意思与其他三句不同（  ）",
    "options": [
     "Can you help me, please?",
-    "I can swim.",
-    "She can ride a bike.",
-    "He can speak English."
+    "I can swim in the river every day.",
+    "She can ride a bike to school.",
+    "He can speak English very well."
    ],
    "correct_answer": "A",
    "explanation": "Can you help me? 是“请求别人帮忙”，can 表示请求；其余三句的 can 都表示“会、有能力做”。",
@@ -5252,9 +5252,9 @@
    "stem": "下面哪一句是在给别人提建议（  ）",
    "options": [
     "You should drink more water.",
-    "I can swim very well.",
-    "He is a doctor.",
-    "They will go to the park."
+    "I can swim very well and run very fast.",
+    "He is a doctor in a big hospital.",
+    "They will go to the park next Sunday."
    ],
    "correct_answer": "A",
    "explanation": "should 用来提建议：你应该多喝水。can 说能力，is 说身份，will 说将来，都不是建议。",
@@ -5317,10 +5317,10 @@
    "question_type": "选择题",
    "stem": "读句子：“Use both sides of the paper. Don't throw old books away. Give them to younger children.” 这段话主要说的是（  ）",
    "options": [
-    "怎样在纸上画画",
-    "怎样打扫教室",
+    "怎样在纸上画好看的图画",
+    "怎样把教室打扫得干干净净",
     "怎样节约用纸、让旧书再用",
-    "怎样买新书"
+    "怎样到书店买新的故事书"
    ],
    "correct_answer": "C",
    "explanation": "三句说的是一件事的三个做法：纸用两面、旧书别扔、送给更小的孩子。合起来就是节约用纸、让书再用一次。",
@@ -5339,10 +5339,10 @@
    "question_type": "选择题",
    "stem": "读句子：“It is not easy to save water. We should start with small things. Turning off the tap is a good start.” 从句子可以知道（  ）",
    "options": [
-    "只有大人才需要节约用水",
+    "只有大人才需要节约用水，小孩完全不用管",
     "节约用水可以从关水龙头这样的小事做起",
-    "关水龙头没有用",
-    "节约用水很容易，不用做什么"
+    "关水龙头没有用，水还是会白白流走",
+    "节约用水很容易，根本不用特意做什么"
    ],
    "correct_answer": "B",
    "explanation": "start with small things 和 a good start 都说从小事做起；前半句 not easy 说的是不容易，不是做不到。",
@@ -6306,9 +6306,9 @@
    "question_type": "选择题",
    "stem": "读句子：“Tom is 12 and Jim is 10. Tom is taller, but Jim runs faster.” 从句子看（  ）",
    "options": [
-    "汤姆更高，也跑得更快",
+    "汤姆更高，跑步也比吉姆快",
     "吉姆更高，跑得也更快",
-    "两个人一样高",
+    "两个人差不多一样高",
     "汤姆更高，吉姆跑得更快"
    ],
    "correct_answer": "D",
@@ -6329,9 +6329,9 @@
    "stem": "读句子：“My old bike is small. The new one is bigger, but it is heavier, so I ride it more slowly.” 从句子可以知道（  ）",
    "options": [
     "新车更大更重，骑起来更慢",
-    "新车更小更轻",
-    "新车骑得更快",
-    "两辆车一样重"
+    "新车比旧车更小更轻",
+    "新车骑起来比旧车要快得多",
+    "新旧两辆车一样重"
    ],
    "correct_answer": "A",
    "explanation": "bigger、heavier 说的是新车，so 引出结果：骑得更慢（more slowly）。三个比较级连成一条因果链。",
@@ -6724,10 +6724,10 @@
    "question_type": "选择题",
    "stem": "读句子：“The yellow bird is smaller than the blue one. But the blue one sings more beautifully.” 从句子看（  ）",
    "options": [
-    "黄鸟小，也唱得好",
-    "蓝鸟小，唱得差",
+    "黄鸟小，唱得也比蓝鸟好",
+    "蓝鸟更小，唱得也差",
     "黄鸟小，蓝鸟唱得好",
-    "两只鸟一样大"
+    "两只鸟差不多一样大"
    ],
    "correct_answer": "C",
    "explanation": "前半句说黄鸟比蓝鸟小，后半句 but 转折，说蓝鸟唱得更动听，所以黄鸟小、蓝鸟唱得好。",
@@ -6856,10 +6856,10 @@
    "question_type": "选择题",
    "stem": "读句子：“Lily has a fever. The doctor says she should stay in bed for two days and drink more water.” 医生让 Lily（  ）",
    "options": [
-    "多吃冰激凌",
-    "到操场上去跑步",
+    "多吃点冰激凌",
+    "每天到操场上去跑步",
     "卧床两天，多喝水",
-    "马上回学校上课"
+    "马上回学校去上课"
    ],
    "correct_answer": "C",
    "explanation": "stay in bed for two days 是卧床两天，drink more water 是多喝水。should 后面的两件事都是医生说的。",
@@ -6878,10 +6878,10 @@
    "question_type": "选择题",
    "stem": "读句子：“Tom has a cough but no fever. He can go to school, but he shouldn't run.” 从句子可以知道（  ）",
    "options": [
-    "汤姆什么病也没有",
-    "汤姆可以在操场上跑",
+    "汤姆什么病也没有，很健康",
+    "汤姆可以在操场上跑，还能上体育课",
     "汤姆能上学，但不能在操场上跑",
-    "汤姆发烧了，不能上学"
+    "汤姆发烧了，所以不能去上学"
    ],
    "correct_answer": "C",
    "explanation": "doesn't have a fever 否掉了发烧；can go to school 和 but he shouldn't run 是两条相反的态度：能去，但不能跑。",
@@ -6989,7 +6989,7 @@
    "stem": "下面哪一组问答搭配得最合适（  ）",
    "options": [
     "— What's wrong with you? — It's Monday.",
-    "— What's wrong with you? — I like apples.",
+    "— What's wrong with you? — I like apples very much.",
     "— What's wrong with you? — I have a bad cold.",
     "— What's wrong with you? — I'm twelve."
    ],
@@ -7648,9 +7648,9 @@
    "question_type": "选择题",
    "stem": "读句子：“Lily should take the medicine and stay in bed, but she shouldn't read for long.” 医生给 Lily 的建议是（  ）",
    "options": [
-    "只吃药，可以长时间看书",
+    "只吃药就行，还可以长时间看书",
     "不用吃药，可以去上学",
-    "多看书，多运动",
+    "多看书，还要多做运动",
     "吃药、卧床，但不要长时间看书"
    ],
    "correct_answer": "D",
@@ -7672,8 +7672,8 @@
    "options": [
     "感冒三天还没好，就应该去看医生",
     "一感冒就一定要马上去医院",
-    "感冒了不该喝水",
-    "感冒三天一定会自己好"
+    "感冒以后都不该多喝水",
+    "感冒三天以后一定就会自己好起来"
    ],
    "correct_answer": "A",
    "explanation": "if ... after three days 说的是“三天后仍不舒服”才去看医生，不是一感冒就去；前面还说要多喝水。",
@@ -7692,9 +7692,9 @@
    "question_type": "选择题",
    "stem": "下面哪一句是给病人的建议（  ）",
    "options": [
-    "I have a cold.",
-    "He is a doctor.",
-    "She has a fever.",
+    "I have a bad cold.",
+    "He is a good doctor.",
+    "She has a high fever today.",
     "You should stay in bed."
    ],
    "correct_answer": "D",
@@ -7758,10 +7758,10 @@
    "question_type": "选择题",
    "stem": "“— I have a bad cold. — ______” 横线上最合适的一句是（  ）",
    "options": [
-    "It's half past seven.",
+    "It's half past seven in the morning.",
     "You should take the medicine and have a rest.",
-    "I have a cold, too, thank you.",
-    "Yes, I am a student."
+    "I have a cold, too, and thank you for asking me.",
+    "Yes, I am a middle school student."
    ],
    "correct_answer": "B",
    "explanation": "对方说重感冒，接一句建议最合适：吃药、休息。回答年龄、身份、时间都答非所问。",
@@ -8485,9 +8485,9 @@
    "stem": "读句子：“Christmas is the most popular festival in many Western countries.” 从句子看，圣诞节（  ）",
    "options": [
     "在很多西方国家是最受欢迎的节日",
-    "在中国是最重要的节日",
-    "那天孩子们要上学",
-    "那天家人不在一起吃饭"
+    "在中国是一年里最重要的传统节日",
+    "那天孩子们还要去上学",
+    "那天家人不在一起吃晚饭"
    ],
    "correct_answer": "A",
    "explanation": "the most popular festival in many Western countries 说的是“在很多西方国家最受欢迎”。在中国最重要的节日是春节，两个国家不要混。",
@@ -8507,7 +8507,7 @@
    "stem": "读句子：“Both are important. But for Chinese families, the Spring Festival is the most important.” 从句子可以知道（  ）",
    "options": [
     "两个节日一样重要",
-    "中国家庭从不过圣诞节",
+    "中国家庭从来都不过圣诞节",
     "对中国家庭来说春节最重要",
     "圣诞节比春节更重要"
    ],
@@ -9384,10 +9384,10 @@
    "question_type": "选择题",
    "stem": "读句子：\"Farmers use water to water crops.\" 农民用水做什么（ ）",
    "options": [
-    "灭火",
-    "洗澡",
+    "灭火救人",
+    "洗菜洗澡",
     "浇庄稼",
-    "喝"
+    "烧开喝"
    ],
    "correct_answer": "C",
    "explanation": "water crops 是浇庄稼。这里的 water 作动词，是浇水的意思。",
@@ -9431,9 +9431,9 @@
    "stem": "读句子：\"But we can use or drink only a small part of the water on the Earth.\" 这句说明（ ）",
    "options": [
     "能用的水只是很少一部分",
-    "地球上没有水",
-    "水多得用不完",
-    "地球上的水都能喝"
+    "地球上已经没有一滴水了",
+    "水太多了，怎么用也用不完",
+    "地球上的水全都能直接喝"
    ],
    "correct_answer": "A",
    "explanation": "only a small part 是只有很小一部分。but 和上一句的地球多水形成转折。",
@@ -9476,10 +9476,10 @@
    "question_type": "选择题",
    "stem": "读句子：\"We use water to wash clothes and take showers. We use water to cook food.\" 这两句合起来讲（ ）",
    "options": [
-    "只有大人才用水",
-    "水和做饭没有关系",
+    "只有做饭的时候才会用到水",
+    "水和洗衣服、做饭都没有关系",
     "水在日常生活中用途很多",
-    "水只能用来看"
+    "水只能用来看，不能用来洗和煮"
    ],
    "correct_answer": "C",
    "explanation": "洗衣服、洗澡、做饭都用水，合起来就是水在生活里用途很多。",
@@ -9522,9 +9522,9 @@
    "question_type": "选择题",
    "stem": "读句子：\"Turn off the dripping tap. Fix a broken tap.\" 这两条都在说（ ）",
    "options": [
-    "把水存起来",
-    "换个新水龙头",
-    "多用一点水",
+    "把水存起来以后再用",
+    "把旧水龙头整个换掉",
+    "多用一点水也无所谓",
     "别让水白白流走"
    ],
    "correct_answer": "D",
@@ -9545,10 +9545,10 @@
    "question_type": "选择题",
    "stem": "读句子：\"Water is very important in our lives.\" 哪一项和这句相符（ ）",
    "options": [
-    "水只用来喝",
-    "水只用来浇花",
+    "水只用来喝，别的都用不上",
+    "水只用来浇花，别的都用不上",
     "水对我们的生活很重要",
-    "水对生活不重要"
+    "水对我们的生活一点也不重要"
    ],
    "correct_answer": "C",
    "explanation": "in our lives 是在我们的生活里，important 是重要。",
@@ -9568,10 +9568,10 @@
    "question_type": "选择题",
    "stem": "读句子：\"Animals and plants need water too.\" 哪一项和这句相符（ ）",
    "options": [
-    "只有人需要水",
-    "只有动物需要水",
+    "只有人才需要水，动物不用",
+    "只有动物需要水，植物不需要",
     "动物和植物都需要水",
-    "只有植物需要水"
+    "只有植物需要水，动物不需要"
    ],
    "correct_answer": "C",
    "explanation": "animals and plants 两个都提了，too 说明人之外它们也需要。",
@@ -9591,10 +9591,10 @@
    "question_type": "选择题",
    "stem": "读句子：\"Water the plants with grey water.\" 这条建议的意思是（ ）",
    "options": [
-    "用干净的水浇花",
+    "用干净的自来水来浇花",
     "用洗过东西的水浇花",
-    "把花扔掉",
-    "不要给花浇水"
+    "把花扔掉，不要再养了",
+    "不要给花浇水，让它干着"
    ],
    "correct_answer": "B",
    "explanation": "grey water 是洗过东西的水，water the plants 是浇花。",
@@ -9730,9 +9730,9 @@
    "stem": "读句子：\"Firemen use water to put out fires.\" 哪一项和这句不符（ ）",
    "options": [
     "消防员用水浇庄稼",
-    "灭火需要很多水",
-    "消防员离不开水",
-    "消防员用水灭火"
+    "火很大时，消防员用水灭火",
+    "消防员救火离不开水",
+    "消防员用水把火扑灭"
    ],
    "correct_answer": "A",
    "explanation": "put out fires 是灭火，不是浇庄稼。浇庄稼的是农民。",
@@ -9822,9 +9822,9 @@
    "stem": "读句子：\"Dan helps her to get on the train and helps her to sit down.\" Dan 帮老妇人做了什么（ ）",
    "options": [
     "扶她上车、帮她坐下",
-    "帮她打电话",
-    "帮她提行李",
-    "给她钱"
+    "只帮她拿行李，没有扶她上车",
+    "让她自己上车，没有扶她",
+    "扶她下了火车，送她出站"
    ],
    "correct_answer": "A",
    "explanation": "get on the train 是上车，sit down 是坐下，两件事都写在句子里。",
@@ -9844,10 +9844,10 @@
    "question_type": "选择题",
    "stem": "读句子：Dan says, \"I'll take the lady home with my father.\" Dan 为什么向朋友道歉（ ）",
    "options": [
-    "他没带钱",
+    "他出门时忘了带钱，买不起票",
     "他要送老妇人回家，不能一起走",
-    "他不想看电影",
-    "他迟到了"
+    "他觉得那部电影不好看，所以不想去",
+    "他迟到了很久，朋友们已经走了"
    ],
    "correct_answer": "B",
    "explanation": "take the lady home 是送老人回家，所以他要先离开朋友。",
@@ -9867,10 +9867,10 @@
    "question_type": "选择题",
    "stem": "读句子：\"Two days later, he gets a letter and six cinema tickets from the old woman.\" 两天后 Dan 收到什么（ ）",
    "options": [
-    "六封信",
+    "六封信，没有别的东西",
     "一封信和六张电影票",
-    "一张电影票",
-    "一封信和钱"
+    "只有一张电影票和一封信",
+    "一封信和一些钱，没有电影票"
    ],
    "correct_answer": "B",
    "explanation": "a letter 是一封信，six cinema tickets 是六张电影票，数量要看清。",
@@ -9891,8 +9891,8 @@
    "stem": "读句子：\"Dan writes his name and address in her notebook.\" 老妇人为什么要 Dan 写下名字和地址（ ）",
    "options": [
     "想以后写信感谢他",
-    "想请他吃饭",
-    "想让他再来帮忙",
+    "想请他到家里吃顿饭",
+    "想让他以后常来帮忙",
     "想记住名字玩"
    ],
    "correct_answer": "A",
@@ -9913,10 +9913,10 @@
    "question_type": "选择题",
    "stem": "读句子：\"Dan is happy. He can go to the cinema with his friends again!\" Dan 为什么高兴（ ）",
    "options": [
-    "老妇人住进他家",
-    "他得到很多钱",
+    "老妇人搬进了他家，和他住一起",
+    "老妇人给了他很多钱作为报答",
     "他又能和朋友一起看电影了",
-    "他不用上学了"
+    "他以后都不用再去电影院了"
    ],
    "correct_answer": "C",
    "explanation": "again 是关键：他当天没看成，现在有票可以再去一次。",
@@ -9983,9 +9983,9 @@
    "stem": "读句子：\"She lives in a beautiful house.\" 哪一项和这句相符（ ）",
    "options": [
     "她住在一座漂亮的房子里",
-    "她没有家",
-    "她住在车站里",
-    "她住在 Dan 家"
+    "她没有家，也没有自己的房子住",
+    "她住在车站里，那儿不是房子",
+    "她住在 Dan 家，房子不是她的"
    ],
    "correct_answer": "A",
    "explanation": "lives in 是住在，a beautiful house 是漂亮的房子。",
@@ -10028,9 +10028,9 @@
    "question_type": "选择题",
    "stem": "读句子：\"Dan writes his name and address in her notebook.\" 哪一项和这句相符（ ）",
    "options": [
-    "他写在一张电影票上",
-    "他写在一封信上",
-    "他写在自己的本子上",
+    "他写在一张电影票的背面",
+    "他写在一封信的信封上",
+    "他写在自己随身带的本子上",
     "他写在老妇人的本子上"
    ],
    "correct_answer": "D",
@@ -10074,10 +10074,10 @@
    "question_type": "选择题",
    "stem": "读句子：Dan says, \"I'll take the lady home with my father.\" 哪一项和这句相符（ ）",
    "options": [
-    "Dan 一个人送老人回家",
-    "Dan 让朋友送老人回家",
+    "Dan 一个人送老人回家，爸爸没去",
+    "Dan 让朋友替自己送老人回家",
     "Dan 和爸爸一起送老人回家",
-    "Dan 不送老人回家"
+    "Dan 不送老人回家，让她自己走"
    ],
    "correct_answer": "C",
    "explanation": "with my father 是和爸爸一起，不是一个人。",
@@ -10189,9 +10189,9 @@
    "question_type": "选择题",
    "stem": "读句子：\"He gives his father a Christmas tree.\" Martin 给爸爸什么（ ）",
    "options": [
-    "一个蛋糕",
-    "一张卡片",
-    "一只火鸡",
+    "一个生日蛋糕",
+    "一张圣诞卡片",
+    "一只烤好的火鸡",
     "一棵圣诞树"
    ],
    "correct_answer": "D",
@@ -10235,10 +10235,10 @@
    "question_type": "选择题",
    "stem": "读句子：Dad says, \"I don't need two trees.\" 爸爸为什么说不需要两棵树（ ）",
    "options": [
-    "他想自己去买",
+    "他想自己去商店买两棵更好的树",
     "兄弟俩各送了一棵，重复了",
-    "树太小了",
-    "他不喜欢树"
+    "两棵树都太小，屋里摆不下",
+    "他一点也不喜欢圣诞树"
    ],
    "correct_answer": "B",
    "explanation": "Martin 送了一棵，Jack 又送了一棵，爸爸只需要一棵。",
@@ -10259,9 +10259,9 @@
    "stem": "读句子：\"Let's give one to the Brown family. They have nothing for Christmas.\" 爸爸建议把树送给谁（ ）",
    "options": [
     "Brown 一家",
-    "邻居家的孩子",
-    "Jack",
-    "Martin"
+    "隔壁邻居家的两个孩子",
+    "Jack 自己留着",
+    "Martin 自己留着"
    ],
    "correct_answer": "A",
    "explanation": "give one to the Brown family，收树的是 Brown 一家。",
@@ -10281,9 +10281,9 @@
    "question_type": "选择题",
    "stem": "读句子：\"Their father gives them chocolate, cakes and a roast turkey.\" 爸爸给 Brown 家什么（ ）",
    "options": [
-    "一棵圣诞树",
-    "一个轮椅",
-    "一件大礼物",
+    "一棵又高又大的圣诞树",
+    "一块很贵的手表",
+    "一件包装很大的礼物",
     "巧克力、蛋糕和烤火鸡"
    ],
    "correct_answer": "D",
@@ -10304,10 +10304,10 @@
    "question_type": "选择题",
    "stem": "读句子：\"Martin gives Jim a nice, big present.\" 为什么要给 Jim 一份大礼物（ ）",
    "options": [
-    "Jim 要过生日",
-    "Jim 考试考得好",
+    "Jim 那天正好过生日，所以要送大的",
+    "Jim 考试考了第一名，所以要奖励他",
     "Jim 最小又不能走路，需要关爱",
-    "Jim 帮了他们"
+    "Jim 平时帮了他们家很大的忙"
    ],
    "correct_answer": "C",
    "explanation": "前文写 Jim 是最小的儿子而且不能走路，礼物大是因为这个孩子更需要照顾。",
@@ -10327,9 +10327,9 @@
    "question_type": "选择题",
    "stem": "读句子：\"It is a small house.\" 这句话在故事里的作用是（ ）",
    "options": [
-    "说明他们要搬家",
-    "说明房子很新",
-    "说明房子很漂亮",
+    "说明 Brown 一家很快就要搬家",
+    "说明这座房子是刚盖好的新房",
+    "说明房子又大又漂亮，很气派",
     "说明 Brown 家不富裕"
    ],
    "correct_answer": "D",
@@ -10351,9 +10351,9 @@
    "stem": "读句子：Dad says, \"Let's give one to the Brown family.\" 从爸爸的话能看出（ ）",
    "options": [
     "他愿意把多余的东西分享出去",
-    "他不想过圣诞节",
-    "他很生气",
-    "他不喜欢礼物"
+    "他不想过圣诞节，也不想送礼物",
+    "他很生气，不愿意把树送给别人",
+    "他不喜欢礼物，也不想收礼物"
    ],
    "correct_answer": "A",
    "explanation": "两棵树用不完，他没有留着自己用，而是送给更需要的人。",
@@ -10373,10 +10373,10 @@
    "question_type": "选择题",
    "stem": "读句子：\"It is Christmas time in Canada.\" 哪一项和这句相符（ ）",
    "options": [
-    "加拿大的暑假",
-    "英国的春节",
+    "加拿大的漫长暑假",
+    "英国热闹的春节",
     "加拿大的圣诞节",
-    "美国的圣诞节"
+    "美国的圣诞节假期"
    ],
    "correct_answer": "C",
    "explanation": "in Canada 是加拿大，Christmas 是圣诞节，两处都要对上。",
@@ -10465,9 +10465,9 @@
    "question_type": "选择题",
    "stem": "读句子：\"They have nothing for Christmas.\" 哪一项和这句相符（ ）",
    "options": [
-    "Brown 家很有钱",
-    "Brown 家有很多礼物",
-    "Brown 家有两棵圣诞树",
+    "Brown 家很有钱，什么都买得起",
+    "Brown 家收到了很多圣诞礼物",
+    "Brown 家有两棵又大又好的圣诞树",
     "Brown 家圣诞节什么都没有"
    ],
    "correct_answer": "D",
@@ -10488,10 +10488,10 @@
    "question_type": "选择题",
    "stem": "读句子：\"The Brown family is happy now.\" 哪一项和这句相符（ ）",
    "options": [
-    "Brown 一家很难过",
+    "Brown 一家现在还是很难过",
     "Brown 一家现在很开心",
-    "Brown 一家很生气",
-    "Brown 一家搬走了"
+    "Brown 一家现在都很生气",
+    "Brown 一家现在已经搬走了"
    ],
    "correct_answer": "B",
    "explanation": "is happy 是开心，now 是现在。",
