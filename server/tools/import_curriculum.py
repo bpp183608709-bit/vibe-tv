@@ -113,11 +113,28 @@ def import_tree(db: Database, payloads: list[dict]) -> dict[str, int]:
                            " week_start = ? WHERE id = ?", (*values, unit_id))
             unit_ids[aggregate["node_id"]] = unit_id
 
+        # Ordinals are positions, and a new edition can reorder the chapters: `math-6up-u01` used to be
+        # 分数乘法 and is 确定位置 in the 2024 edition, so `u01`/`u02` swap places in one import. Topics
+        # are matched by `code` and then re-positioned, which means a topic can ask for a
+        # (unit_id, ordinal) slot that another topic has not vacated yet. On a populated database that
+        # is "Duplicate entry '17-1' for key 'topic.uk_topic'" — invisible on an empty one, because
+        # there is nothing to collide with.
+        #
+        # So push every existing ordinal out of the way first: ordinals are tiny (1..n), +100 stays
+        # inside TINYINT UNSIGNED, and the bump is injective within a unit. The loop below then owns
+        # slots 1..n again. A row that vanished from the file keeps an ordinal ≥100 until it is
+        # deleted, which is also how the stale report at the end tells it apart.
+        db.execute(
+            "UPDATE topic SET ordinal = ordinal + 100"
+            " WHERE ordinal < 100 AND unit_id IN"
+            " (SELECT id FROM unit WHERE textbook_id = ?)",
+            (textbook_id,),
+        )
+
+        placed: set[int] = set()
         for parent_id, unit_id in unit_ids.items():
             mine = [n for n in diagnostics if n["parent_id"] == parent_id]
-            seen = set()
             for ordinal, node in enumerate(sorted(mine, key=lambda n: n["node_id"]), start=1):
-                seen.add(ordinal)
                 payload_values = (
                     unit_id,
                     ordinal,
@@ -132,13 +149,19 @@ def import_tree(db: Database, payloads: list[dict]) -> dict[str, int]:
                 )
                 row = db.query_one("SELECT id FROM topic WHERE code = ?", (node["node_id"],))
                 if row is None:
-                    row = db.query_one("SELECT id FROM topic WHERE unit_id = ? AND ordinal = ?",
-                                       (unit_id, ordinal))
+                    # A row with no `code` predates the column. It is still "the node that used to sit
+                    # at this ordinal", so look for the slot it was released from (the +100 above),
+                    # not the one it holds now. `code IS NULL` is load-bearing: after the bump every
+                    # row sits at ordinal+100, and without it a new node silently overwrites an
+                    # unrelated old one instead of being reported stale (math-6up-d27 ate math-6up-d10).
+                    row = db.query_one(
+                        "SELECT id FROM topic WHERE unit_id = ? AND ordinal = ? AND code IS NULL",
+                        (unit_id, ordinal + 100))
                 if row is None:
-                    db.insert(
+                    placed.add(db.insert(
                         "INSERT INTO topic (unit_id, ordinal, chapter_order, code, name_zh, summary_zh,"
                         " knowledge_type, micro_nodes_json, source_ids_json, prereq_json)"
-                        " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", payload_values)
+                        " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", payload_values))
                     stats["topics"] += 1
                 else:
                     db.execute(
@@ -146,17 +169,16 @@ def import_tree(db: Database, payloads: list[dict]) -> dict[str, int]:
                         " name_zh = ?, summary_zh = ?, knowledge_type = ?, micro_nodes_json = ?,"
                         " source_ids_json = ?, prereq_json = ? WHERE id = ?",
                         (*payload_values, int(row["id"])))
-            # Compare by business key, not by ordinal. Ordinals are reassigned on every import, so a
-            # topic that vanished from the file can sit on an ordinal another topic just took — the
-            # ordinal check then says nothing and the row survives silently. That is exactly what
-            # happened to english-6up-d05 when the 2026 edition dropped its unit.
-            stale = db.query("SELECT id, code, ordinal, name_zh FROM topic WHERE unit_id = ?", (unit_id,))
-            file_codes = {n["node_id"] for n in mine}
-            for row in stale:
-                if row["code"] is not None:
-                    if row["code"] in file_codes:
-                        continue
-                elif int(row["ordinal"]) in seen:
+                    placed.add(int(row["id"]))
+        # What the file no longer has, reported once every unit has been positioned. Reporting it
+        # inside the unit loop gives false positives: in the 2026 edition `math-6up-d01` only moved
+        # from u01 to u02, but it is still sitting in u01 when u01 is processed, so it read as deleted
+        # (14 lines on the real migration, of which only 7 were). "Not placed by this file" is the
+        # exact test, and it does not care whether the row was matched by code or by ordinal.
+        for parent_id, unit_id in unit_ids.items():
+            for row in db.query("SELECT id, code, ordinal, name_zh FROM topic WHERE unit_id = ?",
+                                (unit_id,)):
+                if int(row["id"]) in placed:
                     continue
                 print(f"  skipped: {code} unit {parent_id} topic {row['code'] or row['ordinal']}"
                       f" ({row['name_zh']}) still in the database but gone from the file",

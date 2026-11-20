@@ -16,7 +16,10 @@ being demanded from every author and every exporter.
 ordinal it used to read from `unit`).
 
 Idempotent on `code` (the question_id from the file): a question edited in the file is updated in place,
-options and accepted answers are rewritten, so the file stays the source.
+options and accepted answers are rewritten, so the file stays the source. A row whose `code` is still
+NULL — anything written before that column existed — is matched by its dedup key
+`(template_key, param_hash)` and adopts the file's code, so re-importing an old database updates rows
+instead of colliding with them.
 """
 
 from __future__ import annotations
@@ -87,6 +90,18 @@ def import_file(db: Database, path: Path) -> dict[str, int]:
         )
 
         existing = db.query_one("SELECT id FROM question WHERE code = ?", (raw["question_id"],))
+        if existing is None:
+            # Rows written before `question.code` existed carry NULL there: the 2026-11 migration adds
+            # the column but cannot backfill it (param_hash is a hash of the old name, not the name).
+            # Matching on `code` alone therefore treats every legacy row as new and the INSERT then
+            # dies on uk_question_dedup (topic_id, template_key, param_hash) — on a populated database
+            # only, which is why the empty-database run never saw it. The dedup key *is* "this is the
+            # same question", so match on it instead and let the update below adopt the file's code.
+            # The row keeps its id, and every quiz_answer that points at it stays attached.
+            existing = db.query_one(
+                "SELECT id FROM question WHERE template_key = ? AND param_hash = ?",
+                ("hand", param_hash(raw["question_id"])),
+            )
         if existing is None:
             question_id = db.insert(
                 "INSERT INTO question (textbook_id, topic_id, code, subject_id, angle, ability_tag,"
