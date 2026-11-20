@@ -4495,6 +4495,270 @@
    "question_id": "english-6up-d10-q06"
   },
   {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "I'd like ___ of tea, please.（选择正确的量词）",
+   "options": [
+    "a piece",
+    "a bowl",
+    "a cup",
+    "a bag"
+   ],
+   "correct_answer": "C",
+   "explanation": "茶用杯子计量，说 a cup of tea；piece 用于一片一片的东西，bowl 装饭或面，bag 装可以装袋的东西。",
+   "tags": [
+    "量词",
+    "a cup of"
+   ],
+   "question_id": "english-6up-d10-q07"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "选出与 bread 搭配正确的短语：（  ）",
+   "options": [
+    "a bottle of bread",
+    "a glass of bread",
+    "a cup of bread",
+    "a piece of bread"
+   ],
+   "correct_answer": "D",
+   "explanation": "面包论片，用 a piece of bread；bottle、glass、cup 都装液体，不能用来数面包。",
+   "tags": [
+    "量词",
+    "a piece of"
+   ],
+   "question_id": "english-6up-d10-q08"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "你想告诉妈妈早餐想吃两片面包，说：（  ）",
+   "options": [
+    "I'd like two pieces of bread.",
+    "I'd like two piece of bread.",
+    "I'd like two breads, please.",
+    "I'd like two bottles of bread."
+   ],
+   "correct_answer": "A",
+   "explanation": "两片面包是 two pieces of bread，量词 piece 随数字变复数，bread 不加 s；量词漏 s、bread 加 s、拿 bottle 数面包都不对。",
+   "tags": [
+    "量词复数",
+    "不可数名词"
+   ],
+   "question_id": "english-6up-d10-q09"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "— ___ orange juice do you want? — Two bottles, please.（选择正确形式）",
+   "options": [
+    "How many",
+    "How long",
+    "How old",
+    "How much"
+   ],
+   "correct_answer": "D",
+   "explanation": "orange juice 是不可数名词，问多少用 How much；How many 后面接可数名词复数，How long 问时间长短，How old 问年龄。",
+   "tags": [
+    "不可数名词",
+    "How much"
+   ],
+   "question_id": "english-6up-d10-q10"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“我们需要两瓶橙汁。”用英语怎么说？（  ）",
+   "options": [
+    "We need two bottle of orange juice.",
+    "We need two bottles of orange juices.",
+    "We need two bottles of orange juice.",
+    "We need two orange juice."
+   ],
+   "correct_answer": "C",
+   "explanation": "两瓶是 two bottles，量词随数字变复数；orange juice 不可数，不加 s，也不能直接说 two orange juice。",
+   "tags": [
+    "量词复数",
+    "不可数名词"
+   ],
+   "question_id": "english-6up-d10-q11"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "There isn't much milk. Let's buy two ___ of milk and a ___ of tea.（选择正确形式）",
+   "options": [
+    "bottle; cup",
+    "bottles; cup",
+    "bottles; cups",
+    "bottle; cups"
+   ],
+   "correct_answer": "B",
+   "explanation": "two 后面的量词 bottle 要加 s，a 后面的 cup 用单数；milk 和 tea 都是不可数名词，词尾不加 s。",
+   "tags": [
+    "量词复数",
+    "不可数名词"
+   ],
+   "question_id": "english-6up-d10-q12"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪个量词不能和 milk 搭配？（  ）",
+   "options": [
+    "a bottle",
+    "a piece",
+    "a glass",
+    "a cup"
+   ],
+   "correct_answer": "B",
+   "explanation": "牛奶是液体，用 bottle、glass、cup 计量都行；piece 用来数一片一片的东西，不能说 a piece of milk。",
+   "tags": [
+    "量词搭配",
+    "不可数名词"
+   ],
+   "question_id": "english-6up-d10-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪个短语的搭配正确？（  ）",
+   "options": [
+    "a bowl of rice",
+    "a bowl of tea",
+    "a piece of milk",
+    "a glass of bread"
+   ],
+   "correct_answer": "A",
+   "explanation": "米饭论碗，a bowl of rice 正确；茶用 cup，牛奶用 glass 或 bottle，面包用 piece。",
+   "tags": [
+    "量词搭配",
+    "a bowl of"
+   ],
+   "question_id": "english-6up-d10-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句写错了（  ）",
+   "options": [
+    "We need two bottles of water.",
+    "She buys three bags of apples.",
+    "He wants two breads for lunch.",
+    "I'd like two cups of tea, please."
+   ],
+   "correct_answer": "C",
+   "explanation": "bread 不可数，不能加 s，要说 two pieces of bread；其余三句的量词都随数字用了复数。",
+   "tags": [
+    "不可数名词",
+    "量词复数"
+   ],
+   "question_id": "english-6up-d10-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一组里的量词都用对了？（  ）",
+   "options": [
+    "a bottle of juice, a cup of tea",
+    "a bottle of bread, a cup of tea",
+    "a piece of juice, a glass of water",
+    "a cup of bread, a bag of apples"
+   ],
+   "correct_answer": "A",
+   "explanation": "果汁装瓶、茶沏在杯里，两个搭配都对；面包不能用 bottle 或 cup 数，果汁也不能说 a piece of。",
+   "tags": [
+    "量词搭配",
+    "辨析"
+   ],
+   "question_id": "english-6up-d10-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句中量词和名词的搭配都对？（  ）",
+   "options": [
+    "We need two bottles of apple juices.",
+    "We need two bottles of apple juice.",
+    "We need two bottle of apple juice.",
+    "We need two pieces of apple juice."
+   ],
+   "correct_answer": "B",
+   "explanation": "两瓶苹果汁是 two bottles of apple juice，量词加 s、juice 不加 s；juice 加 s 和量词漏 s 都不对，果汁也不能用 piece 数。",
+   "tags": [
+    "量词复数",
+    "不可数名词"
+   ],
+   "question_id": "english-6up-d10-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d10",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“I'd like two cup of tea and three breads.”这句话共有几处错？（  ）",
+   "options": [
+    "一处",
+    "三处",
+    "没有错",
+    "两处"
+   ],
+   "correct_answer": "D",
+   "explanation": "two 后面的 cup 要写成 cups，这是一处；bread 不可数，three breads 要改成 three pieces of bread，这是第二处。",
+   "tags": [
+    "量词复数",
+    "找错"
+   ],
+   "question_id": "english-6up-d10-q18"
+  },
+  {
    "diagnostic_node_id": "english-6up-d11",
    "subject": "english",
    "ability_tag": "语言运用",
@@ -4625,6 +4889,270 @@
     "提供帮助的表达"
    ],
    "question_id": "english-6up-d11-q06"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "— Can you swim? — Yes, I ___.（选择正确形式）",
+   "options": [
+    "do",
+    "am",
+    "can",
+    "will"
+   ],
+   "correct_answer": "C",
+   "explanation": "用 Can 提问，就用 can 回答；do 对应助动词提问，am 对应 be 动词提问，will 对应将来时提问，都接不上这句问句。",
+   "tags": [
+    "can 的答句",
+    "一般疑问句"
+   ],
+   "question_id": "english-6up-d11-q07"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "My sister can ___ the piano very well.（选择正确形式）",
+   "options": [
+    "plays",
+    "playing",
+    "to play",
+    "play"
+   ],
+   "correct_answer": "D",
+   "explanation": "can 是情态动词，后面一律跟动词原形 play；加 s、加 ing、加 to 都不行。",
+   "tags": [
+    "can + 动词原形",
+    "能力"
+   ],
+   "question_id": "english-6up-d11-q08"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "— ___ I use your ruler? — Sure. Here you are.（选择正确形式）",
+   "options": [
+    "Can",
+    "Do",
+    "Am",
+    "Are"
+   ],
+   "correct_answer": "A",
+   "explanation": "向别人借东西、请求许可用 Can I ...?；Do 提问时要接动词原形，Am 和 Are 后面都不能直接跟 I use。",
+   "tags": [
+    "can 表请求",
+    "借东西"
+   ],
+   "question_id": "english-6up-d11-q09"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "你想帮妈妈做事，问她需要什么帮助，说：（  ）",
+   "options": [
+    "What can you do for me?",
+    "What I can do for you?",
+    "What do I can for you?",
+    "What can I do for you?"
+   ],
+   "correct_answer": "D",
+   "explanation": "主动提出帮忙说 What can I do for you?；第二句把帮忙的人和被帮的人说反了，第三句语序错，第四句 do 和 can 重复。",
+   "tags": [
+    "提供帮助",
+    "What can I do for you"
+   ],
+   "question_id": "english-6up-d11-q10"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "Lingling can't ___ the box. It's too heavy.（选择正确形式）",
+   "options": [
+    "carries",
+    "carrying",
+    "carry",
+    "to carry"
+   ],
+   "correct_answer": "C",
+   "explanation": "can't 是情态动词 can 的否定形式，后面跟动词原形 carry；加 s、加 ing、加 to 都不对。",
+   "tags": [
+    "can't + 动词原形",
+    "能力"
+   ],
+   "question_id": "english-6up-d11-q11"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "He can ___ English, but he can't ___ Chinese.（选择正确形式）",
+   "options": [
+    "speaks; writes",
+    "speak; write",
+    "speaking; writing",
+    "to speak; to write"
+   ],
+   "correct_answer": "B",
+   "explanation": "can 和 can't 后面都用动词原形，两个空都填 speak、write 的原形；加 s、加 ing、加 to 都错。",
+   "tags": [
+    "can + 动词原形",
+    "can't"
+   ],
+   "question_id": "english-6up-d11-q12"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "can 后面的动词应该用哪种形式？（  ）",
+   "options": [
+    "第三人称单数",
+    "动词原形",
+    "现在分词",
+    "动词不定式"
+   ],
+   "correct_answer": "B",
+   "explanation": "情态动词 can 后面跟动词原形，既不加 s，也不加 ing，更不加 to。",
+   "tags": [
+    "can + 动词原形",
+    "规则"
+   ],
+   "question_id": "english-6up-d11-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪个与 can't 意思相同？（  ）",
+   "options": [
+    "cannot",
+    "can",
+    "must",
+    "not can"
+   ],
+   "correct_answer": "A",
+   "explanation": "can't 是 cannot 的缩写，两者都表示不能；can 表示能，must 表示必须，not can 词序不对。",
+   "tags": [
+    "can't",
+    "cannot"
+   ],
+   "question_id": "english-6up-d11-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句的 can 表示请求，而不是能力？（  ）",
+   "options": [
+    "I can swim very fast.",
+    "She can make cakes.",
+    "Can I use your pen?",
+    "They can play football."
+   ],
+   "correct_answer": "C",
+   "explanation": "Can I ...? 是在请求许可，想知道能不能用别人的东西；其余三句说的都是会做什么事。",
+   "tags": [
+    "can 表请求",
+    "can 表能力"
+   ],
+   "question_id": "english-6up-d11-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中的 can't 用得不对？（  ）",
+   "options": [
+    "He can't plays chess.",
+    "I can't swim at all.",
+    "She can't come today.",
+    "We can't find the pen."
+   ],
+   "correct_answer": "A",
+   "explanation": "can't 后面要用动词原形，plays 应改成 play；其余三句的 can't 后面都是原形。",
+   "tags": [
+    "can't + 动词原形",
+    "找错"
+   ],
+   "question_id": "english-6up-d11-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一组里的两句 can 都用对了？（  ）",
+   "options": [
+    "I can swim. She can sings.",
+    "I can swim. She can sing.",
+    "I can to swim. She can sing.",
+    "I can swimming. She can sing."
+   ],
+   "correct_answer": "B",
+   "explanation": "can 后面跟动词原形，所以 swim 和 sing 都对；加 s、加 to、加 ing 的写法都错。",
+   "tags": [
+    "can + 动词原形",
+    "辨析"
+   ],
+   "question_id": "english-6up-d11-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d11",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“She can to sing, but she can't dances.”下面哪一种改法把两处错都改对了（  ）",
+   "options": [
+    "She can to sing, but she can't dance.",
+    "She can sing, but she can't dances.",
+    "She can sings, but she can't dance.",
+    "She can sing, but she can't dance."
+   ],
+   "correct_answer": "D",
+   "explanation": "can 后面不能加 to，要写 can sing；can't 后面要用原形，要写 can't dance。只改一处的三个选项各留了一处错。",
+   "tags": [
+    "can + 动词原形",
+    "改错"
+   ],
+   "question_id": "english-6up-d11-q18"
   },
   {
    "question_id": "english-6up-d12-q01",
@@ -4825,6 +5353,402 @@
    "question_id": "english-6up-d12-q09"
   },
   {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "To help the earth, we ___ take a bag when we go shopping.（选择正确形式）",
+   "options": [
+    "should",
+    "shouldn't",
+    "should to",
+    "shoulds"
+   ],
+   "correct_answer": "A",
+   "explanation": "购物时自带袋子是建议，用 should 加动词原形；shouldn't 意思相反，should 后面不能加 to，也没有 shoulds 这个形式。",
+   "tags": [
+    "should",
+    "环保"
+   ],
+   "question_id": "english-6up-d12-q10"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "We should ___ the lights when we leave the room.（选择正确形式）",
+   "options": [
+    "turning off",
+    "turn off",
+    "to turn off",
+    "turns off"
+   ],
+   "correct_answer": "B",
+   "explanation": "should 后面接动词原形，关灯是 turn off；turning off 是 -ing 形式，to turn off 多了 to，turns off 是三单形式。",
+   "tags": [
+    "should",
+    "环保"
+   ],
+   "question_id": "english-6up-d12-q11"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "同学说：“I'm thirsty.” 你给他提建议，说：（  ）",
+   "options": [
+    "You should to drink water.",
+    "You shouldn't drink water.",
+    "You should drinking water.",
+    "You should drink water."
+   ],
+   "correct_answer": "D",
+   "explanation": "口渴时建议喝水，用 should 加动词原形 drink；加 to、用 -ing 都不对，shouldn't 意思相反。",
+   "tags": [
+    "should",
+    "建议"
+   ],
+   "question_id": "english-6up-d12-q12"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "把“We should waste paper.”改成否定建议：（  ）",
+   "options": [
+    "We don't should waste paper.",
+    "We shouldn't waste paper.",
+    "We shouldn't to waste paper.",
+    "We not should waste paper."
+   ],
+   "correct_answer": "B",
+   "explanation": "否定建议用 shouldn't 加动词原形，should 不能和 don't 连用，也不能在 shouldn't 后加 to，not 要放进 should 里合成 shouldn't。",
+   "tags": [
+    "shouldn't",
+    "否定"
+   ],
+   "question_id": "english-6up-d12-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "We should ___ water and we shouldn't ___ rubbish into the river.（选择正确形式）",
+   "options": [
+    "save; throwing",
+    "saving; throw",
+    "save; throw",
+    "to save; throw"
+   ],
+   "correct_answer": "C",
+   "explanation": "两个情态动词后面都接动词原形，所以是 save water 和 throw rubbish；加 -ing 或 to 都不对。",
+   "tags": [
+    "should",
+    "动词原形"
+   ],
+   "question_id": "english-6up-d12-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "“It is a good idea to ride a bike to school.”意思相近的是（  ）",
+   "options": [
+    "We shouldn't ride a bike to school.",
+    "We should to ride a bike to school.",
+    "We can rides a bike to school.",
+    "We should ride a bike to school."
+   ],
+   "correct_answer": "D",
+   "explanation": "a good idea 就是值得做的建议，用 should 加动词原形；shouldn't 意思相反，should 后多 to、can 后加 s 都不对。",
+   "tags": [
+    "should",
+    "同义改写"
+   ],
+   "question_id": "english-6up-d12-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句是在劝别人不要浪费水（  ）",
+   "options": [
+    "We shouldn't waste water.",
+    "We don't waste water every day.",
+    "We are wasting water now.",
+    "We wasted water yesterday."
+   ],
+   "correct_answer": "A",
+   "explanation": "shouldn't 加动词原形表示“不应该”，是在提建议；其余三句分别说习惯、正在发生和过去的事，都不是建议。",
+   "tags": [
+    "shouldn't",
+    "建议"
+   ],
+   "question_id": "english-6up-d12-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句中的建议说得不对（  ）",
+   "options": [
+    "We should use both sides of the paper.",
+    "We should to turn off the tap.",
+    "We shouldn't throw bottles away.",
+    "We should take a bag to the shop."
+   ],
+   "correct_answer": "B",
+   "explanation": "should 后面接动词原形，不能加 to；turn off 前多了 to，所以这一句错，其余三句形式都对。",
+   "tags": [
+    "should",
+    "找错"
+   ],
+   "question_id": "english-6up-d12-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "朋友说：“I'm cold.” 你提建议，说：（  ）",
+   "options": [
+    "You should to put on your coat.",
+    "You should put on your coat.",
+    "You shouldn't put on your coat.",
+    "You should putting on your coat."
+   ],
+   "correct_answer": "B",
+   "explanation": "冷的时候建议穿上外套，用 should 加动词原形 put on；加 to、用 -ing 都不对，shouldn't 意思相反。",
+   "tags": [
+    "should",
+    "情景"
+   ],
+   "question_id": "english-6up-d12-q18"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句是命令，不是建议（  ）",
+   "options": [
+    "You should turn off the tap.",
+    "We should save water.",
+    "Turn off the tap now.",
+    "You shouldn't waste water."
+   ],
+   "correct_answer": "C",
+   "explanation": "祈使句直接叫人做事，语气是命令；带 should 或 shouldn't 的三句都是在提建议。",
+   "tags": [
+    "祈使句",
+    "建议"
+   ],
+   "question_id": "english-6up-d12-q19"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句的建议是在节约用纸（  ）",
+   "options": [
+    "Turn off the tap after washing.",
+    "Take a bag when you go shopping.",
+    "Use both sides of the paper.",
+    "Ride a bike to school every day."
+   ],
+   "correct_answer": "C",
+   "explanation": "纸的两面都用，能少砍树、少浪费纸。关水龙头是节水，自带袋子是少用塑料袋，骑车是少开车，都不是节约用纸。",
+   "tags": [
+    "环保",
+    "节约用纸"
+   ],
+   "question_id": "english-6up-d12-q20"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 should 用得对，也符合环保（  ）",
+   "options": [
+    "We should throw the old bottles into the river.",
+    "We should recycle the old bottles.",
+    "We should to recycle the old bottles.",
+    "We shouldn't recycle the old bottles."
+   ],
+   "correct_answer": "B",
+   "explanation": "旧瓶子应该回收，用 should 加动词原形 recycle；扔进河里和不回收都不环保，should 后加 to 形式也不对。",
+   "tags": [
+    "should",
+    "回收"
+   ],
+   "question_id": "english-6up-d12-q21"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“We should take a bag when we go shopping. Plastic bags are bad for the earth.” 从句子看，购物时应该（  ）",
+   "options": [
+    "多要塑料袋",
+    "把袋子扔掉",
+    "不去购物",
+    "自己带袋子"
+   ],
+   "correct_answer": "D",
+   "explanation": "句子说购物要带袋子，因为塑料袋对地球不好；多要塑料袋、扔掉袋子都不符合，不去购物也不是句子的建议。",
+   "tags": [
+    "环保",
+    "购物"
+   ],
+   "question_id": "english-6up-d12-q22"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“We should ride a bike to school. It is good for the air.” 句子建议我们上学（  ）",
+   "options": [
+    "坐小汽车",
+    "坐飞机",
+    "让父母送",
+    "骑自行车"
+   ],
+   "correct_answer": "D",
+   "explanation": "句子说骑车上学对空气好，所以建议骑车；坐车、坐飞机、让父母送都不是句子里的建议。",
+   "tags": [
+    "环保",
+    "交通"
+   ],
+   "question_id": "english-6up-d12-q23"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“Don't throw the old bottles away. We should recycle them and make new things.” 句子建议我们（  ）",
+   "options": [
+    "回收旧瓶子",
+    "扔掉旧瓶子",
+    "把瓶子藏起来",
+    "买新瓶子"
+   ],
+   "correct_answer": "A",
+   "explanation": "句子说不要扔旧瓶子，要回收再利用；扔掉和藏起来都不对，句子也没让人买新瓶子。",
+   "tags": [
+    "环保",
+    "回收"
+   ],
+   "question_id": "english-6up-d12-q24"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“Use both sides of the paper and take a bag to the shop. Small actions help the earth.” 这段话主要说的是（  ）",
+   "options": [
+    "小事也能帮地球",
+    "纸只能写一面",
+    "购物要多拿袋子",
+    "保护地球要靠大事"
+   ],
+   "correct_answer": "A",
+   "explanation": "句子举了用纸两面、自带袋子两个小例子，说明小事也能帮地球；说纸只能用一面、要多拿袋子都和句子相反，说靠大事也不是句子的意思。",
+   "tags": [
+    "环保",
+    "3R"
+   ],
+   "question_id": "english-6up-d12-q25"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读对话：“Mum, I want to buy a new toy car.” “Your old one still works. We shouldn't buy another.” 从对话看，妈妈建议孩子（  ）",
+   "options": [
+    "继续玩旧玩具车",
+    "马上买新的玩具车",
+    "把旧车送给别人",
+    "不再玩玩具车"
+   ],
+   "correct_answer": "A",
+   "explanation": "妈妈说旧车还能用，不应该再买，所以是建议继续玩旧的；买新的和句子相反，送人和不再玩都没提到。",
+   "tags": [
+    "环保",
+    "建议"
+   ],
+   "question_id": "english-6up-d12-q26"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d12",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“We shouldn't throw rubbish on the ground. We should put it in the bin and recycle it.” 从句子可以知道（  ）",
+   "options": [
+    "垃圾可以扔在地上",
+    "垃圾应该倒进河里",
+    "垃圾要丢进垃圾桶",
+    "垃圾都不用回收"
+   ],
+   "correct_answer": "C",
+   "explanation": "句子说不要在地上扔垃圾，要放进垃圾桶并回收；扔在地上、倒进河里、不回收都和句子相反。",
+   "tags": [
+    "环保",
+    "垃圾分类"
+   ],
+   "question_id": "english-6up-d12-q27"
+  },
+  {
    "question_id": "english-6up-d13-q01",
    "diagnostic_node_id": "english-6up-d13",
    "subject": "english",
@@ -4954,6 +5878,270 @@
     "-er 形式"
    ],
    "question_id": "english-6up-d13-q06"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d13",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "nice 的比较级是（  ）",
+   "options": [
+    "niceer",
+    "more nice",
+    "nicer",
+    "nicest"
+   ],
+   "correct_answer": "C",
+   "explanation": "nice 以 e 结尾，比较级只加 r，变成 nicer；再加一个 e 或加 more 都不对，nicest 是最高级。",
+   "tags": [
+    "比较级",
+    "加 r"
+   ],
+   "question_id": "english-6up-d13-q07"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d13",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "“这本书更薄。”用 thin 的比较级，应填（  ）",
+   "options": [
+    "thiner",
+    "more thin",
+    "thinnest",
+    "thinner"
+   ],
+   "correct_answer": "D",
+   "explanation": "thin 是重读闭音节，比较级要双写 n 再加 er，变成 thinner；只加一个 n、加 more 都不对，thinnest 是最高级。",
+   "tags": [
+    "比较级",
+    "双写辅音"
+   ],
+   "question_id": "english-6up-d13-q08"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d13",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "Her dress is ___ than mine.（选择正确形式）",
+   "options": [
+    "more beautiful",
+    "beautifuler",
+    "most beautiful",
+    "more beautifully"
+   ],
+   "correct_answer": "A",
+   "explanation": "beautiful 是多音节词，比较级用 more，后面接原级；beautifuler 不是正确形式，most 是最高级，more beautifully 是副词形式。",
+   "tags": [
+    "比较级",
+    "more"
+   ],
+   "question_id": "english-6up-d13-q09"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d13",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“这条河比那条河更宽。”用 wide 的比较级，应说（  ）",
+   "options": [
+    "This river is more wide than that one.",
+    "This river is widest than that one.",
+    "This river is wideer than that one.",
+    "This river is wider than that one."
+   ],
+   "correct_answer": "D",
+   "explanation": "wide 以 e 结尾，比较级加 r 变成 wider；加 more 是多余，widest 是最高级，wideer 多写了一个 e。",
+   "tags": [
+    "比较级",
+    "wide"
+   ],
+   "question_id": "english-6up-d13-q10"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d13",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "important 的比较级是（  ）",
+   "options": [
+    "importanter",
+    "most important",
+    "more important",
+    "more importantly"
+   ],
+   "correct_answer": "C",
+   "explanation": "important 是多音节词，比较级在前面加 more，后面用原级；importanter 不是正确形式，most 是最高级，more importantly 是副词形式。",
+   "tags": [
+    "比较级",
+    "more"
+   ],
+   "question_id": "english-6up-d13-q11"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d13",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "The bag is ___ (heavy) than the box, and the box is ___ (big) than the cup.（选择正确形式）",
+   "options": [
+    "heavier; biger",
+    "heavier; bigger",
+    "more heavy; bigger",
+    "heavyer; bigger"
+   ],
+   "correct_answer": "B",
+   "explanation": "heavy 变 y 为 i 加 er，big 双写 g 加 er，所以是 heavier 和 bigger；biger 少写一个 g，more heavy 和 heavyer 都不对。",
+   "tags": [
+    "比较级",
+    "双写辅音"
+   ],
+   "question_id": "english-6up-d13-q12"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d13",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一组比较级都写对了（  ）",
+   "options": [
+    "taller, niceer",
+    "taller, nicer",
+    "more tall, nicer",
+    "taller, more nice"
+   ],
+   "correct_answer": "B",
+   "explanation": "tall 直接加 er，nice 以 e 结尾加 r，所以 taller 和 nicer 都对；niceer 多写 e，more tall 和 more nice 都不该加 more。",
+   "tags": [
+    "比较级",
+    "辨析"
+   ],
+   "question_id": "english-6up-d13-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d13",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪个比较级少写了一个字母（  ）",
+   "options": [
+    "thiner",
+    "thinner",
+    "hotter",
+    "bigger"
+   ],
+   "correct_answer": "A",
+   "explanation": "thin 要双写 n 再加 er，写成 thinner，thiner 少了一个 n；hotter 和 bigger 的双写都对。",
+   "tags": [
+    "比较级",
+    "双写辅音"
+   ],
+   "question_id": "english-6up-d13-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d13",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中的比较级形式正确（  ）",
+   "options": [
+    "This apple is more big than that one.",
+    "This apple is biger than that one.",
+    "This apple is bigger than that one.",
+    "This apple is biggest than that one."
+   ],
+   "correct_answer": "C",
+   "explanation": "big 是重读闭音节，比较级双写 g 加 er，bigger 正确；more big 多余，biger 少一个 g，biggest 是最高级。",
+   "tags": [
+    "比较级",
+    "辨析"
+   ],
+   "question_id": "english-6up-d13-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d13",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 more 用错了（  ）",
+   "options": [
+    "This box is more heavy than that bag.",
+    "This book is more interesting than that one.",
+    "This park is more beautiful than that park.",
+    "This test is more important than that game."
+   ],
+   "correct_answer": "A",
+   "explanation": "heavy 是双音节短词，比较级用 heavier，不用 more heavy；interesting、beautiful、important 都是长词，用 more 是对的。",
+   "tags": [
+    "比较级",
+    "more"
+   ],
+   "question_id": "english-6up-d13-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d13",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句的比较级构成规则与其他三句不同（  ）",
+   "options": [
+    "This tree in the garden is taller than that one.",
+    "This dress is more beautiful than that one.",
+    "This line on the paper is longer than that one.",
+    "This road near my home is shorter than that one."
+   ],
+   "correct_answer": "B",
+   "explanation": "beautiful 是多音节词，比较级加 more；taller、longer、shorter 都是短词直接加 er，所以不同的一句是 more beautiful 那一句。",
+   "tags": [
+    "比较级",
+    "规则比较"
+   ],
+   "question_id": "english-6up-d13-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d13",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句的比较级错在双写辅音（  ）",
+   "options": [
+    "This box is more big than that bag.",
+    "This box is biggest than that bag.",
+    "This box is bigger than that bag.",
+    "This box is biger than that bag."
+   ],
+   "correct_answer": "D",
+   "explanation": "big 要双写 g 再加 er，biger 少了一个 g，正是双写辅音的错误；more big 错在多加了 more，biggest 是最高级，bigger 形式正确。",
+   "tags": [
+    "比较级",
+    "双写辅音"
+   ],
+   "question_id": "english-6up-d13-q18"
   },
   {
    "diagnostic_node_id": "english-6up-d14",
@@ -5152,6 +6340,402 @@
     "句子理解"
    ],
    "question_id": "english-6up-d14-q09"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "This jacket is ___.（选择正确形式）",
+   "options": [
+    "heavier than that one",
+    "heavy than that one",
+    "heaviest than that one",
+    "more heavy than that one"
+   ],
+   "correct_answer": "A",
+   "explanation": "than 前面要用比较级，heavy 变 heavier，把 y 改成 i 再加 -er；heavy 是原形，heaviest 是最高级，more heavy 是错误说法。",
+   "tags": [
+    "比较级",
+    "than"
+   ],
+   "question_id": "english-6up-d14-q10"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "你想告诉同学“我的书包比你的重”，说：（  ）",
+   "options": [
+    "My schoolbag is heavy than yours.",
+    "My schoolbag is heavier than yours.",
+    "My schoolbag is more heavy than yours.",
+    "My schoolbag is heaviest than yours."
+   ],
+   "correct_answer": "B",
+   "explanation": "比较书包轻重用比较级 heavier，后面接 than yours；heavy 是原形，more heavy 多加了 more，heaviest 是最高级，都不能跟 than 连用。",
+   "tags": [
+    "比较级",
+    "情景表达"
+   ],
+   "question_id": "english-6up-d14-q11"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“Lucy is younger than Lily.” 与哪一句意思相同？（  ）",
+   "options": [
+    "Lucy is older than Lily.",
+    "Lily is younger than Lucy.",
+    "Lily and Lucy are the same age.",
+    "Lily is older than Lucy."
+   ],
+   "correct_answer": "D",
+   "explanation": "Lucy 比 Lily 小，反过来就是 Lily 比 Lucy 大，所以 older than 意思相同；另外两句把年龄方向说反了，最后一句说两人同岁，也不对。",
+   "tags": [
+    "比较级",
+    "同义改写"
+   ],
+   "question_id": "english-6up-d14-q12"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面这句哪里说错了：“My hair is more long than yours.”（  ）",
+   "options": [
+    "把 more long 改成 longest",
+    "把 more long 改成 longer",
+    "把 than 改成 to 才对",
+    "把 yours 改成 your 才对"
+   ],
+   "correct_answer": "B",
+   "explanation": "long 是单音节词，比较级直接加 -er，不能用 more long；longest 是最高级，than 后面接比较对象不能换成 to，yours 表示你的头发，本身没错。",
+   "tags": [
+    "比较级",
+    "more 误用"
+   ],
+   "question_id": "english-6up-d14-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "— Which is bigger, your bedroom or your study? — ___（选择正确回答）",
+   "options": [
+    "My bedroom is big than my study.",
+    "My bedroom is bigger to my study.",
+    "My bedroom is bigger than my study.",
+    "My bedroom is more big than my study."
+   ],
+   "correct_answer": "C",
+   "explanation": "问两者哪个更大，回答要用比较级 bigger，并用 than 引出比较对象。big 是原形，to 不能代替 than，more big 也不是正确形式。",
+   "tags": [
+    "比较级",
+    "Which 问法"
+   ],
+   "question_id": "english-6up-d14-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "把 “The red kite is big. The blue kite is small.” 合成一句，正确的是（  ）",
+   "options": [
+    "The red kite is big than the blue one.",
+    "The blue kite is bigger than the red one.",
+    "The red kite is biggest than the blue one.",
+    "The red kite is bigger than the blue one."
+   ],
+   "correct_answer": "D",
+   "explanation": "两句合一句要比大小，big 变 bigger，后面用 than the blue one 代替 the blue kite。big 没变比较级，方向说反，biggest 是最高级，都不能和 than 搭配。",
+   "tags": [
+    "比较级",
+    "合并句子"
+   ],
+   "question_id": "english-6up-d14-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 than 前面的形容词形式不对（  ）",
+   "options": [
+    "He is tall than his brother.",
+    "He is taller than his brother.",
+    "She is older than her sister.",
+    "She is younger than her brother."
+   ],
+   "correct_answer": "A",
+   "explanation": "than 前面要用比较级，tall 应变成 taller；tall 是原形。其余三句的 taller、older、younger 都是正确的比较级。",
+   "tags": [
+    "比较级",
+    "找错"
+   ],
+   "question_id": "english-6up-d14-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句的 than 用对了（  ）",
+   "options": [
+    "This box is heavier to that one.",
+    "This box is heavier than that one.",
+    "This box is more heavy than that one.",
+    "This box is heaviest than that one."
+   ],
+   "correct_answer": "B",
+   "explanation": "两者比较用 than，不用 to；heavy 的比较级是 heavier，不加 more，也不用最高级 heaviest。",
+   "tags": [
+    "比较级",
+    "than 与 to"
+   ],
+   "question_id": "english-6up-d14-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“Tom is more taller than Jim.” 改对后是（  ）",
+   "options": [
+    "Tom is tallest than Jim.",
+    "Tom is taller than Jim.",
+    "Tom is more tall than Jim.",
+    "Tom is tall than Jim."
+   ],
+   "correct_answer": "B",
+   "explanation": "taller 本身就是比较级，前面不能再加 more；tallest 是最高级，more tall 和 tall 都没有正确构成比较级。",
+   "tags": [
+    "比较级",
+    "more 误用"
+   ],
+   "question_id": "english-6up-d14-q18"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 than 后面的比较对象写得对（  ）",
+   "options": [
+    "My bike is newer than your.",
+    "My bike is newer than you.",
+    "My bike is newer than yours.",
+    "My bike is newer than your's."
+   ],
+   "correct_answer": "C",
+   "explanation": "比较的是两辆自行车，than 后面用 yours 代替 your bike；your 后面缺名词，you 指人，your's 不是正确写法。",
+   "tags": [
+    "比较级",
+    "比较对象"
+   ],
+   "question_id": "english-6up-d14-q19"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句既用了 than，又把比较级写对了（  ）",
+   "options": [
+    "She is carefuller than her brother.",
+    "She is more careful to her brother.",
+    "She is more careful than her brother.",
+    "She is the most careful than her brother."
+   ],
+   "correct_answer": "C",
+   "explanation": "careful 是多音节词，比较级用 more careful，后面接 than；carefuller 拼法不对，to 不能代替 than，most careful 是最高级。",
+   "tags": [
+    "比较级",
+    "more + 长形容词"
+   ],
+   "question_id": "english-6up-d14-q20"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面这句改对后是：“This book is more interesting and more cheaper than that one.”（  ）",
+   "options": [
+    "This book is more interesting and more cheap than that one.",
+    "This book is more interesting and cheaper than that one.",
+    "This book is interestinger and cheaper than that one.",
+    "This book is most interesting and cheapest than that one."
+   ],
+   "correct_answer": "B",
+   "explanation": "interesting 用 more 构成比较级，cheap 是单音节词，直接加 -er 变 cheaper，不能再加 more；最后一句还把两个词都写成了最高级。",
+   "tags": [
+    "比较级",
+    "双比较"
+   ],
+   "question_id": "english-6up-d14-q21"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“The elephant is heavier than the horse.” 大象比马（  ）",
+   "options": [
+    "轻",
+    "高",
+    "矮",
+    "重"
+   ],
+   "correct_answer": "D",
+   "explanation": "heavier 是 heavy 的比较级，意思是更重，所以大象比马重。",
+   "tags": [
+    "比较级",
+    "读句理解"
+   ],
+   "question_id": "english-6up-d14-q22"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“Amy's ruler is longer than Ben's.” 谁的尺子长？（  ）",
+   "options": [
+    "Ben 的",
+    "两根一样长",
+    "不能确定",
+    "Amy 的"
+   ],
+   "correct_answer": "D",
+   "explanation": "longer than 表示比……长，Amy 的尺子比 Ben 的长，所以 Amy 的更长。",
+   "tags": [
+    "比较级",
+    "读句理解"
+   ],
+   "question_id": "english-6up-d14-q23"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“The green bag is heavier than the blue one, but it is cheaper.” 从句子看（  ）",
+   "options": [
+    "绿包比蓝包重，但便宜",
+    "蓝包比绿包重，也更贵",
+    "绿包比蓝包轻，但便宜",
+    "两个包一样重，价格不同"
+   ],
+   "correct_answer": "A",
+   "explanation": "前半句说绿包比蓝包重，后半句 but 转折，说绿包更便宜；另外几句把轻重或价格说反，或说成一样重。",
+   "tags": [
+    "比较级",
+    "转折理解"
+   ],
+   "question_id": "english-6up-d14-q24"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“My old schoolbag is small but light. The new one is big and heavy.” 从句子看（  ）",
+   "options": [
+    "旧书包小但轻",
+    "新书包又小又轻",
+    "两个书包一样大",
+    "旧书包又大又重"
+   ],
+   "correct_answer": "A",
+   "explanation": "旧书包 small but light，新书包 big and heavy，所以旧的小而轻。另外几句把大小轻重说反，或说成一样。",
+   "tags": [
+    "比较级",
+    "对比理解"
+   ],
+   "question_id": "english-6up-d14-q25"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“The new phone is bigger but more expensive, so I still use my old one.” 从句子可以知道（  ）",
+   "options": [
+    "旧手机更便宜，我还在用它",
+    "新手机更便宜，我天天用它",
+    "旧手机更大，我不喜欢它",
+    "两个手机价格一样"
+   ],
+   "correct_answer": "A",
+   "explanation": "新手机 bigger but more expensive，说明它更大也更贵；so 引出结果，我还是用旧手机，可见旧手机更便宜。",
+   "tags": [
+    "比较级",
+    "因果理解"
+   ],
+   "question_id": "english-6up-d14-q26"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d14",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“The yellow bird is smaller than the blue one. But the blue one sings more beautifully.” 从句子看（  ）",
+   "options": [
+    "黄鸟小，也唱得好",
+    "蓝鸟小，唱得差",
+    "黄鸟小，蓝鸟唱得好",
+    "两只鸟一样大"
+   ],
+   "correct_answer": "C",
+   "explanation": "前半句说黄鸟比蓝鸟小，后半句 but 转折，说蓝鸟唱得更动听，所以黄鸟小、蓝鸟唱得好。",
+   "tags": [
+    "比较级",
+    "对比理解"
+   ],
+   "question_id": "english-6up-d14-q27"
   },
   {
    "question_id": "english-6up-d16-q01",
@@ -5418,6 +7002,534 @@
    "question_id": "english-6up-d16-q12"
   },
   {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "I have a bad cold. I should go to the hospital and ___.",
+   "options": [
+    "see a film",
+    "see a friend",
+    "see a panda",
+    "see a doctor"
+   ],
+   "correct_answer": "D",
+   "explanation": "重感冒要去医院看病，see a doctor 是看医生。看电影、看朋友、看熊猫，都治不了感冒。",
+   "tags": [
+    "看病表达",
+    "see a doctor"
+   ],
+   "question_id": "english-6up-d16-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "— What's wrong with you?  — I have a ___. I can't stop coughing.",
+   "options": [
+    "cold",
+    "fever",
+    "cough",
+    "headache"
+   ],
+   "correct_answer": "C",
+   "explanation": "can't stop coughing 是咳个不停，说的症状就是咳嗽，用 have a cough。感冒、发烧、头疼都不能直接对应“咳个不停”。",
+   "tags": [
+    "疾病表达",
+    "have a cough"
+   ],
+   "question_id": "english-6up-d16-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“What's wrong with you?” 还可以说成（  ）",
+   "options": [
+    "What's the matter?",
+    "What's your name?",
+    "What's this in English?",
+    "What time is it now?"
+   ],
+   "correct_answer": "A",
+   "explanation": "What's wrong with you? 是问“你怎么了”，What's the matter? 意思一样。问名字、问这个用英语怎么说、问时间，都不是问病情。",
+   "tags": [
+    "问病情",
+    "同义表达"
+   ],
+   "question_id": "english-6up-d16-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "同学脸色发白，你想问他哪里不舒服，应该说（  ）",
+   "options": [
+    "What's wrong with you?",
+    "What do you want to eat?",
+    "Where are you from?",
+    "How old are you now?"
+   ],
+   "correct_answer": "A",
+   "explanation": "同学脸色不好，要问他哪里不舒服，用 What's wrong with you?。问想吃什么、从哪来、多大，都问不到病情。",
+   "tags": [
+    "问病情",
+    "情景表达"
+   ],
+   "question_id": "english-6up-d16-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "同学说 “I have a bad cold.” 下面哪一句是接着追问病情最自然的一句（  ）",
+   "options": [
+    "Do you like the film?",
+    "Do you have a fever, too?",
+    "Are you a student here?",
+    "What's your name, please?"
+   ],
+   "correct_answer": "B",
+   "explanation": "对方说得了重感冒，接着问“有没有发烧”最自然。问电影、问是不是学生、问名字，都接不上病情这个话题。",
+   "tags": [
+    "疾病问答",
+    "追问"
+   ],
+   "question_id": "english-6up-d16-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一组主语和 have 或 has 搭配正确（  ）",
+   "options": [
+    "He — have a cold",
+    "She — have a fever",
+    "They — has a fever",
+    "I — have a cold"
+   ],
+   "correct_answer": "D",
+   "explanation": "I 后面用 have，He 和 She 后面要用 has，They 后面用 have。所以 I 配 have a cold 这一组对。",
+   "tags": [
+    "have 与 has",
+    "主谓搭配"
+   ],
+   "question_id": "english-6up-d16-q18"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“Sam has a bad cold. He should stay in bed.” Sam 应该（  ）",
+   "options": [
+    "go to school",
+    "stay in bed",
+    "play football",
+    "eat ice cream"
+   ],
+   "correct_answer": "B",
+   "explanation": "句子里说 He should stay in bed，就是卧床休息。去上学、踢足球、吃冰淇淋，都不适合重感冒的孩子。",
+   "tags": [
+    "读句子",
+    "stay in bed"
+   ],
+   "question_id": "english-6up-d16-q19"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“Lucy has a fever. She can't go to school today.” 下面哪一句说错了（  ）",
+   "options": [
+    "Lucy has a fever.",
+    "Lucy feels fine today.",
+    "She can't go to school.",
+    "She is ill today."
+   ],
+   "correct_answer": "B",
+   "explanation": "句子说她发烧、今天不能上学，可见她生病了。说她今天感觉很好，和句子正好相反。",
+   "tags": [
+    "读句子",
+    "判断说法"
+   ],
+   "question_id": "english-6up-d16-q20"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“I don't feel well today.” 下面哪一句意思相同（  ）",
+   "options": [
+    "I am very happy today.",
+    "I am not busy today.",
+    "I am fine today.",
+    "I am not fine today."
+   ],
+   "correct_answer": "D",
+   "explanation": "I don't feel well 是身体不舒服，和 I am not fine today 意思相同。很开心、不忙、很好，都不是不舒服。",
+   "tags": [
+    "I don't feel well",
+    "同义句"
+   ],
+   "question_id": "english-6up-d16-q21"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“Mike has a bad cold. He is in bed now.” 你去看他，最合适说（  ）",
+   "options": [
+    "Let's play football now.",
+    "You look great today.",
+    "Have a nice trip!",
+    "Take this medicine."
+   ],
+   "correct_answer": "D",
+   "explanation": "Mike 重感冒躺在床上，看他时劝他吃药最合适。约他踢球、夸他气色好、祝他旅途愉快，都不合适。",
+   "tags": [
+    "探病",
+    "情景选句"
+   ],
+   "question_id": "english-6up-d16-q22"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读短文：“Tom has a headache. He should take some medicine and stay in bed for two days.” 医生让他（  ）",
+   "options": [
+    "go to school and study",
+    "take medicine and rest",
+    "drink cold water at once",
+    "run in the park every day"
+   ],
+   "correct_answer": "B",
+   "explanation": "短文说他头疼，应该吃药并卧床两天，所以是吃药休息。去上学、喝冷水、每天跑步，短文里都没有。",
+   "tags": [
+    "读短文",
+    "take medicine"
+   ],
+   "question_id": "english-6up-d16-q23"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读三句话：“I have a fever.” “You should see a doctor.” “OK, thank you.” 三句话的正确顺序是（  ）",
+   "options": [
+    "病情→建议→道谢",
+    "建议→病情→道谢",
+    "道谢→病情→建议",
+    "病情→道谢→建议"
+   ],
+   "correct_answer": "A",
+   "explanation": "先说发烧，医生再建议看医生，最后道谢，所以顺序是病情、建议、道谢。",
+   "tags": [
+    "对话顺序",
+    "看病表达"
+   ],
+   "question_id": "english-6up-d16-q24"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "My tooth hurts badly. I ___.（选最合适的说法）",
+   "options": [
+    "have a bad cold",
+    "have a bad cough",
+    "have a toothache",
+    "have a fever"
+   ],
+   "correct_answer": "C",
+   "explanation": "牙疼得厉害，就是 have a toothache。重感冒、咳嗽厉害、发烧，都不会让牙齿疼。",
+   "tags": [
+    "疾病词汇",
+    "toothache"
+   ],
+   "question_id": "english-6up-d16-q25"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句不是说自己身体不舒服（  ）",
+   "options": [
+    "I have a bad cold.",
+    "I have a fever.",
+    "I have a new bike.",
+    "I have a cough."
+   ],
+   "correct_answer": "C",
+   "explanation": "有一辆新自行车和身体不舒服无关。重感冒、发烧、咳嗽，都是在说身体不好。",
+   "tags": [
+    "疾病表达",
+    "句子辨析"
+   ],
+   "question_id": "english-6up-d16-q26"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“He is ill.” 和下面哪一句意思最接近（  ）",
+   "options": [
+    "He feels quite well.",
+    "He is a tall boy.",
+    "He is at school.",
+    "He feels bad now."
+   ],
+   "correct_answer": "D",
+   "explanation": "ill 是生病的、身体不舒服，He feels bad now 意思最接近。感觉很好、个子高、在学校，都不表示生病。",
+   "tags": [
+    "ill",
+    "同义表达"
+   ],
+   "question_id": "english-6up-d16-q27"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "早上起床头疼，你想告诉妈妈，最合适说（  ）",
+   "options": [
+    "I have a big lunch, Mum.",
+    "I have a new book, Mum.",
+    "I have a good idea, Mum.",
+    "I have a headache, Mum."
+   ],
+   "correct_answer": "D",
+   "explanation": "头疼是 have a headache。吃午饭、有新书、有好主意，都没有说到身体不舒服。",
+   "tags": [
+    "have a headache",
+    "情景表达"
+   ],
+   "question_id": "english-6up-d16-q28"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读对话：“What's wrong with you?” “I have a cold, but I don't have a fever.” 下面哪一句对（  ）",
+   "options": [
+    "他感冒了，也在发烧。",
+    "他有感冒，但没有发烧。",
+    "他没感冒，只是发烧。",
+    "他既没感冒，也没发烧。"
+   ],
+   "correct_answer": "B",
+   "explanation": "答句说 I have a cold, but I don't have a fever，就是有感冒、没有发烧。",
+   "tags": [
+    "读对话",
+    "have a cold"
+   ],
+   "question_id": "english-6up-d16-q29"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一组“症状—做法”配得最合理（  ）",
+   "options": [
+    "have a fever — see a doctor",
+    "have a fever — go swimming",
+    "have a cold — eat ice cream",
+    "have a headache — run a race"
+   ],
+   "correct_answer": "A",
+   "explanation": "发烧要看医生，这一组最合理。发烧去游泳、感冒吃冰淇淋、头疼去赛跑，都会让身体更难受。",
+   "tags": [
+    "症状与建议",
+    "搭配判断"
+   ],
+   "question_id": "english-6up-d16-q30"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "你想告诉妈妈“我感冒了”，应该说（  ）",
+   "options": [
+    "I have a rest, Mum.",
+    "I have a cake, Mum.",
+    "I have a cold, Mum.",
+    "I have a look, Mum."
+   ],
+   "correct_answer": "C",
+   "explanation": "感冒是 have a cold，所以要说 I have a cold, Mum.。have a rest 是休息一下，have a cake 是吃蛋糕，have a look 是看一看。",
+   "tags": [
+    "have a cold",
+    "告知病情"
+   ],
+   "question_id": "english-6up-d16-q31"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "医生问 “What's wrong with you?”，下面哪一句不能回答（  ）",
+   "options": [
+    "I have a cold.",
+    "I have a new coat.",
+    "I have a fever.",
+    "I have a headache."
+   ],
+   "correct_answer": "B",
+   "explanation": "医生问哪里不舒服，要回答感冒、发烧、头疼。说自己有一件新外套，答的不是病情。",
+   "tags": [
+    "问答",
+    "What's wrong with you?"
+   ],
+   "question_id": "english-6up-d16-q32"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“I have a cold.” 下面哪一句意思最接近（  ）",
+   "options": [
+    "I am not feeling well.",
+    "I feel very well today.",
+    "I want a new coat.",
+    "I like cold water."
+   ],
+   "correct_answer": "A",
+   "explanation": "感冒就是身体不舒服，I am not feeling well 意思最接近。感觉很好、想要新外套、喜欢冷水，都和感冒无关。",
+   "tags": [
+    "I don't feel well",
+    "同义表达"
+   ],
+   "question_id": "english-6up-d16-q33"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "医生检查完说 “Take this medicine twice a day.” 你回答（  ）",
+   "options": [
+    "OK, thank you, doctor.",
+    "No, I have a cold.",
+    "I'm sorry to hear that.",
+    "You are welcome, sir."
+   ],
+   "correct_answer": "A",
+   "explanation": "医生说一天吃两次药，病人答应并道谢最合适。说自己感冒了、说听到这事很难过、说不用谢，都不像病人的回答。",
+   "tags": [
+    "看病情景",
+    "应答表达"
+   ],
+   "question_id": "english-6up-d16-q34"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读对话：“What's wrong with you?” “I have a bad cold.” 医生接着最可能说（  ）",
+   "options": [
+    "You should go swimming now.",
+    "You should eat more ice cream.",
+    "You should take some medicine.",
+    "You should run in the rain."
+   ],
+   "correct_answer": "C",
+   "explanation": "病人说得了重感冒，医生会给建议吃药。让去游泳、吃冰淇淋、在雨里跑，只会让感冒更重。",
+   "tags": [
+    "给建议",
+    "should"
+   ],
+   "question_id": "english-6up-d16-q35"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d16",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "把看病的对话排成通顺顺序：① I have a fever. ② Take this medicine and stay in bed. ③ What's wrong with you? ④ Thank you, doctor.（  ）",
+   "options": [
+    "③①④②",
+    "①③②④",
+    "③①②④",
+    "②③①④"
+   ],
+   "correct_answer": "C",
+   "explanation": "先问怎么了，再回答发烧，医生接着给建议吃药休息，最后道谢，所以是先问、再答、再建议、最后道谢。",
+   "tags": [
+    "看病对话",
+    "排序"
+   ],
+   "question_id": "english-6up-d16-q36"
+  },
+  {
    "question_id": "english-6up-d17-q01",
    "diagnostic_node_id": "english-6up-d17",
    "subject": "english",
@@ -5682,6 +7794,534 @@
    "question_id": "english-6up-d17-q12"
   },
   {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "Amy has a cough. She ___ drink more water.（选择正确形式）",
+   "options": [
+    "should to",
+    "shoulds",
+    "shouldn't",
+    "should"
+   ],
+   "correct_answer": "D",
+   "explanation": "咳嗽时应该多喝水，should 后面直接跟动词原形 drink。should to 多了 to；shoulds 不是词；shouldn't 表示“不应该”，和句意相反。",
+   "tags": [
+    "should + 动词原形",
+    "给建议"
+   ],
+   "question_id": "english-6up-d17-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "Ben has a bad cold. He ___ go to school today.（选择正确形式）",
+   "options": [
+    "shouldn't to",
+    "don't should",
+    "shouldn't",
+    "not should"
+   ],
+   "correct_answer": "C",
+   "explanation": "重感冒不该去上学，shouldn't 后面跟动词原形 go。shouldn't to 多了 to；don't should 把两个助动词叠在一起；not should 语序不对。",
+   "tags": [
+    "shouldn't + 动词原形",
+    "劝阻"
+   ],
+   "question_id": "english-6up-d17-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "与 “You shouldn't eat too much ice cream.” 意思相同的是（  ）",
+   "options": [
+    "You should not eat too much ice cream.",
+    "You should eat too much ice cream.",
+    "You shouldn't to eat too much ice cream.",
+    "You don't should eat too much ice cream."
+   ],
+   "correct_answer": "A",
+   "explanation": "shouldn't 是 should not 的缩写，遇到 eat too much ice cream 时，两句都表示“不应该吃太多冰淇淋”。去掉 not 的说法意思正好相反；shouldn't to 多了 to；don't should 不能这样连用。",
+   "tags": [
+    "shouldn't = should not",
+    "同义表达"
+   ],
+   "question_id": "english-6up-d17-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "You should ___ the medicine after dinner.（选择正确形式）",
+   "options": [
+    "take",
+    "takes",
+    "taking",
+    "took"
+   ],
+   "correct_answer": "A",
+   "explanation": "should 后面用动词原形，所以是 take。takes 是第三人称单数；taking 是 -ing 形式；took 是过去式，都不能直接放在 should 后面。",
+   "tags": [
+    "should + 动词原形",
+    "吃药"
+   ],
+   "question_id": "english-6up-d17-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "Kate has a bad cold. She ___ go out, and she ___ stay at home.（选择正确形式）",
+   "options": [
+    "shouldn't; shouldn't",
+    "shouldn't; should",
+    "should; should not",
+    "shouldn't; shouldn't to"
+   ],
+   "correct_answer": "B",
+   "explanation": "重感冒不该出门、应该待在家，第一个空用 shouldn't，第二个空用 should，后面都跟动词原形。第二个空填 shouldn't 或 should not 都变成“不该待在家”；第一个空填 should 则变成“应该出门”；shouldn't to 多了 to。",
+   "tags": [
+    "should / shouldn't 并用",
+    "给建议"
+   ],
+   "question_id": "english-6up-d17-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "Lily has a cough. She shouldn't ___ , and she should ___ more water.（选择正确形式）",
+   "options": [
+    "talks too much; drinks",
+    "talking too much; drinking",
+    "to talk too much; to drink",
+    "talk too much; drink"
+   ],
+   "correct_answer": "D",
+   "explanation": "shouldn't 和 should 后面都跟动词原形，所以是 talk too much 和 drink more water；加 -s、-ing 或 to 都不对。",
+   "tags": [
+    "should / shouldn't",
+    "动词原形"
+   ],
+   "question_id": "english-6up-d17-q18"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“I have a fever. The doctor says I should stay in bed and drink more water.” 医生让“我”做什么（  ）",
+   "options": [
+    "多吃冰淇淋、少喝水",
+    "卧床休息、多喝水",
+    "马上去学校上课",
+    "多看电视多跑步"
+   ],
+   "correct_answer": "B",
+   "explanation": "句子说 should stay in bed and drink more water，就是卧床休息、多喝水。吃冰淇淋、上学、看电视跑步都没有出现在建议里，也和发烧时该做的相反。",
+   "tags": [
+    "读材料取信息",
+    "fever 的建议"
+   ],
+   "question_id": "english-6up-d17-q19"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“You shouldn't eat too much ice cream,” the doctor says. “You should drink warm water.” 医生认为不应该做什么（  ）",
+   "options": [
+    "每天喝温水",
+    "吃太多冰淇淋",
+    "在家好好休息",
+    "按时吃感冒药"
+   ],
+   "correct_answer": "B",
+   "explanation": "shouldn't 后面是 eat too much ice cream，医生不建议吃太多冰淇淋。喝温水是 should 的建议；好好休息和按时吃药都是合理的做法，句子并没有反对。",
+   "tags": [
+    "shouldn't 表劝阻",
+    "读材料取信息"
+   ],
+   "question_id": "english-6up-d17-q20"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“You should take this medicine twice a day, but you shouldn't drink cold water,” the doctor says. 医生的意思是什么（  ）",
+   "options": [
+    "一天吃三次药，多喝冷水",
+    "不用吃药，多喝冷水",
+    "一天吃两次药，多喝冷水",
+    "一天吃两次药，别喝冷水"
+   ],
+   "correct_answer": "D",
+   "explanation": "twice a day 是一天两次，shouldn't drink cold water 是别喝冷水，合起来就是“一天吃两次药，别喝冷水”。三次药、不用吃药都和 twice a day 不符；把 shouldn't 换成 should 的说法正好说反。",
+   "tags": [
+    "读材料取信息",
+    "should / shouldn't 对比"
+   ],
+   "question_id": "english-6up-d17-q21"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“Drink more water and take a rest. Don't eat ice cream,” Dad says to Emma. 爸爸认为 Emma 不应该做什么（  ）",
+   "options": [
+    "每天多喝温水",
+    "在家好好休息",
+    "按时吃药",
+    "吃冰淇淋"
+   ],
+   "correct_answer": "D",
+   "explanation": "Don't eat ice cream 就是不要吃冰淇淋。多喝水、好好休息是爸爸让 Emma 做的；按时吃药句子没有提到，也不是爸爸反对的事。",
+   "tags": [
+    "读材料取信息",
+    "Don't 表劝阻"
+   ],
+   "question_id": "english-6up-d17-q22"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“If your tooth hurts, you should see a dentist. Don't eat too many sweets,” Mum says. 从句子可以知道（  ）",
+   "options": [
+    "牙疼不用看医生，多吃糖就好",
+    "牙疼要看牙医，还要少吃糖",
+    "牙疼要多吃糖，不用看牙医",
+    "只有大人牙疼才要看牙医"
+   ],
+   "correct_answer": "B",
+   "explanation": "if your tooth hurts 时应该 see a dentist，同时 Don't eat too many sweets，所以是看牙医、少吃糖。其余几条把应该和不应该说反了，或者加了句子里没有的“只有大人”。",
+   "tags": [
+    "条件句取信息",
+    "should / shouldn't 表建议"
+   ],
+   "question_id": "english-6up-d17-q23"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“You should drink more water. Come back in three days if you still feel sick.” 医生让 Ben 三天后做什么（  ）",
+   "options": [
+    "还难受就再来",
+    "三天后一定来打针",
+    "三天内一口水都别喝",
+    "马上住院做手术"
+   ],
+   "correct_answer": "A",
+   "explanation": "come back in three days if you still feel sick 是说三天后还不舒服就再来，不是一定要打针。别喝水、马上住院都和句子相反，或者句子根本没有提到。",
+   "tags": [
+    "条件句取信息",
+    "复诊建议"
+   ],
+   "question_id": "english-6up-d17-q24"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句的 should 用对了（  ）",
+   "options": [
+    "You should drinks more water.",
+    "You should to drink more water.",
+    "You should drink more water.",
+    "You should drinking more water."
+   ],
+   "correct_answer": "C",
+   "explanation": "should 后面接动词原形 drink，所以 You should drink more water. 是对的。drinks 多了 -s；should to drink 多了 to；should drinking 用了 -ing 形式。",
+   "tags": [
+    "should + 动词原形",
+    "挑正确句子"
+   ],
+   "question_id": "english-6up-d17-q25"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句是在劝阻病人（  ）",
+   "options": [
+    "You should eat too much ice cream every day.",
+    "You shouldn't to eat ice cream.",
+    "You shouldn't eat too much ice cream.",
+    "You don't should eat ice cream."
+   ],
+   "correct_answer": "C",
+   "explanation": "劝阻用 shouldn't + 动词原形，You shouldn't eat too much ice cream. 是对的。用 should 的说法是在鼓励吃冰淇淋；shouldn't to 多了 to；don't should 两个词不能这样叠用。",
+   "tags": [
+    "shouldn't 表劝阻",
+    "挑正确句子"
+   ],
+   "question_id": "english-6up-d17-q26"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句给咳嗽病人的建议不合适（  ）",
+   "options": [
+    "You should drink more water for your cough.",
+    "You should stay in bed and rest.",
+    "You should take your medicine three times a day.",
+    "You should eat more ice cream for your cough."
+   ],
+   "correct_answer": "D",
+   "explanation": "咳嗽时吃更多冰淇淋会让嗓子更难受，这条建议不合适。多喝水、卧床休息、按时吃药都是照顾咳嗽病人的常见做法。",
+   "tags": [
+    "建议是否合理",
+    "咳嗽"
+   ],
+   "question_id": "english-6up-d17-q27"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句不是给病人的建议（  ）",
+   "options": [
+    "You should drink more water.",
+    "You should stay in bed.",
+    "You shouldn't go to school.",
+    "I have a bad cold today."
+   ],
+   "correct_answer": "D",
+   "explanation": "说自己得了重感冒只是在讲病情，没有给别人建议。其余三句都用 should 或 shouldn't 告诉病人该做什么、不该做什么。",
+   "tags": [
+    "建议句识别",
+    "should / shouldn't"
+   ],
+   "question_id": "english-6up-d17-q28"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句的写法有错误（  ）",
+   "options": [
+    "He should see a doctor.",
+    "He should to see a doctor.",
+    "He shouldn't see a doctor.",
+    "Should he see a doctor?"
+   ],
+   "correct_answer": "B",
+   "explanation": "should 后面直接跟动词原形，不能加 to，所以 should to see 有错误。其余三句分别是肯定、否定和疑问，写法都对。",
+   "tags": [
+    "should 后不加 to",
+    "挑错句"
+   ],
+   "question_id": "english-6up-d17-q29"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句的 should / shouldn't 和病情搭配得不对（  ）",
+   "options": [
+    "You have a fever. You should run outside.",
+    "You have a fever. You should stay in bed.",
+    "You have a cough. You shouldn't eat ice cream.",
+    "You have a toothache. You should see a dentist."
+   ],
+   "correct_answer": "A",
+   "explanation": "发烧时应该休息，不该到外面跑步，You have a fever. You should run outside. 搭配不对。发烧卧床、咳嗽不吃冰淇淋、牙疼看牙医都合情合理。",
+   "tags": [
+    "建议与病情匹配",
+    "should / shouldn't"
+   ],
+   "question_id": "english-6up-d17-q30"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "同桌咳嗽得厉害，你建议他（  ）",
+   "options": [
+    "You should eat more ice cream.",
+    "You shouldn't drink water.",
+    "You should drink more water.",
+    "You should go swimming."
+   ],
+   "correct_answer": "C",
+   "explanation": "咳嗽时多喝水是合适的建议，用 You should drink more water. 表达。吃冰淇淋、不喝水都会让咳嗽更难受；游泳也不适合正在咳嗽的人。",
+   "tags": [
+    "情景建议",
+    "should + 动词原形"
+   ],
+   "question_id": "english-6up-d17-q31"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "朋友发烧了，你劝他（  ）",
+   "options": [
+    "You should go to school and play football.",
+    "You shouldn't go to school today.",
+    "You shouldn't stay in bed at home.",
+    "You should play football outside."
+   ],
+   "correct_answer": "B",
+   "explanation": "发烧时不该去上学，用 You shouldn't go to school today. 劝阻。去上学还踢球、不该卧床、去踢球都不利于退烧。",
+   "tags": [
+    "情景劝阻",
+    "shouldn't + 动词原形"
+   ],
+   "question_id": "english-6up-d17-q32"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "— I have a toothache. — ______（选择应答句）",
+   "options": [
+    "You should see a dentist.",
+    "You should eat more sweets.",
+    "You shouldn't see a dentist.",
+    "You should drink cold water."
+   ],
+   "correct_answer": "A",
+   "explanation": "牙疼应该去看牙医，回答用 You should see a dentist。吃更多糖、不看牙医会让牙更疼；喝冷水也不是治牙疼的建议。",
+   "tags": [
+    "情景应答",
+    "牙疼的建议"
+   ],
+   "question_id": "english-6up-d17-q33"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "— What should I do? I have a bad cold. — ______（选择应答句）",
+   "options": [
+    "You should rest and drink water.",
+    "You should go out and play football.",
+    "You shouldn't drink any water.",
+    "You should eat more ice cream."
+   ],
+   "correct_answer": "A",
+   "explanation": "重感冒应该休息、喝水，所以选 You should rest and drink water。出去玩球、不喝水、吃冰淇淋都会让感冒更重。",
+   "tags": [
+    "情景应答",
+    "感冒的建议"
+   ],
+   "question_id": "english-6up-d17-q34"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "给感冒病人提两条建议，哪一句最合适（  ）",
+   "options": [
+    "You should drink more water and should stay up late.",
+    "You shouldn't drink water and should stay up late.",
+    "You should drink more water and shouldn't stay up late.",
+    "You should eat more ice cream and shouldn't see a doctor."
+   ],
+   "correct_answer": "C",
+   "explanation": "感冒时要多喝水、不熬夜，You should drink more water and shouldn't stay up late. 两个分句都用对了。说 should stay up late 的让人熬夜；说不喝水的既不补水又熬夜；说吃冰淇淋、不看医生的更不合适。",
+   "tags": [
+    "两条建议并用",
+    "should / shouldn't"
+   ],
+   "question_id": "english-6up-d17-q35"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d17",
+   "subject": "english",
+   "ability_tag": "综合表达",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“① I have a cough. ② You should drink more water. ③ Thank you.” 排成一段对话，顺序正确的是（  ）",
+   "options": [
+    "②—①—③",
+    "③—①—②",
+    "①—②—③",
+    "①—③—②"
+   ],
+   "correct_answer": "C",
+   "explanation": "先说病情 I have a cough.，再给建议 You should drink more water.，最后道谢 Thank you.，所以顺序是①—②—③。先给建议再讲病情、先道谢都不合对话常理。",
+   "tags": [
+    "对话顺序",
+    "病情与建议"
+   ],
+   "question_id": "english-6up-d17-q36"
+  },
+  {
    "diagnostic_node_id": "english-6up-d15",
    "subject": "english",
    "ability_tag": "语言运用",
@@ -5878,6 +8518,402 @@
     "句子理解"
    ],
    "question_id": "english-6up-d15-q09"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "The Spring Festival is ___ for children.（选择正确形式）",
+   "options": [
+    "the happiest time",
+    "the happier time",
+    "the happy time",
+    "the most happy time"
+   ],
+   "correct_answer": "A",
+   "explanation": "春节是孩子们最快乐的时候，happy 的最高级是 happiest，前面加 the；happier 是比较级，happy 是原形，most happy 不是正确形式。",
+   "tags": [
+    "最高级",
+    "the + 最高级"
+   ],
+   "question_id": "english-6up-d15-q10"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "你想说“春节是最好的节日”，说：（  ）",
+   "options": [
+    "The Spring Festival is the goodest festival.",
+    "The Spring Festival is the best festival.",
+    "The Spring Festival is the better festival.",
+    "The Spring Festival is the most good festival."
+   ],
+   "correct_answer": "B",
+   "explanation": "good 的最高级是不规则变化 best，前面加 the；goodest 和 most good 都不是正确形式，better 是比较级。",
+   "tags": [
+    "最高级",
+    "不规则 good"
+   ],
+   "question_id": "english-6up-d15-q11"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "Of the three festivals, the Spring Festival is ___.（用 important 的正确形式）",
+   "options": [
+    "the more important",
+    "the important one",
+    "the most importanter",
+    "the most important"
+   ],
+   "correct_answer": "D",
+   "explanation": "三者比较用最高级，important 是多音节词，前面加 the most；more important 用于两者比较，另外两个少了 most 或重复了最高级。",
+   "tags": [
+    "最高级",
+    "三者比较"
+   ],
+   "question_id": "english-6up-d15-q12"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面这句哪里错了：“Of all the festivals, I like the Spring Festival bestest.”（  ）",
+   "options": [
+    "bestest 要改成 better",
+    "bestest 要改成 best",
+    "like 要改成 likes 才对",
+    "festivals 改成 festival"
+   ],
+   "correct_answer": "B",
+   "explanation": "good 的最高级是 best，不能写成 bestest；better 是比较级，主语 I 后面的 like 用原形，festivals 是复数，都没有错。",
+   "tags": [
+    "最高级",
+    "不规则 good"
+   ],
+   "question_id": "english-6up-d15-q13"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "你想说“在所有节日中，春节是最重要的”，说：（  ）",
+   "options": [
+    "Of all the festivals, the Spring Festival is the more important.",
+    "Of all the festivals, the Spring Festival is the most importantest.",
+    "Of all the festivals, the Spring Festival is the most important.",
+    "Of all the festivals, the Spring Festival is the important most."
+   ],
+   "correct_answer": "C",
+   "explanation": "表示在所有节日中排第一，要用最高级 the most important；more important 是比较级，most importantest 重复了最高级，important most 词序不对。",
+   "tags": [
+    "最高级",
+    "of all 范围"
+   ],
+   "question_id": "english-6up-d15-q14"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "语言运用",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面这句话哪里要改：“The Spring Festival is most important festival in China.”（  ）",
+   "options": [
+    "把 festival 加 s",
+    "把 most 改成 more",
+    "把 in 改成 of",
+    "要在 most 前加 the"
+   ],
+   "correct_answer": "D",
+   "explanation": "最高级前要加 the，most important 前缺了 the；festival 这里是单数，不用改成复数，most 不能换成 more，in China 表示范围是对的。",
+   "tags": [
+    "最高级",
+    "the 缺失"
+   ],
+   "question_id": "english-6up-d15-q15"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句不是最高级（  ）",
+   "options": [
+    "The Spring Festival is the most important festival.",
+    "Christmas is the most popular festival in the West.",
+    "Mid-Autumn is more popular than Dragon Boat.",
+    "The Dragon Boat Festival is the oldest of the three."
+   ],
+   "correct_answer": "A",
+   "explanation": "最高级表示“最……”，常和 the 连用；第三句用 more popular than，是两者比较的比较级，不是最高级。",
+   "tags": [
+    "最高级",
+    "比较级辨析"
+   ],
+   "question_id": "english-6up-d15-q16"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "下面哪一句中最高级的形式写对了（  ）",
+   "options": [
+    "She is tallest girl in her class.",
+    "She is the tallest girl in her class.",
+    "She is the taller girl in her class.",
+    "She is the most tall girl in her class."
+   ],
+   "correct_answer": "B",
+   "explanation": "tall 是单音节词，最高级加 -est，并在前面加 the；缺 the、用比较级 taller、用 most tall 都不对。",
+   "tags": [
+    "最高级",
+    "单音节"
+   ],
+   "question_id": "english-6up-d15-q17"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "下面哪一句中最高级后面的范围写得对（  ）",
+   "options": [
+    "She is the youngest in the three.",
+    "She is the youngest of the three.",
+    "She is the younger of the three.",
+    "She is the most young of the three."
+   ],
+   "correct_answer": "B",
+   "explanation": "三个孩子比较用最高级，范围是三个时用 of the three；in the three 说法不对，younger 是比较级，most young 不是正确形式。",
+   "tags": [
+    "最高级",
+    "of + 范围"
+   ],
+   "question_id": "english-6up-d15-q18"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "“This is the most biggest cake in the shop.” 改对后是（  ）",
+   "options": [
+    "This is the most big cake in the shop.",
+    "This is the bigger cake in the shop.",
+    "This is the biggest cake in the shop.",
+    "This is the biggest than the shop."
+   ],
+   "correct_answer": "C",
+   "explanation": "big 的最高级是 biggest，不能再加 most；most big 缺 -est，bigger 是比较级，biggest 后面也不能接 than。",
+   "tags": [
+    "最高级",
+    "重复最高级"
+   ],
+   "question_id": "english-6up-d15-q19"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句中 good 的最高级用对了（  ）",
+   "options": [
+    "Lucy is the goodest singer in our class.",
+    "Lucy is the bestest singer in our class.",
+    "Lucy is the best singer in our class.",
+    "Lucy is the better singer in our class."
+   ],
+   "correct_answer": "C",
+   "explanation": "good 的最高级是不规则变化 best；goodest 和 bestest 都是错误拼写，better 是比较级。",
+   "tags": [
+    "最高级",
+    "不规则 good"
+   ],
+   "question_id": "english-6up-d15-q20"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "辨析判断",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "下面哪一句中最高级的用法和形式都正确（  ）",
+   "options": [
+    "Of all the festivals, Christmas is most popular one.",
+    "Of all the festivals, Christmas is the most popular.",
+    "Of all the festivals, Christmas is the more popular.",
+    "Of all the festivals, Christmas is the most popularer."
+   ],
+   "correct_answer": "B",
+   "explanation": "of all 表示在全部节日中，用最高级 the most popular；少了 the、用比较级 more popular、把 popular 再加 -er 都不对。",
+   "tags": [
+    "最高级",
+    "of all 范围"
+   ],
+   "question_id": "english-6up-d15-q21"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“At the Mid-Autumn Festival, families eat mooncakes and look at the moon.” 中秋节人们会（  ）",
+   "options": [
+    "吃粽子、赛龙舟",
+    "吃饺子、拿红包",
+    "装饰圣诞树",
+    "吃月饼、赏月"
+   ],
+   "correct_answer": "D",
+   "explanation": "句子里说 eat mooncakes and look at the moon，就是吃月饼、赏月；粽子龙舟是端午，饺子红包是春节，圣诞树是圣诞。",
+   "tags": [
+    "节日习俗",
+    "中秋"
+   ],
+   "question_id": "english-6up-d15-q22"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "记忆理解",
+   "difficulty_preset": "易",
+   "question_type": "选择题",
+   "stem": "读句子：“Children get red packets at the Spring Festival.” 孩子们在春节会得到（  ）",
+   "options": [
+    "月饼",
+    "粽子",
+    "圣诞礼物",
+    "红包"
+   ],
+   "correct_answer": "D",
+   "explanation": "red packets 是红包，春节时长辈给孩子红包；月饼是中秋节，粽子是端午节，圣诞礼物是圣诞节。",
+   "tags": [
+    "节日习俗",
+    "春节"
+   ],
+   "question_id": "english-6up-d15-q23"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“Of the three festivals, the Dragon Boat Festival is the oldest.” 这三个节日里最古老的是（  ）",
+   "options": [
+    "端午节",
+    "春节",
+    "中秋节",
+    "三个一样古老"
+   ],
+   "correct_answer": "A",
+   "explanation": "句子说 the Dragon Boat Festival is the oldest，三个里最古老的是端午。说成春节、中秋，或说三个一样古老，都和句子不符。",
+   "tags": [
+    "最高级",
+    "节日比较"
+   ],
+   "question_id": "english-6up-d15-q24"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "应用",
+   "difficulty_preset": "中",
+   "question_type": "选择题",
+   "stem": "读句子：“Of the three big festivals, the Spring Festival is the most important.” 从句子看（  ）",
+   "options": [
+    "三个节日里春节最重要",
+    "三个节日里中秋最重要",
+    "春节和中秋一样重要",
+    "三个节日都不重要"
+   ],
+   "correct_answer": "A",
+   "explanation": "句子用最高级 the most important，范围是三个大节日，说明春节在三个里最重要。",
+   "tags": [
+    "最高级",
+    "三者比较"
+   ],
+   "question_id": "english-6up-d15-q25"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“The Mid-Autumn Festival is the most beautiful of the three. Families eat mooncakes.” 从句子可以知道（  ）",
+   "options": [
+    "中秋最美，人们吃月饼",
+    "中秋最美，人们吃粽子",
+    "端午最美，人们吃月饼",
+    "中秋最美，人们赛龙舟"
+   ],
+   "correct_answer": "A",
+   "explanation": "前半句说中秋在三个节日里最美，后半句说家人吃月饼；粽子是端午的食物，龙舟是端午的活动，句子都没有提到。",
+   "tags": [
+    "节日习俗",
+    "最高级"
+   ],
+   "question_id": "english-6up-d15-q26"
+  },
+  {
+   "diagnostic_node_id": "english-6up-d15",
+   "subject": "english",
+   "ability_tag": "阅读理解",
+   "cognitive_level": "分析评价创造",
+   "difficulty_preset": "难",
+   "question_type": "选择题",
+   "stem": "读句子：“Spring Festival is the happiest time for children. They get red packets.” 从句子可以知道（  ）",
+   "options": [
+    "春节是大人最快乐的时候",
+    "孩子在春节吃月饼",
+    "春节是孩子最快乐的时候",
+    "孩子在春节赛龙舟"
+   ],
+   "correct_answer": "C",
+   "explanation": "句子说春节是孩子们最快乐的时候，还提到孩子拿红包；另一句把对象换成大人，月饼和龙舟是别的节日。",
+   "tags": [
+    "节日习俗",
+    "最高级"
+   ],
+   "question_id": "english-6up-d15-q27"
   },
   {
    "diagnostic_node_id": "english-6up-d18",
