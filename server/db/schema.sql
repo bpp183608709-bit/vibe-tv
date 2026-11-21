@@ -586,8 +586,22 @@ CREATE TABLE weakness (
   evidence_question_ids JSON   NULL,                 -- three question codes, newest first
   parent_aggregate_node_id VARCHAR(24) NOT NULL,     -- unit.code, e.g. math-6up-u01
   parent_aggregate_name    VARCHAR(64) NOT NULL,
-  resolved       TINYINT(1)    NOT NULL DEFAULT 0,
-  opened_at      DATETIME      NOT NULL,
+  resolved       TINYINT(1)    NOT NULL DEFAULT 0,      -- 0 = active, 1 = resolved (docs/weakness-calc-mapping.md)
+  opened_at      DATETIME      NOT NULL,                -- first detection; a relapse keeps it
+  -- The state machine's frozen explanations. Written once at detection and never rewritten by a later
+  -- window, so "why was this called weak" stays answerable after the child has recovered.
+  initial_level  TINYINT UNSIGNED NULL,                 -- band at detection (0 or 1)
+  detection_snapshot     JSON NULL,                     -- wa / n / difficulty mix at detection
+  detection_history      JSON NULL,                     -- previous detection snapshots, oldest first
+  current_window_snapshot JSON NULL,                    -- wa / n / medium_correct / hard_correct now
+  closing_snapshot       JSON NULL,                     -- the four numbers at the moment it closed
+  cause_tags     JSON NULL,                             -- up to two ability lines that explain it
+  cause_status   VARCHAR(24) NULL,                      -- ok / insufficient_sample
+  resolved_at    DATETIME NULL,
+  reopen_count   TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  reopened_at    DATETIME NULL,
+  -- Moves only when a new answer enters the window: a parent's ±10 must not look like practice.
+  last_practiced_at DATETIME NULL,
   updated_at     DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (weakness_id),
   UNIQUE KEY uk_weakness (device_id, topic_id),

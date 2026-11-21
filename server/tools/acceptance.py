@@ -1502,8 +1502,10 @@ def main(argv: list[str] | None = None) -> int:
               bool(rows) and all(row["diagnostic_node_id"] for row in rows),
               str(rows[:1]))
 
-        # A node that climbs back to 熟练 resolves its weakness row; it is not deleted, so the history
-        # survives. Driven through mastery.record_tv_answer, the path a real answer takes.
+        # A weakness row closes only when the 15-question window clears all three at once:
+        # WA ≥ 0.8, hard_correct ≥ 1, medium_correct ≥ 3 (docs/weakness-calc-mapping.md §5.3).
+        # Climbing to 熟练 (0.6–0.8) is deliberately not enough any more, so the seed below has to
+        # answer four hard questions right, not just ten easy ones.
         probe_device = pair()
         seed_topic = int(stumbled[0])
         with weakness_probe.tx() as cur:
@@ -1511,7 +1513,7 @@ def main(argv: list[str] | None = None) -> int:
                 mastery.record_tv_answer(
                     cur, device_id=probe_device, topic_id=seed_topic, correct=False, flagged=False,
                     session_id="01ACCEPTANCE000000000000W", question_id=300 + index,
-                    now_ms=T, now_iso=iso_p2)
+                    now_ms=T, now_iso=iso_p2, difficulty=2)
         opened = weakness_probe.query_one(
             "SELECT weakness_id, mastery_level, resolved FROM weakness"
             " WHERE device_id = ? AND topic_id = ?", (probe_device, seed_topic))
@@ -1520,15 +1522,15 @@ def main(argv: list[str] | None = None) -> int:
               str(opened))
 
         with weakness_probe.tx() as cur:
-            for index in range(mastery.MASTERY_WINDOW):
+            for index in range(12):
                 mastery.record_tv_answer(
                     cur, device_id=probe_device, topic_id=seed_topic, correct=True, flagged=False,
                     session_id="01ACCEPTANCE000000000000W", question_id=400 + index,
-                    now_ms=T, now_iso=iso_p2)
+                    now_ms=T, now_iso=iso_p2, difficulty=3 if index < 4 else 2)
         healed = weakness_probe.query_one(
-            "SELECT weakness_id, resolved FROM weakness WHERE device_id = ? AND topic_id = ?",
-            (probe_device, seed_topic))
-        check("ten right answers mark it resolved instead of deleting it",
+            "SELECT weakness_id, resolved, closing_snapshot FROM weakness"
+            " WHERE device_id = ? AND topic_id = ?", (probe_device, seed_topic))
+        check("twelve right answers (four hard, eight medium) close it instead of deleting it",
               healed is not None and int(healed["resolved"]) == 1
               and healed["weakness_id"] == opened["weakness_id"],
               str(healed))

@@ -31,6 +31,7 @@ from __future__ import annotations
 import datetime
 import json
 
+from server.app import weakness
 from server.app.ids import new_ulid
 
 #: How many answers the accuracy is computed over. Rolling, not cumulative.
@@ -235,12 +236,16 @@ def _emit(cur, *, device_id: str, topic_id: int, kind: str, delta: int, score_af
 
 def _store(cur, *, device_id: str, topic_id: int, summary: dict, bias: int, wrong_streak: int,
            paused_until: str | None, total_wrong: int, total_right: int, weak_since: str | None,
-           seq: int, now_iso: str) -> dict:
-    """Write the derived columns, the drill-down and the weak-list row, then hand back what callers return.
+           seq: int, now_iso: str, new_evidence: bool = True) -> dict:
+    """Write the derived columns, the drill-down and the weakness state machine, then hand back what
+    callers return.
 
-    All four writes are in the caller's transaction: the level, the ability split, the weak row and the
-    ledger entry it came from move together or not at all. A report that reads a level from one and a
-    weakness from another is how a parent ends up looking at two different answers to the same question.
+    All four writes are in the caller's transaction: the level, the ability split, the weakness row and
+    the ledger entry it came from move together or not at all. A report that reads a level from one and
+    a weakness from another is how a parent ends up looking at two different answers to the same question.
+
+    `new_evidence` separates "the child answered something" from "the window was recomputed" (a voided
+    question, a parent's ±10): the weakness row's `last_practiced_at` must not move for the latter.
     """
     level = level_of(summary["acc_x1000"], summary["hard_right"])
     score = score_of(summary["acc_x1000"], bias)
@@ -257,8 +262,10 @@ def _store(cur, *, device_id: str, topic_id: int, summary: dict, bias: int, wron
          weak_since, json.dumps(abilities, ensure_ascii=False) if abilities else None,
          now_iso, now_iso, device_id, topic_id),
     )
-    _sync_weakness(cur, device_id=device_id, topic_id=topic_id, level=level,
-                   acc=summary["acc_x1000"], sample=summary["sample_count"], now_iso=now_iso)
+    # The weakness row is its own model (15 distinct questions, persisted state machine): see
+    # server/app/weakness.py and docs/weakness-calc-mapping.md. This is the only place it is written.
+    weakness.sync(cur, device_id=device_id, topic_id=topic_id, now_iso=now_iso,
+                  new_evidence=new_evidence)
     return {"score": score, "level": level, "acc": summary["acc_x1000"] / 1000,
             "sample_count": summary["sample_count"], "paused_until": paused_until}
 
@@ -308,9 +315,10 @@ def _refresh_ability(cur, *, device_id: str, topic_id: int, ability_tag: str, no
 
 
 def _window_questions(cur, device_id: str, topic_id: int) -> list[dict]:
-    """The counted rows of the current window that name a question, newest first.
+    """The counted rows of the current node window that name a question, newest first.
 
-    `question_id` is stored on the event rather than parsed back out of `ref_id`, so this is one join
+    Kept for the per-cell tests, which contrast this ten-row slice with the cells' own windows:
+    `question_id` is stored on the event rather than parsed back out of `ref_id`, so it is one join
     instead of string surgery on '<session>:<question>'.
     """
     return cur.query(
@@ -340,58 +348,6 @@ def _ability_breakdown(cur, device_id: str, topic_id: int) -> list[dict]:
     )
     return [{"tag": row["ability_tag"], "sample": int(row["sample_count"]),
              "acc": int(row["acc_x1000"]), "level": int(row["level"])} for row in rows]
-
-
-def _sync_weakness(cur, *, device_id: str, topic_id: int, level: int, acc: int, sample: int,
-                   now_iso: str) -> None:
-    """Keep the weakness row in step with the level just stored.
-
-    Three cases, and only three:
-      * not measured yet (sample < 3) — nothing to say, leave the row as it is;
-      * measured and weak (level <= 1) — upsert, clearing `resolved` if this is a relapse;
-      * measured and not weak — mark `resolved` if a row exists, never delete it.
-
-    Resolved rather than deleted, so "was he weak in September" stays answerable and `opened_at` keeps
-    the first occurrence across relapses.
-    """
-    if int(sample) < MIN_SAMPLE:
-        return
-    existing = cur.query_one(
-        "SELECT weakness_id, opened_at FROM weakness WHERE device_id = ? AND topic_id = ?",
-        (device_id, topic_id),
-    )
-    if level > 1:
-        if existing is not None:
-            cur.execute("UPDATE weakness SET resolved = 1, updated_at = ? WHERE weakness_id = ?",
-                        (now_iso, existing["weakness_id"]))
-        return
-
-    where = cur.query_one(
-        "SELECT t.code AS node_code, u.code AS aggregate_code, u.name_zh AS aggregate_name"
-        " FROM topic t JOIN unit u ON u.id = t.unit_id WHERE t.id = ?",
-        (topic_id,),
-    )
-    if where is None or not where.get("node_code"):
-        return
-    evidence = [row["question_code"] for row in _window_questions(cur, device_id, topic_id)
-                if row.get("question_code")][:3]
-    values = (level, acc, sample, json.dumps(evidence, ensure_ascii=False),
-              where["aggregate_code"], where["aggregate_name"], now_iso)
-    if existing is None:
-        cur.execute(
-            "INSERT INTO weakness (weakness_id, device_id, topic_id, diagnostic_node_id, mastery_level,"
-            " weighted_accuracy, sample_count, evidence_question_ids, parent_aggregate_node_id,"
-            " parent_aggregate_name, resolved, opened_at, updated_at)"
-            " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?)",
-            (new_ulid(), device_id, topic_id, where["node_code"], *values, now_iso),
-        )
-    else:
-        cur.execute(
-            "UPDATE weakness SET diagnostic_node_id = ?, mastery_level = ?, weighted_accuracy = ?,"
-            " sample_count = ?, evidence_question_ids = ?, parent_aggregate_node_id = ?,"
-            " parent_aggregate_name = ?, resolved = 0, updated_at = ? WHERE weakness_id = ?",
-            (where["node_code"], *values, existing["weakness_id"]),
-        )
 
 
 def _weak_since(old_level: int | None, new_level: int, current: str | None, now_iso: str) -> str | None:
@@ -443,7 +399,8 @@ def _apply(cur, *, device_id: str, topic_id: int, row: dict, kind: str, is_corre
                          now_iso=now_iso, seq=seq)
     stored = _store(cur, device_id=device_id, topic_id=topic_id, summary=summary, bias=bias,
                     wrong_streak=wrong_streak, paused_until=paused_until, total_wrong=total_wrong,
-                    total_right=total_right, weak_since=weak_since, seq=seq, now_iso=now_iso)
+                    total_right=total_right, weak_since=weak_since, seq=seq, now_iso=now_iso,
+                    new_evidence=counted)
     # The caller's `delta` and the ledger's `delta` are the same number, by construction: replaying the
     # events must land on the stored score. `acc` is what explains it, `delta` is what the toast shows.
     stored["delta"] = score - old_score
@@ -473,7 +430,8 @@ def record_tv_answer(cur, *, device_id: str, topic_id: int, correct: bool, flagg
             window_of(cur, device_id, topic_id)), bias=int(row["bias"] or 0), wrong_streak=0,
             paused_until=row["paused_until"], total_wrong=int(row["total_wrong"] or 0),
             total_right=int(row["total_right"] or 0),
-            weak_since=row["weak_since"], seq=int(row["seq"] or 0), now_iso=now_iso)
+            weak_since=row["weak_since"], seq=int(row["seq"] or 0), now_iso=now_iso,
+            new_evidence=False)
         return {"score": int(row["score"] or 0), "level": int(row["level"] or 0),
                 "acc": int(row["acc_x1000"] or 0) / 1000,
                 "sample_count": int(row["sample_count"] or 0), "paused_until": row["paused_until"]}
@@ -533,7 +491,7 @@ def adjust(cur, *, device_id: str, topic_id: int, delta: int, note: str, now_iso
            total_wrong=int(row["total_wrong"] or 0), total_right=int(row["total_right"] or 0),
            weak_since=_weak_since(int(row["level"]) if int(row["sample_count"] or 0) >= MIN_SAMPLE else None,
                                   level, row["weak_since"], now_iso),
-           seq=int(row["seq"] or 0), now_iso=now_iso)
+           seq=int(row["seq"] or 0), now_iso=now_iso, new_evidence=False)
     return {"score": new_score, "level": level, "delta": new_score - old_score, "bias": bias}
 
 
@@ -589,7 +547,7 @@ def void_question(cur, *, device_id: str, question_id: int, note: str, now_iso: 
                weak_since=_weak_since(
                    int(row["level"]) if int(row["sample_count"] or 0) >= MIN_SAMPLE else None,
                    level, row["weak_since"], now_iso),
-               seq=int(row["seq"] or 0), now_iso=now_iso)
+               seq=int(row["seq"] or 0), now_iso=now_iso, new_evidence=False)
         touched.append({"topic_id": topic_id, "score": new_score, "level": level,
                         "delta": new_score - old_score})
     return {"topics": touched, "events": len(rows)}

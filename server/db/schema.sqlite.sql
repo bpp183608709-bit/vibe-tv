@@ -456,8 +456,19 @@ CREATE TABLE weakness (
   evidence_question_ids TEXT NULL,                -- JSON array of question codes
   parent_aggregate_node_id TEXT NOT NULL,         -- unit.code
   parent_aggregate_name    TEXT NOT NULL,
-  resolved       INTEGER NOT NULL DEFAULT 0,
+  resolved       INTEGER NOT NULL DEFAULT 0,      -- 0 = active, 1 = resolved
   opened_at      TEXT    NOT NULL,
+  initial_level  INTEGER NULL,
+  detection_snapshot TEXT NULL,
+  detection_history  TEXT NULL,
+  current_window_snapshot TEXT NULL,
+  closing_snapshot   TEXT NULL,
+  cause_tags     TEXT NULL,
+  cause_status   TEXT NULL,
+  resolved_at    TEXT NULL,
+  reopen_count   INTEGER NOT NULL DEFAULT 0,
+  reopened_at    TEXT NULL,
+  last_practiced_at TEXT NULL,
   updated_at     TEXT    NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (weakness_id),
   UNIQUE (device_id, topic_id),

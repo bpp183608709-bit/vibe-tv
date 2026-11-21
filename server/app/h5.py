@@ -696,10 +696,11 @@ class H5:
         if topic_id is not None:
             where, params, tail = "WHERE t.id = ?", (device_id, device_id, topic_id), "ORDER BY t.id"
         elif floor:
-            # A node is on the list only once it has been measured (sample_count ≥ 3) and is weak
-            # (level ≤ 1). Membership comes from the `weakness` table rather than being re-derived here:
-            # the page and the number then cannot disagree about what "weak" means, because one write
-            # (mastery._sync_weakness) decides both. Worst first: lowest level, then lowest accuracy.
+            # A node is on the list only once it has been measured (n ≥ 3 in the 15-question window)
+            # and is weak (WA < 0.6). Membership comes from the `weakness` table rather than being
+            # re-derived here: the page and the number then cannot disagree about what "weak" means,
+            # because one write (`weakness.sync`) decides both. Worst first: lowest level, then lowest
+            # accuracy.
             where = ("WHERE EXISTS (SELECT 1 FROM weakness w"
                      " WHERE w.device_id = ? AND w.topic_id = t.id AND w.resolved = 0)")
             params = (device_id, device_id, device_id)

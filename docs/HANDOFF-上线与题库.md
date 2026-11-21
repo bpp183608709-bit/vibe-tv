@@ -140,7 +140,7 @@ ssh -i ~/.ssh/misty_deploy root@47.95.198.148 'sh /opt/wrong-quiz/server/tools/a
 
 题库现状（**2026-11-21 01:15 迁移后直接查生产库**）：**1917 题 / 67 个诊断节点 / 28 个单元**
 （数学 864、语文 576、英语 477），三科各 45 / 30 / 40 格，每格 3 易 3 中 3 难。M3 的一期题库已全部入库，
-五道闸（schema / content / outline / ability / matrix）在本地全绿，`pytest 141 passed`。
+五道闸（schema / content / outline / ability / matrix）在本地全绿，`pytest 158 passed`。
 
 > 注：`docs/PLAN-上线与题库.md` §1.2 里写的「30 个全部 `verified=false`」已经过时——当前库里
 > 没有 `verified` 这类字段，别照着它改表。
