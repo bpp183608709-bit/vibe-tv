@@ -1,0 +1,7749 @@
+{
+ "meta": {
+  "source": "knowledge-eval/data",
+  "window": 15,
+  "short_window": {
+   "total": 5,
+   "medium": 2,
+   "hard": 1,
+   "fill_easy_or_medium": 2
+  },
+  "thresholds": {
+   "L1": 15,
+   "L2": 20,
+   "L3": 25
+  }
+ },
+ "summary": {
+  "questions": 1917,
+  "nodes": 67,
+  "subjects": 3,
+  "ability_tags": 8,
+  "difficulties": 3,
+  "theoretical_cells": 804,
+  "declared_cells": 213,
+  "not_applicable_cells": 591,
+  "filled_cells": 213,
+  "empty_cells": 0,
+  "empty_ratio": 0.0,
+  "disabled_questions": 0,
+  "orphan_questions": 0
+ },
+ "subjects": [
+  {
+   "subject": "math",
+   "name_zh": "数学",
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "questions": 864,
+   "nodes": 25,
+   "cells_declared": 96,
+   "levels": {
+    "L0": 0,
+    "L1": 0,
+    "L2": 0,
+    "L3": 25
+   }
+  },
+  {
+   "subject": "chinese",
+   "name_zh": "语文",
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断",
+    "综合表达"
+   ],
+   "questions": 576,
+   "nodes": 22,
+   "cells_declared": 64,
+   "levels": {
+    "L0": 0,
+    "L1": 4,
+    "L2": 0,
+    "L3": 18
+   }
+  },
+  {
+   "subject": "english",
+   "name_zh": "英语",
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断",
+    "综合表达"
+   ],
+   "questions": 477,
+   "nodes": 20,
+   "cells_declared": 53,
+   "levels": {
+    "L0": 0,
+    "L1": 10,
+    "L2": 0,
+    "L3": 10
+   }
+  }
+ ],
+ "nodes": [
+  {
+   "code": "math-6up-d05",
+   "name_zh": "用方向和距离确定位置",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u01",
+   "unit_name_zh": "确定位置",
+   "chapter_order": 1,
+   "ability_lines": [
+    "理解意义",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d26",
+   "name_zh": "用有序数对确定位置",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u01",
+   "unit_name_zh": "确定位置",
+   "chapter_order": 1,
+   "ability_lines": [
+    "理解意义",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d01",
+   "name_zh": "分数乘整数",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u02",
+   "unit_name_zh": "分数乘法",
+   "chapter_order": 2,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d02",
+   "name_zh": "一个数乘分数",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u02",
+   "unit_name_zh": "分数乘法",
+   "chapter_order": 2,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d03",
+   "name_zh": "分数、小数混合运算与运算律",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u02",
+   "unit_name_zh": "分数乘法",
+   "chapter_order": 2,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d04",
+   "name_zh": "积与因数的大小关系",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u02",
+   "unit_name_zh": "分数乘法",
+   "chapter_order": 2,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d06",
+   "name_zh": "倒数的认识",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u03",
+   "unit_name_zh": "分数除法",
+   "chapter_order": 3,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d07",
+   "name_zh": "分数除法的计算",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u03",
+   "unit_name_zh": "分数除法",
+   "chapter_order": 3,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d08",
+   "name_zh": "商与被除数的关系",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u03",
+   "unit_name_zh": "分数除法",
+   "chapter_order": 3,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d09",
+   "name_zh": "分数除法应用题",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u03",
+   "unit_name_zh": "分数除法",
+   "chapter_order": 3,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d27",
+   "name_zh": "负数的意义与读写",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u04",
+   "unit_name_zh": "生活中的负数",
+   "chapter_order": 4,
+   "ability_lines": [
+    "理解意义",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d28",
+   "name_zh": "负数在生活中的应用",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u04",
+   "unit_name_zh": "生活中的负数",
+   "chapter_order": 4,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d13",
+   "name_zh": "圆的认识与对称性",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u05",
+   "unit_name_zh": "圆",
+   "chapter_order": 5,
+   "ability_lines": [
+    "理解意义",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d14",
+   "name_zh": "圆周率与圆的周长",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u05",
+   "unit_name_zh": "圆",
+   "chapter_order": 5,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d15",
+   "name_zh": "圆的面积",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u05",
+   "unit_name_zh": "圆",
+   "chapter_order": 5,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d16",
+   "name_zh": "组合图形与扇形",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u05",
+   "unit_name_zh": "圆",
+   "chapter_order": 5,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d23",
+   "name_zh": "确定起跑线",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u06",
+   "unit_name_zh": "体育中的数学",
+   "chapter_order": 6,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d17",
+   "name_zh": "百分数的意义与取值范围",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u07",
+   "unit_name_zh": "百分数",
+   "chapter_order": 7,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d18",
+   "name_zh": "百分数与小数、分数的互化",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u07",
+   "unit_name_zh": "百分数",
+   "chapter_order": 7,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d19",
+   "name_zh": "百分数增减的综合应用",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u07",
+   "unit_name_zh": "百分数",
+   "chapter_order": 7,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d29",
+   "name_zh": "用百分数比较数据",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u07",
+   "unit_name_zh": "百分数",
+   "chapter_order": 7,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d24",
+   "name_zh": "节约用水的数据",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u08",
+   "unit_name_zh": "水是生命之源",
+   "chapter_order": 8,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d25",
+   "name_zh": "分数四则混合运算",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u-review",
+   "unit_name_zh": "复习与关联",
+   "chapter_order": 9,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d30",
+   "name_zh": "应用提升：分数与百分数的实际问题",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u-review",
+   "unit_name_zh": "复习与关联",
+   "chapter_order": 9,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "math-6up-d31",
+   "name_zh": "数学广角：鸽巢问题",
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "unit_code": "math-6up-u-review",
+   "unit_name_zh": "复习与关联",
+   "chapter_order": 9,
+   "ability_lines": [
+    "理解意义",
+    "执行计算",
+    "情境应用",
+    "辨析变式"
+   ],
+   "grid": {
+    "理解意义": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "执行计算": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "情境应用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析变式": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "理解意义",
+       "执行计算"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "理解意义",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "情境应用"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "执行计算",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "情境应用",
+       "辨析变式"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d01",
+   "name_zh": "写景状物类文本的语境词义与情感把握",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u01",
+   "unit_name_zh": "触摸自然",
+   "chapter_order": 1,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d02",
+   "name_zh": "古诗词的背诵与理解（宿建德江·六月二十七日望湖楼醉书·西江月·夜行黄沙道中）",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u01",
+   "unit_name_zh": "触摸自然",
+   "chapter_order": 1,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d15",
+   "name_zh": "排比、分号的运用与《过故人庄》",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u01",
+   "unit_name_zh": "触摸自然",
+   "chapter_order": 1,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d03",
+   "name_zh": "革命题材叙事文的场面概括与人物品质",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u02",
+   "unit_name_zh": "重温革命岁月",
+   "chapter_order": 2,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d04",
+   "name_zh": "点面结合写法的辨识",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u02",
+   "unit_name_zh": "重温革命岁月",
+   "chapter_order": 2,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断",
+    "综合表达"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "综合表达": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "综合表达"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "综合表达"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "辨析判断",
+       "综合表达"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d16",
+   "name_zh": "爱国名言的积累与“反复”的表达效果",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u02",
+   "unit_name_zh": "重温革命岁月",
+   "chapter_order": 2,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d05",
+   "name_zh": "按任务筛选信息与调整阅读速度",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u03",
+   "unit_name_zh": "有目的地阅读",
+   "chapter_order": 3,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d17",
+   "name_zh": "分条表述与《春日》",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u03",
+   "unit_name_zh": "有目的地阅读",
+   "chapter_order": 3,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d06",
+   "name_zh": "小说三要素的识别与分析",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u04",
+   "unit_name_zh": "小说阅读",
+   "chapter_order": 4,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d07",
+   "name_zh": "环境描写与人物心理的关系",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u04",
+   "unit_name_zh": "小说阅读",
+   "chapter_order": 4,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d18",
+   "name_zh": "小说人物内心的体会",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u04",
+   "unit_name_zh": "小说阅读",
+   "chapter_order": 4,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d22",
+   "name_zh": "《童年》的人物与情节",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u04",
+   "unit_name_zh": "小说阅读",
+   "chapter_order": 4,
+   "ability_lines": [
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 18,
+   "cells_declared": 2,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L1",
+   "level_zh": "L1 仅可立案",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 1,
+    "feasible_combos": 1,
+    "combos": [
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 3,
+    "elimination_need": 5,
+    "repeats_required": 2
+   },
+   "patches": {
+    "to_l2": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ],
+    "to_l3": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 2
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "阅读理解",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "阅读理解",
+      "difficulty": "易",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "易",
+      "count": 1
+     }
+    ]
+   }
+  },
+  {
+   "code": "chinese-6up-d08",
+   "name_zh": "围绕中心意思选取材料",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u05",
+   "unit_name_zh": "围绕中心意思写",
+   "chapter_order": 5,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断",
+    "综合表达"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "综合表达": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "综合表达"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "综合表达"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "辨析判断",
+       "综合表达"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d09",
+   "name_zh": "说明性文章的信息提取与观点依据",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u06",
+   "unit_name_zh": "保护环境",
+   "chapter_order": 6,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d10",
+   "name_zh": "古诗三首的景物与情感（浪淘沙·江南春·书湖阴先生壁）",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u06",
+   "unit_name_zh": "保护环境",
+   "chapter_order": 6,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d19",
+   "name_zh": "抓关键句与传统文化常识",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u06",
+   "unit_name_zh": "保护环境",
+   "chapter_order": 6,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d11",
+   "name_zh": "文言实词与文意（两小儿辩日·曹冲称象）",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u07",
+   "unit_name_zh": "科学与想象",
+   "chapter_order": 7,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d12",
+   "name_zh": "科学类文本的想象与推理",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u07",
+   "unit_name_zh": "科学与想象",
+   "chapter_order": 7,
+   "ability_lines": [
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 18,
+   "cells_declared": 2,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L1",
+   "level_zh": "L1 仅可立案",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 1,
+    "feasible_combos": 1,
+    "combos": [
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 3,
+    "elimination_need": 5,
+    "repeats_required": 2
+   },
+   "patches": {
+    "to_l2": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ],
+    "to_l3": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 2
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "阅读理解",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "阅读理解",
+      "difficulty": "易",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "易",
+      "count": 1
+     }
+    ]
+   }
+  },
+  {
+   "code": "chinese-6up-d20",
+   "name_zh": "文言句子的朗读停顿",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u07",
+   "unit_name_zh": "科学与想象",
+   "chapter_order": 7,
+   "ability_lines": [
+    "语言运用",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 18,
+   "cells_declared": 2,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L1",
+   "level_zh": "L1 仅可立案",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 1,
+    "feasible_combos": 1,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 3,
+    "elimination_need": 5,
+    "repeats_required": 2
+   },
+   "patches": {
+    "to_l2": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ],
+    "to_l3": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 2
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "语言运用",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "语言运用",
+      "difficulty": "易",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "易",
+      "count": 1
+     }
+    ]
+   }
+  },
+  {
+   "code": "chinese-6up-d13",
+   "name_zh": "鲁迅作品的人物形象与时代背景",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u08",
+   "unit_name_zh": "走近鲁迅",
+   "chapter_order": 8,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "chinese-6up-d14",
+   "name_zh": "借助资料理解课文",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u08",
+   "unit_name_zh": "走近鲁迅",
+   "chapter_order": 8,
+   "ability_lines": [
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 18,
+   "cells_declared": 2,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L1",
+   "level_zh": "L1 仅可立案",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 1,
+    "feasible_combos": 1,
+    "combos": [
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 3,
+    "elimination_need": 5,
+    "repeats_required": 2
+   },
+   "patches": {
+    "to_l2": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ],
+    "to_l3": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 2
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "阅读理解",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "阅读理解",
+      "difficulty": "易",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "易",
+      "count": 1
+     }
+    ]
+   }
+  },
+  {
+   "code": "chinese-6up-d21",
+   "name_zh": "鲁迅名言的积累与用法",
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "unit_code": "chinese-6up-u08",
+   "unit_name_zh": "走近鲁迅",
+   "chapter_order": 8,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "english-6up-d01",
+   "name_zh": "一般过去时（规则与不规则动词）+ 谈假期活动",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u01",
+   "unit_name_zh": "What did you do during the holidays?",
+   "chapter_order": 1,
+   "ability_lines": [
+    "语言运用",
+    "辨析判断",
+    "阅读理解"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "辨析判断",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "english-6up-d02",
+   "name_zh": "假期活动词汇与问答",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u01",
+   "unit_name_zh": "What did you do during the holidays?",
+   "chapter_order": 1,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断",
+    "综合表达"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "综合表达": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "综合表达"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "综合表达"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "辨析判断",
+       "综合表达"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "english-6up-d03",
+   "name_zh": "一般现在时第三人称单数",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u02",
+   "unit_name_zh": "Beibei always gets up early",
+   "chapter_order": 2,
+   "ability_lines": [
+    "语言运用",
+    "辨析判断",
+    "阅读理解"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "辨析判断",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "english-6up-d04",
+   "name_zh": "频度副词",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u02",
+   "unit_name_zh": "Beibei always gets up early",
+   "chapter_order": 2,
+   "ability_lines": [
+    "语言运用",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 18,
+   "cells_declared": 2,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L1",
+   "level_zh": "L1 仅可立案",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 1,
+    "feasible_combos": 1,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 3,
+    "elimination_need": 5,
+    "repeats_required": 2
+   },
+   "patches": {
+    "to_l2": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ],
+    "to_l3": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 2
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "语言运用",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "语言运用",
+      "difficulty": "易",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "易",
+      "count": 1
+     }
+    ]
+   }
+  },
+  {
+   "code": "english-6up-d06",
+   "name_zh": "enjoy + doing（节日活动）",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u03",
+   "unit_name_zh": "The Mid-Autumn Festival",
+   "chapter_order": 3,
+   "ability_lines": [
+    "语言运用",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 18,
+   "cells_declared": 2,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L1",
+   "level_zh": "L1 仅可立案",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 1,
+    "feasible_combos": 1,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 3,
+    "elimination_need": 5,
+    "repeats_required": 2
+   },
+   "patches": {
+    "to_l2": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ],
+    "to_l3": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 2
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "语言运用",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "语言运用",
+      "difficulty": "易",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "易",
+      "count": 1
+     }
+    ]
+   }
+  },
+  {
+   "code": "english-6up-d07",
+   "name_zh": "一般现在时与一般过去时在节日描述中的对比",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u03",
+   "unit_name_zh": "The Mid-Autumn Festival",
+   "chapter_order": 3,
+   "ability_lines": [
+    "语言运用",
+    "辨析判断",
+    "阅读理解"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "辨析判断",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "english-6up-d08",
+   "name_zh": "一般将来时 will（含 There will be）",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u04",
+   "unit_name_zh": "It will be sunny and cool tomorrow",
+   "chapter_order": 4,
+   "ability_lines": [
+    "语言运用",
+    "辨析判断",
+    "阅读理解"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "辨析判断",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "english-6up-d09",
+   "name_zh": "天气词汇与活动安排",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u04",
+   "unit_name_zh": "It will be sunny and cool tomorrow",
+   "chapter_order": 4,
+   "ability_lines": [
+    "语言运用",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 18,
+   "cells_declared": 2,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L1",
+   "level_zh": "L1 仅可立案",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 1,
+    "feasible_combos": 1,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 3,
+    "elimination_need": 5,
+    "repeats_required": 2
+   },
+   "patches": {
+    "to_l2": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ],
+    "to_l3": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 2
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "语言运用",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "语言运用",
+      "difficulty": "易",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "易",
+      "count": 1
+     }
+    ]
+   }
+  },
+  {
+   "code": "english-6up-d10",
+   "name_zh": "量词表达（a bottle of / a glass of）",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u05",
+   "unit_name_zh": "I will bring a bottle of orange juice",
+   "chapter_order": 5,
+   "ability_lines": [
+    "语言运用",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 18,
+   "cells_declared": 2,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L1",
+   "level_zh": "L1 仅可立案",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 1,
+    "feasible_combos": 1,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 3,
+    "elimination_need": 5,
+    "repeats_required": 2
+   },
+   "patches": {
+    "to_l2": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ],
+    "to_l3": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 2
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "语言运用",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "语言运用",
+      "difficulty": "易",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "易",
+      "count": 1
+     }
+    ]
+   }
+  },
+  {
+   "code": "english-6up-d11",
+   "name_zh": "情态动词 can 表能力与请求",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u06",
+   "unit_name_zh": "What can I do?",
+   "chapter_order": 6,
+   "ability_lines": [
+    "语言运用",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 18,
+   "cells_declared": 2,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L1",
+   "level_zh": "L1 仅可立案",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 1,
+    "feasible_combos": 1,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 3,
+    "elimination_need": 5,
+    "repeats_required": 2
+   },
+   "patches": {
+    "to_l2": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ],
+    "to_l3": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 2
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "语言运用",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "语言运用",
+      "difficulty": "易",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "易",
+      "count": 1
+     }
+    ]
+   }
+  },
+  {
+   "code": "english-6up-d12",
+   "name_zh": "should / shouldn't 表建议（环保）",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u07",
+   "unit_name_zh": "We shouldn't waste water",
+   "chapter_order": 7,
+   "ability_lines": [
+    "语言运用",
+    "辨析判断",
+    "阅读理解"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "辨析判断",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "english-6up-d13",
+   "name_zh": "形容词比较级（-er / more）",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u08",
+   "unit_name_zh": "This bird is bigger than the first one",
+   "chapter_order": 8,
+   "ability_lines": [
+    "语言运用",
+    "辨析判断"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 18,
+   "cells_declared": 2,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L1",
+   "level_zh": "L1 仅可立案",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 1,
+    "feasible_combos": 1,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 3,
+    "elimination_need": 5,
+    "repeats_required": 2
+   },
+   "patches": {
+    "to_l2": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ],
+    "to_l3": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 2
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "语言运用",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "语言运用",
+      "difficulty": "易",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "易",
+      "count": 1
+     }
+    ]
+   }
+  },
+  {
+   "code": "english-6up-d14",
+   "name_zh": "比较级句型 than",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u08",
+   "unit_name_zh": "This bird is bigger than the first one",
+   "chapter_order": 8,
+   "ability_lines": [
+    "语言运用",
+    "辨析判断",
+    "阅读理解"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "辨析判断",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "english-6up-d16",
+   "name_zh": "疾病与身体不适表达",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u09",
+   "unit_name_zh": "I don't feel well",
+   "chapter_order": 9,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断",
+    "综合表达"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "综合表达": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "综合表达"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "综合表达"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "辨析判断",
+       "综合表达"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "english-6up-d17",
+   "name_zh": "should / shouldn't 表建议（看病）",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u09",
+   "unit_name_zh": "I don't feel well",
+   "chapter_order": 9,
+   "ability_lines": [
+    "语言运用",
+    "阅读理解",
+    "辨析判断",
+    "综合表达"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "综合表达": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 36,
+   "cells_declared": 4,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 6,
+    "feasible_combos": 6,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "综合表达"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "阅读理解",
+       "综合表达"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "辨析判断",
+       "综合表达"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 21,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "english-6up-d15",
+   "name_zh": "节日习俗表达与最高级",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u10",
+   "unit_name_zh": "Festivals bring families together",
+   "chapter_order": 10,
+   "ability_lines": [
+    "语言运用",
+    "辨析判断",
+    "阅读理解"
+   ],
+   "grid": {
+    "语言运用": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 27,
+   "cells_declared": 3,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L3",
+   "level_zh": "L3 两轮闭环",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 3,
+    "feasible_combos": 3,
+    "combos": [
+     {
+      "combo": [
+       "语言运用",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "语言运用",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     },
+     {
+      "combo": [
+       "辨析判断",
+       "阅读理解"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 12,
+    "elimination_need": 5,
+    "repeats_required": 0
+   },
+   "patches": {
+    "to_l2": [],
+    "to_l3": []
+   }
+  },
+  {
+   "code": "english-6up-d18",
+   "name_zh": "比较事物（Let's compare!）",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u11",
+   "unit_name_zh": "阅读拓展板块",
+   "chapter_order": 11,
+   "ability_lines": [
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 18,
+   "cells_declared": 2,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L1",
+   "level_zh": "L1 仅可立案",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 1,
+    "feasible_combos": 1,
+    "combos": [
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 3,
+    "elimination_need": 5,
+    "repeats_required": 2
+   },
+   "patches": {
+    "to_l2": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ],
+    "to_l3": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 2
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "阅读理解",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "阅读理解",
+      "difficulty": "易",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "易",
+      "count": 1
+     }
+    ]
+   }
+  },
+  {
+   "code": "english-6up-d19",
+   "name_zh": "水的用途与节水（Let's save water!）",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u11",
+   "unit_name_zh": "阅读拓展板块",
+   "chapter_order": 11,
+   "ability_lines": [
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 18,
+   "cells_declared": 2,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L1",
+   "level_zh": "L1 仅可立案",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 1,
+    "feasible_combos": 1,
+    "combos": [
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 3,
+    "elimination_need": 5,
+    "repeats_required": 2
+   },
+   "patches": {
+    "to_l2": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ],
+    "to_l3": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 2
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "阅读理解",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "阅读理解",
+      "difficulty": "易",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "易",
+      "count": 1
+     }
+    ]
+   }
+  },
+  {
+   "code": "english-6up-d20",
+   "name_zh": "A Helping Hand（地铁站助人）",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u11",
+   "unit_name_zh": "阅读拓展板块",
+   "chapter_order": 11,
+   "ability_lines": [
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 18,
+   "cells_declared": 2,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L1",
+   "level_zh": "L1 仅可立案",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 1,
+    "feasible_combos": 1,
+    "combos": [
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 3,
+    "elimination_need": 5,
+    "repeats_required": 2
+   },
+   "patches": {
+    "to_l2": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ],
+    "to_l3": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 2
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "阅读理解",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "阅读理解",
+      "difficulty": "易",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "易",
+      "count": 1
+     }
+    ]
+   }
+  },
+  {
+   "code": "english-6up-d21",
+   "name_zh": "Two Trees（圣诞送树）",
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "unit_code": "english-6up-u11",
+   "unit_name_zh": "阅读拓展板块",
+   "chapter_order": 11,
+   "ability_lines": [
+    "阅读理解",
+    "辨析判断"
+   ],
+   "grid": {
+    "阅读理解": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    },
+    "辨析判断": {
+     "1": 3,
+     "2": 3,
+     "3": 3
+    }
+   },
+   "questions": 18,
+   "cells_declared": 2,
+   "empty_lines": [],
+   "undeclared_lines": [],
+   "level": "L1",
+   "level_zh": "L1 仅可立案",
+   "elimination": {
+    "verdict": "strong",
+    "verdict_zh": "强可行",
+    "total_combos": 1,
+    "feasible_combos": 1,
+    "combos": [
+     {
+      "combo": [
+       "阅读理解",
+       "辨析判断"
+      ],
+      "medium": 6,
+      "hard": 6,
+      "easy": 6,
+      "total": 18,
+      "feasible": true
+     }
+    ]
+   },
+   "residual": {
+    "unused_after_window": 3,
+    "elimination_need": 5,
+    "repeats_required": 2
+   },
+   "patches": {
+    "to_l2": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ],
+    "to_l3": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 2
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "阅读理解",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     },
+     {
+      "ability": "阅读理解",
+      "difficulty": "易",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "易",
+      "count": 1
+     }
+    ]
+   }
+  }
+ ],
+ "patch": [
+  {
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "ability": "理解意义",
+   "difficulty": "易",
+   "current": 75,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "ability": "理解意义",
+   "difficulty": "中",
+   "current": 75,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "ability": "理解意义",
+   "difficulty": "难",
+   "current": 75,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "ability": "执行计算",
+   "difficulty": "易",
+   "current": 63,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "ability": "执行计算",
+   "difficulty": "中",
+   "current": 63,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "ability": "执行计算",
+   "difficulty": "难",
+   "current": 63,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "ability": "情境应用",
+   "difficulty": "易",
+   "current": 75,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "ability": "情境应用",
+   "difficulty": "中",
+   "current": 75,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "ability": "情境应用",
+   "difficulty": "难",
+   "current": 75,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "ability": "辨析变式",
+   "difficulty": "易",
+   "current": 75,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "ability": "辨析变式",
+   "difficulty": "中",
+   "current": 75,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "math",
+   "subject_name_zh": "数学",
+   "ability": "辨析变式",
+   "difficulty": "难",
+   "current": 75,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "ability": "语言运用",
+   "difficulty": "易",
+   "current": 57,
+   "to_l2": 0,
+   "to_l3": 1
+  },
+  {
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "ability": "语言运用",
+   "difficulty": "中",
+   "current": 57,
+   "to_l2": 1,
+   "to_l3": 2
+  },
+  {
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "ability": "语言运用",
+   "difficulty": "难",
+   "current": 57,
+   "to_l2": 0,
+   "to_l3": 1
+  },
+  {
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "ability": "阅读理解",
+   "difficulty": "易",
+   "current": 63,
+   "to_l2": 0,
+   "to_l3": 3
+  },
+  {
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "ability": "阅读理解",
+   "difficulty": "中",
+   "current": 63,
+   "to_l2": 3,
+   "to_l3": 6
+  },
+  {
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "ability": "阅读理解",
+   "difficulty": "难",
+   "current": 63,
+   "to_l2": 0,
+   "to_l3": 3
+  },
+  {
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "ability": "辨析判断",
+   "difficulty": "易",
+   "current": 66,
+   "to_l2": 0,
+   "to_l3": 4
+  },
+  {
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "ability": "辨析判断",
+   "difficulty": "中",
+   "current": 66,
+   "to_l2": 0,
+   "to_l3": 4
+  },
+  {
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "ability": "辨析判断",
+   "difficulty": "难",
+   "current": 66,
+   "to_l2": 4,
+   "to_l3": 4
+  },
+  {
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "ability": "综合表达",
+   "difficulty": "易",
+   "current": 6,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "ability": "综合表达",
+   "difficulty": "中",
+   "current": 6,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "chinese",
+   "subject_name_zh": "语文",
+   "ability": "综合表达",
+   "difficulty": "难",
+   "current": 6,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "ability": "语言运用",
+   "difficulty": "易",
+   "current": 48,
+   "to_l2": 0,
+   "to_l3": 6
+  },
+  {
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "ability": "语言运用",
+   "difficulty": "中",
+   "current": 48,
+   "to_l2": 6,
+   "to_l3": 12
+  },
+  {
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "ability": "语言运用",
+   "difficulty": "难",
+   "current": 48,
+   "to_l2": 0,
+   "to_l3": 6
+  },
+  {
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "ability": "阅读理解",
+   "difficulty": "易",
+   "current": 42,
+   "to_l2": 0,
+   "to_l3": 4
+  },
+  {
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "ability": "阅读理解",
+   "difficulty": "中",
+   "current": 42,
+   "to_l2": 4,
+   "to_l3": 8
+  },
+  {
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "ability": "阅读理解",
+   "difficulty": "难",
+   "current": 42,
+   "to_l2": 0,
+   "to_l3": 4
+  },
+  {
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "ability": "辨析判断",
+   "difficulty": "易",
+   "current": 60,
+   "to_l2": 0,
+   "to_l3": 10
+  },
+  {
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "ability": "辨析判断",
+   "difficulty": "中",
+   "current": 60,
+   "to_l2": 0,
+   "to_l3": 10
+  },
+  {
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "ability": "辨析判断",
+   "difficulty": "难",
+   "current": 60,
+   "to_l2": 10,
+   "to_l3": 10
+  },
+  {
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "ability": "综合表达",
+   "difficulty": "易",
+   "current": 9,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "ability": "综合表达",
+   "difficulty": "中",
+   "current": 9,
+   "to_l2": 0,
+   "to_l3": 0
+  },
+  {
+   "subject": "english",
+   "subject_name_zh": "英语",
+   "ability": "综合表达",
+   "difficulty": "难",
+   "current": 9,
+   "to_l2": 0,
+   "to_l3": 0
+  }
+ ],
+ "gaps": {
+  "p0": [],
+  "p1": [
+   {
+    "code": "chinese-6up-d22",
+    "name_zh": "《童年》的人物与情节",
+    "questions": 18,
+    "repeats_required": 2,
+    "patch_to_l2": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ]
+   },
+   {
+    "code": "chinese-6up-d12",
+    "name_zh": "科学类文本的想象与推理",
+    "questions": 18,
+    "repeats_required": 2,
+    "patch_to_l2": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ]
+   },
+   {
+    "code": "chinese-6up-d20",
+    "name_zh": "文言句子的朗读停顿",
+    "questions": 18,
+    "repeats_required": 2,
+    "patch_to_l2": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ]
+   },
+   {
+    "code": "chinese-6up-d14",
+    "name_zh": "借助资料理解课文",
+    "questions": 18,
+    "repeats_required": 2,
+    "patch_to_l2": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ]
+   },
+   {
+    "code": "english-6up-d04",
+    "name_zh": "频度副词",
+    "questions": 18,
+    "repeats_required": 2,
+    "patch_to_l2": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ]
+   },
+   {
+    "code": "english-6up-d06",
+    "name_zh": "enjoy + doing（节日活动）",
+    "questions": 18,
+    "repeats_required": 2,
+    "patch_to_l2": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ]
+   },
+   {
+    "code": "english-6up-d09",
+    "name_zh": "天气词汇与活动安排",
+    "questions": 18,
+    "repeats_required": 2,
+    "patch_to_l2": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ]
+   },
+   {
+    "code": "english-6up-d10",
+    "name_zh": "量词表达（a bottle of / a glass of）",
+    "questions": 18,
+    "repeats_required": 2,
+    "patch_to_l2": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ]
+   },
+   {
+    "code": "english-6up-d11",
+    "name_zh": "情态动词 can 表能力与请求",
+    "questions": 18,
+    "repeats_required": 2,
+    "patch_to_l2": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ]
+   },
+   {
+    "code": "english-6up-d13",
+    "name_zh": "形容词比较级（-er / more）",
+    "questions": 18,
+    "repeats_required": 2,
+    "patch_to_l2": [
+     {
+      "ability": "语言运用",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ]
+   },
+   {
+    "code": "english-6up-d18",
+    "name_zh": "比较事物（Let's compare!）",
+    "questions": 18,
+    "repeats_required": 2,
+    "patch_to_l2": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ]
+   },
+   {
+    "code": "english-6up-d19",
+    "name_zh": "水的用途与节水（Let's save water!）",
+    "questions": 18,
+    "repeats_required": 2,
+    "patch_to_l2": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ]
+   },
+   {
+    "code": "english-6up-d20",
+    "name_zh": "A Helping Hand（地铁站助人）",
+    "questions": 18,
+    "repeats_required": 2,
+    "patch_to_l2": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ]
+   },
+   {
+    "code": "english-6up-d21",
+    "name_zh": "Two Trees（圣诞送树）",
+    "questions": 18,
+    "repeats_required": 2,
+    "patch_to_l2": [
+     {
+      "ability": "阅读理解",
+      "difficulty": "中",
+      "count": 1
+     },
+     {
+      "ability": "辨析判断",
+      "difficulty": "难",
+      "count": 1
+     }
+    ]
+   }
+  ],
+  "p2": []
+ },
+ "conclusion": {
+  "nodes_l2_or_better": 53,
+  "nodes_l1_only": 14,
+  "nodes_l0": 0,
+  "nodes_total": 67,
+  "repeat_ratio": 0.208955223880597,
+  "repeats_required_total": 28,
+  "patch_to_l2_total": 28,
+  "patch_to_l3_total": 98,
+  "by_subject": [
+   {
+    "subject": "math",
+    "name_zh": "数学",
+    "nodes": 25,
+    "repeat_nodes": 0
+   },
+   {
+    "subject": "chinese",
+    "name_zh": "语文",
+    "nodes": 22,
+    "repeat_nodes": 4
+   },
+   {
+    "subject": "english",
+    "name_zh": "英语",
+    "nodes": 20,
+    "repeat_nodes": 10
+   }
+  ],
+  "strong_all": 67,
+  "conditional": 0,
+  "infeasible": 0
+ }
+}
